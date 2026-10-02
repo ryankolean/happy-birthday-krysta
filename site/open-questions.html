@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Open questions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="topnav"><div class="navinner"><a href="index.html">The trip</a><a href="itinerary.html">Itinerary</a><a href="costs.html">Costs</a><a href="dining.html">Birthday dinner</a><a href="nye.html">New Year's Eve</a><a href="decisions.html">Decisions</a><a href="open-questions.html" aria-current="page">Open questions</a><a href="tasks.html">To do</a></div></nav>
+<div class="wrap">
+<div class="prose" style="padding-top:44px"><h1>Open questions</h1>
+<p>What is unresolved, and what each one costs. Close these in <code>decisions.md</code> and update <code>data/tasks.yml</code>.</p>
+<h2>Gating everything else</h2>
+<h3>What happens on New Year&#39;s Eve</h3>
+<p>Approach is decided, nothing is ordered. The 2026 takeaway menus do not publish until late November, which means this cannot be closed before then. <strong>Cost of being wrong:</strong> up to $2,000, the difference between the potluck and the St. Regis gala.</p>
+<h3>Pujol&#39;s booking window</h3>
+<p>Not on OpenTable, and nobody knows how far ahead they open. This is the birthday dinner and the biggest blind spot on the trip. <strong>Cost of being wrong:</strong> the birthday dinner, which has no substitute at the same tier that is also bookable.</p>
+<h3>Em&#39;s holiday release</h3>
+<p>Tock says &quot;Em has not opened reservations for 2 ene.&quot; Probing shows 19 December open and 31 December not, so the holiday week is withheld rather than sold out. Nobody knows the release date. Phone +52 55 6450 1302.</p>
+<h3>Whether the balloon flies on 2 January</h3>
+<p>No operator site confirms holiday-period operations, and no 2027 pricing is published anywhere. 2 January is a Saturday in the busiest week of the year, which is when balloon operators fill first. <strong>Cost of being wrong:</strong> $1,690 and the centrepiece of the birthday.</p>
+<h2>Money</h2>
+<h3>The Fives environmental tax</h3>
+<p>Sources conflict badly, from under $25 for the stay to $270. One email to <a href="mailto:reservations@thefiveshotels.com">reservations@thefiveshotels.com</a> settles it. <strong>Spread:</strong> about $245.</p>
+<h3>Whether the 32 percent Fives discount survives to booking</h3>
+<p>And whether it stacks with the 5 percent loyalty discount. <strong>Spread:</strong> about $226 on the loyalty discount alone, more if the promotional rate expires.</p>
+<h3>Tulum beach club day</h3>
+<p>Unpriced. Table minimums for 6 in early January have never been quoted. Three hours of driving round trip. May not survive on its own merits.</p>
+<h3>LAX origin</h3>
+<p>Unpriced. If anyone is flying from Los Angeles that is a separate search, and LAX to MEX has far more Delta frequency than Detroit.</p>
+<h3>Whether Couple B takes a connection home</h3>
+<p>The MEX to DTW nonstop is $1,893 and connections that day run $774 to $956. <strong>Saving:</strong> about $1,040 each. They have not been asked.</p>
+<h2>Logistics</h2>
+<h3>Firm yes or no from all 8</h3>
+<p>With a date by which a maybe becomes a no. Nothing non-refundable should be signed before this.</p>
+<h3>Silver Medallion benefits on these routes</h3>
+<p>Whether complimentary Comfort+ extends to Mexico at Silver, and the international checked-bag allowance. Priority boarding and waived same-day change fees are safe. At Silver the group is lowest upgrade priority, so do not count on it on a sold-out holiday A319.</p>
+<h3>Four venue addresses never resolved</h3>
+<p>Minutito, Cursi, Fueguia 1833 and Salazar were on the shortlist and none has a confirmed address.</p>
+<h3>Whether a taquiza provider will take a party of 8</h3>
+<p>Most Mexico City providers set a 50 person minimum. One phone call settles it.</p>
+<h2>The website</h2>
+<p><strong>Settled.</strong> The repo is <strong>public</strong> and the site is live at <a href="https://ryankolean.github.io/happy-birthday-krysta/">ryankolean.github.io/happy-birthday-krysta</a>. Public was the choice because GitHub Pages from a private repo needs a paid plan, and the group needs to be able to open it.</p>
+<p>Built by <code>scripts/build.mjs</code> from <code>data/*.yml</code> and <code>docs/*.md</code>, deployed by GitHub Actions on every push to <code>main</code>. No framework, two dependencies.</p>
+<h3>What this costs us</h3>
+<p>Everything in this repo is world readable and permanent. Git history cannot be meaningfully cleaned after the fact.</p>
+<p>The site sends <code>noindex, nofollow</code> and ships a <code>robots.txt</code> disallowing everything, so it stays link shareable without being searchable. <strong>That is a courtesy to crawlers, not a security control.</strong> Anyone with the link sees everything.</p>
+<h3>What must never be committed</h3>
+<p>Street addresses, confirmation numbers, record locators, card details, full legal names, dates of birth, passport numbers, travelers&#39; personal phone numbers, home addresses. Those live in <code>private/</code>, which is gitignored. Template at <code>private-template.md</code>.</p>
+<p>Published business numbers and public listing URLs are fine.</p>
+<h3>Still open</h3>
+<p>Whether to put the exact Airbnb address on the site once booked. Right now only the listing URL and the neighborhood are published, which is the right line. Resist moving it.</p>
+</div>
+<footer>
+  <p>Built from <code>data/</code> in <a href="https://github.com/ryankolean/happy-birthday-krysta">ryankolean/happy-birthday-krysta</a>. Lodging and flights last verified 2026-10-02. Nothing is booked yet.</p>
+  <p>Figures marked <span class="tag quoted">quoted</span> are live prices from the operator's own site. <span class="tag estimate">estimate</span> is a real market price for a comparable thing, never quoted for us. <span class="tag open">open</span> means undecided and the number is a placeholder.</p>
+</footer>
+</div>
+</body>
+</html>

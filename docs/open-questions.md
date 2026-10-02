@@ -49,19 +49,19 @@ Most Mexico City providers set a 50 person minimum. One phone call settles it.
 
 ## The website
 
-### Framework
-Undecided. Content in `data/` is plain YAML and framework-agnostic on purpose. Astro is the house default and is what `4pm-detroit` uses. Nothing has been installed.
+**Settled.** The repo is **public** and the site is live at [ryankolean.github.io/happy-birthday-krysta](https://ryankolean.github.io/happy-birthday-krysta/). Public was the choice because GitHub Pages from a private repo needs a paid plan, and the group needs to be able to open it.
 
-### Hosting, and this is the real question
-This repo is **private**, because a public trip itinerary broadcasts the exact dates that eight people's homes are empty.
+Built by `scripts/build.mjs` from `data/*.yml` and `docs/*.md`, deployed by GitHub Actions on every push to `main`. No framework, two dependencies.
 
-GitHub Pages from a private repo requires a paid GitHub plan. On a free account the options are:
+### What this costs us
+Everything in this repo is world readable and permanent. Git history cannot be meaningfully cleaned after the fact.
 
-1. **Upgrade to GitHub Pro.** Private repo, private Pages, about $4 a month.
-2. **Make the repo public** and keep every sensitive detail out of it: street addresses, confirmation numbers, flight record locators, phone numbers, full names.
-3. **Keep the repo private and share the Claude artifact instead**, which is already published and link-shareable.
-
-Option 2 is workable but the history is forever, so the discipline has to start at the first commit rather than being retrofitted.
+The site sends `noindex, nofollow` and ships a `robots.txt` disallowing everything, so it stays link shareable without being searchable. **That is a courtesy to crawlers, not a security control.** Anyone with the link sees everything.
 
 ### What must never be committed
-Street addresses, confirmation numbers, record locators, card details, full legal names, dates of birth, passport numbers, phone numbers, home addresses. Those live in `private/`, which is gitignored.
+Street addresses, confirmation numbers, record locators, card details, full legal names, dates of birth, passport numbers, travelers' personal phone numbers, home addresses. Those live in `private/`, which is gitignored. Template at `private-template.md`.
+
+Published business numbers and public listing URLs are fine.
+
+### Still open
+Whether to put the exact Airbnb address on the site once booked. Right now only the listing URL and the neighborhood are published, which is the right line. Resist moving it.

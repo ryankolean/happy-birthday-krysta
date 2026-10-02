@@ -50,9 +50,27 @@ See `data/tasks.yml` for what is urgent and `docs/open-questions.md` for what is
 
 ## Website
 
-Not built yet. The content in `data/` is ready for a static site generator. Framework undecided: see `docs/open-questions.md`.
+**Live at [ryankolean.github.io/happy-birthday-krysta](https://ryankolean.github.io/happy-birthday-krysta/)**
 
-**Before publishing anything:** this repo is private because a public trip itinerary broadcasts exact dates when eight people's homes are empty. Keep the published site free of street addresses, confirmation numbers, flight record locators and anyone's contact details. Those live in `private/`, which is gitignored.
+Eight pages, generated from `data/` and `docs/` by `scripts/build.mjs`, deployed by GitHub Actions on every push to `main`.
+
+```bash
+npm install
+npm run build     # writes site/
+npm run serve     # builds, then serves site/ on :4199
+```
+
+**Never hand-edit anything under `site/`.** It is generated output and the next build overwrites it. Change `data/*.yml` or `docs/*.md` instead.
+
+### This repo is public, so the discipline matters
+
+A trip itinerary names the exact dates that eight people's homes sit empty. The repo is public so that GitHub Pages works on a free plan, which means **everything committed here is world readable, permanently.**
+
+Keep out: street addresses, confirmation numbers, flight record locators, card details, full legal names, dates of birth, passport numbers, and travelers' personal phone numbers. Those live in `private/`, which is gitignored. There is a template at `docs/private-template.md`.
+
+Published business numbers and public listing URLs are fine. Someone's mobile is not.
+
+The site sends `noindex, nofollow` and ships a `robots.txt` that disallows everything, so it stays link shareable without turning up in search. That is a courtesy, not a security control.
 
 ## Full working
 

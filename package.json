@@ -1,0 +1,15 @@
+{
+  "name": "happy-birthday-krysta",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Trip site for Krysta's 35th birthday in Mexico, Dec 2026 to Jan 2027",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "node scripts/build.mjs && python3 -m http.server 4173 --directory site"
+  },
+  "dependencies": {
+    "js-yaml": "4.1.0",
+    "marked": "12.0.2"
+  }
+}
