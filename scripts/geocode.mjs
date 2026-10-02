@@ -26,7 +26,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const places = yaml.load(readFileSync(join(root, 'data', 'places.yml'), 'utf8'));
 const cache = existsSync(cachePath) ? JSON.parse(readFileSync(cachePath, 'utf8')) : {};
 
-const todo = places.places.filter((p) => p.address && !cache[p.address]);
+// A place carrying its own lat/lon is already placed, so it never needs a
+// lookup. The build prefers those coordinates over the cache anyway.
+const todo = places.places.filter((p) => p.address && !cache[p.address] && !(p.lat && p.lon));
 
 if (!todo.length) {
   console.log(`nothing to geocode, all ${places.places.length} places are cached`);

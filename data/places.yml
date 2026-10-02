@@ -212,33 +212,42 @@ places:
 
   - name: Campomar Masaryk
     category: fine
-    address: Campomar, Presidente Masaryk, Polanco, Ciudad de Mexico
+    lat: 19.431675
+    lon: -99.197076
+    address: Avenida Presidente Masaryk 264, Polanco IV Seccion, Miguel Hidalgo, 11550 Ciudad de Mexico
     neighborhood: Polanco
+    precision: approximate
+    note: >
+      Street number 264 does not resolve, so the pin sits on Avenida Presidente
+      Masaryk itself rather than on the door. The address above is the real one
+      and came off the Google Maps entry.
     source: instagram @thatonepointofview
 
   - name: Esquina Comun
     category: fine
-    address: Esquina Comun, Roma Norte, Ciudad de Mexico
-    neighborhood: Roma Norte
+    address: Fernando Montes de Oca 86, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico
+    neighborhood: Condesa
     source: instagram @thatonepointofview
 
   - name: Wagyu San
     category: fine
-    address: Wagyu San, Polanco, Ciudad de Mexico
-    neighborhood: Polanco
+    address: Paseo de la Reforma 333, Cuauhtemoc, 06500 Ciudad de Mexico
+    neighborhood: Cuauhtemoc
     note: Was already on Krysta's own list. Sushi and steak, views of the Angel.
     source: instagram @thatonepointofview
 
   - name: Pandora Rooftop
     category: fine
-    address: Pandora Rooftop, Ciudad de Mexico
+    address: Napoles 35, Juarez, Cuauhtemoc, 06600 Ciudad de Mexico
     note: Already on Krysta's list. Rooftop, octopus and steak.
     source: instagram @thatonepointofview
 
   - name: Taverna
     category: fine
-    address: Taverna, Polanco, Ciudad de Mexico
-    neighborhood: Polanco
+    lat: 19.429691
+    lon: -99.1531323
+    address: Taverna, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Cuauhtemoc
     note: Mediterranean and seafood. Also runs a New Year's Eve menu.
     source: instagram @thatonepointofview
 
@@ -252,14 +261,16 @@ places:
   # Brunch and lunch
   - name: Margot
     category: casual
-    address: Margot, Roma Norte, Ciudad de Mexico
+    address: Durango 219, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
     neighborhood: Roma Norte
     source: instagram @thatonepointofview
 
   - name: Saint
     category: casual
-    address: Saint, Roma Norte, Ciudad de Mexico
-    neighborhood: Roma Norte
+    lat: 19.4077573
+    lon: -99.1771326
+    address: Saint, Hipodromo, Ciudad de Mexico
+    neighborhood: Hipodromo
     source: instagram @thatonepointofview
 
   - name: Madre Cafe
@@ -270,7 +281,7 @@ places:
 
   - name: Maizajo
     category: casual
-    address: Maizajo, Ciudad de Mexico
+    address: Fernando Montes de Oca 113, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico
     note: Nixtamal and tortilla specialists.
     source: instagram @thatonepointofview
 
@@ -283,7 +294,7 @@ places:
 
   - name: Jenni's Quesadillas
     category: casual
-    address: Jenni's Quesadillas, Ciudad de Mexico
+    address: Merida 83, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
     source: instagram @thatonepointofview, @itsalanbarr
 
   - name: Mi Compa Chava
@@ -319,6 +330,8 @@ places:
 
   - name: Sanborns de los Azulejos
     category: casual
+    lat: 19.4342214
+    lon: -99.1401815
     address: Avenida Francisco I Madero 4, Centro Historico, Ciudad de Mexico
     neighborhood: Centro Historico
     note: Breakfast inside the House of Tiles. Worth it for the room.
@@ -326,29 +339,34 @@ places:
 
   - name: El Moro
     category: casual
-    address: Churreria El Moro, Eje Central Lazaro Cardenas 42, Centro, Ciudad de Mexico
+    address: Eje Central Lazaro Cardenas 42, Centro, Cuauhtemoc, 06000 Ciudad de Mexico
     neighborhood: Centro
     note: Churros and thick chocolate, open late.
     source: instagram @itsalanbarr
 
   - name: Pasteleria Ideal
     category: casual
-    address: Pasteleria Ideal, 16 de Septiembre 18, Centro, Ciudad de Mexico
+    address: 16 de Septiembre 18, Centro, Cuauhtemoc, 06000 Ciudad de Mexico
     neighborhood: Centro
     source: instagram @itsalanbarr
 
   - name: Lindy
     category: casual
-    address: Lindy, Roma Norte, Ciudad de Mexico
-    neighborhood: Roma Norte
+    address: Avenida Mexico 31, Condesa, Cuauhtemoc, 06100 Ciudad de Mexico
+    neighborhood: Condesa
     note: Classic flan.
     source: instagram @unnipulipra
 
   - name: Reyna Nata
     category: casual
+    lat: 19.4327702
+    lon: -99.1820729
     address: Reyna Nata, Roma Norte, Ciudad de Mexico
     neighborhood: Roma Norte
-    note: Basque cheesecake.
+    note: >
+      Basque cheesecake. Google Maps lists this as "Ren & Nata" in Polanco,
+      which matches the @renynata__ handle the post credited. Worth eyeballing
+      before anyone makes a trip for it.
     source: instagram @unnipulipra
 
   # Tacos and street food
@@ -363,6 +381,8 @@ places:
 
   - name: Tacos La Once Mil
     category: taco
+    lat: 19.4199507
+    lon: -99.160306
     address: Tacos La Once Mil, Roma Norte, Ciudad de Mexico
     neighborhood: Roma Norte
     note: >
@@ -378,6 +398,8 @@ places:
 
   - name: Milpa
     category: taco
+    lat: 19.4140625
+    lon: -99.1856371
     address: Milpa, Ciudad de Mexico
     note: >
       Rated 7/10 and called the non-hyped pick, where you see locals rather than
@@ -386,13 +408,15 @@ places:
 
   - name: Tacos Los Alexis
     category: taco
+    lat: 19.4132919
+    lon: -99.1569371
     address: Tacos Los Alexis, Ciudad de Mexico
     note: Rated 6.5/10. Short menu, reasonably priced, never lets you down but will not amaze.
     source: instagram @placesnoted
 
   - name: La Ochenta y Nueve
     category: taco
-    address: La 89, Ciudad de Mexico
+    address: Colima 134, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
     note: >
       Rated 5.5/10, the weakest on the list. Quesabirria and campechano, but
       meat and oil overwhelm the tortilla. Only if you are already nearby.
