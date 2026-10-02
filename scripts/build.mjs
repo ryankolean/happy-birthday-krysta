@@ -122,6 +122,7 @@ const CSS = `:root {
   --f-display: "Instrument Serif", Georgia, "Times New Roman", serif;
   --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --pin-stroke: #11211F;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -130,6 +131,7 @@ const CSS = `:root {
     --muted: #8FA09B; --teal: #5FC2B8; --teal-soft: #15302D;
     --marigold: #F0A23E; --marigold-soft: #33240E; --sea: #6FB8D2;
     --rule: #1E2A28; --rule-firm: #2C3B38;
+    --pin-stroke: #FCFCFA;
   }
 }
 :root[data-theme="dark"] {
@@ -138,6 +140,7 @@ const CSS = `:root {
   --muted: #8FA09B; --teal: #5FC2B8; --teal-soft: #15302D;
   --marigold: #F0A23E; --marigold-soft: #33240E; --sea: #6FB8D2;
   --rule: #1E2A28; --rule-firm: #2C3B38;
+  --pin-stroke: #FCFCFA;
 }
 
 * { box-sizing: border-box; }
@@ -375,23 +378,29 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
 .leaflet-popup-content { font-size: 13px; line-height: 1.5; }
 .leaflet-popup-content strong { font-size: 14px; }
 
+/* Pins. The drop shadow is what keeps a pin legible when its fill lands on a
+   tile of a similar tone, in either theme. */
+.mappin { line-height: 0; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45)); }
+.mappin svg { display: block; }
+.leaflet-marker-icon:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
+
 .legend-row { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 18px 12px; }
 .legitem {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: 7px;
   font-family: var(--f-body); font-size: 12.5px; font-weight: 500;
   color: var(--ink); background: var(--raise);
   border: 1px solid var(--rule-firm); border-radius: 2px;
-  padding: 7px 11px; cursor: pointer; line-height: 1;
+  padding: 6px 11px 6px 8px; cursor: pointer; line-height: 1;
 }
-.legitem i { width: 11px; height: 11px; border-radius: 50%; display: block; flex: none; }
+.legpin { display: block; flex: none; }
 .legitem .cnt { font-family: var(--f-mono); font-size: 11px; color: var(--muted); }
 .legitem[aria-pressed="false"] { opacity: 0.4; }
-.legitem[aria-pressed="false"] i { background: transparent !important; box-shadow: inset 0 0 0 2px var(--rule-firm); }
+.legitem[aria-pressed="false"] .legpin path { fill: none; stroke: var(--rule-firm); }
 .legitem:hover { border-color: var(--teal); }
 
 .swatch {
-  display: inline-block; width: 10px; height: 10px; border-radius: 50%;
-  margin-right: 8px; vertical-align: baseline;
+  display: inline-block; width: 11px; height: 11px; border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg); margin-right: 9px; vertical-align: baseline;
 }
 
 footer { margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--rule-firm); font-size: 12.5px; color: var(--muted); }
@@ -684,6 +693,11 @@ function buildTasks() {
 
 // ---------- map ----------
 
+// Teardrop pin silhouette, same geometry 4pm-detroit uses (src/lib/map-pin.ts).
+// The tip sits at y=21 in a 24 unit box, which is what sets the icon anchor.
+const PIN_PATH =
+  'M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z';
+
 function buildMap() {
   const cats = placesDoc.categories;
 
@@ -741,10 +755,15 @@ function buildMap() {
   const counts = {};
   for (const p of resolved) counts[p.c || p.category] = (counts[p.c || p.category] || 0) + 1;
 
+  // Same pin silhouette the legend and the markers both draw, so a retuned
+  // colour cannot make the two disagree. Lifted from 4pm-detroit's map-pin.ts.
   const legend = Object.entries(cats)
     .map(
       ([key, c]) =>
-        `<button class="legitem" data-cat="${esc(key)}" aria-pressed="true"><i style="background:${esc(c.color)}"></i>${esc(c.label)} <span class="cnt">${counts[key] || 0}</span></button>`
+        `<button class="legitem" data-cat="${esc(key)}" aria-pressed="true">` +
+        `<svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">` +
+        `<path d="${PIN_PATH}" fill="${esc(c.color)}" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>` +
+        `${esc(c.label)} <span class="cnt">${counts[key] || 0}</span></button>`
     )
     .join('');
 
@@ -811,17 +830,56 @@ ${lists}
   var groups = {};
   Object.keys(DATA.categories).forEach(function (k) { groups[k] = L.layerGroup().addTo(map); });
 
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  var PIN_PATH = ${JSON.stringify(PIN_PATH)};
+
+  // Built with DOM APIs rather than innerHTML. Every value here is either a
+  // constant or a colour from our own data, but this keeps pin construction
+  // unambiguously safe. Same approach as 4pm-detroit's map-view client.
+  function buildPinEl(colour, approx, big) {
+    var el = document.createElement('div');
+    el.className = 'mappin' + (big ? ' mappin--big' : '');
+
+    var size = big ? 36 : 28;
+    var svg = document.createElementNS(SVG_NS, 'svg');
+    svg.setAttribute('width', String(size));
+    svg.setAttribute('height', String(size));
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+    svg.setAttribute('aria-hidden', 'true');
+
+    var pin = document.createElementNS(SVG_NS, 'path');
+    pin.setAttribute('d', PIN_PATH);
+    // An approximate location is drawn hollow and dashed, so it cannot be
+    // mistaken for a pin we can actually stand behind.
+    pin.setAttribute('fill', approx ? 'none' : colour);
+    pin.setAttribute('stroke', approx ? colour : 'var(--pin-stroke)');
+    pin.setAttribute('stroke-width', approx ? '2.5' : '2');
+    if (approx) pin.setAttribute('stroke-dasharray', '3 2');
+    svg.appendChild(pin);
+
+    el.appendChild(svg);
+    return el;
+  }
+
   var bounds = [];
   DATA.places.forEach(function (p) {
     var colour = (DATA.categories[p.c] || {}).color || '#666';
-    var marker = L.circleMarker([p.lat, p.lon], {
-      radius: p.c === 'stay' ? 11 : 8,
-      color: colour,
-      weight: p.approx ? 3 : 2,
-      opacity: 1,
-      fillColor: colour,
-      fillOpacity: p.approx ? 0.12 : 0.85,
-      dashArray: p.approx ? '4 3' : null
+    var big = p.c === 'stay';
+    var size = big ? 36 : 28;
+    var marker = L.marker([p.lat, p.lon], {
+      icon: L.divIcon({
+        html: buildPinEl(colour, p.approx, big),
+        className: '',
+        iconSize: [size, size],
+        // The silhouette's tip is at y=21 of 24, so the anchor is 21/24 down.
+        iconAnchor: [size / 2, Math.round(size * (21 / 24))],
+        popupAnchor: [0, -Math.round(size * (21 / 24)) + 4]
+      }),
+      alt: p.n,
+      riseOnHover: true
     });
 
     var html = '<strong>' + p.n + '</strong>';
@@ -834,7 +892,7 @@ ${lists}
     if (p.booking) html += '<br><br><em>' + p.booking + '</em>';
     if (p.url) html += '<br><br><a href="' + p.url + '" target="_blank" rel="noopener">Open listing</a>';
     marker.bindPopup(html, { maxWidth: 260 });
-    marker.bindTooltip(p.n, { direction: 'top', offset: [0, -8] });
+    marker.bindTooltip(p.n, { direction: 'top', offset: [0, -4] });
 
     marker.addTo(groups[p.c] || map);
     bounds.push([p.lat, p.lon]);

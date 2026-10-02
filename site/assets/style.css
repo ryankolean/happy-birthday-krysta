@@ -15,6 +15,7 @@
   --f-display: "Instrument Serif", Georgia, "Times New Roman", serif;
   --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --pin-stroke: #11211F;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -23,6 +24,7 @@
     --muted: #8FA09B; --teal: #5FC2B8; --teal-soft: #15302D;
     --marigold: #F0A23E; --marigold-soft: #33240E; --sea: #6FB8D2;
     --rule: #1E2A28; --rule-firm: #2C3B38;
+    --pin-stroke: #FCFCFA;
   }
 }
 :root[data-theme="dark"] {
@@ -31,6 +33,7 @@
   --muted: #8FA09B; --teal: #5FC2B8; --teal-soft: #15302D;
   --marigold: #F0A23E; --marigold-soft: #33240E; --sea: #6FB8D2;
   --rule: #1E2A28; --rule-firm: #2C3B38;
+  --pin-stroke: #FCFCFA;
 }
 
 * { box-sizing: border-box; }
@@ -268,23 +271,29 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
 .leaflet-popup-content { font-size: 13px; line-height: 1.5; }
 .leaflet-popup-content strong { font-size: 14px; }
 
+/* Pins. The drop shadow is what keeps a pin legible when its fill lands on a
+   tile of a similar tone, in either theme. */
+.mappin { line-height: 0; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45)); }
+.mappin svg { display: block; }
+.leaflet-marker-icon:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
+
 .legend-row { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 18px 12px; }
 .legitem {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: 7px;
   font-family: var(--f-body); font-size: 12.5px; font-weight: 500;
   color: var(--ink); background: var(--raise);
   border: 1px solid var(--rule-firm); border-radius: 2px;
-  padding: 7px 11px; cursor: pointer; line-height: 1;
+  padding: 6px 11px 6px 8px; cursor: pointer; line-height: 1;
 }
-.legitem i { width: 11px; height: 11px; border-radius: 50%; display: block; flex: none; }
+.legpin { display: block; flex: none; }
 .legitem .cnt { font-family: var(--f-mono); font-size: 11px; color: var(--muted); }
 .legitem[aria-pressed="false"] { opacity: 0.4; }
-.legitem[aria-pressed="false"] i { background: transparent !important; box-shadow: inset 0 0 0 2px var(--rule-firm); }
+.legitem[aria-pressed="false"] .legpin path { fill: none; stroke: var(--rule-firm); }
 .legitem:hover { border-color: var(--teal); }
 
 .swatch {
-  display: inline-block; width: 10px; height: 10px; border-radius: 50%;
-  margin-right: 8px; vertical-align: baseline;
+  display: inline-block; width: 11px; height: 11px; border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg); margin-right: 9px; vertical-align: baseline;
 }
 
 footer { margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--rule-firm); font-size: 12.5px; color: var(--muted); }

@@ -25,7 +25,7 @@
 
 <p class="lede">Dinner options, bars, markets and the house, colour coded. Tap a pin for details, or tap a colour below to show and hide that group.</p>
 
-<div class="legend-row"><button class="legitem" data-cat="stay" aria-pressed="true"><i style="background:#C06A05"></i>Where we are staying <span class="cnt">1</span></button><button class="legitem" data-cat="fine" aria-pressed="true"><i style="background:#0F5C57"></i>Fine dining <span class="cnt">10</span></button><button class="legitem" data-cat="casual" aria-pressed="true"><i style="background:#2E8B6F"></i>Casual food <span class="cnt">3</span></button><button class="legitem" data-cat="bar" aria-pressed="true"><i style="background:#6B4E9E"></i>Bars and drinks <span class="cnt">5</span></button><button class="legitem" data-cat="market" aria-pressed="true"><i style="background:#B5541F"></i>Markets and food pickup <span class="cnt">3</span></button><button class="legitem" data-cat="spot" aria-pressed="true"><i style="background:#4A6FA5"></i>Parks, shops and sights <span class="cnt">3</span></button></div>
+<div class="legend-row"><button class="legitem" data-cat="stay" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#C06A05" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Where we are staying <span class="cnt">1</span></button><button class="legitem" data-cat="fine" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#0F5C57" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Fine dining <span class="cnt">10</span></button><button class="legitem" data-cat="casual" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#2E8B6F" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Casual food <span class="cnt">3</span></button><button class="legitem" data-cat="bar" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#6B4E9E" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bars and drinks <span class="cnt">5</span></button><button class="legitem" data-cat="market" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#B5541F" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Markets and food pickup <span class="cnt">3</span></button><button class="legitem" data-cat="spot" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#4A6FA5" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Parks, shops and sights <span class="cnt">3</span></button></div>
 <div id="map" role="application" aria-label="Map of trip locations"></div>
 <p class="caveat">Map data from OpenStreetMap. The house pin is the middle of Roma Norte: Airbnb only shows an approximate area until a booking is confirmed, and the exact address deliberately stays out of this repo.</p>
 
@@ -63,17 +63,56 @@
   var groups = {};
   Object.keys(DATA.categories).forEach(function (k) { groups[k] = L.layerGroup().addTo(map); });
 
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  var PIN_PATH = "M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z";
+
+  // Built with DOM APIs rather than innerHTML. Every value here is either a
+  // constant or a colour from our own data, but this keeps pin construction
+  // unambiguously safe. Same approach as 4pm-detroit's map-view client.
+  function buildPinEl(colour, approx, big) {
+    var el = document.createElement('div');
+    el.className = 'mappin' + (big ? ' mappin--big' : '');
+
+    var size = big ? 36 : 28;
+    var svg = document.createElementNS(SVG_NS, 'svg');
+    svg.setAttribute('width', String(size));
+    svg.setAttribute('height', String(size));
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+    svg.setAttribute('aria-hidden', 'true');
+
+    var pin = document.createElementNS(SVG_NS, 'path');
+    pin.setAttribute('d', PIN_PATH);
+    // An approximate location is drawn hollow and dashed, so it cannot be
+    // mistaken for a pin we can actually stand behind.
+    pin.setAttribute('fill', approx ? 'none' : colour);
+    pin.setAttribute('stroke', approx ? colour : 'var(--pin-stroke)');
+    pin.setAttribute('stroke-width', approx ? '2.5' : '2');
+    if (approx) pin.setAttribute('stroke-dasharray', '3 2');
+    svg.appendChild(pin);
+
+    el.appendChild(svg);
+    return el;
+  }
+
   var bounds = [];
   DATA.places.forEach(function (p) {
     var colour = (DATA.categories[p.c] || {}).color || '#666';
-    var marker = L.circleMarker([p.lat, p.lon], {
-      radius: p.c === 'stay' ? 11 : 8,
-      color: colour,
-      weight: p.approx ? 3 : 2,
-      opacity: 1,
-      fillColor: colour,
-      fillOpacity: p.approx ? 0.12 : 0.85,
-      dashArray: p.approx ? '4 3' : null
+    var big = p.c === 'stay';
+    var size = big ? 36 : 28;
+    var marker = L.marker([p.lat, p.lon], {
+      icon: L.divIcon({
+        html: buildPinEl(colour, p.approx, big),
+        className: '',
+        iconSize: [size, size],
+        // The silhouette's tip is at y=21 of 24, so the anchor is 21/24 down.
+        iconAnchor: [size / 2, Math.round(size * (21 / 24))],
+        popupAnchor: [0, -Math.round(size * (21 / 24)) + 4]
+      }),
+      alt: p.n,
+      riseOnHover: true
     });
 
     var html = '<strong>' + p.n + '</strong>';
@@ -86,7 +125,7 @@
     if (p.booking) html += '<br><br><em>' + p.booking + '</em>';
     if (p.url) html += '<br><br><a href="' + p.url + '" target="_blank" rel="noopener">Open listing</a>';
     marker.bindPopup(html, { maxWidth: 260 });
-    marker.bindTooltip(p.n, { direction: 'top', offset: [0, -8] });
+    marker.bindTooltip(p.n, { direction: 'top', offset: [0, -4] });
 
     marker.addTo(groups[p.c] || map);
     bounds.push([p.lat, p.lon]);
