@@ -6,7 +6,8 @@
   "description": "Trip site for Krysta's 35th birthday in Mexico, Dec 2026 to Jan 2027",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "serve": "node scripts/build.mjs && python3 -m http.server 4173 --directory site"
+    "serve": "node scripts/build.mjs && python3 -m http.server 4199 --directory site --bind 127.0.0.1",
+    "geocode": "node scripts/geocode.mjs"
   },
   "dependencies": {
     "js-yaml": "4.1.0",

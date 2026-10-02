@@ -1,0 +1,197 @@
+# Every place we might eat, drink, or go, plus where we are staying.
+#
+# TO ADD A PLACE: append an entry with at minimum `name`, `category` and
+# `address`, then run `npm run geocode` to fill in lat/lon, then `npm run build`.
+# Entries that already have coordinates are left alone.
+#
+# category must be one of the keys in `categories` below.
+# precision: exact | approximate   (approximate draws a hollow marker)
+
+categories:
+  stay:
+    label: Where we are staying
+    color: "#C06A05"
+  fine:
+    label: Fine dining
+    color: "#0F5C57"
+  casual:
+    label: Casual food
+    color: "#2E8B6F"
+  bar:
+    label: Bars and drinks
+    color: "#6B4E9E"
+  market:
+    label: Markets and food pickup
+    color: "#B5541F"
+  spot:
+    label: Parks, shops and sights
+    color: "#4A6FA5"
+
+places:
+  # ---------- where we are staying ----------
+  - name: Oasis in Roma Norte
+    category: stay
+    address: Roma Norte, Cuauhtemoc, Mexico City
+    neighborhood: Roma Norte
+    precision: approximate
+    note: >
+      Airbnb only shows an approximate area until a booking is confirmed, and
+      the exact address stays out of this repo on purpose. Pin is the middle
+      of Roma Norte, good enough for judging walking distance.
+    url: https://www.airbnb.com/rooms/33561836
+
+  # ---------- fine dining ----------
+  - name: Pujol
+    category: fine
+    address: Tennyson 133, Polanco, Mexico City
+    neighborhood: Polanco
+    note: Private dining room, 8 to 14, minimum 8 tasting menus, no room fee. MX$3,795 each.
+    booking: Direct, not on OpenTable. Window unknown.
+
+  - name: Em
+    category: fine
+    address: Avenida Amsterdam 76, Condesa, Mexico City
+    neighborhood: Condesa
+    note: One Michelin star. Main dining room takes 3 to 8. MX$3,900 each. Reopened Oct 2026 at this address.
+    booking: Tock. Holiday week not yet released. +52 55 6450 1302.
+
+  - name: Quintonil
+    category: fine
+    address: Quintonil, Isaac Newton, Polanco, Ciudad de Mexico
+    neighborhood: Polanco
+    note: Ruled out. Caps at 6 in the main dining room, 1 to 3 at the counter.
+    booking: Two months ahead on the 1st at midnight.
+
+  - name: Rosetta
+    category: fine
+    address: Colima 166, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: One Michelin star, in a Roma mansion. A la carte, about $50 to $88 each.
+    booking: OpenTable. Large parties want months of notice.
+
+  - name: Maximo Bistrot
+    category: fine
+    address: Avenida Alvaro Obregon 65 Bis, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: One Michelin star. A la carte, $56 to $100 each. Private dining with notice.
+    booking: OpenTable. Window is one month out, not 90 days.
+
+  - name: Ling Ling
+    category: fine
+    address: Paseo de la Reforma 509, Cuauhtemoc, Mexico City
+    neighborhood: Juarez
+    note: 56th floor of Chapultepec Uno. Takes parties up to 20. The 29 December pick.
+    booking: OpenTable, rolling 90 days.
+
+  - name: Balcon del Zocalo
+    category: fine
+    address: 5 de Mayo 61, Centro, Cuauhtemoc, Ciudad de Mexico, Mexico
+    neighborhood: Centro Historico
+    note: 6th floor, facing the Cathedral. Tasting menu MX$1,850, about $109 each.
+    booking: OpenTable. +52 55 5130 5134.
+
+  - name: Sud 777
+    category: fine
+    address: Boulevard de la Luz 777, Jardines del Pedregal, Mexico City
+    neighborhood: Jardines del Pedregal
+    note: Twelve courses at MX$1,850. 35 to 45 minutes south, which is why it loses.
+    booking: OpenTable or WhatsApp. +52 55 5568 4777.
+
+  - name: La Table Krug
+    category: fine
+    address: Paseo de la Reforma 439, Cuauhtemoc, Mexico City
+    neighborhood: Juarez
+    note: Inside the St. Regis. Tuesday to Saturday, one seating at 8 PM.
+
+  - name: Contramar
+    category: fine
+    address: Durango 200, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: The classic lunch. Books out far ahead.
+
+  # ---------- casual ----------
+  - name: Cuina
+    category: casual
+    address: Tabasco 46, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: Four minute walk. Max 10 online, so 8 fits. The 30 December casual option.
+    booking: CoverManager, slug cuina-cdmx. 55 8902 4840.
+
+  - name: Lardo
+    category: casual
+    address: Agustin Melgar 6, Condesa, Mexico City
+    neighborhood: Condesa
+    note: The 1 January brunch fallback when most of the city is shut.
+
+  - name: Macelleria
+    category: casual
+    address: Orizaba 127, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: One of the very few places open 31 December on a normal menu, and it closes at 7 PM.
+
+  - name: Angelopolitano
+    category: market
+    address: Puebla 371, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: New Year's Eve dinner for pickup, 1 to 5 PM. Order 48 hours ahead.
+
+  - name: Madereros
+    category: market
+    address: Calle General Antonio Leon 72, San Miguel Chapultepec, Mexico City
+    neighborhood: San Miguel Chapultepec
+    note: New Year's Eve pickup, MX$900 each. Order by 29 December. Instagram @madereros.mx.
+
+  - name: Mercado Medellin
+    category: market
+    address: Campeche 101, Roma Sur, Mexico City
+    neighborhood: Roma Sur
+    note: About a ten minute walk. Open 8 AM to 7 PM, fondas busiest noon to 3 PM.
+
+  # ---------- bars ----------
+  - name: Limantour
+    category: bar
+    address: Avenida Alvaro Obregon 106, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: Number 20 on Mexico's 50 Best. The 29 December drinks pick.
+
+  - name: Rayo
+    category: bar
+    address: Rio Panuco 128, Cuauhtemoc, Mexico City
+    neighborhood: Cuauhtemoc
+    note: Caps at 8, confirmed. Wednesday to Saturday, 6 PM to 1:15 AM. 55 6385 2051.
+
+  - name: Handshake Speakeasy
+    category: bar
+    address: Amberes 65, Juarez, Mexico City
+    neighborhood: Juarez
+    note: Longest booking lead time of any bar on the list. Establish it early.
+
+  - name: Gin Gin Cibeles
+    category: bar
+    address: Oaxaca 87, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: Open daily 4 PM to 3 AM, which makes it the 1 January fallback. Formal attire.
+
+  - name: Toledo Rooftop
+    category: bar
+    address: Avenida Chapultepec 461, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: Sits outside the New Year's Eve closure ring on a designated alternate route.
+
+  # ---------- sights ----------
+  - name: Parque Mexico
+    category: spot
+    address: Avenida Mexico, Condesa, Mexico City
+    neighborhood: Condesa
+
+  - name: Museo Nacional de Antropologia
+    category: spot
+    address: Museo Nacional de Antropologia, Ciudad de Mexico
+    neighborhood: Chapultepec
+    note: Tuesday to Sunday 9 to 18, MX$210. Closed 1 January.
+
+  - name: Zocalo
+    category: spot
+    address: Plaza de la Constitucion, Ciudad de Mexico
+    neighborhood: Centro Historico
+    note: Dark on New Year's Eve this year, the city confirmed no programming.

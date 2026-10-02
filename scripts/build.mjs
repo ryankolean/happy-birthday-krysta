@@ -15,6 +15,8 @@ const trip = load('trip.yml');
 const travelers = load('travelers.yml');
 const flights = load('flights.yml');
 const lodging = load('lodging.yml');
+const placesDoc = load('places.yml');
+const geocache = JSON.parse(readFileSync(join(root, 'data', 'geocache.json'), 'utf8'));
 const itinerary = load('itinerary.yml');
 const budget = load('budget.yml');
 const tasks = load('tasks.yml');
@@ -60,6 +62,7 @@ const tidy = (s) => String(s ?? '').replace(/\s*\n\s*/g, ' ').trim();
 const PAGES = [
   { file: 'index.html', label: 'The trip' },
   { file: 'itinerary.html', label: 'Itinerary' },
+  { file: 'map.html', label: 'Map' },
   { file: 'costs.html', label: 'Costs' },
   { file: 'dining.html', label: 'Birthday dinner' },
   { file: 'nye.html', label: "New Year's Eve" },
@@ -352,6 +355,45 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
 .prose li { margin-bottom: 6px; }
 .prose strong { color: var(--ink); }
 
+/* map */
+#map {
+  height: clamp(380px, 62vh, 620px);
+  width: 100%;
+  border: 1px solid var(--rule-firm);
+  background: var(--raise);
+  z-index: 0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .leaflet-tile {
+    filter: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.88) saturate(0.6);
+  }
+}
+:root[data-theme="dark"] .leaflet-tile {
+  filter: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.88) saturate(0.6);
+}
+.leaflet-container { font-family: var(--f-body); font-size: 13px; }
+.leaflet-popup-content { font-size: 13px; line-height: 1.5; }
+.leaflet-popup-content strong { font-size: 14px; }
+
+.legend-row { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 18px 12px; }
+.legitem {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--f-body); font-size: 12.5px; font-weight: 500;
+  color: var(--ink); background: var(--raise);
+  border: 1px solid var(--rule-firm); border-radius: 2px;
+  padding: 7px 11px; cursor: pointer; line-height: 1;
+}
+.legitem i { width: 11px; height: 11px; border-radius: 50%; display: block; flex: none; }
+.legitem .cnt { font-family: var(--f-mono); font-size: 11px; color: var(--muted); }
+.legitem[aria-pressed="false"] { opacity: 0.4; }
+.legitem[aria-pressed="false"] i { background: transparent !important; box-shadow: inset 0 0 0 2px var(--rule-firm); }
+.legitem:hover { border-color: var(--teal); }
+
+.swatch {
+  display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+  margin-right: 8px; vertical-align: baseline;
+}
+
 footer { margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--rule-firm); font-size: 12.5px; color: var(--muted); }
 footer p { max-width: 70ch; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
@@ -640,6 +682,205 @@ function buildTasks() {
   return shell({ title: 'What still has to happen', current: 'tasks.html', body: b });
 }
 
+// ---------- map ----------
+
+function buildMap() {
+  const cats = placesDoc.categories;
+
+  // Attach coordinates and drop anything still unresolved, so the map never
+  // shows a pin we cannot stand behind.
+  const resolved = [];
+  const unresolved = [];
+  for (const p of placesDoc.places) {
+    const hit = p.lat && p.lon ? { lat: p.lat, lon: p.lon } : geocache[p.address];
+    if (hit) resolved.push({ ...p, lat: hit.lat, lon: hit.lon });
+    else unresolved.push(p);
+  }
+
+  const stay = resolved.find((p) => p.category === 'stay');
+
+  // Straight-line distance from the house. Real walking is longer, so the
+  // minutes below are a floor, not a promise.
+  const km = (a, b) => {
+    const R = 6371;
+    const rad = (d) => (d * Math.PI) / 180;
+    const dLat = rad(b.lat - a.lat);
+    const dLon = rad(b.lon - a.lon);
+    const h =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLon / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  };
+
+  for (const p of resolved) {
+    p.km = stay && p !== stay ? km(stay, p) : 0;
+    // 4.5 km/h walking, rounded up. Anything past 2.5 km is not a walk.
+    p.walkMin = p.km > 0 && p.km <= 2.5 ? Math.ceil((p.km / 4.5) * 60) : null;
+  }
+
+  const payload = {
+    center: stay ? [stay.lat, stay.lon] : [19.4185, -99.1626],
+    categories: cats,
+    // Escaped at build time: these strings go straight into popup innerHTML,
+    // and a name with an apostrophe or an angle bracket would otherwise break it.
+    places: resolved.map((p) => ({
+      n: esc(p.name),
+      c: p.category,
+      lat: p.lat,
+      lon: p.lon,
+      hood: esc(p.neighborhood || ''),
+      note: esc(tidy(p.note || '')),
+      booking: esc(tidy(p.booking || '')),
+      url: encodeURI(p.url || ''),
+      approx: p.precision === 'approximate',
+      km: Math.round(p.km * 10) / 10,
+      walk: p.walkMin,
+    })),
+  };
+
+  const counts = {};
+  for (const p of resolved) counts[p.c || p.category] = (counts[p.c || p.category] || 0) + 1;
+
+  const legend = Object.entries(cats)
+    .map(
+      ([key, c]) =>
+        `<button class="legitem" data-cat="${esc(key)}" aria-pressed="true"><i style="background:${esc(c.color)}"></i>${esc(c.label)} <span class="cnt">${counts[key] || 0}</span></button>`
+    )
+    .join('');
+
+  // Grouped list under the map, so the page still works if tiles fail to load.
+  let lists = '';
+  for (const [key, c] of Object.entries(cats)) {
+    const inCat = resolved.filter((p) => p.category === key);
+    if (!inCat.length) continue;
+    lists += `<h3><span class="swatch" style="background:${esc(c.color)}"></span>${esc(c.label)}</h3>
+<div class="scroller"><table><thead><tr><th>Place</th><th>Where</th><th class="n">From the house</th><th>Notes</th></tr></thead><tbody>`;
+    for (const p of inCat.slice().sort((a, b) => a.km - b.km)) {
+      const dist =
+        p.category === 'stay'
+          ? ''
+          : p.walkMin
+            ? `${p.walkMin} min walk`
+            : `${(Math.round(p.km * 10) / 10).toFixed(1)} km`;
+      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.url ? `<br><a href="${esc(p.url)}">listing</a>` : ''}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${esc(tidy(p.note || ''))}${p.booking ? `<br><small>${esc(tidy(p.booking))}</small>` : ''}</td></tr>`;
+    }
+    lists += `</tbody></table></div>`;
+  }
+
+  const body = `<header class="masthead">
+  <p class="eyebrow">${resolved.length} places mapped</p>
+  <h1>Where everything is</h1>
+  <div class="dateline">
+    <div><b>Base</b>Roma Norte</div>
+    <div><b>Dashed ring</b>1 km from the house</div>
+    <div><b>Hollow pin</b>Approximate location</div>
+  </div>
+</header>
+
+<p class="lede">Dinner options, bars, markets and the house, colour coded. Tap a pin for details, or tap a colour below to show and hide that group.</p>
+
+<div class="legend-row">${legend}</div>
+<div id="map" role="application" aria-label="Map of trip locations"></div>
+<p class="caveat">Map data from OpenStreetMap. The house pin is the middle of Roma Norte: Airbnb only shows an approximate area until a booking is confirmed, and the exact address deliberately stays out of this repo.</p>
+${unresolved.length ? `<div class="note warn"><div class="nh">Not yet on the map</div><p>${unresolved.map((p) => esc(p.name)).join(', ')}. Add a more specific address in <code>data/places.yml</code> and run <code>npm run geocode</code>.</p></div>` : ''}
+
+<h2>Every place, by type</h2>
+${lists}
+
+<div class="note">
+  <div class="nh">Adding more</div>
+  <p>Append to <code>data/places.yml</code> with a name, category and address, then run <code>npm run geocode</code> and <code>npm run build</code>. Coordinates are cached in <code>data/geocache.json</code>, so nothing already resolved gets looked up twice.</p>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+  integrity="sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+  integrity="sha384-NElt3Op+9NBMCYaef5HxeJmU4Xeard/Lku8ek6hoPTvYkQPh3zLIrJP7KiRocsxO" crossorigin="anonymous"></script>
+<script>
+(function () {
+  var DATA = ${JSON.stringify(payload)};
+  var el = document.getElementById('map');
+  if (!window.L || !el) { if (el) el.innerHTML = '<p style="padding:20px">Map could not load. The full list is below.</p>'; return; }
+
+  var map = L.map(el, { scrollWheelZoom: false }).setView(DATA.center, 14);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  var groups = {};
+  Object.keys(DATA.categories).forEach(function (k) { groups[k] = L.layerGroup().addTo(map); });
+
+  var bounds = [];
+  DATA.places.forEach(function (p) {
+    var colour = (DATA.categories[p.c] || {}).color || '#666';
+    var marker = L.circleMarker([p.lat, p.lon], {
+      radius: p.c === 'stay' ? 11 : 8,
+      color: colour,
+      weight: p.approx ? 3 : 2,
+      opacity: 1,
+      fillColor: colour,
+      fillOpacity: p.approx ? 0.12 : 0.85,
+      dashArray: p.approx ? '4 3' : null
+    });
+
+    var html = '<strong>' + p.n + '</strong>';
+    if (p.hood) html += '<br><span style="opacity:.7">' + p.hood + '</span>';
+    if (p.c !== 'stay') {
+      html += '<br><span style="opacity:.7">' +
+        (p.walk ? p.walk + ' min walk' : p.km + ' km') + ' from the house</span>';
+    }
+    if (p.note) html += '<br><br>' + p.note;
+    if (p.booking) html += '<br><br><em>' + p.booking + '</em>';
+    if (p.url) html += '<br><br><a href="' + p.url + '" target="_blank" rel="noopener">Open listing</a>';
+    marker.bindPopup(html, { maxWidth: 260 });
+    marker.bindTooltip(p.n, { direction: 'top', offset: [0, -8] });
+
+    marker.addTo(groups[p.c] || map);
+    bounds.push([p.lat, p.lon]);
+  });
+
+  // One kilometre ring around the house, which is roughly a 12 minute walk.
+  var stay = DATA.places.filter(function (p) { return p.c === 'stay'; })[0];
+  if (stay) {
+    L.circle([stay.lat, stay.lon], {
+      radius: 1000, color: DATA.categories.stay.color, weight: 1,
+      dashArray: '5 6', fill: false, opacity: 0.7
+    }).addTo(map);
+  }
+
+  // Fit to the walkable cluster. A couple of places sit far south or in
+  // Polanco, and including them shrinks Roma Norte to an unreadable blob.
+  var near = DATA.places.filter(function (p) { return p.km <= 3; })
+                        .map(function (p) { return [p.lat, p.lon]; });
+  if (near.length > 1) map.fitBounds(near, { padding: [40, 40] });
+  else if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
+
+  var far = DATA.places.filter(function (p) { return p.km > 3; });
+  if (far.length) {
+    var names = far.map(function (p) { return p.n; }).join(', ');
+    L.control.attribution({ prefix: false })
+      .addAttribution('Zoom out for: ' + names)
+      .addTo(map);
+  }
+
+  document.querySelectorAll('.legitem').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var k = btn.dataset.cat;
+      var on = btn.getAttribute('aria-pressed') === 'true';
+      btn.setAttribute('aria-pressed', on ? 'false' : 'true');
+      if (on) map.removeLayer(groups[k]); else map.addLayer(groups[k]);
+    });
+  });
+
+  map.on('click', function () { map.scrollWheelZoom.enable(); });
+  map.on('mouseout', function () { map.scrollWheelZoom.disable(); });
+})();
+</script>`;
+
+  return shell({ title: 'Where everything is', current: 'map.html', body });
+}
+
 // ---------- markdown pages ----------
 
 marked.setOptions({ gfm: true, breaks: false });
@@ -663,6 +904,7 @@ writeFileSync(join(out, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
 writeFileSync(join(out, 'index.html'), buildIndex());
 writeFileSync(join(out, 'itinerary.html'), buildItinerary());
 writeFileSync(join(out, 'costs.html'), buildCosts());
+writeFileSync(join(out, 'map.html'), buildMap());
 writeFileSync(join(out, 'tasks.html'), buildTasks());
 writeFileSync(join(out, 'dining.html'), buildDoc('dining.md', 'dining.html', 'Birthday dinner options'));
 writeFileSync(join(out, 'nye.html'), buildDoc('nye.md', 'nye.html', "New Year's Eve"));

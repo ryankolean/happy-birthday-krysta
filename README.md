@@ -37,6 +37,33 @@ Change a fact in `data/`, not in `docs/` and not in the site templates.
 | `data/itinerary.yml` | Day by day, all eleven days |
 | `data/budget.yml` | Every line item, with status |
 | `data/tasks.yml` | Open tasks, owners, deadlines |
+| `data/places.yml` | Every dinner, bar, market and sight on the map |
+| `data/geocache.json` | Generated. Coordinates keyed by address, do not hand-edit |
+
+## Adding a place to the map
+
+Append to `data/places.yml` with at least a name, a category and an address:
+
+```yaml
+  - name: Rosetta
+    category: fine          # stay | fine | casual | bar | market | spot
+    address: Colima 166, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: One Michelin star, in a Roma mansion.
+    booking: OpenTable.
+```
+
+Then:
+
+```bash
+npm run geocode && npm run build
+```
+
+`geocode` looks up only the addresses it has not seen before and writes them to `data/geocache.json`, so nothing already resolved gets fetched twice. It uses OpenStreetMap's Nominatim at one request per second, so leave it out of CI.
+
+If a place comes back unresolved, the map page names it and the fix is a more specific address. Naming the venue itself often works better than the street (`Quintonil, Isaac Newton, Polanco` resolved when the street number alone did not). You can also set `lat:` and `lon:` directly on the entry to skip geocoding.
+
+**Check what comes back.** The Anthropology Museum first geocoded about 4 km off, because the address had no street number and Nominatim matched the length of Reforma instead. Open the map and look before trusting a pin.
 
 | Doc | Covers |
 |---|---|
