@@ -1,0 +1,174 @@
+# Open tasks, most urgent first. Update status here, not in docs/.
+# status: todo | doing | done | blocked
+
+as_of: 2026-10-02
+
+this_week:
+  - id: book-oasis
+    title: Book the Oasis 6BR
+    status: todo
+    why_now: >
+      $3,927, and Airbnb flags these dates as usually booked. There is no
+      waitlist. Free cancellation lasts 24 hours, then partial refund only
+      until 22 December, so this needs the group's yes before the card goes in.
+    blocks: [collect-deposits]
+
+  - id: book-dtw-mex
+    title: Book DL 646 for all 8
+    status: todo
+    why_now: >
+      Exactly one nonstop a day from Detroit, roughly 130 seats, holiday week.
+      Seats are the risk, not the fare. Book before watching the price.
+
+  - id: decide-nye
+    title: Decide the New Year's Eve plan
+    status: todo
+    why_now: >
+      Second largest line after lodging and it gates everything else on the 31st.
+      Three approaches priced in docs/nye.md. Recommendation is the potluck
+      pickup run, with a private chef as the zero-effort fallback.
+
+  - id: call-pujol
+    title: Call Pujol and establish their booking window
+    status: todo
+    why_now: >
+      Not on OpenTable and nobody knows how far ahead they open. This is the
+      birthday dinner and the biggest unknown on the board.
+
+  - id: book-ling-ling-dec29
+    title: Book Ling Ling for 29 December
+    status: todo
+    why_now: >
+      OpenTable works on a rolling 90 day window and 29 December opened on
+      30 September. It is bookable right now.
+
+dated:
+  - id: grab-ling-ling-jan2
+    title: Be online on 4 October for Ling Ling on 2 January
+    status: todo
+    date: 2026-10-04
+    why: Hold it as the Pujol backup until Pujol confirms, then release it.
+
+  - id: maximo-window
+    title: Maximo Bistrot opens about 2 December for 2 January
+    status: todo
+    date: 2026-12-02
+    why: Their window is one month out, not 90 days. Different rule from the rest.
+
+  - id: em-holiday-release
+    title: Call Em about when the holiday week releases
+    status: todo
+    why: >
+      Tock says "Em has not opened reservations for 2 ene." Not sold out,
+      not yet open. 19 December is open, 31 December is not, so they are
+      holding the holiday week back. Phone +52 55 6450 1302.
+
+  - id: nye-menus-2026
+    title: Pull the 2026 New Year's Eve takeaway menus
+    status: todo
+    date: 2026-11-25
+    why: >
+      Angelopolitano and Madereros publish theirs in late November. Prices on
+      file are from the 2023 cycle. Order by 28 December.
+
+  - id: fives-decide-by-dec-13
+    title: Decide whether to keep the flexible Fives rate
+    status: todo
+    date: 2026-12-13
+    why: Last day the flexible rate refunds.
+
+  - id: airbnb-refund-cliff
+    title: Last partial refund date on the Oasis
+    status: todo
+    date: 2026-12-22
+    why: After this there is no refund at all.
+
+decisions_needed:
+  - id: confirm-balloon
+    title: Confirm Volare flies 2 January 2027
+    status: todo
+    detail: >
+      Three questions: do they fly that date, can they hold a private basket
+      for 8, and what is the 2027 holiday rate. 2 January is a Saturday in the
+      busiest week of the year.
+
+  - id: pick-fives-rate
+    title: Flexible or non-refundable at The Fives
+    status: todo
+    detail: >
+      Flexible costs $798 more and refunds until 13 December. Given the
+      headcount only just settled, flexible is the safer call.
+
+  - id: pick-meal-plan
+    title: Room-only or all-inclusive at The Fives
+    status: todo
+    detail: $587 difference across six people. The room can be booked before this is settled.
+
+  - id: couple-b-routing
+    title: Decide the 3 January flight home from Mexico City
+    status: todo
+    detail: The two leaving should look at a connection and save about $1,040 each.
+
+  - id: pick-birthday-venue
+    title: Lock the 2 January dinner
+    status: todo
+    detail: >
+      Pujol is the incumbent. If the balloon stays on 2 January, an a la carte
+      room suits a fifteen hour day better than a nine course tasting menu.
+      See docs/dining.md.
+
+housekeeping:
+  - id: collect-deposits
+    title: Collect a deposit from everyone
+    status: todo
+    detail: Before anything non-refundable is signed.
+
+  - id: passports
+    title: Check passports and sort travel insurance
+    status: todo
+    detail: Valid at least six months past 8 January 2027.
+
+  - id: fives-environmental-tax
+    title: Email The Fives about the environmental tax
+    status: todo
+    detail: >
+      Sources disagree badly, from under $25 for the stay to $270.
+      reservations@thefiveshotels.com.
+
+  - id: group-chat
+    title: Start the group chat for all 8
+    status: todo
+    detail: >
+      Post dress codes. Gin Gin Cibeles is formal attire and a couple of the
+      others have codes.
+
+  - id: build-site
+    title: Build the website from data/
+    status: todo
+    detail: Framework undecided. See docs/open-questions.md.
+
+done:
+  - id: resolve-headcount
+    title: Resolve headcount
+    detail: 8 in Mexico City, 6 at the beach.
+
+  - id: verify-availability
+    title: Verify both properties still available
+    detail: Checked 2026-10-02 on the operators' own engines. Both open.
+
+  - id: resolve-fives-tax
+    title: Settle whether Fives quotes include tax
+    detail: >
+      They do. The engine prints subtotal $3,739, VAT 21% $785, total $4,525,
+      taxes included. Earlier planning had grossed this up on top, overstating
+      the beach by about $1,500.
+
+  - id: resolve-quintonil
+    title: Settle whether Quintonil can seat 8
+    detail: >
+      It cannot. Caps at 6 in the main dining room, 1 to 3 at the counter,
+      and they ask guests not to book multiple tables to be seated together.
+
+  - id: resolve-airbnb-fees
+    title: Settle whether Airbnb totals include fees
+    detail: They do. Airbnb now displays all-in pricing.

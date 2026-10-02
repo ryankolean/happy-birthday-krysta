@@ -1,0 +1,24 @@
+# Never commit trip PII, booking records, or payment details
+private/
+*.local.*
+.env
+.env.*
+
+# Node
+node_modules/
+dist/
+.astro/
+.cache/
+*.log
+npm-debug.log*
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
+.vscode/
+.idea/
+*.swp

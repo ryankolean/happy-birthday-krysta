@@ -1,0 +1,115 @@
+# Priced live on Google Flights 2026-09-24/25. Nothing booked.
+# Delta is the preferred carrier. The group holds Silver Medallion.
+
+status: not booked
+priced: 2026-09-25
+preference: nonstop only, early to mid afternoon departures where possible
+
+flights:
+  - id: out
+    date: 2026-12-29
+    route: DTW to MEX
+    carrier: Delta
+    number: DL 646
+    aircraft: Airbus A319
+    stops: 0
+    depart: "08:40"
+    arrive: "12:30"
+    duration: 4h50
+    price_usd: 1246
+    who: all 8
+    risk: >
+      Exactly one nonstop per day on roughly 130 seats, in holiday week,
+      and we need 8 of them. Seat availability is the real risk, not fare.
+      Book before watching the price.
+
+  - id: to_beach
+    date: 2027-01-03
+    route: MEX to CUN
+    carrier: Aeromexico
+    stops: 0
+    depart: "13:55"
+    arrive: "17:33"
+    price_usd: 184
+    who: the 6 continuing to the beach
+    note: >
+      No Delta option exists, Delta does not fly Mexican domestic routes.
+      Ticket it as a DL-coded codeshare through delta.com so it credits to
+      the Delta account. Aeromexico runs this hourly 06:01 to 22:05, all at
+      the same fare, so pick the time around checkout rather than price.
+      Avoid Viva and Volaris, which fly it from NLU, an hour plus north of Roma Norte.
+
+  - id: city_home
+    date: 2027-01-03
+    route: MEX to DTW
+    carrier: Delta
+    stops: 0
+    depart: "13:55"
+    arrive: "19:15"
+    duration: 4h20
+    price_usd: 1893
+    who: the 2 leaving after the city
+    note: >
+      Connections the same day run $774 to $956. Taking one saves about
+      $1,040 each. Worth asking before booking the nonstop.
+
+  - id: home
+    date: 2027-01-08
+    route: CUN to DTW
+    carrier: Delta
+    number: DL 1911
+    aircraft: A321neo
+    stops: 0
+    depart: "15:15"
+    arrive: "19:10"
+    duration: 3h55
+    price_usd: 493
+    who: the 6 from the beach
+    note: >
+      DL 618 is the same $493 at 13:40 but needs you at CUN by 10:40,
+      before resort checkout. DL 1911 means leaving around 11:45 with a
+      three hour buffer, and CUN in early January genuinely needs three hours.
+
+per_person_usd:
+  full_trip: 1923      # 1246 + 184 + 493
+  city_only: 3139      # 1246 + 1893
+
+total_usd: 17816       # 6 x 1923 + 2 x 3139
+
+# Both 3 January departures leave at 13:55, so the whole group leaves the
+# house together after the 11:00 checkout and nobody waits around.
+
+afternoon_departure_problem: >
+  The stated preference cannot be met on the outbound. Mexico City is 4h50
+  nonstop and 7 to 8 hours connecting, so every afternoon departure from
+  Detroit lands between 21:50 and 01:15. Checked flying out 28 December
+  instead: same result, plus an extra Airbnb night. Decision is to keep the
+  08:40 nonstop, because 29 December is one of only two free evenings in
+  Mexico City and trading it for $728 per person is a poor deal.
+
+alternatives_considered:
+  - depart: "08:25"
+    arrive: "14:45"
+    stops: 1
+    via: SAT
+    carrier: Delta
+    price_usd: 603
+    verdict: saves $5,144 across 8 but departs 15 minutes earlier, so it buys money not sleep
+  - depart: "16:40"
+    arrive: "22:30"
+    stops: 1
+    via: IAH
+    carrier: United
+    price_usd: 518
+    verdict: lands too late to use the evening
+
+date_sensitivity_dtw_mex:
+  2026-12-27: 1346
+  2026-12-28: 1641
+  2026-12-29: 1246
+  2026-12-30: 1060   # saves $186 pp but costs the 29 Dec night and a full day
+
+open:
+  - Ask the 2 flying MEX to DTW whether they will take a connection
+  - LAX origin is unpriced, if anyone is coming from Los Angeles
+  - Verify Silver Medallion benefits on these routes at delta.com rather than assuming

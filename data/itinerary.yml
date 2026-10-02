@@ -1,0 +1,210 @@
+# All eleven days. The website renders this.
+# Of the five nights in Mexico City, three are committed and one is a write-off.
+# That is the whole shape of the week and it is why the dinner list had to be cut.
+
+days:
+  - date: 2026-12-29
+    weekday: Tuesday
+    leg: cdmx
+    kind: travel
+    title: Arrive, then the one big dinner
+    summary: Fly to Mexico City, Ling Ling at eight
+    events:
+      - time: "08:40"
+        what: DL 646 departs Detroit, lands Mexico City 12:30
+      - time: "14:30"
+        what: At the house in Roma Norte
+        detail: Immigration plus transfer runs about 90 minutes. Nothing scheduled after this.
+      - time: "20:00"
+        what: Dinner at Ling Ling
+        detail: 56th floor of Chapultepec Uno, Reforma 509. Seats parties up to 20.
+        why: The only open upscale slot in the whole week, which is why it gets arrival night.
+      - time: late
+        what: Drinks at Limantour, Roma Norte
+        detail: Number 20 on Mexico's 50 Best.
+    warnings:
+      - Owl Bar and Rayo are both closed Tuesdays
+      - Gin Gin Cibeles is open daily but is formal attire
+
+  - date: 2026-12-30
+    weekday: Wednesday
+    leg: cdmx
+    kind: city
+    title: Taco day
+    summary: Street food on foot, all day, no reservations
+    events:
+      - time: all day
+        what: Street food crawl through Roma Norte and Condesa, working outward
+        detail: >
+          Replaces the guided Sabores food tour that was penciled in. Saves about
+          $920 and is closer to what Krysta actually asked for.
+      - time: evening
+        what: Keep it casual, or Cuina on Tabasco 46, a four minute walk
+        detail: No tasting menu on a day spent eating tacos.
+      - time: late
+        what: Drinks at Owl Bar, the Condesa speakeasy
+        detail: Opens Wednesdays, 18:00 to 02:00.
+
+  - date: 2026-12-31
+    weekday: Thursday
+    leg: cdmx
+    kind: anchor
+    title: New Year's Eve
+    summary: Dinner at the house, midnight on the rooftop
+    events:
+      - time: morning
+        what: Mercado Medellin run, Campeche 101 in Roma Sur, about a ten minute walk
+        detail: Open 08:00 to 19:00. The fondas at the back run hardest noon to 15:00.
+      - time: "13:00"
+        what: Collect pre-ordered dishes
+        detail: >
+          Every New Year's Eve pickup window in the city is 13:00 to 17:00.
+          This is an afternoon errand, not an evening one.
+      - time: evening
+        what: Potluck dinner at the house, on our own schedule
+      - time: "00:00"
+        what: Midnight on the Oasis rooftop
+        detail: This is why the house was chosen over hotel rooms.
+    plan_status: >
+      Approach decided, specific orders not placed. See docs/nye.md for the
+      three options and what each costs.
+    warnings:
+      - Reforma closes both directions, plus Florencia, Rio Tiber and Rio Rhin
+      - The free Reforma party runs 18:00 to 02:00 and draws about 250,000 people
+      - The Zocalo is dark, the city confirmed no programming
+      - Cars will not move. Keep everything walkable from the front door.
+      - Of the restaurants open on a normal menu, only Macelleria is in Roma Norte and it closes at 19:00
+
+  - date: 2027-01-01
+    weekday: Friday
+    leg: cdmx
+    kind: rest
+    title: Recovery, deliberately empty
+    summary: Nothing booked, on purpose
+    events:
+      - time: midday
+        what: Late brunch at the house, or Lardo in Condesa
+      - time: evening
+        what: An early night
+        detail: Gin Gin Cibeles and Owl Bar are the only sure things if anyone wants out.
+    warnings:
+      - Anthropology Museum closed
+      - Casa Azul explicitly closed 1 January
+      - Most of the city is shut and the group will have been out late
+      - Small taquerias commonly close 31 December and 1 January without publishing it
+
+  - date: 2027-01-02
+    weekday: Saturday
+    leg: cdmx
+    kind: birthday
+    title: The birthday
+    summary: Sunrise balloon over Teotihuacan, then the big dinner
+    events:
+      - time: "04:30"
+        what: Pickup for the balloon, hotel collection included
+      - time: "06:30"
+        what: Sunrise over Teotihuacan, 45 to 60 minutes aloft
+        detail: Breakfast and a toast after, then the pyramids.
+      - time: "14:00"
+        what: Back in the city
+      - time: "14:30"
+        what: Sleep
+        detail: Not optional. Roughly fifteen hours from the alarm to dinner.
+      - time: "19:30"
+        what: Birthday dinner
+        detail: >
+          Venue not locked. Pujol private room is the incumbent at $1,786 for 8.
+          See docs/dining.md for the alternatives, several of which suit a
+          balloon day better than a nine course tasting menu.
+      - time: late
+        what: Drinks at Rayo
+        detail: Caps at 8, open until 01:15 Saturdays.
+    warnings:
+      - 2 January is a Saturday on a holiday weekend, the hardest night of the week to seat 8
+      - Bazar Sabado runs Saturdays only but the balloon owns the day
+      - Pujol's 14:00 seating is unusable, the balloon returns at that hour
+
+  - date: 2027-01-03
+    weekday: Sunday
+    leg: travel
+    kind: travel
+    title: The group splits
+    summary: Six to Cancun, two home, both at 13:55
+    events:
+      - time: "11:00"
+        what: Checkout. Leave together around 11:30.
+      - time: "13:55"
+        what: Both flights depart at the same time
+        detail: Six to Cancun, two to Detroit. Nobody waits around at the airport.
+      - time: "17:33"
+        what: Land in Cancun
+        detail: Transfer to Puerto Morelos is 27 km and about 27 minutes.
+
+  - date: 2027-01-04
+    weekday: Monday
+    leg: riviera
+    kind: beach
+    title: Beach
+    summary: Nothing. That is the point of this leg.
+    events:
+      - time: all day
+        what: Nothing scheduled
+        detail: The village is a 16 minute walk with 19 restaurants inside a kilometre.
+
+  - date: 2027-01-05
+    weekday: Tuesday
+    leg: riviera
+    kind: excursion
+    title: Chichen Itza
+    summary: Private tour, full day
+    events:
+      - time: all day
+        what: Chichen Itza private tour
+        detail: From $119 per person, about $714 for 6.
+
+  - date: 2027-01-06
+    weekday: Wednesday
+    leg: riviera
+    kind: beach
+    title: Isla Mujeres
+    summary: By ferry, or another beach day
+    events:
+      - time: all day
+        what: Isla Mujeres by ferry
+        detail: MX$580 each round trip, about $203 for 6.
+    notes:
+      - Tulum was considered and is 87 minutes each way. Three hours of driving for a beach club probably does not survive.
+
+  - date: 2027-01-07
+    weekday: Thursday
+    leg: riviera
+    kind: beach
+    title: Beach
+    summary: Last full day, dinner in the village
+
+  - date: 2027-01-08
+    weekday: Friday
+    leg: travel
+    kind: travel
+    title: Home
+    summary: DL 1911 at 15:15
+    events:
+      - time: "12:00"
+        what: Checkout. Leave for the airport around 11:45.
+      - time: "15:15"
+        what: DL 1911 to Detroit, lands 19:10
+        detail: Cancun in the first week of January genuinely needs three hours.
+
+does_not_fit:
+  - item: Quintonil
+    why: Caps at 6 in the main dining room, 1 to 3 at the counter. Cannot seat 8.
+  - item: La Table Krug
+    why: At the St. Regis. Works on 29 or 30 Dec, but do not book it if the group takes a St. Regis New Year's Eve.
+  - item: Bikes and Munchies street food bike tour
+    why: No day left for a second food tour.
+  - item: Casa Azul
+    why: Wants a half day. 30 Dec is taco day, 31 is New Year's Eve, 1 Jan it is closed, 2 Jan is the birthday.
+  - item: Teotihuacan as its own day trip
+    why: >
+      No longer needed. The 2 January balloon package includes pyramid entry,
+      which closes this gap without giving up another day.

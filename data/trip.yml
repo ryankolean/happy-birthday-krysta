@@ -1,0 +1,54 @@
+# Core trip facts. Everything else references these.
+title: Happy Birthday Krysta
+occasion: Krysta's 35th birthday
+birthday: 2027-01-02
+
+start: 2026-12-29
+end: 2027-01-08
+nights: 10
+
+legs:
+  - id: cdmx
+    name: Mexico City
+    arrive: 2026-12-29
+    depart: 2027-01-03
+    nights: 5
+    travelers: 8
+    base: Roma Norte
+    why: New Year's Eve and the birthday both happen here
+
+  - id: riviera
+    name: Riviera Maya
+    arrive: 2027-01-03
+    depart: 2027-01-08
+    nights: 5
+    travelers: 6
+    base: Puerto Morelos
+    why: Beach decompression after the city
+
+# Used for every USD conversion in this repo.
+exchange_rate:
+  mxn_per_usd: 17.0
+  range: 16.97 to 17.18
+  as_of: 2026-09
+
+# Mexico City runs UTC-6 year round and does not observe DST.
+timezones:
+  cdmx: America/Mexico_City
+  cancun: America/Cancun
+  home: America/Detroit
+
+taxes:
+  cdmx_lodging: 19.5%   # 16% IVA + 3.5% CDMX lodging tax
+  quintana_roo: 21%     # 16% IVA + 5% Quintana Roo ISH
+
+totals_usd:
+  trip_all_8: 38700
+  per_person_full_trip: 4876
+  per_person_city_only: 4741
+  excludes:
+    - personal spending
+    - travel insurance
+    - anything bought on the ground
+
+verified: 2026-10-02

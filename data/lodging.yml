@@ -1,0 +1,138 @@
+# Both properties verified available 2026-10-02 on the operators' own engines.
+# Neither is booked.
+
+properties:
+  - id: oasis
+    leg: cdmx
+    name: Oasis in Roma Norte
+    subtitle: Private Rooftop, 6BR house
+    neighborhood: Roma Norte
+    platform: Airbnb
+    listing_id: "33561836"
+    url: https://www.airbnb.com/rooms/33561836
+    status: available
+    checkin: 2026-12-29
+    checkout: 2027-01-03
+    nights: 5
+    guests: 8
+    total_usd: 3927
+    per_person_usd: 491
+    all_in: true
+    capacity: 12
+    bedrooms: 6
+    beds: 6
+    baths: 6.5
+    bed_config:
+      - bedroom: 1
+        bed: King
+      - bedroom: 2
+        bed: King
+      - bedroom: 3
+        bed: Queen
+      - bedroom: 4
+        bed: King
+      - bedroom: 5
+        bed: Double
+      - bedroom: 6
+        bed: King
+    checkout_time: "11:00"
+    rating: 4.91
+    reviews: 145
+    host: Roma Spot, Superhost, 7 years hosting
+    cancellation:
+      headline_badge: Free cancellation
+      actual: Free for 24 hours after booking, then partial refund only until 22 December 2026
+      warning: >
+        The badge is misleading. After 22 December there is no refund.
+        Treat the deposit as committed once placed. Collect deposits first.
+    why_chosen:
+      - Six private bedrooms for 3 couples plus 2 singles, with one spare
+      - Private rooftop for midnight on New Year's Eve
+      - No quiet hours in the house rules
+      - Full kitchen, which the New Year's Eve plan uses
+      - 6.5 bathrooms for 8 people
+    flags:
+      - Airbnb marks these dates "Rare find, this place is usually booked"
+      - Total moves with guest count, so re-price if the party changes from 8
+      - There is no waitlist on Airbnb
+
+  - id: fives
+    leg: riviera
+    name: The Fives Oceanfront Puerto Morelos
+    room_type: Two Bedroom Oceanview Residence
+    platform: direct, Paraty Tech engine
+    url: https://www.thefiveshotels.com/the-fives-oceanfront-puerto-morelos.html
+    status: available
+    inventory_seen: 10 units
+    checkin: 2027-01-03
+    checkout: 2027-01-08
+    nights: 5
+    adults: 6
+    checkin_time: "15:00"
+    checkout_time: "12:00"
+    size_sqft: 1421
+    max_occupancy: 8
+    taxes_included: true
+    discount_live: 32%
+    rack_rate_usd: 6654
+    rates_usd:
+      room_only_nonrefundable: 4525
+      room_only_flexible: 5323
+      all_inclusive_supplement: 2529
+      all_inclusive_nonrefundable: 7054
+      all_inclusive_flexible: 7852
+    loyalty_discount:
+      amount_usd: 226
+      percent: 5
+      note: offered at the room selection step for a prior Fives booking, or on signup
+    flexible_terms: Free cancellation, refundable until 13 December 2026
+    recommended_rate: flexible room-only
+    tax_breakdown_seen:
+      subtotal_usd: 3739
+      vat_21_usd: 785
+      total_usd: 4525
+      note: >
+        The engine prints "Taxes included" and shows the VAT inside the total.
+        Earlier planning grossed these quotes up by 21% on top, overstating
+        the beach lodging by about $1,500. Do not gross up engine quotes.
+    upgrade_option:
+      room_type: Two Bedroom Oceanfront Residence
+      inventory_seen: 15 units
+      room_only_nonrefundable_usd: 5895
+    contact:
+      email: reservations@thefiveshotels.com
+      us_can: "+1 800 592 1246"
+      direct: "+52 998 580 0100"
+    why_jan_3:
+      - The Fives runs a holiday rate band 24 Dec 2026 to 2 Jan 2027, with the next band starting exactly 3 January
+      - The identical unit is $7,895 for 29 Dec to 3 Jan versus $4,990 for 3 to 8 Jan
+      - A stay including 2 January has no all-inclusive board available at all
+    no_traps_confirmed:
+      - No resort fee
+      - No reservation fee
+      - No New Year's Eve gala charge
+      - Only holiday charge is a 25 December gala at $100 per adult, which 3 January clears by nine days
+    open:
+      - Environmental tax at check-in, sources conflict between under $25 for the stay and up to $270
+      - Whether the 32% rate survives to booking and stacks with the 5% loyalty discount
+      - Kitchen items surcharge if anyone plans to cook
+
+backups:
+  - name: Luxurious Boutique Palace
+    neighborhood: Condesa
+    platform: Airbnb
+    listing_id: "597915155431399462"
+    total_usd: 4095
+    config: 8 guests, 4BR, 5 beds, 4 baths
+    status: available 2026-10-02
+    verdict: four bedrooms reintroduces the bed configuration problem
+
+  - name: Casa Mer
+    neighborhood: Roma Norte
+    platform: Airbnb
+    listing_id: "1725087189768698349"
+    config: 9 guests, 4BR, 5 beds, 2 baths
+    status: available 2026-10-02
+    verdict: 2 baths for 8, 11 PM quiet hours, no visitors rule. Rejected.
+
+verified: 2026-10-02

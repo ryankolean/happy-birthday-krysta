@@ -1,0 +1,53 @@
+# Roles only. Real names and contact details stay in private/, never here.
+# Headcount resolved: 8 in Mexico City, 6 at the beach.
+
+headcount:
+  cdmx: 8
+  riviera: 6
+
+groups:
+  - id: hosts
+    label: Ryan and Krysta
+    size: 2
+    legs: [cdmx, riviera]
+    room: private
+
+  - id: couple_a
+    label: Couple A
+    size: 2
+    legs: [cdmx, riviera]
+    room: private
+
+  - id: couple_b
+    label: Couple B
+    size: 2
+    legs: [cdmx]
+    room: private
+    note: Flies home from Mexico City on 3 January
+
+  - id: single_a
+    label: Single friend A
+    size: 1
+    legs: [cdmx, riviera]
+    room: private
+
+  - id: single_b
+    label: Single friend B
+    size: 1
+    legs: [cdmx, riviera]
+    room: private
+
+# This was the binding constraint on lodging. Three couples plus two singles
+# means the two singles need separate beds from each other, which ruled out
+# every four bedroom option in the search.
+bed_requirement:
+  couples: 3
+  singles: 2
+  rule: the two singles need separate rooms, not a shared twin room
+  satisfied_by: the Oasis has six bedrooms, so everyone gets a private room and one is spare
+
+open:
+  - Firm yes or no from all 8, with a date by which a maybe becomes a no
+  - Who flies from DTW and whether anyone is coming from LAX
+  - Collect a deposit per person before anything non-refundable is signed
+  - Couple B needs to confirm their own return routing from MEX
