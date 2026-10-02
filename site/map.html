@@ -27,6 +27,7 @@
 
 <div class="legend-row"><button class="legitem" data-cat="stay" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#C06A05" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Where we are staying <span class="cnt">1</span></button><button class="legitem" data-cat="fine" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#0F5C57" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Fine dining <span class="cnt">12</span></button><button class="legitem" data-cat="casual" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#2E8B6F" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Casual food <span class="cnt">9</span></button><button class="legitem" data-cat="bar" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#6B4E9E" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bars and drinks <span class="cnt">15</span></button><button class="legitem" data-cat="market" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#B5541F" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Markets and food pickup <span class="cnt">3</span></button><button class="legitem" data-cat="taco" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#C23B22" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tacos and street food <span class="cnt">6</span></button><button class="legitem" data-cat="spot" aria-pressed="true"><svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#4A6FA5" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Parks, shops and sights <span class="cnt">4</span></button></div>
 <div id="map" role="application" aria-label="Map of trip locations"></div>
+<p class="caveat" id="faraway"></p>
 <p class="caveat">Map data from OpenStreetMap. The house pin is the middle of Roma Norte: Airbnb only shows an approximate area until a booking is confirmed, and the exact address deliberately stays out of this repo.</p>
 <div class="note warn"><div class="nh">Not yet on the map</div><p>Campomar Masaryk, Esquina Comun, Wagyu San, Pandora Rooftop, Taverna, Margot, Saint, Maizajo, Jenni's Quesadillas, Sanborns de los Azulejos, El Moro, Pasteleria Ideal, Lindy, Reyna Nata, Tacos La Once Mil, Milpa, Tacos Los Alexis, La Ochenta y Nueve. Add a more specific address in <code>data/places.yml</code> and run <code>npm run geocode</code>.</p></div>
 
@@ -60,6 +61,9 @@
     maxZoom: 19,
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
+
+  // Both units: Mexico is metric, most of this group reads miles.
+  L.control.scale({ position: 'bottomleft', metric: true, imperial: true, maxWidth: 150 }).addTo(map);
 
   var groups = {};
   Object.keys(DATA.categories).forEach(function (k) { groups[k] = L.layerGroup().addTo(map); });
@@ -148,12 +152,19 @@
   if (near.length > 1) map.fitBounds(near, { padding: [40, 40] });
   else if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
 
+  // Named below the map rather than in the attribution bar: with ten of them
+  // the line spanned the full width and sat on top of the scale.
   var far = DATA.places.filter(function (p) { return p.km > 3; });
-  if (far.length) {
-    var names = far.map(function (p) { return p.n; }).join(', ');
-    L.control.attribution({ prefix: false })
-      .addAttribution('Zoom out for: ' + names)
-      .addTo(map);
+  var farEl = document.getElementById('faraway');
+  if (farEl) {
+    if (far.length) {
+      far.sort(function (a, b) { return a.km - b.km; });
+      farEl.textContent =
+        'Outside the opening view, zoom out to reach them: ' +
+        far.map(function (p) { return p.n + ' (' + p.km + ' km)'; }).join(', ') + '.';
+    } else {
+      farEl.hidden = true;
+    }
   }
 
   document.querySelectorAll('.legitem').forEach(function (btn) {

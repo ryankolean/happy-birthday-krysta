@@ -375,6 +375,32 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
   filter: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.88) saturate(0.6);
 }
 .leaflet-container { font-family: var(--f-body); font-size: 13px; }
+
+/* Scale bar. Leaflet's default is a thin grey hairline that disappears on the
+   dark tiles, so it gets the page's own surface and type. */
+.leaflet-container .leaflet-control-scale { margin: 0 0 12px 12px; }
+/* Leaflet's own stylesheet loads after this one, so these need the extra
+   specificity to win on background and border. */
+.leaflet-container .leaflet-control-scale-line {
+  background: var(--raise);
+  border: 1px solid var(--rule-firm);
+  border-top: none;
+  color: var(--ink);
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  padding: 1px 6px 2px;
+  text-shadow: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.leaflet-container .leaflet-control-scale-line:not(:first-child) {
+  border-top: 1px solid var(--rule-firm);
+  border-bottom: none;
+  margin-top: -1px;
+}
 .leaflet-popup-content { font-size: 13px; line-height: 1.5; }
 .leaflet-popup-content strong { font-size: 14px; }
 
@@ -800,6 +826,7 @@ function buildMap() {
 
 <div class="legend-row">${legend}</div>
 <div id="map" role="application" aria-label="Map of trip locations"></div>
+<p class="caveat" id="faraway"></p>
 <p class="caveat">Map data from OpenStreetMap. The house pin is the middle of Roma Norte: Airbnb only shows an approximate area until a booking is confirmed, and the exact address deliberately stays out of this repo.</p>
 ${unresolved.length ? `<div class="note warn"><div class="nh">Not yet on the map</div><p>${unresolved.map((p) => esc(p.name)).join(', ')}. Add a more specific address in <code>data/places.yml</code> and run <code>npm run geocode</code>.</p></div>` : ''}
 
@@ -826,6 +853,9 @@ ${lists}
     maxZoom: 19,
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
+
+  // Both units: Mexico is metric, most of this group reads miles.
+  L.control.scale({ position: 'bottomleft', metric: true, imperial: true, maxWidth: 150 }).addTo(map);
 
   var groups = {};
   Object.keys(DATA.categories).forEach(function (k) { groups[k] = L.layerGroup().addTo(map); });
@@ -914,12 +944,19 @@ ${lists}
   if (near.length > 1) map.fitBounds(near, { padding: [40, 40] });
   else if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
 
+  // Named below the map rather than in the attribution bar: with ten of them
+  // the line spanned the full width and sat on top of the scale.
   var far = DATA.places.filter(function (p) { return p.km > 3; });
-  if (far.length) {
-    var names = far.map(function (p) { return p.n; }).join(', ');
-    L.control.attribution({ prefix: false })
-      .addAttribution('Zoom out for: ' + names)
-      .addTo(map);
+  var farEl = document.getElementById('faraway');
+  if (farEl) {
+    if (far.length) {
+      far.sort(function (a, b) { return a.km - b.km; });
+      farEl.textContent =
+        'Outside the opening view, zoom out to reach them: ' +
+        far.map(function (p) { return p.n + ' (' + p.km + ' km)'; }).join(', ') + '.';
+    } else {
+      farEl.hidden = true;
+    }
   }
 
   document.querySelectorAll('.legitem').forEach(function (btn) {
