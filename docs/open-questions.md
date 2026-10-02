@@ -5,16 +5,16 @@ What is unresolved, and what each one costs. Close these in `decisions.md` and u
 ## Gating everything else
 
 ### What happens on New Year's Eve
-Approach is decided, nothing is ordered. The 2026 takeaway menus do not publish until late November, which means this cannot be closed before then. **Cost of being wrong:** up to $293 each, the difference between the potluck and the St. Regis gala.
+Approach is decided on [the New Year's Eve page](nye.html), nothing is ordered. The 2026 takeaway menus do not publish until late November, which means this cannot be closed before then. **Cost of being wrong:** up to $293 each, the difference between the potluck and the St. Regis gala.
 
 ### Pujol's booking window
-Not on OpenTable, and nobody knows how far ahead they open. This is the birthday dinner and the biggest blind spot on the trip. **Cost of being wrong:** the birthday dinner, which has no substitute at the same tier that is also bookable.
+Not on OpenTable, and nobody knows how far ahead they open. This is [the birthday dinner](dining.html) and the biggest blind spot on the trip. **Cost of being wrong:** the birthday dinner, which has no substitute at the same tier that is also bookable.
 
 ### Em's holiday release
 Tock says "Em has not opened reservations for 2 ene." Probing shows 19 December open and 31 December not, so the holiday week is withheld rather than sold out. Nobody knows the release date. Phone +52 55 6450 1302.
 
 ### Whether the balloon flies on 2 January
-No operator site confirms holiday-period operations, and no 2027 pricing is published anywhere. 2 January is a Saturday in the busiest week of the year, which is when balloon operators fill first. **Cost of being wrong:** $211 each, and the centrepiece of the birthday.
+No operator site confirms holiday-period operations, and no 2027 pricing is published anywhere. 2 January is a Saturday in the busiest week of the year, which is when balloon operators fill first. **Cost of being wrong:** $211 each, and the centrepiece of [the birthday](itinerary.html).
 
 ## Money
 

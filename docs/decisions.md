@@ -44,7 +44,7 @@ It also corrected a much larger error. An earlier pass had quoted $1,790 to $2,3
 
 That decision makes the weather terms critical, because **2 January has no rebooking slot**: on the 3rd the group flies at 13:55 and a balloon day does not return until about 14:00.
 
-**Volare** is the operator, chosen specifically for one published sentence: weather cancellations may be rescheduled **or cancelled with no extra fee**. WE FLY publishes no refund terms at all and Sky Balloons publishes no cancellation policy and appears to require self-transport to their airport for a 6 AM appointment. Volare's family private basket is MX$3,600 per person, takes 2 to 16, includes hotel pickup, and cancels free to 48 hours.
+The day it sits on is laid out on [the itinerary](itinerary.html). **Volare** is the operator, chosen specifically for one published sentence: weather cancellations may be rescheduled **or cancelled with no extra fee**. WE FLY publishes no refund terms at all and Sky Balloons publishes no cancellation policy and appears to require self-transport to their airport for a 6 AM appointment. Volare's family private basket is MX$3,600 per person, takes 2 to 16, includes hotel pickup, and cancels free to 48 hours.
 
 Side benefit: the package includes Teotihuacan entry, which closes a gap the itinerary could not otherwise fit.
 
@@ -70,4 +70,4 @@ Worth remembering why the error survived: a Booking.com figure agreed with the g
 
 **Recommended, not locked.** At the current 32 percent discount, all-inclusive is **$84.30 per adult per night**, so full board costs only **$98 more each** than room-only plus eating in the village. That gap used to be $239 each.
 
-Break-even is about $19.57 per adult per day, roughly two resort cocktails. Room-only still wins on the merits, because the village is a 16 minute walk with 19 restaurants inside a kilometre and the resort has three on-site venues with documented closure problems. But it is close enough now that the group should be asked rather than told.
+Break-even is about $19.57 per adult per day, roughly two resort cocktails. The full arithmetic is on [the costs page](costs.html). Room-only still wins on the merits, because the village is a 16 minute walk with 19 restaurants inside a kilometre and the resort has three on-site venues with documented closure problems. But it is close enough now that the group should be asked rather than told.

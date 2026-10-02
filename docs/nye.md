@@ -28,7 +28,7 @@ So the plan is not "everyone wanders out at 7 and brings something back." Nothin
 
 ### Morning: Mercado Medellin
 
-Campeche 101, Roma Sur. About a ten minute walk. Open 08:00 to 19:00, and the fondas at the back run hardest from noon to 15:00. Cheese, charcuterie, pan, produce, and Peruvian, Colombian and Venezuelan stalls. 31 December morning is the busiest market day of the Mexican year, which makes going one of the more authentic things available that day.
+Campeche 101, Roma Sur. About a ten minute walk, and it is on [the map](map.html). Open 08:00 to 19:00, and the fondas at the back run hardest from noon to 15:00. Cheese, charcuterie, pan, produce, and Peruvian, Colombian and Venezuelan stalls. 31 December morning is the busiest market day of the Mexican year, which makes going one of the more authentic things available that day.
 
 ### Afternoon: the pickups
 
@@ -108,7 +108,7 @@ A taquero at the house would suit a rooftop party perfectly and the rate is only
 
 **Nostos** runs a la carte with no minimum consumption and extended hours on 31 December, which makes it the least painful restaurant option if the group wants to go out.
 
-One conflict: **Maximo Bistrot does a four course Eduardo Garcia dinner on 31 December**, and Maximo is also a candidate for the 2 January birthday. Pick one night, not both.
+One conflict: **Maximo Bistrot does a four course Eduardo Garcia dinner on 31 December**, and Maximo is also a candidate for [the 2 January birthday dinner](dining.html). Pick one night, not both.
 
 ## Why not the gala
 

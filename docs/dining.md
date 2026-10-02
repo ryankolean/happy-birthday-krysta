@@ -4,7 +4,7 @@ Party of 8. Hardest night of the week to seat, because it is a Saturday on a hol
 
 ## The constraint nobody plans around
 
-The balloon has a 4:30 AM pickup and gets back around 2 PM. A nine course tasting menu at 7:30 PM is roughly **fifteen hours after the alarm**. There are already two tasting menus in the itinerary counting whatever New Year's Eve becomes.
+[The balloon](itinerary.html) has a 4:30 AM pickup and gets back around 2 PM. A nine course tasting menu at 7:30 PM is roughly **fifteen hours after the alarm**. There are already two tasting menus in the itinerary counting [whatever New Year's Eve becomes](nye.html).
 
 So the real question is not which restaurant is best. It is whether this night wants a tasting menu at all.
 
@@ -57,6 +57,8 @@ The honest pick is **Maximo Bistrot** or **Rosetta**. One Michelin star between 
 **Sud 777** is the same MX$1,850 each for twelve courses but sits in Jardines del Pedregal, 35 to 45 minutes south. That kills it for this night.
 
 ## Other nights
+
+Every venue below is plotted on [the map](map.html) with its walk from the house.
 
 - **29 December:** Ling Ling, the only open upscale slot. OpenTable, up to 20, released 30 September so it is bookable now.
 - **30 December:** taco day. Casual only. Cuina on Tabasco 46 if anyone wants a table, CoverManager slug `cuina-cdmx`, max 10 online.

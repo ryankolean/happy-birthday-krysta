@@ -59,6 +59,41 @@ const longDate = (iso) => {
 
 const tidy = (s) => String(s ?? '').replace(/\s*\n\s*/g, ' ').trim();
 
+// data/ and docs/ are written for whoever edits the repo, but the site is read
+// by people who just want the page. Every reference to a source file becomes a
+// link to the page built from it.
+const PAGE_REFS = [
+  [/(?:docs\/)?nye\.md/g, 'nye.html', "the New Year's Eve options"],
+  [/(?:docs\/)?dining\.md/g, 'dining.html', 'the birthday dinner options'],
+  [/(?:docs\/)?open-questions\.md/g, 'open-questions.html', 'the open questions'],
+  [/(?:docs\/)?decisions\.md/g, 'decisions.html', 'the decision log'],
+  [/data\/tasks\.yml/g, 'tasks.html', 'the to do list'],
+  [/data\/flights\.yml/g, 'index.html#flights', 'the flights table'],
+  [/data\/places\.yml/g, 'map.html', 'the map'],
+];
+
+// Runs on text that has already been escaped, so anything it inserts is the
+// only markup present. Pass skipAnchors for rendered markdown, which already
+// contains links that must not be rewritten from the inside.
+function linkify(html, skipAnchors) {
+  const sub = (chunk) => {
+    let out = chunk;
+    for (const [re, href, label] of PAGE_REFS) {
+      out = out.replace(re, `<a href="${href}">${label}</a>`);
+    }
+    return out;
+  };
+  if (!skipAnchors) return sub(html);
+  return html
+    .split(/(<a\b[^>]*>.*?<\/a>)/gs)
+    .map((part, i) => (i % 2 ? part : sub(part)))
+    .join('');
+}
+
+// Note text: collapse, escape, then linkify. Used everywhere a YAML note or
+// detail string reaches the page.
+const nt = (s) => linkify(esc(tidy(s)));
+
 const PAGES = [
   { file: 'index.html', label: 'The trip' },
   { file: 'itinerary.html', label: 'Itinerary' },
@@ -465,11 +500,11 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
 
 <div class="note warn">
   <div class="nh">Read this if you are flying home from Mexico City</div>
-  <p>${esc(tidy(budget.flag_for_couple_b))}</p>
+  <p>${nt(budget.flag_for_couple_b)}</p>
 </div>`;
 
   // calendar
-  b += `<h2><span class="num">01</span>The eleven days at a glance</h2>
+  b += `<h2 id="calendar"><span class="num">01</span>The eleven days at a glance</h2>
 <div class="legend">
   <span><i style="background:var(--teal)"></i>Mexico City</span>
   <span><i style="background:var(--sea)"></i>Riviera Maya</span>
@@ -484,7 +519,7 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
   b += `</div>`;
 
   // lodging
-  b += `<h2><span class="num">02</span>Where we are staying</h2>
+  b += `<h2 id="lodging"><span class="num">02</span>Where we are staying</h2>
 <p class="lede">Both verified available on ${esc(iso(trip.verified))} on the operators' own booking engines. Neither is booked.</p>`;
 
   const oasis = lodging.properties.find((p) => p.id === 'oasis');
@@ -505,18 +540,20 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
 <td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_flexible)}</strong></td></tr>
 </tbody></table></div>`;
 
-  b += `<h3>Beds at the Oasis, so nobody is surprised</h3>
+  b += `<p class="lede" style="margin-top:14px">Everywhere we might eat, drink or go is plotted on <a href="map.html">the map</a>, colour coded and with the walk from the house.</p>
+
+<h3>Beds at the Oasis, so nobody is surprised</h3>
 <p>${oasis.bedrooms} bedrooms and ${oasis.baths} bathrooms: ${esc(oasis.bed_config.map((x) => x.bed).join(', ').toLowerCase())}. Three couples take three rooms, the two singles get their own rooms each, and there is a bedroom spare. Checkout is ${esc(oasis.checkout_time)} and the rooftop is private.</p>
 <p><a href="${esc(oasis.url)}">View the Oasis listing</a> &middot; <a href="${esc(fives.url)}">View The Fives</a></p>
 
 <div class="note warn">
   <div class="nh">Two things worth knowing</div>
-  <p><strong>The beach is cheaper than we had budgeted.</strong> ${esc(tidy(fives.tax_breakdown_seen.note))}</p>
-  <p><strong>The Airbnb cancellation terms are tighter than the badge suggests.</strong> ${esc(oasis.cancellation.actual)}. ${esc(tidy(oasis.cancellation.warning))}</p>
+  <p><strong>The beach is cheaper than we had budgeted.</strong> ${nt(fives.tax_breakdown_seen.note)}</p>
+  <p><strong>The Airbnb cancellation terms are tighter than the badge suggests.</strong> ${esc(oasis.cancellation.actual)}. ${nt(oasis.cancellation.warning)}</p>
 </div>`;
 
   // flights
-  b += `<h2><span class="num">03</span>Flights</h2>
+  b += `<h2 id="flights"><span class="num">03</span>Flights</h2>
 <p class="lede">Every leg is nonstop. Priced ${esc(iso(flights.priced))}, nothing booked. Delta where Delta flies it.</p>
 <div class="scroller"><table>
 <thead><tr><th>Date</th><th>Route</th><th>Flight</th><th>Times</th><th class="n">Per person</th></tr></thead><tbody>`;
@@ -526,14 +563,14 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
   b += `<tr class="sum"><td colspan="4">Your flights, doing both legs</td><td class="n">${usd(flights.per_person_usd.full_trip)}</td></tr>
 <tr class="sum"><td colspan="4">Your flights, flying home from Mexico City</td><td class="n">${usd(flights.per_person_usd.city_only)}</td></tr>
 </tbody></table></div>
-<p>${esc(tidy(flights.afternoon_departure_problem))}</p>
+<p>${nt(flights.afternoon_departure_problem)}</p>
 <div class="note">
   <div class="nh">The one real risk on the outbound</div>
-  <p>${esc(tidy(flights.flights[0].risk))}</p>
+  <p>${nt(flights.flights[0].risk)}</p>
 </div>`;
 
   // costs summary
-  b += `<h2><span class="num">04</span>What it costs you</h2>
+  b += `<h2 id="costs"><span class="num">04</span>What it costs you</h2>
 <p class="lede">Three blocks: flights, the city, the beach. Full line by line breakdown on the <a href="costs.html">costs page</a>.</p>
 <div class="scroller"><table>
 <thead><tr><th>Block</th><th class="n">Doing both legs</th><th class="n">City only</th></tr></thead><tbody>
@@ -545,15 +582,15 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
 
 <div class="note">
   <div class="nh">The meal plan at the beach is now a close call</div>
-  <p>${esc(tidy(budget.riviera.alternative_all_inclusive.note))}</p>
+  <p>${nt(budget.riviera.alternative_all_inclusive.note)}</p>
 </div>`;
 
   // what needs doing
-  b += `<h2><span class="num">05</span>What still has to happen</h2>
+  b += `<h2 id="todo"><span class="num">05</span>What still has to happen</h2>
 <p class="lede">The first five are this week, and the first two because waiting makes them worse rather than just more expensive. Everything else is on the <a href="tasks.html">to do page</a>.</p>
 <ol class="tasks">`;
   for (const t of tasks.this_week) {
-    b += `<li><span class="tt">${esc(t.title)}</span><span class="tw">${esc(tidy(t.why_now))}</span></li>`;
+    b += `<li><span class="tt">${esc(t.title)}</span><span class="tw">${nt(t.why_now)}</span></li>`;
   }
   b += `</ol>`;
 
@@ -583,14 +620,14 @@ function buildItinerary() {
     if (d.events) {
       b += `<ul class="runs">`;
       for (const e of d.events) {
-        b += `<li><span class="t">${esc(e.time)}</span><span class="d"><strong>${esc(e.what)}</strong>${e.detail ? `<small>${esc(tidy(e.detail))}</small>` : ''}${e.why ? `<small>${esc(tidy(e.why))}</small>` : ''}</span></li>`;
+        b += `<li><span class="t">${esc(e.time)}</span><span class="d"><strong>${esc(e.what)}</strong>${e.detail ? `<small>${nt(e.detail)}</small>` : ''}${e.why ? `<small>${nt(e.why)}</small>` : ''}</span></li>`;
       }
       b += `</ul>`;
     }
-    if (d.plan_status) b += `<div class="note"><p>${esc(tidy(d.plan_status))}</p></div>`;
-    if (d.notes) b += `<div class="note"><ul>${d.notes.map((n) => `<li>${esc(tidy(n))}</li>`).join('')}</ul></div>`;
+    if (d.plan_status) b += `<div class="note"><p>${nt(d.plan_status)}</p></div>`;
+    if (d.notes) b += `<div class="note"><ul>${d.notes.map((n) => `<li>${nt(n)}</li>`).join('')}</ul></div>`;
     if (d.warnings) {
-      b += `<div class="note warn"><div class="nh">Watch out</div><ul>${d.warnings.map((w) => `<li>${esc(tidy(w))}</li>`).join('')}</ul></div>`;
+      b += `<div class="note warn"><div class="nh">Watch out</div><ul>${d.warnings.map((w) => `<li>${nt(w)}</li>`).join('')}</ul></div>`;
     }
     b += `</div>`;
   }
@@ -600,7 +637,7 @@ function buildItinerary() {
     b += `<h2>What does not fit, and why</h2>
 <div class="scroller"><table><thead><tr><th>Item</th><th>Why not</th></tr></thead><tbody>`;
     for (const x of itinerary.does_not_fit) {
-      b += `<tr><td><strong>${esc(x.item)}</strong></td><td>${esc(tidy(x.why))}</td></tr>`;
+      b += `<tr><td><strong>${esc(x.item)}</strong></td><td>${nt(x.why)}</td></tr>`;
     }
     b += `</tbody></table></div>`;
   }
@@ -616,7 +653,7 @@ function costRows(lines) {
       const unit = l.unit_price
         ? `<br><small>${usd(l.unit_price)} for the ${esc(l.unit_label || 'whole booking')}</small>`
         : '';
-      return `<tr><td><strong>${esc(l.item)}</strong>${unit}${l.note ? `<br><small>${esc(tidy(l.note))}</small>` : ''}</td><td><span class="tag ${esc(l.status)}">${esc(l.status)}</span></td><td class="n">${usd(l.per_person)}</td></tr>`;
+      return `<tr><td><strong>${esc(l.item)}</strong>${unit}${l.note ? `<br><small>${nt(l.note)}</small>` : ''}</td><td><span class="tag ${esc(l.status)}">${esc(l.status)}</span></td><td class="n">${usd(l.per_person)}</td></tr>`;
     })
     .join('');
 }
@@ -636,6 +673,14 @@ function buildCosts() {
 </header>
 
 <p class="lede">Every figure on this page is what one person pays. Lodging also shows the whole-place price, because a house and a resort residence are booked whole and then split evenly.</p>
+
+<h2>Flights</h2>
+<div class="scroller"><table>
+<thead><tr><th>Who</th><th>Legs</th><th>Status</th><th class="n">Each</th></tr></thead><tbody>
+<tr><td><strong>Doing both legs</strong></td><td>Detroit to Mexico City, Mexico City to Cancun, Cancun to Detroit</td><td><span class="tag ${esc(budget.flights.status)}">${esc(budget.flights.status)}</span></td><td class="n">${usd(budget.flights.per_person_full_trip)}</td></tr>
+<tr><td><strong>City only</strong></td><td>Detroit to Mexico City, Mexico City to Detroit</td><td><span class="tag ${esc(budget.flights.status)}">${esc(budget.flights.status)}</span></td><td class="n">${usd(budget.flights.per_person_city_only)}</td></tr>
+</tbody></table></div>
+<p>${nt(budget.flights.note)} Flight numbers, times and the alternatives considered are in <a href="index.html#flights">the flights table on the front page</a>.</p>
 
 <h2>Mexico City</h2>
 <div class="scroller"><table>
@@ -667,12 +712,12 @@ function buildCosts() {
 
 <div class="note">
   <div class="nh">Room only or all inclusive</div>
-  <p>${esc(tidy(r.alternative_all_inclusive.note))}</p>
+  <p>${nt(r.alternative_all_inclusive.note)}</p>
 </div>
 
 <h3>Optional at the beach</h3>
 <div class="scroller"><table><thead><tr><th>Item</th><th>Status</th><th class="n">Each</th></tr></thead><tbody>
-${r.optional.map((o) => `<tr><td><strong>${esc(o.item)}</strong>${o.note ? `<br><small>${esc(tidy(o.note))}</small>` : ''}</td><td><span class="tag ${esc(o.status)}">${esc(o.status)}</span></td><td class="n">${usd(o.per_person)}</td></tr>`).join('')}
+${r.optional.map((o) => `<tr><td><strong>${esc(o.item)}</strong>${o.note ? `<br><small>${nt(o.note)}</small>` : ''}</td><td><span class="tag ${esc(o.status)}">${esc(o.status)}</span></td><td class="n">${usd(o.per_person)}</td></tr>`).join('')}
 </tbody></table></div>
 
 <h2>Splitting it</h2>
@@ -685,7 +730,7 @@ ${budget.non_refundable_exposure.map((x) => `<tr><td><strong>${esc(x.what)}</str
 
 <div class="note warn">
   <div class="nh">For the two leaving after Mexico City</div>
-  <p>${esc(tidy(budget.flag_for_couple_b))}</p>
+  <p>${nt(budget.flag_for_couple_b)}</p>
 </div>`;
 
   return shell({ title: 'What it costs', current: 'costs.html', body: b });
@@ -697,8 +742,7 @@ function taskBlock(title, list, showWhen) {
   if (!list || !list.length) return '';
   let s = `<h2>${esc(title)}</h2><ol class="tasks">`;
   for (const t of list) {
-    const text = tidy(t.why_now || t.why || t.detail || '');
-    s += `<li><span class="tt">${esc(t.title)}${t.status ? ` <span class="tag ${esc(t.status)}">${esc(t.status)}</span>` : ''}</span>${showWhen && t.date ? `<span class="when">${esc(longDate(t.date))}</span>` : ''}<span class="tw">${esc(text)}</span></li>`;
+    s += `<li><span class="tt">${esc(t.title)}${t.status ? ` <span class="tag ${esc(t.status)}">${esc(t.status)}</span>` : ''}</span>${showWhen && t.date ? `<span class="when">${esc(longDate(t.date))}</span>` : ''}<span class="tw">${nt(t.why_now || t.why || t.detail || '')}</span></li>`;
   }
   return s + `</ol>`;
 }
@@ -769,8 +813,8 @@ function buildMap() {
       lat: p.lat,
       lon: p.lon,
       hood: esc(p.neighborhood || ''),
-      note: esc(tidy(p.note || '')),
-      booking: esc(tidy(p.booking || '')),
+      note: nt(p.note || ''),
+      booking: nt(p.booking || ''),
       url: encodeURI(p.url || ''),
       approx: p.precision === 'approximate',
       km: Math.round(p.km * 10) / 10,
@@ -807,7 +851,7 @@ function buildMap() {
           : p.walkMin
             ? `${p.walkMin} min walk`
             : `${(Math.round(p.km * 10) / 10).toFixed(1)} km`;
-      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.url ? `<br><a href="${esc(p.url)}">listing</a>` : ''}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${esc(tidy(p.note || ''))}${p.booking ? `<br><small>${esc(tidy(p.booking))}</small>` : ''}</td></tr>`;
+      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.url ? `<br><a href="${esc(p.url)}">listing</a>` : ''}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${nt(p.note || '')}${p.booking ? `<br><small>${nt(p.booking)}</small>` : ''}</td></tr>`;
     }
     lists += `</tbody></table></div>`;
   }
@@ -983,7 +1027,10 @@ marked.setOptions({ gfm: true, breaks: false });
 function buildDoc(mdFile, htmlFile, title) {
   const md = readFileSync(join(root, 'docs', mdFile), 'utf8');
   // Wrap tables so wide ones scroll instead of breaking the page.
-  const html = marked.parse(md).replace(/<table>/g, '<div class="scroller"><table>').replace(/<\/table>/g, '</table></div>');
+  const html = linkify(
+    marked.parse(md).replace(/<table>/g, '<div class="scroller"><table>').replace(/<\/table>/g, '</table></div>'),
+    true
+  );
   return shell({ title, current: htmlFile, body: `<div class="prose" style="padding-top:44px">${html}</div>` });
 }
 
