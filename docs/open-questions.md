@@ -5,7 +5,7 @@ What is unresolved, and what each one costs. Close these in `decisions.md` and u
 ## Gating everything else
 
 ### What happens on New Year's Eve
-Approach is decided, nothing is ordered. The 2026 takeaway menus do not publish until late November, which means this cannot be closed before then. **Cost of being wrong:** up to $2,000, the difference between the potluck and the St. Regis gala.
+Approach is decided, nothing is ordered. The 2026 takeaway menus do not publish until late November, which means this cannot be closed before then. **Cost of being wrong:** up to $293 each, the difference between the potluck and the St. Regis gala.
 
 ### Pujol's booking window
 Not on OpenTable, and nobody knows how far ahead they open. This is the birthday dinner and the biggest blind spot on the trip. **Cost of being wrong:** the birthday dinner, which has no substitute at the same tier that is also bookable.
@@ -14,18 +14,18 @@ Not on OpenTable, and nobody knows how far ahead they open. This is the birthday
 Tock says "Em has not opened reservations for 2 ene." Probing shows 19 December open and 31 December not, so the holiday week is withheld rather than sold out. Nobody knows the release date. Phone +52 55 6450 1302.
 
 ### Whether the balloon flies on 2 January
-No operator site confirms holiday-period operations, and no 2027 pricing is published anywhere. 2 January is a Saturday in the busiest week of the year, which is when balloon operators fill first. **Cost of being wrong:** $1,690 and the centrepiece of the birthday.
+No operator site confirms holiday-period operations, and no 2027 pricing is published anywhere. 2 January is a Saturday in the busiest week of the year, which is when balloon operators fill first. **Cost of being wrong:** $211 each, and the centrepiece of the birthday.
 
 ## Money
 
 ### The Fives environmental tax
-Sources conflict badly, from under $25 for the stay to $270. One email to reservations@thefiveshotels.com settles it. **Spread:** about $245.
+Sources conflict badly, from under $25 for the stay to $270. One email to reservations@thefiveshotels.com settles it. **Spread:** about $41 each.
 
 ### Whether the 32 percent Fives discount survives to booking
-And whether it stacks with the 5 percent loyalty discount. **Spread:** about $226 on the loyalty discount alone, more if the promotional rate expires.
+And whether it stacks with the 5 percent loyalty discount. **Spread:** about $38 each on the loyalty discount alone, more if the promotional rate expires.
 
 ### Tulum beach club day
-Unpriced. Table minimums for 6 in early January have never been quoted. Three hours of driving round trip. May not survive on its own merits.
+Unpriced. Table minimums in early January have never been quoted, so there is no per-head figure. Three hours of driving round trip. May not survive on its own merits.
 
 ### LAX origin
 Unpriced. If anyone is flying from Los Angeles that is a separate search, and LAX to MEX has far more Delta frequency than Detroit.

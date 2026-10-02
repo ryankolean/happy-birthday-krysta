@@ -74,8 +74,6 @@ per_person_usd:
   full_trip: 1923      # 1246 + 184 + 493
   city_only: 3139      # 1246 + 1893
 
-total_usd: 17816       # 6 x 1923 + 2 x 3139
-
 # Both 3 January departures leave at 13:55, so the whole group leaves the
 # house together after the 11:00 checkout and nobody waits around.
 

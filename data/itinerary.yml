@@ -37,7 +37,7 @@ days:
         what: Street food crawl through Roma Norte and Condesa, working outward
         detail: >
           Replaces the guided Sabores food tour that was penciled in. Saves about
-          $920 and is closer to what Krysta actually asked for.
+          $115 each and is closer to what Krysta actually asked for.
       - time: evening
         what: Keep it casual, or Cuina on Tabasco 46, a four minute walk
         detail: No tasting menu on a day spent eating tacos.
@@ -113,7 +113,7 @@ days:
       - time: "19:30"
         what: Birthday dinner
         detail: >
-          Venue not locked. Pujol private room is the incumbent at $1,786 for 8.
+          Venue not locked. Pujol private room is the incumbent at $223 each.
           See docs/dining.md for the alternatives, several of which suit a
           balloon day better than a nine course tasting menu.
       - time: late
@@ -160,7 +160,7 @@ days:
     events:
       - time: all day
         what: Chichen Itza private tour
-        detail: From $119 per person, about $714 for 6.
+        detail: From $119 each.
 
   - date: 2027-01-06
     weekday: Wednesday
@@ -171,7 +171,7 @@ days:
     events:
       - time: all day
         what: Isla Mujeres by ferry
-        detail: MX$580 each round trip, about $203 for 6.
+        detail: MX$580 each round trip, about $34.
     notes:
       - Tulum was considered and is 87 minutes each way. Three hours of driving for a beach club probably does not survive.
 

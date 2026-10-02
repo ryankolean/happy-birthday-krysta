@@ -9,9 +9,12 @@ Planning repo for Krysta's 35th birthday trip to Mexico, **29 December 2026 to 8
 | **Mexico City** | 29 Dec to 3 Jan, 5 nights, 8 people |
 | **Riviera Maya** | 3 Jan to 8 Jan, 5 nights, 6 people |
 | **The birthday** | Saturday 2 January |
-| **Whole trip, all 8** | about $38,700 |
-| **Per person, full trip** | about $4,876 |
+| **Per person, doing both legs** | about $4,876 |
 | **Per person, city only** | about $4,741 |
+
+Every figure in this repo is **per person**. Group totals are deliberately not tracked: people pay for themselves, and a whole-trip number nobody writes a cheque for only made the figures harder to read.
+
+The one exception is lodging, which carries the whole-place price alongside the per-person split, because a house and a resort residence are booked whole and then divided evenly.
 
 Costs cover flights, lodging, the anchor dinners and the booked activities. They exclude personal spending, travel insurance and anything bought on the ground.
 

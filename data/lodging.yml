@@ -75,12 +75,18 @@ properties:
     taxes_included: true
     discount_live: 32%
     rack_rate_usd: 6654
+    # Residence is booked whole then split 6 ways.
     rates_usd:
       room_only_nonrefundable: 4525
       room_only_flexible: 5323
       all_inclusive_supplement: 2529
       all_inclusive_nonrefundable: 7054
       all_inclusive_flexible: 7852
+    rates_per_person_usd:
+      room_only_nonrefundable: 754
+      room_only_flexible: 887
+      all_inclusive_nonrefundable: 1176
+      all_inclusive_flexible: 1309
     loyalty_discount:
       amount_usd: 226
       percent: 5
@@ -94,11 +100,12 @@ properties:
       note: >
         The engine prints "Taxes included" and shows the VAT inside the total.
         Earlier planning grossed these quotes up by 21% on top, overstating
-        the beach lodging by about $1,500. Do not gross up engine quotes.
+        the beach lodging by about $250 each. Do not gross up engine quotes.
     upgrade_option:
       room_type: Two Bedroom Oceanfront Residence
       inventory_seen: 15 units
       room_only_nonrefundable_usd: 5895
+      room_only_nonrefundable_per_person_usd: 983
     contact:
       email: reservations@thefiveshotels.com
       us_can: "+1 800 592 1246"
@@ -123,6 +130,7 @@ backups:
     platform: Airbnb
     listing_id: "597915155431399462"
     total_usd: 4095
+    per_person_usd: 512
     config: 8 guests, 4BR, 5 beds, 4 baths
     status: available 2026-10-02
     verdict: four bedrooms reintroduces the bed configuration problem

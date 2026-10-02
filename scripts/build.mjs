@@ -379,11 +379,12 @@ function buildIndex() {
 </header>
 
 <div class="totals">
-${tile('Whole trip, all 8', usd(budget.grand_total), 'Flights, lodging, the anchor dinners and the booked activities.', true)}
-${tile('Per person, full trip', usd(budget.per_person.full_trip), 'The 6 doing Mexico City and the beach.')}
-${tile('Per person, city only', usd(budget.per_person.city_only), 'The 2 flying home on 3 January. See the note below.')}
+${tile('Per person, full trip', usd(budget.per_person.full_trip), 'Everything below, for the 6 doing both legs.', true)}
+${tile('Flights', usd(flights.per_person_usd.full_trip), 'Four nonstop legs. ' + usd(flights.per_person_usd.city_only) + ' if you fly home from Mexico City.')}
+${tile('Mexico City', usd(budget.cdmx.per_person), 'Five nights, including your share of the house.')}
+${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including your share of the residence.')}
 </div>
-<p class="caveat">Excludes ${esc(trip.totals_usd.excludes.join(', '))}. Peso figures converted at ${esc(trip.exchange_rate.range)} MXN/USD.</p>
+<p class="caveat">All figures are per person. Excludes ${esc(budget.excludes.join(', '))}. Peso figures converted at ${esc(trip.exchange_rate.range)} MXN/USD.</p>
 
 <div class="note warn">
   <div class="nh">Read this if you are flying home from Mexico City</div>
@@ -413,15 +414,18 @@ ${tile('Per person, city only', usd(budget.per_person.city_only), 'The 2 flying 
   const fives = lodging.properties.find((p) => p.id === 'fives');
 
   b += `<div class="scroller"><table>
-<thead><tr><th>Property</th><th>Dates</th><th>Found</th><th class="n">Price</th></tr></thead><tbody>
+<caption>Lodging is booked whole and split evenly. Both columns shown so the arithmetic is visible.</caption>
+<thead><tr><th>Property</th><th>Dates</th><th>Found</th><th class="n">Whole place</th><th class="n">Each</th></tr></thead><tbody>
 <tr><td><strong>${esc(oasis.name)}</strong><br><small>${esc(oasis.neighborhood)}, ${oasis.bedrooms}BR, ${oasis.baths} baths, private rooftop</small></td>
 <td>${esc(shortDate(oasis.checkin))} to ${esc(shortDate(oasis.checkout))}<br><small>${oasis.guests} guests</small></td>
 <td><span class="tag ok">available</span><br><small>Flagged "rare find, usually booked"</small></td>
-<td class="n">${usd(oasis.total_usd)}</td></tr>
+<td class="n"><small>${usd(oasis.total_usd)}</small></td>
+<td class="n"><strong>${usd(oasis.per_person_usd)}</strong></td></tr>
 <tr><td><strong>${esc(fives.room_type)}</strong><br><small>${esc(fives.name)}, ${fives.size_sqft} sq ft, sleeps ${fives.max_occupancy}</small></td>
 <td>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}<br><small>${fives.adults} adults</small></td>
 <td><span class="tag ok">${esc(fives.inventory_seen)} left</span><br><small>${esc(fives.discount_live)} off, plus ${fives.loyalty_discount.percent}% loyalty</small></td>
-<td class="n">${usd(fives.rates_usd.room_only_nonrefundable)}</td></tr>
+<td class="n"><small>${usd(fives.rates_usd.room_only_flexible)}</small></td>
+<td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_flexible)}</strong></td></tr>
 </tbody></table></div>`;
 
   b += `<h3>Beds at the Oasis, so nobody is surprised</h3>
@@ -442,7 +446,8 @@ ${tile('Per person, city only', usd(budget.per_person.city_only), 'The 2 flying 
   for (const f of flights.flights) {
     b += `<tr><td>${esc(shortDate(f.date))}</td><td>${esc(f.route)}<br><small>${esc(f.who)}</small></td><td>${f.number ? `<strong>${esc(f.number)}</strong>` : esc(f.carrier)}</td><td>${esc(f.depart)} to ${esc(f.arrive)}</td><td class="n">${usd(f.price_usd)}</td></tr>`;
   }
-  b += `<tr class="sum"><td colspan="4">Flights for all 8</td><td class="n">${usd(flights.total_usd)}</td></tr>
+  b += `<tr class="sum"><td colspan="4">Your flights, doing both legs</td><td class="n">${usd(flights.per_person_usd.full_trip)}</td></tr>
+<tr class="sum"><td colspan="4">Your flights, flying home from Mexico City</td><td class="n">${usd(flights.per_person_usd.city_only)}</td></tr>
 </tbody></table></div>
 <p>${esc(tidy(flights.afternoon_departure_problem))}</p>
 <div class="note">
@@ -451,14 +456,14 @@ ${tile('Per person, city only', usd(budget.per_person.city_only), 'The 2 flying 
 </div>`;
 
   // costs summary
-  b += `<h2><span class="num">04</span>What it costs</h2>
+  b += `<h2><span class="num">04</span>What it costs you</h2>
 <p class="lede">Three blocks: flights, the city, the beach. Full line by line breakdown on the <a href="costs.html">costs page</a>.</p>
 <div class="scroller"><table>
-<thead><tr><th>Block</th><th>People</th><th class="n">Total</th><th class="n">Per person</th></tr></thead><tbody>
-<tr><td>Flights</td><td>8</td><td class="n">${usd(flights.total_usd)}</td><td class="n">${usd(flights.per_person_full_trip)} / ${usd(flights.per_person_city_only)}</td></tr>
-<tr><td>Mexico City</td><td>${budget.cdmx.travelers}</td><td class="n">${usd(budget.cdmx.subtotal)}</td><td class="n">${usd(budget.cdmx.per_person)}</td></tr>
-<tr><td>Riviera Maya</td><td>${budget.riviera.travelers}</td><td class="n">${usd(budget.riviera.subtotal)}</td><td class="n">${usd(budget.riviera.per_person)}</td></tr>
-<tr class="sum"><td colspan="2">Whole trip</td><td class="n">${usd(budget.grand_total)}</td><td class="n">${usd(budget.per_person.full_trip)}</td></tr>
+<thead><tr><th>Block</th><th class="n">Doing both legs</th><th class="n">City only</th></tr></thead><tbody>
+<tr><td>Flights</td><td class="n">${usd(flights.per_person_usd.full_trip)}</td><td class="n">${usd(flights.per_person_usd.city_only)}</td></tr>
+<tr><td>Mexico City</td><td class="n">${usd(budget.cdmx.per_person)}</td><td class="n">${usd(budget.cdmx.per_person)}</td></tr>
+<tr><td>Riviera Maya</td><td class="n">${usd(budget.riviera.per_person)}</td><td class="n">n/a</td></tr>
+<tr class="sum"><td>Per person</td><td class="n">${usd(budget.per_person.full_trip)}</td><td class="n">${usd(budget.per_person.city_only)}</td></tr>
 </tbody></table></div>
 
 <div class="note">
@@ -530,10 +535,12 @@ function buildItinerary() {
 
 function costRows(lines) {
   return lines
-    .map(
-      (l) =>
-        `<tr><td><strong>${esc(l.item)}</strong>${l.note ? `<br><small>${esc(tidy(l.note))}</small>` : ''}</td><td><span class="tag ${esc(l.status)}">${esc(l.status)}</span></td><td class="n">${usd(l.group)}</td><td class="n">${usd(l.per_person)}</td></tr>`
-    )
+    .map((l) => {
+      const unit = l.unit_price
+        ? `<br><small>${usd(l.unit_price)} for the ${esc(l.unit_label || 'whole booking')}</small>`
+        : '';
+      return `<tr><td><strong>${esc(l.item)}</strong>${unit}${l.note ? `<br><small>${esc(tidy(l.note))}</small>` : ''}</td><td><span class="tag ${esc(l.status)}">${esc(l.status)}</span></td><td class="n">${usd(l.per_person)}</td></tr>`;
+    })
     .join('');
 }
 
@@ -542,37 +549,43 @@ function buildCosts() {
   const fives = lodging.properties.find((p) => p.id === 'fives');
 
   let b = `<header class="masthead">
-  <p class="eyebrow">Line by line</p>
-  <h1>What it costs</h1>
+  <p class="eyebrow">Line by line, per person</p>
+  <h1>What it costs you</h1>
   <div class="dateline">
-    <div><b>Whole trip</b>${esc(usd(budget.grand_total))}</div>
-    <div><b>Per person, full trip</b>${esc(usd(budget.per_person.full_trip))}</div>
-    <div><b>Per person, city only</b>${esc(usd(budget.per_person.city_only))}</div>
+    <div><b>Doing both legs</b>${esc(usd(budget.per_person.full_trip))}</div>
+    <div><b>City only</b>${esc(usd(budget.per_person.city_only))}</div>
     <div><b>Rate used</b>${esc(budget.rate_mxn_per_usd)} MXN/USD</div>
   </div>
 </header>
 
-<h2>Mexico City, ${budget.cdmx.travelers} people</h2>
+<p class="lede">Every figure on this page is what one person pays. Lodging also shows the whole-place price, because a house and a resort residence are booked whole and then split evenly.</p>
+
+<h2>Mexico City</h2>
 <div class="scroller"><table>
-<thead><tr><th>Item</th><th>Status</th><th class="n">Group</th><th class="n">Per person</th></tr></thead>
+<thead><tr><th>Item</th><th>Status</th><th class="n">Each</th></tr></thead>
 <tbody>${costRows(budget.cdmx.lines)}
-<tr class="sum"><td colspan="2">Mexico City</td><td class="n">${usd(budget.cdmx.subtotal)}</td><td class="n">${usd(budget.cdmx.per_person)}</td></tr>
+<tr class="sum"><td colspan="2">Mexico City, per person</td><td class="n">${usd(budget.cdmx.per_person)}</td></tr>
 </tbody></table></div>
 
-<h2>Riviera Maya, ${r.travelers} people</h2>
+<h2>Riviera Maya</h2>
 <p class="lede">${esc(fives.name)}, one ${esc(fives.room_type)}: ${fives.size_sqft} sq ft, sleeps up to ${fives.max_occupancy}. Quoted live, taxes included. A ${esc(fives.discount_live)} discount is running and a further ${fives.loyalty_discount.percent}% comes off through their loyalty programme.</p>
 <div class="scroller"><table>
-<thead><tr><th>Rate option</th><th class="n">Non-refundable</th><th class="n">Flexible</th></tr></thead><tbody>
-<tr class="pick"><td><strong>Room only</strong> <small>then eat in Puerto Morelos</small></td><td class="n">${usd(fives.rates_usd.room_only_nonrefundable)}</td><td class="n">${usd(fives.rates_usd.room_only_flexible)}</td></tr>
-<tr><td>All inclusive instead</td><td class="n">${usd(fives.rates_usd.all_inclusive_nonrefundable)}</td><td class="n">${usd(fives.rates_usd.all_inclusive_flexible)}</td></tr>
+<caption>The residence is booked whole and split ${r.travelers} ways. Per person in bold.</caption>
+<thead><tr><th>Rate option</th><th class="n">Non-refundable</th><th class="n">Each</th><th class="n">Flexible</th><th class="n">Each</th></tr></thead><tbody>
+<tr class="pick"><td><strong>Room only</strong> <small>then eat in Puerto Morelos</small></td>
+<td class="n"><small>${usd(fives.rates_usd.room_only_nonrefundable)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_nonrefundable)}</strong></td>
+<td class="n"><small>${usd(fives.rates_usd.room_only_flexible)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_flexible)}</strong></td></tr>
+<tr><td>All inclusive instead</td>
+<td class="n"><small>${usd(fives.rates_usd.all_inclusive_nonrefundable)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.all_inclusive_nonrefundable)}</strong></td>
+<td class="n"><small>${usd(fives.rates_usd.all_inclusive_flexible)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.all_inclusive_flexible)}</strong></td></tr>
 </tbody></table></div>
 <p><strong>Flexible terms:</strong> ${esc(fives.flexible_terms)}.</p>
 
 <div class="scroller"><table>
 <caption>Recommended build: ${esc(r.recommended_build)}.</caption>
-<thead><tr><th>Item</th><th>Status</th><th class="n">Group</th><th class="n">Per person</th></tr></thead>
+<thead><tr><th>Item</th><th>Status</th><th class="n">Each</th></tr></thead>
 <tbody>${costRows(r.lines)}
-<tr class="sum"><td colspan="2">Riviera Maya</td><td class="n">${usd(r.subtotal)}</td><td class="n">${usd(r.per_person)}</td></tr>
+<tr class="sum"><td colspan="2">Riviera Maya, per person</td><td class="n">${usd(r.per_person)}</td></tr>
 </tbody></table></div>
 
 <div class="note">
@@ -581,8 +594,8 @@ function buildCosts() {
 </div>
 
 <h3>Optional at the beach</h3>
-<div class="scroller"><table><thead><tr><th>Item</th><th>Status</th><th class="n">Group</th></tr></thead><tbody>
-${r.optional.map((o) => `<tr><td><strong>${esc(o.item)}</strong>${o.note ? `<br><small>${esc(tidy(o.note))}</small>` : ''}</td><td><span class="tag ${esc(o.status)}">${esc(o.status)}</span></td><td class="n">${usd(o.group)}</td></tr>`).join('')}
+<div class="scroller"><table><thead><tr><th>Item</th><th>Status</th><th class="n">Each</th></tr></thead><tbody>
+${r.optional.map((o) => `<tr><td><strong>${esc(o.item)}</strong>${o.note ? `<br><small>${esc(tidy(o.note))}</small>` : ''}</td><td><span class="tag ${esc(o.status)}">${esc(o.status)}</span></td><td class="n">${usd(o.per_person)}</td></tr>`).join('')}
 </tbody></table></div>
 
 <h2>Splitting it</h2>

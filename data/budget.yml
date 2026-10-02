@@ -1,80 +1,75 @@
-# Every line, with how solid the number is.
-# status: quoted = live price seen on the operator's own site
+# Everything is per person. Lodging also carries the unit price, because a
+# house and a resort residence are booked whole and then split.
+#
+# status: quoted   = live price seen on the operator's own site
 #         estimate = real market price for a comparable thing, not quoted for us
-#         open = not decided, figure is a placeholder
+#         open     = not decided, figure is a placeholder
 
 currency: USD
 rate_mxn_per_usd: 17.0
 priced: 2026-10-02
 
 flights:
-  total: 17816
   per_person_full_trip: 1923
   per_person_city_only: 3139
   status: quoted
-  note: Priced on Google Flights 2026-09-25. See data/flights.yml.
+  note: Priced on Google Flights 2026-09-25. See data/flights.yml for each leg.
 
 cdmx:
   travelers: 8
   lines:
     - item: Oasis 6BR, Roma Norte, 5 nights
-      group: 3927
       per_person: 491
+      unit_price: 3927
+      unit_label: whole house, 5 nights, split 8 ways
       status: quoted
       verified: 2026-10-02
 
     - item: New Year's Eve
-      group: 2593
       per_person: 324
       status: open
       note: >
-        Figure is the St. Regis gala at MX$5,500 per adult, the only one of the
-        three galas with a published price. The private chef approach costs about
-        $554 plus a holiday premium, and the potluck approach about $250 to $550.
-        See docs/nye.md. Expect this line to drop by $2,000 or so.
+        Placeholder is the St. Regis gala at MX$5,500 per adult, the only one of
+        the three galas with a published price. The private chef approach works
+        out to about $69 each plus a holiday premium, and the potluck approach
+        about $31 to $69 each. See docs/nye.md. Expect this line to fall sharply.
 
     - item: Birthday dinner, 2 January
-      group: 1786
       per_person: 223
       status: open
       note: >
-        Figure is Pujol's private dining room at MX$3,795 per person, eight
-        tasting menus minimum, no room fee. Em is the same price point.
-        Maximo Bistrot or Rosetta would be $450 to $800. See docs/dining.md.
+        Placeholder is Pujol's private dining room at MX$3,795 each, eight
+        tasting menus minimum, no room fee. Em is the same price point at
+        MX$3,900. Maximo Bistrot or Rosetta would be $56 to $100 each.
+        See docs/dining.md.
 
     - item: Hot air balloon over Teotihuacan, 2 January
-      group: 1690
       per_person: 211
       status: estimate
       note: >
-        Volare family private basket, MX$3,600 per person. Provisional: Volare
-        has not confirmed 2 January 2027 operations or a 2027 holiday rate.
+        Volare family private basket, MX$3,600 each. Provisional: Volare has not
+        confirmed 2 January 2027 operations or a 2027 holiday rate.
 
     - item: Ling Ling, 29 December
-      group: 1000
       per_person: 125
       status: estimate
 
     - item: Casual dinners and drinks, 2 nights
-      group: 1100
       per_person: 138
       status: estimate
 
     - item: Taco day, 30 December
-      group: 320
       per_person: 40
       status: estimate
-      note: Replaces the Sabores food tour, which would have been about $920.
+      note: Replaces the Sabores food tour, which would have been about $115 each.
 
     - item: Museums and city transport
-      group: 400
       per_person: 50
       status: estimate
       note: >
         Basing in Roma Norte keeps most of the itinerary on foot. The Polanco
-        alternative would have cost $450 to $700 in rideshare.
+        alternative would have cost $56 to $88 each in rideshare.
 
-  subtotal: 12819
   per_person: 1602
 
 riviera:
@@ -82,61 +77,59 @@ riviera:
   recommended_build: flexible room-only rate, eat in the village, one big excursion
   lines:
     - item: Two Bedroom Oceanview Residence, flexible room-only
-      group: 5323
       per_person: 887
+      unit_price: 5323
+      unit_label: whole residence, 5 nights, split 6 ways
       status: quoted
       verified: 2026-10-02
-      note: Taxes included. Non-refundable is $4,525 but refunds nothing from the moment it is booked.
+      note: >
+        Taxes included. Non-refundable is $754 each, but refunds nothing from
+        the moment it is booked.
 
     - item: Food in town, 5 days
-      group: 1942
       per_person: 324
       status: estimate
-      note: About $65 per adult per day including tip.
+      note: About $65 per day including tip.
 
     - item: Chichen Itza private tour
-      group: 714
       per_person: 119
       status: estimate
 
     - item: CUN airport transfer, round trip
-      group: 125
       per_person: 21
       status: estimate
-      note: $100 to $125 for the whole group at any headcount.
+      note: The transfer is $100 to $125 for the van at any headcount, so this falls if more people come.
 
-  subtotal: 8104
   per_person: 1351
 
   alternative_all_inclusive:
-    room_and_board: 7852
-    plus_transfer_and_excursion: 8691
     per_person: 1449
-    delta_vs_room_only: 587
+    lodging_and_board_per_person: 1309
+    delta_per_person: 98
     note: >
       All-inclusive works out to $84.30 per adult per night at the current
-      discount, so full board costs only $587 more than room-only plus eating
-      in the village. That gap used to be $1,434. Break-even is about two
-      resort cocktails a day. Room-only is still the pick given the 16 minute
-      village walk, but it is now close enough to put to the group.
+      discount, so full board costs only $98 more each than room-only plus
+      eating in the village. That gap used to be $239 each. Break-even is
+      about two resort cocktails a day. Room-only is still the pick given the
+      16 minute village walk, but it is now close enough to put to the group.
 
   optional:
     - item: Isla Mujeres ferry
-      group: 203
+      per_person: 34
       status: estimate
+      note: MX$580 each, round trip.
     - item: Tulum beach club day
-      group: null
+      per_person: null
       status: open
-      note: Unpriced. 87 minutes each way. May not survive.
-    - item: Rental van if two or more excursions
-      group: 335
+      note: Unpriced. Table minimums for 6 in early January have never been quoted. 87 minutes each way.
+    - item: Rental van for the week
+      per_person: 56
       status: estimate
-      note: Net for the week after skipping the transfer.
+      note: Net, after skipping the airport transfer. Only worth it with two or more excursions.
 
-grand_total: 38739
 per_person:
-  full_trip: 4876
-  city_only: 4741
+  full_trip: 4876      # 1923 flights + 1602 city + 1351 beach
+  city_only: 4741      # 3139 flights + 1602 city
 
 excludes:
   - personal spending
@@ -146,9 +139,10 @@ excludes:
 
 split_mechanism:
   - Agree a per-person target before booking
+  - Lodging is the only line billed as a whole. Both are split evenly by head.
   - Keep the two legs on separate ledgers. Guests who leave after Mexico City should not carry beach costs.
   - Anyone joining only for the beach should not carry New Year's Eve.
-  - Under room-only, food is individual rather than prepaid. Agree up front whether meals go on one card and get split, or people pay their own.
+  - Under room-only at the beach, food is individual rather than prepaid. Agree up front whether meals go on one card and get split, or people pay their own.
   - Note who fronts which booking and how they are repaid
   - Splitwise or similar, agreed up front
 
@@ -158,7 +152,7 @@ non_refundable_exposure:
   - what: The Fives, flexible rate
     terms: Free cancellation, refundable until 13 December 2026
   - what: Pujol, if booked
-    terms: MX$2,000 per person, 48 hour window
+    terms: MX$2,000 each, 48 hour window
   - what: New Year's Eve galas
     terms: Typically prepaid
   - what: Balloon

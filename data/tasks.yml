@@ -8,7 +8,8 @@ this_week:
     title: Book the Oasis 6BR
     status: todo
     why_now: >
-      $3,927, and Airbnb flags these dates as usually booked. There is no
+      $491 each, $3,927 for the whole house, and Airbnb flags these dates as
+      usually booked. There is no
       waitlist. Free cancellation lasts 24 hours, then partial refund only
       until 22 December, so this needs the group's yes before the card goes in.
     blocks: [collect-deposits]
@@ -96,13 +97,13 @@ decisions_needed:
     title: Flexible or non-refundable at The Fives
     status: todo
     detail: >
-      Flexible costs $798 more and refunds until 13 December. Given the
+      Flexible costs $133 more each and refunds until 13 December. Given the
       headcount only just settled, flexible is the safer call.
 
   - id: pick-meal-plan
     title: Room-only or all-inclusive at The Fives
     status: todo
-    detail: $587 difference across six people. The room can be booked before this is settled.
+    detail: $98 more each for full board. The room can be booked before this is settled.
 
   - id: couple-b-routing
     title: Decide the 3 January flight home from Mexico City
@@ -132,7 +133,7 @@ housekeeping:
     title: Email The Fives about the environmental tax
     status: todo
     detail: >
-      Sources disagree badly, from under $25 for the stay to $270.
+      Sources disagree badly, from under $25 for the whole stay to $270.
       reservations@thefiveshotels.com.
 
   - id: group-chat
@@ -161,7 +162,7 @@ done:
     detail: >
       They do. The engine prints subtotal $3,739, VAT 21% $785, total $4,525,
       taxes included. Earlier planning had grossed this up on top, overstating
-      the beach by about $1,500.
+      the beach by about $250 each.
 
   - id: resolve-quintonil
     title: Settle whether Quintonil can seat 8

@@ -12,11 +12,13 @@ That reframes the whole decision: the best plan is the one that does not require
 
 ## The three approaches, priced
 
-| | Cost for 8 | Effort | Risk |
+All prices **per person**.
+
+| | Each | Effort | Risk |
 |---|---|---|---|
-| **Potluck pickup run** | ~$250 to $550 | High, all before 5 PM | Pre-order deadlines |
-| **Private chef** | $554 plus holiday premium | None | Quote and availability |
-| St. Regis gala | $2,593 | Travel through the closure ring | Sells out, and you miss your own rooftop |
+| **Potluck pickup run** | **$31 to $69** | High, all before 5 PM | Pre-order deadlines |
+| **Private chef** | **$69** plus holiday premium | None | Quote and availability |
+| St. Regis gala | **$324** | Travel through the closure ring | Sells out, and you miss your own rooftop |
 
 ## Recommended: the potluck pickup run
 
@@ -32,16 +34,16 @@ Campeche 101, Roma Sur. About a ten minute walk. Open 08:00 to 19:00, and the fo
 
 **Angelopolitano**, Puebla 371, Roma Norte. Walkable.
 
-| Package | Price | Feeds |
-|---|---|---|
-| Light dinner | MX$1,390 | 4 |
-| Dinner | MX$3,090 | 4 |
-| Deluxe dinner | MX$3,600 | 6 |
-| By the kilo | MX$240 to 1,700 | |
+| Package | Feeds | Price | Each |
+|---|---|---|---|
+| Light dinner | 4 | MX$1,390 | **$20** |
+| Dinner | 4 | MX$3,090 | **$45** |
+| Deluxe dinner | 6 | MX$3,600 | **$35** |
+| By the kilo | | MX$240 to 1,700 | |
 
 Pickup 13:00 to 17:00 on 24 and 31 December. **Order 48 hours ahead**, by phone.
 
-**Madereros**, Calle Gral. Antonio Leon 72, San Miguel Chapultepec. MX$900 per person, same 13:00 to 17:00 window, **order by 29 December**, via Instagram @madereros.mx.
+**Madereros**, Calle Gral. Antonio Leon 72, San Miguel Chapultepec. MX$900 each, about **$53 per person**, same 13:00 to 17:00 window, **order by 29 December**, via Instagram @madereros.mx.
 
 **Price caveat:** the source for both is the 2023 holiday cycle. The structure is stable year to year, the prices are not. Add thirty or forty percent for inflation, and the 2026 menus will not publish until late November.
 
@@ -77,9 +79,9 @@ One place in the neighborhood, shutting at seven. Rappi, Uber Eats and Didi all 
 | **7 to 12** | **MX$1,177** |
 | 13+ | MX$1,150 |
 
-For 8: MX$9,416, about **$554**. All-inclusive: the chef comes to the house, sources and buys every ingredient, cooks, runs full table service, and cleans the kitchen. **Not** included: tableware, glassware, drinks.
+That is about **$69 each**. All-inclusive: the chef comes to the house, sources and buys every ingredient, cooks, runs full table service, and cleans the kitchen. **Not** included: tableware, glassware, drinks.
 
-31 December can be requested. Their own wording is that prices move with the season and December books first, so expect a premium. Even at double it lands near $1,100.
+31 December can be requested. Their own wording is that prices move with the season and December books first, so expect a premium. Even at double it lands near $138 each.
 
 Other platforms worth quoting against it: Cozymeal, miummium, Silvia Private Chef.
 
@@ -92,17 +94,17 @@ Other platforms worth quoting against it: Cozymeal, miummium, Silvia Private Che
 
 ## Taquiza has a hard floor
 
-A taquero at the house would suit a rooftop party perfectly and the rate is only MX$115 to MX$200 a head. But **most Mexico City providers set a 50 person minimum.** At 8 you either pay a renegotiated price or get turned down. Worth one phone call, not worth planning around.
+A taquero at the house would suit a rooftop party perfectly and the rate is only MX$115 to MX$200 a head, about $7 to $12 each. But **most Mexico City providers set a 50 person minimum.** At 8 you either pay a renegotiated rate or get turned down. Worth one phone call, not worth planning around.
 
 ## The galas, for reference
 
-| Venue | Price | Notes |
+| Venue | Each | Notes |
 |---|---|---|
-| St. Regis | MX$5,500 per adult, ~$2,593 for 8 | 20:00 to 01:00. The only one with a published price. |
-| Cityzen | MX$24,000 / 46,000 / 66,000 per table | 38th floor. Top tier seats 6, so confirm an 8 top. |
+| St. Regis | MX$5,500, **$324** | 20:00 to 01:00. The only one with a published per-head price. |
+| Cityzen | MX$24,000 / 46,000 / 66,000 per table | Priced per table, not per head. 38th floor, top tier seats 6, so confirm an 8 top. |
 | Four Seasons Il Becco | unpublished | Private terrace plus Fifty Mils after party, 23:00 to 03:30 |
-| Chambao | MX$4,140 per person | Polanco, four courses, excludes drinks |
-| Garum | MX$2,300 per person | Polanco, six courses |
+| Chambao | MX$4,140, **$244** | Polanco, four courses, excludes drinks |
+| Garum | MX$2,300, **$135** | Polanco, six courses |
 
 **Nostos** runs a la carte with no minimum consumption and extended hours on 31 December, which makes it the least painful restaurant option if the group wants to go out.
 

@@ -42,10 +42,12 @@ taxes:
   cdmx_lodging: 19.5%   # 16% IVA + 3.5% CDMX lodging tax
   quintana_roo: 21%     # 16% IVA + 5% Quintana Roo ISH
 
-totals_usd:
-  trip_all_8: 38700
-  per_person_full_trip: 4876
-  per_person_city_only: 4741
+# Per person only. Group totals are deliberately not tracked anywhere in this
+# repo: people pay for themselves, and a whole-trip number nobody writes a
+# cheque for only made the figures harder to read.
+per_person_usd:
+  full_trip: 4876
+  city_only: 4741
   excludes:
     - personal spending
     - travel insurance

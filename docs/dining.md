@@ -10,16 +10,18 @@ So the real question is not which restaurant is best. It is whether this night w
 
 ## What can actually seat 8
 
-| Venue | Where | Format | Per person | For 8 | Books via |
-|---|---|---|---|---|---|
-| **Pujol** private room | Polanco | Tasting | MX$3,795 | **$1,786** | Direct, window unknown |
-| **Em** main dining room | Condesa | Tasting, 8 to 9 courses | MX$3,900 | **$1,835** | Tock, parties 3 to 8 |
-| Ling Ling | Reforma | A la carte | varies | ~$1,000 | OpenTable, up to 20 |
-| **Balcon del Zocalo** | Centro | Tasting | MX$1,850 | **$871** | OpenTable |
-| Sud 777 | Pedregal | Tasting, 12 courses | MX$1,850 | **$871** | OpenTable, WhatsApp |
-| **Maximo Bistrot** | Roma, walkable | A la carte | MX$500+ | ~$450 to $800 | OpenTable, private dining available |
-| **Rosetta** | Roma, walkable | A la carte | ~$40 to $70 | ~$400 to $700 | OpenTable |
-| La Table Krug | St. Regis | One 8 PM seating | unpublished | unpublished | Direct |
+All prices are **per person**, food only, before drinks and tip.
+
+| Venue | Where | Format | Each | Books via |
+|---|---|---|---|---|
+| **Pujol** private room | Polanco | Tasting | MX$3,795, **$223** | Direct, window unknown |
+| **Em** main dining room | Condesa | Tasting, 8 to 9 courses | MX$3,900, **$229** | Tock, parties 3 to 8 |
+| Ling Ling | Reforma | A la carte | ~**$125** | OpenTable, up to 20 |
+| **Balcon del Zocalo** | Centro | Tasting | MX$1,850, **$109** | OpenTable |
+| Sud 777 | Pedregal | Tasting, 12 courses | MX$1,850, **$109** | OpenTable, WhatsApp |
+| **Maximo Bistrot** | Roma, walkable | A la carte | **$56 to $100** | OpenTable, private dining available |
+| **Rosetta** | Roma, walkable | A la carte | **$50 to $88** | OpenTable |
+| La Table Krug | St. Regis | One 8 PM seating | unpublished | Direct |
 
 ## Ruled out
 
@@ -27,13 +29,13 @@ So the real question is not which restaurant is best. It is whether this night w
 
 ## Pujol, the incumbent
 
-Private dining room, capacity 8 to 14, **minimum 8 tasting menus** which the group meets exactly, and **no room rental fee**. MX$3,795 per person, about $1,786 for 8 before drinks and tip. Seatings are 2:00 PM or 7:30 PM, and the 2:00 PM is unusable because the balloon returns at that hour.
+Private dining room, capacity 8 to 14, **minimum 8 tasting menus** which the group meets exactly, and **no room rental fee**. MX$3,795 each, about **$223 per person** before drinks and tip. Seatings are 2:00 PM or 7:30 PM, and the 2:00 PM is unusable because the balloon returns at that hour.
 
-Cancellation is MX$2,000 per person inside 48 hours. **Pujol does not book through OpenTable** and its booking window is unknown, which makes it the biggest blind spot on the whole trip.
+Cancellation is MX$2,000 each (about $118) inside 48 hours. **Pujol does not book through OpenTable** and its booking window is unknown, which makes it the biggest blind spot on the whole trip.
 
 ## Em, the real peer
 
-One Michelin star 2024 through 2026, number 71 in Latin America's 50 Best. **Main dining room takes parties of 3 to 8**, so 8 fits with nothing to negotiate. MX$3,900 per person with a MX$2,000 per person deposit, so about $941 due at booking.
+One Michelin star 2024 through 2026, number 71 in Latin America's 50 Best. **Main dining room takes parties of 3 to 8**, so 8 fits with nothing to negotiate. MX$3,900 each, about **$229 per person**, with a MX$2,000 deposit per person (about $118 each) due at booking.
 
 Two things no write-up mentions:
 
@@ -43,16 +45,16 @@ Two things no write-up mentions:
 
 ## If the balloon stays on 2 January
 
-The honest pick is **Maximo Bistrot** or **Rosetta**. One Michelin star between them, both a la carte so people order to their appetite, both walkable from the house so there is no car at either end, and both roughly a quarter of Pujol's cost.
+The honest pick is **Maximo Bistrot** or **Rosetta**. One Michelin star between them, both a la carte so people order to their appetite, both walkable from the house so there is no car at either end, and both roughly a quarter of Pujol's price per head.
 
 - **Maximo Bistrot**, Avenida Alvaro Obregon 65 Bis, Roma. Private dining with notice. One Michelin star 2025. **Window is one month out, not 90 days**, so 2 January opens around 2 December. rsvp@maximobistrot.com.mx, +52 55 5525 2661.
-- **Rosetta**, in a Roma mansion. A la carte, dishes MX$240 to MX$610, about $40 per person average. One reviewer booked four months out for a party of 10 plus.
+- **Rosetta**, in a Roma mansion. A la carte, dishes MX$240 to MX$610, about **$50 to $88 each**. One reviewer booked four months out for a party of 10 plus.
 
 ## Worth a look either way
 
-**Balcon del Zocalo**, 6th floor of the Zocalo Central Hotel, 5 de Mayo 61, facing the Cathedral. Tasting menu MX$1,850, less than half Pujol, with the cathedral view that was on Krysta's own list. Seasonal pairing MX$1,650. +52 55 5130 5134.
+**Balcon del Zocalo**, 6th floor of the Zocalo Central Hotel, 5 de Mayo 61, facing the Cathedral. Tasting menu MX$1,850, about **$109 each**, less than half Pujol, with the cathedral view that was on Krysta's own list. Seasonal pairing MX$1,650. +52 55 5130 5134.
 
-**Sud 777** is the same MX$1,850 for twelve courses but sits in Jardines del Pedregal, 35 to 45 minutes south. That kills it for this night.
+**Sud 777** is the same MX$1,850 each for twelve courses but sits in Jardines del Pedregal, 35 to 45 minutes south. That kills it for this night.
 
 ## Other nights
 
