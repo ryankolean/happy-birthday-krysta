@@ -2,126 +2,251 @@
   "Roma Norte, Cuauhtemoc, Mexico City": {
     "lat": 19.4183227,
     "lon": -99.1625655,
-    "matched": "Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+    "matched": "Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
   },
   "Tennyson 133, Polanco, Mexico City": {
     "lat": 19.4305785,
     "lon": -99.1951637,
-    "matched": "Calle Alfredo Tennyson, Polanco 4ª Sección, Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11550, Mexico"
+    "matched": "Calle Alfredo Tennyson, Polanco 4\u00aa Secci\u00f3n, Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11550, Mexico"
   },
   "Avenida Amsterdam 76, Condesa, Mexico City": {
     "lat": 19.4140367,
     "lon": -99.1700288,
-    "matched": "76, Avenida Amsterdam, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+    "matched": "76, Avenida Amsterdam, Hip\u00f3dromo, Condesa, Mexico City, Cuauht\u00e9moc, Mexico City, 06100, Mexico"
   },
   "Colima 166, Roma Norte, Mexico City": {
     "lat": 19.4197702,
     "lon": -99.1597721,
-    "matched": "166, Calle Colima, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+    "matched": "166, Calle Colima, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
   },
   "Avenida Alvaro Obregon 65 Bis, Roma Norte, Mexico City": {
     "lat": 19.4190015,
     "lon": -99.1580885,
-    "matched": "65 BIS, Avenida Álvaro Obregón, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+    "matched": "65 BIS, Avenida \u00c1lvaro Obreg\u00f3n, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
   },
   "Paseo de la Reforma 509, Cuauhtemoc, Mexico City": {
     "lat": 19.4241618,
     "lon": -99.1757815,
-    "matched": "Chapultepec Uno, 509, Avenida Paseo de la Reforma, Cuauhtémoc, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06500, Mexico"
+    "matched": "Chapultepec Uno, 509, Avenida Paseo de la Reforma, Cuauht\u00e9moc, Condesa, Mexico City, Cuauht\u00e9moc, Mexico City, 06500, Mexico"
   },
   "Boulevard de la Luz 777, Jardines del Pedregal, Mexico City": {
     "lat": 19.3135169,
     "lon": -99.2114728,
-    "matched": "Sud777, 777, Boulevard de la Luz, Jardines del Pedregal, Pedregal de San Ángel, Mexico City, Álvaro Obregón, Mexico City, 01900, Mexico"
+    "matched": "Sud777, 777, Boulevard de la Luz, Jardines del Pedregal, Pedregal de San \u00c1ngel, Mexico City, \u00c1lvaro Obreg\u00f3n, Mexico City, 01900, Mexico"
   },
   "Paseo de la Reforma 439, Cuauhtemoc, Mexico City": {
     "lat": 19.4258034,
     "lon": -99.1723876,
-    "matched": "Torre Libertad, 439, Avenida Paseo de la Reforma, Cuauhtémoc, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06500, Mexico"
+    "matched": "Torre Libertad, 439, Avenida Paseo de la Reforma, Cuauht\u00e9moc, Condesa, Mexico City, Cuauht\u00e9moc, Mexico City, 06500, Mexico"
   },
   "Durango 200, Roma Norte, Mexico City": {
     "lat": 19.4195002,
     "lon": -99.1671992,
-    "matched": "200, Calle Durango, Roma Norte, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+    "matched": "200, Calle Durango, Roma Norte, Condesa, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
   },
   "Tabasco 46, Roma Norte, Mexico City": {
     "lat": 19.4198631,
     "lon": -99.1556364,
-    "matched": "46, Calle Tabasco, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+    "matched": "46, Calle Tabasco, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
   },
   "Agustin Melgar 6, Condesa, Mexico City": {
     "lat": 19.418515,
     "lon": -99.176234,
-    "matched": "Calle Agustín Melgar, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06140, Mexico"
+    "matched": "Calle Agust\u00edn Melgar, Condesa, Mexico City, Cuauht\u00e9moc, Mexico City, 06140, Mexico"
   },
   "Orizaba 127, Roma Norte, Mexico City": {
     "lat": 19.4119594,
     "lon": -99.1581199,
-    "matched": "Calle Orizaba, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+    "matched": "Calle Orizaba, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
   },
   "Puebla 371, Roma Norte, Mexico City": {
     "lat": 19.4205069,
     "lon": -99.1732177,
-    "matched": "371, Calle Puebla, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+    "matched": "371, Calle Puebla, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
   },
   "Calle General Antonio Leon 72, San Miguel Chapultepec, Mexico City": {
     "lat": 19.4139178,
     "lon": -99.1857838,
-    "matched": "Madereros, Calle General Antonio Leon 72, Calle General Antonio León, San Miguel Chapultepec 2ª Sección, San Miguel Chapultepec, Mexico City, Miguel Hidalgo, Mexico City, 11850, Mexico"
+    "matched": "Madereros, Calle General Antonio Leon 72, Calle General Antonio Le\u00f3n, San Miguel Chapultepec 2\u00aa Secci\u00f3n, San Miguel Chapultepec, Mexico City, Miguel Hidalgo, Mexico City, 11850, Mexico"
   },
   "Campeche 101, Roma Sur, Mexico City": {
     "lat": 19.4100724,
     "lon": -99.163471,
-    "matched": "Calle Campeche, Roma Sur, Roma, Mexico City, Cuauhtémoc, Mexico City, 06760, Mexico"
+    "matched": "Calle Campeche, Roma Sur, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06760, Mexico"
   },
   "Avenida Alvaro Obregon 106, Roma Norte, Mexico City": {
     "lat": 19.4181496,
     "lon": -99.1595255,
-    "matched": "106, Avenida Álvaro Obregón, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+    "matched": "106, Avenida \u00c1lvaro Obreg\u00f3n, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
   },
   "Rio Panuco 128, Cuauhtemoc, Mexico City": {
     "lat": 19.4303826,
     "lon": -99.1681137,
-    "matched": "Calle Río Pánuco, Cuauhtémoc, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06500, Mexico"
+    "matched": "Calle R\u00edo P\u00e1nuco, Cuauht\u00e9moc, Condesa, Mexico City, Cuauht\u00e9moc, Mexico City, 06500, Mexico"
   },
   "Amberes 65, Juarez, Mexico City": {
     "lat": 19.4256996,
     "lon": -99.1653446,
-    "matched": "Calle Amberes, Juárez, Roma, Mexico City, Cuauhtémoc, Mexico City, 06600, Mexico"
+    "matched": "Calle Amberes, Ju\u00e1rez, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06600, Mexico"
   },
   "Oaxaca 87, Roma Norte, Mexico City": {
     "lat": 19.4191056,
     "lon": -99.1674891,
-    "matched": "87, Avenida Oaxaca, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+    "matched": "87, Avenida Oaxaca, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
   },
   "Avenida Chapultepec 461, Roma Norte, Mexico City": {
     "lat": 19.4221513,
     "lon": -99.1694835,
-    "matched": "Avenida Chapultepec, Roma Norte, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+    "matched": "Avenida Chapultepec, Roma Norte, Condesa, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
   },
   "Avenida Mexico, Condesa, Mexico City": {
     "lat": 19.4138811,
     "lon": -99.1678284,
-    "matched": "Avenida México, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+    "matched": "Avenida M\u00e9xico, Hip\u00f3dromo, Condesa, Mexico City, Cuauht\u00e9moc, Mexico City, 06100, Mexico"
   },
   "Quintonil, Isaac Newton, Polanco, Ciudad de Mexico": {
     "lat": 19.4308184,
     "lon": -99.1918345,
-    "matched": "Quintonil, 55, Calle Isaac Newton, Polanco 4ª Sección, Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11550, Mexico"
+    "matched": "Quintonil, 55, Calle Isaac Newton, Polanco 4\u00aa Secci\u00f3n, Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11550, Mexico"
   },
   "Museo Nacional de Antropologia, Ciudad de Mexico": {
     "lat": 19.4261524,
     "lon": -99.1866516,
-    "matched": "Museo Nacional de Antropología, Plaza de acceso, 1a. Sección del Bosque de Chapultepec, Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11560, Mexico"
+    "matched": "Museo Nacional de Antropolog\u00eda, Plaza de acceso, 1a. Secci\u00f3n del Bosque de Chapultepec, Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11560, Mexico"
   },
   "Plaza de la Constitucion, Ciudad de Mexico": {
     "lat": 19.4326468,
     "lon": -99.1331985,
-    "matched": "Constitution Square, Centro, Mexico City, Cuauhtémoc, Mexico City, 06060, Mexico"
+    "matched": "Constitution Square, Centro, Mexico City, Cuauht\u00e9moc, Mexico City, 06060, Mexico"
   },
   "5 de Mayo 61, Centro, Cuauhtemoc, Ciudad de Mexico, Mexico": {
     "lat": 19.4338573,
     "lon": -99.1343091,
-    "matched": "61, Calle 5 de Mayo, Centro, Mexico City, Cuauhtémoc, Mexico City, 06060, Mexico"
+    "matched": "61, Calle 5 de Mayo, Centro, Mexico City, Cuauht\u00e9moc, Mexico City, 06060, Mexico"
+  },
+  "La Unica, Polanco, Ciudad de Mexico": {
+    "lat": 19.4313519,
+    "lon": -99.197799,
+    "matched": "Mar y Tierra La \u00danica, 98, Calle Anatole France, Polanco 3\u00aa Secci\u00f3n, Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11560, Mexico"
+  },
+  "San Angel Inn, Diego Rivera 50, San Angel, Ciudad de Mexico": {
+    "lat": 19.3495249,
+    "lon": -99.1979181,
+    "matched": "San Angel Inn, 50, Calle Diego Rivera, Colonia San \u00c1ngel Inn, San \u00c1ngel, Mexico City, \u00c1lvaro Obreg\u00f3n, Mexico City, 01060, Mexico"
+  },
+  "Madre Cafe, Roma Norte, Ciudad de Mexico": {
+    "lat": 19.4170708,
+    "lon": -99.1596032,
+    "matched": "Madre Caf\u00e9, Calle Orizaba, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
+  },
+  "Panaderia Rosetta, Colima 179, Roma Norte, Ciudad de Mexico": {
+    "lat": 19.4199737,
+    "lon": -99.1606103,
+    "matched": "Rosetta, 179, Calle Colima, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
+  },
+  "Mi Compa Chava, Roma Norte, Ciudad de Mexico": {
+    "lat": 19.4152137,
+    "lon": -99.1621552,
+    "matched": "Mi Compa Chava, Calle Zacatecas, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
+  },
+  "Calle Zamora 31, Condesa, Ciudad de Mexico": {
+    "lat": 19.4185806,
+    "lon": -99.1770744,
+    "matched": "31, Calle Zamora, Condesa, San Miguel Chapultepec, Mexico City, Cuauht\u00e9moc, Mexico City, 06140, Mexico"
+  },
+  "Expendio de Maiz Sin Nombre, Yucatan 84, Roma Norte, Ciudad de Mexico": {
+    "lat": 19.4142114,
+    "lon": -99.1628312,
+    "matched": "Expendio de Maiz Sin Nombre, 84, Avenida Yucat\u00e1n, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
+  },
+  "Avenida Juarez 70, Colonia Centro, Ciudad de Mexico": {
+    "lat": 19.4347237,
+    "lon": -99.1460782,
+    "matched": "El Cardenal, 70, Avenida Ju\u00e1rez, Centro, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06050, Mexico"
+  },
+  "Tacos del Valle, Ciudad de Mexico": {
+    "lat": 19.3971844,
+    "lon": -99.1662302,
+    "matched": "Tacos Argentinos, Calle Adolfo Prieto, Colonia Del Valle, La Piedad, Mexico City, Benito Ju\u00e1rez, Mexico City, 03103, Mexico"
+  },
+  "Tacos Atarantados, Ciudad de Mexico": {
+    "lat": 19.4124385,
+    "lon": -99.166639,
+    "matched": "Tacos Atarantados, 337, Avenida Insurgentes Sur, Hip\u00f3dromo, Condesa, Mexico City, Cuauht\u00e9moc, Mexico City, 06100, Mexico"
+  },
+  "Taqueria Orinoco, Roma Norte, Ciudad de Mexico": {
+    "lat": 19.418156,
+    "lon": -99.1592321,
+    "matched": "Taquer\u00eda Orinoco, 100, Avenida \u00c1lvaro Obreg\u00f3n, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
+  },
+  "Tacos El Paisa, Ciudad de Mexico": {
+    "lat": 19.3554065,
+    "lon": -99.0992204,
+    "matched": "Tacos El Paisa, Calzada Ermita Iztapalapa, Colonia El Santuario, Mexico City, Iztapalapa, Mexico City, 09820, Mexico"
+  },
+  "Turin 52, Juarez, Ciudad de Mexico": {
+    "lat": 19.4270448,
+    "lon": -99.155649,
+    "matched": "Hanky Panky Cocktail Bar, 52, Calle Turin, Ju\u00e1rez, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06600, Mexico"
+  },
+  "Petrarca 254, Polanco, Ciudad de Mexico": {
+    "lat": 19.4336326,
+    "lon": -99.18545,
+    "matched": "Pujol, 254, Calle Francisco Petrarca, Polanco 5\u00aa Secci\u00f3n, Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11570, Mexico"
+  },
+  "Calle Orizaba 76, Roma Norte, Ciudad de Mexico": {
+    "lat": 19.4203478,
+    "lon": -99.1600084,
+    "matched": "76, Calle Orizaba, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
+  },
+  "Tonala 15, Roma Norte, Ciudad de Mexico": {
+    "lat": 19.4210726,
+    "lon": -99.1635314,
+    "matched": "15, Calle Tonal\u00e1, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
+  },
+  "Avenida Alvaro Obregon 190, Roma Norte, Ciudad de Mexico": {
+    "lat": 19.4177479,
+    "lon": -99.1619286,
+    "matched": "Avenida \u00c1lvaro Obreg\u00f3n, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
+  },
+  "Avenida Yucatan 84b, Roma Norte, Ciudad de Mexico": {
+    "lat": 19.4132946,
+    "lon": -99.1616717,
+    "matched": "Avenida Yucat\u00e1n, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
+  },
+  "Havre 42, Juarez, Ciudad de Mexico": {
+    "lat": 19.4265628,
+    "lon": -99.1609807,
+    "matched": "42, Calle Havre, Ju\u00e1rez, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06600, Mexico"
+  },
+  "Form Matter, Ciudad de Mexico": {
+    "lat": 19.4148112,
+    "lon": -99.1564747,
+    "matched": "FORM + MATTER (FO+MA), Calle San Luis Potos\u00ed, Roma Norte, Roma, Mexico City, Cuauht\u00e9moc, Mexico City, 06700, Mexico"
+  },
+  "Cometa, Ciudad de Mexico": {
+    "lat": 19.3400204,
+    "lon": -99.0109538,
+    "matched": "Calle Continuaci\u00f3n Cometa, Colonia Lomas de la Estancia, Mexico City, Iztapalapa, Pueblo Santiago Acahualtepec, Mexico City, 09640, Mexico"
+  },
+  "Bosque de Chapultepec, Ciudad de Mexico": {
+    "lat": 19.4126439,
+    "lon": -99.2038347,
+    "matched": "2a. Secci\u00f3n del Bosque de Chapultepec, Lomas de Chapultepec, Mexico City, Miguel Hidalgo, Mexico City, 11100, Mexico"
+  },
+  "Ribera de San Cosme 56, San Rafael, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4391743,
+    "lon": -99.1560375,
+    "matched": "Avenida Insurgentes Centro, San Rafael, Mexico City, Cuauht\u00e9moc, Mexico City, 06470, Mexico"
+  },
+  "Bolivar 56, Centro, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4304123,
+    "lon": -99.1386622,
+    "matched": "56, Calle Sim\u00f3n Bol\u00edvar, Centro, Mexico City, Cuauht\u00e9moc, Mexico City, 06060, Mexico"
+  },
+  "Avenida Nuevo Leon 68, Condesa, Ciudad de Mexico": {
+    "lat": 19.4128303,
+    "lon": -99.1714835,
+    "matched": "68, Avenida Nuevo Le\u00f3n, Hip\u00f3dromo, Condesa, Mexico City, Cuauht\u00e9moc, Mexico City, 06100, Mexico"
   }
 }

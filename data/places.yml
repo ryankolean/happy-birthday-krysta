@@ -23,6 +23,9 @@ categories:
   market:
     label: Markets and food pickup
     color: "#B5541F"
+  taco:
+    label: Tacos and street food
+    color: "#C23B22"
   spot:
     label: Parks, shops and sights
     color: "#4A6FA5"
@@ -195,3 +198,302 @@ places:
     address: Plaza de la Constitucion, Ciudad de Mexico
     neighborhood: Centro Historico
     note: Dark on New Year's Eve this year, the city confirmed no programming.
+
+  # ---------- from the Instagram saves, October 2026 ----------
+  # Sources are the posts Ryan saved to the mex-city collection. A star means
+  # the poster said they actually ate or drank there, not just saved it.
+
+  # Dinner, from @thatonepointofview's saved list
+  - name: La Unica
+    category: fine
+    address: La Unica, Polanco, Ciudad de Mexico
+    neighborhood: Polanco
+    source: instagram @thatonepointofview
+
+  - name: Campomar Masaryk
+    category: fine
+    address: Campomar, Presidente Masaryk, Polanco, Ciudad de Mexico
+    neighborhood: Polanco
+    source: instagram @thatonepointofview
+
+  - name: Esquina Comun
+    category: fine
+    address: Esquina Comun, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    source: instagram @thatonepointofview
+
+  - name: Wagyu San
+    category: fine
+    address: Wagyu San, Polanco, Ciudad de Mexico
+    neighborhood: Polanco
+    note: Was already on Krysta's own list. Sushi and steak, views of the Angel.
+    source: instagram @thatonepointofview
+
+  - name: Pandora Rooftop
+    category: fine
+    address: Pandora Rooftop, Ciudad de Mexico
+    note: Already on Krysta's list. Rooftop, octopus and steak.
+    source: instagram @thatonepointofview
+
+  - name: Taverna
+    category: fine
+    address: Taverna, Polanco, Ciudad de Mexico
+    neighborhood: Polanco
+    note: Mediterranean and seafood. Also runs a New Year's Eve menu.
+    source: instagram @thatonepointofview
+
+  - name: San Angel Inn
+    category: fine
+    address: San Angel Inn, Diego Rivera 50, San Angel, Ciudad de Mexico
+    neighborhood: San Angel
+    note: No Michelin star yet, but named as deserving one.
+    source: instagram @talianatashamereles
+
+  # Brunch and lunch
+  - name: Margot
+    category: casual
+    address: Margot, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    source: instagram @thatonepointofview
+
+  - name: Saint
+    category: casual
+    address: Saint, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    source: instagram @thatonepointofview
+
+  - name: Madre Cafe
+    category: casual
+    address: Madre Cafe, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    source: instagram @thatonepointofview
+
+  - name: Maizajo
+    category: casual
+    address: Maizajo, Ciudad de Mexico
+    note: Nixtamal and tortilla specialists.
+    source: instagram @thatonepointofview
+
+  - name: Panaderia Rosetta
+    category: casual
+    address: Panaderia Rosetta, Colima 179, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: The bakery arm of Rosetta. Guava roll is the thing.
+    source: instagram @thatonepointofview
+
+  - name: Jenni's Quesadillas
+    category: casual
+    address: Jenni's Quesadillas, Ciudad de Mexico
+    source: instagram @thatonepointofview, @itsalanbarr
+
+  - name: Mi Compa Chava
+    category: casual
+    address: Mi Compa Chava, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: Sinaloan seafood. Was already on Krysta's own list.
+    source: instagram @thatonepointofview, @itsalanbarr
+
+  - name: De Huevos
+    category: casual
+    address: Calle Zamora 31, Condesa, Ciudad de Mexico
+    neighborhood: Condesa
+    note: >
+      Breakfast sandwiches, rare in this city. DE HUEVOS MX$179, breakfast
+      burrito with chilaquiles MX$175. Open Mon-Fri 8 to 16, Sat-Sun 9 to 16.
+      They deliver.
+    source: instagram @tastemakermike
+
+  - name: Expendio de Maiz
+    category: casual
+    address: Expendio de Maiz Sin Nombre, Yucatan 84, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: No menu, they just feed you until you say stop. No reservations.
+    source: instagram @johnny.novo, @itsalanbarr
+
+  - name: El Cardenal
+    category: casual
+    address: Avenida Juarez 70, Colonia Centro, Ciudad de Mexico
+    neighborhood: Centro
+    note: Traditional breakfast, table-side hot chocolate and sweet breads.
+    source: instagram @aver.network, @unnipulipra
+
+  - name: Sanborns de los Azulejos
+    category: casual
+    address: Avenida Francisco I Madero 4, Centro Historico, Ciudad de Mexico
+    neighborhood: Centro Historico
+    note: Breakfast inside the House of Tiles. Worth it for the room.
+    source: instagram @aver.network
+
+  - name: El Moro
+    category: casual
+    address: Churreria El Moro, Eje Central Lazaro Cardenas 42, Centro, Ciudad de Mexico
+    neighborhood: Centro
+    note: Churros and thick chocolate, open late.
+    source: instagram @itsalanbarr
+
+  - name: Pasteleria Ideal
+    category: casual
+    address: Pasteleria Ideal, 16 de Septiembre 18, Centro, Ciudad de Mexico
+    neighborhood: Centro
+    source: instagram @itsalanbarr
+
+  - name: Lindy
+    category: casual
+    address: Lindy, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: Classic flan.
+    source: instagram @unnipulipra
+
+  - name: Reyna Nata
+    category: casual
+    address: Reyna Nata, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: Basque cheesecake.
+    source: instagram @unnipulipra
+
+  # Tacos and street food
+  - name: Tacos del Valle
+    category: taco
+    address: Tacos del Valle, Ciudad de Mexico
+    note: >
+      Rated 9/10 by @placesnoted and starred by @thatonepointofview as actually
+      eaten. Trompo-style pastor over open flame. The one where the hype and
+      the plate agree.
+    source: instagram @placesnoted, @thatonepointofview
+
+  - name: Tacos La Once Mil
+    category: taco
+    address: Tacos La Once Mil, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Rated 10/10. Wood-fired Wagyu, filet mignon and Prime skirt, tortillas
+      made to order, spicy tuna tostada. Pricier than a normal taqueria.
+    source: instagram @placesnoted
+
+  - name: Tacos Atarantados
+    category: taco
+    address: Tacos Atarantados, Ciudad de Mexico
+    note: Rated 8.5/10. Al pastor over real charcoal, which is rarer than it should be here.
+    source: instagram @placesnoted
+
+  - name: Milpa
+    category: taco
+    address: Milpa, Ciudad de Mexico
+    note: >
+      Rated 7/10 and called the non-hyped pick, where you see locals rather than
+      tourists. Open kitchen, seating spills outside, soft shell crab taco.
+    source: instagram @placesnoted
+
+  - name: Tacos Los Alexis
+    category: taco
+    address: Tacos Los Alexis, Ciudad de Mexico
+    note: Rated 6.5/10. Short menu, reasonably priced, never lets you down but will not amaze.
+    source: instagram @placesnoted
+
+  - name: La Ochenta y Nueve
+    category: taco
+    address: La 89, Ciudad de Mexico
+    note: >
+      Rated 5.5/10, the weakest on the list. Quesabirria and campechano, but
+      meat and oil overwhelm the tortilla. Only if you are already nearby.
+    source: instagram @placesnoted
+
+  - name: Taqueria Orinoco
+    category: taco
+    address: Taqueria Orinoco, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: Starred as actually eaten. Open very late.
+    source: instagram @thatonepointofview
+
+  - name: El Califa de Leon
+    category: taco
+    address: Ribera de San Cosme 56, San Rafael, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: San Rafael
+    note: The one-Michelin-star taco stand. Four tacos on the menu, cash only, tiny.
+    source: instagram @thatonepointofview, @itsalanbarr
+
+  - name: Los Cocuyos
+    category: taco
+    address: Bolivar 56, Centro, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Centro
+    note: Open almost around the clock. Suadero and the offal cuts.
+    source: instagram @itsalanbarr
+
+  - name: Tacos El Paisa
+    category: taco
+    address: Tacos El Paisa, Ciudad de Mexico
+    source: instagram @itsalanbarr
+
+  # Bars
+  - name: Hanky Panky
+    category: bar
+    address: Turin 52, Juarez, Ciudad de Mexico
+    neighborhood: Juarez
+    note: Speakeasy, entrance through an unmarked door. Reservations needed.
+    source: instagram @aver.network
+
+  - name: Ticuchi
+    category: bar
+    address: Petrarca 254, Polanco, Ciudad de Mexico
+    neighborhood: Polanco
+    note: Enrique Olvera's agave bar, next door to Pujol.
+    source: instagram @aver.network
+
+  - name: El Desconocido
+    category: bar
+    address: Calle Orizaba 76, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    source: instagram @aver.network
+
+  - name: Bar Latosa
+    category: bar
+    address: Tonala 15, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    source: instagram @aver.network
+
+  - name: Dacopa
+    category: bar
+    address: Avenida Alvaro Obregon 190, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    source: instagram @aver.network
+
+  - name: Salon Palomilla
+    category: bar
+    address: Avenida Yucatan 84b, Roma Norte, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: Also starred by @thatonepointofview as actually visited.
+    source: instagram @aver.network, @thatonepointofview
+
+  - name: Ruido Bar
+    category: bar
+    address: Havre 42, Juarez, Ciudad de Mexico
+    neighborhood: Juarez
+    source: instagram @aver.network
+
+  - name: FORM + MATTER
+    category: bar
+    address: Form Matter, Ciudad de Mexico
+    note: Starred as actually visited.
+    source: instagram @thatonepointofview
+
+  - name: Musak
+    category: bar
+    address: Avenida Nuevo Leon 68, Condesa, Ciudad de Mexico
+    neighborhood: Condesa
+    source: instagram @thatonepointofview
+
+  - name: Cometa Disco
+    category: bar
+    address: Cometa, Ciudad de Mexico
+    note: Disco and late-night dancing.
+    source: instagram @adiavital0
+
+  # Sights
+  - name: Chapultepec ring stall 546
+    category: spot
+    address: Bosque de Chapultepec, Ciudad de Mexico
+    precision: approximate
+    note: >
+      Custom engraved rings, stall 546, near the Monument to the Heroes. Stalls
+      are not in numeric order, look for the queue. From MX$150, bring cash.
+    source: instagram @placesnoted

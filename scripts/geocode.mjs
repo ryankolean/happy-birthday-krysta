@@ -18,6 +18,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const cachePath = join(root, 'data', 'geocache.json');
 
 const UA = 'happy-birthday-krysta/1.0 (trip planning site; github.com/ryankolean/happy-birthday-krysta)';
+
+// Greater Mexico City, generously drawn. Every pin has to land inside this.
+const BBOX = { minLat: 19.2, maxLat: 19.6, minLon: -99.4, maxLon: -98.9 };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const places = yaml.load(readFileSync(join(root, 'data', 'places.yml'), 'utf8'));
@@ -48,13 +51,22 @@ for (const p of todo) {
     if (!json.length) {
       failed.push(`${p.name}: no match for "${p.address}"`);
     } else {
-      cache[p.address] = {
-        lat: Number(json[0].lat),
-        lon: Number(json[0].lon),
-        matched: json[0].display_name,
-      };
-      ok++;
-      console.log(`  ok   ${p.name}`);
+      const lat = Number(json[0].lat);
+      const lon = Number(json[0].lon);
+
+      // Nominatim will happily return a same-named street on another
+      // continent. "La 89" resolved to Santiago, Chile. Anything outside
+      // greater Mexico City is rejected rather than cached, because a wrong
+      // pin that looks right is worse than a missing one.
+      if (lat < BBOX.minLat || lat > BBOX.maxLat || lon < BBOX.minLon || lon > BBOX.maxLon) {
+        failed.push(
+          `${p.name}: match was outside Mexico City (${lat.toFixed(4)}, ${lon.toFixed(4)}) - "${json[0].display_name.slice(0, 70)}"`
+        );
+      } else {
+        cache[p.address] = { lat, lon, matched: json[0].display_name };
+        ok++;
+        console.log(`  ok   ${p.name}`);
+      }
     }
   } catch (err) {
     failed.push(`${p.name}: ${err.message}`);
