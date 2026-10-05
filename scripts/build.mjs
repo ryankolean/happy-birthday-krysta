@@ -3,6 +3,7 @@
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
 import { join, dirname } from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { marked } from 'marked';
@@ -97,6 +98,7 @@ const nt = (s) => linkify(esc(tidy(s)));
 const PAGES = [
   { file: 'index.html', label: 'The trip' },
   { file: 'itinerary.html', label: 'Itinerary' },
+  { file: 'stays.html', label: 'Accommodations' },
   { file: 'map.html', label: 'Map' },
   { file: 'costs.html', label: 'Costs' },
   { file: 'dining.html', label: 'Birthday dinner' },
@@ -122,7 +124,7 @@ function shell({ title, current, body }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=${CSS_HASH}">
 </head>
 <body>
 <nav class="topnav"><div class="navinner">${nav}</div></nav>
@@ -364,16 +366,50 @@ td small { color: var(--muted); }
 /* task list */
 ol.tasks { list-style: none; margin: 0; padding: 0; counter-reset: t; }
 ol.tasks li {
-  counter-increment: t; display: grid; grid-template-columns: 30px 1fr;
-  gap: 2px 14px; padding: 15px 0; border-bottom: 1px solid var(--rule); font-size: 14.5px;
+  counter-increment: t;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  column-gap: 16px;
+  row-gap: 0;
+  align-items: start;
+  padding: 20px 0 22px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 14.5px;
 }
+ol.tasks li:last-child { border-bottom: none; }
 ol.tasks li::before {
   content: counter(t, decimal-leading-zero);
-  font-family: var(--f-mono); font-size: 11.5px; font-weight: 500; color: var(--teal); padding-top: 4px;
+  grid-column: 1;
+  grid-row: 1;
+  font-family: var(--f-mono); font-size: 11.5px; font-weight: 500;
+  color: var(--teal); padding-top: 3px;
 }
-ol.tasks .tt { color: var(--ink); font-weight: 600; }
-ol.tasks .tw { color: var(--muted); font-size: 13.5px; margin-top: 3px; line-height: 1.5; }
-.when { font-family: var(--f-mono); font-size: 11px; color: var(--marigold); font-weight: 500; }
+/* Every span sits in the text column. Without this the browser auto-flows a
+   task with no date into the 36px number column and renders it one word per
+   line. */
+ol.tasks li > span { grid-column: 2; min-width: 0; }
+ol.tasks .tt {
+  color: var(--ink); font-weight: 600; line-height: 1.45;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 9px;
+}
+ol.tasks .when {
+  justify-self: start;
+  margin-top: 9px;
+  font-family: var(--f-mono); font-size: 10.5px; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--marigold);
+  background: var(--marigold-soft);
+  border-radius: 2px;
+  padding: 3px 8px;
+}
+ol.tasks .tw {
+  color: var(--body); font-size: 13.5px; margin-top: 9px;
+  line-height: 1.65; max-width: 66ch;
+}
+@media (max-width: 520px) {
+  ol.tasks li { grid-template-columns: 28px 1fr; column-gap: 12px; }
+  ol.tasks .tw { font-size: 13px; }
+}
 
 a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: 2px; }
 a:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
@@ -459,6 +495,15 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
 .legitem[aria-pressed="false"] .legpin path { fill: none; stroke: var(--rule-firm); }
 .legitem:hover { border-color: var(--teal); }
 
+.bigline {
+  display: inline-block;
+  font-family: var(--f-body); font-size: 14px; font-weight: 600;
+  color: var(--teal); background: var(--teal-soft);
+  border: 1px solid var(--teal); border-radius: 2px;
+  padding: 10px 16px; text-decoration: none;
+}
+.bigline:hover { background: var(--teal); color: var(--paper); }
+
 .swatch {
   display: inline-block; width: 11px; height: 11px; border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg); margin-right: 9px; vertical-align: baseline;
@@ -468,6 +513,10 @@ footer { margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--rule-f
 footer p { max-width: 70ch; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 `;
+
+// Fingerprint the stylesheet so a deploy actually invalidates it. Without
+// this, a returning visitor gets the cached CSS against the new HTML.
+const CSS_HASH = createHash('sha256').update(CSS).digest('hex').slice(0, 8);
 
 // ---------- index ----------
 
@@ -761,6 +810,131 @@ function buildTasks() {
   return shell({ title: 'What still has to happen', current: 'tasks.html', body: b });
 }
 
+// ---------- accommodations ----------
+
+function buildStays() {
+  const oasis = lodging.properties.find((p) => p.id === 'oasis');
+  const fives = lodging.properties.find((p) => p.id === 'fives');
+  const r = budget.riviera;
+
+  const bullets = (arr) => `<ul>${arr.map((x) => `<li>${nt(x)}</li>`).join('')}</ul>`;
+
+  let b = `<header class="masthead">
+  <p class="eyebrow">Both verified available ${esc(iso(trip.verified))}, neither booked</p>
+  <h1>Where we are staying</h1>
+  <div class="dateline">
+    <div><b>Mexico City</b>${esc(shortDate(oasis.checkin))} to ${esc(shortDate(oasis.checkout))}, ${oasis.nights} nights</div>
+    <div><b>Riviera Maya</b>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}, ${fives.nights} nights</div>
+  </div>
+</header>
+
+<div class="scroller"><table>
+<caption>Both are booked whole and split evenly. Per person in bold.</caption>
+<thead><tr><th>Where</th><th>Dates</th><th>Who</th><th class="n">Whole place</th><th class="n">Each</th></tr></thead><tbody>
+<tr><td><strong>${esc(oasis.name)}</strong><br><small>${esc(oasis.neighborhood)}, Mexico City</small></td>
+<td>${esc(shortDate(oasis.checkin))} to ${esc(shortDate(oasis.checkout))}<br><small>${oasis.nights} nights</small></td>
+<td>${oasis.guests} guests</td>
+<td class="n"><small>${usd(oasis.total_usd)}</small></td><td class="n"><strong>${usd(oasis.per_person_usd)}</strong></td></tr>
+<tr><td><strong>${esc(fives.name)}</strong><br><small>${esc(fives.room_type)}</small></td>
+<td>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}<br><small>${fives.nights} nights</small></td>
+<td>${fives.adults} adults</td>
+<td class="n"><small>${usd(fives.rates_usd.room_only_flexible)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_flexible)}</strong></td></tr>
+</tbody></table></div>
+
+<h2><span class="num">01</span>${esc(oasis.name)}</h2>
+<p class="lede">${esc(oasis.subtitle)}. ${esc(oasis.neighborhood)}, Mexico City.</p>
+
+<p><a class="bigline" href="${esc(oasis.url)}">Open the Airbnb listing</a></p>
+
+<div class="scroller"><table><tbody>
+<tr><th>Check in</th><td>${esc(longDate(oasis.checkin))}</td></tr>
+<tr><th>Check out</th><td>${esc(longDate(oasis.checkout))}, before ${esc(oasis.checkout_time)}</td></tr>
+<tr><th>Nights</th><td>${oasis.nights}</td></tr>
+<tr><th>Guests</th><td>${oasis.guests} of us, sleeps ${oasis.capacity}</td></tr>
+<tr><th>Layout</th><td>${oasis.bedrooms} bedrooms, ${oasis.baths} bathrooms</td></tr>
+<tr><th>Price</th><td><strong>${usd(oasis.total_usd)}</strong> all in, <strong>${usd(oasis.per_person_usd)} each</strong></td></tr>
+<tr><th>Host</th><td>${esc(oasis.host)}, rated ${oasis.rating} from ${oasis.reviews} reviews</td></tr>
+</tbody></table></div>
+
+<h3>Who sleeps where</h3>
+<div class="scroller"><table><thead><tr><th>Bedroom</th><th>Bed</th></tr></thead><tbody>
+${oasis.bed_config.map((x) => `<tr><td>${esc(x.bedroom)}</td><td>${esc(x.bed)}</td></tr>`).join('')}
+</tbody></table></div>
+<p>Three couples take three rooms, the two singles get a room each, and one bedroom is spare. Nobody shares and nobody takes a sofa.</p>
+
+<h3>Why this one</h3>
+${bullets(oasis.why_chosen)}
+
+<div class="note warn">
+  <div class="nh">Cancellation is tighter than the badge says</div>
+  <p>The listing advertises <em>${esc(oasis.cancellation.headline_badge)}</em>. The actual policy is: <strong>${esc(oasis.cancellation.actual)}</strong></p>
+  <p>${nt(oasis.cancellation.warning)}</p>
+</div>
+
+<div class="note">
+  <div class="nh">Worth knowing</div>
+  ${bullets(oasis.flags)}
+</div>
+
+<h2><span class="num">02</span>${esc(fives.name)}</h2>
+<p class="lede">One ${esc(fives.room_type)}, ${fives.size_sqft} sq ft, sleeps up to ${fives.max_occupancy}. Puerto Morelos, between Cancun and Playa del Carmen.</p>
+
+<p><a class="bigline" href="${esc(fives.url)}">Open the resort site</a></p>
+
+<div class="scroller"><table><tbody>
+<tr><th>Check in</th><td>${esc(longDate(fives.checkin))}, from ${esc(fives.checkin_time)}</td></tr>
+<tr><th>Check out</th><td>${esc(longDate(fives.checkout))}, before ${esc(fives.checkout_time)}</td></tr>
+<tr><th>Nights</th><td>${fives.nights}</td></tr>
+<tr><th>Guests</th><td>${fives.adults} adults</td></tr>
+<tr><th>Room</th><td>${esc(fives.room_type)}, ${fives.size_sqft} sq ft</td></tr>
+<tr><th>Availability seen</th><td>${esc(fives.inventory_seen)}, with a ${esc(fives.discount_live)} discount live</td></tr>
+<tr><th>Reservations</th><td>${esc(fives.contact.email)}<br>US and Canada ${esc(fives.contact.us_can)}<br>Direct ${esc(fives.contact.direct)}</td></tr>
+</tbody></table></div>
+
+<h3>The four rate combinations</h3>
+<div class="scroller"><table>
+<caption>All taxes included. Split ${fives.adults} ways, per person in bold.</caption>
+<thead><tr><th>Option</th><th class="n">Non-refundable</th><th class="n">Each</th><th class="n">Flexible</th><th class="n">Each</th></tr></thead><tbody>
+<tr class="pick"><td><strong>Room only</strong> <small>then eat in the village</small></td>
+<td class="n"><small>${usd(fives.rates_usd.room_only_nonrefundable)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_nonrefundable)}</strong></td>
+<td class="n"><small>${usd(fives.rates_usd.room_only_flexible)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_flexible)}</strong></td></tr>
+<tr><td>All inclusive</td>
+<td class="n"><small>${usd(fives.rates_usd.all_inclusive_nonrefundable)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.all_inclusive_nonrefundable)}</strong></td>
+<td class="n"><small>${usd(fives.rates_usd.all_inclusive_flexible)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.all_inclusive_flexible)}</strong></td></tr>
+</tbody></table></div>
+<p><strong>Recommended: ${esc(fives.recommended_rate)}.</strong> ${esc(fives.flexible_terms)}. A further ${fives.loyalty_discount.percent}% (${usd(fives.loyalty_discount.amount_usd)}) comes off through their loyalty programme, which ${nt(fives.loyalty_discount.note)}</p>
+
+<div class="note">
+  <div class="nh">Room only or all inclusive</div>
+  <p>${nt(r.alternative_all_inclusive.note)}</p>
+</div>
+
+<h3>Why 3 January and not earlier</h3>
+${bullets(fives.why_jan_3)}
+
+<h3>Confirmed, so nobody has to ask again</h3>
+${bullets(fives.no_traps_confirmed)}
+
+<div class="note warn">
+  <div class="nh">Still to confirm before booking</div>
+  ${bullets(fives.open)}
+</div>
+
+<h2><span class="num">03</span>Backups</h2>
+<p class="lede">Checked on the same dates, in case the Oasis goes before we book it.</p>
+<div class="scroller"><table>
+<thead><tr><th>Place</th><th>Layout</th><th class="n">Whole place</th><th>Verdict</th></tr></thead><tbody>
+${lodging.backups.map((x) => `<tr><td><strong>${esc(x.name)}</strong><br><small>${esc(x.neighborhood)}</small>${x.listing_id ? `<br><a href="https://www.airbnb.com/rooms/${esc(x.listing_id)}">listing</a>` : ''}</td><td>${esc(x.config)}</td><td class="n">${x.total_usd ? usd(x.total_usd) : 'not priced'}</td><td>${nt(x.verdict)}</td></tr>`).join('')}
+</tbody></table></div>
+
+<div class="note">
+  <div class="nh">Deposits</div>
+  <p>Both of these want money before they are held, and the Airbnb stops refunding entirely after 22 December. Collect from everyone first. The full cancellation position is on <a href="costs.html">the costs page</a>, and the booking deadlines are on <a href="tasks.html">the to do list</a>.</p>
+</div>`;
+
+  return shell({ title: 'Where we are staying', current: 'stays.html', body: b });
+}
+
 // ---------- map ----------
 
 // Teardrop pin silhouette, same geometry 4pm-detroit uses (src/lib/map-pin.ts).
@@ -1046,6 +1220,7 @@ writeFileSync(join(out, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
 writeFileSync(join(out, 'index.html'), buildIndex());
 writeFileSync(join(out, 'itinerary.html'), buildItinerary());
 writeFileSync(join(out, 'costs.html'), buildCosts());
+writeFileSync(join(out, 'stays.html'), buildStays());
 writeFileSync(join(out, 'map.html'), buildMap());
 writeFileSync(join(out, 'tasks.html'), buildTasks());
 writeFileSync(join(out, 'dining.html'), buildDoc('dining.md', 'dining.html', 'Birthday dinner options'));

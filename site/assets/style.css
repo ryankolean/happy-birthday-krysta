@@ -222,16 +222,50 @@ td small { color: var(--muted); }
 /* task list */
 ol.tasks { list-style: none; margin: 0; padding: 0; counter-reset: t; }
 ol.tasks li {
-  counter-increment: t; display: grid; grid-template-columns: 30px 1fr;
-  gap: 2px 14px; padding: 15px 0; border-bottom: 1px solid var(--rule); font-size: 14.5px;
+  counter-increment: t;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  column-gap: 16px;
+  row-gap: 0;
+  align-items: start;
+  padding: 20px 0 22px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 14.5px;
 }
+ol.tasks li:last-child { border-bottom: none; }
 ol.tasks li::before {
   content: counter(t, decimal-leading-zero);
-  font-family: var(--f-mono); font-size: 11.5px; font-weight: 500; color: var(--teal); padding-top: 4px;
+  grid-column: 1;
+  grid-row: 1;
+  font-family: var(--f-mono); font-size: 11.5px; font-weight: 500;
+  color: var(--teal); padding-top: 3px;
 }
-ol.tasks .tt { color: var(--ink); font-weight: 600; }
-ol.tasks .tw { color: var(--muted); font-size: 13.5px; margin-top: 3px; line-height: 1.5; }
-.when { font-family: var(--f-mono); font-size: 11px; color: var(--marigold); font-weight: 500; }
+/* Every span sits in the text column. Without this the browser auto-flows a
+   task with no date into the 36px number column and renders it one word per
+   line. */
+ol.tasks li > span { grid-column: 2; min-width: 0; }
+ol.tasks .tt {
+  color: var(--ink); font-weight: 600; line-height: 1.45;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 9px;
+}
+ol.tasks .when {
+  justify-self: start;
+  margin-top: 9px;
+  font-family: var(--f-mono); font-size: 10.5px; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--marigold);
+  background: var(--marigold-soft);
+  border-radius: 2px;
+  padding: 3px 8px;
+}
+ol.tasks .tw {
+  color: var(--body); font-size: 13.5px; margin-top: 9px;
+  line-height: 1.65; max-width: 66ch;
+}
+@media (max-width: 520px) {
+  ol.tasks li { grid-template-columns: 28px 1fr; column-gap: 12px; }
+  ol.tasks .tw { font-size: 13px; }
+}
 
 a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: 2px; }
 a:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
@@ -316,6 +350,15 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
 .legitem[aria-pressed="false"] { opacity: 0.4; }
 .legitem[aria-pressed="false"] .legpin path { fill: none; stroke: var(--rule-firm); }
 .legitem:hover { border-color: var(--teal); }
+
+.bigline {
+  display: inline-block;
+  font-family: var(--f-body); font-size: 14px; font-weight: 600;
+  color: var(--teal); background: var(--teal-soft);
+  border: 1px solid var(--teal); border-radius: 2px;
+  padding: 10px 16px; text-decoration: none;
+}
+.bigline:hover { background: var(--teal); color: var(--paper); }
 
 .swatch {
   display: inline-block; width: 11px; height: 11px; border-radius: 50% 50% 50% 0;
