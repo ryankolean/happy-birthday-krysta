@@ -876,7 +876,36 @@ ${bullets(oasis.why_chosen)}
   ${bullets(oasis.flags)}
 </div>
 
-<h2><span class="num">02</span>${esc(fives.name)}</h2>
+<h2><span class="num">02</span>Mexico City alternatives</h2>
+<p class="lede">Priced at ${lodging.cdmx_options.priced_at_guests} guests for the same nights, checked ${esc(iso(lodging.cdmx_options.checked))}. Each one verified on its own listing page, not from the search grid.</p>
+
+<div class="scroller"><table>
+<thead><tr><th>Option</th><th>Beds</th><th class="n">Baths</th><th>Roof</th><th class="n">Total</th><th class="n">Each</th></tr></thead><tbody>
+${lodging.cdmx_options.available.map((o) => `<tr${o.listing_id === '675329409719299615' ? ' class="pick"' : ''}>
+<td><strong><a href="${esc(o.url)}">${esc(o.name)}</a></strong><br><small>${esc(o.neighborhood)} &middot; ${o.bedrooms}BR &middot; ${o.rating} from ${o.reviews} reviews</small></td>
+<td>${esc(o.beds)}</td>
+<td class="n">${esc(o.baths)}</td>
+<td>${/^No roof/i.test(o.roof) ? '<span class="tag estimate">none</span>' : '<span class="tag ok">yes</span>'}<br><small>${esc(o.roof)}</small></td>
+<td class="n"><small>${usd(o.total_usd)}</small></td>
+<td class="n"><strong>${usd(o.per_person_usd)}</strong></td></tr>`).join('')}
+</tbody></table></div>
+
+<h3>Cancellation, which differs sharply</h3>
+<div class="scroller"><table>
+<thead><tr><th>Option</th><th>Terms</th></tr></thead><tbody>
+${lodging.cdmx_options.available.map((o) => `<tr><td><strong>${esc(o.name)}</strong></td><td>${esc(o.cancellation)}</td></tr>`).join('')}
+</tbody></table></div>
+
+<h3>The case for each</h3>
+${lodging.cdmx_options.available.map((o) => `<div class="note"><div class="nh">${esc(o.name)} &middot; ${usd(o.per_person_usd)} each</div><p>${nt(o.verdict)}</p></div>`).join('')}
+
+<div class="note warn">
+  <div class="nh">Checked and not available, do not chase these again</div>
+  <p>All three showed up in Airbnb search with prices attached, but their own listing pages say the dates are not available. The search grid cannot be trusted on its own.</p>
+  <ul>${lodging.cdmx_options.unavailable.map((o) => `<li><strong>${esc(o.name)}</strong>: ${nt(o.note)}</li>`).join('')}</ul>
+</div>
+
+<h2><span class="num">03</span>${esc(fives.name)}</h2>
 <p class="lede">One ${esc(fives.room_type)}, ${fives.size_sqft} sq ft, sleeps up to ${fives.max_occupancy}. Puerto Morelos, between Cancun and Playa del Carmen.</p>
 
 <p><a class="bigline" href="${esc(fives.url)}">Open the resort site</a></p>
@@ -920,7 +949,7 @@ ${bullets(fives.no_traps_confirmed)}
   ${bullets(fives.open)}
 </div>
 
-<h2><span class="num">03</span>Backups</h2>
+<h2><span class="num">04</span>Backups</h2>
 <p class="lede">Checked on the same dates, in case the Oasis goes before we book it.</p>
 <div class="scroller"><table>
 <thead><tr><th>Place</th><th>Layout</th><th class="n">Whole place</th><th>Verdict</th></tr></thead><tbody>

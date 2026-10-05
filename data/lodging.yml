@@ -124,6 +124,83 @@ properties:
       - Whether the 32% rate survives to booking and stacks with the 5% loyalty discount
       - Kitchen items surcharge if anyone plans to cook
 
+# Mexico City options priced at 6 guests, 29 Dec to 3 Jan, each one verified
+# on its own listing page rather than from the search grid. The grid prices
+# listings that are not actually bookable on these dates, so it cannot be
+# trusted on its own.
+cdmx_options:
+  priced_at_guests: 6
+  checked: 2026-10-05
+
+  available:
+    - name: Condesa Penthouse, huge roof terrace
+      listing_id: "21622910"
+      url: https://www.airbnb.com/rooms/21622910
+      neighborhood: Condesa
+      bedrooms: 3
+      beds: 1 king, 1 king, 1 queen
+      baths: 3
+      roof: Huge private roof terrace, no quiet hours
+      total_usd: 2182
+      per_person_usd: 364
+      rating: 4.9
+      reviews: 124
+      cancellation: Free cancellation until 24 December 2026
+      verdict: >
+        Cheapest per head, the only available rooftop, and by far the most
+        forgiving cancellation terms. Filed under Roma Norte in search but it
+        is actually Condesa, 100m from Parque Mexico, so further from the Roma
+        restaurant cluster the itinerary is built around.
+
+    - name: Lovely 3BR flat in Roma Norte w/ 2 Balconies
+      listing_id: "675329409719299615"
+      url: https://www.airbnb.com/rooms/675329409719299615
+      neighborhood: Roma Norte
+      bedrooms: 3
+      beds: 3 kings
+      baths: 2
+      roof: No roof. Two balconies.
+      total_usd: 2776
+      per_person_usd: 463
+      rating: 4.93
+      reviews: 232
+      cancellation: Free for 24 hours after booking, then partial refund until 22 December 2026
+      verdict: >
+        The only genuinely Roma Norte three bedroom still available. Three
+        kings is the best bed setup on the board for three couples, and 232
+        reviews is the strongest record. Costs the roof and one bathroom.
+
+    - name: Oasis in Roma Norte, 6BR
+      listing_id: "33561836"
+      url: https://www.airbnb.com/rooms/33561836
+      neighborhood: Roma Norte
+      bedrooms: 6
+      beds: 4 kings, 1 queen, 1 double
+      baths: 6.5
+      roof: Private rooftop, no quiet hours
+      total_usd: 3653
+      per_person_usd: 609
+      rating: 4.91
+      reviews: 145
+      cancellation: Free for 24 hours after booking, then partial refund until 22 December 2026
+      verdict: >
+        Priced for 8 originally. At 6 the extra three bedrooms and 6.5
+        bathrooms are largely unused, so the premium buys space three couples
+        do not need. Still the only one that is a house rather than a flat.
+
+  # Checked and genuinely unavailable for 29 Dec to 3 Jan. Recorded so nobody
+  # researches them twice: all three appeared in search with prices attached.
+  unavailable:
+    - name: Luxury 3BR w/ Private Rooftop & Terrace
+      listing_id: "714628538476264695"
+      note: King and two queens, 3 baths, 5.0 from 38. Would have been the pick.
+    - name: Balcony Residence w/Rooftop
+      listing_id: "37780811"
+      note: Rooftop pool, 4.84 from 220, a block from Mercado Roma.
+    - name: Penthouse with castle views and rooftop
+      listing_id: "1375339747471577043"
+      note: Also carried quiet hours after 10 PM, so it was out regardless.
+
 backups:
   - name: Luxurious Boutique Palace
     neighborhood: Condesa
