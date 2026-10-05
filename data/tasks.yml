@@ -40,15 +40,21 @@ this_week:
     title: Book Ling Ling for 29 December
     status: todo
     why_now: >
-      OpenTable works on a rolling 90 day window and 29 December opened on
-      30 September. It is bookable right now.
+      Checked on OpenTable 5 October: a party of 8 on 29 December has 15:00,
+      18:30, 19:00, 19:30 and 20:00 open, and the 15:00 carries 750 reward
+      points. Nothing is holding it for us. Take 20:00, which is what the
+      itinerary assumes.
 
 dated:
   - id: grab-ling-ling-jan2
-    title: Be online on 4 October for Ling Ling on 2 January
+    title: Hold Ling Ling on 2 January as the Pujol backup
     status: todo
-    date: 2026-10-04
-    why: Hold it as the Pujol backup until Pujol confirms, then release it.
+    why: >
+      The 4 October release date has passed and the panic was unnecessary.
+      Checked 5 October: a party of 8 on 2 January still has 18:00, 18:30,
+      19:00, 19:30 and 20:00 open. Hold one until Pujol confirms, then release
+      it. Cancelling an OpenTable booking costs nothing, so there is no reason
+      to wait.
 
   - id: maximo-window
     title: Maximo Bistrot opens about 2 December for 2 January
