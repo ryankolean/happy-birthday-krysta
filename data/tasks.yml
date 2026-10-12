@@ -4,14 +4,17 @@
 as_of: 2026-10-02
 
 this_week:
-  - id: book-oasis
-    title: Book the Oasis 6BR
+  - id: book-casa-km
+    title: Book Casa KM, or pick the Condesa flat instead
     status: todo
     why_now: >
-      $491 each, $3,927 for the whole house, and Airbnb flags these dates as
-      usually booked. There is no
-      waitlist. Free cancellation lasts 24 hours, then partial refund only
-      until 22 December, so this needs the group's yes before the card goes in.
+      Casa KM is $436 each, $3,055 for the whole flat split 7 ways, with four
+      bedrooms that each have their own bathroom and a private rooftop. The one
+      alternative is the Coolest flat in Condesa at $675 each. Only seven share
+      the place; the eighth is booking their own hotel. Free cancellation lasts
+      24 hours on either, then partial refund only until 22 December, so this
+      needs the group's yes before the card goes in. Capacity at Casa KM is
+      exactly 7, so confirm nobody is adding a plus one first.
     blocks: [collect-deposits]
 
   - id: book-dtw-mex
@@ -85,10 +88,12 @@ dated:
     why: Last day the flexible rate refunds.
 
   - id: airbnb-refund-cliff
-    title: Last partial refund date on the Oasis
+    title: Last partial refund date on the Mexico City flat
     status: todo
     date: 2026-12-22
-    why: After this there is no refund at all.
+    why: >
+      Applies to Casa KM and to the Condesa flat alike. After this there is no
+      refund at all.
 
 decisions_needed:
   - id: confirm-balloon
@@ -157,7 +162,10 @@ housekeeping:
 done:
   - id: resolve-headcount
     title: Resolve headcount
-    detail: 8 in Mexico City, 6 at the beach.
+    detail: >
+      8 in Mexico City, of whom 7 share the accommodation and the eighth books
+      their own hotel. 6 at the beach. Dinners, flights and the balloon are all
+      still sized for 8.
 
   - id: verify-availability
     title: Verify both properties still available

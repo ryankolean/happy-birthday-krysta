@@ -8,6 +8,7 @@
 currency: USD
 rate_mxn_per_usd: 17.0
 priced: 2026-10-02
+lodging_repriced: 2026-10-12
 
 flights:
   per_person_full_trip: 1923
@@ -17,13 +18,24 @@ flights:
 
 cdmx:
   travelers: 8
+  lodging_travelers: 7
+  lodging_note: >
+    Eight people are in Mexico City, but only seven share the accommodation.
+    The eighth is booking their own hotel, so the lodging line splits 7 ways
+    while every other line below is still an eight-person trip. Dinners, the
+    balloon and the flights are all unchanged at 8, which also means Pujol's
+    eight tasting menu minimum is still met.
   lines:
-    - item: Oasis 6BR, Roma Norte, 5 nights
-      per_person: 491
-      unit_price: 3927
-      unit_label: whole house, 5 nights, split 8 ways
+    - item: Casa KM, 4BR penthouse, Del Valle Norte, 5 nights
+      per_person: 436
+      unit_price: 3055
+      unit_label: whole flat, 5 nights, split 7 ways
       status: quoted
-      verified: 2026-10-02
+      verified: 2026-10-12
+      note: >
+        Front runner. Four bedrooms, each with its own full bathroom, plus a
+        private rooftop. Priced at 7 guests on the listing page. The Oasis is
+        out; at 7 guests it repriced to $3,996, or $571 each.
 
     - item: New Year's Eve
       per_person: 324
@@ -70,7 +82,21 @@ cdmx:
         Basing in Roma Norte keeps most of the itinerary on foot. The Polanco
         alternative would have cost $56 to $88 each in rideshare.
 
-  per_person: 1602
+  per_person: 1547
+
+  alternative_lodging:
+    item: 4BRM 3BTH Coolest flat in Heart of Condesa
+    per_person: 675
+    unit_price: 4724
+    delta_per_person: 239
+    cdmx_per_person_if_taken: 1786
+    status: quoted
+    verified: 2026-10-12
+    note: >
+      The one other option still on the table. Three bathrooms rather than one
+      per bedroom and no roof, but 4.85 from 193 reviews and a three minute
+      walk to Em. At $675 each it puts Mexico City at $1,786 instead of $1,547,
+      the full trip at $5,060 and city only at $4,925.
 
 riviera:
   travelers: 6
@@ -128,8 +154,8 @@ riviera:
       note: Net, after skipping the airport transfer. Only worth it with two or more excursions.
 
 per_person:
-  full_trip: 4876      # 1923 flights + 1602 city + 1351 beach
-  city_only: 4741      # 3139 flights + 1602 city
+  full_trip: 4821      # 1923 flights + 1547 city + 1351 beach
+  city_only: 4686      # 3139 flights + 1547 city
 
 excludes:
   - personal spending
@@ -147,7 +173,7 @@ split_mechanism:
   - Splitwise or similar, agreed up front
 
 non_refundable_exposure:
-  - what: Oasis Airbnb
+  - what: Casa KM Airbnb
     terms: Free 24 hours, then partial refund only until 22 December 2026
   - what: The Fives, flexible rate
     terms: Free cancellation, refundable until 13 December 2026
@@ -159,7 +185,7 @@ non_refundable_exposure:
     terms: Volare cancels free to 48 hours. Weather cancellations are refundable with no fee.
 
 flag_for_couple_b: >
-  The two leaving after Mexico City pay $4,741 each, almost as much as the six
-  doing the whole eleven days, because the MEX to DTW Delta nonstop is $1,893
-  one way. Connections that day run $774 to $956. Taking one saves about
-  $1,040 each and brings them to roughly $3,700.
+  The two leaving after Mexico City pay $4,686 each, almost as much as the
+  $4,821 paid by those doing the whole eleven days, because the MEX to DTW
+  Delta nonstop is $1,893 one way. Connections that day run $774 to $956.
+  Taking one saves about $1,040 each and brings them to roughly $3,650.

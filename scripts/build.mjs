@@ -738,11 +738,19 @@ function buildCosts() {
 <p>${nt(budget.flights.note)} Flight numbers, times and the alternatives considered are in <a href="index.html#flights">the flights table on the front page</a>.</p>
 
 <h2>Mexico City</h2>
+<p class="lede">${nt(budget.cdmx.lodging_note)}</p>
 <div class="scroller"><table>
+<caption>Lodging splits ${budget.cdmx.lodging_travelers} ways. Every other line is an ${budget.cdmx.travelers} person trip.</caption>
 <thead><tr><th>Item</th><th>Status</th><th class="n">Each</th></tr></thead>
 <tbody>${costRows(budget.cdmx.lines)}
 <tr class="sum"><td colspan="2">Mexico City, per person</td><td class="n">${usd(budget.cdmx.per_person)}</td></tr>
 </tbody></table></div>
+
+<div class="note">
+  <div class="nh">If we take ${esc(budget.cdmx.alternative_lodging.item)} instead</div>
+  <p>${nt(budget.cdmx.alternative_lodging.note)}</p>
+  <p>Both options are compared side by side on <a href="stays.html">the accommodations page</a>.</p>
+</div>
 
 <h2>Riviera Maya</h2>
 <p class="lede">${esc(fives.name)}, one ${esc(fives.room_type)}: ${fives.size_sqft} sq ft, sleeps up to ${fives.max_occupancy}. Quoted live, taxes included. A ${esc(fives.discount_live)} discount is running and a further ${fives.loyalty_discount.percent}% comes off through their loyalty programme.</p>

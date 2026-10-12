@@ -2,6 +2,18 @@
 
 What was decided, and what it beat. Newest first.
 
+## Casa KM over the Oasis, and the group drops to 7 in one house
+
+**Decided 12 October 2026, reversing the Oasis.** Headcount settled at three couples plus one single. An eighth traveller is in Mexico City but books their own hotel, so the house splits **7 ways** while dinners, flights and the balloon stay sized for 8. Pujol's eight tasting menu minimum is therefore still met.
+
+The Oasis was dropped on its own reviews, not on price. Guests report **no windows in most bedrooms** and "very little airflow unless you leave your room door open", **musty bedding** that one guest said left them unable to rest, **visible mold on some bedroom ceilings**, and an occasional sewage smell in the lower common area. A separate review notes "there is no real kitchen appliances to use", which the New Year's Eve plan depends on. At 7 guests it also repriced to $3,996, or **$571 each**, making it the most expensive option considered.
+
+**Casa KM** is $3,055, **$436 each**: four bedrooms each with its own full bathroom, a private rooftop with a grill, balconies off three of the four bedrooms, and 4.99 from 139 reviews. Bedroom 4 is described by the host as best suited to one guest, which fits the single traveller exactly. Capacity is a hard 7.
+
+Searched Roma Norte again under a tight map box rather than the keyword, which had been pulling in Condesa and Polanco. Inside Roma Norte proper nothing competes: the places with enough bathrooms run **$699 to $773 each**, the affordable ones have two bathrooms or split the group across two units, and the one cheap outlier publishes no bed configuration and has no reviews.
+
+One alternative stays on the table: the **Coolest flat in Condesa** at $4,724, **$675 each**. Longest review record of anything checked, 4.85 from 193, and a three minute walk to Em. It gives up a bathroom each and the rooftop, and its fourth bedroom is reached through a separate door off the building hallway, which would fall to the single traveller.
+
 ## Riviera Maya over a second city
 
 **Decided.** Mexico City for New Year's Eve and the birthday, then Puerto Morelos to decompress. Both anchors happen in the city, so the beach leg carries no scheduling pressure.
@@ -16,7 +28,9 @@ What was decided, and what it beat. Newest first.
 
 ## Oasis 6BR over five boutique hotel rooms
 
-**Decided.** The bed configuration was the binding constraint: three couples plus two singles who need separate rooms. Every Roma Norte and Condesa boutique offers a single king, which forces five rooms and adds roughly $375 to $440 each.
+**Superseded 12 October 2026 by Casa KM, see the entry at the top.** Recorded because the reasoning below still holds on bed configuration, and because the lodging correction it contains is worth keeping.
+
+**Decided at the time.** The bed configuration was the binding constraint: three couples plus two singles who need separate rooms. Every Roma Norte and Condesa boutique offers a single king, which forces five rooms and adds roughly $375 to $440 each.
 
 The Oasis solves it with six bedrooms and one spare, adds a private rooftop for midnight, has no quiet hours, and costs $491 each, $3,927 for the whole house.
 
