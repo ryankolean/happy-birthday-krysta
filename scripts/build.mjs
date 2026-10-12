@@ -569,19 +569,25 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
 
   // lodging
   b += `<h2 id="lodging"><span class="num">02</span>Where we are staying</h2>
-<p class="lede">Both verified available on ${esc(iso(trip.verified))} on the operators' own booking engines. Neither is booked.</p>`;
+<p class="lede">All verified available on the operators' own booking engines. Nothing is booked. Mexico City is down to two options and priced at 7 sharing.</p>`;
 
-  const oasis = lodging.properties.find((p) => p.id === 'oasis');
   const fives = lodging.properties.find((p) => p.id === 'fives');
+  const casakm = lodging.cdmx_front_runner;
+  const alt = lodging.cdmx_alternative;
 
   b += `<div class="scroller"><table>
 <caption>Lodging is booked whole and split evenly. Both columns shown so the arithmetic is visible.</caption>
 <thead><tr><th>Property</th><th>Dates</th><th>Found</th><th class="n">Whole place</th><th class="n">Each</th></tr></thead><tbody>
-<tr><td><strong>${esc(oasis.name)}</strong><br><small>${esc(oasis.neighborhood)}, ${oasis.bedrooms}BR, ${oasis.baths} baths, private rooftop</small></td>
-<td>${esc(shortDate(oasis.checkin))} to ${esc(shortDate(oasis.checkout))}<br><small>${oasis.guests} guests</small></td>
-<td><span class="tag ok">available</span><br><small>Flagged "rare find, usually booked"</small></td>
-<td class="n"><small>${usd(oasis.total_usd)}</small></td>
-<td class="n"><strong>${usd(oasis.per_person_usd)}</strong></td></tr>
+<tr class="pick"><td><strong>${esc(casakm.name)}</strong><br><small>${esc(casakm.neighborhood)}, ${casakm.bedrooms}BR, ${casakm.baths} baths, private rooftop &middot; front runner</small></td>
+<td>${esc(shortDate(casakm.checkin))} to ${esc(shortDate(casakm.checkout))}<br><small>${casakm.guests} guests</small></td>
+<td><span class="tag ok">available</span><br><small>${casakm.rating} from ${casakm.reviews} reviews</small></td>
+<td class="n"><small>${usd(casakm.total_usd)}</small></td>
+<td class="n"><strong>${usd(casakm.per_person_usd)}</strong></td></tr>
+<tr><td><strong>${esc(alt.short_name)}</strong><br><small>${esc(alt.neighborhood)}, ${alt.bedrooms}BR, ${alt.baths} baths, no roof &middot; the alternative</small></td>
+<td>${esc(shortDate(alt.checkin))} to ${esc(shortDate(alt.checkout))}<br><small>${alt.guests} guests</small></td>
+<td><span class="tag ok">available</span><br><small>${alt.rating} from ${alt.reviews} reviews</small></td>
+<td class="n"><small>${usd(alt.total_usd)}</small></td>
+<td class="n"><strong>${usd(alt.per_person_usd)}</strong></td></tr>
 <tr><td><strong>${esc(fives.room_type)}</strong><br><small>${esc(fives.name)}, ${fives.size_sqft} sq ft, sleeps ${fives.max_occupancy}</small></td>
 <td>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}<br><small>${fives.adults} adults</small></td>
 <td><span class="tag ok">${esc(fives.inventory_seen)} left</span><br><small>${esc(fives.discount_live)} off, plus ${fives.loyalty_discount.percent}% loyalty</small></td>
@@ -591,14 +597,14 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
 
   b += `<p class="lede" style="margin-top:14px">Everywhere we might eat, drink or go is plotted on <a href="map.html">the map</a>, colour coded and with the walk from the house.</p>
 
-<h3>Beds at the Oasis, so nobody is surprised</h3>
-<p>${oasis.bedrooms} bedrooms and ${oasis.baths} bathrooms: ${esc(oasis.bed_config.map((x) => x.bed).join(', ').toLowerCase())}. Three couples take three rooms, the two singles get their own rooms each, and there is a bedroom spare. Checkout is ${esc(oasis.checkout_time)} and the rooftop is private.</p>
-<p><a href="${esc(oasis.url)}">View the Oasis listing</a> &middot; <a href="${esc(fives.url)}">View The Fives</a></p>
+<h3>Beds at ${esc(casakm.name)}, so nobody is surprised</h3>
+<p>${casakm.bedrooms} bedrooms and ${casakm.baths} bathrooms: ${esc(casakm.bed_config.map((x) => x.bed).join(', ').toLowerCase())}, and every bedroom has its own full bathroom. ${nt(casakm.room_plan)} Checkout is ${esc(casakm.checkout_time)} and the rooftop is private.</p>
+<p><a href="${esc(casakm.url)}">View ${esc(casakm.name)}</a> &middot; <a href="${esc(alt.url)}">View ${esc(alt.short_name)}</a> &middot; <a href="${esc(fives.url)}">View The Fives</a> &middot; <a href="stays.html">Compare them side by side</a></p>
 
 <div class="note warn">
   <div class="nh">Two things worth knowing</div>
   <p><strong>The beach is cheaper than we had budgeted.</strong> ${nt(fives.tax_breakdown_seen.note)}</p>
-  <p><strong>The Airbnb cancellation terms are tighter than the badge suggests.</strong> ${esc(oasis.cancellation.actual)}. ${nt(oasis.cancellation.warning)}</p>
+  <p><strong>Both Mexico City options stop refunding on 22 December.</strong> ${esc(casakm.cancellation.actual)}. ${nt(casakm.cancellation.warning)}</p>
 </div>`;
 
   // flights
@@ -815,97 +821,157 @@ function buildTasks() {
 function buildStays() {
   const oasis = lodging.properties.find((p) => p.id === 'oasis');
   const fives = lodging.properties.find((p) => p.id === 'fives');
+  const casakm = lodging.cdmx_front_runner;
+  const alt = lodging.cdmx_alternative;
   const r = budget.riviera;
 
   const bullets = (arr) => `<ul>${arr.map((x) => `<li>${nt(x)}</li>`).join('')}</ul>`;
 
   let b = `<header class="masthead">
-  <p class="eyebrow">Both verified available ${esc(iso(trip.verified))}, neither booked</p>
+  <p class="eyebrow">Front runner picked ${esc(iso(casakm.verified))}, nothing booked yet</p>
   <h1>Where we are staying</h1>
   <div class="dateline">
-    <div><b>Mexico City</b>${esc(shortDate(oasis.checkin))} to ${esc(shortDate(oasis.checkout))}, ${oasis.nights} nights</div>
+    <div><b>Mexico City</b>${esc(shortDate(casakm.checkin))} to ${esc(shortDate(casakm.checkout))}, ${casakm.nights} nights</div>
     <div><b>Riviera Maya</b>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}, ${fives.nights} nights</div>
   </div>
 </header>
 
 <div class="scroller"><table>
-<caption>Both are booked whole and split evenly. Per person in bold.</caption>
+<caption>Booked whole and split evenly. Mexico City is priced at ${casakm.guests} sharing. Per person in bold.</caption>
 <thead><tr><th>Where</th><th>Dates</th><th>Who</th><th class="n">Whole place</th><th class="n">Each</th></tr></thead><tbody>
-<tr><td><strong>${esc(oasis.name)}</strong><br><small>${esc(oasis.neighborhood)}, Mexico City</small></td>
-<td>${esc(shortDate(oasis.checkin))} to ${esc(shortDate(oasis.checkout))}<br><small>${oasis.nights} nights</small></td>
-<td>${oasis.guests} guests</td>
-<td class="n"><small>${usd(oasis.total_usd)}</small></td><td class="n"><strong>${usd(oasis.per_person_usd)}</strong></td></tr>
+<tr class="pick"><td><strong>${esc(casakm.name)}</strong><br><small>${esc(casakm.neighborhood)}, Mexico City &middot; front runner</small></td>
+<td>${esc(shortDate(casakm.checkin))} to ${esc(shortDate(casakm.checkout))}<br><small>${casakm.nights} nights</small></td>
+<td>${casakm.guests} guests</td>
+<td class="n"><small>${usd(casakm.total_usd)}</small></td><td class="n"><strong>${usd(casakm.per_person_usd)}</strong></td></tr>
 <tr><td><strong>${esc(fives.name)}</strong><br><small>${esc(fives.room_type)}</small></td>
 <td>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}<br><small>${fives.nights} nights</small></td>
 <td>${fives.adults} adults</td>
 <td class="n"><small>${usd(fives.rates_usd.room_only_flexible)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_flexible)}</strong></td></tr>
 </tbody></table></div>
 
-<h2><span class="num">01</span>${esc(oasis.name)}</h2>
-<p class="lede">${esc(oasis.subtitle)}. ${esc(oasis.neighborhood)}, Mexico City.</p>
+<h2><span class="num">01</span>${esc(casakm.name)}<span class="tag ok">front runner</span></h2>
+<p class="lede">${esc(casakm.subtitle)}. ${esc(casakm.neighborhood)}, Mexico City. <strong>${usd(casakm.per_person_usd)} each</strong>, all in.</p>
 
-<p><a class="bigline" href="${esc(oasis.url)}">Open the Airbnb listing</a></p>
+<p><a class="bigline" href="${esc(casakm.url)}">Open the Airbnb listing</a></p>
 
 <div class="scroller"><table><tbody>
-<tr><th>Check in</th><td>${esc(longDate(oasis.checkin))}</td></tr>
-<tr><th>Check out</th><td>${esc(longDate(oasis.checkout))}, before ${esc(oasis.checkout_time)}</td></tr>
-<tr><th>Nights</th><td>${oasis.nights}</td></tr>
-<tr><th>Guests</th><td>${oasis.guests} of us, sleeps ${oasis.capacity}</td></tr>
-<tr><th>Layout</th><td>${oasis.bedrooms} bedrooms, ${oasis.baths} bathrooms</td></tr>
-<tr><th>Price</th><td><strong>${usd(oasis.total_usd)}</strong> all in, <strong>${usd(oasis.per_person_usd)} each</strong></td></tr>
-<tr><th>Host</th><td>${esc(oasis.host)}, rated ${oasis.rating} from ${oasis.reviews} reviews</td></tr>
+<tr><th>Check in</th><td>${esc(longDate(casakm.checkin))}, from ${esc(casakm.checkin_time)}</td></tr>
+<tr><th>Check out</th><td>${esc(longDate(casakm.checkout))}, before ${esc(casakm.checkout_time)}</td></tr>
+<tr><th>Nights</th><td>${casakm.nights}</td></tr>
+<tr><th>Guests</th><td>${casakm.guests} of us, and ${casakm.capacity} is the hard maximum</td></tr>
+<tr><th>Layout</th><td>${casakm.bedrooms} bedrooms, ${casakm.beds} beds, ${casakm.baths} bathrooms<br><small>${esc(casakm.baths_note)}</small></td></tr>
+<tr><th>Price</th><td><strong>${usd(casakm.total_usd)}</strong> all in, <strong>${usd(casakm.per_person_usd)} each</strong></td></tr>
+<tr><th>Rated</th><td>${casakm.rating} from ${casakm.reviews} reviews</td></tr>
+<tr><th>Also</th><td>Washer and dryer in unit, ${casakm.wifi_mbps} Mbps wifi, ${esc(casakm.parking)}</td></tr>
 </tbody></table></div>
 
 <h3>Who sleeps where</h3>
-<div class="scroller"><table><thead><tr><th>Bedroom</th><th>Bed</th></tr></thead><tbody>
-${oasis.bed_config.map((x) => `<tr><td>${esc(x.bedroom)}</td><td>${esc(x.bed)}</td></tr>`).join('')}
+<div class="scroller"><table><thead><tr><th>Bedroom</th><th>Bed</th><th>What else</th></tr></thead><tbody>
+${casakm.bed_config.map((x) => `<tr><td>${esc(x.bedroom)}</td><td><strong>${esc(x.bed)}</strong></td><td><small>${esc(x.extras)}</small></td></tr>`).join('')}
 </tbody></table></div>
-<p>Three couples take three rooms, the two singles get a room each, and one bedroom is spare. Nobody shares and nobody takes a sofa.</p>
+<p>${nt(casakm.room_plan)}</p>
+
+<h3>The rooftop</h3>
+<p>${nt(casakm.roof)}</p>
+
+<h3>How far from everything</h3>
+<div class="scroller"><table>
+<caption>Straight line from the house, so real walking is a little longer.</caption>
+<thead><tr><th>To</th><th class="n">Distance</th></tr></thead><tbody>
+<tr><td>Roma Norte restaurant cluster</td><td class="n">${casakm.distance_km.roma_norte_core} km</td></tr>
+<tr><td>Parque Mexico</td><td class="n">${casakm.distance_km.parque_mexico} km</td></tr>
+<tr><td><a href="dining.html">Em</a>, Av. Amsterdam 76</td><td class="n">${casakm.distance_km.em} km</td></tr>
+<tr><td><a href="dining.html">Pujol</a>, Polanco</td><td class="n">${casakm.distance_km.pujol} km</td></tr>
+</tbody></table></div>
+<p>Del Valle Norte reads as far out, but it is closer to Em and Parque Mexico than the Oasis is. Every venue is plotted on <a href="map.html">the map</a>.</p>
 
 <h3>Why this one</h3>
-${bullets(oasis.why_chosen)}
+${bullets(casakm.why_chosen)}
 
 <div class="note warn">
-  <div class="nh">Cancellation is tighter than the badge says</div>
-  <p>The listing advertises <em>${esc(oasis.cancellation.headline_badge)}</em>. The actual policy is: <strong>${esc(oasis.cancellation.actual)}</strong></p>
-  <p>${nt(oasis.cancellation.warning)}</p>
+  <div class="nh">Cancellation is the one weak spot</div>
+  <p><strong>${esc(casakm.cancellation.actual)}</strong></p>
+  <p>${nt(casakm.cancellation.warning)}</p>
 </div>
 
 <div class="note">
-  <div class="nh">Worth knowing</div>
-  ${bullets(oasis.flags)}
+  <div class="nh">Worth knowing before we book</div>
+  ${bullets(casakm.flags)}
 </div>
 
-<h2><span class="num">02</span>Mexico City alternatives</h2>
-<p class="lede">Priced at ${lodging.cdmx_options.priced_at_guests} guests for the same nights, checked ${esc(iso(lodging.cdmx_options.checked))}. Each one verified on its own listing page, not from the search grid.</p>
+<h2><span class="num">02</span>Mexico City, head to head</h2>
+<p class="lede">Two options left on the table, both verified on their own listing pages at ${casakm.guests} guests for the same nights. The search grid prices listings that are not actually bookable, so nothing here comes from it.</p>
 
 <div class="scroller"><table>
-<thead><tr><th>Option</th><th>Beds</th><th class="n">Baths</th><th>Roof</th><th class="n">Total</th><th class="n">Each</th></tr></thead><tbody>
-${lodging.cdmx_options.available.map((o) => `<tr${o.listing_id === '675329409719299615' ? ' class="pick"' : ''}>
-<td><strong><a href="${esc(o.url)}">${esc(o.name)}</a></strong><br><small>${esc(o.neighborhood)} &middot; ${o.bedrooms}BR &middot; ${o.rating} from ${o.reviews} reviews</small></td>
-<td>${esc(o.beds)}</td>
-<td class="n">${esc(o.baths)}</td>
-<td>${/^No roof/i.test(o.roof) ? '<span class="tag estimate">none</span>' : '<span class="tag ok">yes</span>'}<br><small>${esc(o.roof)}</small></td>
-<td class="n"><small>${usd(o.total_usd)}</small></td>
-<td class="n"><strong>${usd(o.per_person_usd)}</strong></td></tr>`).join('')}
+<thead><tr><th>&nbsp;</th><th>${esc(casakm.name)}</th><th>${esc(alt.short_name)}</th></tr></thead><tbody>
+<tr><th>Each</th><td class="pick"><strong>${usd(casakm.per_person_usd)}</strong></td><td><strong>${usd(alt.per_person_usd)}</strong></td></tr>
+<tr><th>Whole place</th><td>${usd(casakm.total_usd)}</td><td>${usd(alt.total_usd)}</td></tr>
+<tr><th>Bedrooms</th><td>${casakm.bedrooms}</td><td>${alt.bedrooms}</td></tr>
+<tr><th>Bathrooms</th><td>${casakm.baths}, one per bedroom</td><td>${alt.baths}, shared</td></tr>
+<tr><th>Rated</th><td>${casakm.rating} from ${casakm.reviews}</td><td>${alt.rating} from ${alt.reviews}</td></tr>
+<tr><th>Roof</th><td>Private rooftop with a grill</td><td>None</td></tr>
+<tr><th>To Roma Norte</th><td>${casakm.distance_km.roma_norte_core.toFixed(1)} km</td><td>${alt.distance_km.roma_norte_core.toFixed(1)} km</td></tr>
+<tr><th>To <a href="dining.html">Em</a></th><td>${casakm.distance_km.em.toFixed(1)} km</td><td>${alt.distance_km.em.toFixed(1)} km</td></tr>
+<tr><th>Neighbourhood</th><td>${esc(casakm.neighborhood)}</td><td>${esc(alt.neighborhood)}</td></tr>
 </tbody></table></div>
 
-<h3>Cancellation, which differs sharply</h3>
+<p>${esc(alt.short_name)} costs <strong>${usd(alt.per_person_usd - casakm.per_person_usd)} more each</strong>, or ${usd(alt.total_usd - casakm.total_usd)} across the group. What that buys is the review record and the walk to dinner. What it gives up is a bathroom each, the rooftop, and keeping all four bedrooms behind one door.</p>
+
+<h3>${esc(alt.name)}</h3>
+<p class="lede">${esc(alt.neighborhood)}, Mexico City. <strong>${usd(alt.per_person_usd)} each</strong>, all in.</p>
+
+<p><a class="bigline" href="${esc(alt.url)}">Open the Airbnb listing</a></p>
+
+<div class="scroller"><table><tbody>
+<tr><th>Check in</th><td>${esc(longDate(alt.checkin))}, from ${esc(alt.checkin_time)}</td></tr>
+<tr><th>Check out</th><td>${esc(longDate(alt.checkout))}, before ${esc(alt.checkout_time)}</td></tr>
+<tr><th>Guests</th><td>${alt.guests} of us, and it sleeps up to ${alt.capacity}</td></tr>
+<tr><th>Layout</th><td>${alt.bedrooms} bedrooms, ${alt.beds} beds, ${alt.baths} bathrooms</td></tr>
+<tr><th>Price</th><td><strong>${usd(alt.total_usd)}</strong> all in, <strong>${usd(alt.per_person_usd)} each</strong></td></tr>
+<tr><th>Rated</th><td>${alt.rating} from ${alt.reviews} reviews</td></tr>
+<tr><th>Outdoor</th><td>${esc(alt.roof)}</td></tr>
+</tbody></table></div>
+
+<h4>Guest scores</h4>
 <div class="scroller"><table>
-<thead><tr><th>Option</th><th>Terms</th></tr></thead><tbody>
-${lodging.cdmx_options.available.map((o) => `<tr><td><strong>${esc(o.name)}</strong></td><td>${esc(o.cancellation)}</td></tr>`).join('')}
-</tbody></table></div>
+<thead><tr><th>Cleanliness</th><th>Accuracy</th><th>Check in</th><th>Communication</th><th>Location</th><th>Value</th></tr></thead>
+<tbody><tr>
+<td class="n">${alt.subscores.cleanliness}</td><td class="n">${alt.subscores.accuracy}</td><td class="n">${alt.subscores.checkin}</td>
+<td class="n">${alt.subscores.communication}</td><td class="n">${alt.subscores.location}</td><td class="n">${alt.subscores.value}</td>
+</tr></tbody></table></div>
 
-<h3>The case for each</h3>
-${lodging.cdmx_options.available.map((o) => `<div class="note"><div class="nh">${esc(o.name)} &middot; ${usd(o.per_person_usd)} each</div><p>${nt(o.verdict)}</p></div>`).join('')}
+<h4>Who sleeps where</h4>
+<div class="scroller"><table><thead><tr><th>Bedroom</th><th>Bed</th><th>What else</th></tr></thead><tbody>
+${alt.bed_config.map((x) => `<tr><td>${esc(x.bedroom)}</td><td><strong>${esc(x.bed)}</strong></td><td><small>${esc(x.extras)}</small></td></tr>`).join('')}
+</tbody></table></div>
+<p>${nt(alt.room_plan)}</p>
+
+<h4>Why consider it</h4>
+${bullets(alt.why_consider)}
 
 <div class="note warn">
-  <div class="nh">Checked and not available, do not chase these again</div>
-  <p>All three showed up in Airbnb search with prices attached, but their own listing pages say the dates are not available. The search grid cannot be trusted on its own.</p>
-  <ul>${lodging.cdmx_options.unavailable.map((o) => `<li><strong>${esc(o.name)}</strong>: ${nt(o.note)}</li>`).join('')}</ul>
+  <div class="nh">Worth knowing before we book</div>
+  ${bullets(alt.flags)}
 </div>
 
-<h2><span class="num">03</span>${esc(fives.name)}</h2>
+<div class="note">
+  <div class="nh">Verdict</div>
+  <p>${nt(alt.verdict)}</p>
+</div>
+
+<h2><span class="num">03</span>Why we are leaving ${esc(oasis.name)}</h2>
+<p class="lede">It held the Mexico City slot until ${esc(iso(oasis.displaced_on))}. Its own reviews are what moved us off it.</p>
+
+<p><a class="bigline" href="${esc(oasis.url)}">Open the old listing</a></p>
+
+${bullets(oasis.displaced_because)}
+
+<div class="note">
+  <div class="nh">What it did have</div>
+  <p>Six bedrooms and ${oasis.baths} bathrooms, a private rooftop, no quiet hours, and ${oasis.rating} from ${oasis.reviews} reviews. The bathroom count and the rooftop are the two things ${esc(casakm.name)} had to match, and it does.</p>
+</div>
+
+<h2><span class="num">04</span>${esc(fives.name)}</h2>
 <p class="lede">One ${esc(fives.room_type)}, ${fives.size_sqft} sq ft, sleeps up to ${fives.max_occupancy}. Puerto Morelos, between Cancun and Playa del Carmen.</p>
 
 <p><a class="bigline" href="${esc(fives.url)}">Open the resort site</a></p>
@@ -949,16 +1015,9 @@ ${bullets(fives.no_traps_confirmed)}
   ${bullets(fives.open)}
 </div>
 
-<h2><span class="num">04</span>Backups</h2>
-<p class="lede">Checked on the same dates, in case the Oasis goes before we book it.</p>
-<div class="scroller"><table>
-<thead><tr><th>Place</th><th>Layout</th><th class="n">Whole place</th><th>Verdict</th></tr></thead><tbody>
-${lodging.backups.map((x) => `<tr><td><strong>${esc(x.name)}</strong><br><small>${esc(x.neighborhood)}</small>${x.listing_id ? `<br><a href="https://www.airbnb.com/rooms/${esc(x.listing_id)}">listing</a>` : ''}</td><td>${esc(x.config)}</td><td class="n">${x.total_usd ? usd(x.total_usd) : 'not priced'}</td><td>${nt(x.verdict)}</td></tr>`).join('')}
-</tbody></table></div>
-
 <div class="note">
   <div class="nh">Deposits</div>
-  <p>Both of these want money before they are held, and the Airbnb stops refunding entirely after 22 December. Collect from everyone first. The full cancellation position is on <a href="costs.html">the costs page</a>, and the booking deadlines are on <a href="tasks.html">the to do list</a>.</p>
+  <p>Both legs want money before they are held, and ${esc(casakm.name)} stops refunding entirely after 22 December. Collect from everyone first. The full cancellation position is on <a href="costs.html">the costs page</a>, and the booking deadlines are on <a href="tasks.html">the to do list</a>.</p>
 </div>`;
 
   return shell({ title: 'Where we are staying', current: 'stays.html', body: b });

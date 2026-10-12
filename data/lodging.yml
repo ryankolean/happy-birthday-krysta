@@ -51,6 +51,26 @@ properties:
       - No quiet hours in the house rules
       - Full kitchen, which the New Year's Eve plan uses
       - 6.5 bathrooms for 8 people
+    displaced_on: 2026-10-12
+    displaced_by: Casa KM
+    displaced_because:
+      - >
+        Guests report no windows in most bedrooms. One: "no windows in most of
+        the rooms, which means very little airflow unless you leave your room
+        door open." Another: "no A/C so the upstairs rooms get hot. no windows
+        so there is no airflow but there were tower fans in all rooms."
+      - >
+        Two separate reviews raise the smell. "The house smells very musty, and
+        so do the towels and bedding. You can't rest because of the smell." A
+        second lists "visible mold on ceiling of some bedrooms" and "occasional
+        sewage smell by lower common area."
+      - >
+        A guest notes "there is no real kitchen appliances to use", which the
+        New Year's Eve plan depends on.
+      - >
+        The street-facing first bedroom has road noise and a street lamp with no
+        curtains. One guest bought and installed curtains during their stay.
+      - At 7 guests it reprices to $3,996, or $571 each, the most expensive option on the board.
     flags:
       - Airbnb marks these dates "Rare find, this place is usually booked"
       - Total moves with guest count, so re-price if the party changes from 8
@@ -124,100 +144,169 @@ properties:
       - Whether the 32% rate survives to booking and stacks with the 5% loyalty discount
       - Kitchen items surcharge if anyone plans to cook
 
-# Mexico City options priced at 6 guests, 29 Dec to 3 Jan, each one verified
-# on its own listing page rather than from the search grid. The grid prices
-# listings that are not actually bookable on these dates, so it cannot be
-# trusted on its own.
-cdmx_options:
-  priced_at_guests: 6
-  checked: 2026-10-05
+# Front runner for Mexico City as of 12 October 2026, replacing the Oasis.
+# Headcount settled at 7 sharing (3 couples plus 1 single); the 8th traveller
+# is booking their own hotel. Priced at 7 guests on the listing page itself.
+cdmx_front_runner:
+  name: Casa KM
+  subtitle: 4BR Penthouse with Private Rooftop
+  neighborhood: Del Valle Norte
+  platform: Airbnb
+  listing_id: "881238784886784781"
+  url: https://www.airbnb.com/rooms/881238784886784781
+  status: available
+  verified: 2026-10-12
+  checkin: 2026-12-29
+  checkout: 2027-01-03
+  nights: 5
+  guests: 7
+  capacity: 7
+  total_usd: 3055
+  per_person_usd: 436
+  all_in: true
+  bedrooms: 4
+  beds: 4
+  baths: 4.5
+  baths_note: Every bedroom has its own full bathroom, plus a guest half bath.
+  rating: 4.99
+  reviews: 139
+  checkin_time: "16:00"
+  checkout_time: "11:00"
+  wifi_mbps: 433
+  parking: 2 covered spaces
+  bed_config:
+    - bedroom: 1
+      bed: King
+      extras: En-suite bath, closet, balcony, hammock, Smart TV
+    - bedroom: 2
+      bed: Queen
+      extras: En-suite bath, closet, balcony
+    - bedroom: 3
+      bed: Queen
+      extras: En-suite bath, closet, balcony
+    - bedroom: 4
+      bed: Full
+      extras: En-suite bath. No balcony or closet. Host lists it as best for one guest.
+  room_plan: >
+    Three couples take the king and the two queens, all of which have their own
+    balcony and bathroom. The single traveller takes bedroom 4, which the host
+    describes as best suited to one guest. Nobody shares a bathroom.
+  roof: >
+    Private rooftop one level up, with outdoor furniture, a shaded dining area,
+    a grill, a stationary bike and open city views that reach the volcanoes on
+    clear days.
+  distance_km:
+    roma_norte_core: 2.2
+    parque_mexico: 1.5
+    em: 1.6
+    pujol: 4.7
+  cancellation:
+    actual: Free for 24 hours after booking, then partial refund only until 22 December 2026
+    warning: >
+      Same cliff as the Oasis. Every runner up has better terms, so if the
+      headcount is still soft this is the one thing worth paying up to avoid.
+  why_chosen:
+    - Four bedrooms, each with its own full bathroom, so all three couples and the single get a private bath
+    - Bedroom 4 is purpose-built for a single guest, which fits the odd traveller exactly
+    - Balconies off three of the four bedrooms, the direct fix for the Oasis airflow complaints
+    - Private rooftop with a grill and shaded dining, so we keep the thing the Oasis was worth
+    - 4.99 from 139 reviews is the strongest record of anything checked on these dates
+    - Gas stove, oven and a full kitchen, so the New Year's Eve plan survives
+    - Smoke detectors in every bedroom, a carbon monoxide alarm, three fire extinguishers and a first aid kit
+    - Washer and dryer in unit, 433 Mbps wifi, two covered parking spaces
+  flags:
+    - Seven guests maximum, so there is zero slack if anyone adds a plus one
+    - Cancellation is free for 24 hours only, then partial refund until 22 December
+    - Three levels joined by interior stairs, and the elevator only reaches the middle one
+    - No air conditioning and no central heating, just portable fans and extra blankets. January nights run about 45F.
+    - Del Valle Norte reads as far but is not; it is closer to Em and Parque Mexico than the Oasis is
+  runners_up_note: >
+    Four alternatives were verified on the same dates and all four have better
+    cancellation terms. The cheapest, a five bedroom Del Valle penthouse with
+    three kings and three terraces, is $288 each and saves the group $1,042.
 
-  available:
-    - name: Condesa Penthouse, huge roof terrace
-      listing_id: "21622910"
-      url: https://www.airbnb.com/rooms/21622910
-      neighborhood: Condesa
-      bedrooms: 3
-      beds: 1 king, 1 king, 1 queen
-      baths: 3
-      roof: Huge private roof terrace, no quiet hours
-      total_usd: 2182
-      per_person_usd: 364
-      rating: 4.9
-      reviews: 124
-      cancellation: Free cancellation until 24 December 2026
-      verdict: >
-        Cheapest per head, the only available rooftop, and by far the most
-        forgiving cancellation terms. Filed under Roma Norte in search but it
-        is actually Condesa, 100m from Parque Mexico, so further from the Roma
-        restaurant cluster the itinerary is built around.
-
-    - name: Lovely 3BR flat in Roma Norte w/ 2 Balconies
-      listing_id: "675329409719299615"
-      url: https://www.airbnb.com/rooms/675329409719299615
-      neighborhood: Roma Norte
-      bedrooms: 3
-      beds: 3 kings
-      baths: 2
-      roof: No roof. Two balconies.
-      total_usd: 2776
-      per_person_usd: 463
-      rating: 4.93
-      reviews: 232
-      cancellation: Free for 24 hours after booking, then partial refund until 22 December 2026
-      verdict: >
-        The only genuinely Roma Norte three bedroom still available. Three
-        kings is the best bed setup on the board for three couples, and 232
-        reviews is the strongest record. Costs the roof and one bathroom.
-
-    - name: Oasis in Roma Norte, 6BR
-      listing_id: "33561836"
-      url: https://www.airbnb.com/rooms/33561836
-      neighborhood: Roma Norte
-      bedrooms: 6
-      beds: 4 kings, 1 queen, 1 double
-      baths: 6.5
-      roof: Private rooftop, no quiet hours
-      total_usd: 3653
-      per_person_usd: 609
-      rating: 4.91
-      reviews: 145
-      cancellation: Free for 24 hours after booking, then partial refund until 22 December 2026
-      verdict: >
-        Priced for 8 originally. At 6 the extra three bedrooms and 6.5
-        bathrooms are largely unused, so the premium buys space three couples
-        do not need. Still the only one that is a house rather than a flat.
-
-  # Checked and genuinely unavailable for 29 Dec to 3 Jan. Recorded so nobody
-  # researches them twice: all three appeared in search with prices attached.
-  unavailable:
-    - name: Luxury 3BR w/ Private Rooftop & Terrace
-      listing_id: "714628538476264695"
-      note: King and two queens, 3 baths, 5.0 from 38. Would have been the pick.
-    - name: Balcony Residence w/Rooftop
-      listing_id: "37780811"
-      note: Rooftop pool, 4.84 from 220, a block from Mercado Roma.
-    - name: Penthouse with castle views and rooftop
-      listing_id: "1375339747471577043"
-      note: Also carried quiet hours after 10 PM, so it was out regardless.
-
-backups:
-  - name: Luxurious Boutique Palace
-    neighborhood: Condesa
-    platform: Airbnb
-    listing_id: "597915155431399462"
-    total_usd: 4095
-    per_person_usd: 512
-    config: 8 guests, 4BR, 5 beds, 4 baths
-    status: available 2026-10-02
-    verdict: four bedrooms reintroduces the bed configuration problem
-
-  - name: Casa Mer
-    neighborhood: Roma Norte
-    platform: Airbnb
-    listing_id: "1725087189768698349"
-    config: 9 guests, 4BR, 5 beds, 2 baths
-    status: available 2026-10-02
-    verdict: 2 baths for 8, 11 PM quiet hours, no visitors rule. Rejected.
+# The only other option still on the table for Mexico City. Verified on its own
+# listing page 12 October 2026 and priced at 7 guests, same nights.
+cdmx_alternative:
+  name: 4BRM 3BTH Coolest flat in Heart of Condesa
+  short_name: Coolest flat in Condesa
+  neighborhood: Condesa
+  platform: Airbnb
+  listing_id: "557345447959782857"
+  url: https://www.airbnb.com/rooms/557345447959782857
+  status: available
+  verified: 2026-10-12
+  checkin: 2026-12-29
+  checkout: 2027-01-03
+  nights: 5
+  guests: 7
+  capacity: 14
+  total_usd: 4724
+  per_person_usd: 675
+  all_in: true
+  bedrooms: 4
+  beds: 6
+  baths: 3
+  rating: 4.85
+  reviews: 193
+  checkin_time: "16:00"
+  checkout_time: "11:00"
+  subscores:
+    cleanliness: 4.8
+    accuracy: 4.8
+    checkin: 4.9
+    communication: 5.0
+    location: 5.0
+    value: 4.8
+  bed_config:
+    - bedroom: 1
+      bed: 2 queens
+      extras: In the main part of the flat
+    - bedroom: 2
+      bed: King
+      extras: In the main part of the flat
+    - bedroom: 3
+      bed: 2 queens
+      extras: In the main part of the flat
+    - bedroom: 4
+      bed: Queen
+      extras: Separate entrance off the building hallway, with its own bathroom
+  room_plan: >
+    Three couples take the king and the two queen rooms, all three of which sit
+    together. The single traveller takes bedroom 4. Two of the four rooms hold
+    two queens each, so a couple in one of those leaves a spare bed in the room.
+  roof: No roof and no terrace. The flat faces a park across the street.
+  distance_km:
+    roma_norte_core: 1.0
+    parque_mexico: 0.4
+    em: 0.3
+    pujol: 3.5
+  cancellation:
+    actual: Free for 24 hours after booking, then partial refund only until 22 December 2026
+  why_consider:
+    - 4.85 from 193 reviews, the longest track record of anything checked on these dates
+    - Location scores a straight 5.0, and it faces a park 400m from Parque Mexico
+    - A three minute walk to Em, the closest any option gets to a birthday dinner venue
+    - Lift in the building, washer and dryer in the unit, gas stove and oven
+    - Smoke alarm and carbon monoxide alarm both present
+    - Reviews confirm it has handled a group of 11 without trouble
+  flags:
+    - >
+      Bedroom 4 has a separate entrance. The host writes that three bedrooms sit
+      together "while the fourth one has a separate entrance, accessed through a
+      different door." A guest confirms whoever sleeps there "has to knock on the
+      apartment entrance" to rejoin everyone. The single traveller would get it.
+    - Three bathrooms for seven people, against four and a half at Casa KM
+    - No roof and no terrace, so there is no midnight spot in the building
+    - Cancellation is free for 24 hours only, the same cliff as Casa KM
+    - No air conditioning, portable fans only
+    - >
+      Staff water the house plants every Wednesday and Saturday between 11:00
+      and 15:00. That lands on 30 December and 2 January.
+    - Capacity is 14, so we would be paying for a flat built for twice our number
+  verdict: >
+    The safest bet on reviews and the best placed for dinner, but it costs $239
+    more each than Casa KM for fewer bathrooms, no roof, and a bedroom the single
+    traveller reaches through a different door.
 
 verified: 2026-10-02
