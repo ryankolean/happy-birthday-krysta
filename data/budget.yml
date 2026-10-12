@@ -17,25 +17,29 @@ flights:
   note: Priced on Google Flights 2026-09-25. See data/flights.yml for each leg.
 
 cdmx:
-  travelers: 8
-  lodging_travelers: 7
+  travelers: 7
+  lodging_travelers: 6
+  group_shape: 2 couples and 2 singles share the accommodation
   lodging_note: >
-    Eight people are in Mexico City, but only seven share the accommodation.
-    The eighth is booking their own hotel, so the lodging line splits 7 ways
-    while every other line below is still an eight-person trip. Dinners, the
-    balloon and the flights are all unchanged at 8, which also means Pujol's
-    eight tasting menu minimum is still met.
+    Seven people are in Mexico City, but only six share the accommodation: two
+    couples and two singles. The seventh books their own hotel, so the lodging
+    line splits 6 ways while every other line below is a seven person trip.
+    Dropping from 8 to 7 breaks Pujol's eight tasting menu minimum, which the
+    birthday dinner line still assumes.
   lines:
     - item: Casa KM, 4BR penthouse, Del Valle Norte, 5 nights
-      per_person: 436
-      unit_price: 3055
-      unit_label: whole flat, 5 nights, split 7 ways
+      per_person: 491
+      unit_price: 2944
+      unit_label: whole flat, 5 nights, split 6 ways
       status: quoted
       verified: 2026-10-12
       note: >
-        Front runner. Four bedrooms, each with its own full bathroom, plus a
-        private rooftop. Priced at 7 guests on the listing page. The Oasis is
-        out; at 7 guests it repriced to $3,996, or $571 each.
+        Four bedrooms, each with its own full bathroom, plus a private rooftop.
+        The couples take the king and a queen, the singles take the other queen
+        and the full. Re-quoted at 6 guests: the whole place fell only $111 while
+        the split lost a seventh head, so per person went from $436 to $491.
+        Cheaper options now exist, because 2 couples and 2 singles is an easier
+        bed configuration to satisfy than 3 couples and 1 single was.
 
     - item: New Year's Eve
       per_person: 324
@@ -82,21 +86,22 @@ cdmx:
         Basing in Roma Norte keeps most of the itinerary on foot. The Polanco
         alternative would have cost $56 to $88 each in rideshare.
 
-  per_person: 1547
+  per_person: 1602
 
   alternative_lodging:
     item: 4BRM 3BTH Coolest flat in Heart of Condesa
-    per_person: 675
-    unit_price: 4724
-    delta_per_person: 239
-    cdmx_per_person_if_taken: 1786
+    per_person: 760
+    unit_price: 4559
+    delta_per_person: 269
+    cdmx_per_person_if_taken: 1871
     status: quoted
     verified: 2026-10-12
     note: >
-      The one other option still on the table. Three bathrooms rather than one
-      per bedroom and no roof, but 4.85 from 193 reviews and a three minute
-      walk to Em. At $675 each it puts Mexico City at $1,786 instead of $1,547,
-      the full trip at $5,060 and city only at $4,925.
+      Three bathrooms rather than one per bedroom and no roof, but 4.85 from
+      193 reviews and a three minute walk to Em. At $760 each it puts Mexico
+      City at $1,871 instead of $1,602, the full trip at $5,145 and city only
+      at $5,010. The gap to Casa KM widened from $239 to $269 each at the
+      smaller split.
 
 riviera:
   travelers: 6
@@ -154,8 +159,8 @@ riviera:
       note: Net, after skipping the airport transfer. Only worth it with two or more excursions.
 
 per_person:
-  full_trip: 4821      # 1923 flights + 1547 city + 1351 beach
-  city_only: 4686      # 3139 flights + 1547 city
+  full_trip: 4876      # 1923 flights + 1602 city + 1351 beach
+  city_only: 4741      # 3139 flights + 1602 city
 
 excludes:
   - personal spending
@@ -185,7 +190,7 @@ non_refundable_exposure:
     terms: Volare cancels free to 48 hours. Weather cancellations are refundable with no fee.
 
 flag_for_couple_b: >
-  The two leaving after Mexico City pay $4,686 each, almost as much as the
-  $4,821 paid by those doing the whole eleven days, because the MEX to DTW
+  Those leaving after Mexico City pay $4,741 each, almost as much as the
+  $4,876 paid by those doing the whole eleven days, because the MEX to DTW
   Delta nonstop is $1,893 one way. Connections that day run $774 to $956.
-  Taking one saves about $1,040 each and brings them to roughly $3,650.
+  Taking one saves about $1,040 each and brings them to roughly $3,700.

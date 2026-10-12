@@ -2,7 +2,23 @@
 
 What was decided, and what it beat. Newest first.
 
+## Group drops to 7 in the city, 6 sharing the house
+
+**Changed 12 October 2026.** One half of one couple dropped. The shape is now **two couples and two singles** in the accommodation, six people, plus a seventh who books their own hotel. **Seven in the city** for dinners, the balloon and the flights.
+
+Three consequences, in order of how much they cost:
+
+**Pujol's private room is no longer viable as planned.** It carries a minimum of eight tasting menus at MX$3,795 each. At seven we either pay for an eighth cover nobody eats, about **$223 wasted**, or give up the private room. Em takes parties of 3 to 8, so it fits seven with no minimum to pad, and it is now the cleaner booking. See `dining.md`.
+
+**Casa KM got more expensive per head, not less.** Re-quoted at 6 guests the whole flat fell only $111, from $3,055 to **$2,944**, while the split lost a head. Per person went **$436 to $491**. This is the same per-unit arithmetic that pushed the Oasis from $483 each at ten guests to $913 at four: shrinking the group raises the lodging line. Mexico City per person lands back at exactly **$1,602**, the same figure it held when the trip was eight people in the Oasis.
+
+**The bed configuration constraint loosened, which reopens cheaper options.** Three couples plus one single required three double beds in three separate rooms. Two couples plus two singles needs only two double beds, because the singles will take any room with any bed. Listings previously rejected for having twin-bed rooms now qualify. Re-searching at six found several that undercut Casa KM sharply, the cheapest a four bedroom, three bathroom flat in Anzures at **$307 each** with 4.86 from 187 reviews, against Casa KM's $491. Casa KM is still the pick on bathrooms and review record; it is no longer the pick on price.
+
+Open: whether the person who dropped was also on the beach leg. If so the Riviera Maya residence reprices from a six way split, and every beach figure still assumes six.
+
 ## Casa KM over the Oasis, and the group drops to 7 in one house
+
+**Partly superseded the same day by the drop to 7, see the entry above.** The choice of Casa KM stands; the prices below were quoted at 7 sharing and are now $2,944 and $491 each.
 
 **Decided 12 October 2026, reversing the Oasis.** Headcount settled at three couples plus one single. An eighth traveller is in Mexico City but books their own hotel, so the house splits **7 ways** while dinners, flights and the balloon stay sized for 8. Pujol's eight tasting menu minimum is therefore still met.
 

@@ -13,7 +13,8 @@ legs:
     arrive: 2026-12-29
     depart: 2027-01-03
     nights: 5
-    travelers: 8
+    travelers: 7
+    lodging_travelers: 6
     base: Roma Norte
     why: New Year's Eve and the birthday both happen here
 

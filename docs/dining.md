@@ -1,6 +1,6 @@
 # Birthday dinner, Saturday 2 January
 
-Party of 8. Hardest night of the week to seat, because it is a Saturday on a holiday weekend.
+Party of **7**, down from 8 on 12 October. Hardest night of the week to seat, because it is a Saturday on a holiday weekend. The drop to 7 broke Pujol's minimum, which is covered below.
 
 ## The constraint nobody plans around
 
@@ -29,13 +29,16 @@ All prices are **per person**, food only, before drinks and tip.
 
 ## Pujol, the incumbent
 
-Private dining room, capacity 8 to 14, **minimum 8 tasting menus** which the group meets exactly, and **no room rental fee**. MX$3,795 each, about **$223 per person** before drinks and tip. Seatings are 2:00 PM or 7:30 PM, and the 2:00 PM is unusable because the balloon returns at that hour.
+Private dining room, capacity 8 to 14, **minimum 8 tasting menus**, and **no room rental fee**.
+
+> **The group no longer meets the minimum.** At 7 we either pay for an eighth cover nobody eats, roughly **$223 wasted**, or give up the private room and take a regular table if one exists. This is the single biggest consequence of dropping to 7, and it flips the recommendation toward Em, which takes parties of 3 to 8 and fits 7 with nothing to negotiate.
+ MX$3,795 each, about **$223 per person** before drinks and tip. Seatings are 2:00 PM or 7:30 PM, and the 2:00 PM is unusable because the balloon returns at that hour.
 
 Cancellation is MX$2,000 each (about $118) inside 48 hours. **Pujol does not book through OpenTable** and its booking window is unknown, which makes it the biggest blind spot on the whole trip.
 
 ## Em, the real peer
 
-One Michelin star 2024 through 2026, number 71 in Latin America's 50 Best. **Main dining room takes parties of 3 to 8**, so 8 fits with nothing to negotiate. MX$3,900 each, about **$229 per person**, with a MX$2,000 deposit per person (about $118 each) due at booking.
+One Michelin star 2024 through 2026, number 71 in Latin America's 50 Best. **Main dining room takes parties of 3 to 8**, so 7 fits with nothing to negotiate and no minimum to pad. MX$3,900 each, about **$229 per person**, with a MX$2,000 deposit per person (about $118 each) due at booking.
 
 Two things no write-up mentions:
 
@@ -60,7 +63,7 @@ The honest pick is **Maximo Bistrot** or **Rosetta**. One Michelin star between 
 
 Every venue below is plotted on [the map](map.html) with its walk from the house.
 
-- **29 December:** Ling Ling, the only open upscale slot. OpenTable, up to 20, released 30 September so it is bookable now.
+- **29 December:** Ling Ling, the only open upscale slot. OpenTable, up to 20, released 30 September so it is bookable now. Availability was last checked at a party of 8, so re-check at 7 before booking.
 - **30 December:** taco day. Casual only. Cuina on Tabasco 46 if anyone wants a table, CoverManager slug `cuina-cdmx`, max 10 online.
 - **La Table Krug:** Tuesday to Saturday, one seating at 8:00 PM, so 29 or 30 December work. It is at the St. Regis, so do not book it if the group takes a St. Regis New Year's Eve.
 

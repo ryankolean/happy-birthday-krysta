@@ -8,17 +8,17 @@ this_week:
     title: Book Casa KM, or pick the Condesa flat instead
     status: todo
     why_now: >
-      Casa KM is $436 each, $3,055 for the whole flat split 7 ways, with four
-      bedrooms that each have their own bathroom and a private rooftop. The one
-      alternative is the Coolest flat in Condesa at $675 each. Only seven share
-      the place; the eighth is booking their own hotel. Free cancellation lasts
-      24 hours on either, then partial refund only until 22 December, so this
-      needs the group's yes before the card goes in. Capacity at Casa KM is
-      exactly 7, so confirm nobody is adding a plus one first.
+      Re-quoted at 6 sharing: Casa KM is now $491 each, $2,944 for the whole
+      flat split 6 ways, with four bedrooms that each have their own bathroom
+      and a private rooftop. The Condesa flat is $760 each. Free cancellation
+      lasts 24 hours on either, then partial refund only until 22 December.
+      Two couples and two singles is an easier bed configuration than three
+      couples was, so cheaper places now qualify that did not before, the
+      cheapest at $307 each. Worth a look before the card goes in.
     blocks: [collect-deposits]
 
   - id: book-dtw-mex
-    title: Book DL 646 for all 8
+    title: Book DL 646 for all 7
     status: todo
     why_now: >
       Exactly one nonstop a day from Detroit, roughly 130 seats, holiday week.
@@ -96,12 +96,31 @@ dated:
       refund at all.
 
 decisions_needed:
+  - id: pujol-minimum-broken
+    title: Pujol's private room needs 8 and we are now 7
+    status: todo
+    detail: >
+      The private dining room carries a minimum of eight tasting menus at
+      MX$3,795 each. At 7 we either pay for an eighth cover we do not use,
+      about $223 wasted, or give up the private room. Em takes parties of 3 to
+      8 and fits 7 with nothing to negotiate, so it is now the cleaner booking.
+      Ling Ling and the balloon both need re-quoting at 7 as well.
+
+  - id: recheck-beach-headcount
+    title: Confirm whether the beach leg is still 6
+    status: todo
+    detail: >
+      One person dropped from the Mexico City group. If they were also on the
+      Riviera Maya leg, that leg falls from 6 to 5 and The Fives residence
+      reprices, since it is billed per unit and split by head. Every beach
+      figure on the costs page still assumes 6.
+
   - id: confirm-balloon
     title: Confirm Volare flies 2 January 2027
     status: todo
     detail: >
       Three questions: do they fly that date, can they hold a private basket
-      for 8, and what is the 2027 holiday rate. 2 January is a Saturday in the
+      for 7, and what is the 2027 holiday rate. 2 January is a Saturday in the
       busiest week of the year.
 
   - id: pick-fives-rate
@@ -148,7 +167,7 @@ housekeeping:
       reservations@thefiveshotels.com.
 
   - id: group-chat
-    title: Start the group chat for all 8
+    title: Start the group chat for all 7
     status: todo
     detail: >
       Post dress codes. Gin Gin Cibeles is formal attire and a couple of the
@@ -163,9 +182,10 @@ done:
   - id: resolve-headcount
     title: Resolve headcount
     detail: >
-      8 in Mexico City, of whom 7 share the accommodation and the eighth books
-      their own hotel. 6 at the beach. Dinners, flights and the balloon are all
-      still sized for 8.
+      Settled then changed twice. Now 7 in Mexico City, of whom 6 share the
+      accommodation as two couples and two singles, while the seventh books
+      their own hotel. Dinners, flights and the balloon are sized for 7.
+      Beach headcount needs rechecking, see the open task.
 
   - id: verify-availability
     title: Verify both properties still available

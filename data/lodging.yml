@@ -159,10 +159,10 @@ cdmx_front_runner:
   checkin: 2026-12-29
   checkout: 2027-01-03
   nights: 5
-  guests: 7
+  guests: 6
   capacity: 7
-  total_usd: 3055
-  per_person_usd: 436
+  total_usd: 2944
+  per_person_usd: 491
   all_in: true
   bedrooms: 4
   beds: 4
@@ -188,9 +188,9 @@ cdmx_front_runner:
       bed: Full
       extras: En-suite bath. No balcony or closet. Host lists it as best for one guest.
   room_plan: >
-    Three couples take the king and the two queens, all of which have their own
-    balcony and bathroom. The single traveller takes bedroom 4, which the host
-    describes as best suited to one guest. Nobody shares a bathroom.
+    Two couples take the king and one queen, both with their own balcony and
+    bathroom. The two singles take the other queen and bedroom 4. Nobody shares
+    a bedroom and nobody shares a bathroom.
   roof: >
     Private rooftop one level up, with outdoor furniture, a shaded dining area,
     a grill, a stationary bike and open city views that reach the volcanoes on
@@ -206,8 +206,8 @@ cdmx_front_runner:
       Same cliff as the Oasis. Every runner up has better terms, so if the
       headcount is still soft this is the one thing worth paying up to avoid.
   why_chosen:
-    - Four bedrooms, each with its own full bathroom, so all three couples and the single get a private bath
-    - Bedroom 4 is purpose-built for a single guest, which fits the odd traveller exactly
+    - Four bedrooms, each with its own full bathroom, so both couples and both singles get a private bath
+    - Bedroom 4 is purpose-built for a single guest, which suits one of the two singles
     - Balconies off three of the four bedrooms, the direct fix for the Oasis airflow complaints
     - Private rooftop with a grill and shaded dining, so we keep the thing the Oasis was worth
     - 4.99 from 139 reviews is the strongest record of anything checked on these dates
@@ -215,15 +215,16 @@ cdmx_front_runner:
     - Smoke detectors in every bedroom, a carbon monoxide alarm, three fire extinguishers and a first aid kit
     - Washer and dryer in unit, 433 Mbps wifi, two covered parking spaces
   flags:
-    - Seven guests maximum, so there is zero slack if anyone adds a plus one
+    - Seven guests maximum, which now leaves one spare place rather than none
+    - Re-quoted at 6 the whole flat fell only $111, so per person rose from $436 to $491
     - Cancellation is free for 24 hours only, then partial refund until 22 December
     - Three levels joined by interior stairs, and the elevator only reaches the middle one
     - No air conditioning and no central heating, just portable fans and extra blankets. January nights run about 45F.
     - Del Valle Norte reads as far but is not; it is closer to Em and Parque Mexico than the Oasis is
   runners_up_note: >
-    Four alternatives were verified on the same dates and all four have better
-    cancellation terms. The cheapest, a five bedroom Del Valle penthouse with
-    three kings and three terraces, is $288 each and saves the group $1,042.
+    Dropping to two couples and two singles makes the bed configuration far
+    easier to satisfy, which reopens options that three couples had ruled out.
+    Several now undercut Casa KM sharply, the cheapest at $307 each.
 
 # The only other option still on the table for Mexico City. Verified on its own
 # listing page 12 October 2026 and priced at 7 guests, same nights.
@@ -239,10 +240,10 @@ cdmx_alternative:
   checkin: 2026-12-29
   checkout: 2027-01-03
   nights: 5
-  guests: 7
+  guests: 6
   capacity: 14
-  total_usd: 4724
-  per_person_usd: 675
+  total_usd: 4559
+  per_person_usd: 760
   all_in: true
   bedrooms: 4
   beds: 6
@@ -272,9 +273,9 @@ cdmx_alternative:
       bed: Queen
       extras: Separate entrance off the building hallway, with its own bathroom
   room_plan: >
-    Three couples take the king and the two queen rooms, all three of which sit
-    together. The single traveller takes bedroom 4. Two of the four rooms hold
-    two queens each, so a couple in one of those leaves a spare bed in the room.
+    The two couples take the king and one of the two-queen rooms. The two
+    singles take the other two-queen room and bedroom 4. Two rooms hold two
+    queens each, so whoever is in them leaves a bed unused.
   roof: No roof and no terrace. The flat faces a park across the street.
   distance_km:
     roma_norte_core: 1.0
@@ -295,7 +296,7 @@ cdmx_alternative:
       Bedroom 4 has a separate entrance. The host writes that three bedrooms sit
       together "while the fourth one has a separate entrance, accessed through a
       different door." A guest confirms whoever sleeps there "has to knock on the
-      apartment entrance" to rejoin everyone. The single traveller would get it.
+      apartment entrance" to rejoin everyone. One of the two singles would get it.
     - Three bathrooms for seven people, against four and a half at Casa KM
     - No roof and no terrace, so there is no midnight spot in the building
     - Cancellation is free for 24 hours only, the same cliff as Casa KM
@@ -305,8 +306,9 @@ cdmx_alternative:
       and 15:00. That lands on 30 December and 2 January.
     - Capacity is 14, so we would be paying for a flat built for twice our number
   verdict: >
-    The safest bet on reviews and the best placed for dinner, but it costs $239
-    more each than Casa KM for fewer bathrooms, no roof, and a bedroom the single
-    traveller reaches through a different door.
+    The safest bet on reviews and the best placed for dinner, but at the six way
+    split it now costs $269 more each than Casa KM for fewer bathrooms, no roof,
+    and a bedroom one of the singles reaches through a different door. It is the
+    most expensive option on the board.
 
-verified: 2026-10-02
+verified: 2026-10-12

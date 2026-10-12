@@ -17,7 +17,7 @@ flights:
     arrive: "12:30"
     duration: 4h50
     price_usd: 1246
-    who: all 8
+    who: all 7
     risk: >
       Exactly one nonstop per day on roughly 130 seats, in holiday week,
       and we need 8 of them. Seat availability is the real risk, not fare.
