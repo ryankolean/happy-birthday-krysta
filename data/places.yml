@@ -32,16 +32,18 @@ categories:
 
 places:
   # ---------- where we are staying ----------
-  - name: Oasis in Roma Norte
+  - name: Casa KM
     category: stay
-    address: Roma Norte, Cuauhtemoc, Mexico City
-    neighborhood: Roma Norte
+    address: Colonia del Valle, Benito Juarez, Ciudad de Mexico
+    neighborhood: Del Valle Norte
     precision: approximate
     note: >
-      Airbnb only shows an approximate area until a booking is confirmed, and
-      the exact address stays out of this repo on purpose. Pin is the middle
-      of Roma Norte, good enough for judging walking distance.
-    url: https://www.airbnb.com/rooms/33561836
+      Front runner for the Mexico City stay, not yet booked. Pin is the middle
+      of Del Valle Norte, good enough for judging walking distance. Airbnb
+      shows a tighter circle than this, but deliberately is not used: the
+      exact address stays out of this repo, and so does anything that narrows
+      it to a block.
+    url: https://www.airbnb.com/rooms/881238784886784781
 
   # ---------- fine dining ----------
   - name: Pujol

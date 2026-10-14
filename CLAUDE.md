@@ -33,7 +33,11 @@ Published business phone numbers and public listing URLs are fine. Someone's per
 
 Categories are fixed in the `categories` block at the top of `places.yml`. Adding a seventh means picking a colour that stays legible on both themes, so prefer reusing one of the six.
 
-**Never put the exact Airbnb address on the map.** The `stay` pin is deliberately the middle of Roma Norte with `precision: approximate`, and the page says so. That stays true after booking.
+**Never put the exact Airbnb address on the map.** The `stay` pin is deliberately the middle of whichever neighbourhood we are staying in, with `precision: approximate`, and the page says so. That stays true after booking. Airbnb's own published circle is roughly 150m and narrows the house to a block, so do not use it either, even though the listing page exposes it.
+
+Because the pin is coarser than the house, every walk figure on the map is a floor. The map page prints both the pinned number and the one measured from the listing's circle, so nobody reads the pessimistic figure as the real one.
+
+**Validate what the geocoder matched, not just that it returned something.** `Del Valle Norte, Benito Juarez, Mexico City` resolved to Avenida Division del Norte, 2.35 km from the colonia, and passed the bounding-box check because it is still inside the city. Check `matched` in `data/geocache.json` names the place you asked for, and purge the entry if it does not.
 
 Geocoding is a network call to a public service at one request per second. It runs locally and on purpose, never in CI.
 

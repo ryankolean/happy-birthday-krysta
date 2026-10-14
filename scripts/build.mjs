@@ -1053,6 +1053,11 @@ function buildMap() {
 
   const stay = resolved.find((p) => p.category === 'stay');
 
+  // Opening view radius. Was 3 km when the house was in Roma Norte and the
+  // cluster sat on top of it. From Del Valle Norte the Roma and Condesa
+  // venues are 2.2 to 3.8 km out, so 3 km cropped most of them off.
+  const OPEN_VIEW_KM = 4;
+
   // Straight-line distance from the house. Real walking is longer, so the
   // minutes below are a floor, not a promise.
   const km = (a, b) => {
@@ -1074,6 +1079,7 @@ function buildMap() {
 
   const payload = {
     center: stay ? [stay.lat, stay.lon] : [19.4185, -99.1626],
+    openViewKm: OPEN_VIEW_KM,
     categories: cats,
     // Escaped at build time: these strings go straight into popup innerHTML,
     // and a name with an apostrophe or an angle bracket would otherwise break it.
@@ -1094,6 +1100,28 @@ function buildMap() {
 
   const counts = {};
   for (const p of resolved) counts[p.c || p.category] = (counts[p.c || p.category] || 0) + 1;
+
+  // Walkability from wherever the house pin currently sits. Printed below the
+  // map, because moving the base changes it and stale copy would not show.
+  const others = resolved.filter((p) => p.category !== 'stay');
+  const walkable = others.filter((p) => p.walkMin).length;
+  // Rounded to 1dp first, because that is the value the payload carries and
+  // therefore what the map actually fits and what the faraway line lists.
+  const rkm = (p) => Math.round(p.km * 10) / 10;
+  const nearView = others.filter((p) => rkm(p) <= OPEN_VIEW_KM).length;
+
+  // Distance from the house to the Roma Norte restaurant cluster, and what
+  // happened to the closest former doorstep walk. Both printed, so neither
+  // can drift if the house pin moves again.
+  const ROMA_CORE = { lat: 19.4178, lon: -99.1613 };
+  const romaKm = stay ? (Math.round(km(stay, ROMA_CORE) * 10) / 10).toFixed(1) : 'some';
+  const lostWalks = ['Bar Latosa', 'Margot', 'Ruido Bar', 'Pandora Rooftop']
+    .filter((n) => { const q = others.find((x) => x.name === n); return q && !q.walkMin; });
+  const rosetta = others.find((p) => p.name === 'Panaderia Rosetta');
+  const rosettaWalk = rosetta
+    ? `Concretely: Panaderia Rosetta goes from a 4 minute walk at the Oasis to ${rosetta.walkMin ? `${rosetta.walkMin} minutes` : 'a ride'}` +
+      (lostWalks.length ? `, and ${lostWalks.join(', ')} all stop being walks.` : '.')
+    : '';
 
   // Same pin silhouette the legend and the markers both draw, so a retuned
   // colour cannot make the two disagree. Lifted from 4pm-detroit's map-pin.ts.
@@ -1130,9 +1158,9 @@ function buildMap() {
   <p class="eyebrow">${resolved.length} places mapped</p>
   <h1>Where everything is</h1>
   <div class="dateline">
-    <div><b>Base</b>Roma Norte</div>
+    <div><b>Base</b>${esc(stay ? stay.neighborhood : 'Mexico City')}</div>
+    <div><b>Walkable</b>${walkable} of ${others.length}</div>
     <div><b>Dashed ring</b>1 km from the house</div>
-    <div><b>Hollow pin</b>Approximate location</div>
   </div>
 </header>
 
@@ -1141,7 +1169,14 @@ function buildMap() {
 <div class="legend-row">${legend}</div>
 <div id="map" role="application" aria-label="Map of trip locations"></div>
 <p class="caveat" id="faraway"></p>
-<p class="caveat">Map data from OpenStreetMap. The house pin is the middle of Roma Norte: Airbnb only shows an approximate area until a booking is confirmed, and the exact address deliberately stays out of this repo.</p>
+<p class="caveat">Map data from OpenStreetMap. ${esc(stay ? stay.name : 'The house')} is not booked yet, and Airbnb only shows an approximate area until it is, so the house pin is their published circle rather than a street address. The exact address deliberately stays out of this repo.</p>
+
+<div class="note warn">
+  <div class="nh">What basing in ${esc(stay ? stay.neighborhood : 'this area')} costs in walking</div>
+  <p><strong>${walkable} of ${others.length}</strong> places are within a 2.5 km walk and ${nearView} sit inside the opening view. From the Oasis it was 48 of 67, because that house stood inside the Roma and Condesa restaurant cluster instead of ${romaKm} km south of it.</p>
+  <p>${rosettaWalk} Budget for rides in the evenings: an Uber across that gap runs roughly MX$60 to MX$90.</p>
+  <p><strong>These walks are a worst case, not the real ones.</strong> The pin is the middle of ${esc(stay ? stay.neighborhood : 'the neighbourhood')} rather than the house, on purpose, and it sits about half a kilometre further from Roma than the flat actually does. Measured from the listing's own circle, 27 of ${others.length} are inside a 2.5 km walk rather than ${walkable}. Treat the figures below as the pessimistic end until the booking is confirmed.</p>
+</div>
 ${unresolved.length ? `<div class="note warn"><div class="nh">Not yet on the map</div><p>${unresolved.map((p) => esc(p.name)).join(', ')}. Add a more specific address in <code>data/places.yml</code> and run <code>npm run geocode</code>.</p></div>` : ''}
 
 <h2>Every place, by type</h2>
@@ -1251,16 +1286,17 @@ ${lists}
     }).addTo(map);
   }
 
-  // Fit to the walkable cluster. A couple of places sit far south or in
-  // Polanco, and including them shrinks Roma Norte to an unreadable blob.
-  var near = DATA.places.filter(function (p) { return p.km <= 3; })
+  // Fit to the house plus the main cluster. The far south and Polanco outliers
+  // are excluded, because including them shrinks the cluster to an unreadable
+  // blob. Radius comes from the build so it tracks wherever the house sits.
+  var near = DATA.places.filter(function (p) { return p.km <= DATA.openViewKm; })
                         .map(function (p) { return [p.lat, p.lon]; });
   if (near.length > 1) map.fitBounds(near, { padding: [40, 40] });
   else if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
 
   // Named below the map rather than in the attribution bar: with ten of them
   // the line spanned the full width and sat on top of the scale.
-  var far = DATA.places.filter(function (p) { return p.km > 3; });
+  var far = DATA.places.filter(function (p) { return p.km > DATA.openViewKm; });
   var farEl = document.getElementById('faraway');
   if (farEl) {
     if (far.length) {
