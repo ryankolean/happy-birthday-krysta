@@ -1,12 +1,14 @@
 # New Year's Eve, Thursday 31 December
 
-Party of 8, in Roma Norte, with a private rooftop at the house.
+Party of 7, in Del Valle Norte, with a private rooftop at the house.
+
+> **The rooftop at midnight is now in question.** Casa KM was booked on 18 October and its confirmation lists **quiet hours from 22:00 to 08:00**, which the listing's rules summary never showed. Midnight on the roof on 31 December falls inside that window, and the property has exterior security cameras. Everything below still assumes the roof, so it is all provisional until Manuel confirms in writing. That request is on [the to do list](tasks.html). If the answer is no, the potluck pickup run still works indoors, but the midnight plan needs a different venue.
 
 ## What makes this night different
 
 Reforma closes in both directions, along with Florencia, Rio Tiber and Rio Rhin. The free Reforma party runs 18:00 to 02:00 and draws about **250,000 people**. The Zocalo is dark, the city confirmed no programming.
 
-**Cars will not move.** And midnight is already planned on the Oasis rooftop, which means a restaurant dinner forces a choice between leaving early and missing midnight.
+**Cars will not move.** And midnight is provisionally planned on the Casa KM rooftop, subject to the quiet hours above, which means a restaurant dinner forces a choice between leaving early and missing midnight.
 
 That reframes the whole decision: the best plan is the one that does not require leaving the house.
 
@@ -18,7 +20,7 @@ All prices **per person**.
 |---|---|---|---|
 | **Potluck pickup run** | **$31 to $69** | High, all before 5 PM | Pre-order deadlines |
 | **Private chef** | **$69** plus holiday premium | None | Quote and availability |
-| St. Regis gala | **$324** | Travel through the closure ring | Sells out, and you miss your own rooftop |
+| St. Regis gala | **$324** | Travel through the closure ring | Sells out, and you miss your own rooftop. Worth more of a look if the roof is refused. |
 
 ## Recommended: the potluck pickup run
 

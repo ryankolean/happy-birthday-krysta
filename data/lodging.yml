@@ -1,5 +1,5 @@
-# Both properties verified available 2026-10-02 on the operators' own engines.
-# Neither is booked.
+# Casa KM is booked. The Fives is not. The Oasis stays only as the record of
+# what it lost on and why.
 
 properties:
   - id: oasis
@@ -144,7 +144,8 @@ properties:
       - Whether the 32% rate survives to booking and stacks with the 5% loyalty discount
       - Kitchen items surcharge if anyone plans to cook
 
-# Front runner for Mexico City as of 12 October 2026, replacing the Oasis.
+# BOOKED 18 October 2026. The confirmation code, street address, host phone
+# and payment links live in private/casa-km-booking.md, which is gitignored.
 # Headcount settled at 7 sharing (3 couples plus 1 single); the 8th traveller
 # is booking their own hotel. Priced at 7 guests on the listing page itself.
 cdmx_front_runner:
@@ -154,16 +155,38 @@ cdmx_front_runner:
   platform: Airbnb
   listing_id: "881238784886784781"
   url: https://www.airbnb.com/rooms/881238784886784781
-  status: available
-  verified: 2026-10-12
+  status: booked
+  booked: 2026-10-18
+  verified: 2026-10-18
   checkin: 2026-12-29
   checkout: 2027-01-03
   nights: 5
   guests: 6
   capacity: 7
-  total_usd: 2944
-  per_person_usd: 491
+  total_usd: 3837
+  per_person_usd: 639
   all_in: true
+  price_breakdown:
+    nightly_usd: 634.20
+    nights: 5
+    # Airbnb prints the nightly as a rounded display: 634.20 x 5 is 3,171.00,
+    # two cents under the subtotal it charges. The subtotal is authoritative.
+    subtotal_usd: 3171.02
+    taxes_usd: 665.91
+    total_usd: 3836.93
+  payment_schedule:
+    - date: 2026-10-18
+      amount_usd: 1585.51
+      status: paid
+    - date: 2026-12-14
+      amount_usd: 2251.42
+      status: scheduled
+  rate_rose_before_booking: >
+    Quoted all in at $2,944 on 12 October, paid $3,836.93 on 18 October, which
+    is $893 more. The receipt is $634.20 a night before tax against roughly
+    $490 implied by the earlier quote, so the nightly rate rose about 29
+    percent in six days. Holiday inventory tightening is the likely cause and
+    it cannot be verified after the fact. Treat the $2,944 figure as dead.
   bedrooms: 4
   beds: 4
   baths: 4.5
@@ -201,10 +224,12 @@ cdmx_front_runner:
     em: 1.6
     pujol: 4.7
   cancellation:
-    actual: Free for 24 hours after booking, then partial refund only until 22 December 2026
+    actual: Free for 24 hours after booking, then partial refund only until 16:00 on 22 December 2026, listing local time
     warning: >
-      Same cliff as the Oasis. Every runner up has better terms, so if the
-      headcount is still soft this is the one thing worth paying up to avoid.
+      The free window has already closed. Until 22 December only a partial
+      refund is available and after that nothing, so the money is committed.
+      The second payment of $2,251.42 lands on 14 December, eight days ahead
+      of that cliff.
   why_chosen:
     - Four bedrooms, each with its own full bathroom, so both couples and both singles get a private bath
     - Bedroom 4 is purpose-built for a single guest, which suits one of the two singles
@@ -214,101 +239,31 @@ cdmx_front_runner:
     - Gas stove, oven and a full kitchen, so the New Year's Eve plan survives
     - Smoke detectors in every bedroom, a carbon monoxide alarm, three fire extinguishers and a first aid kit
     - Washer and dryer in unit, 433 Mbps wifi, two covered parking spaces
+  house_rules:
+    quiet_hours: "22:00 to 08:00"
+    pets: allowed
+    max_guests: 7
+  safety_on_confirmation:
+    - Exterior security cameras on the property
+    - Carbon monoxide alarm
+    - Smoke alarm
   flags:
-    - Seven guests maximum, which now leaves one spare place rather than none
-    - Re-quoted at 6 the whole flat fell only $111, so per person rose from $436 to $491
+    - >
+      Quiet hours run 22:00 to 08:00. This was not in the listing's rules
+      summary and surfaced only on the confirmation. The New Year's Eve plan
+      puts midnight on the rooftop, which sits squarely inside that window,
+      so that plan needs either rethinking or an explicit agreement with the
+      host. See the New Year's Eve page.
+    - Exterior security cameras on the property, so treat the outside as recorded
+    - Seven guests maximum, which leaves one spare place
+    - The nightly rate rose about 29 percent between the 12 October quote and booking
     - Cancellation is free for 24 hours only, then partial refund until 22 December
     - Three levels joined by interior stairs, and the elevator only reaches the middle one
     - No air conditioning and no central heating, just portable fans and extra blankets. January nights run about 45F.
     - Del Valle Norte reads as far but is not; it is closer to Em and Parque Mexico than the Oasis is
-  runners_up_note: >
-    Dropping to two couples and two singles makes the bed configuration far
-    easier to satisfy, which reopens options that three couples had ruled out.
-    Several now undercut Casa KM sharply, the cheapest at $307 each.
-
-# The only other option still on the table for Mexico City. Verified on its own
-# listing page 12 October 2026 and priced at 7 guests, same nights.
-cdmx_alternative:
-  name: 4BRM 3BTH Coolest flat in Heart of Condesa
-  short_name: Coolest flat in Condesa
-  neighborhood: Condesa
-  platform: Airbnb
-  listing_id: "557345447959782857"
-  url: https://www.airbnb.com/rooms/557345447959782857
-  status: available
-  verified: 2026-10-12
-  checkin: 2026-12-29
-  checkout: 2027-01-03
-  nights: 5
-  guests: 6
-  capacity: 14
-  total_usd: 4559
-  per_person_usd: 760
-  all_in: true
-  bedrooms: 4
-  beds: 6
-  baths: 3
-  rating: 4.85
-  reviews: 193
-  checkin_time: "16:00"
-  checkout_time: "11:00"
-  subscores:
-    cleanliness: 4.8
-    accuracy: 4.8
-    checkin: 4.9
-    communication: 5.0
-    location: 5.0
-    value: 4.8
-  bed_config:
-    - bedroom: 1
-      bed: 2 queens
-      extras: In the main part of the flat
-    - bedroom: 2
-      bed: King
-      extras: In the main part of the flat
-    - bedroom: 3
-      bed: 2 queens
-      extras: In the main part of the flat
-    - bedroom: 4
-      bed: Queen
-      extras: Separate entrance off the building hallway, with its own bathroom
-  room_plan: >
-    The two couples take the king and one of the two-queen rooms. The two
-    singles take the other two-queen room and bedroom 4. Two rooms hold two
-    queens each, so whoever is in them leaves a bed unused.
-  roof: No roof and no terrace. The flat faces a park across the street.
-  distance_km:
-    roma_norte_core: 1.0
-    parque_mexico: 0.4
-    em: 0.3
-    pujol: 3.5
-  cancellation:
-    actual: Free for 24 hours after booking, then partial refund only until 22 December 2026
-  why_consider:
-    - 4.85 from 193 reviews, the longest track record of anything checked on these dates
-    - Location scores a straight 5.0, and it faces a park 400m from Parque Mexico
-    - A three minute walk to Em, the closest any option gets to a birthday dinner venue
-    - Lift in the building, washer and dryer in the unit, gas stove and oven
-    - Smoke alarm and carbon monoxide alarm both present
-    - Reviews confirm it has handled a group of 11 without trouble
-  flags:
-    - >
-      Bedroom 4 has a separate entrance. The host writes that three bedrooms sit
-      together "while the fourth one has a separate entrance, accessed through a
-      different door." A guest confirms whoever sleeps there "has to knock on the
-      apartment entrance" to rejoin everyone. One of the two singles would get it.
-    - Three bathrooms for seven people, against four and a half at Casa KM
-    - No roof and no terrace, so there is no midnight spot in the building
-    - Cancellation is free for 24 hours only, the same cliff as Casa KM
-    - No air conditioning, portable fans only
-    - >
-      Staff water the house plants every Wednesday and Saturday between 11:00
-      and 15:00. That lands on 30 December and 2 January.
-    - Capacity is 14, so we would be paying for a flat built for twice our number
-  verdict: >
-    The safest bet on reviews and the best placed for dinner, but at the six way
-    split it now costs $269 more each than Casa KM for fewer bathrooms, no roof,
-    and a bedroom one of the singles reaches through a different door. It is the
-    most expensive option on the board.
-
-verified: 2026-10-12
+  runner_up_note: >
+    The 4BRM Coolest flat in Heart of Condesa was the alternative at $760 each
+    and is no longer in play. Cheaper options existed when we booked, the
+    lowest at $307 each; the decision log records why Casa KM won on bathrooms
+    and review record rather than on price.
+verified: 2026-10-18

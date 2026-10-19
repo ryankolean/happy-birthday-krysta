@@ -38,11 +38,11 @@ places:
     neighborhood: Del Valle Norte
     precision: approximate
     note: >
-      Front runner for the Mexico City stay, not yet booked. Pin is the middle
-      of Del Valle Norte, good enough for judging walking distance. Airbnb
-      shows a tighter circle than this, but deliberately is not used: the
-      exact address stays out of this repo, and so does anything that narrows
-      it to a block.
+      Booked 18 October 2026. Pin is the middle of Colonia del Valle, good
+      enough for judging walking distance. The confirmation gives an exact
+      street address and coordinates; both are deliberately kept out of this
+      repo and off this map, along with anything that narrows the house to a
+      block. They are in the gitignored private folder.
     url: https://www.airbnb.com/rooms/881238784886784781
 
   # ---------- fine dining ----------

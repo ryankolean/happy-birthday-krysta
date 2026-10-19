@@ -51,7 +51,7 @@ Geocoding is a network call to a public service at one request per second. It ru
 
 ## Numbers that need re-verifying before anyone pays
 
-- Both properties were verified available 2026-10-02. Neither is booked.
+- Casa KM is booked and partly paid; the second payment of $2,251.42 auto-charges 14 December 2026. The Fives is still only verified available, not booked.
 - The Fives 32 percent discount is promotional and may not survive.
 - Flight fares were priced 2026-09-25 and will climb through the fall.
 - New Year's Eve takeaway prices on file are from the 2023 cycle. Add 30 to 40 percent.

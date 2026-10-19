@@ -2,6 +2,18 @@
 
 What was decided, and what it beat. Newest first.
 
+## Casa KM booked
+
+**Confirmed 18 October 2026.** Reservation for 29 December to 3 January, six adults. **$3,836.93 all in**, which is $634.20 a night for five nights plus $665.91 of tax, or **$639.49 each** split six ways. Paid $1,585.51 on booking with $2,251.42 auto-charging on 14 December. The confirmation code, street address and host contact are in the gitignored `private/` folder.
+
+Two things the confirmation changed.
+
+**The rate had risen about 29 percent since the quote.** On 12 October the same dates at six guests quoted **$2,944** all in. Six days later it booked at **$3,836.93**, $893 more, or **$148 more per person** than every figure this repo carried. The receipt works out to $634.20 a night before tax against roughly $490 implied by the earlier quote. Holiday inventory tightening is the likely cause and it is not verifiable after the fact. Mexico City per person went from $1,602 to **$1,750**, the full trip to **$5,024**.
+
+**There are quiet hours, 22:00 to 08:00.** This was never in the listing's rules summary and appeared only on the confirmation. The New Year's Eve plan puts midnight on the rooftop, which is inside that window, and the property has exterior security cameras. That plan is provisional until Manuel agrees in writing, which is now a dated task. It is the one thing the Oasis genuinely did better: it had no quiet hours at all, and that was listed as a reason for choosing it back in September.
+
+What it beat: the 4BRM Coolest flat in Heart of Condesa at $760 each, and a field of cheaper options down to $307 each. Casa KM won on four en-suite bathrooms, a private rooftop and 4.99 from 139 reviews, not on price.
+
 ## Group drops to 7 in the city, 6 sharing the house
 
 **Changed 12 October 2026.** One half of one couple dropped. The shape is now **two couples and two singles** in the accommodation, six people, plus a seventh who books their own hotel. **Seven in the city** for dinners, the balloon and the flights.
@@ -18,7 +30,7 @@ Open: whether the person who dropped was also on the beach leg. If so the Rivier
 
 ## Casa KM over the Oasis, and the group drops to 7 in one house
 
-**Partly superseded the same day by the drop to 7, see the entry above.** The choice of Casa KM stands; the prices below were quoted at 7 sharing and are now $2,944 and $491 each.
+**Partly superseded, see the entries above.** The choice of Casa KM stands and it is now booked. The prices below were quoted at 7 sharing; the actual booked figures are **$3,836.93 and $639.49 each** at 6 sharing.
 
 **Decided 12 October 2026, reversing the Oasis.** Headcount settled at three couples plus one single. An eighth traveller is in Mexico City but books their own hotel, so the house splits **7 ways** while dinners, flights and the balloon stay sized for 8. Pujol's eight tasting menu minimum is therefore still met.
 

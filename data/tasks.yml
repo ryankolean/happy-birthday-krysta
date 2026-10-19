@@ -4,19 +4,6 @@
 as_of: 2026-10-02
 
 this_week:
-  - id: book-casa-km
-    title: Book Casa KM, or pick the Condesa flat instead
-    status: todo
-    why_now: >
-      Re-quoted at 6 sharing: Casa KM is now $491 each, $2,944 for the whole
-      flat split 6 ways, with four bedrooms that each have their own bathroom
-      and a private rooftop. The Condesa flat is $760 each. Free cancellation
-      lasts 24 hours on either, then partial refund only until 22 December.
-      Two couples and two singles is an easier bed configuration than three
-      couples was, so cheaper places now qualify that did not before, the
-      cheapest at $307 each. Worth a look before the card goes in.
-    blocks: [collect-deposits]
-
   - id: book-dtw-mex
     title: Book DL 646 for all 7
     status: todo
@@ -73,6 +60,25 @@ dated:
       not yet open. 19 December is open, 31 December is not, so they are
       holding the holiday week back. Phone +52 55 6450 1302.
 
+  - id: nye-quiet-hours
+    title: Settle the rooftop at midnight with the host
+    status: todo
+    date: 2026-11-01
+    why: >
+      The confirmation lists quiet hours 22:00 to 08:00, which the listing's
+      rules summary did not show. Midnight on the rooftop on 31 December sits
+      inside that window. Message Manuel and get an explicit yes in the Airbnb
+      thread, in writing, before building the night around the roof. There are
+      exterior cameras on the property, so this is not a rule to test quietly.
+
+  - id: casa-km-second-payment
+    title: Second Casa KM payment of $2,251.42 comes out
+    status: todo
+    date: 2026-12-14
+    why: >
+      Auto-charges to Google Pay. Collect from everyone before this date, not
+      after. It lands eight days before the 22 December refund cliff.
+
   - id: nye-menus-2026
     title: Pull the 2026 New Year's Eve takeaway menus
     status: todo
@@ -88,12 +94,10 @@ dated:
     why: Last day the flexible rate refunds.
 
   - id: airbnb-refund-cliff
-    title: Last partial refund date on the Mexico City flat
+    title: Last partial refund on Casa KM, 16:00 listing local time
     status: todo
     date: 2026-12-22
-    why: >
-      Applies to Casa KM and to the Condesa flat alike. After this there is no
-      refund at all.
+    why: After this there is no refund at all. The booking is already committed.
 
 decisions_needed:
   - id: pujol-minimum-broken
@@ -179,6 +183,14 @@ housekeeping:
     detail: Framework undecided. See docs/open-questions.md.
 
 done:
+  - id: book-casa-km
+    title: Book Casa KM
+    detail: >
+      Booked 18 October 2026 for 29 December to 3 January, 6 adults.
+      $3,836.93 all in, $639.49 each. Confirmation details are in
+      private/casa-km-booking.md. The rate had risen about 29 percent from
+      the 12 October quote of $2,944.
+
   - id: resolve-headcount
     title: Resolve headcount
     detail: >

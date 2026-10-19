@@ -569,25 +569,19 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
 
   // lodging
   b += `<h2 id="lodging"><span class="num">02</span>Where we are staying</h2>
-<p class="lede">All verified available on the operators' own booking engines. Nothing is booked. Mexico City is down to two options and priced at 7 sharing.</p>`;
+<p class="lede">Mexico City is booked. The Fives is still only held in principle, verified on the resort's own engine.</p>`;
 
   const fives = lodging.properties.find((p) => p.id === 'fives');
   const casakm = lodging.cdmx_front_runner;
-  const alt = lodging.cdmx_alternative;
 
   b += `<div class="scroller"><table>
 <caption>Lodging is booked whole and split evenly. Both columns shown so the arithmetic is visible.</caption>
 <thead><tr><th>Property</th><th>Dates</th><th>Found</th><th class="n">Whole place</th><th class="n">Each</th></tr></thead><tbody>
-<tr class="pick"><td><strong>${esc(casakm.name)}</strong><br><small>${esc(casakm.neighborhood)}, ${casakm.bedrooms}BR, ${casakm.baths} baths, private rooftop &middot; front runner</small></td>
+<tr class="pick"><td><strong>${esc(casakm.name)}</strong><br><small>${esc(casakm.neighborhood)}, ${casakm.bedrooms}BR, ${casakm.baths} baths, private rooftop</small></td>
 <td>${esc(shortDate(casakm.checkin))} to ${esc(shortDate(casakm.checkout))}<br><small>${casakm.guests} guests</small></td>
-<td><span class="tag ok">available</span><br><small>${casakm.rating} from ${casakm.reviews} reviews</small></td>
+<td><span class="tag ok">booked</span><br><small>${esc(iso(casakm.booked))}</small></td>
 <td class="n"><small>${usd(casakm.total_usd)}</small></td>
 <td class="n"><strong>${usd(casakm.per_person_usd)}</strong></td></tr>
-<tr><td><strong>${esc(alt.short_name)}</strong><br><small>${esc(alt.neighborhood)}, ${alt.bedrooms}BR, ${alt.baths} baths, no roof &middot; the alternative</small></td>
-<td>${esc(shortDate(alt.checkin))} to ${esc(shortDate(alt.checkout))}<br><small>${alt.guests} guests</small></td>
-<td><span class="tag ok">available</span><br><small>${alt.rating} from ${alt.reviews} reviews</small></td>
-<td class="n"><small>${usd(alt.total_usd)}</small></td>
-<td class="n"><strong>${usd(alt.per_person_usd)}</strong></td></tr>
 <tr><td><strong>${esc(fives.room_type)}</strong><br><small>${esc(fives.name)}, ${fives.size_sqft} sq ft, sleeps ${fives.max_occupancy}</small></td>
 <td>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}<br><small>${fives.adults} adults</small></td>
 <td><span class="tag ok">${esc(fives.inventory_seen)} left</span><br><small>${esc(fives.discount_live)} off, plus ${fives.loyalty_discount.percent}% loyalty</small></td>
@@ -599,12 +593,12 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
 
 <h3>Beds at ${esc(casakm.name)}, so nobody is surprised</h3>
 <p>${casakm.bedrooms} bedrooms and ${casakm.baths} bathrooms: ${esc(casakm.bed_config.map((x) => x.bed).join(', ').toLowerCase())}, and every bedroom has its own full bathroom. ${nt(casakm.room_plan)} Checkout is ${esc(casakm.checkout_time)} and the rooftop is private.</p>
-<p><a href="${esc(casakm.url)}">View ${esc(casakm.name)}</a> &middot; <a href="${esc(alt.url)}">View ${esc(alt.short_name)}</a> &middot; <a href="${esc(fives.url)}">View The Fives</a> &middot; <a href="stays.html">Compare them side by side</a></p>
+<p><a href="${esc(casakm.url)}">View ${esc(casakm.name)}</a> &middot; <a href="${esc(fives.url)}">View The Fives</a> &middot; <a href="stays.html">Full booking details</a></p>
 
 <div class="note warn">
   <div class="nh">Two things worth knowing</div>
   <p><strong>The beach is cheaper than we had budgeted.</strong> ${nt(fives.tax_breakdown_seen.note)}</p>
-  <p><strong>Both Mexico City options stop refunding on 22 December.</strong> ${esc(casakm.cancellation.actual)}. ${nt(casakm.cancellation.warning)}</p>
+  <p><strong>Mexico City is committed.</strong> ${esc(casakm.cancellation.actual)}. ${nt(casakm.cancellation.warning)}</p>
 </div>`;
 
   // flights
@@ -746,10 +740,10 @@ function buildCosts() {
 <tr class="sum"><td colspan="2">Mexico City, per person</td><td class="n">${usd(budget.cdmx.per_person)}</td></tr>
 </tbody></table></div>
 
-<div class="note">
-  <div class="nh">If we take ${esc(budget.cdmx.alternative_lodging.item)} instead</div>
-  <p>${nt(budget.cdmx.alternative_lodging.note)}</p>
-  <p>Both options are compared side by side on <a href="stays.html">the accommodations page</a>.</p>
+<div class="note warn">
+  <div class="nh">The lodging line is committed, and it rose</div>
+  <p>${nt(budget.cdmx.lines[0].note)}</p>
+  <p>Payment dates and the refund cliff are on <a href="stays.html">the accommodations page</a>.</p>
 </div>
 
 <h2>Riviera Maya</h2>
@@ -830,13 +824,12 @@ function buildStays() {
   const oasis = lodging.properties.find((p) => p.id === 'oasis');
   const fives = lodging.properties.find((p) => p.id === 'fives');
   const casakm = lodging.cdmx_front_runner;
-  const alt = lodging.cdmx_alternative;
   const r = budget.riviera;
 
   const bullets = (arr) => `<ul>${arr.map((x) => `<li>${nt(x)}</li>`).join('')}</ul>`;
 
   let b = `<header class="masthead">
-  <p class="eyebrow">Front runner picked ${esc(iso(casakm.verified))}, nothing booked yet</p>
+  <p class="eyebrow">Mexico City booked ${esc(iso(casakm.booked))}. The Fives is not booked.</p>
   <h1>Where we are staying</h1>
   <div class="dateline">
     <div><b>Mexico City</b>${esc(shortDate(casakm.checkin))} to ${esc(shortDate(casakm.checkout))}, ${casakm.nights} nights</div>
@@ -845,9 +838,9 @@ function buildStays() {
 </header>
 
 <div class="scroller"><table>
-<caption>Booked whole and split evenly. Mexico City is priced at ${casakm.guests} sharing. Per person in bold.</caption>
+<caption>Booked whole and split evenly. Mexico City is the confirmed charge, split ${casakm.guests} ways. Per person in bold.</caption>
 <thead><tr><th>Where</th><th>Dates</th><th>Who</th><th class="n">Whole place</th><th class="n">Each</th></tr></thead><tbody>
-<tr class="pick"><td><strong>${esc(casakm.name)}</strong><br><small>${esc(casakm.neighborhood)}, Mexico City &middot; front runner</small></td>
+<tr class="pick"><td><strong>${esc(casakm.name)}</strong><br><small>${esc(casakm.neighborhood)}, Mexico City &middot; booked</small></td>
 <td>${esc(shortDate(casakm.checkin))} to ${esc(shortDate(casakm.checkout))}<br><small>${casakm.nights} nights</small></td>
 <td>${casakm.guests} guests</td>
 <td class="n"><small>${usd(casakm.total_usd)}</small></td><td class="n"><strong>${usd(casakm.per_person_usd)}</strong></td></tr>
@@ -857,8 +850,8 @@ function buildStays() {
 <td class="n"><small>${usd(fives.rates_usd.room_only_flexible)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_flexible)}</strong></td></tr>
 </tbody></table></div>
 
-<h2><span class="num">01</span>${esc(casakm.name)}<span class="tag ok">front runner</span></h2>
-<p class="lede">${esc(casakm.subtitle)}. ${esc(casakm.neighborhood)}, Mexico City. <strong>${usd(casakm.per_person_usd)} each</strong>, all in.</p>
+<h2><span class="num">01</span>${esc(casakm.name)}<span class="tag ok">booked</span></h2>
+<p class="lede">${esc(casakm.subtitle)}. ${esc(casakm.neighborhood)}, Mexico City. <strong>${usd(casakm.per_person_usd)} each</strong>, all in, and partly paid.</p>
 
 <p><a class="bigline" href="${esc(casakm.url)}">Open the Airbnb listing</a></p>
 
@@ -897,7 +890,7 @@ ${casakm.bed_config.map((x) => `<tr><td>${esc(x.bedroom)}</td><td><strong>${esc(
 ${bullets(casakm.why_chosen)}
 
 <div class="note warn">
-  <div class="nh">Cancellation is the one weak spot</div>
+  <div class="nh">Cancellation, now that it is committed</div>
   <p><strong>${esc(casakm.cancellation.actual)}</strong></p>
   <p>${nt(casakm.cancellation.warning)}</p>
 </div>
@@ -907,64 +900,46 @@ ${bullets(casakm.why_chosen)}
   ${bullets(casakm.flags)}
 </div>
 
-<h2><span class="num">02</span>Mexico City, head to head</h2>
-<p class="lede">Two options left on the table, both verified on their own listing pages at ${casakm.guests} guests for the same nights. The search grid prices listings that are not actually bookable, so nothing here comes from it.</p>
+<h2><span class="num">02</span>The booking itself</h2>
+<p class="lede">Confirmed ${esc(iso(casakm.booked))}. The confirmation code, street address and host phone are deliberately not on this site; they live in the repo's gitignored <code>private/</code> folder.</p>
 
 <div class="scroller"><table>
-<thead><tr><th>&nbsp;</th><th>${esc(casakm.name)}</th><th>${esc(alt.short_name)}</th></tr></thead><tbody>
-<tr><th>Each</th><td class="pick"><strong>${usd(casakm.per_person_usd)}</strong></td><td><strong>${usd(alt.per_person_usd)}</strong></td></tr>
-<tr><th>Whole place</th><td>${usd(casakm.total_usd)}</td><td>${usd(alt.total_usd)}</td></tr>
-<tr><th>Bedrooms</th><td>${casakm.bedrooms}</td><td>${alt.bedrooms}</td></tr>
-<tr><th>Bathrooms</th><td>${casakm.baths}, one per bedroom</td><td>${alt.baths}, shared</td></tr>
-<tr><th>Rated</th><td>${casakm.rating} from ${casakm.reviews}</td><td>${alt.rating} from ${alt.reviews}</td></tr>
-<tr><th>Roof</th><td>Private rooftop with a grill</td><td>None</td></tr>
-<tr><th>To Roma Norte</th><td>${casakm.distance_km.roma_norte_core.toFixed(1)} km</td><td>${alt.distance_km.roma_norte_core.toFixed(1)} km</td></tr>
-<tr><th>To <a href="dining.html">Em</a></th><td>${casakm.distance_km.em.toFixed(1)} km</td><td>${alt.distance_km.em.toFixed(1)} km</td></tr>
-<tr><th>Neighbourhood</th><td>${esc(casakm.neighborhood)}</td><td>${esc(alt.neighborhood)}</td></tr>
+<caption>What was actually charged, taxes included.</caption>
+<thead><tr><th>Line</th><th class="n">Amount</th></tr></thead><tbody>
+<tr><td>${esc(casakm.price_breakdown.nightly_usd.toFixed(2))} a night x ${casakm.price_breakdown.nights} nights</td><td class="n">${usd(casakm.price_breakdown.subtotal_usd)}</td></tr>
+<tr><td>Taxes</td><td class="n">${usd(casakm.price_breakdown.taxes_usd)}</td></tr>
+<tr class="sum"><td>Total</td><td class="n"><strong>${usd(casakm.price_breakdown.total_usd)}</strong></td></tr>
+<tr class="pick"><td>Split ${casakm.guests} ways</td><td class="n"><strong>${usd(casakm.per_person_usd)} each</strong></td></tr>
 </tbody></table></div>
 
-<p>${esc(alt.short_name)} costs <strong>${usd(alt.per_person_usd - casakm.per_person_usd)} more each</strong>, or ${usd(alt.total_usd - casakm.total_usd)} across the group. What that buys is the review record and the walk to dinner. What it gives up is a bathroom each, the rooftop, and keeping all four bedrooms behind one door.</p>
-
-<h3>${esc(alt.name)}</h3>
-<p class="lede">${esc(alt.neighborhood)}, Mexico City. <strong>${usd(alt.per_person_usd)} each</strong>, all in.</p>
-
-<p><a class="bigline" href="${esc(alt.url)}">Open the Airbnb listing</a></p>
-
-<div class="scroller"><table><tbody>
-<tr><th>Check in</th><td>${esc(longDate(alt.checkin))}, from ${esc(alt.checkin_time)}</td></tr>
-<tr><th>Check out</th><td>${esc(longDate(alt.checkout))}, before ${esc(alt.checkout_time)}</td></tr>
-<tr><th>Guests</th><td>${alt.guests} of us, and it sleeps up to ${alt.capacity}</td></tr>
-<tr><th>Layout</th><td>${alt.bedrooms} bedrooms, ${alt.beds} beds, ${alt.baths} bathrooms</td></tr>
-<tr><th>Price</th><td><strong>${usd(alt.total_usd)}</strong> all in, <strong>${usd(alt.per_person_usd)} each</strong></td></tr>
-<tr><th>Rated</th><td>${alt.rating} from ${alt.reviews} reviews</td></tr>
-<tr><th>Outdoor</th><td>${esc(alt.roof)}</td></tr>
-</tbody></table></div>
-
-<h4>Guest scores</h4>
+<h3>When the money moves</h3>
 <div class="scroller"><table>
-<thead><tr><th>Cleanliness</th><th>Accuracy</th><th>Check in</th><th>Communication</th><th>Location</th><th>Value</th></tr></thead>
-<tbody><tr>
-<td class="n">${alt.subscores.cleanliness}</td><td class="n">${alt.subscores.accuracy}</td><td class="n">${alt.subscores.checkin}</td>
-<td class="n">${alt.subscores.communication}</td><td class="n">${alt.subscores.location}</td><td class="n">${alt.subscores.value}</td>
-</tr></tbody></table></div>
-
-<h4>Who sleeps where</h4>
-<div class="scroller"><table><thead><tr><th>Bedroom</th><th>Bed</th><th>What else</th></tr></thead><tbody>
-${alt.bed_config.map((x) => `<tr><td>${esc(x.bedroom)}</td><td><strong>${esc(x.bed)}</strong></td><td><small>${esc(x.extras)}</small></td></tr>`).join('')}
+<thead><tr><th>Date</th><th class="n">Amount</th><th>Status</th></tr></thead><tbody>
+${casakm.payment_schedule.map((x) => `<tr><td>${esc(longDate(x.date))}</td><td class="n">${usd(x.amount_usd)}</td><td><span class="tag ${x.status === 'paid' ? 'ok' : 'estimate'}">${esc(x.status)}</span></td></tr>`).join('')}
 </tbody></table></div>
-<p>${nt(alt.room_plan)}</p>
-
-<h4>Why consider it</h4>
-${bullets(alt.why_consider)}
+<p>The second payment lands before the refund cliff, so deposits want collecting ahead of ${esc(longDate(casakm.payment_schedule[1].date))}, not after. Both dates are on <a href="tasks.html">the to do list</a>.</p>
 
 <div class="note warn">
-  <div class="nh">Worth knowing before we book</div>
-  ${bullets(alt.flags)}
+  <div class="nh">The rate rose before we booked</div>
+  <p>${nt(casakm.rate_rose_before_booking)}</p>
+</div>
+
+<h3>House rules on the confirmation</h3>
+<div class="scroller"><table><tbody>
+<tr><th>Quiet hours</th><td><strong>${esc(casakm.house_rules.quiet_hours)}</strong></td></tr>
+<tr><th>Maximum guests</th><td>${casakm.house_rules.max_guests}</td></tr>
+<tr><th>Pets</th><td>${esc(casakm.house_rules.pets)}</td></tr>
+</tbody></table></div>
+<ul>${casakm.safety_on_confirmation.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+
+<div class="note warn">
+  <div class="nh">Quiet hours versus midnight on the roof</div>
+  <p>The ${esc(casakm.house_rules.quiet_hours)} quiet hours appeared only on the confirmation, not in the listing's rules summary. Midnight on New Year's Eve sits inside that window and the property has exterior cameras, so <a href="nye.html">the New Year's Eve plan</a> is provisional until the host agrees in writing.</p>
 </div>
 
 <div class="note">
-  <div class="nh">Verdict</div>
-  <p>${nt(alt.verdict)}</p>
+  <div class="nh">What it beat</div>
+  <p>${nt(casakm.runner_up_note)}</p>
 </div>
 
 <h2><span class="num">03</span>Why we are leaving ${esc(oasis.name)}</h2>
