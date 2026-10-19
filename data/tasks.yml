@@ -110,15 +110,6 @@ decisions_needed:
       8 and fits 7 with nothing to negotiate, so it is now the cleaner booking.
       Ling Ling and the balloon both need re-quoting at 7 as well.
 
-  - id: recheck-beach-headcount
-    title: Confirm whether the beach leg is still 6
-    status: todo
-    detail: >
-      One person dropped from the Mexico City group. If they were also on the
-      Riviera Maya leg, that leg falls from 6 to 5 and The Fives residence
-      reprices, since it is billed per unit and split by head. Every beach
-      figure on the costs page still assumes 6.
-
   - id: confirm-balloon
     title: Confirm Volare flies 2 January 2027
     status: todo
@@ -139,10 +130,12 @@ decisions_needed:
     status: todo
     detail: $98 more each for full board. The room can be booked before this is settled.
 
-  - id: couple-b-routing
+  - id: solo-b-routing
     title: Decide the 3 January flight home from Mexico City
     status: todo
-    detail: The two leaving should look at a connection and save about $1,040 each.
+    detail: >
+      Now one traveller rather than two. They should look at a connection and
+      save about $1,040 against the $1,893 Delta nonstop.
 
   - id: pick-birthday-venue
     title: Lock the 2 January dinner
@@ -183,6 +176,14 @@ housekeeping:
     detail: Framework undecided. See docs/open-questions.md.
 
 done:
+  - id: resolve-beach-headcount
+    title: Confirm the beach leg headcount
+    detail: >
+      Still 6. The person who dropped on 12 October was one of those flying
+      home after Mexico City, not a beach traveller, so every Riviera Maya
+      figure stands and The Fives residence still splits 6 ways. It also
+      means only one person now leaves after Mexico City instead of two.
+
   - id: book-casa-km
     title: Book Casa KM
     detail: >

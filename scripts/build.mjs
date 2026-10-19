@@ -549,7 +549,7 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
 
 <div class="note warn">
   <div class="nh">Read this if you are flying home from Mexico City</div>
-  <p>${nt(budget.flag_for_couple_b)}</p>
+  <p>${nt(budget.flag_for_solo_b)}</p>
 </div>`;
 
   // calendar
@@ -786,8 +786,8 @@ ${budget.non_refundable_exposure.map((x) => `<tr><td><strong>${esc(x.what)}</str
 </tbody></table></div>
 
 <div class="note warn">
-  <div class="nh">For the two leaving after Mexico City</div>
-  <p>${nt(budget.flag_for_couple_b)}</p>
+  <div class="nh">For the one leaving after Mexico City</div>
+  <p>${nt(budget.flag_for_solo_b)}</p>
 </div>`;
 
   return shell({ title: 'What it costs', current: 'costs.html', body: b });

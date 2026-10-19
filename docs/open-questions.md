@@ -30,12 +30,12 @@ Unpriced. Table minimums in early January have never been quoted, so there is no
 ### LAX origin
 Unpriced. If anyone is flying from Los Angeles that is a separate search, and LAX to MEX has far more Delta frequency than Detroit.
 
-### Whether Couple B takes a connection home
-The MEX to DTW nonstop is $1,893 and connections that day run $774 to $956. **Saving:** about $1,040 each. They have not been asked.
+### Whether the one traveller leaving early takes a connection home
+The MEX to DTW nonstop is $1,893 and connections that day run $774 to $956. **Saving:** about $1,040. This was two people until 12 October; now it is one. They have not been asked.
 
 ## Logistics
 
-### Firm yes or no from all 8
+### Firm yes or no from all 7
 With a date by which a maybe becomes a no. Nothing non-refundable should be signed before this.
 
 ### Silver Medallion benefits on these routes

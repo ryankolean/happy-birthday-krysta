@@ -26,7 +26,7 @@ Three consequences, in order of how much they cost:
 
 **The bed configuration constraint loosened, which reopens cheaper options.** Three couples plus one single required three double beds in three separate rooms. Two couples plus two singles needs only two double beds, because the singles will take any room with any bed. Listings previously rejected for having twin-bed rooms now qualify. Re-searching at six found several that undercut Casa KM sharply, the cheapest a four bedroom, three bathroom flat in Anzures at **$307 each** with 4.86 from 187 reviews, against Casa KM's $491. Casa KM is still the pick on bathrooms and review record; it is no longer the pick on price.
 
-Open: whether the person who dropped was also on the beach leg. If so the Riviera Maya residence reprices from a six way split, and every beach figure still assumes six.
+**Resolved 19 October: the beach leg stays at six.** The person who dropped was one of those flying home after Mexico City rather than a beach traveller, so every Riviera Maya figure stands and The Fives residence still splits six ways. The knock-on is that **only one person now leaves after Mexico City instead of two**, which halves the group that needs the cheaper 3 January connection out of MEX.
 
 ## Casa KM over the Oasis, and the group drops to 7 in one house
 

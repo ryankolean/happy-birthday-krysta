@@ -1,9 +1,17 @@
 # Roles only. Real names and contact details stay in private/, never here.
-# Headcount resolved: 8 in Mexico City, 6 at the beach.
+#
+# Headcount settled 19 October 2026 after two changes: the group went 8 to 7
+# in Mexico City when one half of a couple dropped, and the beach leg is
+# confirmed to stay at 6.
 
 headcount:
-  cdmx: 8
+  cdmx: 7
   riviera: 6
+  sharing_casa_km: 6
+  note: >
+    Seven in Mexico City. Six of them share Casa KM as two couples and two
+    singles; the seventh books their own hotel in the city. Six go on to the
+    Riviera Maya, so exactly one of the seven flies home after Mexico City.
 
 groups:
   - id: hosts
@@ -18,13 +26,6 @@ groups:
     legs: [cdmx, riviera]
     room: private
 
-  - id: couple_b
-    label: Couple B
-    size: 2
-    legs: [cdmx]
-    room: private
-    note: Flies home from Mexico City on 3 January
-
   - id: single_a
     label: Single friend A
     size: 1
@@ -37,17 +38,32 @@ groups:
     legs: [cdmx, riviera]
     room: private
 
-# This was the binding constraint on lodging. Three couples plus two singles
-# means the two singles need separate beds from each other, which ruled out
-# every four bedroom option in the search.
+  - id: solo_b
+    label: Solo traveller B
+    size: 1
+    legs: [cdmx]
+    former_id: couple_b
+    note: >
+      Was Couple B until one of the two dropped on 12 October. Flies home from
+      Mexico City on 3 January, so this is the one person not on the beach leg.
+
+# Lodging was always decided by the bed configuration rather than by price.
+# Three couples plus one single needed three double beds in three separate
+# rooms. Two couples plus two singles needs only two, because a single will
+# take any room with any bed, which is why cheaper options qualified once the
+# group changed shape.
 bed_requirement:
-  couples: 3
+  couples: 2
   singles: 2
   rule: the two singles need separate rooms, not a shared twin room
-  satisfied_by: the Oasis has six bedrooms, so everyone gets a private room and one is spare
+  satisfied_by: >
+    Casa KM has four bedrooms, each with its own full bathroom. The couples
+    take the king and a queen, the singles take the other queen and the full.
 
+# Which named individual sits in which role is deliberately not recorded here.
+# That mapping lives in private/, along with who is paying for what.
 open:
-  - Firm yes or no from all 8, with a date by which a maybe becomes a no
+  - Confirm which of the seven is booking their own hotel in the city
   - Who flies from DTW and whether anyone is coming from LAX
-  - Collect a deposit per person before anything non-refundable is signed
-  - Couple B needs to confirm their own return routing from MEX
+  - Collect a deposit per person before the 14 December Casa KM payment
+  - Solo traveller B needs to confirm their own return routing from MEX
