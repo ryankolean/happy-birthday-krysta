@@ -150,7 +150,7 @@ places:
     category: market
     address: Campeche 101, Roma Sur, Mexico City
     neighborhood: Roma Sur
-    note: About a ten minute walk. Open 8 AM to 7 PM, fondas busiest noon to 3 PM.
+    note: About a 25 minute walk. Open 8 AM to 7 PM, fondas busiest noon to 3 PM.
 
   # ---------- bars ----------
   - name: Limantour
@@ -200,6 +200,21 @@ places:
     address: Plaza de la Constitucion, Ciudad de Mexico
     neighborhood: Centro Historico
     note: Dark on New Year's Eve this year, the city confirmed no programming.
+
+  - name: Lucha libre meeting point
+    category: spot
+    address: Orizaba 156, Colonia Roma Norte, Cuauhtemoc, 06700, Ciudad de Mexico
+    neighborhood: Roma Norte
+    precision: approximate
+    note: >
+      Where the 29 December lucha libre evening gathers, 17:45. Tacos and
+      drinks here first, then the group walks to Arena Mexico or Arena
+      Coliseo together. The pin is approximate for two reasons: the geocoder
+      resolves Orizaba to the street rather than to number 156, and the
+      confirmation says not every run of the experience starts here, with the
+      exact point sent by direct message on the day. Treat it as the right
+      block of Roma Norte, not the door.
+    url: https://www.airbnb.com/experiences/167988
 
   # ---------- from the Instagram saves, October 2026 ----------
   # Sources are the posts Ryan saved to the mex-city collection. A star means

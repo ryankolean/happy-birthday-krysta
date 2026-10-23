@@ -7,22 +7,33 @@ days:
     weekday: Tuesday
     leg: cdmx
     kind: travel
-    title: Arrive, then the one big dinner
-    summary: Fly to Mexico City, Ling Ling at eight
+    title: Arrive, then lucha libre
+    summary: Fly to Mexico City, tacos and the arena at a quarter to six
     events:
       - time: "08:40"
         what: DL 646 departs Detroit, lands Mexico City 12:30
       - time: "14:30"
-        what: At the house in Roma Norte
-        detail: Immigration plus transfer runs about 90 minutes. Nothing scheduled after this.
-      - time: "20:00"
-        what: Dinner at Ling Ling
-        detail: 56th floor of Chapultepec Uno, Reforma 509. Seats parties up to 20.
-        why: The only open upscale slot in the whole week, which is why it gets arrival night.
+        what: At the house in Del Valle Norte
+        detail: >
+          Immigration plus transfer runs about 90 minutes. That leaves about
+          three and a quarter hours before the evening starts.
+      - time: "17:45"
+        what: Lucha libre with El Taco Club, booked
+        detail: >
+          Tacos, beer and mezcal first, then the group walks to the arena
+          together. Attraction tickets, a full meal, specialty drinks and a
+          mask are all included, so this is dinner as well as the show.
+          Runs to 20:45. Minimum age 15.
+        why: >
+          Booked 23 October for all 7 at $715.53 all in. Takes the slot the
+          Ling Ling reservation was penciled into but never actually held.
       - time: late
         what: Drinks at Limantour, Roma Norte
         detail: Number 20 on Mexico's 50 Best.
     warnings:
+      - The exact meeting point arrives by direct message on the day, not in advance
+      - A flight delay much past 16:30 puts the booking at risk. Cancel by 28 December for a full refund
+      - No large cameras, the arena does not allow them. Bring pesos for souvenirs
       - Owl Bar and Rayo are both closed Tuesdays
       - Gin Gin Cibeles is open daily but is formal attire
 
@@ -53,7 +64,7 @@ days:
     summary: Dinner at the house, midnight on the rooftop
     events:
       - time: morning
-        what: Mercado Medellin run, Campeche 101 in Roma Sur, about a ten minute walk
+        what: Mercado Medellin run, Campeche 101 in Roma Sur, about a 25 minute walk
         detail: Open 08:00 to 19:00. The fondas at the back run hardest noon to 15:00.
       - time: "13:00"
         what: Collect pre-ordered dishes
@@ -63,7 +74,7 @@ days:
       - time: evening
         what: Potluck dinner at the house, on our own schedule
       - time: "00:00"
-        what: Midnight on the Oasis rooftop
+        what: Midnight on the Casa KM rooftop
         detail: This is why the house was chosen over hotel rooms.
     plan_status: >
       Approach decided, specific orders not placed. See docs/nye.md for the

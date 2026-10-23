@@ -1,7 +1,7 @@
 # Open tasks, most urgent first. Update status here, not in docs/.
 # status: todo | doing | done | blocked
 
-as_of: 2026-10-02
+as_of: 2026-10-23
 
 this_week:
   - id: book-dtw-mex
@@ -26,15 +26,6 @@ this_week:
       Not on OpenTable and nobody knows how far ahead they open. This is the
       birthday dinner and the biggest unknown on the board.
 
-  - id: book-ling-ling-dec29
-    title: Book Ling Ling for 29 December
-    status: todo
-    why_now: >
-      Checked on OpenTable 5 October: a party of 8 on 29 December has 15:00,
-      18:30, 19:00, 19:30 and 20:00 open, and the 15:00 carries 750 reward
-      points. Nothing is holding it for us. Take 20:00, which is what the
-      itinerary assumes.
-
 dated:
   - id: grab-ling-ling-jan2
     title: Hold Ling Ling on 2 January as the Pujol backup
@@ -44,7 +35,10 @@ dated:
       Checked 5 October: a party of 8 on 2 January still has 18:00, 18:30,
       19:00, 19:30 and 20:00 open. Hold one until Pujol confirms, then release
       it. Cancelling an OpenTable booking costs nothing, so there is no reason
-      to wait.
+      to wait. Recheck at 7 rather than 8, which is the current group size.
+      Ling Ling is now free on this date either way: the 29 December slot it
+      was penciled into went to the lucha libre booking on 23 October, and
+      with Pujol's private room broken at 7 this is the stronger use of it.
 
   - id: maximo-window
     title: Maximo Bistrot opens about 2 December for 2 January
@@ -176,6 +170,17 @@ housekeeping:
     detail: Framework undecided. See docs/open-questions.md.
 
 done:
+  - id: book-lucha-dec29
+    title: Book lucha libre for 29 December
+    detail: >
+      Booked 23 October 2026 and paid in full. Tacos, Mezcal & Lucha Libre
+      with El Taco Club, 17:45 to 20:45, all 7 guests, $715.53 all in or
+      $102.22 each. Confirmation details are in private/lucha-libre-booking.md.
+      This supersedes book-ling-ling-dec29, which was never actioned: the
+      experience includes a full meal, so it takes both the dinner slot and
+      the evening. Free cancellation until 28 December. The exact meeting
+      point is sent by direct message on the day.
+
   - id: resolve-beach-headcount
     title: Confirm the beach leg headcount
     detail: >

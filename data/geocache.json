@@ -308,5 +308,10 @@
     "lat": 19.3942366,
     "lon": -99.1670335,
     "matched": "Colonia Del Valle, Del Valle, Mexico City, Benito Juárez, Mexico City, 03103, Mexico"
+  },
+  "Orizaba 156, Colonia Roma Norte, Cuauhtemoc, 06700, Ciudad de Mexico": {
+    "lat": 19.4175166,
+    "lon": -99.1595904,
+    "matched": "Calle Orizaba, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
   }
 }

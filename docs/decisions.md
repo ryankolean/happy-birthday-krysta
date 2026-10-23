@@ -2,6 +2,20 @@
 
 What was decided, and what it beat. Newest first.
 
+## Lucha libre takes arrival night, 29 December
+
+**Booked 23 October 2026 and paid in full.** Tacos, Mezcal & Lucha Libre with El Taco Club, **17:45 to 20:45**, all seven guests, **$715.53 all in** or **$102.22 each**. Attraction tickets, a full meal, specialty drinks and a mask are included. Free cancellation until 28 December. The confirmation code and payment details are in the gitignored `private/` folder.
+
+**This replaces the Ling Ling dinner, which was never actually booked.** The task to reserve it sat open since 5 October with the note "nothing is holding it for us", so arrival night was free in fact even though the itinerary read as though it were spoken for. Because the experience includes a full meal, it takes the dinner slot as well as the evening, so the **$125 Ling Ling estimate is removed rather than moved**. Mexico City per person falls from **$1,750 to $1,727**, the full trip from **$5,024 to $5,001**, and the city-only figure from **$4,889 to $4,866**. Those supersede the totals quoted in the Casa KM entry below.
+
+**Ling Ling is now free for 2 January**, where the existing task already holds it as the Pujol backup. That matters because Pujol's private room is broken at seven, so this is the stronger use of the reservation.
+
+**The tax was invisible until checkout.** Airbnb's date picker quoted **$616.84** for seven guests. The receipt charged **$715.53**, with **$98.69** of tax appearing only at the payment step. Every per-person figure taken off the picker while comparing options was about $14 light. This is the second time on this trip that tax surfaced only on the confirmation, after Casa KM. Price from a receipt, not a picker.
+
+What it beat: five other lucha experiences priced at seven on the same dates. **Lucha Libre near the ring** was the closest call at **$479** on 2 January with guaranteed ringside seats in the first nine rows, a 4.98 rating and a three-day cancellation window, but it was **sold out on 29 December** and taking it would have meant spending the birthday or the deliberately empty recovery night on it. **Lucha libre, tacos and beers with an artist** was the only one of the six that could seat seven on 1 January, at $509. The cheapest option that night was **Savor lucha libre with margaritas** at $371, drinks only and no meal.
+
+Two things the search established that are worth keeping. **The arenas are Arena Mexico and Arena Coliseo**, which one depending on the day. And **no lucha runs on 30 or 31 December** on any of the six listings, so taco day and New Year's Eve were never candidates.
+
 ## Casa KM booked
 
 **Confirmed 18 October 2026.** Reservation for 29 December to 3 January, six adults. **$3,836.93 all in**, which is $634.20 a night for five nights plus $665.91 of tax, or **$639.49 each** split six ways. Paid $1,585.51 on booking with $2,251.42 auto-charging on 14 December. The confirmation code, street address and host contact are in the gitignored `private/` folder.

@@ -30,7 +30,7 @@ So the plan is not "everyone wanders out at 7 and brings something back." Nothin
 
 ### Morning: Mercado Medellin
 
-Campeche 101, Roma Sur. About a ten minute walk, and it is on [the map](map.html). Open 08:00 to 19:00, and the fondas at the back run hardest from noon to 15:00. Cheese, charcuterie, pan, produce, and Peruvian, Colombian and Venezuelan stalls. 31 December morning is the busiest market day of the Mexican year, which makes going one of the more authentic things available that day.
+Campeche 101, Roma Sur. About a 25 minute walk, and it is on [the map](map.html). Open 08:00 to 19:00, and the fondas at the back run hardest from noon to 15:00. Cheese, charcuterie, pan, produce, and Peruvian, Colombian and Venezuelan stalls. 31 December morning is the busiest market day of the Mexican year, which makes going one of the more authentic things available that day.
 
 ### Afternoon: the pickups
 

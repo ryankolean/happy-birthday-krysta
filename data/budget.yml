@@ -65,9 +65,21 @@ cdmx:
         Volare family private basket, MX$3,600 each. Provisional: Volare has not
         confirmed 2 January 2027 operations or a 2027 holiday rate.
 
-    - item: Ling Ling, 29 December
-      per_person: 125
-      status: estimate
+    - item: Lucha libre with El Taco Club, 29 December
+      per_person: 102
+      unit_price: 716
+      unit_label: whole group of 7
+      status: booked
+      verified: 2026-10-23
+      note: >
+        Booked 23 October and paid in full. $88.12 a head across 7 is $616.84,
+        plus $98.69 of tax, so $715.53 all in or $102.22 each. Attraction
+        tickets, a full meal, specialty drinks and a mask are included, so this
+        line covers the 29 December dinner as well as the show. That is why the
+        $125 Ling Ling estimate it replaces is gone rather than moved. Free
+        cancellation until 28 December. The tax was absent from Airbnb's date
+        picker and appeared only at checkout, so the $616.84 figure quoted
+        during the search was $98.69 light.
 
     - item: Casual dinners and drinks, 2 nights
       per_person: 138
@@ -85,7 +97,7 @@ cdmx:
         Basing in Roma Norte keeps most of the itinerary on foot. The Polanco
         alternative would have cost $56 to $88 each in rideshare.
 
-  per_person: 1750
+  per_person: 1727
 
 riviera:
   travelers: 6
@@ -143,8 +155,8 @@ riviera:
       note: Net, after skipping the airport transfer. Only worth it with two or more excursions.
 
 per_person:
-  full_trip: 5024      # 1923 flights + 1750 city + 1351 beach
-  city_only: 4889      # 3139 flights + 1750 city
+  full_trip: 5001      # 1923 flights + 1727 city + 1351 beach
+  city_only: 4866      # 3139 flights + 1727 city
 
 excludes:
   - personal spending
@@ -166,6 +178,10 @@ non_refundable_exposure:
     terms: >
       Committed. $1,585.51 already paid, $2,251.42 due 14 December, and only a
       partial refund until 16:00 on 22 December. Nothing after that.
+  - what: Lucha libre with El Taco Club, booked 23 October
+    terms: >
+      Paid $715.53 in full on booking. Fully refundable until 28 December,
+      nothing after that.
   - what: The Fives, flexible rate
     terms: Free cancellation, refundable until 13 December 2026
   - what: Pujol, if booked
@@ -176,8 +192,8 @@ non_refundable_exposure:
     terms: Volare cancels free to 48 hours. Weather cancellations are refundable with no fee.
 
 flag_for_solo_b: >
-  The one traveller leaving after Mexico City pays $4,889, almost as much as
-  the $5,024 paid by the six doing the whole eleven days, because the MEX to
+  The one traveller leaving after Mexico City pays $4,866, almost as much as
+  the $5,001 paid by the six doing the whole eleven days, because the MEX to
   DTW Delta nonstop is $1,893 one way. Connections that day run $774 to $956.
-  Taking one saves about $1,040 and brings them to roughly $3,850. This used
+  Taking one saves about $1,040 and brings them to roughly $3,830. This used
   to apply to two people; the drop on 12 October left one.
