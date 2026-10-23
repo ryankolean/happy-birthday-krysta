@@ -24,8 +24,6 @@ cdmx:
     Seven people are in Mexico City, but only six share the accommodation: two
     couples and two singles. The seventh books their own hotel, so the lodging
     line splits 6 ways while every other line below is a seven person trip.
-    Dropping from 8 to 7 breaks Pujol's eight tasting menu minimum, which the
-    birthday dinner line still assumes.
   lines:
     - item: Casa KM, 4BR penthouse, Del Valle Norte, 5 nights
       per_person: 639
@@ -49,14 +47,25 @@ cdmx:
         out to about $69 each plus a holiday premium, and the potluck approach
         about $31 to $69 each. See docs/nye.md. Expect this line to fall sharply.
 
-    - item: Birthday dinner, 2 January
+    - item: Birthday lunch at Pujol, 2 January
       per_person: 223
-      status: open
+      unit_price: 1563
+      unit_label: table of 7, before drinks and tip
+      status: booked
+      verified: 2026-10-23
       note: >
-        Placeholder is Pujol's private dining room at MX$3,795 each, eight
-        tasting menus minimum, no room fee. Em is the same price point at
-        MX$3,900. Maximo Bistrot or Rosetta would be $56 to $100 each.
-        See docs/dining.md.
+        Booked 23 October for 14:30, a table for seven in the main dining
+        room. The figure did not move: MX$3,795 per person with VAT included,
+        which is $223.24 at 17.0 MXN/USD, or about $1,563 across seven. Drinks
+        and tip are on top and are not in this line.
+        Nothing was charged at booking. The card is a guarantee only, and the
+        reservation is free to change or cancel online until 14:30 on
+        1 January. Inside that 24 hours a cancellation, a no-show, a date
+        change or a reduction in the diner count all cost MX$2,000 per person.
+        The eight tasting menu minimum that broke this at seven applies to the
+        private dining room, not to a regular table, so a normal table avoided
+        it. That also means there is no private room and no wasted eighth
+        cover. See docs/dining.md.
 
     - item: Lucha libre with El Taco Club, 29 December
       per_person: 102
@@ -208,8 +217,13 @@ non_refundable_exposure:
       nothing after that.
   - what: The Fives, flexible rate
     terms: Free cancellation, refundable until 13 December 2026
-  - what: Pujol, if booked
-    terms: MX$2,000 each, 48 hour window
+  - what: Pujol, booked 23 October for 2 January
+    terms: >
+      Nothing paid, the card is only a guarantee. Free to change or cancel
+      online until 14:30 on 1 January 2027. Inside that 24 hours, MX$2,000 per
+      person applies to a cancellation, a no-show, a date change or a cut to
+      the diner count, which is about $824 across seven. The window is 24
+      hours and not the 48 this file previously claimed.
   - what: New Year's Eve galas
     terms: Typically prepaid
   - what: Balloon

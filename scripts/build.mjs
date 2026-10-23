@@ -102,7 +102,7 @@ const PAGES = [
   { file: 'stays.html', label: 'Accommodations' },
   { file: 'map.html', label: 'Map' },
   { file: 'costs.html', label: 'Costs' },
-  { file: 'dining.html', label: 'Birthday dinner' },
+  { file: 'dining.html', label: 'Birthday lunch' },
   { file: 'balloon.html', label: 'Balloon' },
   { file: 'nye.html', label: "New Year's Eve" },
   { file: 'decisions.html', label: 'Decisions' },
@@ -1340,7 +1340,7 @@ writeFileSync(join(out, 'costs.html'), buildCosts());
 writeFileSync(join(out, 'stays.html'), buildStays());
 writeFileSync(join(out, 'map.html'), buildMap());
 writeFileSync(join(out, 'tasks.html'), buildTasks());
-writeFileSync(join(out, 'dining.html'), buildDoc('dining.md', 'dining.html', 'Birthday dinner options'));
+writeFileSync(join(out, 'dining.html'), buildDoc('dining.md', 'dining.html', 'Birthday lunch at Pujol'));
 writeFileSync(join(out, 'balloon.html'), buildDoc('balloon.md', 'balloon.html', 'Hot air balloon'));
 writeFileSync(join(out, 'nye.html'), buildDoc('nye.md', 'nye.html', "New Year's Eve"));
 writeFileSync(join(out, 'decisions.html'), buildDoc('decisions.md', 'decisions.html', 'Decision log'));

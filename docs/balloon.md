@@ -57,7 +57,7 @@ delay boarding.
 | **Top-Rated balloon + bkf @ La Gruta** | **4.97 from 8,319** | 04:00 to 10:45, three later starts | **$341** | Pickup, keepsakes, sparkling toast, photos, poncho, optional guide at no extra cost | **Private pricing offered on the 04:30 slot** |
 | Sunrise Balloon & Private Transport | 4.96 from 307 | 04:15 to 10:15 | **$342** | Full meal, pickup, parking, toast, flight certificate | Private van, **shared basket** |
 | Unforgettable Balloon Ride | 4.94 from 3,280 | 04:45 to 09:45 | **$332** | Pickup only. Guide and brunch are paid on site | Private "for an additional fee", priced on the day |
-| Balloon ride + breakfast at La Gruta | 4.96 from 4,338 | 04:30 to 13:30 | **$385** | Full meal, pickup | No |
+| ~~Balloon ride + breakfast at La Gruta~~ | 4.96 from 4,338 | 04:30 to 13:30 | $385 | Full meal, pickup | **Ruled out, see below** |
 
 All four fly on 2 January and all four refund in full up to one day before.
 
@@ -104,15 +104,20 @@ drops from **$1,727 to $1,516**, the full trip from **$5,001 to $4,790**, and
 city only from **$4,866 to $4,655**. Krysta and Ryan add their $171 on top of
 those figures, more if the flight goes private.
 
-**The birthday got its afternoon back.** The itinerary assumed a 14:00 return
-and a compulsory sleep before a 19:30 dinner. Three of these four land back
-between **09:45 and 11:30**, so the nap is optional now. Only the La Gruta
-breakfast option still runs to 13:30.
+**The birthday got its afternoon back, and then spent it.** The itinerary
+assumed a 14:00 return and a compulsory sleep before a 19:30 dinner. Three of
+these four land back between **09:45 and 11:30**, which reopened the early
+seating at Pujol that had been written off precisely because the balloon
+returned at that hour.
 
-That also reopens seatings the dinner page had written off. Pujol's 14:00
-seating was ruled out specifically because the balloon returned at that hour.
-It no longer does. The eight tasting menu minimum is still broken at seven, so
-this reopens a seating rather than the booking.
+**That seating is now booked: Pujol, 14:30, table for seven, 23 October.** See
+[the birthday lunch](dining.html).
+
+**Which rules out the fourth balloon option.** The La Gruta breakfast trip runs
+to **13:30**, and the table is in Polanco at **14:30**. That is not tight, it
+is impossible, so it is struck from the table above. **Choose from the three
+that land by 11:30.** The 04:30 departure on the recommended operator returns
+about 11:15 and leaves roughly three hours before lunch.
 
 **Bazar Sabado is back for the other five.** The itinerary used to say the
 balloon owned the day for all seven. With two going, it does not.

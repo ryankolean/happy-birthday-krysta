@@ -19,26 +19,30 @@ this_week:
       Three approaches priced in docs/nye.md. Recommendation is the potluck
       pickup run, with a private chef as the zero-effort fallback.
 
-  - id: call-pujol
-    title: Call Pujol and establish their booking window
-    status: todo
-    why_now: >
-      Not on OpenTable and nobody knows how far ahead they open. This is the
-      birthday dinner and the biggest unknown on the board.
-
 dated:
+  - id: pujol-change-deadline
+    title: Last moment to change or cancel the Pujol table for free
+    status: todo
+    date: 2027-01-01
+    why: >
+      14:30 on 1 January, exactly 24 hours before the booking. Up to then any
+      change is free online. After it, a cancellation, a no-show, a date
+      change or a cut to the diner count each cost MX$2,000 per person, about
+      $824 across seven. Nothing has been paid, the card is only a guarantee.
+
   - id: grab-ling-ling-jan2
-    title: Hold Ling Ling on 2 January as the Pujol backup
+    title: Optional, keep Ling Ling in reserve behind Pujol
     status: todo
     why: >
-      The 4 October release date has passed and the panic was unnecessary.
-      Checked 5 October: a party of 8 on 2 January still has 18:00, 18:30,
-      19:00, 19:30 and 20:00 open. Hold one until Pujol confirms, then release
-      it. Cancelling an OpenTable booking costs nothing, so there is no reason
-      to wait. Recheck at 7 rather than 8, which is the current group size.
-      Ling Ling is now free on this date either way: the 29 December slot it
-      was penciled into went to the lucha libre booking on 23 October, and
-      with Pujol's private room broken at 7 this is the stronger use of it.
+      Pujol is booked for 2 January, so this is insurance rather than a plan.
+      Pujol itself is free to cancel until 24 hours before, which already
+      covers most of what a backup would be for.
+      Worth knowing before anyone spends time on it: Ling Ling's Mexico City
+      booking channel could not be verified on 23 October. OpenTable's search
+      keeps resolving the name to the Dubai and Picton locations, and no CDMX
+      reservation page was reachable. The earlier note that it is bookable on
+      OpenTable, with 18:00 to 20:00 open at a party of 8, is from 5 October
+      and is now unconfirmed. Find the real channel first, or drop this.
 
   - id: maximo-window
     title: Maximo Bistrot opens about 2 December for 2 January
@@ -117,15 +121,18 @@ dated:
       through the Airbnb message thread, linked in private/lucha-libre-booking.md.
 
 decisions_needed:
-  - id: pujol-minimum-broken
-    title: Pujol's private room needs 8 and we are now 7
+  - id: confirm-dinner-headcount
+    title: Lock the birthday lunch headcount before 1 January
     status: todo
     detail: >
-      The private dining room carries a minimum of eight tasting menus at
-      MX$3,795 each. At 7 we either pay for an eighth cover we do not use,
-      about $223 wasted, or give up the private room. Em takes parties of 3 to
-      8 and fits 7 with nothing to negotiate, so it is now the cleaner booking.
-      Ling Ling and the balloon both need re-quoting at 7 as well.
+      The table is booked for 7 and a headcount message went out to the group
+      on 23 October. Changing the number is free online through OpenTable
+      right up to 14:30 on 1 January, and costs MX$2,000 per head after that,
+      so there is no hurry but there is a hard edge.
+      One real limit: Pujol has no online availability at all on 2 January for
+      9 or more. Six, seven and eight all return the same seatings, so the
+      party can move freely inside that range, but a ninth yes cannot be
+      absorbed online and would mean emailing the restaurant directly.
 
   - id: confirm-balloon
     title: Settle the balloon weight question in writing before booking

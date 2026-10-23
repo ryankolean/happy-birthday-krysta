@@ -1,8 +1,28 @@
-# Birthday dinner, Saturday 2 January
+# Birthday lunch, Saturday 2 January
 
-Party of **7**, down from 8 on 12 October. Hardest night of the week to seat, because it is a Saturday on a holiday weekend. The drop to 7 broke Pujol's minimum, which is covered below.
+## Booked: Pujol, 14:30, table for 7
 
-## The constraint nobody plans around
+**Confirmed 23 October 2026.** Main dining room, six course menu, about two and a half hours. **MX$3,795 each with VAT included, $223.24 at 17.0 MXN/USD**, or roughly **$1,563 across seven** before drinks and tip. Nothing was charged at booking, the card is a guarantee only. The confirmation number and the terms are in the gitignored `private/` folder.
+
+**Free to change or cancel online until 14:30 on 1 January.** Inside that 24 hours, a cancellation, a no-show, a date change or a cut to the diner count each cost **MX$2,000 per person**, about $824 across seven.
+
+Before going: no shorts or sportswear, 15 minute grace period, no valet parking, minimum age 12 at full menu price, and dietary restrictions must be given in advance. `reservaciones@pujol.com.mx`, +52 55-5545-4111.
+
+### Four things this page had wrong
+
+**Pujol does book through OpenTable.** Their own site's RESERVE button points at it (`restref=1545187`). This page previously called that the biggest blind spot on the trip. It was not a blind spot, it was a wrong assumption, and 2 January was openly bookable ten weeks out.
+
+**The cancellation window is 24 hours, not 48.**
+
+**The minimum was never the obstacle.** The eight tasting menu minimum applies to the **private dining room**. A regular table for seven carries no minimum, so there was no eighth cover to waste and no reason the drop to 7 had to cost anything.
+
+**Pujol holds two Michelin stars**, not one, in the 2026 guide. So does Quintonil. They are the only two-star restaurants in the country.
+
+### What the headcount can still do
+
+Pujol returns the **same seatings at 6, 7 and 8** on this date, so the party can move freely in that range. At **9 or more there is no online availability at all**, and a ninth guest would mean emailing the restaurant directly.
+
+## The constraint that shaped it
 
 [The balloon](itinerary.html) still has a 4:30 AM pickup, but it no longer eats the whole day. **Repriced for two on 23 October: three of the four operators land back between 09:45 and 11:30**, not the 2 PM this page was written against. See docs/balloon.md. A 7:30 PM dinner is now about fifteen hours after the alarm with a usable afternoon in the middle, rather than fifteen hours with nothing but a compulsory nap.
 
@@ -10,7 +30,30 @@ That softens the constraint without removing it. There are still two tasting men
 
 So the real question is not which restaurant is best. It is whether this night wants a tasting menu at all.
 
-## What can actually seat 8
+## The alternatives, kept for reference
+
+These were the field before the booking. Everything below is now background rather than a live decision.
+
+### Every Michelin starred restaurant in Mexico City, 2026
+
+Eleven in total. Checked for a party of 7 on 2 January on 23 October.
+
+| Restaurant | Stars | Could it seat 7 that day |
+|---|---|---|
+| **Pujol** | **2** | **Yes. Booked** |
+| Quintonil | 2 | No. Main room caps at 6 |
+| Em | 1 | No. 2 January still unreleased |
+| Esquina Común | 1 | No availability for 7 |
+| Masala y Maíz | 1 | Does not book through OpenTable |
+| Máximo | 1 | Window opens about 2 December |
+| Rosetta | 1 | No CDMX OpenTable listing found |
+| Sud 777 | 1 | Ruled out, 35 to 45 min south |
+| Expendio de Maíz | 1 | Not checked, reported walk-in only |
+| Gaba, La Once Mil | 1 | Not checked, both new in 2026 |
+
+Pujol was the only starred restaurant in the city confirmed able to take seven that day.
+
+### The wider field
 
 All prices are **per person**, food only, before drinks and tip.
 
@@ -29,14 +72,11 @@ All prices are **per person**, food only, before drinks and tip.
 
 **Quintonil caps at 6.** Main dining room takes 2 to 6, the kitchen counter 1 to 3, and they explicitly ask guests not to book multiple reservations intending to be seated together. For reference their window is two months ahead on the 1st at midnight, so January 2027 would open 1 November. Contact: +52 55 5280 2680, reservaciones@quintonil.com.
 
-## Pujol, the incumbent
+### Pujol's private dining room
 
-Private dining room, capacity 8 to 14, **minimum 8 tasting menus**, and **no room rental fee**.
+Capacity 8 to 14, **minimum 8 tasting menus**, no room rental fee. At seven that minimum meant paying for an eighth cover nobody eats, roughly $223 wasted, and for weeks it was treated here as the reason the booking was blocked.
 
-> **The group no longer meets the minimum.** At 7 we either pay for an eighth cover nobody eats, roughly **$223 wasted**, or give up the private room and take a regular table if one exists. This is the single biggest consequence of dropping to 7, and it flips the recommendation toward Em, which takes parties of 3 to 8 and fits 7 with nothing to negotiate.
- MX$3,795 each, about **$223 per person** before drinks and tip. Seatings are 2:00 PM or 7:30 PM. **The 2:00 PM is usable again** now the balloon is two people back by about 11:15 rather than the whole group back at 2 PM, which was the stated reason for writing it off. The eight menu minimum is still broken at seven, so this reopens a seating, not the booking.
-
-Cancellation is MX$2,000 each (about $118) inside 48 hours. **Pujol does not book through OpenTable** and its booking window is unknown, which makes it the biggest blind spot on the whole trip.
+It was not. The minimum is a private room rule, and a regular table for seven has no minimum at all, which is what got booked. The private room remains available if the headcount reaches 8, but it is a separate conversation with the restaurant rather than an OpenTable booking.
 
 ## Em, the real peer
 

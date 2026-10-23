@@ -115,7 +115,7 @@ days:
     leg: cdmx
     kind: birthday
     title: The birthday
-    summary: Sunrise balloon for two, a free morning for the rest, then dinner
+    summary: Sunrise balloon for two, then Pujol at half past two, booked
     events:
       - time: "04:30"
         what: Pickup for the balloon, Krysta and Ryan only
@@ -134,22 +134,33 @@ days:
       - time: "11:15"
         what: The two are back in the city
         detail: >
-          Three of the four operators land back between 09:45 and 11:30, not
-          the 14:00 this page assumed while the balloon was a group booking.
-          A nap is now optional rather than compulsory.
-      - time: "19:30"
-        what: Birthday dinner
+          Three of the four operators land back between 09:45 and 11:30. The
+          fourth returns 13:30 and no longer fits, because lunch is at 14:30
+          in Polanco. That rules it out rather than merely making it tight.
+      - time: "14:30"
+        what: Birthday lunch at Pujol, booked
         detail: >
-          Venue not locked. Pujol private room is the incumbent at $223 each
-          but its eight tasting menu minimum is broken at seven. See
-          docs/dining.md.
+          Table for 7 in the main dining room, six course menu, about two and
+          a half hours. Tennyson 133 in Polanco, roughly 4.7 km from the house.
+          No shorts or sportswear, 15 minute grace period, no valet parking.
+          Give any dietary restrictions in advance.
+        why: >
+          Booked 23 October at $223 each. The eight tasting menu minimum that
+          broke this at seven applies to the private room, not to a regular
+          table, so booking a normal table sidestepped it entirely.
+      - time: evening
+        what: Nothing booked, on purpose
+        detail: >
+          A 2.5 hour lunch finishing around 17:00 is the big meal of the day.
+          Anyone still hungry later eats near the house.
       - time: late
         what: Drinks at Rayo
         detail: Caps at 8, open until 01:15 Saturdays.
     warnings:
-      - 2 January is a Saturday on a holiday weekend, the hardest night of the week to seat 7
+      - Free to change or cancel until 14:30 on 1 January. After that it is MX$2,000 per person
+      - A headcount change inside that same 24 hours is charged exactly like a cancellation
       - The balloon is unbooked and weight limits may rule out the heavier passenger entirely
-      - An earlier return reopens lunch and afternoon seatings that were written off
+      - Pujol has no online availability at all for 9 or more on this date
 
   - date: 2027-01-03
     weekday: Sunday

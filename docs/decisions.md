@@ -2,6 +2,24 @@
 
 What was decided, and what it beat. Newest first.
 
+## The birthday is lunch at Pujol, 2 January
+
+**Booked 23 October 2026.** Table for seven in the main dining room at **14:30**, six course menu, about two and a half hours. **MX$3,795 each with VAT included, $223.24 at 17.0 MXN/USD**, roughly **$1,563 across seven** before drinks and tip. Nothing was charged; the card is a guarantee. Confirmation number and terms are in the gitignored `private/` folder.
+
+**The booking was blocked by two things this repo believed that were not true.**
+
+**Pujol does book through OpenTable.** The dinner page called the unknown booking window "the biggest blind spot on the whole trip" and open-questions carried it as an open item. Pujol's own website RESERVE button points straight at OpenTable (`restref=1545187`), and 2 January was openly bookable ten weeks out. Removed from open-questions rather than answered, because the question was wrong.
+
+**The eight tasting menu minimum never applied.** It is a rule for the **private dining room**. A regular table for seven carries no minimum. For six weeks the drop from 8 to 7 was recorded as costing either a wasted $223 cover or the room itself, and it was recorded as the single biggest consequence of losing a traveller. It cost nothing. A normal table sidestepped it completely.
+
+**Two smaller corrections.** The cancellation window is **24 hours, not 48**. And Pujol holds **two Michelin stars** in the 2026 guide, not one; it and Quintonil are the only two-star restaurants in Mexico.
+
+**The terms are unusually forgiving, with one hard edge.** Free to change or cancel online until **14:30 on 1 January**. Inside that 24 hours a cancellation, a no-show, a date change *or a reduction in the diner count* each cost **MX$2,000 per person**, about $824 across seven. A headcount message went to the group on 23 October, and the answer can move freely: **6, 7 and 8 all return the same seatings**. At **9 or more there is no online availability at all** on that date.
+
+What it beat: every other starred restaurant in the city. Checked for seven on 2 January, **Quintonil** caps at 6, **Em** still has not released the date, **Esquina Común** had no availability, **Masala y Maíz** does not book through OpenTable, **Máximo** does not open its window until about 2 December, **Rosetta** has no reachable CDMX listing, and **Sud 777** was already out on distance. Pujol was the only starred restaurant confirmed able to seat seven that day, and it is the highest rated of them.
+
+**Two knock-ons.** The early seating only became usable because the balloon was repriced for two the same morning and now returns about 11:15 instead of 14:00. And booking 14:30 in Polanco **rules out the fourth balloon option**, the La Gruta breakfast trip, which does not get back until 13:30.
+
 ## Lucha libre takes arrival night, 29 December
 
 **Booked 23 October 2026 and paid in full.** Tacos, Mezcal & Lucha Libre with El Taco Club, **17:45 to 20:45**, all seven guests, **$715.53 all in** or **$102.22 each**. Attraction tickets, a full meal, specialty drinks and a mask are included. Free cancellation until 28 December. The confirmation code and payment details are in the gitignored `private/` folder.

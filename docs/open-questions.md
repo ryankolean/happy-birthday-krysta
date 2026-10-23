@@ -7,11 +7,8 @@ What is unresolved, and what each one costs. Close these in `decisions.md` and u
 ### What happens on New Year's Eve
 Approach is decided on [the New Year's Eve page](nye.html), nothing is ordered. The 2026 takeaway menus do not publish until late November, which means this cannot be closed before then. **Cost of being wrong:** up to $293 each, the difference between the potluck and the St. Regis gala.
 
-### Pujol's booking window
-Not on OpenTable, and nobody knows how far ahead they open. This is [the birthday dinner](dining.html) and the biggest blind spot on the trip. **Cost of being wrong:** the birthday dinner, which has no substitute at the same tier that is also bookable.
-
 ### Em's holiday release
-Tock says "Em has not opened reservations for 2 ene." Probing shows 19 December open and 31 December not, so the holiday week is withheld rather than sold out. Nobody knows the release date. Phone +52 55 6450 1302.
+Tock says "Em has not opened reservations for 2 ene." Probing shows 19 December open and 31 December not, so the holiday week is withheld rather than sold out. Nobody knows the release date. Phone +52 55 6450 1302. **No longer blocking anything**, since [the birthday lunch](dining.html) is booked at Pujol.
 
 ### Whether the balloon will carry us
 **Answered 23 October, and replaced by a harder question.** Whether it flies on 2 January is settled: four operators show live availability that morning, priced for two, which also kills the worry that holiday-week inventory would be gone. See docs/balloon.md.
