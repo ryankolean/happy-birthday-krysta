@@ -58,13 +58,6 @@ cdmx:
         MX$3,900. Maximo Bistrot or Rosetta would be $56 to $100 each.
         See docs/dining.md.
 
-    - item: Hot air balloon over Teotihuacan, 2 January
-      per_person: 211
-      status: estimate
-      note: >
-        Volare family private basket, MX$3,600 each. Provisional: Volare has not
-        confirmed 2 January 2027 operations or a 2027 holiday rate.
-
     - item: Lucha libre with El Taco Club, 29 December
       per_person: 102
       unit_price: 716
@@ -97,7 +90,34 @@ cdmx:
         Basing in Roma Norte keeps most of the itinerary on foot. The Polanco
         alternative would have cost $56 to $88 each in rideshare.
 
-  per_person: 1727
+  per_person: 1516
+
+  # Borne by two people, not seven, so it sits outside the per person total
+  # above. Quoting the other five for a balloon they are not getting on would
+  # overstate the trip for them by more than the lucha libre night costs.
+  balloon_travelers: 2
+  not_shared:
+    - item: Hot air balloon over Teotihuacan, 2 January
+      travelers: 2
+      per_person: 171
+      unit_price: 341
+      unit_label: both passengers, shared basket
+      status: quoted
+      verified: 2026-10-23
+      note: >
+        Krysta and Ryan only. Priced 23 October by selecting 2 January at two
+        guests on the operator's own listing. $341 for the pair on the
+        highest rated of the four, 4.97 from 8,319 ratings. The field runs
+        $332 to $385 for two and all four refund in full to one day before.
+        Replaces a $211 each estimate across seven that assumed a Volare
+        private basket, a group that is no longer going and a 2027 rate that
+        was never confirmed.
+        Two things could still move this. A private flight is the likelier
+        yes given the weight limits and should be budgeted at roughly double
+        until a real quote comes back. And the balloonport surcharges
+        passengers over 100 kg, which adds about $117 across the pair at the
+        $2 per kilo rate the listings quote, though published rates conflict
+        enough that this is not settled. Both are open in docs/balloon.md.
 
 riviera:
   travelers: 6
@@ -155,8 +175,12 @@ riviera:
       note: Net, after skipping the airport transfer. Only worth it with two or more excursions.
 
 per_person:
-  full_trip: 5001      # 1923 flights + 1727 city + 1351 beach
-  city_only: 4866      # 3139 flights + 1727 city
+  full_trip: 4790      # 1923 flights + 1516 city + 1351 beach
+  city_only: 4655      # 3139 flights + 1516 city
+  note: >
+    The balloon is not in either figure, because two people are going rather
+    than seven. Krysta and Ryan add about $171 each on top of the full trip
+    number, more if the flight goes private. Nobody else pays it.
 
 excludes:
   - personal spending
@@ -189,11 +213,14 @@ non_refundable_exposure:
   - what: New Year's Eve galas
     terms: Typically prepaid
   - what: Balloon
-    terms: Volare cancels free to 48 hours. Weather cancellations are refundable with no fee.
+    terms: >
+      Nothing booked. All four operators refund in full up to one day before,
+      so there is no exposure until one is chosen. Book nothing before the
+      weight question is answered in writing.
 
 flag_for_solo_b: >
-  The one traveller leaving after Mexico City pays $4,866, almost as much as
-  the $5,001 paid by the six doing the whole eleven days, because the MEX to
+  The one traveller leaving after Mexico City pays $4,655, almost as much as
+  the $4,790 paid by the six doing the whole eleven days, because the MEX to
   DTW Delta nonstop is $1,893 one way. Connections that day run $774 to $956.
-  Taking one saves about $1,040 and brings them to roughly $3,830. This used
+  Taking one saves about $1,040 and brings them to roughly $3,615. This used
   to apply to two people; the drop on 12 October left one.

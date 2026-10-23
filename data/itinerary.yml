@@ -115,31 +115,41 @@ days:
     leg: cdmx
     kind: birthday
     title: The birthday
-    summary: Sunrise balloon over Teotihuacan, then the big dinner
+    summary: Sunrise balloon for two, a free morning for the rest, then dinner
     events:
       - time: "04:30"
-        what: Pickup for the balloon, hotel collection included
+        what: Pickup for the balloon, Krysta and Ryan only
+        detail: >
+          Door to door collection. Not booked yet: see docs/balloon.md for the
+          four operators and the weight question that has to be settled first.
+          Times below assume the recommended 04:30 departure.
       - time: "06:30"
-        what: Sunrise over Teotihuacan, 45 to 60 minutes aloft
-        detail: Breakfast and a toast after, then the pyramids.
-      - time: "14:00"
-        what: Back in the city
-      - time: "14:30"
-        what: Sleep
-        detail: Not optional. Roughly fifteen hours from the alarm to dinner.
+        what: Sunrise over Teotihuacan, 40 to 60 minutes aloft
+        detail: A sparkling toast on landing, then breakfast.
+      - time: morning
+        what: The other five have the morning free
+        detail: >
+          The balloon no longer owns the day for everybody. Bazar Sabado runs
+          Saturdays only and is back on the table for anyone not flying.
+      - time: "11:15"
+        what: The two are back in the city
+        detail: >
+          Three of the four operators land back between 09:45 and 11:30, not
+          the 14:00 this page assumed while the balloon was a group booking.
+          A nap is now optional rather than compulsory.
       - time: "19:30"
         what: Birthday dinner
         detail: >
-          Venue not locked. Pujol private room is the incumbent at $223 each.
-          See docs/dining.md for the alternatives, several of which suit a
-          balloon day better than a nine course tasting menu.
+          Venue not locked. Pujol private room is the incumbent at $223 each
+          but its eight tasting menu minimum is broken at seven. See
+          docs/dining.md.
       - time: late
         what: Drinks at Rayo
         detail: Caps at 8, open until 01:15 Saturdays.
     warnings:
-      - 2 January is a Saturday on a holiday weekend, the hardest night of the week to seat 8
-      - Bazar Sabado runs Saturdays only but the balloon owns the day
-      - Pujol's 14:00 seating is unusable, the balloon returns at that hour
+      - 2 January is a Saturday on a holiday weekend, the hardest night of the week to seat 7
+      - The balloon is unbooked and weight limits may rule out the heavier passenger entirely
+      - An earlier return reopens lunch and afternoon seatings that were written off
 
   - date: 2027-01-03
     weekday: Sunday

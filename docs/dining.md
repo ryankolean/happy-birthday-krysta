@@ -4,7 +4,9 @@ Party of **7**, down from 8 on 12 October. Hardest night of the week to seat, be
 
 ## The constraint nobody plans around
 
-[The balloon](itinerary.html) has a 4:30 AM pickup and gets back around 2 PM. A nine course tasting menu at 7:30 PM is roughly **fifteen hours after the alarm**. There are already two tasting menus in the itinerary counting [whatever New Year's Eve becomes](nye.html).
+[The balloon](itinerary.html) still has a 4:30 AM pickup, but it no longer eats the whole day. **Repriced for two on 23 October: three of the four operators land back between 09:45 and 11:30**, not the 2 PM this page was written against. See docs/balloon.md. A 7:30 PM dinner is now about fifteen hours after the alarm with a usable afternoon in the middle, rather than fifteen hours with nothing but a compulsory nap.
+
+That softens the constraint without removing it. There are still two tasting menus in the itinerary counting [whatever New Year's Eve becomes](nye.html), and only two of the seven are getting up at 4:30.
 
 So the real question is not which restaurant is best. It is whether this night wants a tasting menu at all.
 
@@ -32,7 +34,7 @@ All prices are **per person**, food only, before drinks and tip.
 Private dining room, capacity 8 to 14, **minimum 8 tasting menus**, and **no room rental fee**.
 
 > **The group no longer meets the minimum.** At 7 we either pay for an eighth cover nobody eats, roughly **$223 wasted**, or give up the private room and take a regular table if one exists. This is the single biggest consequence of dropping to 7, and it flips the recommendation toward Em, which takes parties of 3 to 8 and fits 7 with nothing to negotiate.
- MX$3,795 each, about **$223 per person** before drinks and tip. Seatings are 2:00 PM or 7:30 PM, and the 2:00 PM is unusable because the balloon returns at that hour.
+ MX$3,795 each, about **$223 per person** before drinks and tip. Seatings are 2:00 PM or 7:30 PM. **The 2:00 PM is usable again** now the balloon is two people back by about 11:15 rather than the whole group back at 2 PM, which was the stated reason for writing it off. The eight menu minimum is still broken at seven, so this reopens a seating, not the booking.
 
 Cancellation is MX$2,000 each (about $118) inside 48 hours. **Pujol does not book through OpenTable** and its booking window is unknown, which makes it the biggest blind spot on the whole trip.
 
@@ -46,7 +48,7 @@ Two things no write-up mentions:
 
 **2 January is not bookable yet, and not sold out either.** Tock returns "Em has not opened reservations for 2 ene." Probing the horizon: 12 and 19 December are open, 31 December and 1 January are not. They are holding the holiday week back. Same situation as Pujol, but with a published phone number and a confirmed 8 top.
 
-## If the balloon stays on 2 January
+## The lower effort picks
 
 The honest pick is **Maximo Bistrot** or **Rosetta**. One Michelin star between them, both a la carte so people order to their appetite, both walkable from the house so there is no car at either end, and both roughly a quarter of Pujol's price per head.
 

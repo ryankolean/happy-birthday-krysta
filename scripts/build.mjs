@@ -736,11 +736,19 @@ function buildCosts() {
 <h2>Mexico City</h2>
 <p class="lede">${nt(budget.cdmx.lodging_note)}</p>
 <div class="scroller"><table>
-<caption>Lodging splits ${budget.cdmx.lodging_travelers} ways. Every other line is an ${budget.cdmx.travelers} person trip.</caption>
+<caption>Lodging splits ${budget.cdmx.lodging_travelers} ways. Every other line is priced for all ${budget.cdmx.travelers}. The balloon is neither, so it is below.</caption>
 <thead><tr><th>Item</th><th>Status</th><th class="n">Each</th></tr></thead>
 <tbody>${costRows(budget.cdmx.lines)}
 <tr class="sum"><td colspan="2">Mexico City, per person</td><td class="n">${usd(budget.cdmx.per_person)}</td></tr>
 </tbody></table></div>
+
+<h3>Only two people pay this</h3>
+<div class="scroller"><table>
+<caption>Not in the total above, and not in the trip totals at the top of this page.</caption>
+<thead><tr><th>Item</th><th>Status</th><th class="n">Both</th><th class="n">Each</th></tr></thead><tbody>
+${budget.cdmx.not_shared.map((o) => `<tr><td><strong>${esc(o.item)}</strong>${o.note ? `<br><small>${nt(o.note)}</small>` : ''}</td><td><span class="tag ${esc(o.status)}">${esc(o.status)}</span></td><td class="n"><small>${usd(o.unit_price)}</small></td><td class="n"><strong>${usd(o.per_person)}</strong></td></tr>`).join('')}
+</tbody></table></div>
+<p>${nt(budget.per_person.note)} The research behind it, including the weight limits that decide it, is on <a href="balloon.html">the balloon page</a>.</p>
 
 <div class="note warn">
   <div class="nh">The lodging line is committed, and it rose</div>

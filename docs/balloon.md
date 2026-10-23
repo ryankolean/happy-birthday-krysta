@@ -94,21 +94,28 @@ from 8,319 ratings, against 4,338, 3,280 and 307 for the others.
    limit, so ask them last.
 4. **Only then book**, and only after the written answer. Do not pay and hope
    to settle it at reception at 04:00.
-5. **Reprice the budget line at two passengers**, replacing the Volare estimate
-   of $211 each across seven, which was never confirmed for 2027 and assumed a
-   private basket for a group that is no longer going.
-6. **Rework the 2 January itinerary** for a split morning: two people out from
-   roughly 04:15, five people with a free Saturday.
+## What this freed up, now applied
 
-## What this frees up
+**The balloon is out of the shared per person total.** Two people pay it, not
+seven, so quoting the other five for it overstated their trip. It now sits in
+its own block on [the costs page](costs.html) at **$341 for the pair, $171
+each**, replacing a $211 each estimate across seven. Mexico City per person
+drops from **$1,727 to $1,516**, the full trip from **$5,001 to $4,790**, and
+city only from **$4,866 to $4,655**. Krysta and Ryan add their $171 on top of
+those figures, more if the flight goes private.
 
-**The birthday gets its day back.** The itinerary assumes a 14:00 return and a
-compulsory afternoon sleep before a 19:30 dinner. Three of these four options
-land back between **09:45 and 11:30**. Only the La Gruta breakfast option runs
-to 13:30. Pick a short one and the 04:30 alarm stops dominating the day.
+**The birthday got its afternoon back.** The itinerary assumed a 14:00 return
+and a compulsory sleep before a 19:30 dinner. Three of these four land back
+between **09:45 and 11:30**, so the nap is optional now. Only the La Gruta
+breakfast option still runs to 13:30.
 
-**Bazar Sabado reopens for the other five.** The itinerary currently says the
-balloon owns the day for all seven. With two going, it does not.
+That also reopens seatings the dinner page had written off. Pujol's 14:00
+seating was ruled out specifically because the balloon returned at that hour.
+It no longer does. The eight tasting menu minimum is still broken at seven, so
+this reopens a seating rather than the booking.
+
+**Bazar Sabado is back for the other five.** The itinerary used to say the
+balloon owned the day for all seven. With two going, it does not.
 
 ## Sources
 
