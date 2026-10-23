@@ -93,6 +93,29 @@ dated:
     date: 2026-12-22
     why: After this there is no refund at all. The booking is already committed.
 
+  - id: lucha-cancel-cliff
+    title: Last day to cancel lucha libre for a full refund
+    status: todo
+    date: 2026-12-28
+    why: >
+      The 29 December experience refunds in full only if cancelled at least
+      one day before the 17:45 start, so 28 December is the last day to act.
+      $715.53 is already paid. The decision point is the DL 646 schedule: the
+      flight lands 12:30 and the group needs to be at the meeting point by
+      17:45, so a delay much past 16:30 is what would force this. Check the
+      inbound aircraft the night before rather than waiting for the morning.
+
+  - id: lucha-meeting-point
+    title: Watch for the lucha libre meeting point in the Airbnb thread
+    status: todo
+    date: 2026-12-29
+    why: >
+      The confirmation says not every run of the experience starts at the
+      Orizaba address and that the exact point is sent by direct message on
+      the day. Nobody should set out on the pin alone. The map entry is
+      deliberately approximate for this reason. El Taco Club is reachable
+      through the Airbnb message thread, linked in private/lucha-libre-booking.md.
+
 decisions_needed:
   - id: pujol-minimum-broken
     title: Pujol's private room needs 8 and we are now 7
