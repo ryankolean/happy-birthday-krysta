@@ -13,8 +13,12 @@ Not on OpenTable, and nobody knows how far ahead they open. This is [the birthda
 ### Em's holiday release
 Tock says "Em has not opened reservations for 2 ene." Probing shows 19 December open and 31 December not, so the holiday week is withheld rather than sold out. Nobody knows the release date. Phone +52 55 6450 1302.
 
-### Whether the balloon flies on 2 January
-No operator site confirms holiday-period operations, and no 2027 pricing is published anywhere. 2 January is a Saturday in the busiest week of the year, which is when balloon operators fill first. **Cost of being wrong:** $211 each, and the centrepiece of [the birthday](itinerary.html).
+### Whether the balloon will carry us
+**Answered 23 October, and replaced by a harder question.** Whether it flies on 2 January is settled: four operators show live availability that morning, priced for two, which also kills the worry that holiday-week inventory would be gone. See docs/balloon.md.
+
+What is not settled is whether it will take us. The balloonport surcharges passengers over 100 kg and several operators publish an absolute maximum of 120 to 125 kg. One of the two passengers is above every published ceiling, and one Airbnb listing states 100 kg as a limit rather than a surcharge. The quoted surcharge rates conflict wildly across operator pages, from USD 2 to USD 25 per kilo, which is a spread of roughly $117 against $1,465 for the pair.
+
+**Cost of being wrong:** being turned away at the launch site after an 04:00 pickup on the morning of the birthday, with the money already paid. Needs a written answer from a named operator before anything is booked.
 
 ## Money
 

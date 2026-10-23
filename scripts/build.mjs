@@ -66,6 +66,7 @@ const tidy = (s) => String(s ?? '').replace(/\s*\n\s*/g, ' ').trim();
 const PAGE_REFS = [
   [/(?:docs\/)?nye\.md/g, 'nye.html', "the New Year's Eve options"],
   [/(?:docs\/)?dining\.md/g, 'dining.html', 'the birthday dinner options'],
+  [/(?:docs\/)?balloon\.md/g, 'balloon.html', 'the balloon options'],
   [/(?:docs\/)?open-questions\.md/g, 'open-questions.html', 'the open questions'],
   [/(?:docs\/)?decisions\.md/g, 'decisions.html', 'the decision log'],
   [/data\/tasks\.yml/g, 'tasks.html', 'the to do list'],
@@ -102,6 +103,7 @@ const PAGES = [
   { file: 'map.html', label: 'Map' },
   { file: 'costs.html', label: 'Costs' },
   { file: 'dining.html', label: 'Birthday dinner' },
+  { file: 'balloon.html', label: 'Balloon' },
   { file: 'nye.html', label: "New Year's Eve" },
   { file: 'decisions.html', label: 'Decisions' },
   { file: 'open-questions.html', label: 'Open questions' },
@@ -1331,6 +1333,7 @@ writeFileSync(join(out, 'stays.html'), buildStays());
 writeFileSync(join(out, 'map.html'), buildMap());
 writeFileSync(join(out, 'tasks.html'), buildTasks());
 writeFileSync(join(out, 'dining.html'), buildDoc('dining.md', 'dining.html', 'Birthday dinner options'));
+writeFileSync(join(out, 'balloon.html'), buildDoc('balloon.md', 'balloon.html', 'Hot air balloon'));
 writeFileSync(join(out, 'nye.html'), buildDoc('nye.md', 'nye.html', "New Year's Eve"));
 writeFileSync(join(out, 'decisions.html'), buildDoc('decisions.md', 'decisions.html', 'Decision log'));
 writeFileSync(join(out, 'open-questions.html'), buildDoc('open-questions.md', 'open-questions.html', 'Open questions'));

@@ -128,12 +128,25 @@ decisions_needed:
       Ling Ling and the balloon both need re-quoting at 7 as well.
 
   - id: confirm-balloon
-    title: Confirm Volare flies 2 January 2027
+    title: Settle the balloon weight question in writing before booking
     status: todo
     detail: >
-      Three questions: do they fly that date, can they hold a private basket
-      for 7, and what is the 2027 holiday rate. 2 January is a Saturday in the
-      busiest week of the year.
+      Rewritten 23 October. The old version asked whether Volare flies that
+      date and whether they would hold a private basket for 7. Both questions
+      are dead. Four operators on Airbnb show 2 January availability, so the
+      date is answered, and the balloon is now two passengers rather than the
+      whole group.
+      What replaces it is a harder question. Both passengers are over the
+      100 kg threshold the balloonport charges against and one is above the
+      120 to 125 kg ceiling that several operators publish as an absolute
+      maximum, so this is a refusal risk at the launch site after an 04:00
+      pickup, not just a surcharge. Message the host with the real declared
+      weights from private/balloon-weights.md and get three answers in the
+      Airbnb thread: is the heavier passenger accepted, what is the exact
+      rate and currency, and is it collected in advance or on the day.
+      Ask a second operator too, so there is a fallback that has already
+      answered. Book nothing until it is in writing.
+      Full research, pricing for two and the source list are in docs/balloon.md.
 
   - id: pick-fives-rate
     title: Flexible or non-refundable at The Fives
