@@ -8,7 +8,7 @@ days:
     leg: cdmx
     kind: travel
     title: Arrive, then lucha libre
-    summary: Fly to Mexico City, tacos and the arena at a quarter to six
+    summary: Fly to Mexico City, tacos and the arena at a quarter to six, nothing after
     events:
       - time: "08:40"
         what: DL 646 departs Detroit, lands Mexico City 12:30
@@ -27,15 +27,21 @@ days:
         why: >
           Booked 23 October for all 7 at $715.53 all in. Takes the slot the
           Ling Ling reservation was penciled into but never actually held.
-      - time: late
-        what: Drinks at Limantour, Roma Norte
-        detail: Number 20 on Mexico's 50 Best.
+      - time: after
+        what: A bite nearby only if anyone is still hungry, then back to the house
+        detail: >
+          Nothing else is booked and nothing else is going to fit. The
+          experience already includes a full meal, so this is a top up rather
+          than a plan: pick somewhere near wherever the show lets out, eat,
+          and go. No bar on the list tonight.
     warnings:
       - The exact meeting point arrives by direct message on the day, not in advance
       - A flight delay much past 16:30 puts the booking at risk. Cancel by 28 December for a full refund
       - No large cameras, the arena does not allow them. Bring pesos for souvenirs
-      - Owl Bar and Rayo are both closed Tuesdays
-      - Gin Gin Cibeles is open daily but is formal attire
+      - >
+        Both arenas sit in parts of town that are not worth lingering in late.
+        Eat close by if you want to, then take a car back rather than walking on
+        to somewhere else.
 
   - date: 2026-12-30
     weekday: Wednesday
@@ -210,7 +216,11 @@ does_not_fit:
   - item: Quintonil
     why: Caps at 6 in the main dining room, 1 to 3 at the counter. Cannot seat 8.
   - item: La Table Krug
-    why: At the St. Regis. Works on 29 or 30 Dec, but do not book it if the group takes a St. Regis New Year's Eve.
+    why: >
+      One seating at 20:00, Tuesday to Saturday. 29 December went to lucha
+      libre and 30 December is taco day, so there is no night left for it.
+      It is at the St. Regis besides, so it was already ruled out if the
+      group takes a St. Regis New Year's Eve.
   - item: Bikes and Munchies street food bike tour
     why: No day left for a second food tour.
   - item: Casa Azul

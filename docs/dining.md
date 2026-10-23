@@ -63,9 +63,11 @@ The honest pick is **Maximo Bistrot** or **Rosetta**. One Michelin star between 
 
 Every venue below is plotted on [the map](map.html) with its walk from the house.
 
-- **29 December:** Ling Ling, the only open upscale slot. OpenTable, up to 20, released 30 September so it is bookable now. Availability was last checked at a party of 8, so re-check at 7 before booking.
+- **29 December:** nothing to book. The lucha libre evening runs 17:45 to 20:45 and includes a full meal, so it is the dinner. If anyone is still hungry afterwards they eat near wherever the show lets out and then go home. No reservation, no bar.
 - **30 December:** taco day. Casual only. Cuina on Tabasco 46 if anyone wants a table, CoverManager slug `cuina-cdmx`, max 10 online.
-- **La Table Krug:** Tuesday to Saturday, one seating at 8:00 PM, so 29 or 30 December work. It is at the St. Regis, so do not book it if the group takes a St. Regis New Year's Eve.
+- **La Table Krug:** Tuesday to Saturday, one seating at 8:00 PM. 29 December is now taken by lucha libre, so 30 December is the only night it fits, and that is taco day. Effectively out unless taco day moves. It is at the St. Regis either way, so do not book it if the group takes a St. Regis New Year's Eve.
+
+**Ling Ling is no longer spoken for on 29 December.** It held that slot as the only open upscale seating of the week, but the booking was never actually made and the evening went to lucha libre on 23 October. It is now a 2 January candidate, where it matters more: Pujol's private room needs eight tasting menus and the group is seven. OpenTable, up to 20, released 30 September. Availability was last checked at a party of 8, so re-check at 7 before booking.
 
 ## Booking windows, which all differ
 
