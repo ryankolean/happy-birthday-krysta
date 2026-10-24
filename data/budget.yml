@@ -147,16 +147,12 @@ riviera:
       status: estimate
       note: About $65 per day including tip.
 
-    - item: Chichen Itza private tour
-      per_person: 119
-      status: estimate
-
     - item: CUN airport transfer, round trip
       per_person: 21
       status: estimate
       note: The transfer is $100 to $125 for the van at any headcount, so this falls if more people come.
 
-  per_person: 1351
+  per_person: 1232
 
   alternative_all_inclusive:
     per_person: 1449
@@ -170,6 +166,13 @@ riviera:
       16 minute village walk, but it is now close enough to put to the group.
 
   optional:
+    - item: Chichen Itza private tour
+      per_person: 119
+      status: estimate
+      note: >
+        Was a committed line with 5 January reserved for it. Moved here on
+        23 October: the beach leg is four unplanned days and no excursion is
+        being booked yet. Still the biggest single thing available to add back.
     - item: Isla Mujeres ferry
       per_person: 34
       status: estimate
@@ -184,7 +187,7 @@ riviera:
       note: Net, after skipping the airport transfer. Only worth it with two or more excursions.
 
 per_person:
-  full_trip: 4790      # 1923 flights + 1516 city + 1351 beach
+  full_trip: 4671      # 1923 flights + 1516 city + 1232 beach
   city_only: 4655      # 3139 flights + 1516 city
   note: >
     The balloon is not in either figure, because two people are going rather
@@ -233,8 +236,8 @@ non_refundable_exposure:
       weight question is answered in writing.
 
 flag_for_solo_b: >
-  The one traveller leaving after Mexico City pays $4,655, almost as much as
-  the $4,790 paid by the six doing the whole eleven days, because the MEX to
+  The one traveller leaving after Mexico City pays $4,655, only $16 less than
+  the $4,671 paid by the six doing the whole eleven days, because the MEX to
   DTW Delta nonstop is $1,893 one way. Connections that day run $774 to $956.
   Taking one saves about $1,040 and brings them to roughly $3,615. This used
   to apply to two people; the drop on 12 October left one.

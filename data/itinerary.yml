@@ -115,28 +115,15 @@ days:
     leg: cdmx
     kind: birthday
     title: The birthday
-    summary: Sunrise balloon for two, then Pujol at half past two, booked
+    summary: A free morning, then Pujol at half past two, booked
     events:
-      - time: "04:30"
-        what: Pickup for the balloon, Krysta and Ryan only
-        detail: >
-          Door to door collection. Not booked yet: see docs/balloon.md for the
-          four operators and the weight question that has to be settled first.
-          Times below assume the recommended 04:30 departure.
-      - time: "06:30"
-        what: Sunrise over Teotihuacan, 40 to 60 minutes aloft
-        detail: A sparkling toast on landing, then breakfast.
       - time: morning
-        what: The other five have the morning free
+        what: Free, nothing booked
         detail: >
-          The balloon no longer owns the day for everybody. Bazar Sabado runs
-          Saturdays only and is back on the table for anyone not flying.
-      - time: "11:15"
-        what: The two are back in the city
-        detail: >
-          Three of the four operators land back between 09:45 and 11:30. The
-          fourth returns 13:30 and no longer fits, because lunch is at 14:30
-          in Polanco. That rules it out rather than merely making it tight.
+          The balloon came off this day on 23 October. It is still possible
+          and the research stands in docs/balloon.md, but nothing is held and
+          the morning is open for everybody rather than just for the five who
+          were not flying. Bazar Sabado runs Saturdays only and fits here.
       - time: "14:30"
         what: Birthday lunch at Pujol, booked
         detail: >
@@ -159,24 +146,32 @@ days:
     warnings:
       - Free to change or cancel until 14:30 on 1 January. After that it is MX$2,000 per person
       - A headcount change inside that same 24 hours is charged exactly like a cancellation
-      - The balloon is unbooked and weight limits may rule out the heavier passenger entirely
       - Pujol has no online availability at all for 9 or more on this date
+      - If the balloon comes back, only the options landing by 11:30 fit in front of a 14:30 lunch
 
   - date: 2027-01-03
     weekday: Sunday
     leg: travel
     kind: travel
-    title: The group splits
-    summary: Six to Cancun, two home, both at 13:55
+    title: Travel day to Cancun
+    summary: Six to Cancun, one home, both flights at 13:55
     events:
       - time: "11:00"
-        what: Checkout. Leave together around 11:30.
+        what: Checkout at Casa KM. Leave together around 11:30.
       - time: "13:55"
         what: Both flights depart at the same time
-        detail: Six to Cancun, two to Detroit. Nobody waits around at the airport.
+        detail: >
+          Six to Cancun on Aeromexico, one to Detroit on Delta. Nobody waits
+          around at the airport. Neither is booked yet.
       - time: "17:33"
         what: Land in Cancun
         detail: Transfer to Puerto Morelos is 27 km and about 27 minutes.
+      - time: evening
+        what: Settle in at The Fives
+        detail: Nothing planned. The residence is not booked yet either.
+    warnings:
+      - Neither flight is booked, and The Fives is still only verified available
+      - The one flying home could save about $1,040 by taking a connection instead of the nonstop
 
   - date: 2027-01-04
     weekday: Monday
@@ -192,26 +187,30 @@ days:
   - date: 2027-01-05
     weekday: Tuesday
     leg: riviera
-    kind: excursion
-    title: Chichen Itza
-    summary: Private tour, full day
+    kind: beach
+    title: Beach
+    summary: Nothing scheduled
     events:
       - time: all day
-        what: Chichen Itza private tour
-        detail: From $119 each.
+        what: Nothing scheduled
+        detail: >
+          Chichen Itza had this day penciled in as a full day private tour.
+          Taken off on 23 October: no excursion is being planned yet, so this
+          is a beach day until somebody decides otherwise.
 
   - date: 2027-01-06
     weekday: Wednesday
     leg: riviera
     kind: beach
-    title: Isla Mujeres
-    summary: By ferry, or another beach day
+    title: Beach
+    summary: Nothing scheduled
     events:
       - time: all day
-        what: Isla Mujeres by ferry
-        detail: MX$580 each round trip, about $34.
-    notes:
-      - Tulum was considered and is 87 minutes each way. Three hours of driving for a beach club probably does not survive.
+        what: Nothing scheduled
+        detail: >
+          Isla Mujeres by ferry had this day. Taken off on 23 October for the
+          same reason. Still the easiest day trip to add back if the group
+          wants one.
 
   - date: 2027-01-07
     weekday: Thursday
@@ -248,5 +247,8 @@ does_not_fit:
     why: Wants a half day. 30 Dec is taco day, 31 is New Year's Eve, 1 Jan it is closed, 2 Jan is the birthday.
   - item: Teotihuacan as its own day trip
     why: >
-      No longer needed. The 2 January balloon package includes pyramid entry,
-      which closes this gap without giving up another day.
+      Open again. The balloon packages include pyramid entry and would have
+      closed this gap, but the balloon came off 2 January on 23 October, so
+      nothing currently covers Teotihuacan. There is no spare day in the city
+      to give it either: 29 December is lucha libre, 30 is taco day, 31 is New
+      Year's Eve, 1 January is the rest day and 2 January is the birthday.

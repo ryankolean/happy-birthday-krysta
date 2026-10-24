@@ -135,9 +135,14 @@ decisions_needed:
       absorbed online and would mean emailing the restaurant directly.
 
   - id: confirm-balloon
-    title: Settle the balloon weight question in writing before booking
-    status: todo
+    title: Settle the balloon weight question if the balloon comes back
+    status: blocked
     detail: >
+      Deferred 23 October. The balloon was taken off the 2 January itinerary.
+      It is still possible rather than ruled out, and all four operators
+      refund in full to one day before, so nothing is lost by waiting. If it
+      comes back, only the options landing by 11:30 fit in front of the 14:30
+      Pujol booking, and the weight question below has to be answered first.
       Rewritten 23 October. The old version asked whether Volare flies that
       date and whether they would hold a private basket for 7. Both questions
       are dead. Four operators on Airbnb show 2 January availability, so the
