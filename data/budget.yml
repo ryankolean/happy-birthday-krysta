@@ -1,20 +1,50 @@
 # Everything is per person. Lodging also carries the unit price, because a
 # house and a resort residence are booked whole and then split.
 #
-# status: quoted   = live price seen on the operator's own site
+# status: booked   = paid or held on a real confirmation
+#         quoted   = live price seen on the operator's own site
 #         estimate = real market price for a comparable thing, not quoted for us
 #         open     = not decided, figure is a placeholder
+#
+# THE RULE ON THIS PAGE: only booked and quoted lines go into a total.
+# Estimates are shown so nobody is surprised on the ground, and they are
+# deliberately left out of every total, because the totals are the amount
+# each person owes Ryan. See estimates_note.
 
 currency: USD
 rate_mxn_per_usd: 17.0
 priced: 2026-10-02
-lodging_repriced: 2026-10-12
+lodging_repriced: 2026-10-27
+
+estimates_note: >
+  Every total on this page counts only the lines marked booked or quoted.
+  Lines marked estimate are never added in. Those are things you will pay
+  for yourself on the ground, in cash or on your own card, and the figure is
+  there so the week does not surprise anybody. The totals are a different
+  thing: they are what you owe Ryan, because he fronted the bookings on one
+  card and everybody settles up with him.
 
 flights:
-  per_person_full_trip: 1923
-  per_person_city_only: 3139
-  status: quoted
-  note: Priced on Google Flights 2026-09-25. See data/flights.yml for each leg.
+  status: own_arrangement
+  note: >
+    The fares below were priced on Google Flights on 25 September 2026 and are
+    there as a reference point, not as a bill. They will have moved.
+  krysta_and_ryan: >
+    Krysta and Ryan have not bought theirs yet. When they do, the exact
+    flights will be listed here so anybody who wants to travel together can
+    book the same ones.
+  mex_cun_callout: >
+    The one worth coordinating is Mexico City to Cancun on 3 January.
+    Everybody continuing to the beach is on that leg, and being on the same
+    aircraft means one arrival, one transfer and one van from the airport
+    instead of six people trickling in. Aeromexico runs it hourly at a flat
+    fare, so the time is a group decision rather than a price decision.
+    If you are coming to the beach, say so before anybody ticketing starts.
+  reference_fares_usd:
+    dtw_mex_29_dec: 1246
+    mex_cun_3_jan: 184
+    cun_dtw_8_jan: 493
+    mex_dtw_3_jan_nonstop: 1893
 
 cdmx:
   travelers: 7
@@ -32,56 +62,60 @@ cdmx:
       status: booked
       verified: 2026-10-18
       note: >
-        Booked 18 October. $3,836.93 all in: $634.20 a night for 5 nights plus
-        $665.91 of tax. Split 6 ways that is $639.49 each. Paid $1,585.51 on
-        booking with $2,251.42 scheduled for 14 December. The nightly rate rose
-        about 29 percent between the 12 October quote of $2,944 and booking,
-        which is $148 more per person than the figure this page carried.
-
-    - item: New Year's Eve
-      per_person: 324
-      status: open
-      note: >
-        Placeholder is the St. Regis gala at MX$5,500 per adult, the only one of
-        the three galas with a published price. The private chef approach works
-        out to about $69 each plus a holiday premium, and the potluck approach
-        about $31 to $69 each. See docs/nye.md. Expect this line to fall sharply.
+        Booked 18 October on Ryan's card. $3,836.93 all in: $634.20 a night
+        for 5 nights plus $665.91 of tax. Split 6 ways that is $639.49 each.
+        Paid $1,585.51 on booking with $2,251.42 scheduled for 14 December.
+        The nightly rate rose about 29 percent between the 12 October quote of
+        $2,944 and booking, which is $148 more per person than this page used
+        to carry.
 
     - item: Birthday lunch at Pujol, 2 January
       per_person: 223
       unit_price: 1563
-      unit_label: table of 7, before drinks and tip
+      unit_label: table of 7, food only
       status: booked
-      verified: 2026-10-23
+      verified: 2026-10-27
       note: >
         Booked 23 October for 14:30, a table for seven in the main dining
-        room. The figure did not move: MX$3,795 per person with VAT included,
-        which is $223.24 at 17.0 MXN/USD, or about $1,563 across seven. Drinks
-        and tip are on top and are not in this line.
+        room. Ryan's card is on the booking and will take the whole bill on
+        the day, so this is one of the amounts you settle with him.
+        The menu is MX$3,795 with VAT included, which is $223.24 at 17.0
+        MXN/USD, or about $1,563 across seven. Drinks and tip are on top and
+        are not in this figure. Budget $200 to $250 for the food and expect
+        to add to it.
         Nothing was charged at booking. The card is a guarantee only, and the
         reservation is free to change or cancel online until 14:30 on
         1 January. Inside that 24 hours a cancellation, a no-show, a date
         change or a reduction in the diner count all cost MX$2,000 per person.
-        The eight tasting menu minimum that broke this at seven applies to the
-        private dining room, not to a regular table, so a normal table avoided
-        it. That also means there is no private room and no wasted eighth
-        cover. See docs/dining.md.
 
     - item: Lucha libre with El Taco Club, 29 December
       per_person: 102
       unit_price: 716
-      unit_label: whole group of 7
+      unit_label: whole group of 7, paid in full
       status: booked
-      verified: 2026-10-23
+      verified: 2026-10-27
       note: >
-        Booked 23 October and paid in full. $88.12 a head across 7 is $616.84,
-        plus $98.69 of tax, so $715.53 all in or $102.22 each. Attraction
-        tickets, a full meal, specialty drinks and a mask are included, so this
-        line covers the 29 December dinner as well as the show. That is why the
-        $125 Ling Ling estimate it replaces is gone rather than moved. Free
-        cancellation until 28 December. The tax was absent from Airbnb's date
-        picker and appeared only at checkout, so the $616.84 figure quoted
-        during the search was $98.69 light.
+        Booked and paid in full on 23 October on Ryan's card. The receipt
+        reads $88.12 a head across 7 for $616.84, plus $98.69 of tax, so
+        $715.53 all in and $102.22 each. Re-checked against the Airbnb
+        confirmation on 27 October and the figure is exact.
+        Attraction tickets, a full meal, specialty drinks and a mask are all
+        included, so this line covers the 29 December dinner as well as the
+        show. Free cancellation until 28 December.
+
+  per_person: 964
+
+  # Shown, never totalled. See estimates_note at the top of this file.
+  estimates:
+    - item: New Year's Eve
+      per_person: 0
+      status: open
+      note: >
+        Nothing to pay and nothing booked. The plan is to eat in at Casa KM,
+        with everybody bringing a dish or a bottle to share, or to walk out
+        to whatever is open if the mood changes on the day. This replaces the
+        $324 placeholder that used to sit here, which was the St. Regis gala
+        price and was never anybody's plan.
 
     - item: Casual dinners and drinks, 2 nights
       per_person: 138
@@ -96,116 +130,131 @@ cdmx:
       per_person: 50
       status: estimate
       note: >
-        Basing in Roma Norte keeps most of the itinerary on foot. The Polanco
-        alternative would have cost $56 to $88 each in rideshare.
+        Basing in Del Valle Norte keeps a lot of the itinerary walkable, but
+        Polanco and the centre are a car ride.
 
-  per_person: 1516
-
-  # Borne by two people, not seven, so it sits outside the per person total
-  # above. Quoting the other five for a balloon they are not getting on would
-  # overstate the trip for them by more than the lucha libre night costs.
-  balloon_travelers: 2
-  not_shared:
-    - item: Hot air balloon over Teotihuacan, 2 January
-      travelers: 2
-      per_person: 171
-      unit_price: 341
-      unit_label: both passengers, shared basket
-      status: quoted
-      verified: 2026-10-23
-      note: >
-        Krysta and Ryan only. Priced 23 October by selecting 2 January at two
-        guests on the operator's own listing. $341 for the pair on the
-        highest rated of the four, 4.97 from 8,319 ratings. The field runs
-        $332 to $385 for two and all four refund in full to one day before.
-        Replaces a $211 each estimate across seven that assumed a Volare
-        private basket, a group that is no longer going and a 2027 rate that
-        was never confirmed.
-        Two things could still move this. A private flight is the likelier
-        yes given the weight limits and should be budgeted at roughly double
-        until a real quote comes back. And the balloonport surcharges
-        passengers over 100 kg, which adds about $117 across the pair at the
-        $2 per kilo rate the listings quote, though published rates conflict
-        enough that this is not settled. Both are open in docs/balloon.md.
+  estimates_per_person: 228
 
 riviera:
   travelers: 6
-  recommended_build: flexible room-only rate, eat in the village, one big excursion
+  group_shape: 2 couples and 2 singles
+  recommended_build: >
+    Two Bedroom Oceanview Residence for the two couples, plus a Junior Suite
+    for the two singles, both on the flexible rate. It is the cheapest
+    combination in which nobody shares a bed.
+  room_plan: >
+    Six adults, as two couples and two singles. The Two Bedroom Oceanview
+    Residence has one king and one room with two queens, so on its own it
+    sleeps six only if the two singles share a bed. Adding a Junior Suite,
+    which has a king and a double sofa bed, gives each couple a private
+    bedroom and each single their own bed. That is the layout priced below.
   lines:
-    - item: Two Bedroom Oceanview Residence, flexible room-only
-      per_person: 887
-      unit_price: 5323
-      unit_label: whole residence, 5 nights, split 6 ways
+    - item: Two Bedroom Oceanview Residence plus Junior Suite, flexible rate
+      per_person: 1143
+      unit_price: 6855
+      unit_label: both units, 5 nights, split 6 ways
       status: quoted
-      verified: 2026-10-02
+      verified: 2026-10-27
       note: >
-        Taxes included. Non-refundable is $754 each, but refunds nothing from
-        the moment it is booked.
+        Priced live on the resort's own engine on 27 October for 3 to 8
+        January. The residence is $4,749 on the flexible rate and the Junior
+        Suite is $2,106, so $6,855 across six is $1,142.50 each. Taxes
+        included, nothing booked yet.
+        The residence figure is quoted directly. The Junior Suite flexible
+        figure is derived by applying the same 20 percent the engine applied
+        to the residence, because the engine only prints the flexible price
+        once a room is selected. Confirm it before anybody pays.
 
+  per_person: 1143
+
+  estimates:
     - item: Food in town, 5 days
       per_person: 324
       status: estimate
-      note: About $65 per day including tip.
+      note: About $65 per day including tip, eating in Puerto Morelos village.
 
     - item: CUN airport transfer, round trip
-      per_person: 21
-      status: estimate
-      note: The transfer is $100 to $125 for the van at any headcount, so this falls if more people come.
-
-  per_person: 1232
-
-  alternative_all_inclusive:
-    per_person: 1449
-    lodging_and_board_per_person: 1309
-    delta_per_person: 98
-    note: >
-      All-inclusive works out to $84.30 per adult per night at the current
-      discount, so full board costs only $98 more each than room-only plus
-      eating in the village. That gap used to be $239 each. Break-even is
-      about two resort cocktails a day. Room-only is still the pick given the
-      16 minute village walk, but it is now close enough to put to the group.
-
-  optional:
-    - item: Chichen Itza private tour
-      per_person: 119
+      per_person: 25
       status: estimate
       note: >
-        Was a committed line with 5 January reserved for it. Moved here on
-        23 October: the beach leg is four unplanned days and no excursion is
-        being booked yet. Still the biggest single thing available to add back.
-    - item: Isla Mujeres ferry
-      per_person: 34
-      status: estimate
-      note: MX$580 each, round trip.
-    - item: Tulum beach club day
-      per_person: null
-      status: open
-      note: Unpriced. Table minimums for 6 in early January have never been quoted. 87 minutes each way.
-    - item: Rental van for the week
-      per_person: 56
-      status: estimate
-      note: Net, after skipping the airport transfer. Only worth it with two or more excursions.
+        A private van for the whole group runs roughly $55 to $137 each way
+        depending on operator, so about $150 round trip at the middle of that
+        range, or $25 each at six. This holds only if everyone is on the same
+        Mexico City to Cancun flight. The resort has been asked whether they
+        run their own private transfer, which would be the cleaner answer.
+
+  estimates_per_person: 349
+
+  # Live on the resort engine 27 October 2026, 3 to 8 January, 6 adults,
+  # accommodation only, taxes included. Non-refundable is 32 percent off rack
+  # and flexible is 20 percent off rack. The unit price does not change with
+  # headcount; only the all-inclusive supplement does.
+  layout_options:
+    - id: one_residence
+      label: One Two Bedroom Oceanview Residence
+      sleeps: Two couples in the king and one queen. The two singles share the second queen.
+      nonrefundable_total: 4037
+      nonrefundable_per_person: 673
+      flexible_total: 4749
+      flexible_per_person: 792
+      verdict: >
+        Cheapest, and the like for like update of what this page used to
+        carry. It only works if the two singles are content to share a bed.
+
+    - id: residence_plus_junior
+      label: Two Bedroom Oceanview Residence plus Junior Suite
+      sleeps: A private bedroom for each couple, and the two singles share a suite with a bed each.
+      nonrefundable_total: 5827
+      nonrefundable_per_person: 971
+      flexible_total: 6855
+      flexible_per_person: 1143
+      recommended: true
+      verdict: >
+        The cheapest layout in which nobody shares a bed. $351 more each than
+        the single residence on the flexible rate.
+
+    - id: residence_plus_one_bedroom
+      label: Two Bedroom Oceanview Residence plus One Bedroom Oceanview Residence
+      sleeps: A private bedroom for each couple, and the singles take a one bedroom between them.
+      nonrefundable_total: 6527
+      nonrefundable_per_person: 1088
+      flexible_total: 7679
+      flexible_per_person: 1280
+      verdict: >
+        More space than the Junior Suite but one single still ends up on the
+        living room sofa bed, so it costs more without fixing anything.
+
+  alternative_all_inclusive:
+    supplement_total: 3078
+    supplement_per_person: 513
+    note: >
+      All inclusive adds $3,078 across six on the residence alone, which is
+      $513 each, against a food estimate of $324 for the village. It is no
+      longer the near thing it was: room only plus eating in Puerto Morelos
+      is about $189 cheaper each, and the village is a 16 minute walk with 19
+      restaurants inside a kilometre. Room only stays the pick.
 
 per_person:
-  full_trip: 4671      # 1923 flights + 1516 city + 1232 beach
-  city_only: 4655      # 3139 flights + 1516 city
+  both_legs: 2107      # 964 city + 1143 beach
+  city_only: 964
   note: >
-    The balloon is not in either figure, because two people are going rather
-    than seven. Krysta and Ryan add about $171 each on top of the full trip
-    number, more if the flight goes private. Nobody else pays it.
+    These are what you owe Ryan, not what the trip costs you. Flights are
+    yours to book and pay for, and the estimate lines above are money you
+    will spend on the ground rather than hand to him.
 
 excludes:
+  - flights, which everyone books and pays for themselves
   - personal spending
   - travel insurance
   - tips beyond the quoted dinners
   - anything bought on the ground
 
 split_mechanism:
-  - Agree a per-person target before booking
-  - Lodging is the only line billed as a whole. Both are split evenly by head.
+  - Ryan fronts the shared bookings on one card and everybody settles with him.
+  - Lodging is the only line billed as a whole. Both legs are split evenly by head.
   - Keep the two legs on separate ledgers. Guests who leave after Mexico City should not carry beach costs.
-  - Anyone joining only for the beach should not carry New Year's Eve.
-  - Under room-only at the beach, food is individual rather than prepaid. Agree up front whether meals go on one card and get split, or people pay their own.
+  - Flights never go through this. Book your own and pay for your own.
+  - Pujol goes on Ryan's card on the day. Food is the figure on this page, drinks and tip are settled after.
   - Note who fronts which booking and how they are repaid
   - Splitwise or similar, agreed up front
 
@@ -218,26 +267,21 @@ non_refundable_exposure:
     terms: >
       Paid $715.53 in full on booking. Fully refundable until 28 December,
       nothing after that.
-  - what: The Fives, flexible rate
-    terms: Free cancellation, refundable until 13 December 2026
   - what: Pujol, booked 23 October for 2 January
     terms: >
       Nothing paid, the card is only a guarantee. Free to change or cancel
       online until 14:30 on 1 January 2027. Inside that 24 hours, MX$2,000 per
       person applies to a cancellation, a no-show, a date change or a cut to
-      the diner count, which is about $824 across seven. The window is 24
-      hours and not the 48 this file previously claimed.
-  - what: New Year's Eve galas
-    terms: Typically prepaid
-  - what: Balloon
+      the diner count, which is about $824 across seven.
+  - what: The Fives, flexible rate
     terms: >
-      Nothing booked. All four operators refund in full up to one day before,
-      so there is no exposure until one is chosen. Book nothing before the
-      weight question is answered in writing.
+      Nothing booked. On the flexible rate it refunds in full until
+      13 December 2026. The non-refundable rate is about $171 cheaper each
+      but refunds nothing from the moment it is booked.
 
 flag_for_solo_b: >
-  The one traveller leaving after Mexico City pays $4,655, only $16 less than
-  the $4,671 paid by the six doing the whole eleven days, because the MEX to
-  DTW Delta nonstop is $1,893 one way. Connections that day run $774 to $956.
-  Taking one saves about $1,040 and brings them to roughly $3,615. This used
-  to apply to two people; the drop on 12 October left one.
+  One traveller flies home after Mexico City rather than continuing to the
+  beach. They owe $964 and none of the $1,143 beach line, and they book their
+  own flights like everybody else. Worth knowing before they ticket: the
+  3 January Mexico City to Detroit nonstop was $1,893 one way when it was
+  priced, while connections the same day ran $774 to $956.

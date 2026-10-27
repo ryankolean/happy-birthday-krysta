@@ -65,8 +65,7 @@ const tidy = (s) => String(s ?? '').replace(/\s*\n\s*/g, ' ').trim();
 // link to the page built from it.
 const PAGE_REFS = [
   [/(?:docs\/)?nye\.md/g, 'nye.html', "the New Year's Eve options"],
-  [/(?:docs\/)?dining\.md/g, 'dining.html', 'the birthday dinner options'],
-  [/(?:docs\/)?balloon\.md/g, 'balloon.html', 'the balloon options'],
+  [/(?:docs\/)?dining\.md/g, 'dining.html', 'the birthday page'],
   [/(?:docs\/)?open-questions\.md/g, 'open-questions.html', 'the open questions'],
   [/(?:docs\/)?decisions\.md/g, 'decisions.html', 'the decision log'],
   [/data\/tasks\.yml/g, 'tasks.html', 'the to do list'],
@@ -102,8 +101,7 @@ const PAGES = [
   { file: 'stays.html', label: 'Accommodations' },
   { file: 'map.html', label: 'Map' },
   { file: 'costs.html', label: 'Costs' },
-  { file: 'dining.html', label: 'Birthday lunch' },
-  { file: 'balloon.html', label: 'Balloon' },
+  { file: 'dining.html', label: 'Birthday' },
   { file: 'nye.html', label: "New Year's Eve" },
   { file: 'decisions.html', label: 'Decisions' },
   { file: 'open-questions.html', label: 'Open questions' },
@@ -542,12 +540,12 @@ function buildIndex() {
 </header>
 
 <div class="totals">
-${tile('Per person, full trip', usd(budget.per_person.full_trip), 'Everything below, for the 6 doing both legs.', true)}
-${tile('Flights', usd(flights.per_person_usd.full_trip), 'Four nonstop legs. ' + usd(flights.per_person_usd.city_only) + ' if you fly home from Mexico City.')}
-${tile('Mexico City', usd(budget.cdmx.per_person), 'Five nights, including your share of the house.')}
-${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including your share of the residence.')}
+${tile('You owe Ryan, both legs', usd(budget.per_person.both_legs), 'Shared bookings only, for the 6 doing both legs.', true)}
+${tile('Mexico City', usd(budget.cdmx.per_person), 'Your share of the house, Pujol and lucha libre.')}
+${tile('Riviera Maya', usd(budget.riviera.per_person), 'Your share of the residence and suite. Not booked yet.')}
+${tile('Flights', 'Your own', 'Everybody books and pays for their own. No fare is in any figure here.')}
 </div>
-<p class="caveat">All figures are per person. Excludes ${esc(budget.excludes.join(', '))}. Peso figures converted at ${esc(trip.exchange_rate.range)} MXN/USD.</p>
+<p class="caveat">All figures are per person, and they are what you owe Ryan rather than what the trip costs you. Excludes ${esc(budget.excludes.join(', '))}. Peso figures converted at ${esc(trip.exchange_rate.range)} MXN/USD.</p>
 
 <div class="note warn">
   <div class="nh">Read this if you are flying home from Mexico City</div>
@@ -575,6 +573,7 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
 
   const fives = lodging.properties.find((p) => p.id === 'fives');
   const casakm = lodging.cdmx_front_runner;
+  const fivesRec = fives.combinations.find((c) => c.recommended);
 
   b += `<div class="scroller"><table>
 <caption>Lodging is booked whole and split evenly. Both columns shown so the arithmetic is visible.</caption>
@@ -584,11 +583,11 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
 <td><span class="tag ok">booked</span><br><small>${esc(iso(casakm.booked))}</small></td>
 <td class="n"><small>${usd(casakm.total_usd)}</small></td>
 <td class="n"><strong>${usd(casakm.per_person_usd)}</strong></td></tr>
-<tr><td><strong>${esc(fives.room_type)}</strong><br><small>${esc(fives.name)}, ${fives.size_sqft} sq ft, sleeps ${fives.max_occupancy}</small></td>
-<td>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}<br><small>${fives.adults} adults</small></td>
-<td><span class="tag ok">${esc(fives.inventory_seen)} left</span><br><small>${esc(fives.discount_live)} off, plus ${fives.loyalty_discount.percent}% loyalty</small></td>
-<td class="n"><small>${usd(fives.rates_usd.room_only_flexible)}</small></td>
-<td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_flexible)}</strong></td></tr>
+<tr><td><strong>${esc(fivesRec.label)}</strong><br><small>${esc(fives.name)}, ${fives.adults} adults as ${esc(fives.group_shape)}</small></td>
+<td>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}<br><small>${fives.nights} nights</small></td>
+<td><span class="tag estimate">not booked</span><br><small>repriced ${esc(iso(fives.repriced))}</small></td>
+<td class="n"><small>${usd(fivesRec.flexible_usd)}</small></td>
+<td class="n"><strong>${usd(fivesRec.flexible_per_person_usd)}</strong></td></tr>
 </tbody></table></div>`;
 
   b += `<p class="lede" style="margin-top:14px">Everywhere we might eat, drink or go is plotted on <a href="map.html">the map</a>, colour coded and with the walk from the house.</p>
@@ -599,21 +598,32 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
 
 <div class="note warn">
   <div class="nh">Two things worth knowing</div>
-  <p><strong>The beach is cheaper than we had budgeted.</strong> ${nt(fives.tax_breakdown_seen.note)}</p>
+  <p><strong>The beach needs two units, not one.</strong> ${nt(fives.layout_problem)}</p>
   <p><strong>Mexico City is committed.</strong> ${esc(casakm.cancellation.actual)}. ${nt(casakm.cancellation.warning)}</p>
 </div>`;
 
   // flights
   b += `<h2 id="flights"><span class="num">03</span>Flights</h2>
-<p class="lede">Every leg is nonstop. Priced ${esc(iso(flights.priced))}, nothing booked. Delta where Delta flies it.</p>
+<p class="lede"><strong>Everybody books and pays for their own flights.</strong> No fare is in any total on this site. The fares below were priced ${esc(iso(flights.priced))} and are a reference point, not a bill.</p>
+
+<div class="note">
+  <div class="nh">Be on the same Mexico City to Cancun flight</div>
+  <p>${nt(budget.flights.mex_cun_callout)}</p>
+</div>
+
+<div class="note">
+  <div class="nh">Krysta and Ryan have not booked yet</div>
+  <p>${nt(budget.flights.krysta_and_ryan)}</p>
+</div>
+
 <div class="scroller"><table>
+<caption>Reference fares, per person, one way. Not in any total.</caption>
 <thead><tr><th>Date</th><th>Route</th><th>Flight</th><th>Times</th><th class="n">Per person</th></tr></thead><tbody>`;
   for (const f of flights.flights) {
-    b += `<tr><td>${esc(shortDate(f.date))}</td><td>${esc(f.route)}<br><small>${esc(f.who)}</small></td><td>${f.number ? `<strong>${esc(f.number)}</strong>` : esc(f.carrier)}</td><td>${esc(f.depart)} to ${esc(f.arrive)}</td><td class="n">${usd(f.price_usd)}</td></tr>`;
+    const pick = f.id === 'to_beach' ? ' class="pick"' : '';
+    b += `<tr${pick}><td>${esc(shortDate(f.date))}</td><td>${esc(f.route)}<br><small>${esc(f.who)}</small></td><td>${f.number ? `<strong>${esc(f.number)}</strong>` : esc(f.carrier)}</td><td>${esc(f.depart)} to ${esc(f.arrive)}</td><td class="n">${usd(f.price_usd)}</td></tr>`;
   }
-  b += `<tr class="sum"><td colspan="4">Your flights, doing both legs</td><td class="n">${usd(flights.per_person_usd.full_trip)}</td></tr>
-<tr class="sum"><td colspan="4">Your flights, flying home from Mexico City</td><td class="n">${usd(flights.per_person_usd.city_only)}</td></tr>
-</tbody></table></div>
+  b += `</tbody></table></div>
 <p>${nt(flights.afternoon_departure_problem)}</p>
 <div class="note">
   <div class="nh">The one real risk on the outbound</div>
@@ -622,18 +632,19 @@ ${tile('Riviera Maya', usd(budget.riviera.per_person), 'Five nights, including y
 
   // costs summary
   b += `<h2 id="costs"><span class="num">04</span>What it costs you</h2>
-<p class="lede">Three blocks: flights, the city, the beach. Full line by line breakdown on the <a href="costs.html">costs page</a>.</p>
+<p class="lede">Two blocks, and they are what you owe Ryan rather than what the week costs you. Flights are yours. Full line by line breakdown on the <a href="costs.html">costs page</a>.</p>
 <div class="scroller"><table>
 <thead><tr><th>Block</th><th class="n">Doing both legs</th><th class="n">City only</th></tr></thead><tbody>
-<tr><td>Flights</td><td class="n">${usd(flights.per_person_usd.full_trip)}</td><td class="n">${usd(flights.per_person_usd.city_only)}</td></tr>
 <tr><td>Mexico City</td><td class="n">${usd(budget.cdmx.per_person)}</td><td class="n">${usd(budget.cdmx.per_person)}</td></tr>
 <tr><td>Riviera Maya</td><td class="n">${usd(budget.riviera.per_person)}</td><td class="n">n/a</td></tr>
-<tr class="sum"><td>Per person</td><td class="n">${usd(budget.per_person.full_trip)}</td><td class="n">${usd(budget.per_person.city_only)}</td></tr>
+<tr class="sum"><td>What you owe Ryan</td><td class="n">${usd(budget.per_person.both_legs)}</td><td class="n">${usd(budget.per_person.city_only)}</td></tr>
+<tr><td>Flights</td><td class="n">Your own</td><td class="n">Your own</td></tr>
+<tr><td>Food and transport on the ground<br><small>Estimated, your own money</small></td><td class="n">${usd(budget.cdmx.estimates_per_person + budget.riviera.estimates_per_person)}</td><td class="n">${usd(budget.cdmx.estimates_per_person)}</td></tr>
 </tbody></table></div>
 
-<div class="note">
-  <div class="nh">The meal plan at the beach is now a close call</div>
-  <p>${nt(budget.riviera.alternative_all_inclusive.note)}</p>
+<div class="note warn">
+  <div class="nh">Estimates are never added to a total</div>
+  <p>${nt(budget.estimates_note)}</p>
 </div>`;
 
   // what needs doing
@@ -712,12 +723,20 @@ function costRows(lines) {
 function buildCosts() {
   const r = budget.riviera;
   const fives = lodging.properties.find((p) => p.id === 'fives');
+  const f = budget.flights;
+
+  const estTable = (caption, rows, total) => `<div class="scroller"><table>
+<caption>${esc(caption)}</caption>
+<thead><tr><th>Item</th><th>Status</th><th class="n">Each</th></tr></thead>
+<tbody>${costRows(rows)}
+<tr><td colspan="2"><em>Not added to any total above</em></td><td class="n"><em>${usd(total)}</em></td></tr>
+</tbody></table></div>`;
 
   let b = `<header class="masthead">
-  <p class="eyebrow">Line by line, per person</p>
+  <p class="eyebrow">What you owe Ryan, per person</p>
   <h1>What it costs you</h1>
   <div class="dateline">
-    <div><b>Doing both legs</b>${esc(usd(budget.per_person.full_trip))}</div>
+    <div><b>Doing both legs</b>${esc(usd(budget.per_person.both_legs))}</div>
     <div><b>City only</b>${esc(usd(budget.per_person.city_only))}</div>
     <div><b>Rate used</b>${esc(budget.rate_mxn_per_usd)} MXN/USD</div>
   </div>
@@ -725,30 +744,46 @@ function buildCosts() {
 
 <p class="lede">Every figure on this page is what one person pays. Lodging also shows the whole-place price, because a house and a resort residence are booked whole and then split evenly.</p>
 
+<div class="note warn">
+  <div class="nh">Estimates are not in any total on this page</div>
+  <p>${nt(budget.estimates_note)}</p>
+</div>
+
 <h2>Flights</h2>
+<p class="lede"><strong>Everybody books and pays for their own flights.</strong> No fare appears in any total on this page and no flight money goes through Ryan.</p>
+<p>${nt(f.note)}</p>
+
+<div class="note">
+  <div class="nh">The one flight worth coordinating</div>
+  <p>${nt(f.mex_cun_callout)}</p>
+</div>
+
+<div class="note">
+  <div class="nh">Krysta and Ryan have not booked yet</div>
+  <p>${nt(f.krysta_and_ryan)}</p>
+</div>
+
 <div class="scroller"><table>
-<thead><tr><th>Who</th><th>Legs</th><th>Status</th><th class="n">Each</th></tr></thead><tbody>
-<tr><td><strong>Doing both legs</strong></td><td>Detroit to Mexico City, Mexico City to Cancun, Cancun to Detroit</td><td><span class="tag ${esc(budget.flights.status)}">${esc(budget.flights.status)}</span></td><td class="n">${usd(budget.flights.per_person_full_trip)}</td></tr>
-<tr><td><strong>City only</strong></td><td>Detroit to Mexico City, Mexico City to Detroit</td><td><span class="tag ${esc(budget.flights.status)}">${esc(budget.flights.status)}</span></td><td class="n">${usd(budget.flights.per_person_city_only)}</td></tr>
+<caption>Reference fares only, priced 25 September 2026. Not a bill, and not in any total.</caption>
+<thead><tr><th>Leg</th><th class="n">Each, one way</th></tr></thead><tbody>
+<tr><td>Detroit to Mexico City, 29 December</td><td class="n">${usd(f.reference_fares_usd.dtw_mex_29_dec)}</td></tr>
+<tr class="pick"><td><strong>Mexico City to Cancun, 3 January</strong><br><small>The one to be on together</small></td><td class="n">${usd(f.reference_fares_usd.mex_cun_3_jan)}</td></tr>
+<tr><td>Cancun to Detroit, 8 January</td><td class="n">${usd(f.reference_fares_usd.cun_dtw_8_jan)}</td></tr>
+<tr><td>Mexico City to Detroit, 3 January, nonstop</td><td class="n">${usd(f.reference_fares_usd.mex_dtw_3_jan_nonstop)}</td></tr>
 </tbody></table></div>
-<p>${nt(budget.flights.note)} Flight numbers, times and the alternatives considered are in <a href="index.html#flights">the flights table on the front page</a>.</p>
+<p>Flight numbers, times and the alternatives considered are in <a href="index.html#flights">the flights table on the front page</a>.</p>
 
 <h2>Mexico City</h2>
 <p class="lede">${nt(budget.cdmx.lodging_note)}</p>
 <div class="scroller"><table>
-<caption>Lodging splits ${budget.cdmx.lodging_travelers} ways. Every other line is priced for all ${budget.cdmx.travelers}. The balloon is neither, so it is below.</caption>
+<caption>Booked and paid on Ryan's card. Lodging splits ${budget.cdmx.lodging_travelers} ways, the other two lines are priced for all ${budget.cdmx.travelers}.</caption>
 <thead><tr><th>Item</th><th>Status</th><th class="n">Each</th></tr></thead>
 <tbody>${costRows(budget.cdmx.lines)}
-<tr class="sum"><td colspan="2">Mexico City, per person</td><td class="n">${usd(budget.cdmx.per_person)}</td></tr>
+<tr class="sum"><td colspan="2">Mexico City, what you owe Ryan</td><td class="n">${usd(budget.cdmx.per_person)}</td></tr>
 </tbody></table></div>
 
-<h3>Only two people pay this</h3>
-<div class="scroller"><table>
-<caption>Not in the total above, and not in the trip totals at the top of this page.</caption>
-<thead><tr><th>Item</th><th>Status</th><th class="n">Both</th><th class="n">Each</th></tr></thead><tbody>
-${budget.cdmx.not_shared.map((o) => `<tr><td><strong>${esc(o.item)}</strong>${o.note ? `<br><small>${nt(o.note)}</small>` : ''}</td><td><span class="tag ${esc(o.status)}">${esc(o.status)}</span></td><td class="n"><small>${usd(o.unit_price)}</small></td><td class="n"><strong>${usd(o.per_person)}</strong></td></tr>`).join('')}
-</tbody></table></div>
-<p>${nt(budget.per_person.note)} The research behind it, including the weight limits that decide it, is on <a href="balloon.html">the balloon page</a>.</p>
+<h3>What you will spend on the ground in the city</h3>
+${estTable('Your own money, not money owed to Ryan. Shown so the week does not surprise anybody.', budget.cdmx.estimates, budget.cdmx.estimates_per_person)}
 
 <div class="note warn">
   <div class="nh">The lodging line is committed, and it rose</div>
@@ -757,45 +792,53 @@ ${budget.cdmx.not_shared.map((o) => `<tr><td><strong>${esc(o.item)}</strong>${o.
 </div>
 
 <h2>Riviera Maya</h2>
-<p class="lede">${esc(fives.name)}, one ${esc(fives.room_type)}: ${fives.size_sqft} sq ft, sleeps up to ${fives.max_occupancy}. Quoted live, taxes included. A ${esc(fives.discount_live)} discount is running and a further ${fives.loyalty_discount.percent}% comes off through their loyalty programme.</p>
-<div class="scroller"><table>
-<caption>The residence is booked whole and split ${r.travelers} ways. Per person in bold.</caption>
-<thead><tr><th>Rate option</th><th class="n">Non-refundable</th><th class="n">Each</th><th class="n">Flexible</th><th class="n">Each</th></tr></thead><tbody>
-<tr class="pick"><td><strong>Room only</strong> <small>then eat in Puerto Morelos</small></td>
-<td class="n"><small>${usd(fives.rates_usd.room_only_nonrefundable)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_nonrefundable)}</strong></td>
-<td class="n"><small>${usd(fives.rates_usd.room_only_flexible)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_flexible)}</strong></td></tr>
-<tr><td>All inclusive instead</td>
-<td class="n"><small>${usd(fives.rates_usd.all_inclusive_nonrefundable)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.all_inclusive_nonrefundable)}</strong></td>
-<td class="n"><small>${usd(fives.rates_usd.all_inclusive_flexible)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.all_inclusive_flexible)}</strong></td></tr>
-</tbody></table></div>
-<p><strong>Flexible terms:</strong> ${esc(fives.flexible_terms)}.</p>
+<p class="lede">${esc(fives.name)}, ${r.travelers} people as ${esc(r.group_shape)}. Quoted live on the resort's own engine on ${esc(iso(fives.repriced))}, taxes included, nothing booked.</p>
+
+<div class="note warn">
+  <div class="nh">One residence does not sleep this group</div>
+  <p>${nt(fives.layout_problem)}</p>
+  <p>${nt(fives.layout_recommended)}</p>
+</div>
 
 <div class="scroller"><table>
-<caption>Recommended build: ${esc(r.recommended_build)}.</caption>
+<caption>Recommended build. Booked whole and split ${r.travelers} ways.</caption>
 <thead><tr><th>Item</th><th>Status</th><th class="n">Each</th></tr></thead>
 <tbody>${costRows(r.lines)}
-<tr class="sum"><td colspan="2">Riviera Maya, per person</td><td class="n">${usd(r.per_person)}</td></tr>
+<tr class="sum"><td colspan="2">Riviera Maya, what you owe Ryan</td><td class="n">${usd(r.per_person)}</td></tr>
 </tbody></table></div>
+
+<h3>The three layouts, priced</h3>
+<div class="scroller"><table>
+<caption>Live ${esc(iso(fives.repriced))} for ${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}, accommodation only, taxes included. Split ${r.travelers} ways, per person in bold.</caption>
+<thead><tr><th>Layout</th><th class="n">Non-refundable</th><th class="n">Each</th><th class="n">Flexible</th><th class="n">Each</th></tr></thead><tbody>
+${r.layout_options.map((o) => `<tr${o.recommended ? ' class="pick"' : ''}><td><strong>${esc(o.label)}</strong><br><small>${esc(o.sleeps)}</small><br><small>${nt(o.verdict)}</small></td>
+<td class="n"><small>${usd(o.nonrefundable_total)}</small></td><td class="n">${usd(o.nonrefundable_per_person)}</td>
+<td class="n"><small>${usd(o.flexible_total)}</small></td><td class="n"><strong>${usd(o.flexible_per_person)}</strong></td></tr>`).join('')}
+</tbody></table></div>
+<p><strong>Flexible terms:</strong> ${esc(fives.flexible_terms)}. The non-refundable rate is cheaper but refunds nothing from the moment it is booked, and the layout is still undecided, so flexible is the call until it is not.</p>
+
+<div class="note">
+  <div class="nh">These dates got cheaper</div>
+  <p>${nt(fives.price_moved_in_our_favour)}</p>
+</div>
+
+<h3>What you will spend on the ground at the beach</h3>
+${estTable('Your own money, not money owed to Ryan. Shown so the week does not surprise anybody.', r.estimates, r.estimates_per_person)}
 
 <div class="note">
   <div class="nh">Room only or all inclusive</div>
   <p>${nt(r.alternative_all_inclusive.note)}</p>
 </div>
 
-<h3>Optional at the beach</h3>
-<div class="scroller"><table><thead><tr><th>Item</th><th>Status</th><th class="n">Each</th></tr></thead><tbody>
-${r.optional.map((o) => `<tr><td><strong>${esc(o.item)}</strong>${o.note ? `<br><small>${nt(o.note)}</small>` : ''}</td><td><span class="tag ${esc(o.status)}">${esc(o.status)}</span></td><td class="n">${usd(o.per_person)}</td></tr>`).join('')}
-</tbody></table></div>
-
 <h2>Splitting it</h2>
 <ul>${budget.split_mechanism.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>
 
 <h2>What is already committed if we cancel</h2>
 <div class="scroller"><table><thead><tr><th>What</th><th>Terms</th></tr></thead><tbody>
-${budget.non_refundable_exposure.map((x) => `<tr><td><strong>${esc(x.what)}</strong></td><td>${esc(x.terms)}</td></tr>`).join('')}
+${budget.non_refundable_exposure.map((x) => `<tr><td><strong>${esc(x.what)}</strong></td><td>${nt(x.terms)}</td></tr>`).join('')}
 </tbody></table></div>
 
-<div class="note warn">
+<div class="note">
   <div class="nh">For the one leaving after Mexico City</div>
   <p>${nt(budget.flag_for_solo_b)}</p>
 </div>`;
@@ -831,15 +874,15 @@ function buildTasks() {
 // ---------- accommodations ----------
 
 function buildStays() {
-  const oasis = lodging.properties.find((p) => p.id === 'oasis');
   const fives = lodging.properties.find((p) => p.id === 'fives');
   const casakm = lodging.cdmx_front_runner;
   const r = budget.riviera;
 
   const bullets = (arr) => `<ul>${arr.map((x) => `<li>${nt(x)}</li>`).join('')}</ul>`;
+  const rec = fives.combinations.find((c) => c.recommended);
 
   let b = `<header class="masthead">
-  <p class="eyebrow">Mexico City booked ${esc(iso(casakm.booked))}. The Fives is not booked.</p>
+  <p class="eyebrow">Two places, and only two. Mexico City booked ${esc(iso(casakm.booked))}.</p>
   <h1>Where we are staying</h1>
   <div class="dateline">
     <div><b>Mexico City</b>${esc(shortDate(casakm.checkin))} to ${esc(shortDate(casakm.checkout))}, ${casakm.nights} nights</div>
@@ -847,17 +890,19 @@ function buildStays() {
   </div>
 </header>
 
+<p class="lede">Casa KM in Mexico City is booked and partly paid. The Fives in Puerto Morelos is priced live and not booked. Nothing else is under consideration, so nothing else is on this page.</p>
+
 <div class="scroller"><table>
-<caption>Booked whole and split evenly. Mexico City is the confirmed charge, split ${casakm.guests} ways. Per person in bold.</caption>
+<caption>Booked whole and split evenly. Per person in bold.</caption>
 <thead><tr><th>Where</th><th>Dates</th><th>Who</th><th class="n">Whole place</th><th class="n">Each</th></tr></thead><tbody>
 <tr class="pick"><td><strong>${esc(casakm.name)}</strong><br><small>${esc(casakm.neighborhood)}, Mexico City &middot; booked</small></td>
 <td>${esc(shortDate(casakm.checkin))} to ${esc(shortDate(casakm.checkout))}<br><small>${casakm.nights} nights</small></td>
 <td>${casakm.guests} guests</td>
 <td class="n"><small>${usd(casakm.total_usd)}</small></td><td class="n"><strong>${usd(casakm.per_person_usd)}</strong></td></tr>
-<tr><td><strong>${esc(fives.name)}</strong><br><small>${esc(fives.room_type)}</small></td>
+<tr><td><strong>${esc(fives.name)}</strong><br><small>${esc(rec.label)} &middot; not booked</small></td>
 <td>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}<br><small>${fives.nights} nights</small></td>
 <td>${fives.adults} adults</td>
-<td class="n"><small>${usd(fives.rates_usd.room_only_flexible)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_flexible)}</strong></td></tr>
+<td class="n"><small>${usd(rec.flexible_usd)}</small></td><td class="n"><strong>${usd(rec.flexible_per_person_usd)}</strong></td></tr>
 </tbody></table></div>
 
 <h2><span class="num">01</span>${esc(casakm.name)}<span class="tag ok">booked</span></h2>
@@ -891,10 +936,9 @@ ${casakm.bed_config.map((x) => `<tr><td>${esc(x.bedroom)}</td><td><strong>${esc(
 <thead><tr><th>To</th><th class="n">Distance</th></tr></thead><tbody>
 <tr><td>Roma Norte restaurant cluster</td><td class="n">${casakm.distance_km.roma_norte_core} km</td></tr>
 <tr><td>Parque Mexico</td><td class="n">${casakm.distance_km.parque_mexico} km</td></tr>
-<tr><td><a href="dining.html">Em</a>, Av. Amsterdam 76</td><td class="n">${casakm.distance_km.em} km</td></tr>
 <tr><td><a href="dining.html">Pujol</a>, Polanco</td><td class="n">${casakm.distance_km.pujol} km</td></tr>
 </tbody></table></div>
-<p>Del Valle Norte reads as far out, but it is closer to Em and Parque Mexico than the Oasis is. Every venue is plotted on <a href="map.html">the map</a>.</p>
+<p>Del Valle Norte reads as far out, but most of the week is walkable from it. Every venue is plotted on <a href="map.html">the map</a>.</p>
 
 <h3>Why this one</h3>
 ${bullets(casakm.why_chosen)}
@@ -906,11 +950,11 @@ ${bullets(casakm.why_chosen)}
 </div>
 
 <div class="note">
-  <div class="nh">Worth knowing before we book</div>
+  <div class="nh">Worth knowing</div>
   ${bullets(casakm.flags)}
 </div>
 
-<h2><span class="num">02</span>The booking itself</h2>
+<h2><span class="num">02</span>The Mexico City booking itself</h2>
 <p class="lede">Confirmed ${esc(iso(casakm.booked))}. The confirmation code, street address and host phone are deliberately not on this site; they live in the repo's gitignored <code>private/</code> folder.</p>
 
 <div class="scroller"><table>
@@ -947,50 +991,56 @@ ${casakm.payment_schedule.map((x) => `<tr><td>${esc(longDate(x.date))}</td><td c
   <p>The ${esc(casakm.house_rules.quiet_hours)} quiet hours appeared only on the confirmation, not in the listing's rules summary. Midnight on New Year's Eve sits inside that window and the property has exterior cameras, so <a href="nye.html">the New Year's Eve plan</a> is provisional until the host agrees in writing.</p>
 </div>
 
-<div class="note">
-  <div class="nh">What it beat</div>
-  <p>${nt(casakm.runner_up_note)}</p>
-</div>
-
-<h2><span class="num">03</span>Why we are leaving ${esc(oasis.name)}</h2>
-<p class="lede">It held the Mexico City slot until ${esc(iso(oasis.displaced_on))}. Its own reviews are what moved us off it.</p>
-
-<p><a class="bigline" href="${esc(oasis.url)}">Open the old listing</a></p>
-
-${bullets(oasis.displaced_because)}
-
-<div class="note">
-  <div class="nh">What it did have</div>
-  <p>Six bedrooms and ${oasis.baths} bathrooms, a private rooftop, no quiet hours, and ${oasis.rating} from ${oasis.reviews} reviews. The bathroom count and the rooftop are the two things ${esc(casakm.name)} had to match, and it does.</p>
-</div>
-
-<h2><span class="num">04</span>${esc(fives.name)}</h2>
-<p class="lede">One ${esc(fives.room_type)}, ${fives.size_sqft} sq ft, sleeps up to ${fives.max_occupancy}. Puerto Morelos, between Cancun and Playa del Carmen.</p>
+<h2><span class="num">03</span>${esc(fives.name)}<span class="tag estimate">not booked</span></h2>
+<p class="lede">Puerto Morelos, between Cancun and Playa del Carmen. ${fives.adults} of us, as ${esc(fives.group_shape)}. Repriced live on ${esc(iso(fives.repriced))}.</p>
 
 <p><a class="bigline" href="${esc(fives.url)}">Open the resort site</a></p>
+
+<div class="note warn">
+  <div class="nh">One residence does not sleep this group</div>
+  <p>${nt(fives.layout_problem)}</p>
+  <p><strong>${nt(fives.layout_recommended)}</strong></p>
+</div>
+
+<h3>What six adults costs, three ways</h3>
+<div class="scroller"><table>
+<caption>Live ${esc(iso(fives.repriced))}, ${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}, accommodation only, taxes included. Split ${fives.adults} ways, per person in bold.</caption>
+<thead><tr><th>Layout</th><th>Who sleeps where</th><th class="n">Non-refundable</th><th class="n">Each</th><th class="n">Flexible</th><th class="n">Each</th></tr></thead><tbody>
+${fives.combinations.map((c) => `<tr${c.recommended ? ' class="pick"' : ''}><td><strong>${esc(c.label)}</strong><br><small>${c.units} unit${c.units > 1 ? 's' : ''}</small></td>
+<td><small>${esc(c.sleeps)}</small></td>
+<td class="n"><small>${usd(c.nonrefundable_usd)}</small></td><td class="n">${usd(c.nonrefundable_per_person_usd)}</td>
+<td class="n"><small>${usd(c.flexible_usd)}</small></td><td class="n"><strong>${usd(c.flexible_per_person_usd)}</strong></td></tr>`).join('')}
+</tbody></table></div>
+<p><strong>Recommended: ${esc(rec.label)} on the flexible rate, ${usd(rec.flexible_per_person_usd)} each.</strong> ${esc(fives.flexible_terms)}. A further ${fives.loyalty_discount.percent}% comes off through their loyalty programme, which ${nt(fives.loyalty_discount.note)}</p>
+
+<div class="note">
+  <div class="nh">These dates got cheaper</div>
+  <p>${nt(fives.price_moved_in_our_favour)}</p>
+</div>
+
+<h3>Every unit available on these dates</h3>
+<div class="scroller"><table>
+<caption>The whole-unit price does not change with headcount. Only the all-inclusive supplement does. Flexible figures marked with an asterisk are derived from the rack rate at the same 20 percent the engine applied to the residence, because it only prints a flexible price once a room is selected.</caption>
+<thead><tr><th>Unit</th><th>Beds</th><th class="n">Size</th><th class="n">Non-refundable</th><th class="n">Flexible</th></tr></thead><tbody>
+${fives.room_catalogue.map((c) => `<tr><td><strong>${esc(c.name)}</strong><br><small>up to ${c.max_adults} adults</small></td>
+<td><small>${esc(c.beds)}</small></td>
+<td class="n"><small>${c.size_sqft} sq ft</small></td>
+<td class="n">${usd(c.nonrefundable_usd)}</td>
+<td class="n">${usd(c.flexible_usd)}${c.flexible_derived ? '*' : ''}</td></tr>`).join('')}
+</tbody></table></div>
+
+<div class="note">
+  <div class="nh">There is a three bedroom, and we cannot buy it</div>
+  <p>${nt(fives.three_bedroom_not_available)}</p>
+</div>
 
 <div class="scroller"><table><tbody>
 <tr><th>Check in</th><td>${esc(longDate(fives.checkin))}, from ${esc(fives.checkin_time)}</td></tr>
 <tr><th>Check out</th><td>${esc(longDate(fives.checkout))}, before ${esc(fives.checkout_time)}</td></tr>
 <tr><th>Nights</th><td>${fives.nights}</td></tr>
-<tr><th>Guests</th><td>${fives.adults} adults</td></tr>
-<tr><th>Room</th><td>${esc(fives.room_type)}, ${fives.size_sqft} sq ft</td></tr>
-<tr><th>Availability seen</th><td>${esc(fives.inventory_seen)}, with a ${esc(fives.discount_live)} discount live</td></tr>
+<tr><th>Guests</th><td>${fives.adults} adults, as ${esc(fives.group_shape)}</td></tr>
 <tr><th>Reservations</th><td>${esc(fives.contact.email)}<br>US and Canada ${esc(fives.contact.us_can)}<br>Direct ${esc(fives.contact.direct)}</td></tr>
 </tbody></table></div>
-
-<h3>The four rate combinations</h3>
-<div class="scroller"><table>
-<caption>All taxes included. Split ${fives.adults} ways, per person in bold.</caption>
-<thead><tr><th>Option</th><th class="n">Non-refundable</th><th class="n">Each</th><th class="n">Flexible</th><th class="n">Each</th></tr></thead><tbody>
-<tr class="pick"><td><strong>Room only</strong> <small>then eat in the village</small></td>
-<td class="n"><small>${usd(fives.rates_usd.room_only_nonrefundable)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_nonrefundable)}</strong></td>
-<td class="n"><small>${usd(fives.rates_usd.room_only_flexible)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.room_only_flexible)}</strong></td></tr>
-<tr><td>All inclusive</td>
-<td class="n"><small>${usd(fives.rates_usd.all_inclusive_nonrefundable)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.all_inclusive_nonrefundable)}</strong></td>
-<td class="n"><small>${usd(fives.rates_usd.all_inclusive_flexible)}</small></td><td class="n"><strong>${usd(fives.rates_per_person_usd.all_inclusive_flexible)}</strong></td></tr>
-</tbody></table></div>
-<p><strong>Recommended: ${esc(fives.recommended_rate)}.</strong> ${esc(fives.flexible_terms)}. A further ${fives.loyalty_discount.percent}% (${usd(fives.loyalty_discount.amount_usd)}) comes off through their loyalty programme, which ${nt(fives.loyalty_discount.note)}</p>
 
 <div class="note">
   <div class="nh">Room only or all inclusive</div>
@@ -1004,7 +1054,7 @@ ${bullets(fives.why_jan_3)}
 ${bullets(fives.no_traps_confirmed)}
 
 <div class="note warn">
-  <div class="nh">Still to confirm before booking</div>
+  <div class="nh">Still open before booking</div>
   ${bullets(fives.open)}
 </div>
 
@@ -1340,8 +1390,7 @@ writeFileSync(join(out, 'costs.html'), buildCosts());
 writeFileSync(join(out, 'stays.html'), buildStays());
 writeFileSync(join(out, 'map.html'), buildMap());
 writeFileSync(join(out, 'tasks.html'), buildTasks());
-writeFileSync(join(out, 'dining.html'), buildDoc('dining.md', 'dining.html', 'Birthday lunch at Pujol'));
-writeFileSync(join(out, 'balloon.html'), buildDoc('balloon.md', 'balloon.html', 'Hot air balloon'));
+writeFileSync(join(out, 'dining.html'), buildDoc('dining.md', 'dining.html', 'The birthday'));
 writeFileSync(join(out, 'nye.html'), buildDoc('nye.md', 'nye.html', "New Year's Eve"));
 writeFileSync(join(out, 'decisions.html'), buildDoc('decisions.md', 'decisions.html', 'Decision log'));
 writeFileSync(join(out, 'open-questions.html'), buildDoc('open-questions.md', 'open-questions.html', 'Open questions'));

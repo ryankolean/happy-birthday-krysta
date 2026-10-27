@@ -10,15 +10,6 @@ Approach is decided on [the New Year's Eve page](nye.html), nothing is ordered. 
 ### Em's holiday release
 Tock says "Em has not opened reservations for 2 ene." Probing shows 19 December open and 31 December not, so the holiday week is withheld rather than sold out. Nobody knows the release date. Phone +52 55 6450 1302. **No longer blocking anything**, since [the birthday lunch](dining.html) is booked at Pujol.
 
-### Whether the balloon will carry us
-**Answered 23 October, and replaced by a harder question.** Whether it flies on 2 January is settled: four operators show live availability that morning, priced for two, which also kills the worry that holiday-week inventory would be gone. See docs/balloon.md.
-
-What is not settled is whether it will take us. The balloonport surcharges passengers over 100 kg and several operators publish an absolute maximum of 120 to 125 kg. One of the two passengers is above every published ceiling, and one Airbnb listing states 100 kg as a limit rather than a surcharge. The quoted surcharge rates conflict wildly across operator pages, from USD 2 to USD 25 per kilo, which is a spread of roughly $117 against $1,465 for the pair.
-
-**Cost of being wrong:** being turned away at the launch site after an 04:00 pickup on the morning of the birthday, with the money already paid. Needs a written answer from a named operator before anything is booked.
-
-## Money
-
 ### The Fives environmental tax
 Sources conflict badly, from under $25 for the stay to $270. One email to reservations@thefiveshotels.com settles it. **Spread:** about $41 each.
 

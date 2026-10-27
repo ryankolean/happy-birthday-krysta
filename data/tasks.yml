@@ -1,15 +1,20 @@
 # Open tasks, most urgent first. Update status here, not in docs/.
 # status: todo | doing | done | blocked
 
-as_of: 2026-10-23
+as_of: 2026-10-27
 
 this_week:
   - id: book-dtw-mex
-    title: Book DL 646 for all 7
+    title: Everybody book Detroit to Mexico City, and tell the group when you have
     status: todo
     why_now: >
-      Exactly one nonstop a day from Detroit, roughly 130 seats, holiday week.
-      Seats are the risk, not the fare. Book before watching the price.
+      Flights are each person's own to book and pay for, but the 29 December
+      outbound is the one where waiting hurts everybody. Exactly one nonstop a
+      day from Detroit, roughly 130 seats, holiday week. Seats are the risk,
+      not the fare. DL 646 at 08:40 is the flight. Krysta and Ryan have not
+      bought theirs yet either.
+      Say in the group chat once you have booked, so nobody is quietly left
+      without a seat on the only nonstop.
 
   - id: decide-nye
     title: Decide the New Year's Eve plan
@@ -29,34 +34,6 @@ dated:
       change is free online. After it, a cancellation, a no-show, a date
       change or a cut to the diner count each cost MX$2,000 per person, about
       $824 across seven. Nothing has been paid, the card is only a guarantee.
-
-  - id: grab-ling-ling-jan2
-    title: Optional, keep Ling Ling in reserve behind Pujol
-    status: todo
-    why: >
-      Pujol is booked for 2 January, so this is insurance rather than a plan.
-      Pujol itself is free to cancel until 24 hours before, which already
-      covers most of what a backup would be for.
-      Worth knowing before anyone spends time on it: Ling Ling's Mexico City
-      booking channel could not be verified on 23 October. OpenTable's search
-      keeps resolving the name to the Dubai and Picton locations, and no CDMX
-      reservation page was reachable. The earlier note that it is bookable on
-      OpenTable, with 18:00 to 20:00 open at a party of 8, is from 5 October
-      and is now unconfirmed. Find the real channel first, or drop this.
-
-  - id: maximo-window
-    title: Maximo Bistrot opens about 2 December for 2 January
-    status: todo
-    date: 2026-12-02
-    why: Their window is one month out, not 90 days. Different rule from the rest.
-
-  - id: em-holiday-release
-    title: Call Em about when the holiday week releases
-    status: todo
-    why: >
-      Tock says "Em has not opened reservations for 2 ene." Not sold out,
-      not yet open. 19 December is open, 31 December is not, so they are
-      holding the holiday week back. Phone +52 55 6450 1302.
 
   - id: nye-quiet-hours
     title: Settle the rooftop at midnight with the host
@@ -84,6 +61,31 @@ dated:
     why: >
       Angelopolitano and Madereros publish theirs in late November. Prices on
       file are from the 2023 cycle. Order by 28 December.
+
+  - id: email-fives-transfer
+    title: Email The Fives about a private transfer and the three bedroom
+    status: todo
+    date: 2026-11-03
+    why: >
+      Two questions in one message. Whether they run their own private
+      transfer from Cancun airport and what it costs for six, which is the
+      clean answer if everybody is on the same Mexico City to Cancun flight.
+      And whether the Three Bedroom Oceanfront Residence can be sold for
+      3 to 8 January, because it would solve the sleeping arrangement in one
+      unit and it does not show in the engine at any headcount.
+      Draft is in private/fives-transfer-email.md. Ask about the environmental
+      tax in the same message rather than sending two.
+
+  - id: pujol-dietary
+    title: Collect dietary restrictions for Pujol and send them in
+    status: todo
+    date: 2026-12-15
+    why: >
+      Pujol requires dietary restrictions in advance. It matters more than it
+      used to: their FAQ says the menu is moving to a five course restaurant
+      menu built on the Central Pacific region and mainly fish and shellfish.
+      Anybody who does not eat seafood needs to be named before the day, not
+      at the table. reservaciones@pujol.com.mx.
 
   - id: fives-decide-by-dec-13
     title: Decide whether to keep the flexible Fives rate
@@ -134,43 +136,27 @@ decisions_needed:
       party can move freely inside that range, but a ninth yes cannot be
       absorbed online and would mean emailing the restaurant directly.
 
-  - id: confirm-balloon
-    title: Settle the balloon weight question if the balloon comes back
-    status: blocked
-    detail: >
-      Deferred 23 October. The balloon was taken off the 2 January itinerary.
-      It is still possible rather than ruled out, and all four operators
-      refund in full to one day before, so nothing is lost by waiting. If it
-      comes back, only the options landing by 11:30 fit in front of the 14:30
-      Pujol booking, and the weight question below has to be answered first.
-      Rewritten 23 October. The old version asked whether Volare flies that
-      date and whether they would hold a private basket for 7. Both questions
-      are dead. Four operators on Airbnb show 2 January availability, so the
-      date is answered, and the balloon is now two passengers rather than the
-      whole group.
-      What replaces it is a harder question. Both passengers are over the
-      100 kg threshold the balloonport charges against and one is above the
-      120 to 125 kg ceiling that several operators publish as an absolute
-      maximum, so this is a refusal risk at the launch site after an 04:00
-      pickup, not just a surcharge. Message the host with the real declared
-      weights from private/balloon-weights.md and get three answers in the
-      Airbnb thread: is the heavier passenger accepted, what is the exact
-      rate and currency, and is it collected in advance or on the day.
-      Ask a second operator too, so there is a fallback that has already
-      answered. Book nothing until it is in writing.
-      Full research, pricing for two and the source list are in docs/balloon.md.
-
-  - id: pick-fives-rate
-    title: Flexible or non-refundable at The Fives
+  - id: pick-fives-layout
+    title: Pick the room layout at The Fives, then book it
     status: todo
     detail: >
-      Flexible costs $133 more each and refunds until 13 December. Given the
-      headcount only just settled, flexible is the safer call.
+      The only thing holding up the beach booking. One Two Bedroom Oceanview
+      Residence is $792 each on the flexible rate but has three beds for six
+      adults, so the two singles end up sharing. Adding a Junior Suite for the
+      singles makes it $1,143 each and nobody shares a bed. A One Bedroom
+      instead of the Junior Suite is $1,280 each and still puts one single on
+      a sofa bed.
+      Recommendation is the residence plus the Junior Suite. Decide, then book
+      on the flexible rate, which refunds in full until 13 December.
 
   - id: pick-meal-plan
     title: Room-only or all-inclusive at The Fives
     status: todo
-    detail: $98 more each for full board. The room can be booked before this is settled.
+    detail: >
+      All inclusive adds $513 each against a $324 food estimate for the
+      village, so room only is about $189 cheaper. It used to be a $98 gap and
+      a close call. It is not close any more. The room can be booked before
+      this is settled.
 
   - id: solo-b-routing
     title: Decide the 3 January flight home from Mexico City
@@ -178,14 +164,6 @@ decisions_needed:
     detail: >
       Now one traveller rather than two. They should look at a connection and
       save about $1,040 against the $1,893 Delta nonstop.
-
-  - id: pick-birthday-venue
-    title: Lock the 2 January dinner
-    status: todo
-    detail: >
-      Pujol is the incumbent. If the balloon stays on 2 January, an a la carte
-      room suits a fifteen hour day better than a nine course tasting menu.
-      See docs/dining.md.
 
 housekeeping:
   - id: collect-deposits
@@ -199,11 +177,12 @@ housekeeping:
     detail: Valid at least six months past 8 January 2027.
 
   - id: fives-environmental-tax
-    title: Email The Fives about the environmental tax
+    title: Ask The Fives about the environmental tax
     status: todo
     detail: >
       Sources disagree badly, from under $25 for the whole stay to $270.
-      reservations@thefiveshotels.com.
+      Do not send this on its own. It is the third question in the transfer
+      email, see email-fives-transfer. reservations@thefiveshotels.com.
 
   - id: group-chat
     title: Start the group chat for all 7
@@ -232,7 +211,7 @@ done:
   - id: resolve-beach-headcount
     title: Confirm the beach leg headcount
     detail: >
-      Still 6. The person who dropped on 12 October was one of those flying
+      Still 6, as two couples and two singles. The person who dropped on 12 October was one of those flying
       home after Mexico City, not a beach traveller, so every Riviera Maya
       figure stands and The Fives residence still splits 6 ways. It also
       means only one person now leaves after Mexico City instead of two.
@@ -250,7 +229,7 @@ done:
     detail: >
       Settled then changed twice. Now 7 in Mexico City, of whom 6 share the
       accommodation as two couples and two singles, while the seventh books
-      their own hotel. Dinners, flights and the balloon are sized for 7.
+      their own hotel. Dinners are sized for 7.
       Beach headcount needs rechecking, see the open task.
 
   - id: verify-availability

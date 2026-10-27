@@ -1,3 +1,18 @@
+<!--
+ARCHIVED 27 October 2026. This page is no longer built and does not appear on
+the website. Nothing here is being chased.
+
+The balloon came off the 2 January itinerary on 23 October and was shelved
+entirely on 27 October. The research below is kept because it is still good:
+four operators priced for two on the date, every published weight policy, and
+the refusal risk that actually decides it. All four refunded in full to one
+day before, so nothing was ever committed and nothing was lost.
+
+To bring it back: move this file to docs/, add it to PAGES, PAGE_REFS and the
+writeFileSync list in scripts/build.mjs, and reopen confirm-balloon in
+data/tasks.yml.
+-->
+
 # Hot air balloon, 2 January
 
 Researched 23 October 2026. Nothing is booked. Every figure below was taken by

@@ -43,15 +43,9 @@ taxes:
   cdmx_lodging: 19.5%   # 16% IVA + 3.5% CDMX lodging tax
   quintana_roo: 21%     # 16% IVA + 5% Quintana Roo ISH
 
-# Per person only. Group totals are deliberately not tracked anywhere in this
-# repo: people pay for themselves, and a whole-trip number nobody writes a
-# cheque for only made the figures harder to read.
-per_person_usd:
-  full_trip: 4876
-  city_only: 4741
-  excludes:
-    - personal spending
-    - travel insurance
-    - anything bought on the ground
+# Money lives in data/budget.yml and nowhere else. This file used to carry a
+# second copy of the per person totals, which went stale the moment the real
+# ones moved. Removed 27 October 2026.
+money: see data/budget.yml
 
 verified: 2026-10-02

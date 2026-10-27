@@ -2,6 +2,36 @@
 
 What was decided, and what it beat. Newest first.
 
+## Five changes to how the site reads money, 27 October 2026
+
+**Flights come out of every total.** Everybody books and pays for their own. No fare appears in any per-person figure on the site now, and the four fares that remain are labelled as reference points priced on 25 September. What replaced the old totals is a cleaner question: **what you owe Ryan**, which is the shared bookings he fronted on one card. That is $964 for Mexico City and $1,143 for the beach.
+
+**The one flight that still wants coordinating is Mexico City to Cancun on 3 January.** Everybody continuing to the beach is on it, and being on one aircraft means one arrival and one transfer rather than six people trickling in. Aeromexico runs it hourly at a flat fare, so the departure time is a group decision rather than a price one.
+
+**Estimates are no longer added to anything.** Food, drinks, taxis and the airport transfer are still shown, because the week should not surprise anybody, but they sit in their own tables marked as money you spend yourself. Only booked and quoted lines reach a total. This is the difference between a planning number and a bill, and the page had been blurring it.
+
+**New Year's Eve costs nothing.** The $324 placeholder was the St. Regis gala price and was never anybody's plan. The plan is to eat in at Casa KM with everybody bringing something to share, or to walk out to whatever is open. The line stays at zero.
+
+**The balloon is shelved rather than deferred.** It came off the itinerary on 23 October and was still being carried as a blocked task with a live page. Both are gone. The research moved to `docs/archive/balloon.md`, which is not built and does not appear on the site. Nothing was ever committed and all four operators refunded in full to one day before, so nothing was lost. It supersedes the sunrise balloon decision further down this log.
+
+## The beach needs two units, not one, 27 October 2026
+
+**The Two Bedroom Oceanview Residence cannot sleep this group.** It has three beds: a king and two queens. Six adults as two couples and two singles means one couple on the king, one couple on a queen, and **the two singles sharing the remaining queen**. The resort's engine accepts the booking. Nobody would enjoy the week.
+
+**Decided: the residence for the two couples, plus a Junior Suite for the two singles.** The Junior Suite has a king and a double sofa bed, so each single gets their own bed. It is the cheapest combination on the property in which nobody shares a bed. **$6,855 on the flexible rate, $1,143 each**, against $792 each for the single residence.
+
+What it beat: the residence plus a One Bedroom Oceanview Residence at $1,280 each, which costs $137 more and still leaves one single on a living room sofa bed. And the residence on its own at $792, which is only cheaper because it does not solve the problem.
+
+**The timing is lucky.** These dates have fallen since they were last checked on 2 October. The residence was $4,525 non-refundable and $5,323 flexible; it is now $4,037 and $4,749. The residence alone dropped $574 on the flexible rate, which is most of what the Junior Suite costs. Fixing the sleeping arrangement is affordable now in a way it was not three weeks ago.
+
+**One thing left to ask.** The property publishes a **Three Bedroom Oceanfront Residence** that would solve this in a single unit. It does not appear in the engine for these dates at any headcount, so it is either sold out or not sold online. Worth one email before committing to two units.
+
+## Four excursions dropped from the beach leg, 27 October 2026
+
+**Chichen Itza, Isla Mujeres, the Tulum beach club day and the rental van are all off.** Not deferred, dropped. The beach leg is five nights at a resort on a beach, and the point of it is to be there. Each of the four meant a long drive or a ferry away from the thing the group is paying for.
+
+That takes the optional block on the costs page to nothing, which is the honest state of it.
+
 ## The birthday is lunch at Pujol, 2 January
 
 **Booked 23 October 2026.** Table for seven in the main dining room at **14:30**, six course menu, about two and a half hours. **MX$3,795 each with VAT included, $223.24 at 17.0 MXN/USD**, roughly **$1,563 across seven** before drinks and tip. Nothing was charged; the card is a guarantee. Confirmation number and terms are in the gitignored `private/` folder.
@@ -18,7 +48,7 @@ What was decided, and what it beat. Newest first.
 
 What it beat: every other starred restaurant in the city. Checked for seven on 2 January, **Quintonil** caps at 6, **Em** still has not released the date, **Esquina Común** had no availability, **Masala y Maíz** does not book through OpenTable, **Máximo** does not open its window until about 2 December, **Rosetta** has no reachable CDMX listing, and **Sud 777** was already out on distance. Pujol was the only starred restaurant confirmed able to seat seven that day, and it is the highest rated of them.
 
-**Two knock-ons.** The early seating only became usable because the balloon was repriced for two the same morning and now returns about 11:15 instead of 14:00. And booking 14:30 in Polanco **rules out the fourth balloon option**, the La Gruta breakfast trip, which does not get back until 13:30.
+**Knock-on.** Booking the early seating took the morning of 2 January out of play for anything that runs long, which is part of why the balloon was shelved five days later.
 
 ## Lucha libre takes arrival night, 29 December
 
@@ -114,13 +144,9 @@ It also corrected a much larger error. An earlier pass had quoted $1,790 to $2,3
 
 ## Balloon on 2 January, or not at all
 
-**Ryan's call.** Sunrise balloon over Teotihuacan on the birthday itself, or skip it.
+**Shelved 27 October 2026. See the entry at the top of this log.** It was decided, then taken off the itinerary on 23 October, then shelved for good four days later. Nothing was ever booked and every operator refunded in full to one day before, so it cost nothing.
 
-That decision makes the weather terms critical, because **2 January has no rebooking slot**: on the 3rd the group flies at 13:55 and a balloon day does not return until about 14:00.
-
-The day it sits on is laid out on [the itinerary](itinerary.html). **Volare** is the operator, chosen specifically for one published sentence: weather cancellations may be rescheduled **or cancelled with no extra fee**. WE FLY publishes no refund terms at all and Sky Balloons publishes no cancellation policy and appears to require self-transport to their airport for a 6 AM appointment. Volare's family private basket is MX$3,600 per person, takes 2 to 16, includes hotel pickup, and cancels free to 48 hours.
-
-Side benefit: the package includes Teotihuacan entry, which closes a gap the itinerary could not otherwise fit.
+The research that went into it, including the four operators priced for two and the weight limits that were the real obstacle, is kept at `docs/archive/balloon.md`. That file is not built and does not appear on this site.
 
 ## New Year's Eve stays at the house
 

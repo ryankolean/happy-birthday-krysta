@@ -25,8 +25,9 @@ days:
           mask are all included, so this is dinner as well as the show.
           Runs to 20:45. Minimum age 15.
         why: >
-          Booked 23 October for all 7 at $715.53 all in. Takes the slot the
-          Ling Ling reservation was penciled into but never actually held.
+          Booked 23 October for all 7 at $715.53 all in, which is $102.22
+          each. The experience includes a full meal, so it is dinner as well
+          as the show and nothing else needs booking for the night.
       - time: after
         what: A bite nearby only if anyone is still hungry, then back to the house
         detail: >
@@ -120,10 +121,9 @@ days:
       - time: morning
         what: Free, nothing booked
         detail: >
-          The balloon came off this day on 23 October. It is still possible
-          and the research stands in docs/balloon.md, but nothing is held and
-          the morning is open for everybody rather than just for the five who
-          were not flying. Bazar Sabado runs Saturdays only and fits here.
+          Deliberately open. A 14:30 lunch in Polanco means leaving the house
+          around 13:45, so the morning is genuinely free rather than a
+          countdown. Bazar Sabado runs Saturdays only and fits here.
       - time: "14:30"
         what: Birthday lunch at Pujol, booked
         detail: >
@@ -135,19 +135,28 @@ days:
           Booked 23 October at $223 each. The eight tasting menu minimum that
           broke this at seven applies to the private room, not to a regular
           table, so booking a normal table sidestepped it entirely.
-      - time: evening
-        what: Nothing booked, on purpose
+      - time: "17:00"
+        what: Out of Pujol, nothing booked after
         detail: >
-          A 2.5 hour lunch finishing around 17:00 is the big meal of the day.
-          Anyone still hungry later eats near the house.
+          Either stay in Polanco for an hour, where Masaryk, Parque Lincoln
+          and the Soumaya and Jumex museums are all close, or head back
+          toward Roma. Options are on the birthday page.
+      - time: evening
+        what: Drinks, if anybody wants them
+        detail: >
+          Rayo caps at 8, which fits seven exactly, and runs to 01:15 on
+          Saturdays. Limantour, Handshake and Gin Gin Cibeles are the other
+          three, all pinned on the map. Nothing is booked.
       - time: late
-        what: Drinks at Rayo
-        detail: Caps at 8, open until 01:15 Saturdays.
+        what: No dinner
+        detail: >
+          A two and a half hour lunch finishing at 17:00 is the big meal of
+          the day. Anyone still hungry later eats near the house.
     warnings:
       - Free to change or cancel until 14:30 on 1 January. After that it is MX$2,000 per person
       - A headcount change inside that same 24 hours is charged exactly like a cancellation
       - Pujol has no online availability at all for 9 or more on this date
-      - If the balloon comes back, only the options landing by 11:30 fit in front of a 14:30 lunch
+      - Pujol is switching from a tasting menu to a five course restaurant menu, mainly fish and shellfish. Give dietary restrictions in advance
 
   - date: 2027-01-03
     weekday: Sunday
@@ -194,9 +203,8 @@ days:
       - time: all day
         what: Nothing scheduled
         detail: >
-          Chichen Itza had this day penciled in as a full day private tour.
-          Taken off on 23 October: no excursion is being planned yet, so this
-          is a beach day until somebody decides otherwise.
+          The village is a 16 minute walk if anybody wants to leave the sand.
+          Nothing is being planned for this day on purpose.
 
   - date: 2027-01-06
     weekday: Wednesday
@@ -208,9 +216,8 @@ days:
       - time: all day
         what: Nothing scheduled
         detail: >
-          Isla Mujeres by ferry had this day. Taken off on 23 October for the
-          same reason. Still the easiest day trip to add back if the group
-          wants one.
+          Same as yesterday. The point of this leg is to be on the beach
+          rather than on a road or a ferry.
 
   - date: 2027-01-07
     weekday: Thursday
@@ -247,8 +254,7 @@ does_not_fit:
     why: Wants a half day. 30 Dec is taco day, 31 is New Year's Eve, 1 Jan it is closed, 2 Jan is the birthday.
   - item: Teotihuacan as its own day trip
     why: >
-      Open again. The balloon packages include pyramid entry and would have
-      closed this gap, but the balloon came off 2 January on 23 October, so
-      nothing currently covers Teotihuacan. There is no spare day in the city
-      to give it either: 29 December is lucha libre, 30 is taco day, 31 is New
-      Year's Eve, 1 January is the rest day and 2 January is the birthday.
+      Nothing covers Teotihuacan and there is no spare day in the city to give
+      it: 29 December is lucha libre, 30 is taco day, 31 is New Year's Eve,
+      1 January is the rest day and 2 January is the birthday. It wants a full
+      day and there is not one.

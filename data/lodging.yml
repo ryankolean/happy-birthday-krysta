@@ -1,81 +1,8 @@
-# Casa KM is booked. The Fives is not. The Oasis stays only as the record of
-# what it lost on and why.
+# Two properties, and only two. Casa KM in Mexico City is booked and partly
+# paid. The Fives in Puerto Morelos is priced live and not booked.
+# Everything that was ever a runner up has been cut from this file.
 
 properties:
-  - id: oasis
-    leg: cdmx
-    name: Oasis in Roma Norte
-    subtitle: Private Rooftop, 6BR house
-    neighborhood: Roma Norte
-    platform: Airbnb
-    listing_id: "33561836"
-    url: https://www.airbnb.com/rooms/33561836
-    status: available
-    checkin: 2026-12-29
-    checkout: 2027-01-03
-    nights: 5
-    guests: 8
-    total_usd: 3927
-    per_person_usd: 491
-    all_in: true
-    capacity: 12
-    bedrooms: 6
-    beds: 6
-    baths: 6.5
-    bed_config:
-      - bedroom: 1
-        bed: King
-      - bedroom: 2
-        bed: King
-      - bedroom: 3
-        bed: Queen
-      - bedroom: 4
-        bed: King
-      - bedroom: 5
-        bed: Double
-      - bedroom: 6
-        bed: King
-    checkout_time: "11:00"
-    rating: 4.91
-    reviews: 145
-    host: Roma Spot, Superhost, 7 years hosting
-    cancellation:
-      headline_badge: Free cancellation
-      actual: Free for 24 hours after booking, then partial refund only until 22 December 2026
-      warning: >
-        The badge is misleading. After 22 December there is no refund.
-        Treat the deposit as committed once placed. Collect deposits first.
-    why_chosen:
-      - Six private bedrooms for 3 couples plus 2 singles, with one spare
-      - Private rooftop for midnight on New Year's Eve
-      - No quiet hours in the house rules
-      - Full kitchen, which the New Year's Eve plan uses
-      - 6.5 bathrooms for 8 people
-    displaced_on: 2026-10-12
-    displaced_by: Casa KM
-    displaced_because:
-      - >
-        Guests report no windows in most bedrooms. One: "no windows in most of
-        the rooms, which means very little airflow unless you leave your room
-        door open." Another: "no A/C so the upstairs rooms get hot. no windows
-        so there is no airflow but there were tower fans in all rooms."
-      - >
-        Two separate reviews raise the smell. "The house smells very musty, and
-        so do the towels and bedding. You can't rest because of the smell." A
-        second lists "visible mold on ceiling of some bedrooms" and "occasional
-        sewage smell by lower common area."
-      - >
-        A guest notes "there is no real kitchen appliances to use", which the
-        New Year's Eve plan depends on.
-      - >
-        The street-facing first bedroom has road noise and a street lamp with no
-        curtains. One guest bought and installed curtains during their stay.
-      - At 7 guests it reprices to $3,996, or $571 each, the most expensive option on the board.
-    flags:
-      - Airbnb marks these dates "Rare find, this place is usually booked"
-      - Total moves with guest count, so re-price if the party changes from 8
-      - There is no waitlist on Airbnb
-
   - id: fives
     leg: riviera
     name: The Fives Oceanfront Puerto Morelos
@@ -83,49 +10,166 @@ properties:
     platform: direct, Paraty Tech engine
     url: https://www.thefiveshotels.com/the-fives-oceanfront-puerto-morelos.html
     status: available
-    inventory_seen: 10 units
+    repriced: 2026-10-27
     checkin: 2027-01-03
     checkout: 2027-01-08
     nights: 5
     adults: 6
+    group_shape: 2 couples and 2 singles
     checkin_time: "15:00"
     checkout_time: "12:00"
     size_sqft: 1421
     max_occupancy: 8
     taxes_included: true
     discount_live: 32%
-    rack_rate_usd: 6654
-    # Residence is booked whole then split 6 ways.
-    rates_usd:
-      room_only_nonrefundable: 4525
-      room_only_flexible: 5323
-      all_inclusive_supplement: 2529
-      all_inclusive_nonrefundable: 7054
-      all_inclusive_flexible: 7852
-    rates_per_person_usd:
-      room_only_nonrefundable: 754
-      room_only_flexible: 887
-      all_inclusive_nonrefundable: 1176
-      all_inclusive_flexible: 1309
+    discount_flexible: 20%
+    inventory_seen: 10 units
+
+    # The whole point of this block. Six adults as two couples and two singles
+    # does not fit one residence without somebody sharing a bed.
+    layout_problem: >
+      The Two Bedroom Oceanview Residence sleeps up to eight, but it has three
+      beds: a king in bedroom one and two queens in bedroom two. Two couples
+      and two singles is six adults across those three beds, so one couple
+      takes the king, one couple takes a queen, and the two singles are left
+      sharing the remaining queen. The engine accepts it. Nobody would enjoy it.
+    layout_recommended: >
+      Take the Two Bedroom Oceanview Residence for the two couples and add a
+      Junior Suite for the two singles. The Junior Suite has a king and a
+      double sofa bed, so each single gets their own bed and the couples each
+      get a private bedroom with a private bathroom. It is the cheapest
+      combination on the property in which nobody shares a bed.
+
+    # Live on the resort's own engine 27 October 2026, 3 to 8 January 2027,
+    # accommodation only, taxes included. Non-refundable is 32 percent off the
+    # rack rate, flexible is 20 percent off. The unit price does not move with
+    # headcount. Flexible figures marked derived were calculated by applying
+    # the engine's own 20 percent to the rack rate, because the engine only
+    # prints a flexible price after a room is selected.
+    room_catalogue:
+      - name: Junior Suite
+        size_sqft: 646
+        max_adults: 3
+        beds: King, plus a double sofa bed in the living room
+        rack_usd: 2633
+        nonrefundable_usd: 1790
+        flexible_usd: 2106
+        flexible_derived: true
+        all_inclusive_supplement_usd: 919
+        inventory_seen: 10
+      - name: One Bedroom Partial Oceanview Residence
+        size_sqft: 872
+        max_adults: 3
+        beds: King, plus a double sofa bed in the living room
+        rack_usd: 3145
+        nonrefundable_usd: 2138
+        flexible_usd: 2516
+        flexible_derived: true
+        all_inclusive_supplement_usd: 1019
+        inventory_seen: 7
+      - name: One Bedroom Oceanview Residence
+        size_sqft: 872
+        max_adults: 3
+        beds: King, plus a double sofa bed in the living room
+        rack_usd: 3662
+        nonrefundable_usd: 2490
+        flexible_usd: 2930
+        flexible_derived: true
+        all_inclusive_supplement_usd: 1072
+        inventory_seen: 8
+      - name: One Bedroom Penthouse Residence
+        size_sqft: 1593
+        max_adults: 3
+        beds: Not published
+        rack_usd: 4686
+        nonrefundable_usd: 3187
+        flexible_usd: 3749
+        flexible_derived: true
+        all_inclusive_supplement_usd: 1098
+        inventory_seen: 10
+      - name: Two Bedroom Oceanview Residence
+        size_sqft: 1421
+        max_adults: 6
+        beds: Bedroom 1 king, bedroom 2 two queens
+        rack_usd: 5936
+        nonrefundable_usd: 4037
+        flexible_usd: 4749
+        flexible_derived: false
+        all_inclusive_supplement_usd: 3078
+        inventory_seen: 10
+      - name: Two Bedroom Oceanfront Residence
+        size_sqft: 1421
+        max_adults: 6
+        beds: Bedroom 1 king, bedroom 2 two queens
+        rack_usd: 7769
+        nonrefundable_usd: 5283
+        flexible_usd: 6215
+        flexible_derived: true
+        all_inclusive_supplement_usd: 1744
+        inventory_seen: 15
+
+    # What the three workable combinations cost, split 6 ways.
+    combinations:
+      - id: one_residence
+        label: Two Bedroom Oceanview Residence on its own
+        units: 1
+        sleeps: The two singles share the second queen bed
+        nonrefundable_usd: 4037
+        nonrefundable_per_person_usd: 673
+        flexible_usd: 4749
+        flexible_per_person_usd: 792
+      - id: residence_plus_junior
+        label: Two Bedroom Oceanview Residence plus Junior Suite
+        units: 2
+        sleeps: A private bedroom for each couple, a bed each for the singles
+        nonrefundable_usd: 5827
+        nonrefundable_per_person_usd: 971
+        flexible_usd: 6855
+        flexible_per_person_usd: 1143
+        recommended: true
+      - id: residence_plus_one_bedroom
+        label: Two Bedroom Oceanview Residence plus One Bedroom Oceanview Residence
+        units: 2
+        sleeps: One single still ends up on the living room sofa bed
+        nonrefundable_usd: 6527
+        nonrefundable_per_person_usd: 1088
+        flexible_usd: 7679
+        flexible_per_person_usd: 1280
+
+    price_moved_in_our_favour: >
+      These dates are cheaper than when they were last checked on 2 October.
+      The Two Bedroom Oceanview Residence was $4,525 non-refundable and $5,323
+      flexible. It is now $4,037 and $4,749, so the residence alone fell $488
+      and $574. That is most of what the Junior Suite costs, which is why
+      fixing the sleeping arrangement is affordable now and was not before.
+
+    three_bedroom_not_available: >
+      The property publishes a Three Bedroom Oceanfront Residence that would
+      solve this in one unit. It does not appear in the engine for these dates
+      at any headcount, searched at 6, 7 and 8 adults on 27 October. This
+      matches what was found on 2 October, when the Oceanfront's three bedroom
+      was already sold out for these dates and the sister property still had
+      inventory, so it is most likely genuinely gone rather than withheld from
+      online sale. Worth one email before settling for two units.
+
     loyalty_discount:
-      amount_usd: 226
       percent: 5
-      note: offered at the room selection step for a prior Fives booking, or on signup
+      note: >
+        is offered at the room selection step to anyone with a prior Fives
+        booking, or on signup. The dollar value this page used to print was
+        5 percent of the old, higher residence rate and is now wrong, so it
+        has been removed rather than guessed at. Apply it at booking and see
+        what comes off.
     flexible_terms: Free cancellation, refundable until 13 December 2026
-    recommended_rate: flexible room-only
+    recommended_rate: flexible
     tax_breakdown_seen:
-      subtotal_usd: 3739
-      vat_21_usd: 785
-      total_usd: 4525
+      subtotal_usd: 3336
+      vat_21_usd: 701
+      total_usd: 4037
       note: >
         The engine prints "Taxes included" and shows the VAT inside the total.
         Earlier planning grossed these quotes up by 21% on top, overstating
         the beach lodging by about $250 each. Do not gross up engine quotes.
-    upgrade_option:
-      room_type: Two Bedroom Oceanfront Residence
-      inventory_seen: 15 units
-      room_only_nonrefundable_usd: 5895
-      room_only_nonrefundable_per_person_usd: 983
     contact:
       email: reservations@thefiveshotels.com
       us_can: "+1 800 592 1246"
@@ -140,8 +184,11 @@ properties:
       - No New Year's Eve gala charge
       - Only holiday charge is a 25 December gala at $100 per adult, which 3 January clears by nine days
     open:
+      - Which of the three layouts the group wants, which is the only thing holding up the booking
+      - Whether the Three Bedroom Oceanfront Residence can be sold for these dates
+      - Whether the resort runs its own private airport transfer, and what it costs for six
       - Environmental tax at check-in, sources conflict between under $25 for the stay and up to $270
-      - Whether the 32% rate survives to booking and stacks with the 5% loyalty discount
+      - Whether the 32% and 20% rates survive to booking and stack with the 5% loyalty discount
       - Kitchen items surcharge if anyone plans to cook
 
 # BOOKED 18 October 2026. The confirmation code, street address, host phone
@@ -233,8 +280,8 @@ cdmx_front_runner:
   why_chosen:
     - Four bedrooms, each with its own full bathroom, so both couples and both singles get a private bath
     - Bedroom 4 is purpose-built for a single guest, which suits one of the two singles
-    - Balconies off three of the four bedrooms, the direct fix for the Oasis airflow complaints
-    - Private rooftop with a grill and shaded dining, so we keep the thing the Oasis was worth
+    - Balconies off three of the four bedrooms, which was the fix for the airflow complaints that sank the runner up
+    - Private rooftop with a grill and shaded dining, which was the one thing the alternative had going for it
     - 4.99 from 139 reviews is the strongest record of anything checked on these dates
     - Gas stove, oven and a full kitchen, so the New Year's Eve plan survives
     - Smoke detectors in every bedroom, a carbon monoxide alarm, three fire extinguishers and a first aid kit
@@ -260,7 +307,7 @@ cdmx_front_runner:
     - Cancellation is free for 24 hours only, then partial refund until 22 December
     - Three levels joined by interior stairs, and the elevator only reaches the middle one
     - No air conditioning and no central heating, just portable fans and extra blankets. January nights run about 45F.
-    - Del Valle Norte reads as far but is not; it is closer to Em and Parque Mexico than the Oasis is
+    - Del Valle Norte reads as far out but is not; Pujol is 4.7 km and most of the week is walkable
   runner_up_note: >
     The 4BRM Coolest flat in Heart of Condesa was the alternative at $760 each
     and is no longer in play. Cheaper options existed when we booked, the
