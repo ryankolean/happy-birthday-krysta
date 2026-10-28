@@ -139,38 +139,118 @@ riviera:
   travelers: 6
   group_shape: 2 couples and 2 singles
   recommended_build: >
-    Two Bedroom Oceanview Residence for the two couples, plus a Junior Suite
-    for the two singles, both on the flexible rate. It is the cheapest
-    combination in which nobody shares a bed.
+    Two Bedroom Oceanview Residence plus a Junior Suite, both on the flexible
+    rate. The two singles take the residence's second bedroom, which has two
+    queen beds, its own bathroom and its own balcony. One couple takes the
+    king, the other takes the Junior Suite. It is the cheapest arrangement in
+    which every one of the six gets a real bed and nobody sleeps in a living
+    room.
   room_plan: >
-    Six adults, as two couples and two singles. The Two Bedroom Oceanview
-    Residence has one king and one room with two queens, so on its own it
-    sleeps six only if the two singles share a bed. Adding a Junior Suite,
-    which has a king and a double sofa bed, gives each couple a private
-    bedroom and each single their own bed. That is the layout priced below.
+    The Two Bedroom Oceanview Residence has four sleeping surfaces: a king in
+    bedroom one, two queens in bedroom two, and a double sofa bed in the
+    living room. Six adults is its published maximum and it only reaches that
+    by using the sofa bed, so one unit alone always puts two people in the
+    living room. One extra small unit fixes it, and the second bedroom is the
+    right room to hand the two singles rather than the couple it was going to.
   lines:
     - item: Two Bedroom Oceanview Residence plus Junior Suite, flexible rate
-      per_person: 1143
-      unit_price: 6855
+      per_person: 1086
+      unit_price: 6513
       unit_label: both units, 5 nights, split 6 ways
       status: quoted
       verified: 2026-10-27
       note: >
         Priced live on the resort's own engine on 27 October for 3 to 8
-        January. The residence is $4,749 on the flexible rate and the Junior
-        Suite is $2,106, so $6,855 across six is $1,142.50 each. Taxes
+        January. The residence is $4,512 on the flexible rate and the Junior
+        Suite is $2,001, so $6,513 across six is $1,085.50 each. Taxes
         included, nothing booked yet.
         The residence figure is quoted directly. The Junior Suite flexible
-        figure is derived by applying the same 20 percent the engine applied
-        to the residence, because the engine only prints the flexible price
-        once a room is selected. Confirm it before anybody pays.
-        This price is promotional and it is borrowed. A shallower discount
-        tier, about 18 percent against today's 32, has been seen on the same
-        search. If the rate lapses back to it this line rises by roughly
-        $199 per person. Booking the flexible rate locks the discount and
-        still refunds in full until 13 December.
+        figure is derived by applying the factor the engine applied to the
+        residence, because it only prints a flexible price once a room is
+        selected. Confirm it before anybody pays.
+        This price is promotional and it is moving fast. Three discount tiers
+        have been seen on the same search inside a day, roughly 18, then 32,
+        then 35 percent. Every move so far has gone our way and the rate is
+        now $57 per person below what this line carried a few hours ago.
+        Booking the flexible rate locks a tier and still refunds in full until
+        13 December.
 
-  per_person: 1143
+  per_person: 1086
+
+  # Every arrangement in which all six get a real bed and nobody is in a
+  # living room. Mirrors combinations in data/lodging.yml.
+  layout_options:
+    - id: residence_plus_junior
+      label: Two Bedroom Oceanview Residence plus Junior Suite
+      units: 2
+      sleeps: Singles take bedroom two, a queen each, with their own bathroom and balcony
+      nonrefundable_total: 5536
+      nonrefundable_per_person: 923
+      flexible_total: 6513
+      flexible_per_person: 1086
+      recommended: true
+      verdict: >
+        The cheapest fix, and the one to take. The singles end up in the best
+        room on the property for two people travelling alone.
+    - id: residence_plus_one_bedroom
+      label: Two Bedroom Oceanview Residence plus One Bedroom Oceanview Residence
+      units: 2
+      sleeps: Same sleeping plan, more space and an ocean view for the second couple
+      nonrefundable_total: 6201
+      nonrefundable_per_person: 1034
+      flexible_total: 7296
+      flexible_per_person: 1216
+      verdict: >
+        $130 each more than the Junior Suite and buys 226 extra square feet
+        for one couple. Nothing changes for the singles.
+    - id: four_junior_suites
+      label: Four Junior Suites
+      units: 4
+      sleeps: Everybody gets their own suite and their own king
+      nonrefundable_total: 6804
+      nonrefundable_per_person: 1134
+      flexible_total: 8004
+      flexible_per_person: 1334
+      verdict: >
+        Maximum privacy for the least money among the options that give every
+        single their own room. The cost is that the group has no shared living
+        room or kitchen at all, which is a real loss over five nights.
+    - id: residence_plus_two_juniors
+      label: Two Bedroom Oceanview Residence plus two Junior Suites
+      units: 3
+      sleeps: A private suite for each single, both couples in the residence
+      nonrefundable_total: 7237
+      nonrefundable_per_person: 1206
+      flexible_total: 8514
+      flexible_per_person: 1419
+      verdict: >
+        Each single gets their own suite and the group keeps one big living
+        room. $333 each more than the recommendation.
+    - id: two_residences
+      label: Two Two Bedroom Oceanview Residences
+      units: 2
+      sleeps: A couple in each king, a single taking each second bedroom whole
+      flexible_total: 9024
+      flexible_per_person: 1504
+      nonrefundable_total: 7670
+      nonrefundable_per_person: 1278
+      verdict: >
+        The most comfortable and the most expensive, $418 each above the
+        recommendation. Each single gets a two queen bedroom with a private
+        bathroom and balcony to themselves, and the group gets two full
+        living rooms and kitchens. Worth knowing this is the answer to
+        "should we just take two two bedrooms", and the answer is that it
+        works but costs the most of anything on this list.
+
+  # Not an option, recorded so it is not re-proposed.
+  rejected_single_unit:
+    label: One Two Bedroom Oceanview Residence on its own
+    flexible_total: 4512
+    flexible_per_person: 752
+    why_rejected: >
+      It sleeps six only by putting two adults on the living room sofa bed,
+      with no door and no privacy for five nights, and the shared living room
+      stops being shared the moment it is somebody's bedroom.
 
   estimates:
     - item: Food in town, 5 days
@@ -190,57 +270,19 @@ riviera:
 
   estimates_per_person: 349
 
-  # Live on the resort engine 27 October 2026, 3 to 8 January, 6 adults,
-  # accommodation only, taxes included. Non-refundable is 32 percent off rack
-  # and flexible is 20 percent off rack. The unit price does not change with
-  # headcount; only the all-inclusive supplement does.
-  layout_options:
-    - id: one_residence
-      label: One Two Bedroom Oceanview Residence
-      sleeps: Two couples in the king and one queen. The two singles share the second queen.
-      nonrefundable_total: 4037
-      nonrefundable_per_person: 673
-      flexible_total: 4749
-      flexible_per_person: 792
-      verdict: >
-        Cheapest, and the like for like update of what this page used to
-        carry. It only works if the two singles are content to share a bed.
-
-    - id: residence_plus_junior
-      label: Two Bedroom Oceanview Residence plus Junior Suite
-      sleeps: A private bedroom for each couple, and the two singles share a suite with a bed each.
-      nonrefundable_total: 5827
-      nonrefundable_per_person: 971
-      flexible_total: 6855
-      flexible_per_person: 1143
-      recommended: true
-      verdict: >
-        The cheapest layout in which nobody shares a bed. $351 more each than
-        the single residence on the flexible rate.
-
-    - id: residence_plus_one_bedroom
-      label: Two Bedroom Oceanview Residence plus One Bedroom Oceanview Residence
-      sleeps: A private bedroom for each couple, and the singles take a one bedroom between them.
-      nonrefundable_total: 6527
-      nonrefundable_per_person: 1088
-      flexible_total: 7679
-      flexible_per_person: 1280
-      verdict: >
-        More space than the Junior Suite but one single still ends up on the
-        living room sofa bed, so it costs more without fixing anything.
-
   alternative_all_inclusive:
-    supplement_total: 3078
-    supplement_per_person: 513
+    supplement_total: 3797
+    supplement_per_person: 633
     note: >
-      All inclusive adds $3,078 across six on the residence alone, which is
-      $513 each, against a food estimate of $324 for the village. It is no
-      longer the near thing it was: room only plus eating in Puerto Morelos
-      is about $189 cheaper each, and the village is a 16 minute walk with 19
-      restaurants inside a kilometre. Room only stays the pick.
+      All inclusive on the recommended two units adds $2,924 on the residence
+      and $873 on the Junior Suite, so $3,797 across six, which is $633 each
+      against a food estimate of $324 for the village. It is not close: room
+      only plus eating in Puerto Morelos is about $309 cheaper each, and the
+      village is a 16 minute walk with 19 restaurants inside a kilometre.
+      Room only stays the pick.
 
 per_person:
-  both_legs: 2107      # 964 city + 1143 beach
+  both_legs: 2050      # 964 city + 1086 beach
   city_only: 964
   note: >
     These are what you owe Ryan, not what the trip costs you. Flights are
@@ -284,13 +326,13 @@ non_refundable_exposure:
       13 December 2026. The non-refundable rate is about $171 cheaper each
       but refunds nothing from the moment it is booked.
       The exposure here runs the other way from every other line on this
-      list. Not booking is what costs money: the current discount is
-      promotional and a shallower tier worth about $199 per person has
-      already been seen on the same search.
+      list. Not booking is what costs money. The discount is promotional and
+      has moved three times in a day, from roughly 18 percent to 32 to 35.
+      Booking the flexible rate locks a tier and still refunds in full.
 
 flag_for_solo_b: >
   One traveller flies home after Mexico City rather than continuing to the
-  beach. They owe $964 and none of the $1,143 beach line, and they book their
+  beach. They owe $964 and none of the $1,086 beach line, and they book their
   own flights like everybody else. Worth knowing before they ticket: the
   3 January Mexico City to Detroit nonstop was $1,893 one way when it was
   priced, while connections the same day ran $774 to $956.

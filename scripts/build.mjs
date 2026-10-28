@@ -807,7 +807,8 @@ ${estTable('Your own money, not money owed to Ryan. Shown so the week does not s
 <tr class="sum"><td colspan="2">Riviera Maya, what you owe Ryan</td><td class="n">${usd(r.per_person)}</td></tr>
 </tbody></table></div>
 
-<h3>The three layouts, priced</h3>
+<h3>The ${r.layout_options.length} layouts that work, priced</h3>
+<p>One residence on its own is cheaper than any of them, at ${usd(r.rejected_single_unit.flexible_total)} or ${usd(r.rejected_single_unit.flexible_per_person)} each, and it is not on this list. ${nt(r.rejected_single_unit.why_rejected)}</p>
 <div class="scroller"><table>
 <caption>Live ${esc(iso(fives.repriced))} for ${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}, accommodation only, taxes included. Split ${r.travelers} ways, per person in bold.</caption>
 <thead><tr><th>Layout</th><th class="n">Non-refundable</th><th class="n">Each</th><th class="n">Flexible</th><th class="n">Each</th></tr></thead><tbody>
@@ -1007,7 +1008,8 @@ ${casakm.payment_schedule.map((x) => `<tr><td>${esc(longDate(x.date))}</td><td c
   <p><strong>${nt(fives.layout_recommended)}</strong></p>
 </div>
 
-<h3>What six adults costs, three ways</h3>
+<h3>Every way six adults can sleep here without sharing a bed</h3>
+<p>${nt(fives.rejected_single_unit.why_rejected)} So the ${fives.combinations.length} layouts below all buy one extra unit, and they are what the choice actually is.</p>
 <div class="scroller"><table>
 <caption>Live ${esc(iso(fives.repriced))}, ${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}, accommodation only, taxes included. Split ${fives.adults} ways, per person in bold.</caption>
 <thead><tr><th>Layout</th><th>Who sleeps where</th><th class="n">Non-refundable</th><th class="n">Each</th><th class="n">Flexible</th><th class="n">Each</th></tr></thead><tbody>

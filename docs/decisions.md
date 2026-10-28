@@ -14,6 +14,34 @@ What was decided, and what it beat. Newest first.
 
 **The balloon is shelved rather than deferred.** It came off the itinerary on 23 October and was still being carried as a blocked task with a live page. Both are gone. The research moved to `docs/archive/balloon.md`, which is not built and does not appear on the site. Nothing was ever committed and all four operators refunded in full to one day before, so nothing was lost. It supersedes the sunrise balloon decision further down this log.
 
+## The singles get the best room, not the worst, 27 October 2026
+
+**This corrects the recommendation made earlier today.** The Two Bedroom Oceanview Residence was being read as having three beds. It has four sleeping surfaces, and the difference changes who should sleep where.
+
+The engine's own description settles it: the unit gives you **all the features of a One Bedroom Partial Oceanview Residence** plus **a second bedroom with two queen-size beds, a balcony, and a private bathroom**. The One Bedroom layout carries a king and a **double sofa bed in the living room**. So the full unit is king, two queens, and a sofa bed. Maximum six adults, which it only reaches by using that sofa bed.
+
+**That means one unit always puts two people in the living room,** whoever they are. It is one bed short, not three, and one extra small unit fixes it.
+
+**The earlier plan had the allocation backwards.** It put the two singles in the Junior Suite, where one of them takes its sofa bed, and gave the residence's second bedroom to a couple who did not need two queen beds. For exactly the same two units and exactly the same money, the right arrangement is the reverse: **the singles take the second bedroom**, a queen each, with their own bathroom and their own balcony, and the second couple takes the Junior Suite. It is the best room on the property for two people travelling alone and it was being handed to the wrong people.
+
+**Decided: Two Bedroom Oceanview Residence plus a Junior Suite, flexible, $6,513, $1,086 each.** Nobody sleeps in a living room and nobody shares a bed.
+
+What it beat, all priced live the same day and all split six ways:
+
+| Layout | Flexible | Each | What it buys |
+|---|---|---|---|
+| **Residence + Junior Suite** | **$6,513** | **$1,086** | the recommendation |
+| Residence + One Bedroom Oceanview | $7,296 | $1,216 | 226 more sq ft for one couple, nothing for the singles |
+| Four Junior Suites | $8,004 | $1,334 | a private suite each, but no shared living room at all |
+| Residence + two Junior Suites | $8,514 | $1,419 | a private suite per single, keeps one big living room |
+| Two Two Bedroom Residences | $9,024 | $1,504 | a whole second bedroom per single, two living rooms |
+
+**On "should we just take two two bedrooms":** it works, and it is the most comfortable thing on the list, but it is also the most expensive at **$418 each above the recommendation**. Confirmed on the engine that a second Two Bedroom Oceanview is still offered once the first is held, so it is genuinely bookable, it just costs the most.
+
+**One unit alone was rejected rather than priced as an option.** At $4,512 flexible, $752 each, it is much the cheapest thing available and it is exactly the arrangement this decision exists to avoid: two adults on a sofa bed with no door for five nights, and a shared living room that stops being shared.
+
+**The rate moved again while this was being worked out.** The same search that returned 32 percent off in the morning returned 35 percent a couple of hours later, with flexible going from 20 to 24 percent. The residence fell from $4,749 to $4,512. Three tiers in one day, all moving our way. The recommended layout now costs **$57 per person less** than the single shared-bed arrangement did when it was budgeted this morning, so fixing the sleeping problem has cost nothing at all.
+
 ## The Fives discount is promotional, and worth about $199 each, 27 October 2026
 
 **Reconciled against Ryan's own screenshot of the booking engine.** His figures came back uniformly about **20 percent higher** than the engine returns today, across all six unit types and all six all-inclusive supplements. That is too consistent to be noise.
