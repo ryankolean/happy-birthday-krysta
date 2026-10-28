@@ -822,6 +822,11 @@ ${r.layout_options.map((o) => `<tr${o.recommended ? ' class="pick"' : ''}><td><s
   <p>${nt(fives.price_moved_in_our_favour)}</p>
 </div>
 
+<div class="note warn">
+  <div class="nh">This price is borrowed, not owned</div>
+  <p>${nt(fives.discount_tiers.what_it_means)}</p>
+</div>
+
 <h3>What you will spend on the ground at the beach</h3>
 ${estTable('Your own money, not money owed to Ryan. Shown so the week does not surprise anybody.', r.estimates, r.estimates_per_person)}
 
@@ -1016,6 +1021,11 @@ ${fives.combinations.map((c) => `<tr${c.recommended ? ' class="pick"' : ''}><td>
 <div class="note">
   <div class="nh">These dates got cheaper</div>
   <p>${nt(fives.price_moved_in_our_favour)}</p>
+</div>
+
+<div class="note warn">
+  <div class="nh">This price is borrowed, not owned</div>
+  <p>${nt(fives.discount_tiers.what_it_means)}</p>
 </div>
 
 <h3>Every unit available on these dates</h3>

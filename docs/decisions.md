@@ -14,6 +14,18 @@ What was decided, and what it beat. Newest first.
 
 **The balloon is shelved rather than deferred.** It came off the itinerary on 23 October and was still being carried as a blocked task with a live page. Both are gone. The research moved to `docs/archive/balloon.md`, which is not built and does not appear on the site. Nothing was ever committed and all four operators refunded in full to one day before, so nothing was lost. It supersedes the sunrise balloon decision further down this log.
 
+## The Fives discount is promotional, and worth about $199 each, 27 October 2026
+
+**Reconciled against Ryan's own screenshot of the booking engine.** His figures came back uniformly about **20 percent higher** than the engine returns today, across all six unit types and all six all-inclusive supplements. That is too consistent to be noise.
+
+**It is not headcount.** His search was for 2 adults and the beach pricing on this site is built on 6. Re-ran his exact search, two adults for the same dates, and got today's lower numbers back. The engine prices a unit identically at 2, 4 and 6 adults; only the all-inclusive supplement moves with heads. Confirmed three times now.
+
+**It is the discount tier.** The rack rates match his screenshot exactly, which is what makes the comparison safe. His prices divide out to roughly **0.82 of rack** against today's **0.68**, consistently to within a few dollars on every line. Two tiers exist for these dates, roughly 18 percent and 32 percent, and the deeper one is live now. A Black Friday badge is running on the operator's own site, which is the likeliest explanation. No end date is published anywhere visible.
+
+**What it is worth.** If the rate lapses back to the shallower tier, the recommended two unit layout goes from **$5,827 to about $7,023** non-refundable, roughly **$199 more per person**. The residence on its own goes from $4,037 to about $4,859, about $137 more each.
+
+**So the exposure on this line runs backwards from every other booking on the trip.** Everywhere else, committing early is what costs money. Here, not committing is. The flexible rate refunds in full until 13 December, so booking it now locks the discount and keeps the option to walk. The layout decision costs nothing to make early and about $199 each to make late.
+
 ## The beach needs two units, not one, 27 October 2026
 
 **The Two Bedroom Oceanview Residence cannot sleep this group.** It has three beds: a king and two queens. Six adults as two couples and two singles means one couple on the king, one couple on a queen, and **the two singles sharing the remaining queen**. The resort's engine accepts the booking. Nobody would enjoy the week.

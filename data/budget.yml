@@ -164,6 +164,11 @@ riviera:
         figure is derived by applying the same 20 percent the engine applied
         to the residence, because the engine only prints the flexible price
         once a room is selected. Confirm it before anybody pays.
+        This price is promotional and it is borrowed. A shallower discount
+        tier, about 18 percent against today's 32, has been seen on the same
+        search. If the rate lapses back to it this line rises by roughly
+        $199 per person. Booking the flexible rate locks the discount and
+        still refunds in full until 13 December.
 
   per_person: 1143
 
@@ -278,6 +283,10 @@ non_refundable_exposure:
       Nothing booked. On the flexible rate it refunds in full until
       13 December 2026. The non-refundable rate is about $171 cheaper each
       but refunds nothing from the moment it is booked.
+      The exposure here runs the other way from every other line on this
+      list. Not booking is what costs money: the current discount is
+      promotional and a shallower tier worth about $199 per person has
+      already been seen on the same search.
 
 flag_for_solo_b: >
   One traveller flies home after Mexico City rather than continuing to the
