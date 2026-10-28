@@ -62,19 +62,21 @@ dated:
       Angelopolitano and Madereros publish theirs in late November. Prices on
       file are from the 2023 cycle. Order by 28 December.
 
-  - id: email-fives-transfer
-    title: Email The Fives about a private transfer and the three bedroom
+  - id: call-dreams-jade
+    title: Call Dreams Jade before booking four rooms
     status: todo
     date: 2026-11-03
     why: >
-      Two questions in one message. Whether they run their own private
-      transfer from Cancun airport and what it costs for six, which is the
-      clean answer if everybody is on the same Mexico City to Cancun flight.
-      And whether the Three Bedroom Oceanfront Residence can be sold for
-      3 to 8 January, because it would solve the sleeping arrangement in one
-      unit and it does not show in the engine at any headcount.
-      Draft is in private/fives-transfer-email.md. Ask about the environmental
-      tax in the same message rather than sending two.
+      One call, five questions, and the answers decide the build. Whether
+      four reservations can be linked and assigned adjacent or in the same
+      building across different room categories. Confirmation in writing of
+      the single-occupancy rate and the bed type on both solo rooms. A
+      birthday amenity for Krysta. Whether they will match the $1,617
+      non-refundable Booking rate direct. What the Quintana Roo state tourist
+      tax comes to and whether the resort collects it.
+      Hyatt Inclusive Collection +1 800 597 4761. The resort direct number on
+      file came from a trade directory and is unverified, so use the Hyatt
+      line first. Do not ask for a group rate: those start at ten rooms.
 
   - id: pujol-dietary
     title: Collect dietary restrictions for Pujol and send them in
@@ -87,11 +89,14 @@ dated:
       Anybody who does not eat seafood needs to be named before the day, not
       at the table. reservaciones@pujol.com.mx.
 
-  - id: fives-decide-by-dec-13
-    title: Decide whether to keep the flexible Fives rate
+  - id: jade-confirm-refund-deadline
+    title: Get the Dreams Jade flexible cancellation deadline in writing
     status: todo
-    date: 2026-12-13
-    why: Last day the flexible rate refunds.
+    date: 2026-11-03
+    why: >
+      Booking shows free cancellation on the flexible rate but does not print
+      the deadline on the search page. Everything else on this trip has a
+      date attached and this does not. Get it on the call and put it here.
 
   - id: airbnb-refund-cliff
     title: Last partial refund on Casa KM, 16:00 listing local time
@@ -136,34 +141,36 @@ decisions_needed:
       party can move freely inside that range, but a ninth yes cannot be
       absorbed online and would mean emailing the restaurant directly.
 
-  - id: pick-fives-layout
-    title: Pick the room layout at The Fives, then book it
+  - id: pick-jade-build
+    title: Pick the room build at Dreams Jade, then book it
     status: todo
     detail: >
-      The only thing holding up the beach booking, and it is now a choice
-      between good answers rather than a problem.
-      The Two Bedroom Oceanview Residence has a king, a second bedroom with
-      two queens and its own bathroom and balcony, and a double sofa bed in
-      the living room. One unit sleeps six only by using that sofa bed, so one
-      extra unit is needed whatever else is decided.
-      Recommended: residence plus a Junior Suite, $1,086 each on the flexible
-      rate. The two singles take the second bedroom, a queen each, and the
-      second couple takes the Junior Suite. Nobody is in a living room.
-      If the singles should each have their own room, four Junior Suites is
-      $1,334 each and two Two Bedroom Residences is $1,504 each. The full
-      ladder with every price is on the accommodations page.
-      Do it soon. The discount has moved three times in one day, from roughly
-      18 percent to 32 to 35, and the flexible rate refunds in full until
-      13 December, so booking locks the good tier at no cost.
+      The only thing holding up the beach booking. Eight builds work and the
+      full ladder with every price is on the accommodations page.
+      Recommended: four rooms, everybody in a Junior Suite with Ocean View,
+      $1,509 each on the flexible rate. Everyone has their own room, everyone
+      has the same room, and all four sit in the same buildings.
+      The real question is not the view, it is the fourth room. Three rooms
+      at $1,115 each puts the two singles together in a room with two full
+      beds, which breaks no rule, and saves $394 each. Giving each single
+      their own room costs $534 more each. Upgrading a couple to Ocean Front
+      costs $244. Ask the two singles what they want before assuming.
+      If the group will not carry the ocean view build, the fallback is four
+      rooms with Krysta and Ryan in an Ocean Front King at $1,420 each, where
+      the birthday couple absorb the upgrade and nobody else pays more.
 
-  - id: pick-meal-plan
-    title: Room-only or all-inclusive at The Fives
+  - id: book-via-prive
+    title: Decide whether to book Dreams Jade through a Hyatt Prive advisor
     status: todo
     detail: >
-      All inclusive adds $513 each against a $324 food estimate for the
-      village, so room only is about $189 cheaper. It used to be a $98 gap and
-      a close call. It is not close any more. The room can be booked before
-      this is settled.
+      Prive is Hyatt's advisor-only program. Dreams is in it, five nights
+      clears its four-night minimum, and it reportedly adds a property credit
+      of roughly $100 per stay, a room upgrade confirmed at booking and a
+      welcome amenity, at the same rate as Hyatt's public flexible price.
+      Four reservations may mean four credits.
+      Every source for this is an agency or affiliate blog rather than Hyatt,
+      so get the credit and the upgrade in writing before paying. Worth one
+      conversation before booking direct.
 
   - id: solo-b-routing
     title: Decide the 3 January flight home from Mexico City
@@ -183,13 +190,14 @@ housekeeping:
     status: todo
     detail: Valid at least six months past 8 January 2027.
 
-  - id: fives-environmental-tax
-    title: Ask The Fives about the environmental tax
+  - id: quintana-roo-tourist-tax
+    title: Settle the Quintana Roo state tourist tax for six
     status: todo
     detail: >
-      Sources disagree badly, from under $25 for the whole stay to $270.
-      Do not send this on its own. It is the third question in the transfer
-      email, see email-fives-transfer. reservations@thefiveshotels.com.
+      Quintana Roo charges visitors a state tourism tax that is separate from
+      the hotel bill and from the 16% VAT already added to every figure on
+      the costs page. No amount has been verified for 2027, so nothing is
+      budgeted for it. Ask on the Dreams Jade call, see call-dreams-jade.
 
   - id: group-chat
     title: Start the group chat for all 7
@@ -220,7 +228,7 @@ done:
     detail: >
       Still 6, as two couples and two singles. The person who dropped on 12 October was one of those flying
       home after Mexico City, not a beach traveller, so every Riviera Maya
-      figure stands and The Fives residence still splits 6 ways. It also
+      figure stands and the beach lodging still splits 6 ways. It also
       means only one person now leaves after Mexico City instead of two.
 
   - id: book-casa-km
@@ -246,9 +254,11 @@ done:
   - id: resolve-fives-tax
     title: Settle whether Fives quotes include tax
     detail: >
-      They do. The engine prints subtotal $3,739, VAT 21% $785, total $4,525,
-      taxes included. Earlier planning had grossed this up on top, overstating
-      the beach by about $250 each.
+      They did, and The Fives is no longer the property. Kept because the
+      lesson generalises and the new property goes the other way: Booking
+      quotes Dreams Jade before tax and every figure on the costs page has
+      16% VAT added on top. Check which way round a quote is before doing
+      arithmetic on it.
 
   - id: resolve-quintonil
     title: Settle whether Quintonil can seat 8

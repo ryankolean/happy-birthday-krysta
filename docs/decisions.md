@@ -2,6 +2,61 @@
 
 What was decided, and what it beat. Newest first.
 
+## Dreams Jade replaces The Fives, 28 October 2026
+
+**Decided.** The beach leg moves to [Dreams Jade Resort & Spa](https://www.booking.com/hotel/mx/now-jade-riviera-cancun.html) in Puerto Morelos, all-inclusive, four rooms. Same town, same dates, a different kind of stay.
+
+**What was wrong with The Fives.** It was one residence split between six people, room only, and the arithmetic only ever worked by arguing about who got which bedroom. Every layout on that property was a negotiation. Dreams Jade is a conventional resort: each pair gets a room with a door, the board covers food and drink, and the two singles can have their own rooms without anybody giving something up.
+
+**The decision that actually costs money is the fourth room, not the ocean view.** This was the opposite of how it looked going in.
+
+| | Per person |
+|---|---|
+| Ocean View for one couple | +$132, to that couple only |
+| Ocean Front for one couple | +$244, to that couple only |
+| **Adding a fourth room** | **+$534, to each single** |
+
+Four rooms are four independent reservations at four independent prices, so one couple buying up does not move anybody else's rate by a cent. What mixing categories does cost is **adjacency**: Ocean Front rooms sit in the buildings nearest the water and standard Junior Suites are set back, so a group spread across categories is not a group in the same corridor.
+
+**Recommended: four rooms, everybody in a Junior Suite with Ocean View, $1,509 each on the flexible rate.** It is the most expensive build on the list and still the right one. It is $89 each above buying one couple an Ocean Front, and for that it removes both awkward conversations at once: nobody has a better room than anybody else, and the whole group is in the same buildings.
+
+Every build that works, all priced live on 28 October, 16% VAT added on top of what Booking displays, split six ways:
+
+| Build | Rooms | Non-refundable | Flexible |
+|---|---|---|---|
+| All standard Junior Suite | 3 | $947 | $1,115 |
+| One couple Ocean Front | 3 | $1,029 | $1,210 |
+| All standard Junior Suite | 4 | $1,125 | $1,324 |
+| One couple Ocean View | 4 | $1,169 | $1,375 |
+| One couple Ocean Front | 4 | $1,206 | $1,420 |
+| Both couples Ocean View | 4 | $1,213 | $1,426 |
+| One couple Preferred Club Ocean Front | 4 | $1,250 | $1,471 |
+| **Everybody Ocean View** | **4** | **$1,284** | **$1,509** |
+
+**Three rooms breaks no rule and was not rejected.** The two singles would share a Junior Suite Two Double, which is two separate beds, at $1,115 each. It is $394 cheaper per person than the recommendation. The standing rule on this trip is that nobody shares a bed and nobody sleeps in a living room, and three rooms satisfies both. Whether the singles want their own rooms is a question to ask them, not one to decide for them.
+
+**The single-occupancy trap, which drives the whole build.** Dreams Jade discounts a solo traveller to 80 percent of the two-person rate on its four cheapest room types and to 100 percent of it on everything above them. From Preferred Club Tropical View upward, including every Ocean Front and every Preferred Club room, one person pays the full two-person price for a guest who is not there. So the singles go in an Ocean View room or below, always. Verified at one adult and at six adults across four rooms.
+
+**Booking quotes this property before tax, which is the inverse of the last one.** The listing prints "Included: City tax" and "Excluded: 16% VAT", so every figure here is the displayed price times 1.16. The Fives quoted tax-inclusive and earlier planning wrongly grossed those up, overstating the beach by about $250 each. The lesson is not "never gross up", it is **check which way round a quote is before doing arithmetic on it**.
+
+**The headline number went up and the real outlay barely moved.** The beach line goes from $1,086 to $1,509 and both legs from $2,050 to $2,473. That comparison is misleading on its own, because The Fives was room only and carried a separate $324 food estimate. Counting everything:
+
+| | Lodging | Food | Transfer | Total outlay |
+|---|---|---|---|---|
+| The Fives, flexible | $1,086 | $324 | $25 | $1,435 |
+| Dreams Jade, flexible | $1,509 | included | $25 | $1,534 |
+| Dreams Jade, non-refundable | $1,284 | included | $25 | $1,309 |
+
+So the recommended build is **$99 each more than The Fives** and buys a private room for every person, an ocean view for every person, and no decisions about dinner. On the non-refundable rate it is $126 each **less**.
+
+**Flexible for now.** It costs $225 each more than non-refundable. The build is not settled, nothing is booked and the trip is fourteen months out, so flexible is what lets the group decide without paying for the delay. Switch once the build is agreed.
+
+**Four rooms is not a group.** Hyatt Inclusive Collection group desks start at ten rooms, so there is no group rate being withheld and nothing to negotiate on that front. The real lever is **Hyatt Privé**, Hyatt's advisor-only program: Dreams is in it, five nights clears its four-night minimum, and it reportedly adds a property credit of roughly $100 per stay plus a confirmed room upgrade at the same rate as Hyatt's public flexible price. Every source for that is an agency blog rather than Hyatt, so it needs confirming in writing.
+
+**What was rejected.** Dreams Sapphire, on layout. Iberostar Selection Riviera Cancun at $930 each was cheaper and better rated at 8.5, but its two-bed room is a Junior Suite with twin beds rather than a room type of its own. Riu Palace Riviera Maya at $1,241 scored 9.0 and stayed in contention to the end. Ocean Maya Royale was disqualified outright: no two-bed room exists anywhere in its inventory. Barcelo Maya Colonial and Iberostar Waves Quetzal sell only two-queen rooms, so the couples lose a king. The full comparison is on the Jira TRAVEL board.
+
+**Hyatt's own site could not be priced.** hyatt.com and hyattinclusivecollection.com return HTTP 429 to automated access, so the Booking.com rates are the benchmark and nobody has checked whether booking direct beats them. That is an open question, not a settled one.
+
 ## Five changes to how the site reads money, 27 October 2026
 
 **Flights come out of every total.** Everybody books and pays for their own. No fare appears in any per-person figure on the site now, and the four fares that remain are labelled as reference points priced on 25 September. What replaced the old totals is a cleaner question: **what you owe Ryan**, which is the shared bookings he fronted on one card. That is $964 for Mexico City and $1,143 for the beach.

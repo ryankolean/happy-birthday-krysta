@@ -10,11 +10,14 @@ Approach is decided on [the New Year's Eve page](nye.html), nothing is ordered. 
 ### Em's holiday release
 Tock says "Em has not opened reservations for 2 ene." Probing shows 19 December open and 31 December not, so the holiday week is withheld rather than sold out. Nobody knows the release date. Phone +52 55 6450 1302. **No longer blocking anything**, since [the birthday lunch](dining.html) is booked at Pujol.
 
-### The Fives environmental tax
-Sources conflict badly, from under $25 for the stay to $270. One email to reservations@thefiveshotels.com settles it. **Spread:** about $41 each.
+### Which room build at Dreams Jade
+Eight builds work and the choice is the only thing holding up the beach booking. Recommended is four rooms with everybody in an Ocean View Junior Suite at $1,509 each. **Spread:** $394 each between that and three rooms at $1,115, which breaks no rule and simply puts the two singles in one room with two beds. Ask them before deciding for them.
 
-### Whether the 32 percent Fives discount survives to booking
-And whether it stacks with the 5 percent loyalty discount. **Spread:** about $38 each on the loyalty discount alone, more if the promotional rate expires.
+### Whether booking Dreams Jade direct beats Booking.com
+Unknown. hyatt.com and hyattinclusivecollection.com both return HTTP 429 to automated access, so the Booking rate of $1,617 non-refundable for a standard Junior Suite is the only benchmark in hand. A Hyatt Privé advisor reportedly adds a property credit of about $100 per stay and a confirmed upgrade at the same rate. **Spread:** unknown, possibly four credits across four reservations.
+
+### The Quintana Roo state tourist tax
+Charged per visitor, separate from the hotel bill and from the 16% VAT already added to every beach figure. No 2027 amount has been verified, so nothing is budgeted for it. **Spread:** small but unquantified.
 
 ### Tulum beach club day
 Unpriced. Table minimums in early January have never been quoted, so there is no per-head figure. Three hours of driving round trip. May not survive on its own merits.

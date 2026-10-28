@@ -14,7 +14,7 @@
 currency: USD
 rate_mxn_per_usd: 17.0
 priced: 2026-10-02
-lodging_repriced: 2026-10-27
+lodging_repriced: 2026-10-28
 
 estimates_note: >
   Every total on this page counts only the lines marked booked or quoted.
@@ -138,126 +138,159 @@ cdmx:
 riviera:
   travelers: 6
   group_shape: 2 couples and 2 singles
+  property: Dreams Jade Resort & Spa, Puerto Morelos
+  board: all-inclusive
   recommended_build: >
-    Two Bedroom Oceanview Residence plus a Junior Suite, both on the flexible
-    rate. The two singles take the residence's second bedroom, which has two
-    queen beds, its own bathroom and its own balcony. One couple takes the
-    king, the other takes the Junior Suite. It is the cheapest arrangement in
-    which every one of the six gets a real bed and nobody sleeps in a living
-    room.
+    Four rooms at Dreams Jade, every one a Junior Suite with Ocean View, on
+    the flexible rate. Both couples take an Ocean View King and each single
+    takes an Ocean View King on the single-occupancy rate. Everybody has
+    their own room, everybody has the same room, and all four sit in the same
+    ocean view buildings.
   room_plan: >
-    The Two Bedroom Oceanview Residence has four sleeping surfaces: a king in
-    bedroom one, two queens in bedroom two, and a double sofa bed in the
-    living room. Six adults is its published maximum and it only reaches that
-    by using the sofa bed, so one unit alone always puts two people in the
-    living room. One extra small unit fixes it, and the second bedroom is the
-    right room to hand the two singles rather than the couple it was going to.
+    The fourth room is what costs money here, not the view. Three rooms would
+    put the two singles together in a Junior Suite Two Double, which is two
+    separate beds and breaks no rule, at $966 each. Giving each single their
+    own room costs $534 more each. Upgrading a couple from a standard suite
+    to Ocean Front costs $244. The expensive decision is privacy and the
+    cheap one is the water.
+    Four reservations are four independent prices, so one couple buying up
+    does not raise anybody else's rate. What mixing categories does cost is
+    adjacency, because Ocean Front rooms sit nearest the water and standard
+    Junior Suites are set back. Putting everybody in one category fixes that
+    for $89 each over buying one couple an Ocean Front.
   lines:
-    - item: Two Bedroom Oceanview Residence plus Junior Suite, flexible rate
-      per_person: 1086
-      unit_price: 6513
-      unit_label: both units, 5 nights, split 6 ways
+    - item: Four Ocean View Junior Suites, flexible rate, all-inclusive
+      per_person: 1509
+      unit_price: 9055
+      unit_label: four rooms, 5 nights, split 6 ways
       status: quoted
-      verified: 2026-10-27
+      verified: 2026-10-28
       note: >
-        Priced live on the resort's own engine on 27 October for 3 to 8
-        January. The residence is $4,512 on the flexible rate and the Junior
-        Suite is $2,001, so $6,513 across six is $1,085.50 each. Taxes
-        included, nothing booked yet.
-        The residence figure is quoted directly. The Junior Suite flexible
-        figure is derived by applying the factor the engine applied to the
-        residence, because it only prints a flexible price once a room is
-        selected. Confirm it before anybody pays.
-        This price is promotional and it is moving fast. Three discount tiers
-        have been seen on the same search inside a day, roughly 18, then 32,
-        then 35 percent. Every move so far has gone our way and the rate is
-        now $57 per person below what this line carried a few hours ago.
-        Booking the flexible rate locks a tier and still refunds in full until
-        13 December.
+        Priced live on Booking.com on 28 October for 3 to 8 January. Two
+        Ocean View Kings at $2,515 each and two on the single-occupancy rate
+        at $2,013 each, so $9,055 across six is $1,509 each.
+        These figures have 16% VAT added on top of what Booking displays.
+        Booking quotes this property pre-tax: it prints "Included: City tax"
+        and "Excluded: 16% VAT". The displayed total is $7,806. Do not read
+        the Booking number as the bill. This is the opposite of The Fives,
+        whose engine quoted tax-inclusive and which earlier planning wrongly
+        grossed up.
+        Nothing is booked. The non-refundable rate is $1,284 each, $225
+        cheaper, and refunds nothing from the moment it is taken. Flexible is
+        the call while the build is unsettled.
+        Food is not a separate line any more. This rate is all-inclusive and
+        covers meals, drinks and gratuities, which is why the $324 village
+        food estimate that sat under The Fives has gone.
 
-  per_person: 1086
+  per_person: 1509
 
-  # Every arrangement in which all six get a real bed and nobody is in a
-  # living room. Mirrors combinations in data/lodging.yml.
+  # Every arrangement in which all six get a bed of their own and nobody is on
+  # a sofa. Mirrors combinations in data/lodging.yml.
   layout_options:
-    - id: residence_plus_junior
-      label: Two Bedroom Oceanview Residence plus Junior Suite
-      units: 2
-      sleeps: Singles take bedroom two, a queen each, with their own bathroom and balcony
-      nonrefundable_total: 5536
-      nonrefundable_per_person: 923
-      flexible_total: 6513
-      flexible_per_person: 1086
+    - id: three_base
+      label: Three rooms, all standard Junior Suite
+      units: 3
+      sleeps: Both singles share a room but not a bed, two full beds, one each
+      nonrefundable_total: 5684
+      nonrefundable_per_person: 947
+      flexible_total: 6689
+      flexible_per_person: 1115
+      verdict: >
+        The cheapest thing that breaks no rule, and $394 each below the
+        recommendation. What it gives up is a private room for each single
+        and a view for anybody.
+    - id: three_a_ocean_front
+      label: Three rooms, one couple Ocean Front
+      units: 3
+      sleeps: Singles still share a room, Krysta and Ryan move to the water
+      nonrefundable_total: 6171
+      nonrefundable_per_person: 1029
+      flexible_total: 7259
+      flexible_per_person: 1210
+      verdict: >
+        The birthday couple carry the whole upgrade at $1,181 each and
+        everybody else pays less than in any four-room build.
+    - id: four_base
+      label: Four rooms, all standard Junior Suite
+      units: 4
+      sleeps: A room each for both couples and both singles
+      nonrefundable_total: 6751
+      nonrefundable_per_person: 1125
+      flexible_total: 7946
+      flexible_per_person: 1324
+      verdict: >
+        Privacy for everyone and a view for no one. The two singles carry the
+        whole cost of the fourth room at $1,764 each on the flexible rate.
+    - id: four_a_ocean_view
+      label: Four rooms, one couple Ocean View
+      units: 4
+      sleeps: Krysta and Ryan get the view, everybody else a standard suite
+      nonrefundable_total: 7016
+      nonrefundable_per_person: 1169
+      flexible_total: 8252
+      flexible_per_person: 1375
+      verdict: >
+        The cheapest way to get the birthday couple a view. $132 each to
+        them, nothing to anybody else.
+    - id: four_a_ocean_front
+      label: Four rooms, one couple Ocean Front
+      units: 4
+      sleeps: Krysta and Ryan at the water's edge, everybody else set back
+      nonrefundable_total: 7238
+      nonrefundable_per_person: 1206
+      flexible_total: 8517
+      flexible_per_person: 1420
+      verdict: >
+        The fallback if the group will not carry the ocean view build. The
+        four rooms are not in the same buildings.
+    - id: four_couples_ocean_view
+      label: Four rooms, both couples Ocean View
+      units: 4
+      sleeps: Both couples get the view, neither single does
+      nonrefundable_total: 7280
+      nonrefundable_per_person: 1213
+      flexible_total: 8558
+      flexible_per_person: 1426
+      verdict: >
+        The one arrangement here that is visibly unequal, and it costs only
+        $83 each less than giving everybody the same room. Hard to justify.
+    - id: four_a_pc_ocean_front
+      label: Four rooms, one couple Preferred Club Ocean Front
+      units: 4
+      sleeps: Krysta and Ryan get the water plus the private lounge
+      nonrefundable_total: 7497
+      nonrefundable_per_person: 1250
+      flexible_total: 8824
+      flexible_per_person: 1471
+      verdict: >
+        Top of the realistic ladder for one couple, $1,311 each, and still
+        $38 each below giving the whole group an ocean view.
+    - id: four_all_ocean_view
+      label: Four rooms, everybody Ocean View
+      units: 4
+      sleeps: The same room for all six, a private one each, same buildings
+      nonrefundable_total: 7702
+      nonrefundable_per_person: 1284
+      flexible_total: 9055
+      flexible_per_person: 1509
       recommended: true
       verdict: >
-        The cheapest fix, and the one to take. The singles end up in the best
-        room on the property for two people travelling alone.
-    - id: residence_plus_one_bedroom
-      label: Two Bedroom Oceanview Residence plus One Bedroom Oceanview Residence
-      units: 2
-      sleeps: Same sleeping plan, more space and an ocean view for the second couple
-      nonrefundable_total: 6201
-      nonrefundable_per_person: 1034
-      flexible_total: 7296
-      flexible_per_person: 1216
-      verdict: >
-        $130 each more than the Junior Suite and buys 226 extra square feet
-        for one couple. Nothing changes for the singles.
-    - id: four_junior_suites
-      label: Four Junior Suites
-      units: 4
-      sleeps: Everybody gets their own suite and their own king
-      nonrefundable_total: 6804
-      nonrefundable_per_person: 1134
-      flexible_total: 8004
-      flexible_per_person: 1334
-      verdict: >
-        Maximum privacy for the least money among the options that give every
-        single their own room. The cost is that the group has no shared living
-        room or kitchen at all, which is a real loss over five nights.
-    - id: residence_plus_two_juniors
-      label: Two Bedroom Oceanview Residence plus two Junior Suites
-      units: 3
-      sleeps: A private suite for each single, both couples in the residence
-      nonrefundable_total: 7237
-      nonrefundable_per_person: 1206
-      flexible_total: 8514
-      flexible_per_person: 1419
-      verdict: >
-        Each single gets their own suite and the group keeps one big living
-        room. $333 each more than the recommendation.
-    - id: two_residences
-      label: Two Two Bedroom Oceanview Residences
-      units: 2
-      sleeps: A couple in each king, a single taking each second bedroom whole
-      flexible_total: 9024
-      flexible_per_person: 1504
-      nonrefundable_total: 7670
-      nonrefundable_per_person: 1278
-      verdict: >
-        The most comfortable and the most expensive, $418 each above the
-        recommendation. Each single gets a two queen bedroom with a private
-        bathroom and balcony to themselves, and the group gets two full
-        living rooms and kitchens. Worth knowing this is the answer to
-        "should we just take two two bedrooms", and the answer is that it
-        works but costs the most of anything on this list.
+        The most expensive build on this list and still the one to take. It
+        is $89 each above buying one couple an Ocean Front, and it removes
+        both awkward conversations: nobody has a better room than anybody
+        else and the whole group is in the same buildings.
 
-  # Not an option, recorded so it is not re-proposed.
-  rejected_single_unit:
-    label: One Two Bedroom Oceanview Residence on its own
-    flexible_total: 4512
-    flexible_per_person: 752
-    why_rejected: >
-      It sleeps six only by putting two adults on the living room sofa bed,
-      with no door and no privacy for five nights, and the shared living room
-      stops being shared the moment it is somebody's bedroom.
+  single_occupancy_trap: >
+    Dreams Jade discounts a solo traveller to 80 percent of the two-person
+    rate on the four cheapest room types and to 100 percent of it on
+    everything above them. From Preferred Club Tropical View upward,
+    including every Ocean Front and every Preferred Club room, one person
+    pays the full two-person price for a guest who is not there.
+    So the singles go in an Ocean View room or below, and never in an Ocean
+    Front or a Preferred Club room. Verified at one adult and at six adults
+    across four rooms on 28 October.
 
   estimates:
-    - item: Food in town, 5 days
-      per_person: 324
-      status: estimate
-      note: About $65 per day including tip, eating in Puerto Morelos village.
-
     - item: CUN airport transfer, round trip
       per_person: 25
       status: estimate
@@ -268,21 +301,23 @@ riviera:
         Mexico City to Cancun flight. The resort has been asked whether they
         run their own private transfer, which would be the cleaner answer.
 
-  estimates_per_person: 349
+  estimates_per_person: 25
 
-  alternative_all_inclusive:
-    supplement_total: 3797
-    supplement_per_person: 633
+  board_included:
     note: >
-      All inclusive on the recommended two units adds $2,924 on the residence
-      and $873 on the Junior Suite, so $3,797 across six, which is $633 each
-      against a food estimate of $324 for the village. It is not close: room
-      only plus eating in Puerto Morelos is about $309 cheaper each, and the
-      village is a 16 minute walk with 19 restaurants inside a kilometre.
-      Room only stays the pick.
+      The rate is all-inclusive, so meals, drinks and gratuities are in it.
+      That is why the beach leg no longer carries a food estimate. Under The
+      Fives this page added $324 each for eating in Puerto Morelos village on
+      top of a room-only rate.
+      Judge the two properties on total outlay rather than on the lodging
+      line. The Fives came to $1,435 each once food and the transfer were
+      counted. Dreams Jade on the recommended build is $1,534 on the flexible
+      rate and $1,309 on the non-refundable one. So the flexible build is $99
+      each more than The Fives and buys a private room for every person, an
+      ocean view for every person, and no decisions about dinner.
 
 per_person:
-  both_legs: 2050      # 964 city + 1086 beach
+  both_legs: 2473      # 964 city + 1509 beach
   city_only: 964
   note: >
     These are what you owe Ryan, not what the trip costs you. Flights are
@@ -320,19 +355,20 @@ non_refundable_exposure:
       online until 14:30 on 1 January 2027. Inside that 24 hours, MX$2,000 per
       person applies to a cancellation, a no-show, a date change or a cut to
       the diner count, which is about $824 across seven.
-  - what: The Fives, flexible rate
+  - what: Dreams Jade, flexible rate
     terms: >
-      Nothing booked. On the flexible rate it refunds in full until
-      13 December 2026. The non-refundable rate is about $171 cheaper each
-      but refunds nothing from the moment it is booked.
-      The exposure here runs the other way from every other line on this
-      list. Not booking is what costs money. The discount is promotional and
-      has moved three times in a day, from roughly 18 percent to 32 to 35.
-      Booking the flexible rate locks a tier and still refunds in full.
+      Nothing booked. The flexible rate refunds in full; the exact deadline
+      is confirmed at booking rather than published on the search page, so
+      get it in writing. The non-refundable rate is $225 cheaper each and
+      refunds nothing from the moment it is taken.
+      Unlike every other line here, the exposure runs toward booking rather
+      than away from it. Four rooms over New Year week on the Riviera Maya is
+      the inventory everybody wants, and the build is still unpicked, so
+      flexible is what lets the group decide without paying for the delay.
 
 flag_for_solo_b: >
   One traveller flies home after Mexico City rather than continuing to the
-  beach. They owe $964 and none of the $1,086 beach line, and they book their
+  beach. They owe $964 and none of the $1,509 beach line, and they book their
   own flights like everybody else. Worth knowing before they ticket: the
   3 January Mexico City to Detroit nonstop was $1,893 one way when it was
   priced, while connections the same day ran $774 to $956.

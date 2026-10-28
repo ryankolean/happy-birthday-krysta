@@ -542,7 +542,7 @@ function buildIndex() {
 <div class="totals">
 ${tile('You owe Ryan, both legs', usd(budget.per_person.both_legs), 'Shared bookings only, for the 6 doing both legs.', true)}
 ${tile('Mexico City', usd(budget.cdmx.per_person), 'Your share of the house, Pujol and lucha libre.')}
-${tile('Riviera Maya', usd(budget.riviera.per_person), 'Your share of the residence and suite. Not booked yet.')}
+${tile('Riviera Maya', usd(budget.riviera.per_person), 'Your share of four all-inclusive rooms. Not booked yet.')}
 ${tile('Flights', 'Your own', 'Everybody books and pays for their own. No fare is in any figure here.')}
 </div>
 <p class="caveat">All figures are per person, and they are what you owe Ryan rather than what the trip costs you. Excludes ${esc(budget.excludes.join(', '))}. Peso figures converted at ${esc(trip.exchange_rate.range)} MXN/USD.</p>
@@ -569,11 +569,11 @@ ${tile('Flights', 'Your own', 'Everybody books and pays for their own. No fare i
 
   // lodging
   b += `<h2 id="lodging"><span class="num">02</span>Where we are staying</h2>
-<p class="lede">Mexico City is booked. The Fives is still only held in principle, verified on the resort's own engine.</p>`;
+<p class="lede">Mexico City is booked. Dreams Jade is priced live and not booked.</p>`;
 
-  const fives = lodging.properties.find((p) => p.id === 'fives');
+  const jade = lodging.properties.find((p) => p.id === 'jade');
   const casakm = lodging.cdmx_front_runner;
-  const fivesRec = fives.combinations.find((c) => c.recommended);
+  const jadeRec = jade.combinations.find((c) => c.recommended);
 
   b += `<div class="scroller"><table>
 <caption>Lodging is booked whole and split evenly. Both columns shown so the arithmetic is visible.</caption>
@@ -583,22 +583,22 @@ ${tile('Flights', 'Your own', 'Everybody books and pays for their own. No fare i
 <td><span class="tag ok">booked</span><br><small>${esc(iso(casakm.booked))}</small></td>
 <td class="n"><small>${usd(casakm.total_usd)}</small></td>
 <td class="n"><strong>${usd(casakm.per_person_usd)}</strong></td></tr>
-<tr><td><strong>${esc(fivesRec.label)}</strong><br><small>${esc(fives.name)}, ${fives.adults} adults as ${esc(fives.group_shape)}</small></td>
-<td>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}<br><small>${fives.nights} nights</small></td>
-<td><span class="tag estimate">not booked</span><br><small>repriced ${esc(iso(fives.repriced))}</small></td>
-<td class="n"><small>${usd(fivesRec.flexible_usd)}</small></td>
-<td class="n"><strong>${usd(fivesRec.flexible_per_person_usd)}</strong></td></tr>
+<tr><td><strong>${esc(jadeRec.label)}</strong><br><small>${esc(jade.name)}, ${jade.adults} adults as ${esc(jade.group_shape)}</small></td>
+<td>${esc(shortDate(jade.checkin))} to ${esc(shortDate(jade.checkout))}<br><small>${jade.nights} nights</small></td>
+<td><span class="tag estimate">not booked</span><br><small>repriced ${esc(iso(jade.repriced))}</small></td>
+<td class="n"><small>${usd(jadeRec.flexible_usd)}</small></td>
+<td class="n"><strong>${usd(jadeRec.flexible_per_person_usd)}</strong></td></tr>
 </tbody></table></div>`;
 
   b += `<p class="lede" style="margin-top:14px">Everywhere we might eat, drink or go is plotted on <a href="map.html">the map</a>, colour coded and with the walk from the house.</p>
 
 <h3>Beds at ${esc(casakm.name)}, so nobody is surprised</h3>
 <p>${casakm.bedrooms} bedrooms and ${casakm.baths} bathrooms: ${esc(casakm.bed_config.map((x) => x.bed).join(', ').toLowerCase())}, and every bedroom has its own full bathroom. ${nt(casakm.room_plan)} Checkout is ${esc(casakm.checkout_time)} and the rooftop is private.</p>
-<p><a href="${esc(casakm.url)}">View ${esc(casakm.name)}</a> &middot; <a href="${esc(fives.url)}">View The Fives</a> &middot; <a href="stays.html">Full booking details</a></p>
+<p><a href="${esc(casakm.url)}">View ${esc(casakm.name)}</a> &middot; <a href="${esc(jade.url)}">View Dreams Jade</a> &middot; <a href="stays.html">Full booking details</a></p>
 
 <div class="note warn">
   <div class="nh">Two things worth knowing</div>
-  <p><strong>The beach needs two units, not one.</strong> ${nt(fives.layout_problem)}</p>
+  <p><strong>The fourth room is the expensive decision, not the view.</strong> ${nt(jade.layout_problem)}</p>
   <p><strong>Mexico City is committed.</strong> ${esc(casakm.cancellation.actual)}. ${nt(casakm.cancellation.warning)}</p>
 </div>`;
 
@@ -722,7 +722,7 @@ function costRows(lines) {
 
 function buildCosts() {
   const r = budget.riviera;
-  const fives = lodging.properties.find((p) => p.id === 'fives');
+  const jade = lodging.properties.find((p) => p.id === 'jade');
   const f = budget.flights;
 
   const estTable = (caption, rows, total) => `<div class="scroller"><table>
@@ -792,12 +792,12 @@ ${estTable('Your own money, not money owed to Ryan. Shown so the week does not s
 </div>
 
 <h2>Riviera Maya</h2>
-<p class="lede">${esc(fives.name)}, ${r.travelers} people as ${esc(r.group_shape)}. Quoted live on the resort's own engine on ${esc(iso(fives.repriced))}, taxes included, nothing booked.</p>
+<p class="lede">${esc(jade.name)}, ${r.travelers} people as ${esc(r.group_shape)}. All-inclusive. Priced live on Booking.com on ${esc(iso(jade.repriced))} with 16% VAT added on top, nothing booked.</p>
 
 <div class="note warn">
-  <div class="nh">One residence does not sleep this group</div>
-  <p>${nt(fives.layout_problem)}</p>
-  <p>${nt(fives.layout_recommended)}</p>
+  <div class="nh">The fourth room costs more than the ocean view</div>
+  <p>${nt(jade.layout_problem)}</p>
+  <p>${nt(jade.layout_recommended)}</p>
 </div>
 
 <div class="scroller"><table>
@@ -807,33 +807,33 @@ ${estTable('Your own money, not money owed to Ryan. Shown so the week does not s
 <tr class="sum"><td colspan="2">Riviera Maya, what you owe Ryan</td><td class="n">${usd(r.per_person)}</td></tr>
 </tbody></table></div>
 
-<h3>The ${r.layout_options.length} layouts that work, priced</h3>
-<p>One residence on its own is cheaper than any of them, at ${usd(r.rejected_single_unit.flexible_total)} or ${usd(r.rejected_single_unit.flexible_per_person)} each, and it is not on this list. ${nt(r.rejected_single_unit.why_rejected)}</p>
+<h3>The ${r.layout_options.length} builds that work, priced</h3>
+<p>Every one of these gives all six a bed of their own with nobody on a sofa. They differ on how many rooms and how good a view, not on whether they work.</p>
 <div class="scroller"><table>
-<caption>Live ${esc(iso(fives.repriced))} for ${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}, accommodation only, taxes included. Split ${r.travelers} ways, per person in bold.</caption>
+<caption>Live ${esc(iso(jade.repriced))} for ${esc(shortDate(jade.checkin))} to ${esc(shortDate(jade.checkout))}, all-inclusive, 16% VAT added on top of the quoted price. Split ${r.travelers} ways, per person in bold.</caption>
 <thead><tr><th>Layout</th><th class="n">Non-refundable</th><th class="n">Each</th><th class="n">Flexible</th><th class="n">Each</th></tr></thead><tbody>
 ${r.layout_options.map((o) => `<tr${o.recommended ? ' class="pick"' : ''}><td><strong>${esc(o.label)}</strong><br><small>${esc(o.sleeps)}</small><br><small>${nt(o.verdict)}</small></td>
 <td class="n"><small>${usd(o.nonrefundable_total)}</small></td><td class="n">${usd(o.nonrefundable_per_person)}</td>
 <td class="n"><small>${usd(o.flexible_total)}</small></td><td class="n"><strong>${usd(o.flexible_per_person)}</strong></td></tr>`).join('')}
 </tbody></table></div>
-<p><strong>Flexible terms:</strong> ${esc(fives.flexible_terms)}. The non-refundable rate is cheaper but refunds nothing from the moment it is booked, and the layout is still undecided, so flexible is the call until it is not.</p>
+<p><strong>Flexible terms:</strong> ${esc(jade.flexible_terms)}. ${nt(jade.rate_choice.note)}</p>
 
-<div class="note">
-  <div class="nh">These dates got cheaper</div>
-  <p>${nt(fives.price_moved_in_our_favour)}</p>
+<div class="note warn">
+  <div class="nh">Never put a single in an ocean front room</div>
+  <p>${nt(r.single_occupancy_trap)}</p>
 </div>
 
 <div class="note warn">
-  <div class="nh">This price is borrowed, not owned</div>
-  <p>${nt(fives.discount_tiers.what_it_means)}</p>
+  <div class="nh">Booking quotes this property before tax</div>
+  <p>${nt(jade.tax_treatment.note)}</p>
 </div>
 
 <h3>What you will spend on the ground at the beach</h3>
 ${estTable('Your own money, not money owed to Ryan. Shown so the week does not surprise anybody.', r.estimates, r.estimates_per_person)}
 
 <div class="note">
-  <div class="nh">Room only or all inclusive</div>
-  <p>${nt(r.alternative_all_inclusive.note)}</p>
+  <div class="nh">Food is in the rate now</div>
+  <p>${nt(r.board_included.note)}</p>
 </div>
 
 <h2>Splitting it</h2>
@@ -880,23 +880,23 @@ function buildTasks() {
 // ---------- accommodations ----------
 
 function buildStays() {
-  const fives = lodging.properties.find((p) => p.id === 'fives');
+  const jade = lodging.properties.find((p) => p.id === 'jade');
   const casakm = lodging.cdmx_front_runner;
   const r = budget.riviera;
 
   const bullets = (arr) => `<ul>${arr.map((x) => `<li>${nt(x)}</li>`).join('')}</ul>`;
-  const rec = fives.combinations.find((c) => c.recommended);
+  const rec = jade.combinations.find((c) => c.recommended);
 
   let b = `<header class="masthead">
   <p class="eyebrow">Two places, and only two. Mexico City booked ${esc(iso(casakm.booked))}.</p>
   <h1>Where we are staying</h1>
   <div class="dateline">
     <div><b>Mexico City</b>${esc(shortDate(casakm.checkin))} to ${esc(shortDate(casakm.checkout))}, ${casakm.nights} nights</div>
-    <div><b>Riviera Maya</b>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}, ${fives.nights} nights</div>
+    <div><b>Riviera Maya</b>${esc(shortDate(jade.checkin))} to ${esc(shortDate(jade.checkout))}, ${jade.nights} nights</div>
   </div>
 </header>
 
-<p class="lede">Casa KM in Mexico City is booked and partly paid. The Fives in Puerto Morelos is priced live and not booked. Nothing else is under consideration, so nothing else is on this page.</p>
+<p class="lede">Casa KM in Mexico City is booked and partly paid. Dreams Jade in Puerto Morelos is priced live and not booked. Nothing else is under consideration, so nothing else is on this page.</p>
 
 <div class="scroller"><table>
 <caption>Booked whole and split evenly. Per person in bold.</caption>
@@ -905,9 +905,9 @@ function buildStays() {
 <td>${esc(shortDate(casakm.checkin))} to ${esc(shortDate(casakm.checkout))}<br><small>${casakm.nights} nights</small></td>
 <td>${casakm.guests} guests</td>
 <td class="n"><small>${usd(casakm.total_usd)}</small></td><td class="n"><strong>${usd(casakm.per_person_usd)}</strong></td></tr>
-<tr><td><strong>${esc(fives.name)}</strong><br><small>${esc(rec.label)} &middot; not booked</small></td>
-<td>${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}<br><small>${fives.nights} nights</small></td>
-<td>${fives.adults} adults</td>
+<tr><td><strong>${esc(jade.name)}</strong><br><small>${esc(rec.label)} &middot; not booked</small></td>
+<td>${esc(shortDate(jade.checkin))} to ${esc(shortDate(jade.checkout))}<br><small>${jade.nights} nights</small></td>
+<td>${jade.adults} adults</td>
 <td class="n"><small>${usd(rec.flexible_usd)}</small></td><td class="n"><strong>${usd(rec.flexible_per_person_usd)}</strong></td></tr>
 </tbody></table></div>
 
@@ -997,77 +997,90 @@ ${casakm.payment_schedule.map((x) => `<tr><td>${esc(longDate(x.date))}</td><td c
   <p>The ${esc(casakm.house_rules.quiet_hours)} quiet hours appeared only on the confirmation, not in the listing's rules summary. Midnight on New Year's Eve sits inside that window and the property has exterior cameras, so <a href="nye.html">the New Year's Eve plan</a> is provisional until the host agrees in writing.</p>
 </div>
 
-<h2><span class="num">03</span>${esc(fives.name)}<span class="tag estimate">not booked</span></h2>
-<p class="lede">Puerto Morelos, between Cancun and Playa del Carmen. ${fives.adults} of us, as ${esc(fives.group_shape)}. Repriced live on ${esc(iso(fives.repriced))}.</p>
+<h2><span class="num">03</span>${esc(jade.name)}<span class="tag estimate">not booked</span></h2>
+<p class="lede">Puerto Morelos, between Cancun and Playa del Carmen. ${jade.adults} of us, as ${esc(jade.group_shape)}. All-inclusive, scored ${jade.review_score} on ${jade.review_count} reviews. Repriced live on ${esc(iso(jade.repriced))}.</p>
 
-<p><a class="bigline" href="${esc(fives.url)}">Open the resort site</a></p>
+<p><a class="bigline" href="${esc(jade.url)}">Open the listing</a></p>
+
+<div class="note">
+  <div class="nh">Why here instead of The Fives</div>
+  <p>${nt(jade.why_this_property)}</p>
+</div>
 
 <div class="note warn">
-  <div class="nh">One residence does not sleep this group</div>
-  <p>${nt(fives.layout_problem)}</p>
-  <p><strong>${nt(fives.layout_recommended)}</strong></p>
+  <div class="nh">The fourth room costs more than the ocean view</div>
+  <p>${nt(jade.layout_problem)}</p>
+  <p><strong>${nt(jade.layout_recommended)}</strong></p>
 </div>
 
 <h3>Every way six adults can sleep here without sharing a bed</h3>
-<p>${nt(fives.rejected_single_unit.why_rejected)} So the ${fives.combinations.length} layouts below all buy one extra unit, and they are what the choice actually is.</p>
+<p>All ${jade.combinations.length} builds below give each person a bed of their own with nobody on a sofa. They differ on how many rooms we take and how good the view is.</p>
 <div class="scroller"><table>
-<caption>Live ${esc(iso(fives.repriced))}, ${esc(shortDate(fives.checkin))} to ${esc(shortDate(fives.checkout))}, accommodation only, taxes included. Split ${fives.adults} ways, per person in bold.</caption>
+<caption>Live ${esc(iso(jade.repriced))}, ${esc(shortDate(jade.checkin))} to ${esc(shortDate(jade.checkout))}, all-inclusive, 16% VAT added on top of the quoted price. Split ${jade.adults} ways, per person in bold.</caption>
 <thead><tr><th>Layout</th><th>Who sleeps where</th><th class="n">Non-refundable</th><th class="n">Each</th><th class="n">Flexible</th><th class="n">Each</th></tr></thead><tbody>
-${fives.combinations.map((c) => `<tr${c.recommended ? ' class="pick"' : ''}><td><strong>${esc(c.label)}</strong><br><small>${c.units} unit${c.units > 1 ? 's' : ''}</small></td>
-<td><small>${esc(c.sleeps)}</small></td>
+${jade.combinations.map((c) => `<tr${c.recommended ? ' class="pick"' : ''}><td><strong>${esc(c.label)}</strong><br><small>${c.units} unit${c.units > 1 ? 's' : ''}</small></td>
+<td><small>${esc(c.rooms_detail)}</small><br><small>${nt(c.sleeps)}</small></td>
 <td class="n"><small>${usd(c.nonrefundable_usd)}</small></td><td class="n">${usd(c.nonrefundable_per_person_usd)}</td>
 <td class="n"><small>${usd(c.flexible_usd)}</small></td><td class="n"><strong>${usd(c.flexible_per_person_usd)}</strong></td></tr>`).join('')}
 </tbody></table></div>
-<p><strong>Recommended: ${esc(rec.label)} on the flexible rate, ${usd(rec.flexible_per_person_usd)} each.</strong> ${esc(fives.flexible_terms)}. A further ${fives.loyalty_discount.percent}% comes off through their loyalty programme, which ${nt(fives.loyalty_discount.note)}</p>
+<p><strong>Recommended: ${esc(rec.label)} on the flexible rate, ${usd(rec.flexible_per_person_usd)} each.</strong> ${nt(jade.recommendation_note)}</p>
 
-<div class="note">
-  <div class="nh">These dates got cheaper</div>
-  <p>${nt(fives.price_moved_in_our_favour)}</p>
+<div class="note warn">
+  <div class="nh">Never put a single in an ocean front room</div>
+  <p>${nt(jade.single_occupancy_rule.note)}</p>
 </div>
 
 <div class="note warn">
-  <div class="nh">This price is borrowed, not owned</div>
-  <p>${nt(fives.discount_tiers.what_it_means)}</p>
+  <div class="nh">Booking quotes this property before tax</div>
+  <p>${nt(jade.tax_treatment.note)}</p>
 </div>
-
-<h3>Every unit available on these dates</h3>
-<div class="scroller"><table>
-<caption>The whole-unit price does not change with headcount. Only the all-inclusive supplement does. Flexible figures marked with an asterisk are derived from the rack rate at the same 20 percent the engine applied to the residence, because it only prints a flexible price once a room is selected.</caption>
-<thead><tr><th>Unit</th><th>Beds</th><th class="n">Size</th><th class="n">Non-refundable</th><th class="n">Flexible</th></tr></thead><tbody>
-${fives.room_catalogue.map((c) => `<tr><td><strong>${esc(c.name)}</strong><br><small>up to ${c.max_adults} adults</small></td>
-<td><small>${esc(c.beds)}</small></td>
-<td class="n"><small>${c.size_sqft} sq ft</small></td>
-<td class="n">${usd(c.nonrefundable_usd)}</td>
-<td class="n">${usd(c.flexible_usd)}${c.flexible_derived ? '*' : ''}</td></tr>`).join('')}
-</tbody></table></div>
 
 <div class="note">
-  <div class="nh">There is a three bedroom, and we cannot buy it</div>
-  <p>${nt(fives.three_bedroom_not_available)}</p>
+  <div class="nh">Preferred Club, and a pricing quirk worth knowing</div>
+  <p>${nt(jade.preferred_club.what)}</p>
+  <p>${nt(jade.preferred_club.pricing_quirk)}</p>
 </div>
+
+<h3>Every room available on these dates</h3>
+<div class="scroller"><table>
+<caption>Per room for all ${jade.nights} nights, 16% VAT added on top of the price Booking displays. The single column is the one-adult rate for the same room: 80 percent on the four cheapest types and 100 percent on everything above them.</caption>
+<thead><tr><th>Room</th><th>Beds</th><th class="n">Two people</th><th class="n">Flexible</th><th class="n">One person</th></tr></thead><tbody>
+${jade.room_catalogue.map((c) => `<tr><td><strong>${esc(c.name)}</strong><br><small>up to ${c.max_adults} adults</small></td>
+<td><small>${esc(c.beds)}</small></td>
+<td class="n">${usd(c.nonrefundable.all_in_usd)}</td>
+<td class="n"><small>${usd(c.flexible.all_in_usd)}</small></td>
+<td class="n">${c.single_nonrefundable ? usd(c.single_nonrefundable.all_in_usd) + (c.single_discount_percent ? '' : ' <small>(no discount)</small>') : '<small>n/a</small>'}</td></tr>`).join('')}
+</tbody></table></div>
 
 <div class="scroller"><table><tbody>
-<tr><th>Check in</th><td>${esc(longDate(fives.checkin))}, from ${esc(fives.checkin_time)}</td></tr>
-<tr><th>Check out</th><td>${esc(longDate(fives.checkout))}, before ${esc(fives.checkout_time)}</td></tr>
-<tr><th>Nights</th><td>${fives.nights}</td></tr>
-<tr><th>Guests</th><td>${fives.adults} adults, as ${esc(fives.group_shape)}</td></tr>
-<tr><th>Reservations</th><td>${esc(fives.contact.email)}<br>US and Canada ${esc(fives.contact.us_can)}<br>Direct ${esc(fives.contact.direct)}</td></tr>
+<tr><th>Check in</th><td>${esc(longDate(jade.checkin))}, from ${esc(jade.checkin_time)}</td></tr>
+<tr><th>Check out</th><td>${esc(longDate(jade.checkout))}, before ${esc(jade.checkout_time)}</td></tr>
+<tr><th>Nights</th><td>${jade.nights}</td></tr>
+<tr><th>Guests</th><td>${jade.adults} adults, as ${esc(jade.group_shape)}</td></tr>
+<tr><th>Board</th><td>${esc(jade.board)}</td></tr>
+<tr><th>Reservations</th><td>Hyatt Inclusive Collection ${esc(jade.contact.hyatt_inclusive_us)}<br>Resort direct ${esc(jade.contact.resort_direct)}</td></tr>
 </tbody></table></div>
 
 <div class="note">
-  <div class="nh">Room only or all inclusive</div>
-  <p>${nt(r.alternative_all_inclusive.note)}</p>
+  <div class="nh">Food is in the rate now</div>
+  <p>${nt(r.board_included.note)}</p>
+</div>
+
+<div class="note">
+  <div class="nh">Four rooms is not a group, and there is a better lever</div>
+  <p>${nt(jade.group_booking)}</p>
+  <p>${nt(jade.hyatt_prive.what)} ${nt(jade.hyatt_prive.caution)}</p>
 </div>
 
 <h3>Why 3 January and not earlier</h3>
-${bullets(fives.why_jan_3)}
+<p>${nt(jade.why_jan_3)}</p>
 
-<h3>Confirmed, so nobody has to ask again</h3>
-${bullets(fives.no_traps_confirmed)}
+<h3>Ask these on the call</h3>
+${bullets(jade.ask_on_the_call)}
 
 <div class="note warn">
   <div class="nh">Still open before booking</div>
-  ${bullets(fives.open)}
+  ${bullets(jade.open)}
 </div>
 
 <div class="note">
