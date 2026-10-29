@@ -1003,7 +1003,7 @@ ${casakm.payment_schedule.map((x) => `<tr><td>${esc(longDate(x.date))}</td><td c
 <p><a class="bigline" href="${esc(jade.url)}">Open the listing</a></p>
 
 <div class="note">
-  <div class="nh">Why here instead of The Fives</div>
+  <div class="nh">Why a resort and not a residence</div>
   <p>${nt(jade.why_this_property)}</p>
 </div>
 

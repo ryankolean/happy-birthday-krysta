@@ -2,11 +2,11 @@
 
 What was decided, and what it beat. Newest first.
 
-## Dreams Jade replaces The Fives, 28 October 2026
+## Dreams Jade for the beach leg, 28 October 2026
 
-**Decided.** The beach leg moves to [Dreams Jade Resort & Spa](https://www.booking.com/hotel/mx/now-jade-riviera-cancun.html) in Puerto Morelos, all-inclusive, four rooms. Same town, same dates, a different kind of stay.
+**Decided.** The beach leg is [Dreams Jade Resort & Spa](https://www.booking.com/hotel/mx/now-jade-riviera-cancun.html) in Puerto Morelos, all-inclusive, four rooms.
 
-**What was wrong with The Fives.** It was one residence split between six people, room only, and the arithmetic only ever worked by arguing about who got which bedroom. Every layout on that property was a negotiation. Dreams Jade is a conventional resort: each pair gets a room with a door, the board covers food and drink, and the two singles can have their own rooms without anybody giving something up.
+**Why a resort rather than a residence.** A single large unit split between six people only ever works by arguing about who gets which bedroom, and somebody always ends up on a sofa bed. Dreams Jade is a conventional resort: each pair gets a room with a door, the board covers food and drink, and the two singles can have their own rooms without anybody giving something up.
 
 **The decision that actually costs money is the fourth room, not the ocean view.** This was the opposite of how it looked going in.
 
@@ -37,29 +37,28 @@ Every build that works, all priced live on 28 October, 16% VAT added on top of w
 
 **The single-occupancy trap, which drives the whole build.** Dreams Jade discounts a solo traveller to 80 percent of the two-person rate on its four cheapest room types and to 100 percent of it on everything above them. From Preferred Club Tropical View upward, including every Ocean Front and every Preferred Club room, one person pays the full two-person price for a guest who is not there. So the singles go in an Ocean View room or below, always. Verified at one adult and at six adults across four rooms.
 
-**Booking quotes this property before tax, which is the inverse of the last one.** The listing prints "Included: City tax" and "Excluded: 16% VAT", so every figure here is the displayed price times 1.16. The Fives quoted tax-inclusive and earlier planning wrongly grossed those up, overstating the beach by about $250 each. The lesson is not "never gross up", it is **check which way round a quote is before doing arithmetic on it**.
+**Booking quotes this property before tax.** The listing prints "Included: City tax" and "Excluded: 16% VAT", so every figure here is the displayed price times 1.16. An earlier beach quote on this trip ran the other way, already tax-inclusive, and was grossed up anyway, overstating the lodging by about $250 each. The lesson is not "always gross up" or "never", it is **check which way round a quote is before doing arithmetic on it**.
 
-**The headline number went up and the real outlay barely moved.** The beach line goes from $1,086 to $1,509 and both legs from $2,050 to $2,473. That comparison is misleading on its own, because The Fives was room only and carried a separate $324 food estimate. Counting everything:
+**The beach line is $1,509 and both legs $2,473.** The previous beach figure looked lower, but it was room only and carried a separate $324 food estimate on top. All-inclusive absorbs that, so the lodging line and the real outlay are now the same number:
 
 | | Lodging | Food | Transfer | Total outlay |
 |---|---|---|---|---|
-| The Fives, flexible | $1,086 | $324 | $25 | $1,435 |
 | Dreams Jade, flexible | $1,509 | included | $25 | $1,534 |
 | Dreams Jade, non-refundable | $1,284 | included | $25 | $1,309 |
 
-So the recommended build is **$99 each more than The Fives** and buys a private room for every person, an ocean view for every person, and no decisions about dinner. On the non-refundable rate it is $126 each **less**.
+Against the old room-only plan at $1,435 all in, the recommended build is **$99 each more on the flexible rate and $126 each less on the non-refundable one**, and either buys a private room and an ocean view for every person plus no decisions about dinner.
 
 **Flexible for now.** It costs $225 each more than non-refundable. The build is not settled, nothing is booked and the trip is fourteen months out, so flexible is what lets the group decide without paying for the delay. Switch once the build is agreed.
 
 **Four rooms is not a group.** Hyatt Inclusive Collection group desks start at ten rooms, so there is no group rate being withheld and nothing to negotiate on that front. The real lever is **Hyatt Privé**, Hyatt's advisor-only program: Dreams is in it, five nights clears its four-night minimum, and it reportedly adds a property credit of roughly $100 per stay plus a confirmed room upgrade at the same rate as Hyatt's public flexible price. Every source for that is an agency blog rather than Hyatt, so it needs confirming in writing.
 
-**What was rejected.** Dreams Sapphire, on layout. Iberostar Selection Riviera Cancun at $930 each was cheaper and better rated at 8.5, but its two-bed room is a Junior Suite with twin beds rather than a room type of its own. Riu Palace Riviera Maya at $1,241 scored 9.0 and stayed in contention to the end. Ocean Maya Royale was disqualified outright: no two-bed room exists anywhere in its inventory. Barcelo Maya Colonial and Iberostar Waves Quetzal sell only two-queen rooms, so the couples lose a king. The full comparison is on the Jira TRAVEL board.
+**What it beat.** Dreams Sapphire, on layout. Iberostar Selection Riviera Cancun at $930 each was cheaper and better rated at 8.5, but its two-bed room is a Junior Suite with twin beds rather than a room type of its own. Riu Palace Riviera Maya at $1,241 scored 9.0 and stayed in contention to the end. Ocean Maya Royale was disqualified outright: no two-bed room exists anywhere in its inventory. Barcelo Maya Colonial and Iberostar Waves Quetzal sell only two-queen rooms, so the couples lose a king. The full comparison is on the Jira TRAVEL board.
 
 **Hyatt's own site could not be priced.** hyatt.com and hyattinclusivecollection.com return HTTP 429 to automated access, so the Booking.com rates are the benchmark and nobody has checked whether booking direct beats them. That is an open question, not a settled one.
 
 ## Five changes to how the site reads money, 27 October 2026
 
-**Flights come out of every total.** Everybody books and pays for their own. No fare appears in any per-person figure on the site now, and the four fares that remain are labelled as reference points priced on 25 September. What replaced the old totals is a cleaner question: **what you owe Ryan**, which is the shared bookings he fronted on one card. That is $964 for Mexico City and $1,143 for the beach.
+**Flights come out of every total.** Everybody books and pays for their own. No fare appears in any per-person figure on the site now, and the four fares that remain are labelled as reference points priced on 25 September. What replaced the old totals is a cleaner question: **what you owe Ryan**, which is the shared bookings he fronted on one card. That was $964 for Mexico City and $1,143 for the beach at the time; the beach figure has since moved to $1,509 with the change of property.
 
 **The one flight that still wants coordinating is Mexico City to Cancun on 3 January.** Everybody continuing to the beach is on it, and being on one aircraft means one arrival and one transfer rather than six people trickling in. Aeromexico runs it hourly at a flat fare, so the departure time is a group decision rather than a price one.
 
@@ -68,58 +67,6 @@ So the recommended build is **$99 each more than The Fives** and buys a private 
 **New Year's Eve costs nothing.** The $324 placeholder was the St. Regis gala price and was never anybody's plan. The plan is to eat in at Casa KM with everybody bringing something to share, or to walk out to whatever is open. The line stays at zero.
 
 **The balloon is shelved rather than deferred.** It came off the itinerary on 23 October and was still being carried as a blocked task with a live page. Both are gone. The research moved to `docs/archive/balloon.md`, which is not built and does not appear on the site. Nothing was ever committed and all four operators refunded in full to one day before, so nothing was lost. It supersedes the sunrise balloon decision further down this log.
-
-## The singles get the best room, not the worst, 27 October 2026
-
-**This corrects the recommendation made earlier today.** The Two Bedroom Oceanview Residence was being read as having three beds. It has four sleeping surfaces, and the difference changes who should sleep where.
-
-The engine's own description settles it: the unit gives you **all the features of a One Bedroom Partial Oceanview Residence** plus **a second bedroom with two queen-size beds, a balcony, and a private bathroom**. The One Bedroom layout carries a king and a **double sofa bed in the living room**. So the full unit is king, two queens, and a sofa bed. Maximum six adults, which it only reaches by using that sofa bed.
-
-**That means one unit always puts two people in the living room,** whoever they are. It is one bed short, not three, and one extra small unit fixes it.
-
-**The earlier plan had the allocation backwards.** It put the two singles in the Junior Suite, where one of them takes its sofa bed, and gave the residence's second bedroom to a couple who did not need two queen beds. For exactly the same two units and exactly the same money, the right arrangement is the reverse: **the singles take the second bedroom**, a queen each, with their own bathroom and their own balcony, and the second couple takes the Junior Suite. It is the best room on the property for two people travelling alone and it was being handed to the wrong people.
-
-**Decided: Two Bedroom Oceanview Residence plus a Junior Suite, flexible, $6,513, $1,086 each.** Nobody sleeps in a living room and nobody shares a bed.
-
-What it beat, all priced live the same day and all split six ways:
-
-| Layout | Flexible | Each | What it buys |
-|---|---|---|---|
-| **Residence + Junior Suite** | **$6,513** | **$1,086** | the recommendation |
-| Residence + One Bedroom Oceanview | $7,296 | $1,216 | 226 more sq ft for one couple, nothing for the singles |
-| Four Junior Suites | $8,004 | $1,334 | a private suite each, but no shared living room at all |
-| Residence + two Junior Suites | $8,514 | $1,419 | a private suite per single, keeps one big living room |
-| Two Two Bedroom Residences | $9,024 | $1,504 | a whole second bedroom per single, two living rooms |
-
-**On "should we just take two two bedrooms":** it works, and it is the most comfortable thing on the list, but it is also the most expensive at **$418 each above the recommendation**. Confirmed on the engine that a second Two Bedroom Oceanview is still offered once the first is held, so it is genuinely bookable, it just costs the most.
-
-**One unit alone was rejected rather than priced as an option.** At $4,512 flexible, $752 each, it is much the cheapest thing available and it is exactly the arrangement this decision exists to avoid: two adults on a sofa bed with no door for five nights, and a shared living room that stops being shared.
-
-**The rate moved again while this was being worked out.** The same search that returned 32 percent off in the morning returned 35 percent a couple of hours later, with flexible going from 20 to 24 percent. The residence fell from $4,749 to $4,512. Three tiers in one day, all moving our way. The recommended layout now costs **$57 per person less** than the single shared-bed arrangement did when it was budgeted this morning, so fixing the sleeping problem has cost nothing at all.
-
-## The Fives discount is promotional, and worth about $199 each, 27 October 2026
-
-**Reconciled against Ryan's own screenshot of the booking engine.** His figures came back uniformly about **20 percent higher** than the engine returns today, across all six unit types and all six all-inclusive supplements. That is too consistent to be noise.
-
-**It is not headcount.** His search was for 2 adults and the beach pricing on this site is built on 6. Re-ran his exact search, two adults for the same dates, and got today's lower numbers back. The engine prices a unit identically at 2, 4 and 6 adults; only the all-inclusive supplement moves with heads. Confirmed three times now.
-
-**It is the discount tier.** The rack rates match his screenshot exactly, which is what makes the comparison safe. His prices divide out to roughly **0.82 of rack** against today's **0.68**, consistently to within a few dollars on every line. Two tiers exist for these dates, roughly 18 percent and 32 percent, and the deeper one is live now. A Black Friday badge is running on the operator's own site, which is the likeliest explanation. No end date is published anywhere visible.
-
-**What it is worth.** If the rate lapses back to the shallower tier, the recommended two unit layout goes from **$5,827 to about $7,023** non-refundable, roughly **$199 more per person**. The residence on its own goes from $4,037 to about $4,859, about $137 more each.
-
-**So the exposure on this line runs backwards from every other booking on the trip.** Everywhere else, committing early is what costs money. Here, not committing is. The flexible rate refunds in full until 13 December, so booking it now locks the discount and keeps the option to walk. The layout decision costs nothing to make early and about $199 each to make late.
-
-## The beach needs two units, not one, 27 October 2026
-
-**The Two Bedroom Oceanview Residence cannot sleep this group.** It has three beds: a king and two queens. Six adults as two couples and two singles means one couple on the king, one couple on a queen, and **the two singles sharing the remaining queen**. The resort's engine accepts the booking. Nobody would enjoy the week.
-
-**Decided: the residence for the two couples, plus a Junior Suite for the two singles.** The Junior Suite has a king and a double sofa bed, so each single gets their own bed. It is the cheapest combination on the property in which nobody shares a bed. **$6,855 on the flexible rate, $1,143 each**, against $792 each for the single residence.
-
-What it beat: the residence plus a One Bedroom Oceanview Residence at $1,280 each, which costs $137 more and still leaves one single on a living room sofa bed. And the residence on its own at $792, which is only cheaper because it does not solve the problem.
-
-**The timing is lucky.** These dates have fallen since they were last checked on 2 October. The residence was $4,525 non-refundable and $5,323 flexible; it is now $4,037 and $4,749. The residence alone dropped $574 on the flexible rate, which is most of what the Junior Suite costs. Fixing the sleeping arrangement is affordable now in a way it was not three weeks ago.
-
-**One thing left to ask.** The property publishes a **Three Bedroom Oceanfront Residence** that would solve this in a single unit. It does not appear in the engine for these dates at any headcount, so it is either sold out or not sold online. Worth one email before committing to two units.
 
 ## Four excursions dropped from the beach leg, 27 October 2026
 
@@ -183,7 +130,7 @@ Three consequences, in order of how much they cost:
 
 **The bed configuration constraint loosened, which reopens cheaper options.** Three couples plus one single required three double beds in three separate rooms. Two couples plus two singles needs only two double beds, because the singles will take any room with any bed. Listings previously rejected for having twin-bed rooms now qualify. Re-searching at six found several that undercut Casa KM sharply, the cheapest a four bedroom, three bathroom flat in Anzures at **$307 each** with 4.86 from 187 reviews, against Casa KM's $491. Casa KM is still the pick on bathrooms and review record; it is no longer the pick on price.
 
-**Resolved 19 October: the beach leg stays at six.** The person who dropped was one of those flying home after Mexico City rather than a beach traveller, so every Riviera Maya figure stands and The Fives residence still splits six ways. The knock-on is that **only one person now leaves after Mexico City instead of two**, which halves the group that needs the cheaper 3 January connection out of MEX.
+**Resolved 19 October: the beach leg stays at six.** The person who dropped was one of those flying home after Mexico City rather than a beach traveller, so every Riviera Maya figure stands and the beach lodging still splits six ways. The knock-on is that **only one person now leaves after Mexico City instead of two**, which halves the group that needs the cheaper 3 January connection out of MEX.
 
 ## Casa KM over the Oasis, and the group drops to 7 in one house
 
@@ -203,13 +150,9 @@ One alternative stays on the table: the **Coolest flat in Condesa** at $4,724, *
 
 **Decided.** Mexico City for New Year's Eve and the birthday, then Puerto Morelos to decompress. Both anchors happen in the city, so the beach leg carries no scheduling pressure.
 
-## The Fives Oceanfront over The Fives Beach
-
-**Decided, against the price.** The Fives Beach Hotel and Residences priced lower, at $6,434 for the whole unit all-inclusive for a true 3BR with 3 baths, and it had 3BR inventory for the exact dates while the Oceanfront's 3BR was sold out. Chose the Oceanfront anyway for the boutique character and the walkable village. Worth knowing the decision cost money rather than saved it.
-
 ## Beach leg arrives 3 January, not 29 December
 
-**Decided, and the dates are load bearing.** The Fives runs a holiday rate band from 24 December 2026 to 2 January 2027, with the next band starting exactly 3 January. The identical unit is **$7,895** for 29 December to 3 January versus **$4,990** for 3 to 8 January, both whole-unit prices. A stay that includes 2 January has no all-inclusive board available at all.
+**Decided, and the dates are load bearing.** Riviera Maya resorts run a holiday rate band that ends on 2 January, with the next band starting exactly 3 January. When this was priced the same unit came to **$7,895** for 29 December to 3 January against **$4,990** for 3 to 8 January, and a stay including 2 January could not be sold with all-inclusive board at all. The property has changed since. The rate band has not.
 
 ## Oasis 6BR over five boutique hotel rooms
 
@@ -253,16 +196,11 @@ Driven by the street closures rather than by cost: Reforma shuts in both directi
 
 **Settled 2 October 2026.** It caps at **6** in the main dining room and 1 to 3 at the kitchen counter, and it explicitly asks guests not to book multiple tables intending to be seated together. Earlier notes had this as disputed because every scrape of its Tock page returned a Cloudflare interstitial. It is not disputed.
 
-## The Fives quotes include tax
+## Always check which way round a beach quote runs on tax
 
-**Settled 2 October 2026.** Two research passes had contradicted each other on this, and the gross-up won. It was wrong.
+**Settled 2 October 2026, and it cuts both ways.** An earlier beach quote on this trip was already tax-inclusive, and two research passes had contradicted each other about it. The gross-up won and it was wrong, overstating the lodging line by about 17 percent, roughly $250 each.
 
-The rate-selection page prints the breakdown directly: subtotal $3,739, VAT 21% $785, **total $4,525, taxes included**. Every beach figure that had been grossed up by 21% was overstated by about 17%, roughly $250 each on the lodging line.
+Worth remembering why that error survived: a Booking.com figure agreed with the grossed-up total to within 0.8 percent, which looked like independent corroboration. It was not. The arithmetic was fine and the interpretation was wrong, and matching numbers cannot tell those apart.
 
-Worth remembering why the error survived: a Booking.com figure agreed with the grossed-up total to within 0.8 percent, which looked like independent corroboration. It was not. The arithmetic was fine and the interpretation was wrong, and matching numbers cannot tell those apart.
+**The current property goes the other way.** Booking quotes Dreams Jade pre-tax, printing "Included: City tax" and "Excluded: 16% VAT", so every beach figure on this site is the displayed price times 1.16. The room catalogue stores both numbers and the verification script asserts the relationship on every rate row, so the mistake cannot now be made silently in either direction.
 
-## Room-only over all-inclusive at the beach, narrowly
-
-**Recommended, not locked.** At the current 32 percent discount, all-inclusive is **$84.30 per adult per night**, so full board costs only **$98 more each** than room-only plus eating in the village. That gap used to be $239 each.
-
-Break-even is about $19.57 per adult per day, roughly two resort cocktails. The full arithmetic is on [the costs page](costs.html). Room-only still wins on the merits, because the village is a 16 minute walk with 19 restaurants inside a kilometre and the resort has three on-site venues with documented closure problems. But it is close enough now that the group should be asked rather than told.

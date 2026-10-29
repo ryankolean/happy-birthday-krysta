@@ -26,7 +26,7 @@ Copy this to `private/bookings.md`, which is gitignored. Nothing below belongs i
 | Property | Confirmation | Exact address | Door or lock code | Host contact | Card used |
 |---|---|---|---|---|---|
 | Oasis 6BR | | | | | |
-| The Fives | | | | | |
+| Dreams Jade | | | | | |
 
 ## Reservations
 | What | Date | Confirmation | Deposit paid | Cancellation deadline |

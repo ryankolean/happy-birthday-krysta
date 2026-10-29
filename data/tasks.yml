@@ -77,6 +77,9 @@ dated:
       Hyatt Inclusive Collection +1 800 597 4761. The resort direct number on
       file came from a trade directory and is unverified, so use the Hyatt
       line first. Do not ask for a group rate: those start at ten rooms.
+      Bring the numbers back here afterwards. Everything on the costs page is
+      a Booking.com price seen on 28 October rather than a quote given to us,
+      and the whole beach leg reprices on whatever the call returns.
 
   - id: pujol-dietary
     title: Collect dietary restrictions for Pujol and send them in
@@ -251,14 +254,14 @@ done:
     title: Verify both properties still available
     detail: Checked 2026-10-02 on the operators' own engines. Both open.
 
-  - id: resolve-fives-tax
-    title: Settle whether Fives quotes include tax
+  - id: resolve-beach-tax-direction
+    title: Settle which way round the beach quotes run on tax
     detail: >
-      They did, and The Fives is no longer the property. Kept because the
-      lesson generalises and the new property goes the other way: Booking
-      quotes Dreams Jade before tax and every figure on the costs page has
-      16% VAT added on top. Check which way round a quote is before doing
-      arithmetic on it.
+      Both directions have now been seen on this trip. An earlier quote was
+      already tax-inclusive and was wrongly grossed up, overstating the
+      lodging by about $250 each. Booking quotes Dreams Jade the other way,
+      before tax, so every figure on the costs page has 16% VAT added on top.
+      Check which way round a quote is before doing arithmetic on it.
 
   - id: resolve-quintonil
     title: Settle whether Quintonil can seat 8

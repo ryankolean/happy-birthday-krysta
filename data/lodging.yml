@@ -26,12 +26,12 @@ properties:
       The Booking.com slug is the resort's old name, Now Jade Riviera Cancun.
       It is the same property. Hyatt rebranded it to Dreams Jade.
 
-    # Replaces The Fives, chosen 28 October 2026. See docs/decisions.md.
+    # Chosen 28 October 2026. See docs/decisions.md.
     why_this_property: >
-      The Fives was a residence split between six people, room only, with
-      somebody always at risk of the sofa bed. Dreams Jade is a conventional
-      resort: every pair gets a room with a door, the board is all-inclusive
-      so the food estimate disappears, and the two singles can have their own
+      A single large residence split between six people only works by arguing
+      over who takes the sofa bed. Dreams Jade is a conventional resort:
+      every pair gets a room with a door, the board is all-inclusive so there
+      is no food estimate to carry, and the two singles can have their own
       rooms without anybody negotiating over a living room.
 
     # THE TRAP ON THIS PROPERTY. Read before touching any number here.
@@ -47,10 +47,10 @@ properties:
         combinations therefore carries both numbers: quoted_usd is what
         Booking displays, all_in_usd is that times 1.16. Combinations and the
         budget use all_in only.
-        This is the exact inverse of the mistake made on The Fives, where
-        engine quotes already included tax and earlier planning grossed them
-        up anyway. Here they do not include it and they must be grossed up.
-        Check which way round a quote is before doing arithmetic on it.
+        An earlier beach quote on this trip ran the other way, already
+        tax-inclusive, and was grossed up anyway, overstating the lodging by
+        about $250 each. Here the tax is genuinely excluded and must be
+        added. Check which way round a quote is before doing arithmetic.
 
     # The single biggest lever on this property.
     single_occupancy_rule:
