@@ -313,5 +313,45 @@
     "lat": 19.4175166,
     "lon": -99.1595904,
     "matched": "Calle Orizaba, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Avenida Tamaulipas 39, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico": {
+    "lat": 19.4130941,
+    "lon": -99.1728629,
+    "matched": "39, Avenida Tamaulipas, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06140, Mexico"
+  },
+  "Plaza Popocatepetl 35, Hipodromo Condesa, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4151261,
+    "lon": -99.1676705,
+    "matched": "35, Plaza Popocatépetl, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+  },
+  "Gobernador Ignacio Esteva 35, San Miguel Chapultepec, Miguel Hidalgo, 11850 Ciudad de Mexico": {
+    "lat": 19.4114371,
+    "lon": -99.1889719,
+    "matched": "Calle Gobernador Ignacio Esteva, San Miguel Chapultepec 1ª Sección, San Miguel Chapultepec, Mexico City, Miguel Hidalgo, Mexico City, 11850, Mexico"
+  },
+  "Aguayo 7, Coyoacan, Ciudad de Mexico": {
+    "lat": 19.3538187,
+    "lon": -99.1632128,
+    "matched": "Calle Aguayo, Colonia Del Carmen, Coyoacán, Mexico City, Coyoacán, Mexico City, 04100, Mexico"
+  },
+  "Medellin 78, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico": {
+    "lat": 19.4181693,
+    "lon": -99.1659482,
+    "matched": "78, Avenida Medellín, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Rio Panuco 215, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4303826,
+    "lon": -99.1681137,
+    "matched": "Calle Río Pánuco, Cuauhtémoc, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06500, Mexico"
+  },
+  "Avenida Amsterdam 264, Condesa, Cuauhtemoc, 06100 Ciudad de Mexico": {
+    "lat": 19.4120072,
+    "lon": -99.1676607,
+    "matched": "Amsterdam Dosseiscuatro, 264, Avenida Amsterdam, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+  },
+  "Durango 342, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico": {
+    "lat": 19.4181187,
+    "lon": -99.1736556,
+    "matched": "342, Calle Durango, Roma Norte, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
   }
 }

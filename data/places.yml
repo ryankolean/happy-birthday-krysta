@@ -306,8 +306,11 @@ places:
     category: casual
     address: Panaderia Rosetta, Colima 179, Roma Norte, Ciudad de Mexico
     neighborhood: Roma Norte
-    note: The bakery arm of Rosetta. Guava roll is the thing.
-    source: instagram @thatonepointofview
+    note: >
+      The bakery arm of Rosetta. Guava roll is the thing. Named again by two
+      more reels, one calling it the best bakery in the city. One of those two
+      was unconvinced by the guava pastries, so it is not unanimous.
+    source: instagram @thatonepointofview, @thecaroandtina, @stepbysteph.traveltips
 
   - name: Jenni's Quesadillas
     category: casual
@@ -318,8 +321,11 @@ places:
     category: casual
     address: Mi Compa Chava, Roma Norte, Ciudad de Mexico
     neighborhood: Roma Norte
-    note: Sinaloan seafood. Was already on Krysta's own list.
-    source: instagram @thatonepointofview, @itsalanbarr
+    note: >
+      Sinaloan seafood. Was already on Krysta's own list. A third poster called
+      it the best stop of their whole trip, for the seafood tower, the aguachiles
+      and the tuna tostada.
+    source: instagram @thatonepointofview, @itsalanbarr, @thecaroandtina
 
   - name: De Huevos
     category: casual
@@ -358,8 +364,11 @@ places:
     category: casual
     address: Eje Central Lazaro Cardenas 42, Centro, Cuauhtemoc, 06000 Ciudad de Mexico
     neighborhood: Centro
-    note: Churros and thick chocolate, open late.
-    source: instagram @itsalanbarr
+    note: >
+      Churros and thick chocolate, open late. Almost 100 years old and the
+      churros are fried to order. One poster found them too crisp in the middle,
+      so this is a crunchy churro rather than a gooey one.
+    source: instagram @itsalanbarr, @thecaroandtina
 
   - name: Pasteleria Ideal
     category: casual
@@ -386,15 +395,105 @@ places:
       before anyone makes a trip for it.
     source: instagram @unnipulipra
 
+  # ---------- from five more reels, 30 October 2026 ----------
+  # Bakeries from @stepbysteph.traveltips, desserts from @unnipulipra. Only
+  # the places not already on this list are below; the rest of both reels was
+  # already here under other sources.
+
+  - name: Ficelle
+    category: casual
+    address: Avenida Tamaulipas 39, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico
+    neighborhood: Condesa
+    note: >
+      Tiny Parisian patisserie, named for its caneles. One of the few places
+      in the city making eclairs. Some listings give the number as 39b.
+    source: instagram @stepbysteph.traveltips
+
+  - name: Odette
+    category: casual
+    address: Plaza Popocatepetl 35, Hipodromo Condesa, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Condesa
+    note: >
+      Polished bakery with gift-worthy chocolates. Two branches: this one on
+      Plaza Popocatepetl and an original in Lomas de Chapultepec at Monte
+      Libano 915. The Condesa one is the closer of the two to us.
+    source: instagram @stepbysteph.traveltips
+
+  - name: Marne
+    category: casual
+    address: Gobernador Ignacio Esteva 35, San Miguel Chapultepec, Miguel Hidalgo, 11850 Ciudad de Mexico
+    neighborhood: San Miguel Chapultepec
+    precision: approximate
+    note: >
+      Sourdough and a sunny brunch, two streets from Madereros. Listings
+      disagree on hours, so check before making the trip. Number 35 does not
+      resolve, so the pin sits on Gobernador Ignacio Esteva itself.
+    source: instagram @stepbysteph.traveltips
+
+  - name: Bakers
+    category: casual
+    address: Durango 342, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Quiet and shady, known for huge chocolate hazelnut croissants. Three
+      branches in the city and this is the most relaxed. Reviews are mixed.
+    source: instagram @stepbysteph.traveltips
+
+  - name: Churros Jordan
+    category: casual
+    address: Aguayo 7, Coyoacan, Ciudad de Mexico
+    neighborhood: Coyoacan
+    precision: approximate
+    note: >
+      Stuffed churros with cajeta and Nutella, local H. Coyoacan is a long way
+      south, so this only makes sense on a day already spent down there.
+      Number 7 does not resolve, so the pin sits on Calle Aguayo itself.
+    source: instagram @unnipulipra
+
+  - name: Ritmo Cafe
+    category: casual
+    address: Medellin 78, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Listening bar and cafe. The draw here is Froze, the frozen yogurt
+      counter inside it, with a wall of sauces and toppings. The Instagram
+      handle the post credited, @frozecdmx, is now dead, so the froyo counter
+      may not have outlived it. The address comes from a single directory
+      listing and is not confirmed.
+    source: instagram @unnipulipra
+
+  - name: El Parador
+    category: casual
+    address: Rio Panuco 215, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Cuauhtemoc
+    precision: approximate
+    note: >
+      Churros gordos and chocomilk espuma. The "Combo Especial" is a giant
+      churro with a chocolate milk and a mazapan drink. Their own Instagram
+      says Tuesday to Friday 9:00 to 20:00, so it is shut at the weekend.
+      Same street as Rayo. Number 215 does not resolve, so the pin sits on
+      Calle Rio Panuco itself.
+    source: instagram @unnipulipra
+
+  - name: Myka
+    category: casual
+    address: Avenida Amsterdam 264, Condesa, Cuauhtemoc, 06100 Ciudad de Mexico
+    neighborhood: Condesa
+    note: >
+      Greek frozen yogurt with pistachio sauce and chocolate sea salt crumble.
+      A Madrid chain, not a local one. Also at Temistocles 33 in Polanco.
+    source: instagram @unnipulipra
+
   # Tacos and street food
   - name: Tacos del Valle
     category: taco
     address: Tacos del Valle, Ciudad de Mexico
     note: >
       Rated 9/10 by @placesnoted and starred by @thatonepointofview as actually
-      eaten. Trompo-style pastor over open flame. The one where the hype and
-      the plate agree.
-    source: instagram @placesnoted, @thatonepointofview
+      eaten. Trompo-style pastor over open flame. The one where the hype and the
+      plate agree. Three trompos, spicy pork, pork belly and carne asada, but the
+      pick is the steak and bone marrow taco. Expect a long line.
+    source: instagram @placesnoted, @thatonepointofview, @thecaroandtina
 
   - name: Tacos La Once Mil
     category: taco
@@ -404,8 +503,10 @@ places:
     neighborhood: Roma Norte
     note: >
       Rated 10/10. Wood-fired Wagyu, filet mignon and Prime skirt, tortillas
-      made to order, spicy tuna tostada. Pricier than a normal taqueria.
-    source: instagram @placesnoted
+      made to order, spicy tuna tostada. Pricier than a normal taqueria. Billed
+      as the only Michelin-starred taqueria in Mexico. The wagyu taco is the one
+      to order and the picanha off the trompo is skippable.
+    source: instagram @placesnoted, @thecaroandtina
 
   - name: Tacos Atarantados
     category: taco
