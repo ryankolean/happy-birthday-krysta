@@ -6,7 +6,9 @@ Planning repo for Krysta's 35th birthday trip to Mexico, 29 Dec 2026 to 8 Jan 20
 
 **This repo is private and must stay that way unless the PII question in `docs/open-questions.md` is resolved first.** A public trip itinerary broadcasts the exact dates eight people's homes are empty.
 
-**Never commit:** street addresses, confirmation numbers, flight record locators, card or payment details, full legal names, dates of birth, passport numbers, phone numbers of travelers, home addresses. Those go in `private/`, which is gitignored. Repo history is forever, so this discipline starts at the first commit.
+**Never commit:** street addresses, confirmation numbers, flight record locators, card or payment details, surnames, dates of birth, passport numbers, phone numbers of travelers, home addresses. Those go in `private/`, which is gitignored. Repo history is forever, so this discipline starts at the first commit.
+
+**First names are fine, surnames are not.** Ryan decided this on 1 November 2026, because roles alone made the data unreadable when coordinating seven people. A first name plus a trip date is weak identification; a full legal name plus the dates a house is empty is not. So `Eddie` is fine in `data/` and on the site, `Eddie Bachle` is not and lives only in `private/roster.md`. The role ids stay as the keys, because the whole repo is wired to them.
 
 Published business phone numbers and public listing URLs are fine. Someone's personal mobile is not.
 
@@ -25,7 +27,7 @@ Published business phone numbers and public listing URLs are fine. Someone's per
 - **Price status** on every budget line: `quoted` means a live price seen on the operator's own site, `estimate` means a real market price for a comparable thing that was never quoted for us, `open` means undecided and the figure is a placeholder. Do not blur these. A lot of this plan's earlier errors came from an estimate hardening into a fact.
 - **No em dashes** anywhere. Hyphen inline, colon in headings.
 - **No emojis.**
-- Traveler names stay as roles (`couple_a`, `single_b`) in committed files.
+- Traveler roles (`couple_a`, `single_b`) stay as the keys in committed files. First names may be carried alongside them as a `first_names` field for readability. Surnames never leave `private/roster.md`.
 
 ## The map
 

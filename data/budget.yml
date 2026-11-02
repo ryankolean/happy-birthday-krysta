@@ -33,9 +33,14 @@ flights:
     the Cancun return rose 71. Only two seats were left at the quoted
     outbound fare on 1 November, so this leg rewards booking early.
   krysta_and_ryan: >
-    Krysta and Ryan have not bought theirs yet. When they do, the exact
-    flights will be listed here so anybody who wants to travel together can
-    book the same ones.
+    Krysta and Ryan are booked. They are on DL 646 out of Detroit at 08:40 on
+    29 December, landing in Mexico City at 12:30, and DL 1911 out of Cancun at
+    15:15 on 8 January, landing in Detroit at 19:12. Both nonstop. If you want
+    to travel together, those are the two to match.
+    Fair warning on the outbound: they took the last two seats in the cheapest
+    bucket, so it is now about $1,056 rather than the $890 they paid for the
+    equivalent Main fare. The flights page has the current reference figures
+    for every leg.
   mex_cun_callout: >
     The one worth coordinating is Mexico City to Cancun on 3 January.
     Everybody continuing to the beach is on that leg, and being on the same
@@ -44,10 +49,10 @@ flights:
     fare, so the time is a group decision rather than a price decision.
     If you are coming to the beach, say so before anybody ticketing starts.
   reference_fares_usd:
-    dtw_mex_29_dec: 890
-    mex_cun_3_jan: 176
+    dtw_mex_29_dec: 1056          # the 890 bucket is gone, this is the floor now
+    mex_cun_3_jan: 222            # Basic plus a prepaid checked bag
     cun_dtw_8_jan: 564
-    mex_dtw_3_jan_nonstop: 1893   # not repriced, still a September number
+    mex_dtw_3_jan_nonstop: 1893   # not repriced, and nobody needs it any more
   duplication_warning: >
     These four numbers are a second copy of the fares in data/flights.yml and
     they have already gone stale once. Read them from flights.yml instead and
@@ -61,6 +66,10 @@ cdmx:
     Seven people are in Mexico City, but only six share the accommodation: two
     couples and two singles. The seventh books their own hotel, so the lodging
     line splits 6 ways while every other line below is a seven person trip.
+    The seventh is Matthew, confirmed on 1 November 2026. He is arranging his
+    own flights and his own room in the city, so the only money he settles
+    with Ryan is the shared events and meals: Pujol and the lucha libre night.
+    That is 325, not 964. See per_person_own_lodging below.
   lines:
     - item: Casa KM, 4BR penthouse, Del Valle Norte, 5 nights
       per_person: 639
@@ -110,7 +119,14 @@ cdmx:
         included, so this line covers the 29 December dinner as well as the
         show. Free cancellation until 28 December.
 
-  per_person: 964
+  per_person: 964                 # 639 lodging + 223 Pujol + 102 lucha libre
+  per_person_own_lodging: 325     # 223 Pujol + 102 lucha libre, no lodging
+  per_person_split_note: >
+    Two figures because the group splits two ways in the city. The six sharing
+    Casa KM owe 964 each: Krysta and Ryan, Haley and Eddie, Christian and
+    Bubba. Matthew books his own room and owes 325, the shared events and
+    meals only. Both numbers count the same seven heads at Pujol and at the
+    lucha libre, which is why neither of those lines changes.
 
   # Shown, never totalled. See estimates_note at the top of this file.
   estimates:
@@ -323,7 +339,14 @@ riviera:
 
 per_person:
   both_legs: 2473      # 964 city + 1509 beach
-  city_only: 964
+  city_only: 325       # shared events and meals only, no lodging
+  city_only_was: 964
+  city_only_correction: >
+    This line read 964 until 1 November 2026, which charged the one person
+    doing the city alone for a Casa KM bed they are not sleeping in. They
+    book their own room, so they owe the shared events and meals and nothing
+    else. The lodging line has always split 6 ways; only this summary was
+    wrong, and it was wrong by 639.
   note: >
     These are what you owe Ryan, not what the trip costs you. Flights are
     yours to book and pay for, and the estimate lines above are money you
@@ -372,8 +395,12 @@ non_refundable_exposure:
       flexible is what lets the group decide without paying for the delay.
 
 flag_for_solo_b: >
-  One traveller flies home after Mexico City rather than continuing to the
-  beach. They owe $964 and none of the $1,509 beach line, and they book their
-  own flights like everybody else. Worth knowing before they ticket: the
-  3 January Mexico City to Detroit nonstop was $1,893 one way when it was
-  priced, while connections the same day ran $774 to $956.
+  Matthew is in Mexico City only and is arranging everything else himself.
+  Confirmed 1 November 2026: his own flights, his own room in the city, and
+  he is not on the beach leg.
+  So he owes $325, which is the Pujol lunch at $223 and the lucha libre night
+  at $102. Not the $639 Casa KM share, because he is not in the flat. Not the
+  $1,509 beach line, because he is not there. This page said $964 until
+  1 November, which was wrong by the full lodging share.
+  Nothing else about the group changes. Both shared lines were already priced
+  across seven heads, so the other six pay exactly what they did before.

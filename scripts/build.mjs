@@ -636,8 +636,8 @@ ${tile('Flights', 'Your own', 'Everybody books and pays for their own. No fare i
   b += `<h2 id="costs"><span class="num">04</span>What it costs you</h2>
 <p class="lede">Two blocks, and they are what you owe Ryan rather than what the week costs you. Flights are yours. Full line by line breakdown on the <a href="costs.html">costs page</a>.</p>
 <div class="scroller"><table>
-<thead><tr><th>Block</th><th class="n">Doing both legs</th><th class="n">City only</th></tr></thead><tbody>
-<tr><td>Mexico City</td><td class="n">${usd(budget.cdmx.per_person)}</td><td class="n">${usd(budget.cdmx.per_person)}</td></tr>
+<thead><tr><th>Block</th><th class="n">Doing both legs</th><th class="n">City only<br><small>own room</small></th></tr></thead><tbody>
+<tr><td>Mexico City</td><td class="n">${usd(budget.cdmx.per_person)}</td><td class="n">${usd(budget.cdmx.per_person_own_lodging)}</td></tr>
 <tr><td>Riviera Maya</td><td class="n">${usd(budget.riviera.per_person)}</td><td class="n">n/a</td></tr>
 <tr class="sum"><td>What you owe Ryan</td><td class="n">${usd(budget.per_person.both_legs)}</td><td class="n">${usd(budget.per_person.city_only)}</td></tr>
 <tr><td>Flights</td><td class="n">Your own</td><td class="n">Your own</td></tr>
@@ -1406,10 +1406,13 @@ function buildDoc(mdFile, htmlFile, title) {
 
 function buildFlights() {
   const tz = flightTracker.timezones || {};
-  const booked = (flightTracker.bookings || []).filter((b) => b.status === 'booked');
-  const waiting = (flightTracker.bookings || []).filter((b) => b.status !== 'booked');
+  const all = flightTracker.bookings || [];
+  const booked = all.filter((b) => b.status === 'booked');
+  const waiting = all.filter((b) => b.status === 'pending');
+  const selfRun = all.filter((b) => b.status === 'own_arrangement');
   const heads = booked.reduce((n, b) => n + (b.size || 0), 0);
-  const total = (flightTracker.bookings || []).reduce((n, b) => n + (b.size || 0), 0);
+  const selfHeads = selfRun.reduce((n, b) => n + (b.size || 0), 0);
+  const total = all.reduce((n, b) => n + (b.size || 0), 0) - selfHeads;
 
   let b = `<header class="masthead">
   <p class="eyebrow">Updated ${esc(iso(flightTracker.updated))}</p>
@@ -1475,6 +1478,12 @@ function buildFlights() {
 <td><span class="tag open">${esc(g.status)}</span></td></tr>`;
   }
   b += `</tbody></table></div>`;
+  for (const g of selfRun) {
+    b += `<div class="note">
+  <div class="nh">${esc(g.label)} is arranging their own</div>
+  <p>${nt(g.note)}</p>
+</div>`;
+  }
 
   // pricing
   const pr = flightTracker.pricing_reference || {};
@@ -1483,12 +1492,11 @@ function buildFlights() {
 <p class="lede">Nobody owes this to anybody. Everyone books and pays for their own flights, so these are reference figures to sanity check a quote against before you buy.</p>
 <div class="scroller"><table>
 <caption>Per person, one way each, priced ${esc(iso(pr.as_of))}. <span class="tag quoted">quoted</span></caption>
-<thead><tr><th>Leg</th><th class="n">Going to the beach</th><th class="n">Mexico City only</th></tr></thead><tbody>
-<tr><td>DTW to MEX, 29 Dec</td><td class="n">${usd(pr.beach_bound_reference?.legs?.out)}</td><td class="n">${usd(pr.city_only_reference?.legs?.out)}</td></tr>
-<tr><td>MEX to CUN, 3 Jan<br><small>Basic plus a prepaid bag</small></td><td class="n">${usd(pr.beach_bound_reference?.legs?.to_beach)}</td><td class="n">n/a</td></tr>
-<tr><td>CUN to DTW, 8 Jan</td><td class="n">${usd(pr.beach_bound_reference?.legs?.home)}</td><td class="n">n/a</td></tr>
-<tr><td>MEX to DTW, 3 Jan<br><small>September price, stale</small></td><td class="n">n/a</td><td class="n">${usd(pr.city_only_reference?.legs?.city_home)}</td></tr>
-<tr class="sum"><td>Budget per person</td><td class="n"><strong>${usd(pr.beach_bound_reference?.per_person_usd)}</strong></td><td class="n"><strong>${usd(pr.city_only_reference?.per_person_usd)}</strong></td></tr>
+<thead><tr><th>Leg</th><th class="n">Per person</th></tr></thead><tbody>
+<tr><td>DTW to MEX, 29 Dec</td><td class="n">${usd(pr.beach_bound_reference?.legs?.out)}</td></tr>
+<tr><td>MEX to CUN, 3 Jan<br><small>Aeromexico Basic plus a prepaid bag</small></td><td class="n">${usd(pr.beach_bound_reference?.legs?.to_beach)}</td></tr>
+<tr><td>CUN to DTW, 8 Jan</td><td class="n">${usd(pr.beach_bound_reference?.legs?.home)}</td></tr>
+<tr class="sum"><td>Budget per person</td><td class="n"><strong>${usd(pr.beach_bound_reference?.per_person_usd)}</strong></td></tr>
 </tbody></table></div>
 <div class="note">
   <div class="nh">The cheap outbound fare is gone</div>
@@ -1499,7 +1507,7 @@ function buildFlights() {
   <p>${nt(pr.bags)}</p>
 </div>
 <div class="scroller"><table>
-<caption>Where the trip's air spend stands, all ${roll.travellers} of us.</caption>
+<caption>Where the trip's air spend stands, across the ${roll.travellers_tracked} whose flights we coordinate.</caption>
 <thead><tr><th>&nbsp;</th><th class="n">USD</th></tr></thead><tbody>
 <tr><td>Paid so far</td><td class="n">${usd(roll.paid_so_far_usd)}</td></tr>
 <tr><td>Still to be spent</td><td class="n">${usd(roll.expected_remaining_usd)}</td></tr>

@@ -41,7 +41,7 @@ timezones:
 # unknown. Fill a pending entry in as each person sends their details.
 bookings:
   - group: hosts
-    label: Ryan and Krysta
+    label: Krysta and Ryan
     size: 2
     status: booked
     booked_on: 2026-11-01
@@ -107,7 +107,7 @@ bookings:
       bags_note: only the Aeromexico hop, both Delta legs are covered by Silver
 
   - group: couple_a
-    label: Couple A
+    label: Haley and Eddie
     size: 2
     status: pending
     legs_needed: [out, to_beach, home]
@@ -119,7 +119,7 @@ bookings:
       basis: beach_bound_reference
 
   - group: single_a
-    label: Single friend A
+    label: Christian
     size: 1
     status: pending
     legs_needed: [out, to_beach, home]
@@ -131,7 +131,7 @@ bookings:
       basis: beach_bound_reference
 
   - group: single_b
-    label: Single friend B
+    label: Bubba
     size: 1
     status: pending
     legs_needed: [out, to_beach, home]
@@ -143,24 +143,21 @@ bookings:
       basis: beach_bound_reference
 
   - group: solo_b
-    label: Solo traveller B
+    label: Matthew
     size: 1
-    status: pending
-    legs_needed: [out, city_home]
+    status: own_arrangement
+    legs_needed: []
     note: >
-      Flies home from Mexico City on 2027-01-03 and does not come to the
-      beach, as of 2026-11-01. Their return routing is still open, and the
-      nonstop fare on file is a September number that needs repricing.
+      Handling their own flights and their own room in the city, confirmed
+      1 November 2026. Nothing to collect and nothing to track here. They are
+      in Mexico City only and not on the beach leg.
+      The only money they settle with Ryan is the shared events and meals,
+      which is 325 for Pujol and the lucha libre night. That lives in
+      data/budget.yml, not in this file.
     segments: []
     pricing:
-      status: open
-      expected_per_person_usd: 2949
-      expected_total_usd: 2949
-      basis: city_only_reference
-      warning: >
-        The weakest number in this file. 1893 of it is the MEX to DTW nonstop
-        priced in September and never rechecked, and connections that day ran
-        774 to 956 back then. Reprice before quoting it to anybody.
+      status: not_tracked
+      reason: self-arranged, no figure to collect
 
 # What a seat should cost somebody booking now. Nobody owes this to anybody:
 # everyone books and pays for their own flights. These are reference figures
@@ -176,10 +173,13 @@ pricing_reference:
       to_beach: 222      # Aeromexico Basic plus a prepaid checked bag
       home: 564          # CUN to DTW, Delta Main Classic, DL 1911
   city_only_reference:
-    per_person_usd: 2949
-    legs:
-      out: 1056
-      city_home: 1893    # September number, stale, needs repricing
+    status: retired
+    note: >
+      There was a Mexico City only reference here, at 2,949, built on a MEX to
+      DTW nonstop priced in September and never rechecked. It is gone because
+      the only person it applied to is arranging their own flights, so nobody
+      needs the figure. If somebody else ends up flying home after the city,
+      reprice that leg from scratch rather than reviving 1,893.
   the_890_is_gone: >
     Every earlier version of this plan quoted 1,056 as the fallback and 890 as
     the price. The 890 bucket on DL 646 had exactly two seats left on
@@ -198,15 +198,16 @@ pricing_reference:
 
 pricing_rollup:
   as_of: 2026-11-01
-  travellers: 7
+  travellers_tracked: 6
+  travellers_self_arranged: 1
   paid_so_far_usd: 3096.54
-  expected_remaining_usd: 10761.00
-  expected_trip_total_usd: 13857.54
+  expected_remaining_usd: 7812.00
+  expected_trip_total_usd: 10908.54
   note: >
-    Air only, across all seven, assuming everybody else buys Main Classic and
-    the beach-bound five take the Cancun hop. It is a planning number, not a
-    bill, and the single biggest source of error in it is solo_b's unrepriced
-    return.
+    Air only, across the six whose flights this trip coordinates, assuming
+    everybody still to book buys Main Classic and takes the Cancun hop. The
+    seventh traveller arranges their own flights, so they are not in this
+    figure at all. It is a planning number, not a bill.
 
 # What to ask each person for. Keep it to this list: it is everything needed to
 # coordinate a pickup and nothing that should not be in a git repository.

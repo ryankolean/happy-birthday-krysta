@@ -20,40 +20,50 @@ headcount:
 
 groups:
   - id: hosts
-    label: Ryan and Krysta
+    label: Krysta and Ryan
+    first_names: [Krysta, Ryan]
     size: 2
     legs: [cdmx, riviera]
     room: private
 
   - id: couple_a
-    label: Couple A
+    label: Haley and Eddie
+    first_names: [Haley, Eddie]
     size: 2
     legs: [cdmx, riviera]
     room: private
 
   - id: single_a
-    label: Single friend A
+    label: Christian
+    first_names: [Christian]
     size: 1
     legs: [cdmx, riviera]
     room: private
 
   - id: single_b
-    label: Single friend B
+    label: Bubba
+    first_names: [Bubba]
     size: 1
     legs: [cdmx, riviera]
     room: private
 
   - id: solo_b
-    label: Solo traveller B
+    label: Matthew
+    first_names: [Matthew]
     size: 1
     legs: [cdmx]
     former_id: couple_b
+    room: own hotel in the city
+    arrangement: self
     note: >
       Was Couple B until one of the two dropped on 12 October, and is referred
       to as single #3 now. Flies home from Mexico City on 3 January, so this is
       the one person not on the beach leg. Confirmed still not coming to Cancun
       on 1 November 2026, and worth asking again before the Jade rooms are
       committed, because it is the kind of thing that changes.
+      Self-arranging from 1 November 2026: own flights, own room in the city.
+      The only thing that goes through the group ledger is their share of the
+      shared events and meals, which is Pujol and the lucha libre night.
 
 # Lodging was always decided by the bed configuration rather than by price.
 # Three couples plus one single needed three double beds in three separate
@@ -70,8 +80,13 @@ bed_requirement:
 
 # Which named individual sits in which role is deliberately not recorded here.
 # That mapping lives in private/, along with who is paying for what.
+settled:
+  - >
+    Which of the seven books their own hotel in the city: Matthew, role
+    solo_b, confirmed 1 November 2026. He arranges his own flights and his own
+    room, and settles only the shared events and meals with Ryan. Casa KM
+    therefore splits 6 ways, which is what data/budget.yml has always assumed.
+
 open:
-  - Confirm which of the seven is booking their own hotel in the city
   - Who flies from DTW and whether anyone is coming from LAX
   - Collect a deposit per person before the 14 December Casa KM payment
-  - Solo traveller B needs to confirm their own return routing from MEX
