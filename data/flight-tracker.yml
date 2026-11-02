@@ -256,6 +256,51 @@ coordination:
     Book in pairs against the same flight number. See party_size_ceiling in
     data/flights.yml.
 
+# Fare tracking after purchase. A drop only turns into money if the ticket
+# rules allow a reprice. That is true of the Delta record and not true of the
+# Aeromexico one, so check the rule before spending time on a claim.
+price_watch:
+  as_of: 2026-11-02
+  why: >
+    Both Delta tickets are Main Cabin or above and carry no change fee, so a
+    later drop on the same itinerary can be repriced by an agent and the
+    difference returned as an eCredit. On a 1,548.27 ticket that is worth
+    watching. The Aeromexico fare is AM Plus Classic, where free changes only
+    start one tier up at Flex, so a drop there is swallowed by the change fee.
+
+  baselines:
+    delta_both_legs:
+      per_person_usd: 1548.27
+      total_usd: 3096.54
+      status: paid
+      booked_on: 2026-11-01
+      route: DTW to MEX on 2026-12-29, CUN to DTW on 2027-01-08
+      cabin: Delta Comfort Classic, fare class S
+      watch: yes
+      act_above_usd: 25
+      act_note: >
+        Per person. Below about 25 the agent call costs more time than the
+        eCredit is worth, though there is no fee for trying.
+    mex_cun:
+      per_person_usd: 260.25
+      status: quoted
+      route: MEX to CUN on 2027-01-03, the 14:55
+      fare: AM Plus Classic
+      watch: no
+      why_not: >
+        Free changes begin at AM Plus Flex, one tier above what was bought.
+        A drop is offset by the change fee, and Aeromexico does not reprice
+        as a goodwill gesture the way a Delta agent will.
+
+  how_to_claim: see docs/price-drops.md
+
+  alerts: >
+    Google Flights price tracking on both Delta dates, emailed to Ryan. It is
+    free and does not depend on scraping either airline. Delta and Aeromexico
+    both sit behind bot protection, Akamai and RiskX on the Aeromexico
+    booking flow, so a checker running in CI would break rather than quietly
+    keep working. Do not build one.
+
 open:
   - Collect flight details from couple_a, single_a, single_b and solo_b
   - Buy the Mexico City to Cancun leg for Ryan and Krysta
