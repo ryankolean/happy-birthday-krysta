@@ -1,8 +1,13 @@
 # Roles only. Real names and contact details stay in private/, never here.
+# The name behind each role id is in private/roster.md, which is gitignored.
 #
 # Headcount settled 19 October 2026 after two changes: the group went 8 to 7
 # in Mexico City when one half of a couple dropped, and the beach leg is
 # confirmed to stay at 6.
+#
+# All seven named and confirmed against these roles on 1 November 2026. In
+# Ryan's own numbering the groups read as couple #1 for hosts, couple #2 for
+# couple_a, and singles #1, #2 and #3 for single_a, single_b and solo_b.
 
 headcount:
   cdmx: 7
@@ -44,8 +49,11 @@ groups:
     legs: [cdmx]
     former_id: couple_b
     note: >
-      Was Couple B until one of the two dropped on 12 October. Flies home from
-      Mexico City on 3 January, so this is the one person not on the beach leg.
+      Was Couple B until one of the two dropped on 12 October, and is referred
+      to as single #3 now. Flies home from Mexico City on 3 January, so this is
+      the one person not on the beach leg. Confirmed still not coming to Cancun
+      on 1 November 2026, and worth asking again before the Jade rooms are
+      committed, because it is the kind of thing that changes.
 
 # Lodging was always decided by the bed configuration rather than by price.
 # Three couples plus one single needed three double beds in three separate

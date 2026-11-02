@@ -90,6 +90,21 @@ bookings:
       each way for both of them, and it would extend to up to 8 companions on
       the same reservation, which does not apply here because they booked the
       two of them alone.
+    pricing:
+      status: part paid
+      per_person_usd: 1770.27
+      per_person_status: quoted
+      legs:
+        delta_both:
+          amount_usd: 1548.27
+          status: paid
+          what: DL 646 and DL 1911 on one record, Delta Comfort Classic
+        to_beach:
+          amount_usd: 222
+          status: quoted
+          what: Aeromexico Basic plus a prepaid checked bag, not bought yet
+      bags_usd: 27
+      bags_note: only the Aeromexico hop, both Delta legs are covered by Silver
 
   - group: couple_a
     label: Couple A
@@ -97,6 +112,11 @@ bookings:
     status: pending
     legs_needed: [out, to_beach, home]
     segments: []
+    pricing:
+      status: open
+      expected_per_person_usd: 1842
+      expected_total_usd: 3684
+      basis: beach_bound_reference
 
   - group: single_a
     label: Single friend A
@@ -104,6 +124,11 @@ bookings:
     status: pending
     legs_needed: [out, to_beach, home]
     segments: []
+    pricing:
+      status: open
+      expected_per_person_usd: 1842
+      expected_total_usd: 1842
+      basis: beach_bound_reference
 
   - group: single_b
     label: Single friend B
@@ -111,6 +136,11 @@ bookings:
     status: pending
     legs_needed: [out, to_beach, home]
     segments: []
+    pricing:
+      status: open
+      expected_per_person_usd: 1842
+      expected_total_usd: 1842
+      basis: beach_bound_reference
 
   - group: solo_b
     label: Solo traveller B
@@ -119,9 +149,64 @@ bookings:
     legs_needed: [out, city_home]
     note: >
       Flies home from Mexico City on 2027-01-03 and does not come to the
-      beach. Their return routing is still open, and the nonstop fare on file
-      is a September number that needs repricing.
+      beach, as of 2026-11-01. Their return routing is still open, and the
+      nonstop fare on file is a September number that needs repricing.
     segments: []
+    pricing:
+      status: open
+      expected_per_person_usd: 2949
+      expected_total_usd: 2949
+      basis: city_only_reference
+      warning: >
+        The weakest number in this file. 1893 of it is the MEX to DTW nonstop
+        priced in September and never rechecked, and connections that day ran
+        774 to 956 back then. Reprice before quoting it to anybody.
+
+# What a seat should cost somebody booking now. Nobody owes this to anybody:
+# everyone books and pays for their own flights. These are reference figures
+# so people can sanity check a quote before they buy, and so the trip has an
+# honest running total.
+pricing_reference:
+  as_of: 2026-11-01
+  status: quoted
+  beach_bound_reference:
+    per_person_usd: 1842
+    legs:
+      out: 1056          # DTW to MEX, Delta Main Classic, next bucket up
+      to_beach: 222      # Aeromexico Basic plus a prepaid checked bag
+      home: 564          # CUN to DTW, Delta Main Classic, DL 1911
+  city_only_reference:
+    per_person_usd: 2949
+    legs:
+      out: 1056
+      city_home: 1893    # September number, stale, needs repricing
+  the_890_is_gone: >
+    Every earlier version of this plan quoted 1,056 as the fallback and 890 as
+    the price. The 890 bucket on DL 646 had exactly two seats left on
+    2026-11-01 and Ryan and Krysta took both. 1,056 per person is what the
+    same search returned at four passengers, so it is the realistic floor for
+    anybody booking now, and it will drift up as the date closes. Treat it as
+    a floor, not a quote.
+  bags: >
+    Add nothing for bags on the Delta legs if you hold Medallion status.
+    Without status, add 45 on the outbound and 46 on the way home, so 91 per
+    person. The Aeromexico bag is already inside the 222.
+  what_hosts_paid: >
+    1,770.27 per person, of which 1,548.27 is paid and 222 is the Cancun hop
+    they have not bought. They are above the reference because they chose
+    Delta Comfort for the legroom rather than Main.
+
+pricing_rollup:
+  as_of: 2026-11-01
+  travellers: 7
+  paid_so_far_usd: 3096.54
+  expected_remaining_usd: 10761.00
+  expected_trip_total_usd: 13857.54
+  note: >
+    Air only, across all seven, assuming everybody else buys Main Classic and
+    the beach-bound five take the Cancun hop. It is a planning number, not a
+    bill, and the single biggest source of error in it is solo_b's unrepriced
+    return.
 
 # What to ask each person for. Keep it to this list: it is everything needed to
 # coordinate a pickup and nothing that should not be in a git repository.

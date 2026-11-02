@@ -1417,6 +1417,7 @@ function buildFlights() {
   <div class="dateline">
     <div><b>Booked</b>${heads} of ${total}</div>
     <div><b>Still to report</b>${total - heads}</div>
+    <div><b>Paid so far</b>${usd(flightTracker.pricing_rollup?.paid_so_far_usd)}</div>
   </div>
 </header>
 <p class="lede">Every time shown is the local clock at that airport. Nothing here is converted into your own time zone, because the only times that matter are the ones on the departure board in front of you.</p>`;
@@ -1464,18 +1465,51 @@ function buildFlights() {
   b += `<h2><span class="num">03</span>Still to report</h2>
 <p class="lede">These are the people whose flights nobody has yet. If that is you, the list further down is everything needed.</p>
 <div class="scroller"><table>
-<thead><tr><th>Who</th><th class="n">Seats</th><th>Legs they need</th><th>Status</th></tr></thead><tbody>`;
+<thead><tr><th>Who</th><th class="n">Seats</th><th>Legs they need</th><th class="n">Budget each</th><th>Status</th></tr></thead><tbody>`;
   for (const g of waiting) {
+    const p = g.pricing || {};
     b += `<tr><td><strong>${esc(g.label)}</strong>${g.note ? `<br><small>${nt(g.note)}</small>` : ''}</td>
 <td class="n">${g.size}</td>
 <td><small>${(g.legs_needed || []).map((l) => esc(l)).join(', ')}</small></td>
+<td class="n">${usd(p.expected_per_person_usd)}${p.warning ? '<br><small>weak number</small>' : ''}</td>
 <td><span class="tag open">${esc(g.status)}</span></td></tr>`;
   }
   b += `</tbody></table></div>`;
 
+  // pricing
+  const pr = flightTracker.pricing_reference || {};
+  const roll = flightTracker.pricing_rollup || {};
+  b += `<h2><span class="num">04</span>What a seat costs now</h2>
+<p class="lede">Nobody owes this to anybody. Everyone books and pays for their own flights, so these are reference figures to sanity check a quote against before you buy.</p>
+<div class="scroller"><table>
+<caption>Per person, one way each, priced ${esc(iso(pr.as_of))}. <span class="tag quoted">quoted</span></caption>
+<thead><tr><th>Leg</th><th class="n">Going to the beach</th><th class="n">Mexico City only</th></tr></thead><tbody>
+<tr><td>DTW to MEX, 29 Dec</td><td class="n">${usd(pr.beach_bound_reference?.legs?.out)}</td><td class="n">${usd(pr.city_only_reference?.legs?.out)}</td></tr>
+<tr><td>MEX to CUN, 3 Jan<br><small>Basic plus a prepaid bag</small></td><td class="n">${usd(pr.beach_bound_reference?.legs?.to_beach)}</td><td class="n">n/a</td></tr>
+<tr><td>CUN to DTW, 8 Jan</td><td class="n">${usd(pr.beach_bound_reference?.legs?.home)}</td><td class="n">n/a</td></tr>
+<tr><td>MEX to DTW, 3 Jan<br><small>September price, stale</small></td><td class="n">n/a</td><td class="n">${usd(pr.city_only_reference?.legs?.city_home)}</td></tr>
+<tr class="sum"><td>Budget per person</td><td class="n"><strong>${usd(pr.beach_bound_reference?.per_person_usd)}</strong></td><td class="n"><strong>${usd(pr.city_only_reference?.per_person_usd)}</strong></td></tr>
+</tbody></table></div>
+<div class="note">
+  <div class="nh">The cheap outbound fare is gone</div>
+  <p>${nt(pr.the_890_is_gone)}</p>
+</div>
+<div class="note">
+  <div class="nh">Bags</div>
+  <p>${nt(pr.bags)}</p>
+</div>
+<div class="scroller"><table>
+<caption>Where the trip's air spend stands, all ${roll.travellers} of us.</caption>
+<thead><tr><th>&nbsp;</th><th class="n">USD</th></tr></thead><tbody>
+<tr><td>Paid so far</td><td class="n">${usd(roll.paid_so_far_usd)}</td></tr>
+<tr><td>Still to be spent</td><td class="n">${usd(roll.expected_remaining_usd)}</td></tr>
+<tr class="sum"><td>Expected total, air only</td><td class="n"><strong>${usd(roll.expected_trip_total_usd)}</strong></td></tr>
+</tbody></table></div>
+<p>${nt(roll.note)}</p>`;
+
   // coordination
   const co = flightTracker.coordination || {};
-  b += `<h2><span class="num">04</span>The Cancun leg, and the bag trap</h2>`;
+  b += `<h2><span class="num">05</span>The Cancun leg, and the bag trap</h2>`;
   if (co.mex_cun_2027_01_03) {
     b += `<div class="note"><div class="nh">Be on the same aircraft</div><p>${nt(co.mex_cun_2027_01_03)}</p></div>`;
   }
@@ -1487,7 +1521,7 @@ function buildFlights() {
   }
 
   // what to send
-  b += `<h2><span class="num">05</span>What to send Ryan</h2>
+  b += `<h2><span class="num">06</span>What to send Ryan</h2>
 <div class="note">
   <div class="nh">For each leg you have booked</div>
   <ul>`;
