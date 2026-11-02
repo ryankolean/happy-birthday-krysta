@@ -8,7 +8,9 @@ Planning repo for Krysta's 35th birthday trip to Mexico, 29 Dec 2026 to 8 Jan 20
 
 **Never commit:** street addresses, confirmation numbers, flight record locators, card or payment details, surnames, dates of birth, passport numbers, phone numbers of travelers, home addresses. Those go in `private/`, which is gitignored. Repo history is forever, so this discipline starts at the first commit.
 
-**First names are fine, surnames are not.** Ryan decided this on 1 November 2026, because roles alone made the data unreadable when coordinating seven people. A first name plus a trip date is weak identification; a full legal name plus the dates a house is empty is not. So `Eddie` is fine in `data/` and on the site, `Eddie Bachle` is not and lives only in `private/roster.md`. The role ids stay as the keys, because the whole repo is wired to them.
+**First names are fine, surnames are not.** Ryan decided this on 1 November 2026, because roles alone made the data unreadable when coordinating seven people. A first name plus a trip date is weak identification; a full legal name plus the dates a house is empty is not. So a bare first name is fine in `data/` and on the site, while `Firstname Lastname` is not and lives only in `private/roster.md`. The role ids stay as the keys, because the whole repo is wired to them.
+
+Do not write a real surname here to illustrate the rule. That is exactly how this file leaked one on 1 November 2026. Use `Firstname Lastname` or a plainly fictional name. `npm run check:pii` scans every tracked file against the roster and is the thing that should have caught it.
 
 Published business phone numbers and public listing URLs are fine. Someone's personal mobile is not.
 
