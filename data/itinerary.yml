@@ -166,23 +166,36 @@ days:
     leg: travel
     kind: travel
     title: Travel day to Cancun
-    summary: Six to Cancun, one home, both flights at 13:55
+    summary: One home at 13:55, six to Cancun at 14:55
     events:
       - time: "11:00"
         what: Checkout at Casa KM. Leave together around 11:30.
-      - time: "13:55"
-        what: Both flights depart at the same time
         detail: >
-          Six to Cancun on Aeromexico, one to Detroit on Delta. Nobody waits
-          around at the airport. Neither is booked yet.
-      - time: "17:33"
+          The two departures are an hour apart now, so the group still goes to
+          the airport together and only splits at security.
+      - time: "13:55"
+        what: One flight to Detroit on Delta
+        detail: >
+          The traveller going home after the city, arranging their own
+          booking. Not the same departure as the beach group any more.
+      - time: "14:55"
+        what: Six to Cancun on Aeromexico, AM Plus Classic
+        detail: >
+          An hour later than the old plan. AM Plus is the only fare family on
+          this route that includes a checked bag, and it is not sold on the
+          13:55. The hour buys a bag and an extra-legroom seat for each of the
+          six. Not booked yet.
+      - time: "18:36"
         what: Land in Cancun
-        detail: Transfer to Puerto Morelos is 27 km and about 27 minutes.
+        detail: >
+          Transfer to Puerto Morelos is 27 km and about 27 minutes, so the
+          group is at Dreams Jade around 19:15.
       - time: evening
         what: Settle in at Dreams Jade
         detail: Nothing planned. The residence is not booked yet either.
     warnings:
       - Neither flight is booked, and Dreams Jade is still only verified available
+      - Evening arrival now. Nothing is scheduled for this night, which is why the later flight was affordable
       - The one flying home could save about $1,040 by taking a connection instead of the nonstop
 
   - date: 2027-01-04

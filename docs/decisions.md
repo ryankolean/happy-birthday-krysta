@@ -2,6 +2,34 @@
 
 What was decided, and what it beat. Newest first.
 
+## The Cancun hop is the 14:55 on AM Plus Classic, 1 November 2026
+
+**Decided.** The six continuing to the beach fly Aeromexico MEX to CUN on **3 January at 14:55**, landing 18:36, on **AM Plus Classic at $260.25 each**. This replaces the 13:55 on Main Basic.
+
+**What it beat.** Main Basic at $223.15, which was the plan, plus a checked bag bought online at roughly $27. About $250 all in, $10 cheaper, on a flight that leaves an hour earlier.
+
+**Why the more expensive one won.** AM Plus Classic includes the checked bag, an extra-legroom AM Plus seat, free seat selection and changes for a fee. Main Basic includes none of those. Ten dollars a head is the whole difference, and it is the same trade the group already made paying for Delta Comfort on the long legs, at a tenth of the price. It also removes the last estimated number from the air budget: $260.25 is a quote, where $250 was a quote plus a guess at a bag fee.
+
+**The fact that forced it: no Main Cabin fare on this route includes a checked bag.** Not Basic, not Classic, and not Flex at $302.05. Every row of Aeromexico's own fare comparison reads "Checked baggage 55 lb, Additional charge". This repo previously recorded the opposite, that Flex bundles a bag at $262, and built a whole saving argument on it. That came from a third-party ladder rather than from Aeromexico.
+
+| Fare | Each | Checked bag |
+|---|---|---|
+| Light | $199.95 | Extra, and no carry-on either |
+| Main Basic | $223.15 | Extra |
+| Main Classic | $242.85 | Extra |
+| Main Flex | $302.05 | Extra |
+| AM Plus Basic | $235.95 | Extra |
+| **AM Plus Classic** | **$260.25** | **Included** |
+| AM Plus Flex | $331.05 | Included |
+
+**The cost of the decision is one hour, not ten dollars.** AM Plus is not sold on the 13:55 at any passenger count, nor on the 08:55. The 14:55 is the first departure after the 11:00 Casa KM checkout that sells it. Arrival moves 17:36 to 18:36 and the group reaches Puerto Morelos around 19:15. Nothing is scheduled for that night, which is the only reason the later flight was affordable in the first place.
+
+**A knock-on worth naming.** The two 3 January departures used to leave at the same time, which made one trip to the airport and one goodbye. They are now an hour apart: the traveller flying home to Detroit still goes at 13:55. The group still travels to the airport together and splits at security.
+
+**Price this leg on aeromexico.com and nowhere else.** This line has now been wrong twice, at $176 and at $222, both times from pricing it somewhere else. Aeromexico's own booking engine takes a deep link, so there is no excuse for a third: `/bf/en-us/book/options?itinerary=MEX_CUN_2027-01-03&leg=1&travelers=A6_C0_I0_PH0_PC0`, with the `A` number set to the party size. The flights page carries it.
+
+**Unrelated to fare, worth knowing.** 3 January is the most expensive day of that week at $199.95 for the cheapest fare, against $151.25 on the 1st and 2nd. Checkout pins the trip to it.
+
 ## Dreams Jade for the beach leg, 28 October 2026
 
 **Decided.** The beach leg is [Dreams Jade Resort & Spa](https://www.booking.com/hotel/mx/now-jade-riviera-cancun.html) in Puerto Morelos, all-inclusive, four rooms.

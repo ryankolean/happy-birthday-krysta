@@ -1,20 +1,37 @@
 # Open tasks, most urgent first. Update status here, not in docs/.
 # status: todo | doing | done | blocked
 
-as_of: 2026-10-27
+as_of: 2026-11-01
 
 this_week:
   - id: book-dtw-mex
     title: Everybody book Detroit to Mexico City, and tell the group when you have
-    status: todo
+    status: doing
     why_now: >
       Flights are each person's own to book and pay for, but the 29 December
       outbound is the one where waiting hurts everybody. Exactly one nonstop a
       day from Detroit, roughly 130 seats, holiday week. Seats are the risk,
-      not the fare. DL 646 at 08:40 is the flight. Krysta and Ryan have not
-      bought theirs yet either.
+      not the fare. DL 646 at 08:40 is the flight.
+      Krysta and Ryan booked theirs on 1 November and took the last two seats
+      in the 890 bucket, so expect 1,056 or higher now. Four groups still to
+      book.
       Say in the group chat once you have booked, so nobody is quietly left
       without a seat on the only nonstop.
+
+  - id: book-mex-cun
+    title: Everybody going to the beach books the 14:55 to Cancun, AM Plus Classic
+    status: todo
+    why_now: >
+      Decided 1 November and it needs saying to the group before anybody buys
+      the wrong thing. Aeromexico MEX to CUN on 3 January, the 14:55, landing
+      18:36. Buy AM Plus Classic at 260.25, not the cheapest fare shown.
+      No Main Cabin fare on this route includes a checked bag, Flex included,
+      so the cheap fares are not as cheap as they look. AM Plus Classic is the
+      cheapest fare that includes one, and it adds an extra-legroom seat.
+      AM Plus is not sold on the 13:55, which is why the time moved.
+      Booking link is on the flights page. Price it on aeromexico.com and
+      nowhere else: this fare has been recorded wrong twice from third-party
+      ladders.
 
   - id: decide-nye
     title: Decide the New Year's Eve plan

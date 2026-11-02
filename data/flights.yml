@@ -52,18 +52,41 @@ flights:
     route: MEX to CUN
     carrier: Aeromexico
     stops: 0
-    depart: "13:55"
-    arrive: "17:36"
-    price_usd: 222
+    depart: "14:55"
+    arrive: "18:36"
+    price_usd: 260.25
     price_status: quoted
-    fare: Aeromexico Basic plus a prepaid checked bag
+    fare: AM Plus Classic, one checked bag and an AM Plus seat included
     who: the 6 continuing to the beach
+    decided: 2026-11-01
+    includes: >
+      One checked bag up to 55 lb, an AM Plus seat with extra legroom, free
+      seat selection, and changes allowed for a fee. Nothing in this figure is
+      estimated. 260.25 is the whole fare per person, quoted on aeromexico.com
+      and identical at 1, 2 and 6 passengers.
+    why_this_fare: >
+      It is the cheapest fare Aeromexico sells on this route that includes a
+      checked bag at all. Main Basic is 223.15 and needs a bag bought
+      separately for roughly 27, about 250 all in, which puts AM Plus Classic
+      about 10 per person above it. For that 10 it removes the bag estimate,
+      adds extra legroom and adds seat selection. It is the same trade the
+      group already took in paying for Delta Comfort on the long legs.
+    why_the_time_moved: >
+      The plan was the 13:55 until 1 November. AM Plus is not sold on that
+      departure at any passenger count, nor on the 08:55: the column reads
+      "Not available". The 14:55 is the first departure after the 11:00
+      checkout that sells it. The cost is one hour. The group lands 18:36
+      instead of 17:36 and reaches Puerto Morelos around 19:15, which is still
+      a reasonable arrival for a leg with nothing scheduled on it.
     fare_correction: >
-      The 176 that was on this line is the Light fare, which carries no
-      checked bag and no carry-on at all, not even a bin item. It was never a
-      realistic number for six people moving to a beach resort. The 222 is
-      Basic at 195 plus one prepaid checked bag at about 27. See
-      baggage_decision below.
+      This line was wrong twice, both times because it was priced somewhere
+      other than Aeromexico. The 176 was the Light fare, which carries no
+      checked bag and no carry-on at all, not even a bin item. The 222 that
+      replaced it came off a Google Flights ladder that does not match what
+      Aeromexico sells: it put Basic at 195 and claimed Flex bundles a checked
+      bag. Priced direct on 2026-11-01, Basic is 223.15 and no Main Cabin
+      fare includes a checked bag, Flex included. Price this leg on
+      aeromexico.com and nowhere else.
     note: >
       No Delta option exists. Delta does not fly Mexican domestic routes and
       delta.com refuses the route outright: searching MEX to CUN for this date
@@ -71,60 +94,49 @@ flights:
       It must be bought from Aeromexico direct or through an agency. This
       corrects the earlier plan to ticket it as a DL-coded codeshare through
       delta.com for SkyMiles credit, which is not possible.
-      Aeromexico runs this roughly hourly 06:01 to 22:05 and every departure
-      prices the same, so pick the time around checkout rather than price.
-      Verified 2026-11-01 that the flat fare still holds for a party of six,
-      at 1052 USD for all six, this departure included.
+      Aeromexico runs this roughly hourly 06:01 to 22:05. Every departure
+      prices the same and the fare is identical at 1, 2 and 6 passengers, so
+      there is no party-size ceiling here of the kind the Delta legs have.
+      What does vary by departure is which fare families are sold at all.
       Avoid Viva and Volaris, which fly it from NLU, an hour plus north of
       Roma Norte.
-    baggage_decision:
-      decided: 2026-11-01
-      chosen: Basic fare, with the checked bag bought separately and online
-      per_person_usd: 222
-      for_six_usd: 1332
+    the_date_is_the_expensive_part: >
+      The departure time does not move the price but the date does. Sunday
+      3 January is the peak of the week at 199.95 for the cheapest fare,
+      against 151.25 on 1 and 2 January and 159.35 on 4 January. The trip
+      cannot use the cheaper days: Casa KM checkout is the morning of the 3rd.
+      Noted so nobody reads a 151 quote elsewhere and thinks they are being
+      overcharged.
+    am_plus_ladder_usd:           # per person, aeromexico.com, 2026-11-01, the 14:55
+      basic: 235.95               # no checked bag
+      classic: 260.25             # one checked bag, AM Plus seat, the one booked
+      flex: 331.05                # adds free changes
+    rejected_main_cabin:
       why: >
-        No Aeromexico economy fare below Flex includes a checked bag on this
-        route, which settles a question the third-party baggage guides get
-        wrong. Flex is the first fare that bundles one, at 262 per person.
-        Buying Basic at 195 and adding a bag at about 27 lands at 222, which
-        is 40 per person cheaper, 242 across the six. Flex only wins if
-        somebody expects to change their flight, because it also brings free
-        changes and a full refund.
-      ladder_for_six_usd:          # priced on Google Flights, 2026-11-01
-        light: 1051                # no carry-on, no checked bag
-        basic: 1172                # carry-on, no checked bag
-        classic: 1270              # carry-on, no checked bag
-        flex: 1574                 # carry-on and first checked bag
-        premier_basica: 1671
-        premier_clasica: 1776
-      bag_fee: >
-        500 MXN for the first checked bag on a domestic Mexican flight, per
-        Aeromexico's own Basic fare conditions page. That is about 27 USD at
-        18.79 MXN/USD. Aeromexico says the price varies by point of sale and
-        that seasonal increases can apply, so treat 27 as close rather than
-        exact.
-      pay_online: >
-        Buy the bag online before check-in. Fees are higher at the airport.
-      do_not_count_on_status: >
-        Ryan's Silver Medallion is SkyTeam Elite, which normally adds a bag on
-        SkyTeam carriers, but Aeromexico excludes class V Basic purchases on
-        domestic, US and Canadian routes from Club Premier, SkyTeam and Delta
-        member benefits. On the fare being bought the status is worth nothing.
-        It may add a second bag on Flex, which already includes one, but that
-        is not a reason to buy Flex.
-      not_checked: >
-        AM Plus does include a domestic checked bag and sits between Classic
-        and Flex, but it was not offered in the booking options for this
-        flight, so it was not priced. Worth a look on aeromexico.com directly.
-      caveat: >
-        The ladder above was read off the 10:10 departure. The Light fare is
-        known to be flat across all 16 departures at six passengers, but the
-        upper fares were not checked departure by departure. Confirm Basic is
-        still 195 on the 13:55 before buying six of them.
+        Main Cabin was the plan until the fares were read properly. Not one of
+        its four fares includes a checked bag. Every row of the comparison
+        reads "Checked baggage 55 lb, Additional charge", Flex included, which
+        is what the earlier 262 claim got wrong. That makes the real Main
+        Cabin price 223.15 plus a bag, and at that point AM Plus Classic is
+        10 more and strictly better.
+      ladder_usd:                 # per person, the 13:55
+        light: 199.95             # carry-on is an additional charge, no checked bag
+        basic: 223.15             # carry-on and personal item, no checked bag
+        classic: 242.85           # bigger carry-on, standard seat selection, no checked bag
+        flex: 302.05              # unlimited changes, still no checked bag
+        premier: 320.65
+    do_not_count_on_status: >
+      Ryan's Silver Medallion is SkyTeam Elite, which normally adds a bag on
+      SkyTeam carriers, but Aeromexico excludes class V Basic purchases on
+      domestic, US and Canadian routes from Club Premier, SkyTeam and Delta
+      member benefits. The status buys nothing on this leg either way, which
+      is one more reason to take a fare that includes the bag outright.
     watch: >
-      Bags are only a cost on this one leg. Ryan's Silver covers the first
-      checked bag each way on both Delta legs, so for him and Krysta the
-      500 MXN hop is the only baggage money in the whole trip.
+      With AM Plus Classic there is no baggage money anywhere in this trip.
+      Silver covers the first checked bag each way on both Delta legs, and the
+      Aeromexico fare includes one. If anybody downgrades to Main Basic to
+      save 10, the bag comes back at roughly 27 and has to be bought online
+      before check-in, because it costs more at the airport.
 
   - id: city_home
     date: 2027-01-03
@@ -302,8 +314,8 @@ medallion_silver:
 
 # Reference figures for anybody still booking, in Delta Main Classic.
 per_person_usd:
-  full_trip: 1676      # 890 + 222 + 564, Main Classic, DL 1911 return
-  full_trip_early_return: 1633   # 890 + 222 + 521, DL 618 return
+  full_trip: 1714.25   # 890 + 260.25 + 564, Main Classic, DL 1911 return
+  full_trip_early_return: 1671.25  # 890 + 260.25 + 521, DL 618 return
   city_only: 2783      # 890 + 1893, and the 1893 is a September number
   note: >
     Add about 174 per person for Delta Comfort on both long legs. The 890 is
@@ -317,12 +329,13 @@ per_person_usd:
 # What Ryan and Krysta actually paid.
 hosts_actual_usd:
   delta_both_legs_for_two: 3096.54     # Comfort Classic, booked 2026-11-01
-  mex_cun_for_two: 444                 # Basic plus a bag, not bought yet
-  total_for_two: 3540.54
-  per_person: 1770.27
+  mex_cun_for_two: 520.50              # AM Plus Classic, not bought yet
+  total_for_two: 3617.04
+  per_person: 1808.52
   bags_paid: >
-    Zero on the Delta legs, covered by Silver. About 54 for the two of them on
-    the Aeromexico hop, which is the only baggage money in the trip.
+    Zero, everywhere, on all three legs. Silver covers the first checked bag
+    each way on both Delta legs and AM Plus Classic includes one on the
+    Aeromexico hop. There is no baggage money in this trip.
 
 # Kept as the record of what the options cost when the decision was made.
 for_two_usd:
@@ -428,21 +441,28 @@ date_sensitivity_dtw_mex:
 
 booking_links:
   note: >
-    Delta deep links execute a real search. The multi-city one does not and
-    falls back to the form, and Aeromexico's redirects to its homepage.
+    Delta one-way deep links execute a real search. The Delta multi-city one
+    does not and falls back to the form. Aeromexico's booking engine does take
+    a deep link, found on 2026-11-01 by driving its own form and reading the
+    URL it produced. The earlier note here said Aeromexico redirects to its
+    homepage: that was a guessed URL, not this one. Pattern is
+    /bf/en-us/book/options with itinerary=ORIGIN_DEST_YYYY-MM-DD and
+    travellers=A<adults>_C0_I0_PH0_PC0. Change the A number for party size.
+    Verified live at 1, 2 and 6 passengers.
   dtw_mex: >
     https://www.delta.com/flight-search/search?action=findFlights&tripType=ONE_WAY&originCity=DTW&destinationCity=MEX&departureDate=12/29/2026&paxCount=2
   cun_dtw: >
     https://www.delta.com/flight-search/search?action=findFlights&tripType=ONE_WAY&originCity=CUN&destinationCity=DTW&departureDate=01/08/2027&paxCount=2
   delta_multi_city: https://www.delta.com/flightsearch/book-a-flight
-  mex_cun: https://www.aeromexico.com/en-us
+  mex_cun_two: >
+    https://www.aeromexico.com/bf/en-us/book/options?itinerary=MEX_CUN_2027-01-03&leg=1&travelers=A2_C0_I0_PH0_PC0
+  mex_cun_six: >
+    https://www.aeromexico.com/bf/en-us/book/options?itinerary=MEX_CUN_2027-01-03&leg=1&travelers=A6_C0_I0_PH0_PC0
 
 open:
   - Pick seats on both Delta legs, two together in Comfort rows 10 to 13 on the A319
-  - Agree the MEX to CUN departure time with all six, then everybody books Basic
-  - Confirm Basic is still 195 per person on the 13:55 before buying six
-  - Buy Ryan and Krysta's MEX to CUN seats and prepay the two bags online
+  - Tell the other four the Cancun hop moved to the 14:55, and why
+  - Buy Ryan and Krysta's MEX to CUN seats, AM Plus Classic on the 14:55
   - Collect flight details from the other four groups, see data/flight-tracker.yml
   - Ask the 1 flying MEX to DTW whether they will take a connection, and reprice that leg
-  - Check whether AM Plus beats Basic plus a bag on aeromexico.com directly
   - LAX origin is unpriced, if anyone is coming from Los Angeles

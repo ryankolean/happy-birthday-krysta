@@ -1532,6 +1532,35 @@ function buildFlights() {
   if (co.mex_cun_baggage) {
     b += `<div class="note"><div class="nh">Read this before you book the Cancun hop</div><p>${nt(co.mex_cun_baggage)}</p></div>`;
   }
+  const bl = flights.booking_links || {};
+  const beach = (flights.flights || []).find((l) => l.id === 'to_beach') || {};
+  const rej = beach.rejected_main_cabin || {};
+  const href = (u) => esc(String(u || '').trim());
+  b += `<div class="note">
+  <div class="nh">Book it</div>
+  <p>These open Aeromexico's own booking engine already set to this route and date, so the fares load straight away. Pick the <strong>${esc(beach.depart)}</strong> departure and the <strong>AM Plus Classic</strong> fare. Delta cannot sell this route at all, so do not go looking for it there.</p>
+  <ul>
+    <li><a href="${href(bl.mex_cun_two)}">Mexico City to Cancun, 3 January, for 2</a></li>
+    <li><a href="${href(bl.mex_cun_six)}">Mexico City to Cancun, 3 January, for 6</a></li>
+  </ul>
+  <p>For a different party size, change <code>A2</code> near the end of the link to the number of adults. The fare comes back identical at 1, 2 and 6, so the count does not move the per-person price.</p>
+</div>
+<div class="scroller"><table>
+<caption>Per person, priced on aeromexico.com ${esc(iso(flights.priced))}. <span class="tag quoted">quoted</span></caption>
+<thead><tr><th>Fare</th><th class="n">Each</th><th>Checked bag</th><th>Departure</th></tr></thead><tbody>
+<tr class="pick"><td><strong>AM Plus Classic</strong><br><small>the plan, bag and legroom seat included</small></td><td class="n">${usd(beach.price_usd)}</td><td>Included</td><td><strong>${esc(beach.depart)}</strong></td></tr>
+<tr><td>Main Basic<br><small>plus a bag bought online, about $27</small></td><td class="n">${usd(rej.ladder_usd?.basic)}</td><td>Extra</td><td>13:55</td></tr>
+<tr><td>Main Flex<br><small>the expensive one, and still no bag</small></td><td class="n">${usd(rej.ladder_usd?.flex)}</td><td>Extra</td><td>13:55</td></tr>
+</tbody></table></div>
+<div class="note">
+  <div class="nh">No Main Cabin fare includes a checked bag</div>
+  <p>${nt(rej.why)}</p>
+</div>
+<div class="note">
+  <div class="nh">Why the Cancun hop moved an hour later</div>
+  <p>${nt(beach.why_the_time_moved)}</p>
+</div>
+`;
   if (co.dtw_mex_2026_12_29) {
     b += `<div class="note"><div class="nh">Do not book the outbound as one group</div><p>${nt(co.dtw_mex_2026_12_29)}</p></div>`;
   }

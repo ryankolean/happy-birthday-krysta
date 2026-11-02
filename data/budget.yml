@@ -57,7 +57,7 @@ flights:
     If you are coming to the beach, say so before anybody ticketing starts.
   reference_fares_usd:
     dtw_mex_29_dec: 1056          # the 890 bucket is gone, this is the floor now
-    mex_cun_3_jan: 222            # Basic plus a prepaid checked bag
+    mex_cun_3_jan: 260.25         # AM Plus Classic on the 14:55, bag included
     cun_dtw_8_jan: 564
     mex_dtw_3_jan_nonstop: 1893   # not repriced, and nobody needs it any more
   duplication_warning: >
