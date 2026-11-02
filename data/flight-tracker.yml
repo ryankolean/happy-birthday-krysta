@@ -1,0 +1,170 @@
+# Who is actually on which flight, and what time it is on the local clock at
+# each end. The shared group legs live in data/flights.yml. This file records
+# bookings per traveller group so arrivals can be coordinated.
+#
+# NEVER PUT IN THIS FILE: confirmation numbers, record locators, ticket
+# numbers, full legal names, dates of birth, passport numbers, SkyMiles or
+# other loyalty numbers, seat assignments tied to a named person. Those go in
+# private/, which is gitignored. Point at the private file by name instead,
+# the way the hosts entry does.
+#
+# Flight numbers, airports, dates and times are fine here. They are published
+# schedule facts, not personal data.
+
+updated: 2026-11-01
+
+# Local clock at each airport for this trip's dates.
+#
+# Mexico City runs UTC-6 all year and does not observe DST.
+# Cancun runs UTC-5 all year and does not observe DST.
+# Detroit in late December and early January is on EST, which is UTC-5.
+#
+# So DTW and CUN share a clock for this whole trip, and Mexico City sits one
+# hour behind both. That is why the outbound looks like a 3h50 flight on the
+# clock when it is actually 4h50 in the air, and why the Cancun return's clock
+# time and elapsed time agree.
+timezones:
+  DTW:
+    tz: America/Detroit
+    offset_on_trip: "-05:00"
+    note: EST in December and January, DST is not in effect
+  MEX:
+    tz: America/Mexico_City
+    offset_on_trip: "-06:00"
+    note: no DST, UTC-6 all year since 2022
+  CUN:
+    tz: America/Cancun
+    offset_on_trip: "-05:00"
+    note: no DST, UTC-5 all year
+
+# One entry per group in data/travelers.yml. status is booked, pending or
+# unknown. Fill a pending entry in as each person sends their details.
+bookings:
+  - group: hosts
+    label: Ryan and Krysta
+    size: 2
+    status: booked
+    booked_on: 2026-11-01
+    carrier: Delta
+    ticket: >
+      One Delta multi-city record covering both long legs. Changeable,
+      nonrefundable. Booked direct on delta.com, not through an agency.
+    cabin: Delta Comfort Classic on both segments
+    paid_usd_total: 3096.54
+    paid_per_person_usd: 1548.27
+    paid_breakdown: >
+      2,716.00 base fare for two, plus 380.54 in taxes and fees. The figure is
+      the Delta checkout total at purchase. If seat or bag charges were added
+      after this, the total on the confirmation is the one that counts.
+    confirmation: see private/delta-flights-booking.md
+    segments:
+      - flight: DL 646
+        date: 2026-12-29
+        from: DTW
+        to: MEX
+        depart_local: "08:40"
+        arrive_local: "12:30"
+        depart_utc: "2026-12-29T13:40Z"
+        arrive_utc: "2026-12-29T18:30Z"
+        elapsed: 4h50
+        stops: 0
+        aircraft: Airbus A319
+      - flight: DL 1911
+        date: 2027-01-08
+        from: CUN
+        to: DTW
+        depart_local: "15:15"
+        arrive_local: "19:12"
+        depart_utc: "2027-01-08T20:15Z"
+        arrive_utc: "2027-01-09T00:12Z"
+        elapsed: 3h57
+        stops: 0
+        aircraft: A321neo
+    still_to_book: >
+      Mexico City to Cancun on 2027-01-03. Not bought yet, and deliberately
+      separate: Delta cannot sell this route at all. Buy Aeromexico Basic and
+      prepay one checked bag each online, about 222 per person. Waiting on the
+      group to agree a departure time first.
+    bags: >
+      Nothing to pay on either Delta leg. Silver covers the first checked bag
+      each way for both of them, and it would extend to up to 8 companions on
+      the same reservation, which does not apply here because they booked the
+      two of them alone.
+
+  - group: couple_a
+    label: Couple A
+    size: 2
+    status: pending
+    legs_needed: [out, to_beach, home]
+    segments: []
+
+  - group: single_a
+    label: Single friend A
+    size: 1
+    status: pending
+    legs_needed: [out, to_beach, home]
+    segments: []
+
+  - group: single_b
+    label: Single friend B
+    size: 1
+    status: pending
+    legs_needed: [out, to_beach, home]
+    segments: []
+
+  - group: solo_b
+    label: Solo traveller B
+    size: 1
+    status: pending
+    legs_needed: [out, city_home]
+    note: >
+      Flies home from Mexico City on 2027-01-03 and does not come to the
+      beach. Their return routing is still open, and the nonstop fare on file
+      is a September number that needs repricing.
+    segments: []
+
+# What to ask each person for. Keep it to this list: it is everything needed to
+# coordinate a pickup and nothing that should not be in a git repository.
+collect_from_everyone:
+  - Airline and flight number for each leg
+  - Date of each leg
+  - Airport codes, origin and destination, because MEX and NLU are both Mexico City
+  - Scheduled departure time, local to the departure airport
+  - Scheduled arrival time, local to the arrival airport
+  - Whether the booking is ticketed or still a hold
+  - Do not ask for confirmation numbers in a group thread
+
+# Why the Cancun leg is worth coordinating rather than leaving to each person.
+coordination:
+  mex_cun_2027_01_03: >
+    Six people are on this leg and it is the one that pays to share. One
+    arrival at CUN means one transfer and one van to Puerto Morelos instead of
+    six people trickling in across the afternoon. Aeromexico runs it roughly
+    hourly at a flat fare, so the departure time is a group decision and not a
+    price decision. The 13:55 is the current pick because it leaves after the
+    11:00 Casa KM checkout.
+  mex_cun_baggage: >
+    Tell everybody the same two things before they book, because the default
+    choice is the wrong one. Buy the Basic fare, not the cheapest one shown.
+    The cheapest fare is Light, and it carries no checked bag and no carry-on
+    at all, so it strands you with a personal item on the way to a five night
+    beach stay. Then buy the checked bag online before check-in, at 500 MXN,
+    roughly 27 USD. It costs more at the airport.
+    Basic plus a bag is about 222 per person. The first fare that bundles a
+    bag is Flex at 262, so buying the bag separately saves about 40 each and
+    242 across the six. Nobody should rely on Ryan's Delta status here:
+    Aeromexico excludes Basic purchases on domestic routes from SkyTeam and
+    Delta member baggage benefits. Full working in data/flights.yml under
+    the to_beach leg.
+  dtw_mex_2026_12_29: >
+    Do not try to put the group on one booking. The Delta nonstop will not
+    sell to a party of five or more in a single transaction, and every
+    passenger added prices the whole booking at the highest bucket reached.
+    Book in pairs against the same flight number. See party_size_ceiling in
+    data/flights.yml.
+
+open:
+  - Collect flight details from couple_a, single_a, single_b and solo_b
+  - Buy the Mexico City to Cancun leg for Ryan and Krysta
+  - Agree the MEX to CUN departure time with all six before anybody tickets it
+  - Reprice solo_b's MEX to DTW return, the figure on file is from September

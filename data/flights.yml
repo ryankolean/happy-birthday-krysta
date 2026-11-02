@@ -1,8 +1,17 @@
-# Priced live on Google Flights 2026-09-24/25. Nothing booked.
+# Repriced live on delta.com and Google Flights 2026-11-01. Nothing booked.
 # Delta is the preferred carrier. The group holds Silver Medallion.
+#
+# The September prices are kept in price_history below, because the two long
+# legs moved in opposite directions and the net is a saving.
 
-status: not booked
-priced: 2026-09-25
+status: partly booked
+status_detail: >
+  Ryan and Krysta booked both long legs on 2026-11-01 as one Delta multi-city
+  record in Delta Comfort Classic: DL 646 outbound and DL 1911 home. Nobody
+  else has booked, and the Mexico City to Cancun leg is not bought for anyone.
+  Who is on what is tracked in data/flight-tracker.yml.
+priced: 2026-11-01
+priced_previously: 2026-09-25
 preference: nonstop only, early to mid afternoon departures where possible
 
 flights:
@@ -16,12 +25,27 @@ flights:
     depart: "08:40"
     arrive: "12:30"
     duration: 4h50
-    price_usd: 1246
+    price_usd: 890
+    price_status: quoted
+    fare: Delta Main Classic
+    first_checked_bag_usd: 45
     who: all 7
+    booked_by: >
+      Ryan and Krysta, 2026-11-01, in Delta Comfort Classic rather than Main,
+      on the same multi-city record as DL 1911. The 890 above is the Main
+      Classic one-way reference fare, not what they paid. What they paid is in
+      data/flight-tracker.yml.
+    inventory: >
+      delta.com showed "2 left at this price" on 2026-11-01 in both Main and
+      Comfort, and Ryan and Krysta took the two Comfort seats. That is the fare
+      bucket, not the aircraft, so the flight does not disappear for the rest
+      of the group, the price steps up. The next bucket priced at 1056 per
+      person in Main when the same search was run for four passengers, so
+      anyone still booking should expect to pay more than 890.
     risk: >
-      Exactly one nonstop per day on roughly 130 seats, in holiday week,
-      and we need 8 of them. Seat availability is the real risk, not fare.
-      Book before watching the price.
+      Exactly one nonstop per day on roughly 130 seats, in holiday week.
+      Seat availability is the real risk, not fare. See party_size_ceiling:
+      this flight will not sell to a party of five or more in one booking.
 
   - id: to_beach
     date: 2027-01-03
@@ -29,15 +53,79 @@ flights:
     carrier: Aeromexico
     stops: 0
     depart: "13:55"
-    arrive: "17:33"
-    price_usd: 184
+    arrive: "17:36"
+    price_usd: 222
+    price_status: quoted
+    fare: Aeromexico Basic plus a prepaid checked bag
     who: the 6 continuing to the beach
+    fare_correction: >
+      The 176 that was on this line is the Light fare, which carries no
+      checked bag and no carry-on at all, not even a bin item. It was never a
+      realistic number for six people moving to a beach resort. The 222 is
+      Basic at 195 plus one prepaid checked bag at about 27. See
+      baggage_decision below.
     note: >
-      No Delta option exists, Delta does not fly Mexican domestic routes.
-      Ticket it as a DL-coded codeshare through delta.com so it credits to
-      the Delta account. Aeromexico runs this hourly 06:01 to 22:05, all at
-      the same fare, so pick the time around checkout rather than price.
-      Avoid Viva and Volaris, which fly it from NLU, an hour plus north of Roma Norte.
+      No Delta option exists. Delta does not fly Mexican domestic routes and
+      delta.com refuses the route outright: searching MEX to CUN for this date
+      returns "we do not fly this route on the selected day" (ROF4002_409).
+      It must be bought from Aeromexico direct or through an agency. This
+      corrects the earlier plan to ticket it as a DL-coded codeshare through
+      delta.com for SkyMiles credit, which is not possible.
+      Aeromexico runs this roughly hourly 06:01 to 22:05 and every departure
+      prices the same, so pick the time around checkout rather than price.
+      Verified 2026-11-01 that the flat fare still holds for a party of six,
+      at 1052 USD for all six, this departure included.
+      Avoid Viva and Volaris, which fly it from NLU, an hour plus north of
+      Roma Norte.
+    baggage_decision:
+      decided: 2026-11-01
+      chosen: Basic fare, with the checked bag bought separately and online
+      per_person_usd: 222
+      for_six_usd: 1332
+      why: >
+        No Aeromexico economy fare below Flex includes a checked bag on this
+        route, which settles a question the third-party baggage guides get
+        wrong. Flex is the first fare that bundles one, at 262 per person.
+        Buying Basic at 195 and adding a bag at about 27 lands at 222, which
+        is 40 per person cheaper, 242 across the six. Flex only wins if
+        somebody expects to change their flight, because it also brings free
+        changes and a full refund.
+      ladder_for_six_usd:          # priced on Google Flights, 2026-11-01
+        light: 1051                # no carry-on, no checked bag
+        basic: 1172                # carry-on, no checked bag
+        classic: 1270              # carry-on, no checked bag
+        flex: 1574                 # carry-on and first checked bag
+        premier_basica: 1671
+        premier_clasica: 1776
+      bag_fee: >
+        500 MXN for the first checked bag on a domestic Mexican flight, per
+        Aeromexico's own Basic fare conditions page. That is about 27 USD at
+        the real rate near 18.8 MXN/USD, or about 29 at the stale 17.0 still
+        sitting in data/trip.yml. Aeromexico says the price varies by point of
+        sale and that seasonal increases can apply, so treat 27 as close
+        rather than exact.
+      pay_online: >
+        Buy the bag online before check-in. Fees are higher at the airport.
+      do_not_count_on_status: >
+        Ryan's Silver Medallion is SkyTeam Elite, which normally adds a bag on
+        SkyTeam carriers, but Aeromexico excludes class V Basic purchases on
+        domestic, US and Canadian routes from Club Premier, SkyTeam and Delta
+        member benefits. On the fare being bought the status is worth nothing.
+        It may add a second bag on Flex, which already includes one, but that
+        is not a reason to buy Flex.
+      not_checked: >
+        AM Plus does include a domestic checked bag and sits between Classic
+        and Flex, but it was not offered in the booking options for this
+        flight, so it was not priced. Worth a look on aeromexico.com directly.
+      caveat: >
+        The ladder above was read off the 10:10 departure. The Light fare is
+        known to be flat across all 16 departures at six passengers, but the
+        upper fares were not checked departure by departure. Confirm Basic is
+        still 195 on the 13:55 before buying six of them.
+    watch: >
+      Bags are only a cost on this one leg. Ryan's Silver covers the first
+      checked bag each way on both Delta legs, so for him and Krysta the
+      500 MXN hop is the only baggage money in the whole trip.
 
   - id: city_home
     date: 2027-01-03
@@ -48,10 +136,15 @@ flights:
     arrive: "19:15"
     duration: 4h20
     price_usd: 1893
+    price_status: quoted
+    priced: 2026-09-25
     who: the 1 leaving after the city
     note: >
-      Connections the same day run $774 to $956. Taking one saves about
-      $1,040 each. Worth asking before booking the nonstop.
+      Not repriced on 2026-11-01, because the 1 November check covered only
+      the two legs Ryan and Krysta fly. Treat 1893 as a September number and
+      reprice before solo traveller B books.
+      Connections the same day ran 774 to 956 in September. Taking one saved
+      about 1,040 each. Worth asking before booking the nonstop.
 
   - id: home
     date: 2027-01-08
@@ -61,18 +154,210 @@ flights:
     aircraft: A321neo
     stops: 0
     depart: "15:15"
-    arrive: "19:10"
-    duration: 3h55
-    price_usd: 493
+    arrive: "19:12"
+    duration: 3h57
+    price_usd: 564
+    price_status: quoted
+    fare: Delta Main Classic
+    first_checked_bag_usd: 46
     who: the 6 from the beach
+    booked_by: >
+      Ryan and Krysta, 2026-11-01, in Delta Comfort Classic, on the same
+      multi-city record as DL 646. Arrival is "19:12" rather than the "19:10"
+      that was on file in September.
     note: >
-      DL 618 is the same $493 at 13:40 but needs you at CUN by 10:40,
-      before resort checkout. DL 1911 means leaving around 11:45 with a
-      three hour buffer, and CUN in early January genuinely needs three hours.
+      delta.com prices this leg in pesos, because the point of sale is Mexico
+      for a flight originating there. It quoted MX$10,587 per person, which is
+      564 USD at the rate the two sites implied on 2026-11-01, about 18.8
+      MXN/USD. See exchange_rate_warning below.
+      Changes on this leg cost a fee, unlike the outbound, which changes free.
+    alternative: >
+      DL 618 at "13:50" is MX$9,786, about 521 USD, and delta.com showed
+      "3 left at this price". It saves 43 per person but needs you at CUN
+      around 10:50, before resort checkout. DL 1911 means leaving the resort
+      around 11:45 with a three hour buffer, and CUN in early January
+      genuinely needs three hours.
+      DL 1846 at "12:18" is the same MX$10,587 as DL 1911 and is worse on
+      checkout timing, so it has no case.
 
+# Extra legroom, decided 2026-11-01. Ryan and Krysta both need it.
+legroom:
+  requirement: Main Cabin with extra legroom, exit row or the row just fore or aft of it
+  options:
+    - id: comfort_paid
+      what: Buy Delta Comfort Classic on both long legs
+      surcharge_usd_per_person: 174   # 80 on the outbound, 94 on the return
+      gives: extra legroom, normal armrests, priority boarding
+    - id: preferred_free
+      what: Buy Main Classic and use the Silver complimentary Preferred Seat benefit
+      surcharge_usd_per_person: 0
+      gives: >
+        Exit row at no charge. On the A319 Delta Comfort is rows 10 to 13 and
+        the exit row sits behind it at row 15, sold as Preferred Seating
+        rather than Comfort, and Silver gets Preferred free.
+      watch: >
+        Exit rows have fixed armrests, which costs hip width even as it gains
+        legroom. Confirm row numbers on the live seat map at booking: the
+        A321neo layouts vary by configuration and the third-party seat maps
+        disagree with each other.
+  decided: 2026-11-01
+  chosen: comfort_paid
+  why: >
+    Comfort Classic was taken on both legs rather than gambling on a free exit
+    row. Two reasons beat the saving. The Silver complimentary companion
+    upgrade is limited to U.S. 50 flights, so on a Mexico route it would have
+    seated one of them in Comfort and left the other in Main. And exit rows
+    have fixed armrests, which costs hip width on a four hour flight for two
+    people who need the room. Bought outright, both get legroom and normal
+    armrests, with priority boarding thrown in.
+  still_to_do: >
+    Pick the actual seats. Comfort Classic allows seat selection at any time,
+    so this does not have to happen at purchase, but two together beats
+    whatever gets auto-assigned. Comfort is rows 10 to 13 on the A319.
+
+# Why the two long legs go on one ticket rather than two.
+open_jaw:
+  shape: DTW to MEX on 2026-12-29, CUN to DTW on 2027-01-08, one ticket
+  decided: 2026-11-01
+  outcome: taken, in Delta Comfort Classic
+  price_status: quoted
+  source: delta.com multi-city, priced and booked in the same session
+  prices_for_two_usd:
+    comfort_classic_dl646_dl1911: 3096.54   # what was paid
+    comfort_classic_dl646_dl618: 2996       # 1:50pm return, rejected on timing
+    main_classic_cheapest_combination: 2422
+    two_one_ways_main_classic: 2908
+    two_one_ways_comfort_classic: 3255
+  saving_usd: 158
+  saving_note: >
+    Against the same cabin bought as two one-ways, 3,255, the open jaw saved
+    158. It is not the 486 that the Main Classic headline suggested, because
+    that figure was Delta's "From" teaser and assumed a connecting return.
+  also_gains: >
+    One record for both legs, so a delay or cancellation on the outbound is
+    Delta's to reaccommodate rather than two unrelated tickets.
+  teaser_trap: >
+    Delta advertises the multi-city fare as "From" a figure that pairs the
+    chosen outbound with the cheapest available return, which was a connection
+    through Atlanta. The real nonstop to nonstop total was 177 per person
+    higher. Read the cumulative total on the second segment screen, not the
+    headline on the first.
+  deep_link_warning: >
+    Delta's multi-city search cannot be reached by URL. tripType=MULTI_CITY
+    silently falls back to the booking form with Round Trip selected, though
+    paxCount does carry through. One-way deep links do work. The form has to
+    be built by hand for multi-city.
+
+# What a single booking will and will not sell, checked 2026-11-01.
+# Every passenger added to one booking prices the whole booking at the
+# highest bucket reached, so large parties pay the worst fare for everyone.
+party_size_ceiling:
+  dtw_mex_2026_12_29_nonstop:
+    1: 890
+    2: 890
+    4: 1056
+    5: not sold
+    6: not sold
+    7: not sold
+  cun_dtw_2027_01_08_nonstop:
+    2: 564
+    6: not sold
+  mex_cun_2027_01_03_aeromexico:
+    2: 176
+    3: 176
+    4: 176
+    6: 176
+  conclusion: >
+    The group cannot be put on one Delta nonstop in one transaction. Book in
+    pairs against the same flight numbers, Ryan and Krysta first. The Mexico
+    City to Cancun hop is the only leg that holds its fare at six.
+  method_caveat: >
+    A flight vanishing from results means the search could not sell the whole
+    party in one fare class. It is not proof the seats are physically gone.
+    Delta may still sell six across mixed buckets at a higher fare, so check
+    delta.com before telling the group a flight is unavailable.
+
+# Silver Medallion, read off delta.com 2026-11-01.
+medallion_silver:
+  useful:
+    - >
+      First checked bag free each way on the Delta legs, for both travellers.
+      Worth 182 across the two of them on this itinerary.
+    - >
+      The bag waiver extends to up to 8 companions on the Medallion member's
+      own reservation. It does not justify putting the group on one booking:
+      the fare bucket jump costs 166 per person to save 45.
+    - Complimentary Preferred Seats, which is the free route to the exit row.
+  not_useful:
+    - >
+      The complimentary companion upgrade is limited to U.S. 50 flights, so it
+      does not cover Krysta on a Mexico route. The free upgrade path seats one
+      of them in Comfort, not both. This is the argument for buying Comfort.
+    - >
+      Complimentary Delta Comfort seat access clears 24 hours before
+      departure. Do not count on it in holiday week.
+  not_a_risk: >
+    Basic Economy is not in play. delta.com offered no Basic fare on DL 646,
+    and the ladder starts at Main Classic, which already includes free seat
+    selection and free changes on the outbound.
+
+# Reference figures for anybody still booking, in Delta Main Classic.
 per_person_usd:
-  full_trip: 1923      # 1246 + 184 + 493
-  city_only: 3139      # 1246 + 1893
+  full_trip: 1676      # 890 + 222 + 564, Main Classic, DL 1911 return
+  full_trip_early_return: 1633   # 890 + 222 + 521, DL 618 return
+  city_only: 2783      # 890 + 1893, and the 1893 is a September number
+  note: >
+    Add about 174 per person for Delta Comfort on both long legs. The 890 is
+    no longer buyable: Ryan and Krysta took the last two seats in that bucket
+    on 2026-11-01, so expect the next one up.
+  bags: >
+    The Delta legs carry no bag cost for a Medallion. Everybody else should
+    add 45 outbound and 46 home unless they hold status of their own, which
+    is 91 per person across the two Delta legs.
+
+# What Ryan and Krysta actually paid.
+hosts_actual_usd:
+  delta_both_legs_for_two: 3096.54     # Comfort Classic, booked 2026-11-01
+  mex_cun_for_two: 444                 # Basic plus a bag, not bought yet
+  total_for_two: 3540.54
+  per_person: 1770.27
+  bags_paid: >
+    Zero on the Delta legs, covered by Silver. About 54 for the two of them on
+    the Aeromexico hop, which is the only baggage money in the trip.
+
+# Kept as the record of what the options cost when the decision was made.
+for_two_usd:
+  delta_legs_only_one_ways_main: 2908
+  delta_legs_only_open_jaw_main: 2422
+  delta_legs_only_open_jaw_comfort: 3096.54    # bought
+  two_one_ways_comfort: 3255
+  note: >
+    The sub 3,000 question resolved like this: the two Delta legs in Main on
+    one open-jaw record would have been 2,422, comfortably under. In Comfort,
+    which is what the legroom requirement needed, they came to 3,096.54. Add
+    the Cancun hop with a bag and the trip's air cost for two is 3,540.54.
+
+price_history:
+  out:
+    2026-09-25: 1246
+    2026-11-01: 890     # down 356
+  to_beach:
+    2026-09-25: 184
+    2026-11-01: 176     # flat
+  home:
+    2026-09-25: 493
+    2026-11-01: 564     # up 71
+  net_per_person: >
+    293 cheaper per person than September on the three legs, driven entirely
+    by the outbound.
+
+exchange_rate_warning: >
+  data/trip.yml carries 17.0 MXN/USD as of 2026-09. The peso and dollar
+  prices delta.com and Google Flights showed for the same CUN to DTW seats on
+  2026-11-01 imply about 18.8 MXN/USD. Every MXN conversion in this repo is
+  currently reading about 10 percent too expensive in dollars. Fix it in
+  trip.yml, which is the one place it lives, and recheck the New Year's Eve
+  figures that were quoted in pesos.
 
 # Both 3 January departures leave at 13:55, so the whole group leaves the
 # house together after the 11:00 checkout and nobody waits around.
@@ -86,28 +371,77 @@ afternoon_departure_problem: >
   Mexico City and trading it for $728 per person is a poor deal.
 
 alternatives_considered:
-  - depart: "08:25"
+  - route: DTW to MEX
+    depart: "06:25"
+    arrive: "12:50"
+    stops: 1
+    via: ATL
+    carrier: Delta
+    number: DL 1611 then DL 588
+    price_usd: 753
+    priced: 2026-11-01
+    verdict: >
+      137 per person cheaper than the nonstop and still lands before 13:00,
+      but it means a 06:25 departure, so roughly a 04:00 start. Rejected for
+      two people who want legroom because it also doubles the boardings.
+  - route: DTW to MEX
+    depart: "08:25"
     arrive: "14:45"
     stops: 1
     via: SAT
     carrier: Delta
     price_usd: 603
-    verdict: saves $5,144 across 8 but departs 15 minutes earlier, so it buys money not sleep
-  - depart: "16:40"
+    priced: 2026-09-25
+    verdict: saves money across 8 but departs 15 minutes earlier, so it buys money not sleep
+  - route: DTW to MEX
+    depart: "16:40"
     arrive: "22:30"
     stops: 1
     via: IAH
     carrier: United
     price_usd: 518
+    priced: 2026-09-25
     verdict: lands too late to use the evening
+  - route: CUN to DTW
+    depart: "08:00"
+    arrive: "15:07"
+    stops: 1
+    via: ATL
+    carrier: Delta
+    price_usd: 337          # MX$6,330 at 18.8
+    priced: 2026-11-01
+    verdict: >
+      The cheapest Delta return by a wide margin, but an 08:00 departure from
+      CUN means leaving the resort around 05:00 on the last morning. Rejected.
 
 date_sensitivity_dtw_mex:
   2026-12-27: 1346
   2026-12-28: 1641
   2026-12-29: 1246
   2026-12-30: 1060   # saves $186 pp but costs the 29 Dec night and a full day
+  note: >
+    September figures, kept for the shape rather than the level. On
+    2026-11-01 Google Flights was advertising 31 December at 183 per person,
+    which is a fare the trip cannot use.
+
+booking_links:
+  note: >
+    Delta deep links execute a real search. The multi-city one does not and
+    falls back to the form, and Aeromexico's redirects to its homepage.
+  dtw_mex: >
+    https://www.delta.com/flight-search/search?action=findFlights&tripType=ONE_WAY&originCity=DTW&destinationCity=MEX&departureDate=12/29/2026&paxCount=2
+  cun_dtw: >
+    https://www.delta.com/flight-search/search?action=findFlights&tripType=ONE_WAY&originCity=CUN&destinationCity=DTW&departureDate=01/08/2027&paxCount=2
+  delta_multi_city: https://www.delta.com/flightsearch/book-a-flight
+  mex_cun: https://www.aeromexico.com/en-us
 
 open:
-  - Ask the 2 flying MEX to DTW whether they will take a connection
+  - Pick seats on both Delta legs, two together in Comfort rows 10 to 13 on the A319
+  - Agree the MEX to CUN departure time with all six, then everybody books Basic
+  - Confirm Basic is still 195 per person on the 13:55 before buying six
+  - Buy Ryan and Krysta's MEX to CUN seats and prepay the two bags online
+  - Collect flight details from the other four groups, see data/flight-tracker.yml
+  - Ask the 1 flying MEX to DTW whether they will take a connection, and reprice that leg
+  - Check whether AM Plus beats Basic plus a bag on aeromexico.com directly
   - LAX origin is unpriced, if anyone is coming from Los Angeles
-  - Verify Silver Medallion benefits on these routes at delta.com rather than assuming
+  - Fix the stale 17.0 MXN/USD rate in data/trip.yml

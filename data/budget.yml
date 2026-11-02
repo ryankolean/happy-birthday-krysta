@@ -27,8 +27,11 @@ estimates_note: >
 flights:
   status: own_arrangement
   note: >
-    The fares below were priced on Google Flights on 25 September 2026 and are
-    there as a reference point, not as a bill. They will have moved.
+    The fares below were repriced on delta.com and Google Flights on
+    1 November 2026 and are there as a reference point, not as a bill. They
+    will have moved. The outbound dropped 356 per person since September and
+    the Cancun return rose 71. Only two seats were left at the quoted
+    outbound fare on 1 November, so this leg rewards booking early.
   krysta_and_ryan: >
     Krysta and Ryan have not bought theirs yet. When they do, the exact
     flights will be listed here so anybody who wants to travel together can
@@ -41,10 +44,14 @@ flights:
     fare, so the time is a group decision rather than a price decision.
     If you are coming to the beach, say so before anybody ticketing starts.
   reference_fares_usd:
-    dtw_mex_29_dec: 1246
-    mex_cun_3_jan: 184
-    cun_dtw_8_jan: 493
-    mex_dtw_3_jan_nonstop: 1893
+    dtw_mex_29_dec: 890
+    mex_cun_3_jan: 176
+    cun_dtw_8_jan: 564
+    mex_dtw_3_jan_nonstop: 1893   # not repriced, still a September number
+  duplication_warning: >
+    These four numbers are a second copy of the fares in data/flights.yml and
+    they have already gone stale once. Read them from flights.yml instead and
+    delete this block the next time the flights section is touched.
 
 cdmx:
   travelers: 7

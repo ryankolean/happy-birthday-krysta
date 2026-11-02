@@ -15,6 +15,7 @@ const load = (f) => yaml.load(readFileSync(join(root, 'data', f), 'utf8'));
 const trip = load('trip.yml');
 const travelers = load('travelers.yml');
 const flights = load('flights.yml');
+const flightTracker = load('flight-tracker.yml');
 const lodging = load('lodging.yml');
 const placesDoc = load('places.yml');
 const geocache = JSON.parse(readFileSync(join(root, 'data', 'geocache.json'), 'utf8'));
@@ -98,6 +99,7 @@ const nt = (s) => linkify(esc(tidy(s)));
 const PAGES = [
   { file: 'index.html', label: 'The trip' },
   { file: 'itinerary.html', label: 'Itinerary' },
+  { file: 'flights.html', label: 'Flights' },
   { file: 'stays.html', label: 'Accommodations' },
   { file: 'map.html', label: 'Map' },
   { file: 'costs.html', label: 'Costs' },
@@ -131,7 +133,7 @@ function shell({ title, current, body }) {
 <div class="wrap">
 ${body}
 <footer>
-  <p>Built from <code>data/</code> in <a href="https://github.com/ryankolean/happy-birthday-krysta">ryankolean/happy-birthday-krysta</a>. Lodging and flights last verified ${esc(iso(trip.verified))}. Nothing is booked yet.</p>
+  <p>Built from <code>data/</code> in <a href="https://github.com/ryankolean/happy-birthday-krysta">ryankolean/happy-birthday-krysta</a>. Lodging and flights last verified ${esc(iso(trip.verified))}. Casa KM is booked and partly paid, and Ryan and Krysta's two Delta legs are ticketed. Everything else is still open.</p>
   <p>Figures marked <span class="tag quoted">quoted</span> are live prices from the operator's own site. <span class="tag estimate">estimate</span> is a real market price for a comparable thing, never quoted for us. <span class="tag open">open</span> means undecided and the number is a placeholder.</p>
 </footer>
 </div>
@@ -867,7 +869,7 @@ function buildTasks() {
   let b = `<header class="masthead">
   <p class="eyebrow">As of ${esc(iso(tasks.as_of))}</p>
   <h1>What still has to happen</h1>
-  <div class="dateline"><div><b>Booked so far</b>Nothing</div></div>
+  <div class="dateline"><div><b>Booked so far</b>Casa KM, and 2 of 7 on the long-haul flights</div></div>
 </header>`;
   b += taskBlock('This week', tasks.this_week, false);
   b += taskBlock('On a date', tasks.dated, true);
@@ -1400,6 +1402,108 @@ function buildDoc(mdFile, htmlFile, title) {
   return shell({ title, current: htmlFile, body: `<div class="prose" style="padding-top:44px">${html}</div>` });
 }
 
+// ---------- flights tracker ----------
+
+function buildFlights() {
+  const tz = flightTracker.timezones || {};
+  const booked = (flightTracker.bookings || []).filter((b) => b.status === 'booked');
+  const waiting = (flightTracker.bookings || []).filter((b) => b.status !== 'booked');
+  const heads = booked.reduce((n, b) => n + (b.size || 0), 0);
+  const total = (flightTracker.bookings || []).reduce((n, b) => n + (b.size || 0), 0);
+
+  let b = `<header class="masthead">
+  <p class="eyebrow">Updated ${esc(iso(flightTracker.updated))}</p>
+  <h1>Who is on which flight</h1>
+  <div class="dateline">
+    <div><b>Booked</b>${heads} of ${total}</div>
+    <div><b>Still to report</b>${total - heads}</div>
+  </div>
+</header>
+<p class="lede">Every time shown is the local clock at that airport. Nothing here is converted into your own time zone, because the only times that matter are the ones on the departure board in front of you.</p>`;
+
+  // the clock explainer
+  b += `<h2><span class="num">01</span>What time it actually is</h2>
+<div class="scroller"><table>
+<caption>Local clock at each airport across this trip.</caption>
+<thead><tr><th>Airport</th><th>Zone</th><th class="n">Offset</th><th>Why</th></tr></thead><tbody>`;
+  for (const [code, z] of Object.entries(tz)) {
+    b += `<tr><td><strong>${esc(code)}</strong></td><td><code>${esc(z.tz)}</code></td><td class="n">UTC${esc(z.offset_on_trip)}</td><td><small>${esc(z.note)}</small></td></tr>`;
+  }
+  b += `</tbody></table></div>
+<div class="note">
+  <div class="nh">Detroit and Cancun share a clock, Mexico City does not</div>
+  <p>Across these dates Detroit is on EST and Cancun never leaves UTC-5, so those two read the same. Mexico City sits an hour behind both. That is why the outbound looks like a 3 hour 50 minute hop on the clock when it is really 4 hours 50 in the air, and why the flight home from Cancun reads honestly.</p>
+</div>`;
+
+  // booked
+  b += `<h2><span class="num">02</span>Booked</h2>`;
+  for (const g of booked) {
+    b += `<div class="note">
+  <div class="nh">${esc(g.label)}, ${g.size} ${g.size === 1 ? 'seat' : 'seats'}</div>
+  <p>${nt(g.ticket)}</p>
+  <p><strong>${esc(g.cabin)}.</strong> ${usd(g.paid_usd_total)} for ${g.size}, ${usd(g.paid_per_person_usd)} each. Booked ${esc(iso(g.booked_on))}.</p>
+</div>
+<div class="scroller"><table>
+<caption>${esc(g.label)}. Times are local to each airport.</caption>
+<thead><tr><th>Flight</th><th>Date</th><th>Route</th><th>Departs</th><th>Arrives</th><th class="n">In the air</th></tr></thead><tbody>`;
+    for (const s of g.segments || []) {
+      b += `<tr><td><strong>${esc(s.flight)}</strong><br><small>${esc(s.aircraft || '')}</small></td>
+<td>${esc(shortDate(s.date))}</td>
+<td>${esc(s.from)} to ${esc(s.to)}<br><small>${s.stops === 0 ? 'nonstop' : esc(String(s.stops)) + ' stop'}</small></td>
+<td><strong>${esc(s.depart_local)}</strong><br><small>local in ${esc(s.from)}</small></td>
+<td><strong>${esc(s.arrive_local)}</strong><br><small>local in ${esc(s.to)}</small></td>
+<td class="n">${esc(s.elapsed)}</td></tr>`;
+    }
+    b += `</tbody></table></div>`;
+    if (g.still_to_book) {
+      b += `<div class="note"><div class="nh">Still to book</div><p>${nt(g.still_to_book)}</p></div>`;
+    }
+  }
+
+  // waiting
+  b += `<h2><span class="num">03</span>Still to report</h2>
+<p class="lede">These are the people whose flights nobody has yet. If that is you, the list further down is everything needed.</p>
+<div class="scroller"><table>
+<thead><tr><th>Who</th><th class="n">Seats</th><th>Legs they need</th><th>Status</th></tr></thead><tbody>`;
+  for (const g of waiting) {
+    b += `<tr><td><strong>${esc(g.label)}</strong>${g.note ? `<br><small>${nt(g.note)}</small>` : ''}</td>
+<td class="n">${g.size}</td>
+<td><small>${(g.legs_needed || []).map((l) => esc(l)).join(', ')}</small></td>
+<td><span class="tag open">${esc(g.status)}</span></td></tr>`;
+  }
+  b += `</tbody></table></div>`;
+
+  // coordination
+  const co = flightTracker.coordination || {};
+  b += `<h2><span class="num">04</span>The Cancun leg, and the bag trap</h2>`;
+  if (co.mex_cun_2027_01_03) {
+    b += `<div class="note"><div class="nh">Be on the same aircraft</div><p>${nt(co.mex_cun_2027_01_03)}</p></div>`;
+  }
+  if (co.mex_cun_baggage) {
+    b += `<div class="note"><div class="nh">Read this before you book the Cancun hop</div><p>${nt(co.mex_cun_baggage)}</p></div>`;
+  }
+  if (co.dtw_mex_2026_12_29) {
+    b += `<div class="note"><div class="nh">Do not book the outbound as one group</div><p>${nt(co.dtw_mex_2026_12_29)}</p></div>`;
+  }
+
+  // what to send
+  b += `<h2><span class="num">05</span>What to send Ryan</h2>
+<div class="note">
+  <div class="nh">For each leg you have booked</div>
+  <ul>`;
+  for (const item of flightTracker.collect_from_everyone || []) {
+    b += `<li>${nt(item)}</li>`;
+  }
+  b += `</ul>
+</div>
+<div class="note">
+  <div class="nh">Not confirmation numbers</div>
+  <p>Flight numbers and times are fine to share and fine to keep here. Record locators are not: this page is generated from a file in a git repository, and anybody holding a locator and a surname can change or cancel a booking. Keep yours to yourself.</p>
+</div>`;
+
+  return shell({ title: 'Who is on which flight', current: 'flights.html', body: b });
+}
+
 // ---------- write ----------
 
 rmSync(out, { recursive: true, force: true });
@@ -1411,6 +1515,7 @@ writeFileSync(join(out, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
 
 writeFileSync(join(out, 'index.html'), buildIndex());
 writeFileSync(join(out, 'itinerary.html'), buildItinerary());
+writeFileSync(join(out, 'flights.html'), buildFlights());
 writeFileSync(join(out, 'costs.html'), buildCosts());
 writeFileSync(join(out, 'stays.html'), buildStays());
 writeFileSync(join(out, 'map.html'), buildMap());
