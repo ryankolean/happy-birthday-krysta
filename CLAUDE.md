@@ -25,7 +25,7 @@ Published business phone numbers and public listing URLs are fine. Someone's per
 ## Conventions
 
 - **Dates** are ISO: `2027-01-02`. **Times** are 24 hour: `"19:30"`, quoted in YAML so they stay strings.
-- **Money** is USD unless the key says `mxn`. Convert at the rate in `data/trip.yml`, currently 17.0 MXN/USD, and update that one place when it moves.
+- **Money** is USD unless the key says `mxn`. Convert at the rate in `data/trip.yml`, currently 18.79 MXN/USD, and update that one place when it moves. Nothing in the build converts currency, so changing it there does not change any figure: grep for the old rate and fix every hand-computed USD number with it. The 17.0 that sat there from September to 1 November was eleven percent out.
 - **Price status** on every budget line: `quoted` means a live price seen on the operator's own site, `estimate` means a real market price for a comparable thing that was never quoted for us, `open` means undecided and the figure is a placeholder. Do not blur these. A lot of this plan's earlier errors came from an estimate hardening into a fact.
 - **No em dashes** anywhere. Hyphen inline, colon in headings.
 - **No emojis.**

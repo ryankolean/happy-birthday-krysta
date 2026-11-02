@@ -39,7 +39,7 @@ Every build that works, all priced live on 28 October, 16% VAT added on top of w
 
 **Booking quotes this property before tax.** The listing prints "Included: City tax" and "Excluded: 16% VAT", so every figure here is the displayed price times 1.16. An earlier beach quote on this trip ran the other way, already tax-inclusive, and was grossed up anyway, overstating the lodging by about $250 each. The lesson is not "always gross up" or "never", it is **check which way round a quote is before doing arithmetic on it**.
 
-**The beach line is $1,509 and both legs $2,473.** The previous beach figure looked lower, but it was room only and carried a separate $324 food estimate on top. All-inclusive absorbs that, so the lodging line and the real outlay are now the same number:
+**The beach line is $1,509 and both legs were $2,473 when this was decided.** Both legs is now $2,452, because the Pujol line fell $21 when the exchange rate was corrected on 1 November 2026. The beach figure is unchanged. The previous beach figure looked lower, but it was room only and carried a separate $324 food estimate on top. All-inclusive absorbs that, so the lodging line and the real outlay are now the same number:
 
 | | Lodging | Food | Transfer | Total outlay |
 |---|---|---|---|---|
@@ -76,7 +76,9 @@ That takes the optional block on the costs page to nothing, which is the honest 
 
 ## The birthday is lunch at Pujol, 2 January
 
-**Booked 23 October 2026.** Table for seven in the main dining room at **14:30**, six course menu, about two and a half hours. **MX$3,795 each with VAT included, $223.24 at 17.0 MXN/USD**, roughly **$1,563 across seven** before drinks and tip. Nothing was charged; the card is a guarantee. Confirmation number and terms are in the gitignored `private/` folder.
+**Booked 23 October 2026.** Table for seven in the main dining room at **14:30**, six course menu, about two and a half hours. **MX$3,795 each with VAT included, $202 at 18.79 MXN/USD**, roughly **$1,414 across seven** before drinks and tip. Nothing was charged; the card is a guarantee. Confirmation number and terms are in the gitignored `private/` folder.
+
+The dollar figure read $223.24 until 1 November 2026, when the exchange rate was corrected from a stale 17.0. The peso price has not moved. Drinks and tip are on top of this and are estimated separately at about $80 each, because Pujol has no beverage pairing and the bill depends on what the table orders.
 
 **The booking was blocked by two things this repo believed that were not true.**
 
@@ -86,7 +88,7 @@ That takes the optional block on the costs page to nothing, which is the honest 
 
 **Two smaller corrections.** The cancellation window is **24 hours, not 48**. And Pujol holds **two Michelin stars** in the 2026 guide, not one; it and Quintonil are the only two-star restaurants in Mexico.
 
-**The terms are unusually forgiving, with one hard edge.** Free to change or cancel online until **14:30 on 1 January**. Inside that 24 hours a cancellation, a no-show, a date change *or a reduction in the diner count* each cost **MX$2,000 per person**, about $824 across seven. A headcount message went to the group on 23 October, and the answer can move freely: **6, 7 and 8 all return the same seatings**. At **9 or more there is no online availability at all** on that date.
+**The terms are unusually forgiving, with one hard edge.** Free to change or cancel online until **14:30 on 1 January**. Inside that 24 hours a cancellation, a no-show, a date change *or a reduction in the diner count* each cost **MX$2,000 per person**, about $745 across seven at 18.79 MXN/USD. A headcount message went to the group on 23 October, and the answer can move freely: **6, 7 and 8 all return the same seatings**. At **9 or more there is no online availability at all** on that date.
 
 What it beat: every other starred restaurant in the city. Checked for seven on 2 January, **Quintonil** caps at 6, **Em** still has not released the date, **Esquina Común** had no availability, **Masala y Maíz** does not book through OpenTable, **Máximo** does not open its window until about 2 December, **Rosetta** has no reachable CDMX listing, and **Sud 777** was already out on distance. Pujol was the only starred restaurant confirmed able to seat seven that day, and it is the highest rated of them.
 

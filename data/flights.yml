@@ -100,10 +100,9 @@ flights:
       bag_fee: >
         500 MXN for the first checked bag on a domestic Mexican flight, per
         Aeromexico's own Basic fare conditions page. That is about 27 USD at
-        the real rate near 18.8 MXN/USD, or about 29 at the stale 17.0 still
-        sitting in data/trip.yml. Aeromexico says the price varies by point of
-        sale and that seasonal increases can apply, so treat 27 as close
-        rather than exact.
+        18.79 MXN/USD. Aeromexico says the price varies by point of sale and
+        that seasonal increases can apply, so treat 27 as close rather than
+        exact.
       pay_online: >
         Buy the bag online before check-in. Fees are higher at the airport.
       do_not_count_on_status: >
@@ -351,13 +350,16 @@ price_history:
     293 cheaper per person than September on the three legs, driven entirely
     by the outbound.
 
-exchange_rate_warning: >
-  data/trip.yml carries 17.0 MXN/USD as of 2026-09. The peso and dollar
-  prices delta.com and Google Flights showed for the same CUN to DTW seats on
-  2026-11-01 imply about 18.8 MXN/USD. Every MXN conversion in this repo is
-  currently reading about 10 percent too expensive in dollars. Fix it in
-  trip.yml, which is the one place it lives, and recheck the New Year's Eve
-  figures that were quoted in pesos.
+exchange_rate_fixed: >
+  Resolved 2026-11-01. data/trip.yml carried 17.0 MXN/USD from September. The
+  peso and dollar prices delta.com and Google Flights showed for the same CUN
+  to DTW seats implied about 18.78, and live quotes that day agreed at 18.78
+  to 18.79. trip.yml and budget.yml now both carry 18.79.
+  The blast radius turned out to be one line. Nothing in the build converts
+  currency, so only figures computed by hand from a peso price were wrong,
+  and the Pujol lunch is the only price in this trip quoted to us in pesos.
+  It fell from 223 to 202 per person. The New Year's Eve figures were never
+  an exchange rate problem: they are stale because they are 2023 prices.
 
 # Both 3 January departures leave at 13:55, so the whole group leaves the
 # house together after the 11:00 checkout and nobody waits around.
@@ -444,4 +446,3 @@ open:
   - Ask the 1 flying MEX to DTW whether they will take a connection, and reprice that leg
   - Check whether AM Plus beats Basic plus a bag on aeromexico.com directly
   - LAX origin is unpriced, if anyone is coming from Los Angeles
-  - Fix the stale 17.0 MXN/USD rate in data/trip.yml

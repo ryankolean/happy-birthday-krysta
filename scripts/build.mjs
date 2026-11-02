@@ -641,6 +641,7 @@ ${tile('Flights', 'Your own', 'Everybody books and pays for their own. No fare i
 <tr><td>Riviera Maya</td><td class="n">${usd(budget.riviera.per_person)}</td><td class="n">n/a</td></tr>
 <tr class="sum"><td>What you owe Ryan</td><td class="n">${usd(budget.per_person.both_legs)}</td><td class="n">${usd(budget.per_person.city_only)}</td></tr>
 <tr><td>Flights</td><td class="n">Your own</td><td class="n">Your own</td></tr>
+<tr><td>Drinks and tip at Pujol<br><small>Estimated, but owed to Ryan</small></td><td class="n">${usd(budget.cdmx.owed_estimates_per_person)}</td><td class="n">${usd(budget.cdmx.owed_estimates_per_person)}</td></tr>
 <tr><td>Food and transport on the ground<br><small>Estimated, your own money</small></td><td class="n">${usd(budget.cdmx.estimates_per_person + budget.riviera.estimates_per_person)}</td><td class="n">${usd(budget.cdmx.estimates_per_person)}</td></tr>
 </tbody></table></div>
 
@@ -783,6 +784,13 @@ function buildCosts() {
 <tbody>${costRows(budget.cdmx.lines)}
 <tr class="sum"><td colspan="2">Mexico City, what you owe Ryan</td><td class="n">${usd(budget.cdmx.per_person)}</td></tr>
 </tbody></table></div>
+
+<div class="note warn">
+  <div class="nh">Pujol will cost more than the line above says</div>
+  <p>That line is the set menu only. Pujol has no beverage pairing, so drinks are ordered a la carte and the tip is on top, and the whole bill goes on Ryan's card on the day. Drinks and tip are estimated at <strong>${usd(budget.cdmx.owed_estimates[0].per_person)} each</strong>, somewhere in the range ${esc(budget.cdmx.owed_estimates[0].per_person_range)}, which makes the realistic Pujol figure about <strong>${usd(budget.cdmx.pujol_all_in_estimate_per_person)} a head</strong> rather than ${usd(budget.cdmx.lines[1].per_person)}.</p>
+  <p>It stays out of the total because it is an estimate and estimates never enter a total on this page. That is the rule working, not an oversight. Just do not read the total as the final Pujol number.</p>
+</div>
+${estTable('Estimated, and owed to Ryan rather than spent by you. His card takes the whole Pujol bill.', budget.cdmx.owed_estimates, budget.cdmx.owed_estimates_per_person)}
 
 <h3>What you will spend on the ground in the city</h3>
 ${estTable('Your own money, not money owed to Ryan. Shown so the week does not surprise anybody.', budget.cdmx.estimates, budget.cdmx.estimates_per_person)}

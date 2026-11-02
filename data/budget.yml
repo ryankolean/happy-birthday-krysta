@@ -12,17 +12,24 @@
 # each person owes Ryan. See estimates_note.
 
 currency: USD
-rate_mxn_per_usd: 17.0
+rate_mxn_per_usd: 18.79    # corrected 2026-11-01, was 17.0. See trip.yml.
 priced: 2026-10-02
 lodging_repriced: 2026-10-28
 
 estimates_note: >
   Every total on this page counts only the lines marked booked or quoted.
-  Lines marked estimate are never added in. Those are things you will pay
-  for yourself on the ground, in cash or on your own card, and the figure is
-  there so the week does not surprise anybody. The totals are a different
-  thing: they are what you owe Ryan, because he fronted the bookings on one
-  card and everybody settles up with him.
+  Lines marked estimate are never added in. The totals are what you owe Ryan,
+  because he fronted the bookings on one card and everybody settles up with
+  him.
+  There are two kinds of estimate here and they are not the same thing.
+  The estimates blocks are money you spend yourself on the ground, in cash or
+  on your own card, and the figure is there so the week does not surprise
+  anybody. The owed_estimates block is money that lands on Ryan's card and
+  that you will therefore owe him, but which cannot be pinned to a number
+  yet. Only one line is in it: drinks and tip at Pujol, because the
+  restaurant has no pairing and the bill depends on what the table orders.
+  Keeping it out of the total is the rule working correctly, not an oversight.
+  Treating the total as the final Pujol number is the mistake to avoid.
 
 flights:
   status: own_arrangement
@@ -69,7 +76,7 @@ cdmx:
     The seventh is Matthew, confirmed on 1 November 2026. He is arranging his
     own flights and his own room in the city, so the only money he settles
     with Ryan is the shared events and meals: Pujol and the lucha libre night.
-    That is 325, not 964. See per_person_own_lodging below.
+    That is 304, not 943. See per_person_own_lodging below.
   lines:
     - item: Casa KM, 4BR penthouse, Del Valle Norte, 5 nights
       per_person: 639
@@ -86,19 +93,27 @@ cdmx:
         to carry.
 
     - item: Birthday lunch at Pujol, 2 January
-      per_person: 223
-      unit_price: 1563
-      unit_label: table of 7, food only
+      per_person: 202
+      unit_price: 1414
+      unit_label: table of 7, the set menu only
       status: booked
       verified: 2026-10-27
+      repriced: 2026-11-01
+      incomplete: >
+        This line is the set menu and nothing else. It is the only line on
+        this page that is knowingly short of what will actually hit Ryan's
+        card, because drinks at Pujol are a la carte and the tip is on top.
+        See owed_estimates below for the rest. Read 282 rather than 202 if
+        you want the number to plan against.
       note: >
         Booked 23 October for 14:30, a table for seven in the main dining
         room. Ryan's card is on the booking and will take the whole bill on
         the day, so this is one of the amounts you settle with him.
-        The menu is MX$3,795 with VAT included, which is $223.24 at 17.0
-        MXN/USD, or about $1,563 across seven. Drinks and tip are on top and
-        are not in this figure. Budget $200 to $250 for the food and expect
-        to add to it.
+        The menu is MX$3,795 with VAT included. That is $202 at 18.79
+        MXN/USD, or about $1,414 across seven. It read $223 until
+        1 November, when the exchange rate was corrected from a stale 17.0,
+        so the food got cheaper in dollars by $21 a head without anything
+        changing in Mexico City.
         Nothing was charged at booking. The card is a guarantee only, and the
         reservation is free to change or cancel online until 14:30 on
         1 January. Inside that 24 hours a cancellation, a no-show, a date
@@ -119,14 +134,44 @@ cdmx:
         included, so this line covers the 29 December dinner as well as the
         show. Free cancellation until 28 December.
 
-  per_person: 964                 # 639 lodging + 223 Pujol + 102 lucha libre
-  per_person_own_lodging: 325     # 223 Pujol + 102 lucha libre, no lodging
+  # Estimated, and deliberately not in the totals, but unlike the estimates
+  # block further down this is money you will owe Ryan rather than spend
+  # yourself. His card takes the whole Pujol bill on the day, drinks and tip
+  # included, so this is the gap between the booked line and the real one.
+  owed_estimates:
+    - item: Drinks and tip at Pujol
+      per_person: 80
+      per_person_range: 51 to 113
+      status: estimate
+      settled_with: Ryan
+      note: >
+        Pujol has no beverage pairing. Drinks are a la carte, so there is no
+        package price to quote and the figure depends on what the table
+        orders.
+        Built from a real bill rather than guessed: a published two-person
+        visit paid MX$6,145 against MX$5,130 of menu, so two cocktails and a
+        sparkling water came to about MX$508 a head, and the party then added
+        a 20 percent gratuity.
+        Two drinks each is the realistic planning assumption for a birthday
+        lunch, so about MX$800 a head, which is $43. Tip at 15 percent on food
+        plus drinks is about MX$689, which is $37. That is $80 together.
+        The range runs from one drink each and a 10 percent tip, at $51, to
+        three drinks each and 20 percent, at $113. Mexico customarily tips 10
+        to 15 percent; the bill above went to 20.
+  owed_estimates_per_person: 80
+  pujol_all_in_estimate_per_person: 282   # 202 set menu + 80 drinks and tip
+
+  per_person: 943                 # 639 lodging + 202 Pujol + 102 lucha libre
+  per_person_own_lodging: 304     # 202 Pujol + 102 lucha libre, no lodging
   per_person_split_note: >
     Two figures because the group splits two ways in the city. The six sharing
-    Casa KM owe 964 each: Krysta and Ryan, Haley and Eddie, Christian and
-    Bubba. Matthew books his own room and owes 325, the shared events and
+    Casa KM owe 943 each: Krysta and Ryan, Haley and Eddie, Christian and
+    Bubba. Matthew books his own room and owes 304, the shared events and
     meals only. Both numbers count the same seven heads at Pujol and at the
     lucha libre, which is why neither of those lines changes.
+    Add about 80 to either figure for drinks and tip at Pujol, which lands on
+    Ryan's card too. It is an estimate, so it stays out of the totals by the
+    rule at the top of this file, but it is real money you will owe him.
 
   # Shown, never totalled. See estimates_note at the top of this file.
   estimates:
@@ -338,9 +383,15 @@ riviera:
       plus no decisions about dinner.
 
 per_person:
-  both_legs: 2473      # 964 city + 1509 beach
-  city_only: 325       # shared events and meals only, no lodging
+  both_legs: 2452      # 943 city + 1509 beach
+  city_only: 304       # shared events and meals only, no lodging
   city_only_was: 964
+  add_for_pujol_drinks: 80
+  add_for_pujol_drinks_note: >
+    Neither total includes drinks and tip at Pujol, which go on Ryan's card
+    and are therefore owed to him. They are an estimate, and the rule on this
+    page is that estimates never enter a total, so they sit alongside it
+    instead. Plan on about 80 more per person than the figures above.
   city_only_correction: >
     This line read 964 until 1 November 2026, which charged the one person
     doing the city alone for a Casa KM bed they are not sleeping in. They
@@ -382,7 +433,9 @@ non_refundable_exposure:
       Nothing paid, the card is only a guarantee. Free to change or cancel
       online until 14:30 on 1 January 2027. Inside that 24 hours, MX$2,000 per
       person applies to a cancellation, a no-show, a date change or a cut to
-      the diner count, which is about $824 across seven.
+      the diner count, which is about $745 across seven at 18.79 MXN/USD.
+      That read $824 until 1 November and fell with the exchange rate
+      correction, not because the terms changed.
   - what: Dreams Jade, flexible rate
     terms: >
       Nothing booked. The flexible rate refunds in full; the exact deadline
@@ -398,9 +451,10 @@ flag_for_solo_b: >
   Matthew is in Mexico City only and is arranging everything else himself.
   Confirmed 1 November 2026: his own flights, his own room in the city, and
   he is not on the beach leg.
-  So he owes $325, which is the Pujol lunch at $223 and the lucha libre night
-  at $102. Not the $639 Casa KM share, because he is not in the flat. Not the
-  $1,509 beach line, because he is not there. This page said $964 until
-  1 November, which was wrong by the full lodging share.
+  So he owes $304, which is the Pujol set menu at $202 and the lucha libre
+  night at $102, plus about $80 for his share of the drinks and tip at Pujol.
+  Not the $639 Casa KM share, because he is not in the flat. Not the $1,509
+  beach line, because he is not there. This page said $964 until 1 November,
+  which was wrong by the full lodging share.
   Nothing else about the group changes. Both shared lines were already priced
   across seven heads, so the other six pay exactly what they did before.

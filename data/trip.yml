@@ -29,9 +29,20 @@ legs:
 
 # Used for every USD conversion in this repo.
 exchange_rate:
-  mxn_per_usd: 17.0
-  range: 16.97 to 17.18
-  as_of: 2026-09
+  mxn_per_usd: 18.79
+  range: 17.97 to 18.87
+  as_of: 2026-11-01
+  was: 17.0            # carried from 2026-09 until 2026-11-01
+  correction: >
+    The 17.0 was eleven percent stale and had been flagged twice. It was
+    caught from the outside: delta.com quotes a Cancun departure in pesos and
+    Google Flights quotes the same seats in dollars, and the pair implied
+    about 18.78. Live quotes on 2026-11-01 agree at 18.78 to 18.79.
+    Every peso figure in this repo was reading about eleven percent too
+    expensive in dollars. In practice only the Pujol line was affected,
+    because it is the one price quoted to us in pesos. Nothing in the build
+    converts currency, so each USD figure is computed by hand where it sits
+    and had to be corrected there.
 
 # Mexico City runs UTC-6 year round and does not observe DST.
 timezones:

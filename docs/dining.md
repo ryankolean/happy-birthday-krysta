@@ -11,7 +11,9 @@ Krysta turns 35. The one thing on the calendar is lunch, and it is booked. Every
 | When | Saturday 2 January 2027, 14:30 |
 | Party | 7, in the main dining room |
 | Length | About two and a half hours, so out around 17:00 |
-| Food | **MX$3,795 with VAT included, $223 each** at 17.0 MXN/USD, about **$1,563 across seven** |
+| Set menu | **MX$3,795 with VAT included, $202 each** at 18.79 MXN/USD, about **$1,414 across seven** |
+| Drinks and tip | Not included above. Estimated **$80 each**, range $51 to $113. Pujol has no pairing, so drinks are a la carte |
+| All in, planning figure | **about $282 each** |
 | Drinks and tip | Not included, not in that figure |
 | Charged at booking | Nothing. The card is a guarantee only |
 
@@ -19,7 +21,7 @@ Krysta turns 35. The one thing on the calendar is lunch, and it is booked. Every
 
 ### Free to change until 14:30 on 1 January
 
-Up to exactly 24 hours before, any change is free online through OpenTable. After that, a cancellation, a no-show, a date change **or a cut to the diner count** each cost **MX$2,000 per person**, about $824 across seven.
+Up to exactly 24 hours before, any change is free online through OpenTable. After that, a cancellation, a no-show, a date change **or a cut to the diner count** each cost **MX$2,000 per person**, about $745 across seven at 18.79 MXN/USD.
 
 Two different penalties are published. OpenTable's confirmation says MX$2,000 per person. Pujol's own FAQ says a no-show is charged **100 US dollars per person**. The booking was made through OpenTable, so the MX$2,000 figure is the one that governs it, but do not be surprised if the restaurant quotes the other.
 
