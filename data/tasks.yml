@@ -1,7 +1,7 @@
 # Open tasks, most urgent first. Update status here, not in docs/.
 # status: todo | doing | done | blocked
 
-as_of: 2026-11-01
+as_of: 2026-11-03
 
 this_week:
   - id: book-dtw-mex
@@ -19,19 +19,22 @@ this_week:
       without a seat on the only nonstop.
 
   - id: book-mex-cun
-    title: Everybody going to the beach books the 14:55 to Cancun, AM Plus Classic
-    status: todo
+    title: The other four book AM 536 to Cancun, AM Plus Classic
+    status: doing
     why_now: >
-      Decided 1 November and it needs saying to the group before anybody buys
-      the wrong thing. Aeromexico MEX to CUN on 3 January, the 14:55, landing
-      18:36. Buy AM Plus Classic at 260.25, not the cheapest fare shown.
+      Krysta and Ryan ticketed this leg on 3 November at 260.25 each, so the
+      flight and the fare are no longer a proposal. Four seats left to fill:
+      Haley, Eddie, Christian and Bubba.
+      Aeromexico AM 536, MEX to CUN on 3 January, departing 14:55 from
+      Terminal 2 and landing 18:36 at Terminal 4. Buy AM Plus Classic at
+      260.25, not the cheapest fare shown.
       No Main Cabin fare on this route includes a checked bag, Flex included,
       so the cheap fares are not as cheap as they look. AM Plus Classic is the
       cheapest fare that includes one, and it adds an extra-legroom seat.
       AM Plus is not sold on the 13:55, which is why the time moved.
       Booking link is on the flights page. Price it on aeromexico.com and
       nowhere else: this fare has been recorded wrong twice from third-party
-      ladders.
+      ladders. Re-checked on 3 November and unchanged to the cent.
 
   - id: decide-nye
     title: Decide the New Year's Eve plan
@@ -80,24 +83,50 @@ dated:
       Angelopolitano and Madereros publish theirs in late November. Prices on
       file are from the 2023 cycle. Order by 28 December.
 
-  - id: call-dreams-jade
-    title: Call Dreams Jade before booking four rooms
-    status: todo
+  - id: jade-payment-terms
+    title: Ask Dreams Jade whether 3 January counts as a New Year reservation
+    status: done
     date: 2026-11-03
+    outcome: >
+      Answered in writing on 3 November, and every answer went our way.
+      Payment: the Christmas and New Year full-prepayment exception does not
+      apply to a 3 January arrival. One night per room at booking, $1,684
+      across the four, balance at check-in. Ryan fronts $1,684, not $8,420,
+      and nobody has to be collected from before the trip.
+      Cancellation: free until 30 December 2026, stated as a date. That is a
+      day earlier than the 31 December this repo had pencilled from counting
+      back, so the task date moved with it.
+      Promotions: no confirmed Black Friday or Cyber Monday information, and
+      the resort does not expect these dates to move much. No reason to wait.
+      Price drops: not honoured on a confirmed reservation. The only route to
+      a lower rate is cancel and rebook, which is free until 30 December.
+      The build requests, four Kings and the adjacency note and the birthday
+      amenity, were all taken and added to the reservations subject to
+      availability. Concierge contact for the amenity is in
+      private/jade-quote.md.
+
+  - id: decide-jade-split
+    title: Decide whether the Jade rooms split evenly or per room
+    status: done
+    date: 2026-11-10
+    outcome: >
+      Even split, decided 2 November 2026. All six pay $1,403. The four
+      coupled travellers absorb $933 between them rather than billing
+      Christian and Bubba extra for private rooms that were decided for them.
     why: >
-      One call, five questions, and the answers decide the build. Whether
-      four reservations can be linked and assigned adjacent or in the same
-      building across different room categories. Confirmation in writing of
-      the single-occupancy rate and the bed type on both solo rooms. A
-      birthday amenity for Krysta. Whether they will match the $1,617
-      non-refundable Booking rate direct. What the Quintana Roo state tourist
-      tax comes to and whether the resort collects it.
-      Hyatt Inclusive Collection +1 800 597 4761. The resort direct number on
-      file came from a trade directory and is unverified, so use the Hyatt
-      line first. Do not ask for a group rate: those start at ten rooms.
-      Bring the numbers back here afterwards. Everything on the costs page is
-      a Booking.com price seen on 28 October rather than a quote given to us,
-      and the whole beach leg reprices on whatever the call returns.
+      New question, created by the quote itemising two rates. It never came up
+      while the beach leg was one undifferentiated number.
+      Split evenly by head, which is what this repo has always done, every one
+      of the six pays $1,403. Charge each room what it costs and the four
+      people in couples pay $1,170 while each single pays $1,870.
+      That is $233 a head either way: the even split has the couples putting
+      in $933 between them so the two singles do not carry the full cost of a
+      private room. Neither answer is wrong and both are easy to defend, but
+      it has to be settled before anybody is asked for a deposit, because it
+      changes the number four people are asked for.
+      Ask the two singles. They are the ones it costs, and giving them their
+      own rooms was a decision made on their behalf.
+      Full working in data/budget.yml under riviera.split_question.
 
   - id: pujol-dietary
     title: Collect dietary restrictions for Pujol and send them in
@@ -110,14 +139,22 @@ dated:
       Anybody who does not eat seafood needs to be named before the day, not
       at the table. reservaciones@pujol.com.mx.
 
-  - id: jade-confirm-refund-deadline
-    title: Get the Dreams Jade flexible cancellation deadline in writing
+  - id: jade-cancellation-cliff
+    title: Last day to cancel Dreams Jade without a penalty
     status: todo
-    date: 2026-11-03
+    date: 2026-12-30
     why: >
-      Booking shows free cancellation on the flexible rate but does not print
-      the deadline on the search page. Everything else on this trip has a
-      date attached and this does not. Get it on the call and put it here.
+      Confirmed in writing by the resort on 3 November: cancellations are
+      free up to 30 December 2026. This said 31 December until then, which
+      was counted back three days from a 3 January arrival rather than taken
+      from the resort. They count a day tighter. Do not work to the old date.
+      After it, a cancellation or a no-show costs one night, which is $1,684
+      across the four rooms. That is the entire downside, which makes this a
+      far softer cliff than Casa KM's on 22 December.
+      It is also the last day a better rate can be taken. The resort will not
+      reprice a confirmed booking, so a drop found before 30 December is
+      captured by cancelling and rebooking at no cost, and one found after is
+      not worth the $1,684.
 
   - id: airbnb-refund-cliff
     title: Last partial refund on Casa KM, 16:00 listing local time
@@ -162,23 +199,50 @@ decisions_needed:
       party can move freely inside that range, but a ninth yes cannot be
       absorbed online and would mean emailing the restaurant directly.
 
-  - id: pick-jade-build
-    title: Pick the room build at Dreams Jade, then book it
+  - id: book-jade
+    title: Book the four Dreams Jade rooms direct, once the group confirms
     status: todo
+    date: 2026-11-10
+    why_now: >
+      The build is decided and the price is quoted. What is left is the
+      group saying yes to the number and the two payment questions coming
+      back from the resort.
+      Four Junior Suites Ocean View, King bed in every one, 3 to 8 January,
+      $8,420 all in. Two rooms at double occupancy for the couples and two
+      at single occupancy for Christian and Bubba.
+      Four things must be on the reservations rather than assumed: the same
+      category on all four, a King in each, a note asking the front desk to
+      seat the group together, and Krysta's birthday on 2 January for the
+      complimentary amenity.
+      Holding costs nothing. Cancellation is free until three days before
+      arrival, so there is no reason to wait past the group's yes.
+
+  - id: pick-jade-build
+    title: Pick the room build at Dreams Jade
+    status: done
     detail: >
-      The only thing holding up the beach booking. Eight builds work and the
-      full ladder with every price is on the accommodations page.
-      Recommended: four rooms, everybody in a Junior Suite with Ocean View,
-      $1,509 each on the flexible rate. Everyone has their own room, everyone
-      has the same room, and all four sit in the same buildings.
-      The real question is not the view, it is the fourth room. Three rooms
-      at $1,115 each puts the two singles together in a room with two full
-      beds, which breaks no rule, and saves $394 each. Giving each single
-      their own room costs $534 more each. Upgrading a couple to Ocean Front
-      costs $244. Ask the two singles what they want before assuming.
-      If the group will not carry the ocean view build, the fallback is four
-      rooms with Krysta and Ryan in an Ocean Front King at $1,420 each, where
-      the birthday couple absorb the upgrade and nobody else pays more.
+      DECIDED 2 November 2026: four rooms, all Junior Suite Ocean View, King
+      bed in every one, two couples and two singles, all four in the same
+      category and requested adjacent. $8,420 direct, nothing booked yet.
+      See book-jade for what is left.
+      The argument that got there, kept because it is why the number is what
+      it is. The resort quoted four Ocean View Junior Suites
+      direct on 2 November at $8,420, which is $1,403 each split six ways and
+      $635 under the Booking flexible rate the ladder on the accommodations
+      page is built from.
+      The adjacency answer settled the build. All four rooms must be in the
+      same category for the front desk to even attempt to place the group
+      together, so every mixed-category row on that ladder now also buys a
+      group scattered across the property. That was the thing the ocean view
+      build was being bought to avoid, so the cheaper mixed options are no
+      longer the trade they looked like.
+      What is left is the fourth room, which was always the real question.
+      Three rooms at $1,115 each puts the two singles together in a room with
+      two full beds, breaks no rule, and is now $288 each cheaper rather than
+      $394. Ask the two singles before assuming.
+      Two things to clear first: decide-jade-split and jade-payment-terms.
+      Neither changes the build, both change what people are asked to pay and
+      when.
 
   - id: book-via-prive
     title: Decide whether to book Dreams Jade through a Hyatt Prive advisor
@@ -212,13 +276,22 @@ housekeeping:
     detail: Valid at least six months past 8 January 2027.
 
   - id: quintana-roo-tourist-tax
-    title: Settle the Quintana Roo state tourist tax for six
+    title: Pay Visitax online for six before anybody flies
     status: todo
     detail: >
-      Quintana Roo charges visitors a state tourism tax that is separate from
-      the hotel bill and from the 16% VAT already added to every figure on
-      the costs page. No amount has been verified for 2027, so nothing is
-      budgeted for it. Ask on the Dreams Jade call, see call-dreams-jade.
+      Still not settled, and the resort's answer does not settle it. They said
+      the quoted rates include all applicable taxes and no additional payments
+      are required. That is true of their bill. Visitax is paid to the state
+      of Quintana Roo rather than to the hotel, so it sits outside what they
+      were answering about and is still owed by each of the six.
+      Now carried as an estimate at $15 a head rather than at nothing, which
+      is the real change on 2 November. No 2027 figure is published, it is
+      indexed to the UMA so it moves annually, and recent reporting runs from
+      259 to 285 MXN.
+      Pay it online on the official state portal before travelling. Travellers
+      paying at the Cancun airport desk in December 2025 reported being
+      charged 525 MXN against 285 in town, and the state has said it is
+      reviewing how the tax is collected. Re-check the figure in December.
 
   - id: group-chat
     title: Start the group chat for all 7

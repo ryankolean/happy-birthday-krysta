@@ -2,6 +2,77 @@
 
 What was decided, and what it beat. Newest first.
 
+## The Cancun hop is ticketed: AM 536, 3 November 2026
+
+Krysta and Ryan are on **Aeromexico AM 536**, Mexico City to Cancun on Sunday 3 January, departing **14:55 from Terminal 2** and landing **18:36 at Terminal 4**, nonstop, 2h41. **AM Plus Classic at $260.25 each, $520.50 for the two.** Both passengers confirmed and ticketed. That completes all three of their legs; nothing on their itinerary is a quote any more.
+
+**The fare had not moved.** It was re-priced on aeromexico.com the morning it was bought, two days after it was first recorded, and every rung of the ladder on that departure came back identical to the cent: Main Light $199.95, Main Basic $223.15, Main Classic $242.85, Main Flex $302.05, AM Plus Classic $260.25, AM Plus Flex $331.05. Still nothing below AM Plus that includes a checked bag.
+
+**What it beat.** Main Classic at $242.85, which is $17.40 cheaper and still charges separately for the bag, so it is more expensive once a bag is added and gets you an ordinary seat instead of an extra-legroom one. Main Light at $199.95 was never real: no checked bag and no carry-on at all, not even a bin item, on the way to a five night beach stay. AM Plus Flex at $331.05 buys free changes for $70.80 that nobody needs on a leg sandwiched between two fixed bookings.
+
+**Both passengers carry a Delta SkyMiles number**, so the flight credits to Delta rather than earning the 1,552 Aeroméxico Rewards points the fare would otherwise give each of them. Silver Medallion adds nothing on the bag here, because Aeroméxico excludes domestic Mexican routes from SkyTeam baggage benefits, but the bag is in the fare anyway.
+
+**For the other four, nothing about this is optional any more.** The departure time was the last open question on this leg and it is now settled by two tickets. Match the flight number, not just the hour: Aeroméxico runs this route roughly hourly at the same price, and AM Plus is not sold on every departure.
+
+## Dreams Jade's terms are settled, and they are better than we assumed, 3 November 2026
+
+All four questions put to the resort on 2 November came back on 3 November, and none of the answers makes the booking worse.
+
+**Ryan fronts $1,684, not $8,420.** The quote's Christmas and New Year exception, which requires full payment before arrival, does **not** cover a 3 January arrival. So the normal rule stands: one night per room at booking, balance payable at check-in. Each couple and each single settles its own room at the desk. This was the single biggest open item on the quote and it removes any need to collect $8,420 from six people in November.
+
+**The free-cancellation deadline is 30 December 2026, not 31 December.** This repo had 31 December pencilled, counted back three days from a 3 January arrival. The resort counts a day tighter and has now put 30 December in writing. Every file that carried the old date has been corrected. After it, a cancellation or no-show costs one night, $1,684 across the four rooms.
+
+**No promotion is expected and no price drop will be honoured.** The resort has no confirmed Black Friday or Cyber Monday information and does not expect these dates to move much. Separately, it will not reprice a confirmed reservation if the rate falls later: the only route to a lower rate is to cancel and rebook.
+
+**Those last two together argue for booking now rather than waiting.** Waiting for an unpromised sale risks the four Ocean View Kings over New Year week, of which six were left when last checked. Booking now costs $1,684 against a free cancellation until 30 December, and if a better rate does appear before that date it can still be taken by cancelling and rebooking at no cost. The no-price-protection answer is only a trap after 30 December, and no plausible drop covers $1,684.
+
+**What it beat.** Holding off until the Black Friday cycle, which was a live option when the questions were sent. It lost the moment the resort said it expected no movement on these dates: the downside of waiting is losing the rooms, and the upside is a discount nobody has offered.
+
+## The beach build is locked: four Ocean View Kings, 2 November 2026
+
+**Decided, and not reopening.** Four rooms at Dreams Jade, every one a **Junior Suite with Ocean View and a King bed**. Two rooms for the two couples, one each for Christian and Bubba. All four booked in the same category and requested adjacent. **$8,420 for the five nights.** Nothing is booked yet; the group is being asked to confirm the number first.
+
+| Room | Who | Occupancy | Rate |
+|---|---|---|---|
+| 1 | Krysta and Ryan | 2 | $2,340 |
+| 2 | Haley and Eddie | 2 | $2,340 |
+| 3 | Christian | 1 | $1,870 |
+| 4 | Bubba | 1 | $1,870 |
+
+**What it beat, and why each loser lost.** Three rooms was cheaper and broke no rule, but it puts Christian and Bubba in one room together. Four rooms was chosen so both of them get a door that closes, and that premium was paid deliberately rather than drifted into. Every mixed-category build was cheaper still and is now disqualified outright: the resort confirmed in writing that all four rooms must be in one category for the front desk to even attempt to seat the group together, so saving money by mixing buys a group scattered across the property. A two-bedroom build was asked about and does not exist at this property at any price, in any view: every suite there is one room, and the largest is a garden-view Family Suite that is still a single room.
+
+**King beds in all four, including the single rooms.** The resort confirmed four Kings are available subject to availability. This has to be written on each of the four reservations rather than assumed, which is the kind of thing that gets lost between a quote and a confirmation.
+
+**Four things that must appear on the reservations.** Same category on all four. A King in each. A note asking the front desk to place the group together. Krysta's birthday on 2 January, for the complimentary amenity the resort offers.
+
+**The split is even: $1,403 each, all six.** The quote itemises two rates, which made a choice visible that had never come up while the beach leg was one undifferentiated number. Charging each room what it costs would be $1,170 for each person in a couple and $1,870 for each single. The even split was taken instead, which means the four coupled travellers absorb $933 between them. That is deliberate: Christian and Bubba did not ask for private rooms, the group decided it for them, so they are not billed extra for it. It is also the only version that fits in a group message without a table.
+
+**One thing still open, and it does not change the build or the price.** Whether a 3 January arrival triggers the full-prepayment rule that applies to Christmas and New Year reservations. It decides whether Ryan fronts $1,684 or $8,420, which is a question about when money is collected rather than how much. Asked in the same reply that confirms the booking.
+
+## Dreams Jade is booked direct, not through Booking.com, 2 November 2026
+
+**Decided.** The four Ocean View Junior Suites are booked direct with the resort at **$8,420 for the four rooms**, which is **$1,403 each** across the six. The resort quoted it in writing on 2 November in reply to the enquiry sent on 30 October. Nothing is booked yet; the build and the price are settled and the payment terms are not.
+
+**What it beat.** The same four rooms on Booking.com: $9,055 on the flexible rate and $7,705 non-refundable, both after the 16 percent VAT that Booking excludes. Direct is $635 under flexible and $715 over non-refundable.
+
+| | Four rooms | Each | Cancellation |
+|---|---|---|---|
+| Booking, non-refundable | $7,705 | $1,284 | Nothing refunded, ever |
+| **Direct with the resort** | **$8,420** | **$1,403** | **Free until 3 days out, then one night** |
+| Booking, flexible | $9,055 | $1,509 | Full refund, deadline never published |
+
+**Why the middle one won.** The resort declined to match Booking, saying its rates are public and net, so this was never going to be the cheapest row. It is the right row anyway. The $715 over the non-refundable rate buys a cancellation policy better than either alternative: free up to three days before arrival, and one night after that, which is $1,684 across all four rooms. This group has changed shape twice since October and has not yet asked its two single travellers whether they want their own rooms. Paying $715 to keep that question open until the end of December is cheap, and the non-refundable rate would have closed it today.
+
+**The quote is tax-inclusive and must not be grossed up.** Food, drinks, taxes and gratuities are all in the $8,420. Every other Dreams Jade figure in this repo is a Booking price that needs multiplying by 1.16, so this file now holds quotes running both ways round. Multiplying $8,420 by 1.16 gives $9,767, a number that has never existed, and it would make the direct quote look worse than the Booking rate it actually beats. This is the second time on this trip that a beach quote has run the opposite way to the last one, which is why the rule at the foot of this log exists.
+
+**The answer that settled the build.** Adjacency is conditional, in the resort's own words: all four rooms must be booked in the same category to have any possibility of being placed near each other. Until now, mixing categories was understood to make adjacency less likely. It removes it. So every cheaper mixed-category row on the ladder in `data/lodging.yml` now also buys a group scattered across the property, which was precisely what the single-category build was being bought to avoid. The ocean view build stopped being the nicest option on that list and became the only one that delivers what the list was being judged on.
+
+**The 20 percent single-occupancy rule is confirmed from the operator.** The quote prices a single-occupancy room at $374 against $468, which is 20.09 percent. That rule was worked out from a Booking search page on 28 October and has now been checked against the resort's own desk. Worked out from a search page, then confirmed with the operator, is the order this repo is supposed to do things in.
+
+**Two things the reply did not settle, and one is expensive.** The resort takes a one-night deposit per room with the balance due at check-in, except on Christmas and New Year reservations, which must be paid in full before arrival. It does not say whether a 3 January arrival counts, and most Riviera Maya holiday blocks run to about 5 January. If it does not, the deposit is $1,684 and each couple and each single settles their own room at the desk. If it does, Ryan fronts $8,420 before anybody travels and has to collect it first, which moves the deposit conversation with the group from December into November. The second is the Quintana Roo tourist tax: the resort said its rates include all applicable taxes, which is true of its own bill, but Visitax is paid to the state rather than to the hotel, so it is still owed and is now carried at an estimated $15 a head rather than at nothing.
+
+**A new question nobody had to answer before.** The quote itemises two rates, and that makes the even split visible for the first time. Split evenly by head, as this repo has always done, all six pay $1,403. Charge each room what it costs and the four people in couples pay $1,170 while each single pays $1,870. That is $233 a head: the even split has the four coupled travellers putting in $933 between them so the two singles do not carry the full cost of a private room. It was invisible while the beach leg was one undifferentiated $9,055. Both answers are defensible, the repo convention is the even split and that is what the figures currently carry, and it is recorded as open in `data/budget.yml` under `riviera.split_question` because it changes what four people are asked for.
+
 ## The Cancun hop is the 14:55 on AM Plus Classic, 1 November 2026
 
 **Decided.** The six continuing to the beach fly Aeromexico MEX to CUN on **3 January at 14:55**, landing 18:36, on **AM Plus Classic at $260.25 each**. This replaces the 13:55 on Main Basic.

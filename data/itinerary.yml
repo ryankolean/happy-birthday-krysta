@@ -179,12 +179,13 @@ days:
           The traveller going home after the city, arranging their own
           booking. Not the same departure as the beach group any more.
       - time: "14:55"
-        what: Six to Cancun on Aeromexico, AM Plus Classic
+        what: Six to Cancun on Aeromexico AM 536, AM Plus Classic
         detail: >
           An hour later than the old plan. AM Plus is the only fare family on
           this route that includes a checked bag, and it is not sold on the
           13:55. The hour buys a bag and an extra-legroom seat for each of the
-          six. Not booked yet.
+          six. Krysta and Ryan are ticketed on it as of 3 November. The other
+          four book the same flight number and the same fare.
       - time: "18:36"
         what: Land in Cancun
         detail: >
@@ -192,9 +193,12 @@ days:
           group is at Dreams Jade around 19:15.
       - time: evening
         what: Settle in at Dreams Jade
-        detail: Nothing planned. The residence is not booked yet either.
+        detail: >
+          Nothing planned. The rooms are decided but not booked: four Ocean
+          View Junior Suites with King beds, one for each couple and one
+          each for the two single travellers.
     warnings:
-      - Neither flight is booked, and Dreams Jade is still only verified available
+      - Four of the six are not yet ticketed on AM 536, and Dreams Jade is quoted and decided but not booked
       - Evening arrival now. Nothing is scheduled for this night, which is why the later flight was affordable
       - The one flying home could save about $1,040 by taking a connection instead of the nonstop
 

@@ -10,14 +10,11 @@ Approach is decided on [the New Year's Eve page](nye.html), nothing is ordered. 
 ### Em's holiday release
 Tock says "Em has not opened reservations for 2 ene." Probing shows 19 December open and 31 December not, so the holiday week is withheld rather than sold out. Nobody knows the release date. Phone +52 55 6450 1302. **No longer blocking anything**, since [the birthday lunch](dining.html) is booked at Pujol.
 
-### Which room build at Dreams Jade
-Eight builds work and the choice is the only thing holding up the beach booking. Recommended is four rooms with everybody in an Ocean View Junior Suite at $1,509 each. **Spread:** $394 each between that and three rooms at $1,115, which breaks no rule and simply puts the two singles in one room with two beds. Ask them before deciding for them.
-
-### Whether booking Dreams Jade direct beats Booking.com
-Unknown. hyatt.com and hyattinclusivecollection.com both return HTTP 429 to automated access, so the Booking rate of $1,617 non-refundable for a standard Junior Suite is the only benchmark in hand. A Hyatt Privé advisor reportedly adds a property credit of about $100 per stay and a confirmed upgrade at the same rate. **Spread:** unknown, possibly four credits across four reservations.
+### Whether a Hyatt Privé advisor beats booking direct
+Direct now has a written quote, so the Booking.com comparison is closed: $8,420 for the four rooms, $635 under Booking's flexible rate. What is still untested is Privé, Hyatt's advisor-only program, which reportedly adds a property credit of about $100 per stay plus a confirmed upgrade at the same rate. Four reservations might mean four credits. Every source for it is an agency or affiliate blog rather than Hyatt. **Spread:** possibly $400 of credit, possibly nothing. Worth one conversation before paying, not worth delaying the hold.
 
 ### The Quintana Roo state tourist tax
-Charged per visitor, separate from the hotel bill and from the 16% VAT already added to every beach figure. No 2027 amount has been verified, so nothing is budgeted for it. **Spread:** small but unquantified.
+Charged per visitor, separate from the hotel bill. Dreams Jade was asked on 30 October and its answer covers its own bill only, which is correct and does not settle this: Visitax is paid to the state rather than to the hotel. Now carried as an estimate at **$15 a head** rather than at nothing. No 2027 figure is published and it is indexed to the UMA, so re-check in December and pay online rather than at the airport desk. **Spread:** $14 to $28 each.
 
 ### Tulum beach club day
 Unpriced. Table minimums in early January have never been quoted, so there is no per-head figure. Three hours of driving round trip. May not survive on its own merits.

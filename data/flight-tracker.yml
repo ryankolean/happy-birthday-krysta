@@ -11,7 +11,7 @@
 # Flight numbers, airports, dates and times are fine here. They are published
 # schedule facts, not personal data.
 
-updated: 2026-11-01
+updated: 2026-11-03
 
 # Local clock at each airport for this trip's dates.
 #
@@ -47,16 +47,24 @@ bookings:
     booked_on: 2026-11-01
     carrier: Delta
     ticket: >
-      One Delta multi-city record covering both long legs. Changeable,
-      nonrefundable. Booked direct on delta.com, not through an agency.
-    cabin: Delta Comfort Classic on both segments
-    paid_usd_total: 3096.54
-    paid_per_person_usd: 1548.27
+      Two records. One Delta multi-city record covering both long legs,
+      changeable and nonrefundable, booked direct on delta.com. One Aeromexico
+      record covering the Cancun hop, changeable for a fee and nonrefundable,
+      booked direct on aeromexico.com on 3 November. Delta cannot sell the
+      Mexican domestic route, which is why it could never be one booking.
+    cabin: Delta Comfort Classic on both Delta segments, AM Plus Classic on AM 536
+    paid_usd_total: 3617.04
+    paid_per_person_usd: 1808.52
     paid_breakdown: >
-      2,716.00 base fare for two, plus 380.54 in taxes and fees. The figure is
-      the Delta checkout total at purchase. If seat or bag charges were added
-      after this, the total on the confirmation is the one that counts.
-    confirmation: see private/delta-flights-booking.md
+      Delta, 3,096.54 for two: 2,716.00 base fare plus 380.54 in taxes and
+      fees, the checkout total at purchase. Aeromexico, 520.50 for two at
+      260.25 each. 3,617.04 in all, 1,808.52 per person, and nothing left to
+      buy on any leg. If seat or bag charges were added after purchase, the
+      total on the confirmation is the one that counts.
+    confirmation: >
+      Delta in private/delta-flights-booking.md, Aeromexico in
+      private/aeromexico-mex-cun-booking.md. Record locators and ticket
+      numbers live in those two files and nowhere else.
     segments:
       - flight: DL 646
         date: 2026-12-29
@@ -69,6 +77,17 @@ bookings:
         elapsed: 4h50
         stops: 0
         aircraft: Airbus A319
+      - flight: AM 536
+        date: 2027-01-03
+        from: MEX
+        to: CUN
+        depart_local: "14:55"
+        arrive_local: "18:36"
+        depart_utc: "2027-01-03T20:55Z"
+        arrive_utc: "2027-01-03T23:36Z"
+        elapsed: 2h41
+        stops: 0
+        terminals: MEX T2 to CUN T4
       - flight: DL 1911
         date: 2027-01-08
         from: CUN
@@ -80,20 +99,26 @@ bookings:
         elapsed: 3h57
         stops: 0
         aircraft: A321neo
-    still_to_book: >
-      Mexico City to Cancun on 2027-01-03, the 14:55, AM Plus Classic at
-      260.25 each. Not bought yet, and deliberately separate: Delta cannot
-      sell this route at all. The fare includes a checked bag and an
-      extra-legroom seat, so there is nothing to add to it.
+    nothing_still_to_book: >
+      All three legs are ticketed as of 3 November 2026. The Cancun hop was
+      the last one and it went on AM Plus Classic at 260.25 each, 520.50 for
+      the two, on a separate Aeromexico record. Separate on purpose: Delta
+      cannot sell this route at all. The fare includes a checked bag and an
+      extra-legroom seat, so there was nothing to add to it.
+      Seats are chosen but deliberately not written here, because a seat
+      assignment tied to a named person is exactly what the header of this
+      file says to keep out. They are in
+      private/aeromexico-mex-cun-booking.md, with the open question about
+      them.
     bags: >
       Nothing to pay on either Delta leg. Silver covers the first checked bag
       each way for both of them, and it would extend to up to 8 companions on
       the same reservation, which does not apply here because they booked the
       two of them alone.
     pricing:
-      status: part paid
+      status: paid
       per_person_usd: 1808.52
-      per_person_status: quoted
+      per_person_status: paid
       legs:
         delta_both:
           amount_usd: 1548.27
@@ -101,10 +126,10 @@ bookings:
           what: DL 646 and DL 1911 on one record, Delta Comfort Classic
         to_beach:
           amount_usd: 260.25
-          status: quoted
+          status: paid
           what: >
-            Aeromexico AM Plus Classic on the 14:55, checked bag and
-            extra-legroom seat included, not bought yet
+            Aeromexico AM 536, the 14:55, AM Plus Classic, checked bag and
+            extra-legroom seat included. Ticketed 3 November 2026.
       bags_usd: 0
       bags_note: nothing anywhere. Silver covers both Delta legs, AM Plus Classic includes the Aeromexico bag
 
@@ -283,10 +308,20 @@ price_watch:
         eCredit is worth, though there is no fee for trying.
     mex_cun:
       per_person_usd: 260.25
-      status: quoted
+      status: paid
+      ticketed: 2026-11-03
       route: MEX to CUN on 2027-01-03, the 14:55
       fare: AM Plus Classic
       watch: no
+      rechecked: 2026-11-03
+      recheck_note: >
+        Re-priced on aeromexico.com on 3 November, two days after the fare
+        was first recorded, and the whole ladder on this flight is identical:
+        Main Light 199.95, Main Basic 223.15, Main Classic 242.85, Main Flex
+        302.05, AM Plus Classic 260.25, AM Plus Flex 331.05. Still nothing
+        below AM Plus that includes a checked bag, so the 17.40 over Main
+        Classic still buys the extra-legroom seat rather than the bag.
+        Not bought yet.
       why_not: >
         Free changes begin at AM Plus Flex, one tier above what was bought.
         A drop is offset by the change fee, and Aeromexico does not reprice
@@ -303,6 +338,8 @@ price_watch:
 
 open:
   - Collect flight details from couple_a, single_a, single_b and solo_b
-  - Buy the Mexico City to Cancun leg for Ryan and Krysta
-  - Agree the MEX to CUN departure time with all six before anybody tickets it
+  - >
+    The other four on the beach leg book AM 536 on 2027-01-03, AM Plus
+    Classic. The hosts are already ticketed on it, so the departure time is
+    settled rather than up for discussion.
   - Reprice solo_b's MEX to DTW return, the figure on file is from September

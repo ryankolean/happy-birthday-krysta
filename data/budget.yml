@@ -40,10 +40,14 @@ flights:
     the Cancun return rose 71. Only two seats were left at the quoted
     outbound fare on 1 November, so this leg rewards booking early.
   krysta_and_ryan: >
-    Krysta and Ryan are booked. They are on DL 646 out of Detroit at 08:40 on
-    29 December, landing in Mexico City at 12:30, and DL 1911 out of Cancun at
-    15:15 on 8 January, landing in Detroit at 19:12. Both nonstop. If you want
-    to travel together, those are the two to match.
+    Krysta and Ryan are booked on all three legs. DL 646 out of Detroit at
+    08:40 on 29 December, landing in Mexico City at 12:30. AM 536 out of
+    Mexico City at 14:55 on 3 January, landing in Cancun at 18:36. DL 1911 out
+    of Cancun at 15:15 on 8 January, landing in Detroit at 19:12. All three
+    nonstop. If you want to travel together, those are the three to match.
+    The Cancun hop was ticketed on 3 November at 260.25 each on AM Plus
+    Classic, which is the fare this site recommends. Nothing about it is a
+    guess any more.
     Fair warning on the outbound: they took the last two seats in the cheapest
     bucket, so it is now about $1,056 rather than the $890 they paid for the
     equivalent Main fare. The flights page has the current reference figures
@@ -209,12 +213,20 @@ riviera:
   property: Dreams Jade Resort & Spa, Puerto Morelos
   board: all-inclusive
   recommended_build: >
-    Four rooms at Dreams Jade, every one a Junior Suite with Ocean View, on
-    the flexible rate. Both couples take an Ocean View King and each single
-    takes an Ocean View King on the single-occupancy rate. Everybody has
-    their own room, everybody has the same room, and all four sit in the same
-    ocean view buildings.
+    DECIDED 2 November 2026, and nothing below reopens it. Four rooms at
+    Dreams Jade, every one a Junior Suite with Ocean View, every one with a
+    King bed, booked direct with the resort. Two rooms for the two couples,
+    one each for the two single travellers, all four requested adjacent. Both couples take an Ocean View King and
+    each single takes an Ocean View King on the single-occupancy rate.
+    Everybody has their own room, everybody has the same room, and all four
+    sit in the same ocean view buildings.
+    The resort confirmed on 2 November that this is not just the nicer build
+    but the only one that can be kept together: all four rooms must be in the
+    same category to have any chance of being assigned near each other. Every
+    mixed-category option below therefore buys a scattered group.
   room_plan: >
+    Settled. Four rooms, four Kings, same category, requested adjacent.
+    The reasoning is kept below because it is why the number is what it is.
     The fourth room is what costs money here, not the view. Three rooms would
     put the two singles together in a Junior Suite Two Double, which is two
     separate beds and breaks no rule, at $966 each. Giving each single their
@@ -227,31 +239,81 @@ riviera:
     Junior Suites are set back. Putting everybody in one category fixes that
     for $89 each over buying one couple an Ocean Front.
   lines:
-    - item: Four Ocean View Junior Suites, flexible rate, all-inclusive
-      per_person: 1509
-      unit_price: 9055
+    - item: Four Ocean View Junior Suites, booked direct, all-inclusive
+      per_person: 1403
+      unit_price: 8420
       unit_label: four rooms, 5 nights, split 6 ways
       status: quoted
-      verified: 2026-10-28
+      verified: 2026-11-02
+      supersedes: the 1509 Booking.com figure carried from 28 October
       note: >
-        Priced live on Booking.com on 28 October for 3 to 8 January. Two
-        Ocean View Kings at $2,515 each and two on the single-occupancy rate
-        at $2,013 each, so $9,055 across six is $1,509 each.
-        These figures have 16% VAT added on top of what Booking displays.
-        Booking quotes this property pre-tax: it prints "Included: City tax"
-        and "Excluded: 16% VAT". The displayed total is $7,806. Do not read
-        the Booking number as the bill, and do not gross it up twice.
-        Nothing is booked. The non-refundable rate is $1,284 each, $225
-        cheaper, and refunds nothing from the moment it is taken. Flexible is
-        the call while the build is unsettled.
-        Food is not a separate line any more. This rate is all-inclusive and
-        covers meals, drinks and gratuities, which is why the beach leg no
-        longer carries a $324 village food estimate.
+        Written quote from the Dreams Jade reservations desk on 2 November,
+        in reply to the enquiry sent on 30 October. This is the first beach
+        figure on this trip that was quoted to us rather than read off a
+        search page.
+        Two rooms at double occupancy are $468 a night and two at single
+        occupancy are $374, over five nights, so $2,340 and $1,870 a room and
+        $8,420 across four. Split 6 ways that is $1,403 each.
+        Food, drinks, taxes and gratuities are all in the rate. Nothing is
+        added to this number at the resort, so unlike the Booking.com figures
+        it does not get multiplied by 1.16. Do not gross this up.
+        It lands between the two Booking rates: $634 below the flexible rate
+        at $9,055 and $715 above the non-refundable at $7,705. The resort
+        declined to match Booking, saying its rates are public and net. The
+        $715 buys a cancellation policy better than either, so it is worth
+        paying. See non_refundable_exposure at the foot of this file.
+        Nothing is booked yet.
 
-  per_person: 1509
+  per_person: 1403
+
+  # DECIDED 2 November 2026: even split, $1,403 each. Kept because the
+  # alternative is the first thing anybody will ask about.
+  split_question:
+    convention: >
+      This repo splits lodging evenly by head and always has. Every figure in
+      layout_options below is a whole-group total divided by six, and the
+      Casa KM line works the same way. On that convention the beach leg is
+      $1,403 each and the per_person figure above is right.
+    the_alternative: >
+      Four reservations are four separate prices, and the quote prices them
+      separately: $2,340 for a room with two people in it and $1,870 for a
+      room with one. Charging each room what it actually costs gives $1,170
+      a head for the four people in couples and $1,870 for each single.
+    what_it_moves: >
+      $233 per person. Against an even split each of the four people in a
+      couple pays $233 more than their room costs and each single pays $467
+      less than theirs does. Across the two singles that is $933, which is
+      exactly what the four coupled travellers put in.
+      So the even split is the couples buying each single most of a private
+      room. That was invisible while the beach leg was one undifferentiated
+      $9,055, and the itemised quote is what made it visible.
+    worth_knowing: >
+      The single rate is 80 percent of the double, not 50. A solo traveller
+      already pays for 1.6 people, because the room is the room and only the
+      all-inclusive board scales with the head in it. So a single taking a
+      private room is not getting a cheap deal under the per-room split
+      either: they would pay $1,870 for what costs a couple $1,170 a head.
+      Both splits are defensible and neither is a trick.
+    decided: even split, 2026-11-02
+    decided_by: Ryan
+    why: >
+      The convention held. One number for all six is what goes to the group,
+      and the four coupled travellers absorb $933 between them so that
+      Christian and Bubba are not billed extra for private rooms that were
+      decided on their behalf. It is also the only version of this that fits
+      in a group message without a table.
+      The per-room alternative stays recorded above because it is the first
+      thing somebody will ask about, and the answer should be that it was
+      considered and declined rather than missed.
 
   # Every arrangement in which all six get a bed of their own and nobody is on
   # a sofa. Mirrors combinations in data/lodging.yml.
+  # PRICES BELOW ARE BOOKING.COM, 28 OCTOBER, AND ARE NOW REFERENCE ONLY.
+  # The build the group is taking is four_all_ocean_view, and its real price
+  # is the direct quote in lines above, which is $635 under the flexible
+  # figure printed here. Every other row is still a Booking price that was
+  # never quoted to us, so do not compare a direct number to one of them
+  # without saying which is which.
   layout_options:
     - id: three_base
       label: Three rooms, all standard Junior Suite
@@ -339,12 +401,22 @@ riviera:
       nonrefundable_per_person: 1284
       flexible_total: 9055
       flexible_per_person: 1509
+      direct_total: 8420
+      direct_per_person: 1403
       recommended: true
+      decided: 2026-11-02
       verdict: >
-        The most expensive build on this list and still the one to take. It
-        is $89 each above buying one couple an Ocean Front, and it removes
-        both awkward conversations: nobody has a better room than anybody
-        else and the whole group is in the same buildings.
+        The only row here with a real quote behind it, and the one taken on
+        2 November.
+        Booked direct it is $8,420 rather than the $9,055 Booking wanted, so
+        $1,403 each rather than $1,509. It removes both awkward
+        conversations: nobody has a better room than anybody else and the
+        whole group is in the same buildings.
+        It is also now the only row that can deliver that. The resort
+        confirmed on 2 November that all four rooms must be in one category
+        for the front desk to even attempt to seat the group together, so
+        every cheaper mixed-category row above buys a group scattered across
+        the property.
 
   single_occupancy_trap: >
     Dreams Jade discounts a solo traveller to 80 percent of the two-person
@@ -354,7 +426,10 @@ riviera:
     pays the full two-person price for a guest who is not there.
     So the singles go in an Ocean View room or below, and never in an Ocean
     Front or a Preferred Club room. Verified at one adult and at six adults
-    across four rooms on 28 October.
+    across four rooms on 28 October, and confirmed from the resort's own desk
+    on 2 November: they quoted $374 against $468, which is 20.09 percent. The
+    rule was worked out from a search page and has now been checked against
+    the operator, which is the order this repo is supposed to do things in.
 
   estimates:
     - item: CUN airport transfer, round trip
@@ -364,10 +439,36 @@ riviera:
         A private van for the whole group runs roughly $55 to $137 each way
         depending on operator, so about $150 round trip at the middle of that
         range, or $25 each at six. This holds only if everyone is on the same
-        Mexico City to Cancun flight. The resort has been asked whether they
-        run their own private transfer, which would be the cleaner answer.
+        Mexico City to Cancun flight, which after 2 November they are: all six
+        are on the 14:55 Aeromexico.
+        Answered on 2 November: the resort does not run its own transfer. Its
+        authorised operator is AMSTAR, contactable direct, and the details are
+        in private/jade-quote.md. Price them before assuming $25 holds. An
+        authorised in-house operator is not usually the cheapest on the kerb.
 
-  estimates_per_person: 25
+    - item: Quintana Roo state tourist tax
+      per_person: 15
+      per_person_range: 14 to 28
+      status: estimate
+      note: >
+        Visitax, the state levy on foreign visitors. Paid once per person for
+        the stay rather than per night, and payable online before travel.
+        The resort was asked and its answer does not settle it. It said the
+        quoted rates include all applicable taxes and that no additional
+        payments are required unless you use extra services. That is about
+        the hotel bill. Visitax is paid to the state of Quintana Roo and not
+        to the hotel, so the resort can be entirely right and this can still
+        be owed by every person on the beach leg.
+        No 2027 figure is published. Recent reporting puts it around 285 MXN,
+        which is $15 at 18.79, with some sources still quoting 259. It is
+        indexed to the UMA, so it moves every year. Travellers paying at
+        Cancun airport in December 2025 reported being charged 525 MXN, about
+        $28, against 285 in town, and the state has since said it is
+        reviewing how the tax is collected. Pay it online in advance on the
+        official state portal rather than at the airport desk.
+        Re-check the real 2027 figure in December before anybody travels.
+
+  estimates_per_person: 40
 
   board_included:
     note: >
@@ -375,15 +476,17 @@ riviera:
       That is why the beach leg carries no food estimate. The earlier
       room-only plan for this leg added $324 each on top of the lodging line
       for eating in Puerto Morelos village.
-      Judge this on total outlay rather than on the lodging line alone. The
-      recommended build is $1,534 each all in on the flexible rate and $1,309
-      on the non-refundable one, against $1,435 for the room-only plan it
-      replaced. So flexible is $99 each more and non-refundable is $126 each
-      less, and either buys a private room and an ocean view for every person
-      plus no decisions about dinner.
+      Judge this on total outlay rather than on the lodging line alone. On the
+      direct quote the recommended build is $1,443 each all in, which is
+      $1,403 of room plus $25 of transfer and $15 of Visitax, against $1,435
+      for the room-only plan it replaced. So it is $8 each more than the plan
+      it beat, and it buys a private room and an ocean view for every person,
+      all meals and drinks, and no decisions about dinner for five days.
+      This read $1,534 against the Booking flexible rate until the direct
+      quote landed on 2 November.
 
 per_person:
-  both_legs: 2452      # 943 city + 1509 beach
+  both_legs: 2346      # 943 city + 1403 beach
   city_only: 304       # shared events and meals only, no lodging
   city_only_was: 964
   add_for_pujol_drinks: 80
@@ -413,6 +516,13 @@ excludes:
 split_mechanism:
   - Ryan fronts the shared bookings on one card and everybody settles with him.
   - Lodging is the only line billed as a whole. Both legs are split evenly by head.
+  - >
+    Settled on 2 November for the beach leg too: even split, $1,403 each.
+    Dreams Jade is four reservations at two different rates, so an even split
+    moves $233 a head from the four coupled travellers to the two singles.
+    That was chosen deliberately rather than overlooked, so that nobody is
+    billed extra for a private room decided on their behalf. Working in
+    riviera.split_question.
   - Keep the two legs on separate ledgers. Guests who leave after Mexico City should not carry beach costs.
   - Flights never go through this. Book your own and pay for your own.
   - Pujol goes on Ryan's card on the day. Food is the figure on this page, drinks and tip are settled after.
@@ -436,16 +546,34 @@ non_refundable_exposure:
       the diner count, which is about $745 across seven at 18.79 MXN/USD.
       That read $824 until 1 November and fell with the exchange rate
       correction, not because the terms changed.
-  - what: Dreams Jade, flexible rate
+  - what: Dreams Jade, booked direct
     terms: >
-      Nothing booked. The flexible rate refunds in full; the exact deadline
-      is confirmed at booking rather than published on the search page, so
-      get it in writing. The non-refundable rate is $225 cheaper each and
-      refunds nothing from the moment it is taken.
-      Unlike every other line here, the exposure runs toward booking rather
-      than away from it. Four rooms over New Year week on the Riviera Maya is
-      the inventory everybody wants, and the build is still unpicked, so
-      flexible is what lets the group decide without paying for the delay.
+      Nothing booked. The terms below are the resort's own, quoted in writing
+      on 2 November and completed on 3 November, and they beat both Booking
+      rates.
+      Cancellation: free if received at least 3 days before arrival. Later
+      than that, or a no-show, costs one night. The resort put the deadline
+      in writing on 3 November as 30 December 2026, a day earlier than
+      counting back from arrival had suggested. One night across all four
+      rooms is $1,684, and that is the whole downside of cancelling late.
+      Compare that to Booking: the non-refundable rate refunds nothing from
+      the moment it is taken, and the flexible rate costs $634 more than this
+      quote. Direct wins on both counts, which is why the $715 it costs over
+      the Booking non-refundable rate is worth paying for a group that has
+      already changed shape twice.
+      Payment, now settled: a deposit of one night per room is due at
+      booking, $1,684 in total, with the balance payable at check-in. The
+      resort confirmed on 3 November that the Christmas and New Year
+      full-prepayment exception does not cover a 3 January arrival. So Ryan
+      fronts $1,684 and each couple and each single settles its own room at
+      the desk. Nobody has to be collected from before the trip.
+      There is no price protection after booking. A later rate drop will not
+      be honoured on a confirmed reservation, and the only route to it is
+      cancelling and rebooking: free until 30 December, one night after.
+      The exposure still runs toward booking rather than away from it. Four
+      rooms over New Year week on the Riviera Maya is the inventory everybody
+      wants, and a 3-day cancellation window means holding them costs nothing
+      while the group makes up its mind.
 
 flag_for_solo_b: >
   Matthew is in Mexico City only and is arranging everything else himself.
@@ -453,7 +581,7 @@ flag_for_solo_b: >
   he is not on the beach leg.
   So he owes $304, which is the Pujol set menu at $202 and the lucha libre
   night at $102, plus about $80 for his share of the drinks and tip at Pujol.
-  Not the $639 Casa KM share, because he is not in the flat. Not the $1,509
+  Not the $639 Casa KM share, because he is not in the flat. Not the $1,403
   beach line, because he is not there. This page said $964 until 1 November,
   which was wrong by the full lodging share.
   Nothing else about the group changes. Both shared lines were already priced

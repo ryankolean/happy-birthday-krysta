@@ -51,11 +51,28 @@ flights:
     date: 2027-01-03
     route: MEX to CUN
     carrier: Aeromexico
+    number: AM 536
     stops: 0
     depart: "14:55"
     arrive: "18:36"
+    terminals: departs MEX Terminal 2, arrives CUN Terminal 4
     price_usd: 260.25
     price_status: quoted
+    repriced: 2026-11-03
+    repriced_note: >
+      Re-checked on aeromexico.com on 3 November, the day the hosts ticketed
+      it. Every fare on this departure was identical to 2 days earlier, to the
+      cent. The fare has not moved since it was first recorded, so the figure
+      below is current rather than merely recent.
+    hosts_ticketed: >
+      Krysta and Ryan bought this leg on 3 November 2026 at 260.25 each,
+      520.50 for the two, on exactly the fare recommended here. The flight is
+      confirmed and ticketed. On the ticket the cabin reads Premium Economy,
+      fare class W, which is what AM Plus is called in the booking system.
+      Everyone else on the beach leg still has to book. Match the flight
+      number and the fare, not just the time.
+      Record locator, ticket numbers and seats are in
+      private/aeromexico-mex-cun-booking.md and stay there.
     fare: AM Plus Classic, one checked bag and an AM Plus seat included
     who: the 6 continuing to the beach
     decided: 2026-11-01
@@ -127,7 +144,7 @@ flights:
         is what the earlier 262 claim got wrong. That makes the real Main
         Cabin price 223.15 plus a bag, and at that point AM Plus Classic is
         10 more and strictly better.
-      ladder_usd:                 # per person, the 13:55
+      ladder_usd:                 # per person, the 14:55, re-checked 2026-11-03
         light: 199.95             # carry-on is an additional charge, no checked bag
         basic: 223.15             # carry-on and personal item, no checked bag
         classic: 242.85           # bigger carry-on, standard seat selection, no checked bag
@@ -382,8 +399,10 @@ exchange_rate_fixed: >
   It fell from 223 to 202 per person. The New Year's Eve figures were never
   an exchange rate problem: they are stale because they are 2023 prices.
 
-# Both 3 January departures leave at 13:55, so the whole group leaves the
-# house together after the 11:00 checkout and nobody waits around.
+# The 3 January departure is the 14:55, so the whole group leaves the house
+# together after the 11:00 checkout and nobody waits around. This said 13:55
+# until 3 November, left over from before AM Plus forced the move an hour
+# later. There is only one departure to be on now.
 
 afternoon_departure_problem: >
   The stated preference cannot be met on the outbound. Mexico City is 4h50
