@@ -913,7 +913,8 @@ ${jade.direct_quote ? `<div class="note">
   <div class="nh">The resort quoted us direct on ${esc(iso(jade.direct_quote.received))}</div>
   <p>${esc(jade.direct_quote.build)}. Two rooms at ${usd(jade.direct_quote.rooms[0].nightly_usd)} a night for two people and two at ${usd(jade.direct_quote.rooms[1].nightly_usd)} for one, so <strong>${usd(jade.direct_quote.total_usd)} for the four rooms and ${usd(jade.direct_quote.per_person_usd)} each</strong>. Food, drinks, taxes and gratuities are in that rate, and nothing is added at the resort.</p>
   <p>That is ${usd(jade.direct_quote.versus_booking.direct_saves_usd)} under the Booking.com flexible rate in the table below. ${nt(jade.direct_quote.cancellation)}</p>
-  <p><strong>Still open:</strong> ${nt(jade.direct_quote.payment)}</p>
+  <p><strong>Payment:</strong> ${nt(jade.direct_quote.payment)}</p>
+  <p><strong>Getting there:</strong> ${nt(jade.direct_quote.transfers)}</p>
 </div>` : ''}
 
 <div class="scroller"><table>

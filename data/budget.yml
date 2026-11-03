@@ -433,18 +433,33 @@ riviera:
 
   estimates:
     - item: CUN airport transfer, round trip
-      per_person: 25
-      status: estimate
+      per_person: 16.67
+      status: quoted
+      verified: 2026-11-03
+      unit_price: 100
+      unit_label: one private van, both directions, split 6 ways
+      supersedes: the 25 estimate carried from 2 November
       note: >
-        A private van for the whole group runs roughly $55 to $137 each way
-        depending on operator, so about $150 round trip at the middle of that
-        range, or $25 each at six. This holds only if everyone is on the same
-        Mexico City to Cancun flight, which after 2 November they are: all six
-        are on the 14:55 Aeromexico.
-        Answered on 2 November: the resort does not run its own transfer. Its
-        authorised operator is AMSTAR, contactable direct, and the details are
-        in private/jade-quote.md. Price them before assuming $25 holds. An
-        authorised in-house operator is not usually the cheapest on the kerb.
+        Quoted on eTransfers' own site for the real dates, 3 to 8 January,
+        at six passengers: a Toyota Hiace class van seating 8 with room for 8
+        bags, private and never shared, at $94 round trip for the vehicle on
+        the Economy fare or $100 on Premium. Take Premium. The $6 buys free
+        cancellation up to 24 hours before pickup, and nothing about the
+        beach leg is booked yet.
+        $100 across six is $16.67 each, against the $25 this line carried as
+        an estimate. The price is per vehicle rather than per person, it is
+        the same whatever time the flight lands, and taxes, tolls and luggage
+        are in it. Holiday week did not move it: the same $94 shows for a
+        random November date.
+        This holds only while all six are on one flight, which they are:
+        AM 536, landing 18:36. Split the group across arrivals and this
+        becomes two vans and roughly double.
+        The resort runs no transfer of its own. Its authorised operator is
+        AMSTAR, whose details are in private/jade-quote.md and who publishes
+        no rate anywhere. Worth one email for a quote, but do not assume it
+        wins: an in-house operator rarely beats the kerb, and the reports
+        that do exist put AMSTAR well above this.
+        Uber is not an option at this airport. See docs/transport.md.
 
     - item: Quintana Roo state tourist tax
       per_person: 15
@@ -468,7 +483,7 @@ riviera:
         official state portal rather than at the airport desk.
         Re-check the real 2027 figure in December before anybody travels.
 
-  estimates_per_person: 40
+  estimates_per_person: 31.67
 
   board_included:
     note: >
@@ -477,8 +492,8 @@ riviera:
       room-only plan for this leg added $324 each on top of the lodging line
       for eating in Puerto Morelos village.
       Judge this on total outlay rather than on the lodging line alone. On the
-      direct quote the recommended build is $1,443 each all in, which is
-      $1,403 of room plus $25 of transfer and $15 of Visitax, against $1,435
+      direct quote the recommended build is $1,434.67 each all in, which is
+      $1,403 of room plus $16.67 of transfer and $15 of Visitax, against $1,435
       for the room-only plan it replaced. So it is $8 each more than the plan
       it beat, and it buys a private room and an ocean view for every person,
       all meals and drinks, and no decisions about dinner for five days.

@@ -2,6 +2,18 @@
 
 What was decided, and what it beat. Newest first.
 
+## One private van from the airport, not Uber and not the bus, 3 November 2026
+
+**About $100 for the vehicle, round trip, which is $16.67 each at six.** A Toyota Hiace class van, private, quoted on eTransfers' own booking engine for the real dates with six passengers. Taxes, tolls and luggage included, the driver tracks AM 536 and meets the group past customs, and the price does not change if the flight lands late. Take the $100 Premium fare over the $94 Economy one: the $6 buys free cancellation up to 24 hours before, and nothing on the beach leg is committed yet.
+
+**This replaces a $25 per person estimate that had been sitting in the budget since 2 November.** The real number is $16.67, so the beach leg is $8.33 a head cheaper than the costs page has been saying. All in, the recommended build is now $1,434.67 each rather than $1,443.
+
+**Why it is cheap is worth understanding, because it is fragile.** A van is priced per vehicle, not per head. Six people on one flight splitting one van is the lowest cost per person available on this route. Split the group across two arrivals and it becomes two vans and roughly double, which is one more reason everybody should be on AM 536.
+
+**What it beat.** Uber, which is not permitted to pick up at Cancun airport: the transport ministry has said so, the airport posts notices to that effect, and the taxi unions hold the exclusive right to the arrivals kerb. Uber's own airport product dispatches a union taxi at taxi prices, so it buys the app and none of the saving. Uber is fine once you are in Puerto Morelos; it is the airport that is the problem. The ADO bus at about $12 a head was the only genuinely cheaper option and it is wrong for this group: six people, five nights of luggage, an 18:36 arrival in the dark, a drop at the highway junction rather than the resort, and taxis needed from there anyway. A Sprinter at $197 is more van than six people need.
+
+**AMSTAR, the resort's own authorised operator, is still unpriced.** It publishes no rate anywhere, which is why this was taken to the open market rather than taken on trust. Worth one email since the resort offered it, but the number to beat is $100 for the vehicle, and the reports that exist put AMSTAR well above that. Full working in `docs/transport.md`.
+
 ## The Cancun hop is ticketed: AM 536, 3 November 2026
 
 Krysta and Ryan are on **Aeromexico AM 536**, Mexico City to Cancun on Sunday 3 January, departing **14:55 from Terminal 2** and landing **18:36 at Terminal 4**, nonstop, 2h41. **AM Plus Classic at $260.25 each, $520.50 for the two.** Both passengers confirmed and ticketed. That completes all three of their legs; nothing on their itinerary is a quote any more.

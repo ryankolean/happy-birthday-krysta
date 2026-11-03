@@ -36,6 +36,23 @@ this_week:
       nowhere else: this fare has been recorded wrong twice from third-party
       ladders. Re-checked on 3 November and unchanged to the cent.
 
+  - id: book-cun-transfer
+    title: Book one private van, Cancun airport to Dreams Jade and back
+    status: todo
+    why_now: >
+      Priced 3 November and it is the cheap option only while all six are on
+      one flight, which they are: AM 536, landing 18:36 on 3 January.
+      One Toyota Hiace class van, private, round trip, $100 on the Premium
+      fare at eTransfers, which is $16.67 each at six. Premium rather than
+      the $94 Economy fare because it cancels free up to 24 hours before and
+      nothing on the beach leg is committed yet.
+      Do not plan on Uber. It is not permitted to pick up at Cancun airport,
+      and the app's airport product dispatches a union taxi at taxi prices.
+      Give the operator the flight number so the driver tracks the arrival.
+      Worth one email to AMSTAR first, the resort's own operator, purely to
+      see whether it beats $100. It publishes no rate. Full comparison in
+      docs/transport.md.
+
   - id: decide-nye
     title: Decide the New Year's Eve plan
     status: todo

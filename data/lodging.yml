@@ -138,6 +138,11 @@ properties:
       transfers: >
         The resort runs no transfer of its own. Its authorised operator is
         AMSTAR, to be contacted direct. Details in private/jade-quote.md.
+        AMSTAR publishes no rate, so it was priced against the open market on
+        3 November rather than taken on trust. A private van for all six,
+        both directions, quotes at $100 on eTransfers' own site for the real
+        dates, which is $16.67 each. Full comparison, including why Uber is
+        not an option at this airport, is in docs/transport.md.
       not_answered:
         - >
           The Quintana Roo state tourist tax. The answer given covers the
