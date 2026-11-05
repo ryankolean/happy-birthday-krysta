@@ -487,7 +487,6 @@ booking_links:
     https://www.aeromexico.com/bf/en-us/book/options?itinerary=MEX_CUN_2027-01-03&leg=1&travelers=A6_C0_I0_PH0_PC0
 
 open:
-  - Pick seats on both Delta legs, two together in Comfort rows 10 to 13 on the A319
   - Tell the other four the Cancun hop moved to the 14:55, and why
   - Collect flight details from Haley and Eddie, and from Bubba, see data/flight-tracker.yml
   - Ask the 1 flying MEX to DTW whether they will take a connection, and reprice that leg
