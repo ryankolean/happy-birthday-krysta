@@ -58,6 +58,7 @@ bookings:
     size: 2
     status: booked
     booked_on: 2026-11-01
+    changed_on: 2026-11-05
     carrier: Delta
     ticket: >
       Two records. One Delta multi-city record covering both long legs,
@@ -65,15 +66,24 @@ bookings:
       record covering the Cancun hop, changeable for a fee and nonrefundable,
       booked direct on aeromexico.com on 3 November. Delta cannot sell the
       Mexican domestic route, which is why it could never be one booking.
-    cabin: Delta Comfort Classic on both Delta segments, AM Plus Classic on AM 536
-    paid_usd_total: 3617.04
-    paid_per_person_usd: 1808.52
+      The Delta record was reissued on 5 November 2026 to move the flight home
+      into Delta First. Same two flights, same dates, same times: only the
+      cabin on the Cancun to Detroit leg changed. A reissue mints a new record
+      locator and new ticket numbers, so anything written down from the
+      1 November booking is stale. The current ones are in the private file.
+    cabin: Delta Comfort Classic to Mexico City, Delta First Classic home from Cancun, AM Plus Classic on AM 536
+    paid_usd_total: 3915.04
+    paid_per_person_usd: 1957.52
     paid_breakdown: >
-      Delta, 3,096.54 for two: 2,716.00 base fare plus 380.54 in taxes and
-      fees, the checkout total at purchase. Aeromexico, 520.50 for two at
-      260.25 each. 3,617.04 in all, 1,808.52 per person, and nothing left to
-      buy on any leg. If seat or bag charges were added after purchase, the
-      total on the confirmation is the one that counts.
+      Delta, 3,394.54 for two after the reissue: 3,014.00 base fare plus
+      380.54 in taxes and fees. That is 1,697.27 each, of which 1,548.27 was
+      the original ticket's value carried across as an eCredit and 149.00 was
+      new money. So First on the way home cost 298.00 for the two of them,
+      against the 620.00 the same two seats cost to buy fresh on the same
+      day. The gap is the fare drop between 1 and 5 November, which the
+      reissue collected on the way past. Aeromexico, 520.50 for two at 260.25
+      each, untouched. 3,915.04 in all, 1,957.52 per person, and nothing left
+      to buy on any leg.
     confirmation: >
       Delta in private/delta-flights-booking.md, Aeromexico in
       private/aeromexico-mex-cun-booking.md. Record locators and ticket
@@ -90,6 +100,7 @@ bookings:
         elapsed: 4h50
         stops: 0
         aircraft: Airbus A319
+        cabin: Delta Comfort Classic
       - flight: AM 536
         date: 2027-01-03
         from: MEX
@@ -101,6 +112,7 @@ bookings:
         elapsed: 2h41
         stops: 0
         terminals: MEX T2 to CUN T4
+        cabin: AM Plus Classic
       - flight: DL 1911
         date: 2027-01-08
         from: CUN
@@ -112,6 +124,7 @@ bookings:
         elapsed: 3h57
         stops: 0
         aircraft: A321neo
+        cabin: Delta First Classic
     nothing_still_to_book: >
       All three legs are ticketed as of 3 November 2026. The Cancun hop was
       the last one and it went on AM Plus Classic at 260.25 each, 520.50 for
@@ -127,16 +140,20 @@ bookings:
       Nothing to pay on either Delta leg. Silver covers the first checked bag
       each way for both of them, and it would extend to up to 8 companions on
       the same reservation, which does not apply here because they booked the
-      two of them alone.
+      two of them alone. The flight home is Delta First now, which carries two
+      free checked bags each at 70lb rather than the usual 50, so the return
+      has more allowance than either of them is likely to use.
     pricing:
       status: paid
-      per_person_usd: 1808.52
+      per_person_usd: 1957.52
       per_person_status: paid
       legs:
         delta_both:
-          amount_usd: 1548.27
+          amount_usd: 1697.27
           status: paid
-          what: DL 646 and DL 1911 on one record, Delta Comfort Classic
+          what: >
+            DL 646 and DL 1911 on one record. Delta Comfort Classic out,
+            Delta First Classic home after the 5 November reissue.
         to_beach:
           amount_usd: 260.25
           status: paid
@@ -149,14 +166,71 @@ bookings:
   - group: couple_a
     label: Haley and Eddie
     size: 2
-    status: pending
-    legs_needed: [out, to_beach, home]
-    segments: []
+    status: booked
+    booked_on: 2026-11-05
+    carrier: Delta
+    ticket: >
+      One Delta multi-city record covering both long legs, changeable and
+      nonrefundable, booked direct on delta.com on 5 November 2026. Reported
+      by Eddie the same day, with the receipt, so these times are read off a
+      ticket rather than off a timetable.
+      Same two flights as Krysta and Ryan, same cabins: DL 646 out in Comfort,
+      DL 1911 home in First. They bought theirs outright on the day, which is
+      why their fare is 50 a head above the hosts' reissued one. Nobody owes
+      anybody anything over it. The Cancun hop in the middle is still to buy.
+    cabin: Delta Comfort Classic to Mexico City, Delta First Classic home from Cancun
+    paid_usd_total: 3494.54
+    paid_per_person_usd: 1747.27
+    paid_breakdown: >
+      3,494.54 for two on the Delta record: 3,114.00 base fare plus 380.54 in
+      taxes and fees, which is 1,747.27 each. That is the Delta legs only.
+      AM 536 is not in it and is not bought.
+    segments:
+      - flight: DL 646
+        date: 2026-12-29
+        from: DTW
+        to: MEX
+        depart_local: "08:40"
+        arrive_local: "12:30"
+        depart_utc: "2026-12-29T13:40Z"
+        arrive_utc: "2026-12-29T18:30Z"
+        elapsed: 4h50
+        stops: 0
+        aircraft: Airbus A319
+        cabin: Delta Comfort Classic
+      - flight: DL 1911
+        date: 2027-01-08
+        from: CUN
+        to: DTW
+        depart_local: "15:15"
+        arrive_local: "19:12"
+        depart_utc: "2027-01-08T20:15Z"
+        arrive_utc: "2027-01-09T00:12Z"
+        elapsed: 3h57
+        stops: 0
+        aircraft: A321neo
+        cabin: Delta First Classic
+    still_to_book: >
+      AM 536, Mexico City to Cancun on 3 January, the 14:55. Two seats, AM
+      Plus Classic at 260.25 each, bought direct on aeromexico.com because
+      Delta cannot sell the route. Do not buy a Main Cabin fare on it: none of
+      them includes a checked bag, Flex included. The hosts and Christian are
+      already ticketed on this flight, so the time is settled.
     pricing:
-      status: open
-      expected_per_person_usd: 1880.25
-      expected_total_usd: 3760.50
-      basis: beach_bound_reference
+      status: part_paid
+      per_person_usd: 1747.27
+      per_person_status: paid
+      legs:
+        delta_both:
+          amount_usd: 1747.27
+          status: paid
+          what: >
+            DL 646 and DL 1911 on one record. Delta Comfort Classic out,
+            Delta First Classic home.
+        to_beach:
+          amount_usd: 260.25
+          status: open
+          what: Aeromexico AM 536, the 14:55, AM Plus Classic. Not bought.
 
   - group: single_a
     label: Christian
@@ -325,27 +399,34 @@ pricing_reference:
     person. Nothing to add on the Aeromexico hop at all: AM Plus Classic
     includes a checked bag.
   what_hosts_paid: >
-    1,808.52 per person, all of it paid: 1,548.27 on the Delta record for the
+    1,957.52 per person, all of it paid: 1,697.27 on the Delta record for the
     two long legs, and 260.25 on the separate Aeromexico record for the
-    Cancun hop, ticketed 3 November 2026. They are above the reference
-    because they chose Delta Comfort for the legroom rather than Main.
+    Cancun hop, ticketed 3 November 2026. They are well above the reference
+    because they bought Comfort out rather than Main and then moved the flight
+    home into First on 5 November. Haley and Eddie are on the same two flights
+    in the same two cabins at 1,747.27 for the Delta legs, which is the
+    honest figure for anybody pricing this now. The hosts came in 50 a head
+    under that only because a reissue let them collect a fare drop.
 
 pricing_rollup:
   as_of: 2026-11-05
   travellers_tracked: 6
   travellers_self_arranged: 1
-  travellers_booked: 3
-  paid_so_far_usd: 3617.04
-  expected_remaining_usd: 5640.75
+  travellers_booked: 5
+  paid_so_far_usd: 7409.58
+  expected_remaining_usd: 2400.75
   expected_trip_total_usd: null
   note: >
     Air only, across the six whose flights this trip coordinates. The paid
-    figure is Krysta and Ryan alone, all three of their legs. Christian is
-    ticketed on all four of his segments and is deliberately not in it: he has
-    not said what he paid and nobody needs to know, because everyone pays for
-    their own seats. The remaining figure is three seats, Haley and Eddie and
-    Bubba, at the 1,880.25 beach-bound reference.
-    There is no honest total any more, which is why it reads TBD rather than a
+    figure is two households: Krysta and Ryan at 3,915.04 for all three of
+    their legs, and Haley and Eddie at 3,494.54 for their two Delta legs.
+    Christian is ticketed on all four of his segments and is deliberately not
+    in it: he has not said what he paid and nobody needs to know, because
+    everyone pays for their own seats.
+    The remaining figure is two things. Bubba's whole trip at the 1,880.25
+    beach-bound reference, and the Cancun hop Haley and Eddie have not bought
+    yet, 260.25 each. That is 2,400.75.
+    There is still no honest total, which is why it reads TBD rather than a
     number. One of the six is booked at an unreported price, so a total would
     have to either invent his fare or pretend he is still unbooked. The
     seventh traveller arranges their own flights and was never in this figure.
@@ -402,6 +483,16 @@ coordination:
     8 January, and the AM 536 hop in between is the same aircraft as everyone
     else. It does mean the DTW advice in this file does not apply to him and
     that the 1,880.25 reference figure never did.
+  cun_dtw_2027_01_08: >
+    Four of the group are on the same flight home. Krysta, Ryan, Haley and
+    Eddie are all on DL 1911 out of Cancun at 15:15 on 8 January, landing
+    Detroit 19:12, and all four are in Delta First. One check-in time, one
+    security queue, one ride from DTW. Whoever arranges a car home should book
+    one vehicle for four people and not two.
+    Christian is not on it. He leaves Cancun at 13:50 on DL 641 and routes
+    home through Atlanta to Los Angeles, so he goes to the airport earlier.
+    Bubba has not reported anything yet, and the obvious thing is to put him
+    on DL 1911 with the other four while there are still seats.
   dtw_mex_2026_12_29: >
     Do not try to put the group on one booking. The Delta nonstop will not
     sell to a party of five or more in a single transaction, and every
@@ -413,26 +504,44 @@ coordination:
 # rules allow a reprice. That is true of the Delta record and not true of the
 # Aeromexico one, so check the rule before spending time on a claim.
 price_watch:
-  as_of: 2026-11-02
+  as_of: 2026-11-05
   why: >
     Both Delta tickets are Main Cabin or above and carry no change fee, so a
-    later drop on the same itinerary can be repriced by an agent and the
-    difference returned as an eCredit. On a 1,548.27 ticket that is worth
-    watching. The Aeromexico fare is AM Plus Classic, where free changes only
-    start one tier up at Flex, so a drop there is swallowed by the change fee.
+    later drop on the same itinerary can be collected by reissuing the ticket,
+    with the old ticket's value carried across as an eCredit. The Aeromexico
+    fare is AM Plus Classic, where free changes only start one tier up at
+    Flex, so a drop there is swallowed by the change fee.
+    This worked once already, on 5 November. Keep watching: there is no fee
+    for looking and the ticket is changeable until departure.
+
+  claimed:
+    - on: 2026-11-05
+      what: >
+        The DTW to MEX fare dropped 222.00 for the two of them between
+        1 and 5 November, taxes unchanged at 380.54. Rather than take the
+        drop as an eCredit and keep Comfort, the record was reissued into
+        Delta First on the Cancun to Detroit leg, which absorbed the drop.
+        Net new money 298.00 for two, against 620.00 for the same upgrade
+        bought without a drop to spend. Delta publishes no price-adjustment
+        process and matches nothing automatically, so this only happened
+        because somebody looked.
+      watch_out: >
+        A reissue mints a new record locator and new ticket numbers, and it
+        releases the seats on the old record. Seats had to be picked again.
 
   baselines:
     delta_both_legs:
-      per_person_usd: 1548.27
-      total_usd: 3096.54
+      per_person_usd: 1697.27
+      total_usd: 3394.54
       status: paid
       booked_on: 2026-11-01
+      reissued_on: 2026-11-05
       route: DTW to MEX on 2026-12-29, CUN to DTW on 2027-01-08
-      cabin: Delta Comfort Classic, fare class S
+      cabin: Delta Comfort Classic out fare class S, Delta First Classic home fare class I
       watch: yes
       act_above_usd: 25
       act_note: >
-        Per person. Below about 25 the agent call costs more time than the
+        Per person. Below about 25 the reissue costs more time than the
         eCredit is worth, though there is no fee for trying.
     mex_cun:
       per_person_usd: 260.25
@@ -467,12 +576,18 @@ price_watch:
     keep working. Do not build one.
 
 open:
-  - Collect flight details from couple_a and single_b
+  - Collect flight details from single_b, which is the last one outstanding
   - >
     Three of the six on the beach leg still have to book AM 536 on
     2027-01-03, AM Plus Classic: Haley, Eddie and Bubba. The hosts and
     Christian are ticketed on it, so the departure time is settled rather
-    than up for discussion.
+    than up for discussion. Haley and Eddie bought their two Delta legs on
+    5 November and this is the only leg they are missing.
+  - >
+    Pick the two Delta First seats on DL 1911. The 5 November reissue
+    released the seats on the old record, so the outbound Comfort pair was
+    reselected but the flight home has no seat assignments yet. Free to
+    choose at any time on a Classic fare. See private/delta-flights-booking.md.
   - >
     Check Christian's four reported segments against his own confirmation.
     The times in this file are the published schedule for his dates, not a

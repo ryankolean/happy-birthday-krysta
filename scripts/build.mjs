@@ -1478,7 +1478,11 @@ function buildFlights() {
       const metal = [s.aircraft, s.operated_by && `operated by ${s.operated_by}`]
         .filter(Boolean)
         .join(', ');
-      b += `<tr><td><strong>${esc(s.flight)}</strong><br><small>${esc(metal)}</small></td>
+      // One booking can hold two cabins. Krysta and Ryan fly Comfort out and
+      // First home on the same record, so the cabin belongs on the segment
+      // rather than once at the top of the group.
+      const cabin = s.cabin ? `<br><small><strong>${esc(s.cabin)}</strong></small>` : '';
+      b += `<tr><td><strong>${esc(s.flight)}</strong>${cabin}<br><small>${esc(metal)}</small></td>
 <td>${esc(shortDate(s.date))}</td>
 <td>${esc(s.from)} to ${esc(s.to)}<br><small>${s.stops === 0 ? 'nonstop' : esc(String(s.stops)) + ' stop'}</small></td>
 <td><strong>${esc(s.depart_local)}</strong><br><small>local in ${esc(s.from)}</small></td>

@@ -488,7 +488,7 @@ booking_links:
 
 open:
   - Tell the other four the Cancun hop moved to the 14:55, and why
-  - Collect flight details from Haley and Eddie, and from Bubba, see data/flight-tracker.yml
+  - Collect flight details from Bubba, the last one outstanding, see data/flight-tracker.yml
   - Ask the 1 flying MEX to DTW whether they will take a connection, and reprice that leg
   - >
     LAX is answered rather than priced. Christian booked his own LAX
