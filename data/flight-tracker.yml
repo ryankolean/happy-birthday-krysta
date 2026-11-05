@@ -527,7 +527,11 @@ price_watch:
         because somebody looked.
       watch_out: >
         A reissue mints a new record locator and new ticket numbers, and it
-        releases the seats on the old record. Seats had to be picked again.
+        releases the seats on the old record. The replacement record came
+        back with an auto-assigned pair on the outbound that was not two
+        together and nothing at all on the way home. Both legs were
+        reselected by hand on 5 November. Check the seat map after any
+        reissue rather than assuming the old seats carried across.
 
   baselines:
     delta_both_legs:
@@ -583,11 +587,6 @@ open:
     Christian are ticketed on it, so the departure time is settled rather
     than up for discussion. Haley and Eddie bought their two Delta legs on
     5 November and this is the only leg they are missing.
-  - >
-    Pick the two Delta First seats on DL 1911. The 5 November reissue
-    released the seats on the old record, so the outbound Comfort pair was
-    reselected but the flight home has no seat assignments yet. Free to
-    choose at any time on a Classic fare. See private/delta-flights-booking.md.
   - >
     Check Christian's four reported segments against his own confirmation.
     The times in this file are the published schedule for his dates, not a
