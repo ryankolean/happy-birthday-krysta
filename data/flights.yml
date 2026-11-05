@@ -489,7 +489,9 @@ booking_links:
 open:
   - Pick seats on both Delta legs, two together in Comfort rows 10 to 13 on the A319
   - Tell the other four the Cancun hop moved to the 14:55, and why
-  - Buy Ryan and Krysta's MEX to CUN seats, AM Plus Classic on the 14:55
-  - Collect flight details from the other four groups, see data/flight-tracker.yml
+  - Collect flight details from Haley and Eddie, and from Bubba, see data/flight-tracker.yml
   - Ask the 1 flying MEX to DTW whether they will take a connection, and reprice that leg
-  - LAX origin is unpriced, if anyone is coming from Los Angeles
+  - >
+    LAX is answered rather than priced. Christian booked his own LAX
+    routing on 5 November 2026, so nobody needs a Los Angeles fare
+    quote. His segments are in data/flight-tracker.yml under single_a.

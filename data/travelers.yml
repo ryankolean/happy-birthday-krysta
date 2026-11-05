@@ -88,5 +88,8 @@ settled:
     therefore splits 6 ways, which is what data/budget.yml has always assumed.
 
 open:
-  - Who flies from DTW and whether anyone is coming from LAX
+  - >
+    Who flies from DTW. Christian is the LAX origin, confirmed
+    5 November 2026 when he reported his flights, and he is the only
+    one. Everybody else is assumed Detroit until they say otherwise.
   - Collect a deposit per person before the 14 December Casa KM payment

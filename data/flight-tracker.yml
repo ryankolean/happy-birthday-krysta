@@ -11,18 +11,23 @@
 # Flight numbers, airports, dates and times are fine here. They are published
 # schedule facts, not personal data.
 
-updated: 2026-11-03
+updated: 2026-11-05
 
 # Local clock at each airport for this trip's dates.
 #
 # Mexico City runs UTC-6 all year and does not observe DST.
 # Cancun runs UTC-5 all year and does not observe DST.
 # Detroit in late December and early January is on EST, which is UTC-5.
+# Atlanta is on the same clock as Detroit, EST, UTC-5.
+# Los Angeles over these dates is on PST, UTC-8. DST ended 1 November 2026 and
+# does not resume until 14 March 2027, so both of Christian's LAX dates are
+# PST with no edge case.
 #
-# So DTW and CUN share a clock for this whole trip, and Mexico City sits one
-# hour behind both. That is why the outbound looks like a 3h50 flight on the
-# clock when it is actually 4h50 in the air, and why the Cancun return's clock
-# time and elapsed time agree.
+# So DTW, ATL and CUN share a clock for this whole trip, Mexico City sits one
+# hour behind them and Los Angeles sits three hours behind. That is why the
+# outbound looks like a 3h50 flight on the clock when it is actually 4h50 in
+# the air, why the Cancun return's clock time and elapsed time agree, and why
+# Christian's flight home reads as a two hour hop when it is five hours.
 timezones:
   DTW:
     tz: America/Detroit
@@ -36,6 +41,14 @@ timezones:
     tz: America/Cancun
     offset_on_trip: "-05:00"
     note: no DST, UTC-5 all year
+  ATL:
+    tz: America/New_York
+    offset_on_trip: "-05:00"
+    note: EST in January, same clock as Detroit and Cancun
+  LAX:
+    tz: America/Los_Angeles
+    offset_on_trip: "-08:00"
+    note: PST on both of these dates, three hours behind Detroit
 
 # One entry per group in data/travelers.yml. status is booked, pending or
 # unknown. Fill a pending entry in as each person sends their details.
@@ -148,14 +161,106 @@ bookings:
   - group: single_a
     label: Christian
     size: 1
-    status: pending
-    legs_needed: [out, to_beach, home]
-    segments: []
+    status: booked
+    booked_on: 2026-11-05
+    origin: LAX
+    carrier: Delta, with the outbound operated by Aeromexico
+    ticket: >
+      Four segments, reported by Christian on 5 November 2026, all sold under
+      Delta flight numbers. He flies from Los Angeles rather than Detroit, so
+      the only leg he shares with the group is the Cancun hop in the middle.
+      The outbound is a Delta-numbered codeshare that Aeromexico operates as
+      AM 649, which means he checks in with Aeromexico at LAX Terminal 3 and a
+      Delta counter there cannot help him.
+      Christian sent flight numbers and dates, not times. Every time below is
+      the published schedule for his exact dates, read from OAG data on
+      5 November 2026, not copied off his confirmation. Good enough to
+      coordinate against, not good enough to stake an airport pickup on, so
+      check it against his confirmation before anybody drives anywhere.
+    cabin: not reported
+    segments:
+      - flight: DL 7952
+        operated_by: Aeromexico as AM 649
+        date: 2026-12-29
+        from: LAX
+        to: MEX
+        depart_local: "07:00"
+        arrive_local: "12:45"
+        depart_utc: "2026-12-29T15:00Z"
+        arrive_utc: "2026-12-29T18:45Z"
+        elapsed: 3h45
+        stops: 0
+        aircraft: Boeing 737-800
+        terminals: LAX Terminal 3 to MEX Terminal 2
+      - flight: AM 536
+        date: 2027-01-03
+        from: MEX
+        to: CUN
+        depart_local: "14:55"
+        arrive_local: "18:36"
+        depart_utc: "2027-01-03T20:55Z"
+        arrive_utc: "2027-01-03T23:36Z"
+        elapsed: 2h41
+        stops: 0
+        terminals: MEX Terminal 2 to CUN Terminal 4
+      - flight: DL 641
+        date: 2027-01-08
+        from: CUN
+        to: ATL
+        depart_local: "13:50"
+        arrive_local: "16:34"
+        depart_utc: "2027-01-08T18:50Z"
+        arrive_utc: "2027-01-08T21:34Z"
+        elapsed: 2h44
+        stops: 0
+        aircraft: Airbus A321
+        terminals: CUN Terminal 3 to ATL international arrivals
+      - flight: DL 895
+        date: 2027-01-08
+        from: ATL
+        to: LAX
+        depart_local: "17:59"
+        arrive_local: "20:02"
+        depart_utc: "2027-01-08T22:59Z"
+        arrive_utc: "2027-01-09T04:02Z"
+        elapsed: 5h03
+        stops: 0
+        aircraft: Airbus A321neo
+        terminals: ATL Concourse S to LAX Terminal 3
+    arrives_with_the_hosts: >
+      He lands at MEX Terminal 2 at 12:45 on 29 December, fifteen minutes
+      after Krysta and Ryan land at the same terminal at 12:30 on DL 646.
+      Same terminal, same quarter hour, which is one ride into the city for
+      three people instead of two rides. That was luck rather than planning,
+      and it is worth protecting: whoever arranges the airport transfer from
+      MEX should wait the extra fifteen minutes.
+    atl_connection_is_tight: >
+      One hour twenty five minutes at Atlanta on the way home, and it is the
+      thinnest thing in anybody's itinerary. DL 641 lands at 16:34 into the
+      international arrivals hall and DL 895 leaves Concourse S at 17:59, so
+      inside that window he clears United States immigration and customs and
+      crosses from the international terminal to the domestic concourses.
+      Delta sold it, so it clears Atlanta's own minimum connection time. But
+      8 January is a Friday in the holiday return wave and Atlanta is the
+      busiest airport in the world, so the margin is real rather than
+      comfortable. If CUN pushes back late he misses it.
+      This is his booking and not ours to change. The useful thing he should
+      know is that Delta runs several more ATL to LAX departures that evening,
+      so a miss is a rebooking rather than a night in Atlanta.
+    bags: >
+      Unknown, because he did not say which fare he bought. Two things are
+      worth one message to him rather than a guess here. The Aeromexico
+      operated outbound is exactly where a Delta Basic Economy purchase bites,
+      and no Main Cabin fare on AM 536 includes a checked bag at all, so that
+      leg needs AM Plus Classic if his bag is to fly with him.
     pricing:
-      status: open
-      expected_per_person_usd: 1880.25
-      expected_total_usd: 1880.25
-      basis: beach_bound_reference
+      status: booked_price_not_reported
+      per_person_usd: null
+      note: >
+        Christian has not said what he paid, and there is no reason to ask.
+        Everyone on this trip books and pays for their own seats. The
+        1,880.25 reference figure never applied to him in the first place: it
+        was built on a Detroit origin and he is flying from Los Angeles.
 
   - group: single_b
     label: Bubba
@@ -220,22 +325,31 @@ pricing_reference:
     person. Nothing to add on the Aeromexico hop at all: AM Plus Classic
     includes a checked bag.
   what_hosts_paid: >
-    1,808.52 per person, of which 1,548.27 is paid and 260.25 is the Cancun
-    hop they have not bought. They are above the reference because they chose
-    Delta Comfort for the legroom rather than Main.
+    1,808.52 per person, all of it paid: 1,548.27 on the Delta record for the
+    two long legs, and 260.25 on the separate Aeromexico record for the
+    Cancun hop, ticketed 3 November 2026. They are above the reference
+    because they chose Delta Comfort for the legroom rather than Main.
 
 pricing_rollup:
-  as_of: 2026-11-01
+  as_of: 2026-11-05
   travellers_tracked: 6
   travellers_self_arranged: 1
-  paid_so_far_usd: 3096.54
-  expected_remaining_usd: 8041.50
-  expected_trip_total_usd: 11138.04
+  travellers_booked: 3
+  paid_so_far_usd: 3617.04
+  expected_remaining_usd: 5640.75
+  expected_trip_total_usd: null
   note: >
-    Air only, across the six whose flights this trip coordinates, assuming
-    everybody still to book buys Main Classic and takes the Cancun hop. The
-    seventh traveller arranges their own flights, so they are not in this
-    figure at all. It is a planning number, not a bill.
+    Air only, across the six whose flights this trip coordinates. The paid
+    figure is Krysta and Ryan alone, all three of their legs. Christian is
+    ticketed on all four of his segments and is deliberately not in it: he has
+    not said what he paid and nobody needs to know, because everyone pays for
+    their own seats. The remaining figure is three seats, Haley and Eddie and
+    Bubba, at the 1,880.25 beach-bound reference.
+    There is no honest total any more, which is why it reads TBD rather than a
+    number. One of the six is booked at an unreported price, so a total would
+    have to either invent his fare or pretend he is still unbooked. The
+    seventh traveller arranges their own flights and was never in this figure.
+    It is a planning number, not a bill.
 
 # What to ask each person for. Keep it to this list: it is everything needed to
 # coordinate a pickup and nothing that should not be in a git repository.
@@ -274,6 +388,20 @@ coordination:
     later. Nobody should rely on Ryan's Delta status here: Aeromexico excludes
     Basic purchases on domestic routes from SkyTeam and Delta member baggage
     benefits. Full working in data/flights.yml under the to_beach leg.
+  mex_2026_12_29_arrivals: >
+    Two arrivals at MEX Terminal 2 within fifteen minutes of each other on
+    29 December: Krysta and Ryan at 12:30 on DL 646 from Detroit, Christian at
+    12:45 on DL 7952 from Los Angeles. Three people, one ride into the city.
+    Whoever books that transfer should book it once, for 13:30 or later, and
+    not twice.
+  lax_origin: >
+    Christian is the only one flying from Los Angeles, confirmed 5 November
+    2026 when he reported his flights. That closes an open question this repo
+    carried from the start. It changes nothing about the shared legs: he joins
+    the group at Mexico City on 29 December and leaves it at Cancun on
+    8 January, and the AM 536 hop in between is the same aircraft as everyone
+    else. It does mean the DTW advice in this file does not apply to him and
+    that the 1,880.25 reference figure never did.
   dtw_mex_2026_12_29: >
     Do not try to put the group on one booking. The Delta nonstop will not
     sell to a party of five or more in a single transaction, and every
@@ -321,7 +449,9 @@ price_watch:
         302.05, AM Plus Classic 260.25, AM Plus Flex 331.05. Still nothing
         below AM Plus that includes a checked bag, so the 17.40 over Main
         Classic still buys the extra-legroom seat rather than the bag.
-        Not bought yet.
+        AM Plus Classic was then bought at that 260.25 the same morning, so
+        this ladder is the price that was paid rather than a quote still
+        standing.
       why_not: >
         Free changes begin at AM Plus Flex, one tier above what was bought.
         A drop is offset by the change fee, and Aeromexico does not reprice
@@ -337,9 +467,18 @@ price_watch:
     keep working. Do not build one.
 
 open:
-  - Collect flight details from couple_a, single_a, single_b and solo_b
+  - Collect flight details from couple_a and single_b
   - >
-    The other four on the beach leg book AM 536 on 2027-01-03, AM Plus
-    Classic. The hosts are already ticketed on it, so the departure time is
-    settled rather than up for discussion.
+    Three of the six on the beach leg still have to book AM 536 on
+    2027-01-03, AM Plus Classic: Haley, Eddie and Bubba. The hosts and
+    Christian are ticketed on it, so the departure time is settled rather
+    than up for discussion.
+  - >
+    Check Christian's four reported segments against his own confirmation.
+    The times in this file are the published schedule for his dates, not a
+    reading of his ticket, and nobody should drive to an airport on them.
+  - >
+    Ask Christian whether his AM 536 leg is AM Plus Classic. No Main Cabin
+    fare on that route carries a checked bag, and the group booked around
+    that fact.
   - Reprice solo_b's MEX to DTW return, the figure on file is from September

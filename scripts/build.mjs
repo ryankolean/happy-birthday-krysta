@@ -1452,23 +1452,33 @@ function buildFlights() {
   }
   b += `</tbody></table></div>
 <div class="note">
-  <div class="nh">Detroit and Cancun share a clock, Mexico City does not</div>
-  <p>Across these dates Detroit is on EST and Cancun never leaves UTC-5, so those two read the same. Mexico City sits an hour behind both. That is why the outbound looks like a 3 hour 50 minute hop on the clock when it is really 4 hours 50 in the air, and why the flight home from Cancun reads honestly.</p>
+  <div class="nh">Detroit, Atlanta and Cancun share a clock. Mexico City and Los Angeles do not</div>
+  <p>Across these dates Detroit and Atlanta are on EST and Cancun never leaves UTC-5, so those three read the same. Mexico City sits an hour behind them and Los Angeles sits three hours behind. That is why the outbound looks like a 3 hour 50 minute hop on the clock when it is really 4 hours 50 in the air, why the flight home from Cancun reads honestly, and why the Atlanta to Los Angeles leg reads as a two hour hop when it is five hours in the air.</p>
 </div>`;
 
   // booked
   b += `<h2><span class="num">02</span>Booked</h2>`;
   for (const g of booked) {
+    // Somebody can be ticketed without telling us the fare. Everyone pays for
+    // their own seats, so that is a normal state and not a gap to fill with
+    // "TBD each".
+    const money =
+      g.paid_per_person_usd != null
+        ? `<p><strong>${esc(g.cabin)}.</strong> ${usd(g.paid_usd_total)} for ${g.size}, ${usd(g.paid_per_person_usd)} each. Booked ${esc(iso(g.booked_on))}.</p>`
+        : `<p><strong>Booked ${esc(iso(g.booked_on))}.</strong> ${nt(g.pricing?.note)}</p>`;
     b += `<div class="note">
   <div class="nh">${esc(g.label)}, ${g.size} ${g.size === 1 ? 'seat' : 'seats'}</div>
   <p>${nt(g.ticket)}</p>
-  <p><strong>${esc(g.cabin)}.</strong> ${usd(g.paid_usd_total)} for ${g.size}, ${usd(g.paid_per_person_usd)} each. Booked ${esc(iso(g.booked_on))}.</p>
+  ${money}
 </div>
 <div class="scroller"><table>
 <caption>${esc(g.label)}. Times are local to each airport.</caption>
 <thead><tr><th>Flight</th><th>Date</th><th>Route</th><th>Departs</th><th>Arrives</th><th class="n">In the air</th></tr></thead><tbody>`;
     for (const s of g.segments || []) {
-      b += `<tr><td><strong>${esc(s.flight)}</strong><br><small>${esc(s.aircraft || '')}</small></td>
+      const metal = [s.aircraft, s.operated_by && `operated by ${s.operated_by}`]
+        .filter(Boolean)
+        .join(', ');
+      b += `<tr><td><strong>${esc(s.flight)}</strong><br><small>${esc(metal)}</small></td>
 <td>${esc(shortDate(s.date))}</td>
 <td>${esc(s.from)} to ${esc(s.to)}<br><small>${s.stops === 0 ? 'nonstop' : esc(String(s.stops)) + ' stop'}</small></td>
 <td><strong>${esc(s.depart_local)}</strong><br><small>local in ${esc(s.from)}</small></td>
@@ -1476,6 +1486,12 @@ function buildFlights() {
 <td class="n">${esc(s.elapsed)}</td></tr>`;
     }
     b += `</tbody></table></div>`;
+    if (g.arrives_with_the_hosts) {
+      b += `<div class="note"><div class="nh">He lands fifteen minutes after Krysta and Ryan</div><p>${nt(g.arrives_with_the_hosts)}</p></div>`;
+    }
+    if (g.atl_connection_is_tight) {
+      b += `<div class="note warn"><div class="nh">An hour and twenty five minutes at Atlanta</div><p>${nt(g.atl_connection_is_tight)}</p></div>`;
+    }
     if (g.still_to_book) {
       b += `<div class="note"><div class="nh">Still to book</div><p>${nt(g.still_to_book)}</p></div>`;
     }
