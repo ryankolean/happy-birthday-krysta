@@ -102,6 +102,7 @@ const PAGES = [
   { file: 'flights.html', label: 'Flights' },
   { file: 'stays.html', label: 'Accommodations' },
   { file: 'map.html', label: 'Map' },
+  { file: 'riviera-map.html', label: 'Puerto Morelos map' },
   { file: 'costs.html', label: 'Costs' },
   { file: 'dining.html', label: 'Birthday' },
   { file: 'nye.html', label: "New Year's Eve" },
@@ -1117,14 +1118,23 @@ ${bullets(jade.ask_on_the_call)}
 const PIN_PATH =
   'M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z';
 
-function buildMap() {
+// Two maps from one places.yml. `region` defaults to cdmx; Puerto Morelos
+// entries carry `region: riviera`. Distances on each map are from that
+// region's own `stay` pin.
+const MAPS = {
+  cdmx: { file: 'map.html', title: 'Where everything is', base: 'the house', openViewKm: 4, fallback: [19.4185, -99.1626] },
+  riviera: { file: 'riviera-map.html', title: 'Puerto Morelos', base: 'the resort', openViewKm: 6, fallback: [20.8478, -86.8756] },
+};
+
+function buildMap(region = 'cdmx') {
+  const cfg = MAPS[region];
   const cats = placesDoc.categories;
 
   // Attach coordinates and drop anything still unresolved, so the map never
   // shows a pin we cannot stand behind.
   const resolved = [];
   const unresolved = [];
-  for (const p of placesDoc.places) {
+  for (const p of placesDoc.places.filter((q) => (q.region || 'cdmx') === region)) {
     const hit = p.lat && p.lon ? { lat: p.lat, lon: p.lon } : geocache[p.address];
     if (hit) resolved.push({ ...p, lat: hit.lat, lon: hit.lon });
     else unresolved.push(p);
@@ -1135,7 +1145,7 @@ function buildMap() {
   // Opening view radius. Was 3 km when the house was in Roma Norte and the
   // cluster sat on top of it. From Del Valle Norte the Roma and Condesa
   // venues are 2.2 to 3.8 km out, so 3 km cropped most of them off.
-  const OPEN_VIEW_KM = 4;
+  const OPEN_VIEW_KM = cfg.openViewKm;
 
   // Straight-line distance from the house. Real walking is longer, so the
   // minutes below are a floor, not a promise.
@@ -1157,7 +1167,8 @@ function buildMap() {
   }
 
   const payload = {
-    center: stay ? [stay.lat, stay.lon] : [19.4185, -99.1626],
+    center: stay ? [stay.lat, stay.lon] : cfg.fallback,
+    base: cfg.base,
     openViewKm: OPEN_VIEW_KM,
     categories: cats,
     // Escaped at build time: these strings go straight into popup innerHTML,
@@ -1220,7 +1231,7 @@ function buildMap() {
     const inCat = resolved.filter((p) => p.category === key);
     if (!inCat.length) continue;
     lists += `<h3><span class="swatch" style="background:${esc(c.color)}"></span>${esc(c.label)}</h3>
-<div class="scroller"><table><thead><tr><th>Place</th><th>Where</th><th class="n">From the house</th><th>Notes</th></tr></thead><tbody>`;
+<div class="scroller"><table><thead><tr><th>Place</th><th>Where</th><th class="n">From ${esc(cfg.base)}</th><th>Notes</th></tr></thead><tbody>`;
     for (const p of inCat.slice().sort((a, b) => a.km - b.km)) {
       const dist =
         p.category === 'stay'
@@ -1235,27 +1246,27 @@ function buildMap() {
 
   const body = `<header class="masthead">
   <p class="eyebrow">${resolved.length} places mapped</p>
-  <h1>Where everything is</h1>
+  <h1>${esc(cfg.title)}</h1>
   <div class="dateline">
     <div><b>Base</b>${esc(stay ? stay.neighborhood : 'Mexico City')}</div>
     <div><b>Walkable</b>${walkable} of ${others.length}</div>
-    <div><b>Dashed ring</b>1 km from the house</div>
+    <div><b>Dashed ring</b>1 km from ${esc(cfg.base)}</div>
   </div>
 </header>
 
-<p class="lede">Dinner options, bars, markets and the house, colour coded. Tap a pin for details, or tap a colour below to show and hide that group.</p>
+<p class="lede">Dinner options, bars, markets and ${esc(cfg.base)}, colour coded. Tap a pin for details, or tap a colour below to show and hide that group.</p>
 
 <div class="legend-row">${legend}</div>
 <div id="map" role="application" aria-label="Map of trip locations"></div>
 <p class="caveat" id="faraway"></p>
-<p class="caveat">Map data from OpenStreetMap. ${esc(stay ? stay.name : 'The house')} is not booked yet, and Airbnb only shows an approximate area until it is, so the house pin is their published circle rather than a street address. The exact address deliberately stays out of this repo.</p>
+${region === 'cdmx' ? `<p class="caveat">Map data from OpenStreetMap. ${esc(stay ? stay.name : 'The house')} is not booked yet, and Airbnb only shows an approximate area until it is, so the house pin is their published circle rather than a street address. The exact address deliberately stays out of this repo.</p>
 
 <div class="note warn">
   <div class="nh">What basing in ${esc(stay ? stay.neighborhood : 'this area')} costs in walking</div>
   <p><strong>${walkable} of ${others.length}</strong> places are within a 2.5 km walk and ${nearView} sit inside the opening view. From the Oasis it was 48 of 67, because that house stood inside the Roma and Condesa restaurant cluster instead of ${romaKm} km south of it.</p>
   <p>${rosettaWalk} Budget for rides in the evenings: an Uber across that gap runs roughly MX$60 to MX$90.</p>
   <p><strong>These walks are a worst case, not the real ones.</strong> The pin is the middle of ${esc(stay ? stay.neighborhood : 'the neighbourhood')} rather than the house, on purpose, and it sits about half a kilometre further from Roma than the flat actually does. Measured from the listing's own circle, 27 of ${others.length} are inside a 2.5 km walk rather than ${walkable}. Treat the figures below as the pessimistic end until the booking is confirmed.</p>
-</div>
+</div>` : `<p class="caveat">Map data from OpenStreetMap. Distances are straight-line from ${esc(stay ? stay.name : 'the resort')}; most of these are a short taxi, not a walk.</p>`}
 ${unresolved.length ? `<div class="note warn"><div class="nh">Not yet on the map</div><p>${unresolved.map((p) => esc(p.name)).join(', ')}. Add a more specific address in <code>data/places.yml</code> and run <code>npm run geocode</code>.</p></div>` : ''}
 
 <h2>Every place, by type</h2>
@@ -1344,7 +1355,7 @@ ${lists}
     if (p.hood) html += '<br><span style="opacity:.7">' + p.hood + '</span>';
     if (p.c !== 'stay') {
       html += '<br><span style="opacity:.7">' +
-        (p.walk ? p.walk + ' min walk' : p.km + ' km') + ' from the house</span>';
+        (p.walk ? p.walk + ' min walk' : p.km + ' km') + ' from ' + DATA.base + '</span>';
     }
     if (p.note) html += '<br><br>' + p.note;
     if (p.booking) html += '<br><br><em>' + p.booking + '</em>';
@@ -1402,7 +1413,7 @@ ${lists}
 })();
 </script>`;
 
-  return shell({ title: 'Where everything is', current: 'map.html', body });
+  return shell({ title: cfg.title, current: cfg.file, body });
 }
 
 // ---------- markdown pages ----------
@@ -1632,7 +1643,8 @@ writeFileSync(join(out, 'itinerary.html'), buildItinerary());
 writeFileSync(join(out, 'flights.html'), buildFlights());
 writeFileSync(join(out, 'costs.html'), buildCosts());
 writeFileSync(join(out, 'stays.html'), buildStays());
-writeFileSync(join(out, 'map.html'), buildMap());
+writeFileSync(join(out, 'map.html'), buildMap('cdmx'));
+writeFileSync(join(out, 'riviera-map.html'), buildMap('riviera'));
 writeFileSync(join(out, 'tasks.html'), buildTasks());
 writeFileSync(join(out, 'dining.html'), buildDoc('dining.md', 'dining.html', 'The birthday'));
 writeFileSync(join(out, 'nye.html'), buildDoc('nye.md', 'nye.html', "New Year's Eve"));

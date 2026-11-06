@@ -353,5 +353,185 @@
     "lat": 19.4181187,
     "lon": -99.1736556,
     "matched": "342, Calle Durango, Roma Norte, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Avenida Coyoacan 512, Del Valle, Benito Juarez, Ciudad de Mexico": {
+    "lat": 19.3937929,
+    "lon": -99.1662914,
+    "matched": "Avenida Coyoacán, Colonia Del Valle, Del Valle, Mexico City, Benito Juárez, Mexico City, 03103, Mexico"
+  },
+  "Avenida Universidad 199, Narvarte, Benito Juarez, Ciudad de Mexico": {
+    "lat": 19.3847033,
+    "lon": -99.1556833,
+    "matched": "Avenida Universidad, Narvarte, Mexico City, Benito Juárez, Mexico City, 03600, Mexico"
+  },
+  "Avenida Monterrey 333, Roma Sur, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.405616,
+    "lon": -99.1611511,
+    "matched": "Los Parados Taco place, 333, Avenida Monterrey, Roma Sur, La Piedad, Mexico City, Cuauhtémoc, Mexico City, 01080, Mexico"
+  },
+  "Guanajuato 53, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4173776,
+    "lon": -99.1567587,
+    "matched": "Calle Guanajuato, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Avenida Amsterdam 135, Hipodromo, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4117594,
+    "lon": -99.1715852,
+    "matched": "135, Avenida Amsterdam, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+  },
+  "Londres 247, Del Carmen, Coyoacan, Ciudad de Mexico": {
+    "lat": 19.3554058,
+    "lon": -99.1598956,
+    "matched": "Calle Londres, Colonia Churubusco, San Diego Churubusco, Mexico City, Coyoacán, Mexico City, 04100, Mexico"
+  },
+  "Museo 150, San Pablo Tepetlapa, Coyoacan, Ciudad de Mexico": {
+    "lat": 19.3230418,
+    "lon": -99.1435317,
+    "matched": "Calle Museo, Colonia Hidalgo 191, San Pablo Tepetlapa, Mexico City, Coyoacán, Mexico City, 04620, Mexico"
+  },
+  "Miguel de Cervantes Saavedra 303, Granada, Miguel Hidalgo, Ciudad de Mexico": {
+    "lat": 19.4410129,
+    "lon": -99.1968752,
+    "matched": "Boulevard Miguel de Cervantes Saavedra, Granada, Nuevo Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11520, Mexico"
+  },
+  "Embarcadero Nuevo Nativitas, Xochimilco, Ciudad de Mexico": {
+    "lat": 19.2520558,
+    "lon": -99.0933501,
+    "matched": "Embarcadero Nuevo Nativitas, Calle Hermenegildo Galeana, Colonia San Jerónimo, Santa María Nativitas, Mexico City, Xochimilco, Mexico City, 16420, Mexico"
+  },
+  "Museo de Arte Popular, Revillagigedo, Centro, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4339791,
+    "lon": -99.1462596,
+    "matched": "Museo de Arte Popular, 11, Calle Revillagigedo, Centro, Roma, Mexico City, Cuauhtémoc, Mexico City, 06050, Mexico"
+  },
+  "Biblioteca Vasconcelos, Buenavista, Ciudad de Mexico": {
+    "lat": 19.4474857,
+    "lon": -99.150807,
+    "matched": "Biblioteca Vasconcelos, s/n, Calle Juan Aldama, Buenavista, Mexico City, Cuauhtémoc, Mexico City, 06350, Mexico"
+  },
+  "San Luis Potosi 37, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4132119,
+    "lon": -99.1641684,
+    "matched": "Calle San Luis Potosí, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Atlixco 94, Condesa, Mexico City": {
+    "lat": 19.4117609,
+    "lon": -99.1748781,
+    "matched": "94, Calle Atlixco, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06140, Mexico"
+  },
+  "Tabasco 149, Roma Norte, Mexico City": {
+    "lat": 19.4194678,
+    "lon": -99.159337,
+    "matched": "149, Calle Tabasco, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Tonala 23, Roma Norte, Mexico City": {
+    "lat": 19.4207194,
+    "lon": -99.1634637,
+    "matched": "23, Calle Tonalá, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Ometusco 87, Hipodromo Condesa, Mexico City": {
+    "lat": 19.4055703,
+    "lon": -99.174152,
+    "matched": "87, Calle Ometusco, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+  },
+  "Avenida Sonora 189-C, Hipodromo Condesa, Mexico City": {
+    "lat": 19.4137685,
+    "lon": -99.1684799,
+    "matched": "Avenida Sonora, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+  },
+  "Plaza Rio de Janeiro 54, Roma Norte, Mexico City": {
+    "lat": 19.4217983,
+    "lon": -99.1611258,
+    "matched": "Cerrada de Plaza Río de Janeiro, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Durango 219, Roma Norte, Mexico City": {
+    "lat": 19.4182897,
+    "lon": -99.1735938,
+    "matched": "Calle Durango, Roma Norte, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Avenida Alvaro Obregon 154, Roma Norte, Mexico City": {
+    "lat": 19.4179915,
+    "lon": -99.162206,
+    "matched": "Cocina Conchita & Departamento, 154, Avenida Álvaro Obregón, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Avenida Tamaulipas 55 B, Condesa, Mexico City": {
+    "lat": 19.4099518,
+    "lon": -99.1752665,
+    "matched": "Avenida Tamaulipas, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+  },
+  "Cordoba 107, Roma Norte, Mexico City": {
+    "lat": 19.4150911,
+    "lon": -99.1576846,
+    "matched": "Calle Córdoba, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Avenida Alvaro Obregon 298, Roma Norte, Mexico City": {
+    "lat": 19.4179961,
+    "lon": -99.1617642,
+    "matched": "Avenida Álvaro Obregón, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Sinaloa 57, Roma Norte, Mexico City": {
+    "lat": 19.4211336,
+    "lon": -99.1664334,
+    "matched": "57, Calle Sinaloa, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Jalapa 181, Roma Norte, Mexico City": {
+    "lat": 19.4231037,
+    "lon": -99.1624192,
+    "matched": "Jalapa, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Colima 168, Roma Norte, Mexico City": {
+    "lat": 19.4197393,
+    "lon": -99.1598978,
+    "matched": "168, Calle Colima, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Salamanca 85, Roma Norte, Mexico City": {
+    "lat": 19.4182236,
+    "lon": -99.1696546,
+    "matched": "85, Calle Salamanca, Roma Norte, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Avenida Michoacan 78, Hipodromo Condesa, Mexico City": {
+    "lat": 19.4114328,
+    "lon": -99.1763536,
+    "matched": "Avenida Michoacán, Hipódromo Condesa, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06160, Mexico"
+  },
+  "Tamaulipas 30, Condesa, Mexico City": {
+    "lat": 19.4099518,
+    "lon": -99.1752665,
+    "matched": "Avenida Tamaulipas, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+  },
+  "Calle Jose Maria Morelos, Puerto Morelos, Quintana Roo, Mexico": {
+    "lat": 20.8555814,
+    "lon": -86.8969466,
+    "matched": "Calle José María Morelos, 16, Región 18, Puerto Morelos, Quintana Roo, 77586, Mexico"
+  },
+  "Avenida Javier Rojo Gomez, Puerto Morelos, Quintana Roo, Mexico": {
+    "lat": 20.8453787,
+    "lon": -86.8793331,
+    "matched": "Avenida Javier Rojo Gomez, Puerto Morelos, Quintana Roo, 77580, Mexico"
+  },
+  "Centro, Puerto Morelos, Quintana Roo, Mexico": {
+    "lat": 20.8607368,
+    "lon": -86.908459,
+    "matched": "Centro Educativo Alexander Von Humbol, Calle 1, Luis Donaldo Colosio, Región 18, Puerto Morelos, Quintana Roo, 77586, Mexico"
+  },
+  "Parque Fundadores, Puerto Morelos, Quintana Roo, Mexico": {
+    "lat": 20.8477153,
+    "lon": -86.8760676,
+    "matched": "Parque Fundadores, Puerto Morelos, Quintana Roo, Mexico"
+  },
+  "Ruta de los Cenotes, Puerto Morelos, Quintana Roo, Mexico": {
+    "lat": 20.8549378,
+    "lon": -86.8996898,
+    "matched": "Cenotes route, Calle Chechen, Zetina Gasca, Región 18, Puerto Morelos, Quintana Roo, 77586, Mexico"
+  },
+  "Ruta de los Cenotes km 19, Puerto Morelos, Quintana Roo, Mexico": {
+    "lat": 20.8549378,
+    "lon": -86.8996898,
+    "matched": "Cenotes route, Calle Chechen, Zetina Gasca, Región 18, Puerto Morelos, Quintana Roo, 77586, Mexico"
+  },
+  "Ruta de los Cenotes km 16, Puerto Morelos, Quintana Roo, Mexico": {
+    "lat": 20.8549378,
+    "lon": -86.8996898,
+    "matched": "Cenotes route, Calle Chechen, Zetina Gasca, Región 18, Puerto Morelos, Quintana Roo, 77586, Mexico"
   }
 }

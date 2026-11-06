@@ -157,7 +157,13 @@ places:
     category: bar
     address: Avenida Alvaro Obregon 106, Roma Norte, Mexico City
     neighborhood: Roma Norte
-    note: Number 20 on Mexico's 50 Best. The 29 December drinks pick.
+    note: >
+      Number 20 on Mexico's 50 Best. The 29 December drinks pick. Hours conflict between sources
+      (Time Out: Mon-Tue 6 PM-12 AM, Wed to 1 AM, Thu-Sat to 2 AM, Sun 6-11 PM), so unverified
+      until booked. NYE and 1 Jan status unverified.
+    booking: >
+      Reserve on OpenTable (OpenTable party cap not confirmed for 7); if no slot for 7, call the
+      bar. Weekend peak after 9 PM has a wait.
 
   - name: Rayo
     category: bar
@@ -169,19 +175,36 @@ places:
     category: bar
     address: Amberes 65, Juarez, Mexico City
     neighborhood: Juarez
-    note: Longest booking lead time of any bar on the list. Establish it early.
+    note: >
+      Longest booking lead time of any bar on the list. Establish it early. Hours per OpenTable:
+      Sun-Thu 6 PM-1 AM, Fri-Sat 6 PM-2 AM (secondary source, unverified). NYE and 1 Jan status
+      unverified. Slots about 1.5 hours.
+    booking: >
+      Group of 7 fits: OpenTable allows up to 12 per booking. Parties above 12 go by email only
+      (reservaciones@handshake.bar).
 
   - name: Gin Gin Cibeles
     category: bar
     address: Oaxaca 87, Roma Norte, Mexico City
     neighborhood: Roma Norte
-    note: Open daily 4 PM to 3 AM, which makes it the 1 January fallback. Formal attire.
+    note: >
+      Open daily 4 PM to 3 AM per gingin.mx (own site), which makes it the 1 January fallback if
+      it opens that day (1 Jan hours unverified). Formal attire. Gin Gin also has a Roma Norte
+      branch at Cordoba 107 and a Condesa branch at Tamaulipas 55 B, both open daily 1 PM to 3 AM.
+    booking: >
+      Group of 7: reserve at gingin.mx/rsvp-cibeles or OpenTable or WhatsApp; party-size cap not
+      confirmed.
 
   - name: Toledo Rooftop
     category: bar
     address: Avenida Chapultepec 461, Roma Norte, Mexico City
-    neighborhood: Roma Norte
-    note: Sits outside the New Year's Eve closure ring on a designated alternate route.
+    neighborhood: Juarez
+    note: >
+      Sits outside the New Year's Eve closure ring on a designated alternate route. Hours per
+      aggregator (unverified): Sun-Tue 1 PM-12 AM, Wed-Sat 1 PM-2 AM. NYE ticketed event not
+      found; it announces events on its own channels.
+    booking: >
+      Group of 7: reservation (reservandonos.com listing) recommended; policy unverified.
 
   # ---------- sights ----------
   - name: Parque Mexico
@@ -614,9 +637,16 @@ places:
 
   - name: FORM + MATTER
     category: bar
-    address: Form Matter, Ciudad de Mexico
-    note: Starred as actually visited.
+    address: San Luis Potosi 37, Roma Norte, Cuauhtemoc, Ciudad de Mexico
     source: instagram @thatonepointofview
+    note: >
+      Starred as actually visited. Cocktail bar (FO+MA) inside an apartment building, entrance on Merida, San Luis Potosi 37,
+      Roma Norte. Hours per fomabar.com: Thu and Sun-Tue 6 PM-1 AM, Fri-Sat 6 PM-1:30 AM, so
+      Wednesday looks closed (the site lists no Wednesday). Last call 30 minutes before close. NYE
+      and 1 Jan status not stated.
+    booking: >
+      Parties of 7 or more: book by emailing info@fomabar.com or Instagram DM, not through
+      OpenTable.
 
   - name: Musak
     category: bar
@@ -639,3 +669,753 @@ places:
       Custom engraved rings, stall 546, near the Monument to the Heroes. Stalls
       are not in numeric order, look for the queue. From MX$150, bring cash.
     source: instagram @placesnoted
+
+  # ---------- taco tour stops, TRAVEL-28, checked 6 November 2026 ----------
+  - name: Tacos de Canasta Don Quique
+    category: taco
+    address: Avenida Coyoacan 512, Del Valle, Benito Juarez, Ciudad de Mexico
+    precision: approximate
+    neighborhood: Del Valle
+    note: Taco tour stop 1 (canasta breakfast). Hours and holiday closures unverified. About 20 to 30 MXN a taco, estimate. Cash.
+
+  - name: Tacos Joven
+    category: taco
+    address: Avenida Universidad 199, Narvarte, Benito Juarez, Ciudad de Mexico
+    precision: approximate
+    neighborhood: Narvarte
+    note: Taco tour backup for stop 1. Canasta. Sources disagree on hours (Mon-Sun 10-19 or Mon-Sat 9-16). 15 to 20 MXN a taco. Cash.
+
+  - name: Taqueria Los Parados
+    category: taco
+    address: Avenida Monterrey 333, Roma Sur, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Sur
+    note: Taco tour stop 2. Mon-Thu 12:30-03:00, Fri-Sat to 05:00, Sun to 01:00 (Michelin). Standing only. Holiday hours unverified.
+
+  - name: Carinito Tacos
+    category: taco
+    address: Guanajuato 53, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    precision: approximate
+    neighborhood: Roma Norte
+    note: Taco tour stop 4. Daily 12:00-22:00 (Michelin). Outdoor seating only. Holiday hours unverified.
+
+  - name: Tacos Hola El Guero
+    category: taco
+    address: Avenida Amsterdam 135, Hipodromo, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Hipodromo
+    note: Taco tour backup for stop 2. Guisados since 1968. Michelin lists Mon-Fri 9-21, Sat 9-19, Sun 9-15; Chilango 2024 says 9:30-17:00 Mon-Sat. Holiday hours unverified.
+
+  # ---------- Puerto Morelos, 3 to 8 January 2027 (riviera map) ----------
+  - name: Dreams Jade Resort & Spa
+    category: stay
+    region: riviera
+    address: Dreams Jade Resort & Spa, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8288961
+    lon: -86.8950965
+    neighborhood: Puerto Morelos
+    note: Riviera leg, 3 to 8 January 2027. Priced live, not booked. A resort, so its public address is fine on the map.
+    url: https://www.booking.com/hotel/mx/now-jade-riviera-cancun.html
+
+  # ---------- museums and sights, TRAVEL-25, checked 6 November 2026 ----------
+
+  - name: Museo Frida Kahlo (Casa Azul)
+    category: spot
+    address: Londres 247, Del Carmen, Coyoacan, Ciudad de Mexico
+    lat: 19.3551412
+    lon: -99.1623564
+    neighborhood: Coyoacan
+    note: >
+      Tue and Thu to Sun 10 to 18, Wed 11 to 18, closed Mon. 31 Dec 10 to 14, closed 1 Jan.
+      MX$320 general (about $17), MX$160 Mexican residents with ID; no separate foreigner tier, foreigners pay general.
+    booking: >
+      Timed entry, online only, no tickets sold at the door; book as soon as dates are firm. No free days.
+      Ticket includes a courtesy visit to the Anahuacalli (rules unverified).
+    url: https://boletos.museofridakahlo.org.mx/en/tickets/museo-frida-kahlo-cdmx
+
+  - name: Museo Anahuacalli
+    category: spot
+    address: Museo 150, San Pablo Tepetlapa, Coyoacan, Ciudad de Mexico
+    neighborhood: Coyoacan
+    note: >
+      Enter any time 11 to 17:30, closed Mon per third parties (official ticket page lists no closed days; unverified).
+      MX$130 general (about $6.92), MX$100 Mexican residents with ID. Dec/Jan holiday hours unverified.
+    booking: >
+      Online ticket page with no time slots; box office also reported. Free-day policy not published. Free courtesy
+      entry with a Casa Azul ticket (unverified terms). Photo permit MX$30.
+    url: https://boletos.museoanahuacalli.org.mx/tickets/en/museo-anahuacalli-cdmx
+
+  - name: Museo Nacional de Historia (Castillo de Chapultepec)
+    category: spot
+    address: Museo Nacional de Historia Castillo de Chapultepec, Bosque de Chapultepec I Seccion, Ciudad de Mexico
+    lat: 19.4204632
+    lon: -99.1820866
+    neighborhood: Chapultepec
+    note: >
+      Tue to Sun 9 to 17, closed Mon (INAH). MX$210 foreign tourists (about $11.18), MX$105 Mexicans and resident foreigners.
+      1 Jan unverified: INAH publishes no year-end notice yet and some sources say all museums close 25 Dec and 1 Jan.
+    booking: >
+      No timed entry published, pay at the door. Sunday (3 Jan) is free for Mexicans and resident foreigners only,
+      so tourists still pay. Reconfirm closing hours 31 Dec and 1 Jan in mid-December.
+    url: https://inah.gob.mx/museos/museo-nacional-de-historia-castillo-de-chapultepec
+
+  - name: Museo Soumaya (Plaza Carso)
+    category: spot
+    address: Boulevard Miguel de Cervantes Saavedra y Presa Falcon, Ampliacion Granada, Miguel Hidalgo, Ciudad de Mexico
+    lat: 19.440782
+    lon: -99.2045659
+    neighborhood: Granada
+    note: >
+      Daily 10:30 to 18:30, free admission, per the museum site. A 2024 Chilango list had 24 and 31 Dec until 14:00 and
+      closed 25 Dec and 1 Jan; 29 Dec to 3 Jan 2027 holiday hours unverified. Same block as the Museo Jumex.
+    booking: No tickets or reservations needed; free every day. Call +52 55 1103 9800 to confirm 31 Dec and 1 Jan.
+    url: https://museosoumaya.org/
+
+  - name: Museo Jumex
+    category: spot
+    address: Miguel de Cervantes Saavedra 303, Granada, Miguel Hidalgo, Ciudad de Mexico
+    neighborhood: Granada
+    note: >
+      Tue to Fri 10 to 17, Sat 10 to 19, Sun 10 to 17, closed Mon; free. Last year's pattern (2024 Chilango list) was
+      24 and 31 Dec until 14:00, closed 25 Dec and 1 Jan; 2026-27 holiday hours unverified.
+    booking: No tickets needed, admission is free every day. Free guided tours Tue to Fri at 12 and 16.
+    url: https://www.fundacionjumex.org/
+
+  - name: Museo del Palacio de Bellas Artes
+    category: spot
+    address: Avenida Juarez S/N, Centro Historico, Ciudad de Mexico
+    lat: 19.4355009
+    lon: -99.1412585
+    neighborhood: Centro Historico
+    note: >
+      Tue to Sun 10 to 18, last ticket 17:30, closed Mon. MX$95 (about $5.06), same for foreigners. 1 Jan and 24 to 25 Dec
+      closure unverified (a past year closed 25 Dec, open 10 to 14 on 24 Dec).
+    booking: >
+      Tickets only at the box office on the day, no advance reservation. Sunday (3 Jan) free for everyone including
+      foreigners. Free for under 13, students and teachers with ID, 60+. Free guided tours with admission.
+    url: https://museopalaciodebellasartes.inba.gob.mx/informacion-general/
+
+  - name: Museo del Templo Mayor
+    category: spot
+    address: Seminario 8, Centro Historico, Ciudad de Mexico
+    lat: 19.4343218
+    lon: -99.1317692
+    neighborhood: Centro Historico
+    note: >
+      Tue to Sun 9 to 17, closed Mon (INAH). MX$210 foreign tourists (about $11.18), MX$105 Mexicans and resident foreigners.
+      Dec/Jan holiday hours unverified; the open-air zone has been closed for short maintenance spells this year.
+    booking: >
+      No timed entry published. Sunday (3 Jan) free for Mexicans and resident foreigners only. Guided visits to the
+      Ehecatl temple and ball court were by reservation in 2026 (unverified for Dec).
+    url: https://inah.gob.mx/museos/museo-de-sitio-del-templo-mayor
+
+  - name: MUAC (Museo Universitario Arte Contemporaneo)
+    category: spot
+    address: Insurgentes Sur 3000, Centro Cultural Universitario, Coyoacan, Ciudad de Mexico
+    lat: 19.3147807
+    lon: -99.1854381
+    neighborhood: Ciudad Universitaria
+    note: >
+      Tue, Wed, Fri 10 to 18, Thu 10 to 20, Sat 11 to 20, Sun 11 to 18, closed Mon (hours from Aug, year unstated).
+      MX$60 general (about $3.19). UNAM vacation closure in Dec/Jan is likely and unverified; confirm before going.
+    booking: >
+      No timed entry, pay at the box office. Free Thu 18:00 to 20:00; 50 percent off on Sundays. Free for under 12.
+    url: https://muac.unam.mx/
+
+  - name: Museo Nacional de Arte (MUNAL)
+    category: spot
+    address: Tacuba 8, Centro Historico, Ciudad de Mexico
+    lat: 19.4364584
+    lon: -99.1390874
+    neighborhood: Centro Historico
+    note: >
+      Tue to Sun 10 to 18, last entry 17:30, closed Mon, closed 25 Dec and 1 Jan (museum site). Price not published
+      on the site (unverified). Beside the Palacio de Correos and a short walk from Bellas Artes.
+    booking: Ticket rules and free days not published on the site; unverified.
+    url: https://munal.mx/
+
+  - name: Museo de Arte Popular
+    category: spot
+    address: Museo de Arte Popular, Revillagigedo, Centro, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Centro Historico
+    note: >
+      Tue to Sun 10 to 18, closed Mon. MX$60 per third parties (unverified, no official page reached). A 2024 list had
+      it closed 24, 25 and 30 Dec and 1 Jan; 2026-27 closures unverified.
+    booking: No timed entry known. Third parties say free on Sundays (unverified).
+    url: https://map.cultura.cdmx.gob.mx/
+
+  - name: Palacio Nacional (Diego Rivera murals)
+    category: spot
+    address: Palacio Nacional, Centro Historico, Ciudad de Mexico
+    lat: 19.4325543
+    lon: -99.1312673
+    neighborhood: Centro Historico
+    note: >
+      Free guided visits Tue to Sun, spanish departures 11:00 to 16:00, English 10:30 and 15:30, per a gob.mx PDF
+      (undated, unverified for Dec). Tours can be suspended without notice. Closure on 1 Jan and 24 to 25 Dec unverified.
+    booking: >
+      Registration in person at the Museo de Arte SHCP, Moneda 4, from 10:00; no online booking found. Bring passport
+      or ID (one per group reportedly enough). Free; tours are not tied to the Sunday rule.
+    url: https://www.gob.mx/cms/uploads/attachment/file/831641/Visita_PalNal1-comprimido.pdf
+
+  - name: Xochimilco trajineras (Embarcadero Nuevo Nativitas)
+    category: spot
+    address: Embarcadero Nuevo Nativitas, Xochimilco, Ciudad de Mexico
+    neighborhood: Xochimilco
+    note: >
+      Boats are hired by the hour, about MX$750 per boat per hour (about $39.91 per boat), 15 to 18 people; 2026 reports,
+      no 2026 official tariff found, unverified. Count on 2 hours for the group; a single boat fits 8. Daily; 31 Dec and 1 Jan hours unverified.
+    booking: >
+      No tickets; hire a boat at the embarcadero and agree the price and time before boarding. Weekdays are quieter than
+      weekends; no free days apply. Insist on the posted tariff.
+    url: https://www.posta.com.mx/cdmx/vas-a-xochimilco-como-rentar-una-trajinera-en-2026-sin-ser-estafado/vl2208939
+
+  - name: Teotihuacan (Pyramids of the Sun and Moon)
+    category: spot
+    address: Zona Arqueologica de Teotihuacan, San Juan Teotihuacan, Estado de Mexico
+    # Outside the geocoder's Mexico City box, so placed by hand at the Pyramid of the Sun.
+    lat: 19.6925
+    lon: -98.8438
+    neighborhood: San Juan Teotihuacan (day trip)
+    note: >
+      Daily 8 to 17, last entry 16:30 (INAH). MX$210 foreign tourists (about $11.18), MX$105 Mexicans and resident foreigners.
+      Last year INAH kept it open 31 Dec and 1 Jan; 2026-27 unverified. Security reopening after an April 2026 incident, check news.
+    booking: >
+      Official line: tickets at the site box office and the INAH site; no timed entry. Sunday (3 Jan) free for Mexicans
+      and resident foreigners only, and Sundays are crowded. Arrive at 8 and avoid 3 Jan.
+    url: https://inah.gob.mx/zonas/23-zona-arqueologica-de-teotihuacan
+
+  - name: Biblioteca Vasconcelos
+    category: spot
+    address: Biblioteca Vasconcelos, Buenavista, Ciudad de Mexico
+    neighborhood: Buenavista
+    note: >
+      Free. Hours unverified and unstable: a late-2026 report says reduced 9:30 to 16:30 after a closure, the older
+      pattern is 8:30 to 19:30 daily. Year-end closure unverified. Lower priority than the others.
+    booking: No ticket needed; free. Confirm the hours and the garden opening before making the trip.
+    url: https://mexicocity.cdmx.gob.mx/venues/vasconcelos-library/?lang=en
+
+  # ---------- more bars, Roma Norte and Condesa, TRAVEL-29, checked 6 November 2026 ----------
+  - name: Baltra Bar
+    category: bar
+    address: Iztaccihuatl 36 local D, Hipodromo Condesa, Mexico City
+    lat: 19.40943
+    lon: -99.1689855
+    neighborhood: Condesa
+    note: >-
+      Galapagos-themed cocktail bar on a quiet street on the Roma Norte/Condesa line. Hours per
+      baltra.bar: Sun-Wed 6 PM-12 AM, Thu-Sat 6 PM-2 AM. NYE and 1 Jan not stated (unverified).
+    booking: >-
+      OpenTable via baltra.bar. Group of 7 not confirmed; a secondary source says no reservations on
+      most nights, so unverified. Message ahead.
+    url: https://baltra.bar
+  - name: Owl Hidden Bar
+    category: bar
+    address: Atlixco 94, Condesa, Mexico City
+    neighborhood: Condesa
+    note: >-
+      Hidden bar, reservation is the access key. Tue-Sat 6 PM-2 AM per Chilango (unverified), so
+      likely closed Sun 3 Jan. NYE and 1 Jan unverified.
+    booking: >-
+      Reservation required, by WhatsApp to the bar's published number (55 3881 3337). Group of 7
+      unverified; ask when booking.
+    url: https://www.chilango.com/comida-y-tragos/bares/bares-reservacion-cdmx/
+  - name: Tlecan
+    category: bar
+    address: Avenida Alvaro Obregon 228 local 2, Roma Norte, Mexico City
+    lat: 19.4168806
+    lon: -99.1654383
+    neighborhood: Roma Norte
+    note: >-
+      Agave and mezcal cocktail bar, a 50 Best listing. Hours conflict: about 6 PM-2 AM daily on some
+      listings, Tue-Sat to 1:30 AM and closed Sun-Mon on others (unverified). NYE and 1 Jan
+      unverified.
+    booking: >-
+      Reported walk-in only, so a group of 7 will likely wait or split. Unverified; tlecan.com lists
+      no booking info. Go early.
+    url: https://tlecan.com
+  - name: Bar Mauro
+    category: bar
+    address: Tabasco 149, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: >-
+      1970s Italian-style bar, a 50 Best listing. Open Tue-Sun per 50 Best; Chilango hours
+      (unverified): Mon, Wed, Thu 5-11 PM, Fri-Sat 4 PM-12 AM, Sun 3-10 PM. NYE and 1 Jan unverified.
+    booking: Recommended, by Instagram DM at @barmauromx. Group of 7 unverified; DM for a table.
+    url: https://www.instagram.com/barmauromx
+  - name: Maison Artemisia
+    category: bar
+    address: Tonala 23, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: >-
+      Absinthe and botanical-spirits bar with piano and DJ. Open Tue-Sun 6 PM-2 AM per
+      maisonartemisia.com, closed Mon. Hosted an NYE party 8 PM-3 AM in 2025 (Time Out); 2026
+      unverified. 1 Jan unverified.
+    booking: >-
+      Reserve on OpenTable or reservaciones@maisonartemisia.com. Group of 7 unverified; email for
+      groups. Booking recommended for NYE.
+    url: https://maisonartemisia.com
+  - name: Las Brujas
+    category: bar
+    address: Rio de Janeiro 56 local B, Roma Norte, Mexico City
+    lat: 19.4210456
+    lon: -99.1597296
+    neighborhood: Roma Norte
+    note: >-
+      Cocktail bar in the Casa de las Brujas, on North America's 50 Best extended list (65, 2025).
+      Open to 2 AM Tue-Sat and midnight Sun per OpenTable reviews (unverified). Outdoor seating. NYE
+      and 1 Jan unverified.
+    booking: >-
+      OpenTable; late slots are limited and walk-ins go on a waitlist. Group of 7 unverified; book
+      early evening.
+    url: https://www.opentable.com/r/bar-las-brujas-ciudad-de-mexico-2
+  - name: Felina
+    category: bar
+    address: Ometusco 87, Hipodromo Condesa, Mexico City
+    neighborhood: Condesa
+    note: Mid-century rum cocktail bar in Condesa. Hours, NYE and 1 Jan all unverified.
+    booking: Unverified. Message the bar for a table of 7.
+    url: https://tablejourney.com/mexico/mexico-city/nightlife/felina/
+  - name: Rubi Wine & Cocktails
+    category: bar
+    address: Avenida Sonora 189-C, Hipodromo Condesa, Mexico City
+    precision: approximate
+    neighborhood: Condesa
+    note: >-
+      Wine-based cocktails, facing Parque Mexico. Tue-Sat 4 PM-12 AM, Sun 3-10 PM per Time Out
+      (possibly outdated, unverified). Early closer, good for a first drink. NYE and 1 Jan unverified.
+    booking: OpenTable listing exists. Group of 7 unverified.
+    url: https://www.timeoutmexico.mx/ciudad-de-mexico/bares-y-cantinas/rubi-wine-cocktails
+  - name: The Midnight Monkey
+    category: bar
+    address: Plaza Rio de Janeiro 54, Roma Norte, Mexico City
+    precision: approximate
+    neighborhood: Roma Norte
+    note: >-
+      Speakeasy with jazz and burlesque nights. Tue-Sat 6 PM-2 AM per Chilango (unverified). Part of
+      the 2025 NYE package at Gran Cantina Filomeno (same building); 2026 unverified.
+    booking: Recommended, walk-ins possible per Chilango. WhatsApp 55 9136 1978. Group of 7 unverified.
+    url: >-
+      https://www.publimetro.com.mx/plus/2026/04/17/the-midnight-monkey-celebra-anos-de-arte-en-roma-norte-con-cocteles-jazz-y-burlesque/
+  - name: Biberon
+    category: bar
+    address: Durango 219, Roma Norte, Mexico City
+    precision: approximate
+    neighborhood: Roma Norte
+    note: >-
+      Cocktail bar, Wed-Sat 7 PM-2 AM per Chilango (unverified). Likely closed Sun 3 Jan. NYE and 1
+      Jan unverified.
+    booking: Reservation recommended, WhatsApp 55 3472 6029. Group of 7 unverified.
+    url: https://www.chilango.com/comida-y-tragos/bares/bares-reservacion-cdmx/
+  - name: Departamento
+    category: bar
+    address: Avenida Alvaro Obregon 154, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: >-
+      Underground techno bar and club, the late-night dance option. Wed-Sun 6 PM-3 AM on one listing,
+      Wed-Sat 9 PM-3 AM on another (unverified). NYE and 1 Jan unverified; a ticketed NYE night is
+      likely.
+    booking: >-
+      RSVP line listed (55 4089 4652). Walk-in standing for a group of 7 is normal; table policy
+      unverified.
+    url: https://tablejourney.com/mexico/mexico-city/nightlife/departamento/
+  - name: Gin Gin Condesa
+    category: bar
+    address: Avenida Tamaulipas 55 B, Condesa, Mexico City
+    precision: approximate
+    neighborhood: Condesa
+    note: >-
+      Gin bar, the Condesa branch. Open daily 1 PM-3 AM per gingin.mx (own site). NYE and 1 Jan hours
+      not stated.
+    booking: Reserve at gingin.mx/rsvp-condesa. Group size cap not confirmed for 7; message ahead.
+    url: https://gingin.mx
+  - name: Gin Gin Alvaro Obregon
+    category: bar
+    address: Cordoba 107, Roma Norte, Mexico City
+    precision: approximate
+    neighborhood: Roma Norte
+    note: >-
+      Gin bar, the Roma Norte branch. Open daily 1 PM-3 AM per gingin.mx (own site). NYE and 1 Jan
+      hours not stated.
+    booking: Reserve at gingin.mx/rsvp-aobregon. Group size cap not confirmed for 7; message ahead.
+    url: https://gingin.mx
+  - name: La Clandestina
+    category: bar
+    address: Avenida Alvaro Obregon 298, Roma Norte, Mexico City
+    precision: approximate
+    neighborhood: Roma Norte
+    note: >-
+      Classic mezcaleria, casual flights. Mon-Sat 6:30 PM-2 AM per a recent Chilango guide; older
+      listings differ (unverified). NYE and 1 Jan unverified.
+    booking: Mezcal bars usually take walk-ins; a group of 7 should arrive early. Unverified.
+    url: >-
+      https://www.chilango.com/agenda/vida-nocturna/mezcalerias-chilangas-para-enfiestar-hasta-que-el-cuerpo-aguante/
+  - name: Casa Awolly (Tigre terrace)
+    category: bar
+    address: Sinaloa 57, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: >-
+      Hotel restaurant with a terrace bar called Tigre. Terrace bar 6 PM-2 AM, restaurant Tue-Sun 2:30
+      PM-12:30 AM per Time Out (unverified). NYE and 1 Jan unverified.
+    booking: Unverified. Contact the hotel for a table of 7; terrace seating is limited.
+    url: https://www.timeout.com/mexico-city/bars/hotel-casa-awolly
+  - name: Vigneron
+    category: bar
+    address: Jalapa 181, Roma Norte, Mexico City
+    precision: approximate
+    neighborhood: Roma Norte
+    note: >-
+      Michelin Bib Gourmand wine bar, small producers. Closed Mon, Tue-Thu 2-10 PM, Fri-Sat 2-11 PM,
+      Sun 12-6 PM (aggregators, unverified). Early closer. NYE and 1 Jan unverified.
+    booking: Reservations offered; group of 7 unverified.
+    url: https://guide.michelin.com/en/ciudad-de-mexico/cuauhtemoc_1995126/restaurant/vigneron
+  - name: Hugo el Wine Bar
+    category: bar
+    address: Avenida Veracruz 38, Roma Norte, Mexico City
+    lat: 19.4186475
+    lon: -99.1751724
+    neighborhood: Roma Norte
+    note: Wine bar. Hours, NYE and 1 Jan all unverified.
+    booking: Unverified. Message ahead for 7.
+    url: https://tablejourney.com/mexico/mexico-city/wine-bars/
+  - name: Blanco Colima
+    category: bar
+    address: Colima 168, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: >-
+      Art-filled restaurant and wine/cocktail bar, open daily 10 AM-12 AM per Tablejourney
+      (unverified). 2025 NYE was a prix fixe dinner with open bar, 4,300 MXN plus service from 7 PM;
+      2026 unverified.
+    booking: WhatsApp 55 5511 7527 for NYE. Group of 7 plausible with a booking; unverified.
+    url: https://www.chilango.com/que-hacer/donde-pasar-el-ano-nuevo-2026-en-la-cdmx/
+  - name: Fonico
+    category: bar
+    address: Salamanca 85, Roma Norte, Mexico City
+    neighborhood: Roma Norte
+    note: >-
+      Roma Norte venue that ran a ticketed NYE party in 2025: seatings 6-8:30 PM at 1,950 MXN, 9:30
+      PM-4 AM at 2,980 or 4,100 MXN with open bar. 2026 plans unverified.
+    booking: OpenTable or WhatsApp 55 2246 2016. A group of 7 needs one booking; book early.
+    url: https://www.chilango.com/que-hacer/donde-pasar-el-ano-nuevo-2026-en-la-cdmx/
+  - name: Hotel Condesa DF rooftop
+    category: bar
+    address: Avenida Veracruz 102, Condesa, Mexico City
+    lat: 19.4160949
+    lon: -99.1718864
+    neighborhood: Condesa
+    note: Hotel rooftop bar and patio in Condesa. Hours, NYE and 1 Jan unverified.
+    booking: Unverified. Call ahead for 7; rooftops often take hotel guests first.
+    url: https://theinfatuation.com/mexico-city/reviews/hotel-condesa-df-rooftop-bar
+  - name: Salon Malafama
+    category: bar
+    address: Avenida Michoacan 78, Hipodromo Condesa, Mexico City
+    precision: approximate
+    neighborhood: Condesa
+    note: Casual pool hall and dive bar, cheap fallback. Hours, NYE and 1 Jan unverified.
+    booking: Walk-in, no booking expected. Group of 7 fine in principle; unverified.
+    url: https://www.timeoutmexico.mx/ciudad-de-mexico/antros-bares/salon-malafama
+  - name: Pata Negra
+    category: bar
+    address: Tamaulipas 30, Condesa, Mexico City
+    precision: approximate
+    neighborhood: Condesa
+    note: >-
+      Spanish-style bar with tapas downstairs and live music or DJs in the upper salon (nights from 9
+      PM per an undated Time Out review). Address from memory, unverified. Hours, NYE and 1 Jan
+      unverified.
+    booking: Walk-in likely; unverified for 7.
+    url: https://www.timeout.com/mexico-city/bars/pata-negra
+
+  # ---------- Puerto Morelos places, TRAVEL-22, checked 6 November 2026 ----------
+  - name: Punta Corcho
+    category: fine
+    address: Avenida Rafael E. Melgar, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8471974
+    lon: -86.8761169
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (about 3 km, estimate) from the resort. Michelin-listed seafood, second floor,
+      open-air, ocean breeze. Daily 1 pm to 11 pm per its own site and Michelin. Price tier $$
+      (Michelin); roughly MX$600 to 900 (US$32 to 48) per person with a drink is an unverified
+      estimate. Jan 1 and Jan 6 closure not stated (unverified). Fits 6 but its own site says "No
+      reservaciones", so go early or send the contact form; OpenTable listing exists.
+    booking: >-
+      Walk-in per own site (No reservaciones); OpenTable listing also exists. Unverified which is
+      current.
+    url: https://danielovadia.com/punta-corcho
+    region: riviera
+  - name: Muelle Once
+    category: casual
+    address: Avenida Rafael E. Melgar, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8478
+    lon: -86.8752
+    precision: approximate
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (estimate) from the resort. Beachfront seafood, some tables on sand. Hours conflict
+      across listings (8 am to 7 pm vs 8 am to 11 pm), so unverified; assume lunch to early dinner.
+      OpenTable cost tier is MX$500 and over (about US$27+) per person. Jan 1 and Jan 6 closure
+      unverified. Good for a party of 6; reserving is recommended.
+    booking: OpenTable or phone; reservations recommended
+    url: https://www.opentable.com.mx/r/muelle-once-puerto-morelos
+    region: riviera
+  - name: La Sirena
+    category: bar
+    address: Calle Jose Maria Morelos, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8476
+    lon: -86.8754
+    precision: approximate
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (estimate) from the resort. Rooftop bar and restaurant near the lighthouse. Sun to
+      Thu 11 am to midnight, Fri and Sat 11 am to 1 am (own site). Happy hour Mon to Fri 4 to 6 pm,
+      live music most nights from about 8 pm, no cover. Prices not published; roughly MX$400 to 700
+      (US$21 to 37) per person is an unverified estimate. Jan 1 and Jan 6 hours unverified. Easy for
+      6; reserve the rooftop.
+    booking: Reservations link on the site
+    url: https://lasirenapm.com
+    region: riviera
+  - name: John Gray's Kitchen
+    category: fine
+    address: Avenida Ninos Heroes, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8497898
+    lon: -86.8761827
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (estimate) from the resort. Upscale contemporary. Listings say evenings only (about 4
+      to 10 pm) and closed Sundays, so it is likely closed on arrival day Jan 3 (unverified, no
+      official site found). A reviewer cites a 3 to 6 pm deal of half portion plus a drink for MX$250
+      (US$13). Full dinner price unverified. Jan 1 and Jan 6 unverified.
+    booking: Phone +52 998 871 0665 (third-party listing); book ahead for 6
+    url: https://www.frommers.com/destinations/puerto-morelos/restaurants/john-grays-kitchen
+    region: riviera
+  - name: El Huerto del Puerto
+    category: casual
+    address: Avenida Javier Rojo Gomez, Puerto Morelos, Quintana Roo, Mexico
+    precision: approximate
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (estimate) from the resort. Mexican, breakfast to dinner, Mon to Sun 8 am to 10 pm
+      per its own site. Prices not published (unverified). Site lists no holiday closures; Jan 1 and
+      Jan 6 unverified. Listed street is Javier Rojo Gomez Supermanzana 002 Manzana 4 Lote 4A, but the
+      page also shows a Cancun address, so confirm. Fine for 6.
+    booking: Phone +52 998 491 7173 via site
+    url: https://elhuertodelpuerto.com
+    region: riviera
+  - name: El Nicho
+    category: casual
+    address: Avenida Tulum at Avenida Javier Rojo Gomez, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8474702
+    lon: -86.8765649
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (estimate) from the resort. Breakfast and brunch across from the main plaza. Daily
+      7:30 am to 2 pm, closed Tuesdays (Zonaturistica; a blog says Monday, so unverified). About
+      MX$350 (US$18.60) per person with soft drink. Busy with waits; 6 people should arrive before 9
+      am. Jan 1 closure unverified. Jan 6 is a Wednesday, so expected open.
+    booking: Walk-in
+    url: https://www.zonaturistica.com/restaurante/1784/el-nicho-puerto-morelos.html
+    region: riviera
+  - name: Le Cafe d'Amancia
+    category: casual
+    address: Plaza Principal, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8474908
+    lon: -86.876599
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (estimate) from the resort. Coffee, pastries, smoothies on the main square. Closed
+      Mondays (Fodor's, Airbnb guide); older listing says 7 am to 10 pm Tue to Fri, 7 am to 11 pm Sat,
+      so hours are unverified. Reported cash only (Fodor's). Roughly MX$150 to 250 (US$8 to 13) per
+      person, unverified. Jan 1 and Jan 6 unverified. Small tables, 6 will need to join two.
+    booking: Walk-in
+    url: >-
+      https://fodors.fodors.com/world/mexico-and-central-america/mexico/the-riviera-maya/restaurants/reviews/le-cafe-damancia-200397
+    region: riviera
+  - name: Blue Morelos
+    category: casual
+    address: Avenida Javier Rojo Gomez, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8504609
+    lon: -86.8750851
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (estimate) from the resort. Seafood known for tuna tostadas, fish tacos, octopus.
+      Described as very reasonable but no prices, hours or closures found: unverified. Roughly MX$250
+      to 450 (US$13 to 24) per person is a guess. Likely fine for 6 at off-peak times.
+    booking: Walk-in (unverified)
+    url: >-
+      https://exploredbymarta.com/travel/mexico/best-places-to-eat-best-restaurants-in-puerto-morelos-in-mexico/
+    region: riviera
+  - name: Cantina Habanero
+    category: bar
+    address: Avenida Rafael E. Melgar, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8492852
+    lon: -86.8755805
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (estimate) from the resort. Local cantina north of the plaza with Mexican food and
+      local beer, described as good value (one guide). Address, hours, price and closures all
+      unverified; treat as a lead to confirm on Google Maps. Probably MX$250 to 400 (US$13 to 21) per
+      person. Casual, should seat 6.
+    booking: Walk-in (unverified)
+    url: https://www.gamintraveler.com/2023/11/14/best-restaurants-in-puerto-morelos/
+    region: riviera
+  - name: El Socio Taqueria Naiz
+    category: taco
+    address: Centro, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.848
+    lon: -86.876
+    precision: approximate
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (estimate) from the resort. Reviewer-favorite tacos (Miguelito, chulanaiz, fish).
+      Street address, hours and prices not found: unverified. Taco spots in town run roughly MX$30 to
+      60 each, so MX$200 to 300 (US$11 to 16) per person is a guess. Informal, easy for 6.
+    booking: Walk-in
+    url: https://www.mapthemeal.com/cancun/puerto-morelos/
+    region: riviera
+  - name: Puerto Morelos Artisan Market and Farmers Market
+    category: market
+    address: Parque Fundadores, Puerto Morelos, Quintana Roo, Mexico
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (estimate) from the resort. Artisan market Fri to Sun 5 to 10 pm at Parque Fundadores
+      (portside). Farmers market Wed 8 am to 1 pm near the church; Pabellon El Faro Wed and Thu 4 to
+      10 pm. Free entry, food and crafts a few hundred pesos per person. Jan 1 is a Friday and Jan 6 a
+      Wednesday; schedules can shift for holidays and weather, so unverified for those dates. Walk
+      freely as a group of 6.
+    booking: none
+    url: https://experiencepuertomorelos.com/puerto-morelos-market-magic
+    region: riviera
+  - name: Town Square and Leaning Lighthouse (El Faro Inclinado)
+    category: spot
+    address: Jardin Principal, Avenida Rafael E. Melgar, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8475841
+    lon: -86.8750631
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (estimate) from the resort. Free, open-air, always accessible. Old lighthouse tilted
+      by Hurricane Beulah in 1967; plaza, pier and public beach next to it. Best at sunset. No
+      closures expected on Jan 1 or Jan 6 (outdoor, but unverified). Ideal for 6; pair with a meal at
+      the plaza.
+    booking: none
+    url: https://www.atlasobscura.com/places/the-leaning-lighthouse-el-faro-inclinado
+    region: riviera
+  - name: Puerto Morelos Public Beach
+    category: spot
+    address: Playa Puerto Morelos, Avenida Rafael E. Melgar, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8478
+    lon: -86.8745
+    precision: approximate
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi (estimate) from the resort. Free, calm water off the main square, with restaurants
+      and dive shops behind it. No private beach club was verified in the area; resort day passes
+      exist (e.g. nearby Dreams resorts, around US$100 to 110) but are not needed since the group is
+      already at a resort. Sargassum can affect the beach (unverified for January). Fine for 6.
+    booking: none
+    url: https://www.howisthesargassum.com/puerto-morelos-day-passes
+    region: riviera
+  - name: Puerto Morelos Reef National Park Snorkel
+    category: spot
+    address: Avenida Rafael E. Melgar 1, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.848
+    lon: -86.8742
+    precision: approximate
+    neighborhood: Puerto Morelos centro
+    note: >-
+      8 min taxi to the pier (estimate) from the resort. Reef is reached only by licensed boat from
+      the town pier; a roughly 2 hour trip with about 1 hour in water. Operator prices US$32 to 45
+      (MX$600 to 845) per person: Lighthouse Tours 32, Atma-Ha 38, Wet Set Diving 45 (park fee and
+      gear included for Wet Set and Lighthouse). Other operators add a MX$180 to 260 dock or reef tax.
+      CONANP page not retrievable, so park fee is unverified. Small-group caps are 8 to 10, so 6 fits
+      one boat. Jan 1 and Jan 6 operation unverified; book direct by WhatsApp.
+    booking: >-
+      Book with a licensed operator (Wet Set Diving, Atma-Ha, Lighthouse Tours); confirm park fee
+      included
+    url: https://www.cancuntripinsider.com/guides/puerto-morelos/puerto-morelos-snorkeling
+    region: riviera
+  - name: Jardin Botanico Dr. Alfredo Barrera Marin
+    category: spot
+    address: Carretera Cancun-Tulum km 320, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8446586
+    lon: -86.9020878
+    neighborhood: Highway 307 north of town
+    note: >-
+      5 to 10 min taxi (about 2 km before town per guide, estimate) from the resort. 65 hectares,
+      trails, hanging bridges, Maya archaeology. Mon to Fri 8 am to 4 pm (Frommer's adds Sat 8 am to 1
+      pm, unverified). Admission conflicting: MX$120 foreigner on older pages, up to MX$220 (US$11.70)
+      on a November 2025 review; plan for MX$220. Jan 1 (Friday) likely closed (unverified); Jan 6
+      (Wednesday) expected open. Good for 6 as a 2 hour walk.
+    booking: Walk-in; call +52 998 206 9233
+    url: >-
+      https://www.zonaturistica.com/en/things-to-do/quintana-roo/puerto-morelos/jardin-botanico-dr-alfredo-barrera-marin
+    region: riviera
+  - name: Croco Cun Zoo
+    category: spot
+    address: SM-24 M-3 L-3, Carretera Cancun-Tulum, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8812438
+    lon: -86.8870338
+    neighborhood: Highway 307 near town
+    note: >-
+      10 min taxi (estimate) from the resort. Guided 60 to 75 minute walk-through with animal
+      handling. Own site: daily 9 am to 4:30 pm, adult MX$839 (US$44.65). Other sites list 9 am to 5
+      pm and US$30, so trust the own site but recheck. No closures listed; Jan 1 and Jan 6 unverified.
+      Guided groups of 6 are easy.
+    booking: Tickets on crococunzoo.com; walk-in also possible
+    url: https://www.crococunzoo.com
+    region: riviera
+  - name: Cenote Verde Lucero
+    category: spot
+    address: Ruta de los Cenotes, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8653306
+    lon: -87.0689508
+    neighborhood: Ruta de los Cenotes
+    note: >-
+      35 to 40 min taxi or rental car (estimate; taxi may need a round-trip wait) from the resort.
+      Daily 9 am to 5 pm (own site). Foreign adult MX$350 (US$18.60), child 0 to 9 MX$300; 8 percent
+      surcharge on cards. Parking on site. No closures listed; Jan 1 and Jan 6 unverified. Easy swim
+      stop for 6. Exact km marker not on the site, so geocode may land on the route only.
+    booking: Walk-in; WhatsApp on site
+    url: https://www.cenoteverdelucero.com
+    region: riviera
+  - name: Cenotes Zapote Ecopark
+    category: spot
+    address: Ruta de los Cenotes km 19, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.866
+    lon: -87.075
+    precision: approximate
+    neighborhood: Ruta de los Cenotes
+    note: >-
+      35 to 40 min drive (estimate) from the resort. Two guided tours (Chaka and Zapote), each with
+      two open cenotes and one cavern, about 3 to 4 hours, Maya buffet optional. Sales line daily 9 am
+      to 8 pm; park hours not stated. Ticket prices not shown (unverified); a third-party listing
+      cites about US$20 entry. Extreme options cost extra. Group of 6 fits. Jan 1 and Jan 6
+      unverified.
+    booking: Book on cenoteszapote.com or WhatsApp +52 998 200 8910
+    url: http://cenoteszapote.com/
+    region: riviera
+  - name: Boca del Puma
+    category: spot
+    address: Ruta de los Cenotes km 16, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8639788
+    lon: -87.0563498
+    neighborhood: Ruta de los Cenotes
+    note: >-
+      30 to 35 min drive (estimate) from the resort. Cenote plus jungle activities (zip line, ATV).
+      Hours conflict (8 to 5:30, 9 to 5, 10 to 6) so unverified; entry about MX$300 (US$16), a combo
+      package up to US$90 per one source, both unverified. The official site did not load. Jan 1 and
+      Jan 6 unverified.
+    booking: Walk-in or via site bocadelpuma.com (unverified)
+    url: https://bocadelpuma.com
+    region: riviera
+  - name: Cenote Siete Bocas
+    category: spot
+    address: Ruta de los Cenotes km 15.5, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8760556
+    lon: -87.0435705
+    neighborhood: Ruta de los Cenotes
+    note: >-
+      30 to 35 min drive (estimate) from the resort. Linked cavern cenotes. One guide gives 8 am to 5
+      pm and US$20 (MX$376) per person; single source, unverified. Jan 1 and Jan 6 unverified.
+      Swimming and snorkeling for 6 possible, check on arrival.
+    booking: Walk-in (unverified)
+    url: https://escapetomexico.com/atractivos/cenote-siete-bocas-a-subterranean-network-of-cenotes
+    region: riviera

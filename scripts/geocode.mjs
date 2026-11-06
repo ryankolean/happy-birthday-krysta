@@ -19,8 +19,12 @@ const cachePath = join(root, 'data', 'geocache.json');
 
 const UA = 'happy-birthday-krysta/1.0 (trip planning site; github.com/ryankolean/happy-birthday-krysta)';
 
-// Greater Mexico City, generously drawn. Every pin has to land inside this.
-const BBOX = { minLat: 19.2, maxLat: 19.6, minLon: -99.4, maxLon: -98.9 };
+// Every pin has to land inside its region's box. cdmx is greater Mexico City,
+// riviera is Cancun to Tulum, both generously drawn.
+const BBOXES = {
+  cdmx: { minLat: 19.2, maxLat: 19.6, minLon: -99.4, maxLon: -98.9 },
+  riviera: { minLat: 20.1, maxLat: 21.3, minLon: -87.6, maxLon: -86.7 },
+};
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const places = yaml.load(readFileSync(join(root, 'data', 'places.yml'), 'utf8'));
@@ -58,11 +62,12 @@ for (const p of todo) {
 
       // Nominatim will happily return a same-named street on another
       // continent. "La 89" resolved to Santiago, Chile. Anything outside
-      // greater Mexico City is rejected rather than cached, because a wrong
+      // the place's region is rejected rather than cached, because a wrong
       // pin that looks right is worse than a missing one.
+      const BBOX = BBOXES[p.region || 'cdmx'];
       if (lat < BBOX.minLat || lat > BBOX.maxLat || lon < BBOX.minLon || lon > BBOX.maxLon) {
         failed.push(
-          `${p.name}: match was outside Mexico City (${lat.toFixed(4)}, ${lon.toFixed(4)}) - "${json[0].display_name.slice(0, 70)}"`
+          `${p.name}: match was outside its region (${lat.toFixed(4)}, ${lon.toFixed(4)}) - "${json[0].display_name.slice(0, 70)}"`
         );
       } else {
         cache[p.address] = { lat, lon, matched: json[0].display_name };
