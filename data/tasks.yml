@@ -56,13 +56,17 @@ this_week:
       quoted $184 round trip for a van of up to six on 4 November. That is
       $84 above eTransfers for the same journey, so the resort's provider
       does not win on price. Full comparison in docs/transport.md.
-      Blocked on two things before anything is booked. The return is not one
-      departure: one passenger flies at 13:50 and four at 15:15, so the
-      resort needs two pickups rather than one, and neither operator has
-      been priced for that. And single_b has not reported a flight at all,
-      so the headcount in both directions is not final. A follow-up to
-      AMSTAR asking what it recommends for a split departure is drafted and
-      waiting to send.
+      Waiting on one answer before anything is booked. The return is not
+      one departure: one passenger flies at 13:50 and four at 15:15. The
+      plan is to absorb that with a single pickup sized to the earlier
+      flight, leaving the resort about 10:15, rather than paying for a
+      second run. A follow-up to AMSTAR is drafted and waiting to send,
+      asking whether that single early pickup is still $184 or carries a
+      surcharge, and what two pickups would cost as a fallback.
+      That plan also means single_b's unreported return no longer holds
+      this up. Any Friday departure at or after 15:15 rides the same van.
+      Only something earlier than 13:50 would put a second vehicle back on
+      the table.
 
   - id: decide-nye
     title: Decide the New Year's Eve plan

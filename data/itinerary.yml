@@ -253,10 +253,28 @@ days:
     title: Home
     summary: DL 1911 at 15:15
     events:
+      - time: "10:15"
+        what: One van for all six, provisional. Check out before it comes.
+        detail: >
+          The group does not leave Cancun together. Christian is on the 13:50
+          and four are on the 15:15, 85 minutes apart, so the plan is one
+          pickup sized to the earlier flight rather than two pickups. Three
+          hours before 13:50 is 10:50 at the airport, and the resort is 27
+          minutes away, so the van leaves about 10:15 and everybody checks
+          out ahead of it rather than at noon.
+          Cost of doing it this way: the four on the 15:15 get about four and
+          a half hours at the airport instead of three. Cost of not doing it:
+          two vehicles, two pickups and a second fare on checkout morning.
+          The time is provisional until the operator confirms it. Do not
+          shave Christian's margin to make the wait shorter, because his
+          Atlanta connection is already the thinnest thing in anybody's
+          itinerary at one hour twenty five.
       - time: "12:00"
-        what: Checkout. Leave for the airport around 11:45.
+        what: Checkout deadline at Dreams Jade
+      - time: "13:50"
+        what: DL 641 to Atlanta, Christian only
       - time: "15:15"
-        what: DL 1911 to Detroit, lands 19:10
+        what: DL 1911 to Detroit, lands 19:12
         detail: Cancun in the first week of January genuinely needs three hours.
 
 does_not_fit:

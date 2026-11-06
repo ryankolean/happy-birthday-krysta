@@ -124,19 +124,47 @@ On Friday 8 January the group leaves Cancun on two flights:
 | DL 1911 | 15:15 | 4, Krysta, Ryan, Haley and Eddie |
 | not yet booked | unknown | 1, Bubba |
 
-So the resort needs two pickups on the departure morning, not one, and
-possibly a third if Bubba books something else. Neither operator has priced
-that. A van is priced per vehicle per run, so the honest expectation is that
-a second departure run adds most of a one-way fare to whichever quote wins.
+That looks like two pickups on the departure morning, which would mean a
+second fare, because a van is priced per vehicle per run.
 
-The arrival is unaffected: all six are on AM 536 landing 18:36, one van.
+**The intended answer is one van anyway.** The two departures are 85 minutes
+apart, which is inside the slack that a Cancun international departure needs
+regardless. So the plan is a single pickup sized to the earlier flight, with
+everybody waiting at the airport together.
+
+| | |
+|---|---|
+| Earlier flight | DL 641 at 13:50 |
+| Three hours before it | 10:50 at the airport |
+| Resort to CUN | 27 km, about 27 minutes |
+| **Van leaves Dreams Jade** | **about 10:15, provisional** |
+| Checkout | 12:00, so everybody checks out early rather than at noon |
+
+What it costs: the four on the 15:15 get about four and a half hours at the
+airport instead of the three the itinerary assumed. What it saves: a second
+vehicle, a second fare, and coordinating two pickups on a checkout morning.
+At six people splitting one vehicle that trade is worth taking.
+
+**Do not shave the 13:50 margin to shorten the wait.** Christian's Atlanta
+connection on the way home is one hour twenty five minutes, the thinnest
+thing in anybody's itinerary, so he is the passenger with the least room to
+absorb a slow security queue at Cancun.
+
+This also takes Bubba's unreported return mostly out of the question. Any
+Friday departure at or after 15:15 fits the same single run. Only something
+earlier than 13:50 would break it and put a second vehicle back on the table.
+
+The arrival is unaffected either way: all six on AM 536 landing 18:36, one
+van.
 
 A follow-up to AMSTAR is drafted and waiting to send. It states the split,
-asks what it recommends for a group leaving on two flights and what each
-option costs, asks for a recommended resort pickup time for each flight, and
-puts the three unanswered questions again. Do not book either operator until
-that answer is in and Bubba has a flight: the whole point of the comparison
-is to compare the same journey.
+says the group would prefer one pickup timed to the 13:50, and asks whether
+that is still $184 or whether an earlier pickup carries a surcharge. It also
+asks what two separate pickups would cost as a fallback, asks for a
+recommended pickup time against the 13:50, asks whether one vehicle can make
+two terminal drop-offs on one run, and puts the three unanswered questions
+again. Do not book either operator until that answer is in: the whole point
+of the comparison is to compare the same journey.
 
 ## What has to be true for the $100 to hold
 
