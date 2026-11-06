@@ -24,7 +24,7 @@ across two arrivals and it becomes two vans and roughly double.
 | Same van, Economy fare | $94 round trip | $15.67 | One change allowed, no free cancellation |
 | Sprinter, up to 15 | $197 round trip | $32.83 | More van than six people need |
 | Airport taxi, on the kerb | reported ~$143 round trip | ~$23.83 | eTransfers quotes this as its counter comparison |
-| AMSTAR, the resort's operator | **no published rate** | unknown | See below |
+| AMSTAR, the resort's operator | $184 round trip | $30.67 | Quoted 4 Nov. See below |
 | ADO bus plus a taxi | ~$12 a head each way, plus the taxi | ~$24 plus taxi | See below |
 
 Quoted on eTransfers' own booking engine on 3 November for 3 to 8 January at
@@ -88,10 +88,55 @@ do exist are not encouraging: one traveller describes paying $180 round trip
 for a family of four against a $72 taxi quote for the same journey, and its
 public reviews run poorly.
 
-**Worth one email for a quote, since the resort offered it and a written
-number costs nothing to ask for.** But do not assume it wins. An in-house
-operator rarely beats the kerb, and the figure to beat is $100 for the
-vehicle.
+**It was emailed on 3 November and answered on 4 November with $184 round
+trip**, so the question is now settled with a written number rather than a
+report. Sandra Flores, Inside Sales, quoting a van rated 1 to 6 passengers:
+
+| | |
+|---|---|
+| Price | $184 round trip for the vehicle, $30.67 a head at six |
+| Vehicle | Van, capacity 1 to 6 |
+| Luggage | Rate assumes one piece per person |
+| Taxes | Included |
+| Gratuity | Not included |
+| Cancellation | 48 hours before the service date |
+| Payment | In full at booking |
+| Flight monitoring | Yes, and notify them if the flight number changes |
+
+So AMSTAR is $84 above eTransfers on the vehicle for the same journey, on
+worse cancellation terms, with a luggage allowance of one bag a head against
+eight bags in the van. The resort's own operator loses on every line that was
+compared. Three of the five questions asked were answered; the meet-and-greet
+point at Terminal 4 and whether anything is payable to the driver were not,
+and neither was the direct question about the price gap.
+
+The quote is also now out of date, because it was written against a return
+that no longer exists. See below.
+
+## The return splits, and that changes both quotes
+
+Both quotes were asked for against one return pickup at 15:15. That is wrong.
+On Friday 8 January the group leaves Cancun on two flights:
+
+| Flight | Departs CUN | Passengers |
+|---|---|---|
+| DL 641 | 13:50 | 1, Christian, routing home through Atlanta |
+| DL 1911 | 15:15 | 4, Krysta, Ryan, Haley and Eddie |
+| not yet booked | unknown | 1, Bubba |
+
+So the resort needs two pickups on the departure morning, not one, and
+possibly a third if Bubba books something else. Neither operator has priced
+that. A van is priced per vehicle per run, so the honest expectation is that
+a second departure run adds most of a one-way fare to whichever quote wins.
+
+The arrival is unaffected: all six are on AM 536 landing 18:36, one van.
+
+A follow-up to AMSTAR is drafted and waiting to send. It states the split,
+asks what it recommends for a group leaving on two flights and what each
+option costs, asks for a recommended resort pickup time for each flight, and
+puts the three unanswered questions again. Do not book either operator until
+that answer is in and Bubba has a flight: the whole point of the comparison
+is to compare the same journey.
 
 ## What has to be true for the $100 to hold
 

@@ -342,6 +342,16 @@ bookings:
     status: pending
     legs_needed: [out, to_beach, home]
     segments: []
+    planned_not_ticketed: >
+      The group is planning around him on AM 536, Mexico City to Cancun at
+      14:55 on 3 January, the flight the other five are ticketed on. Ryan
+      confirmed that expectation on 5 November 2026. It is an expectation and
+      nothing more: no record, no ticket, no fare. The airport transfer from
+      Cancun is quoted on all six landing together at 18:36, so if he ends up
+      on a different flight that quote stops being one van and becomes two.
+      Home on 8 January is also unreported. DL 1911 at 15:15 is the obvious
+      answer because four of the group are already on it, and it is also the
+      answer that keeps the return transfer to two pickups instead of three.
     pricing:
       status: open
       expected_per_person_usd: 1880.25
@@ -493,6 +503,11 @@ coordination:
     home through Atlanta to Los Angeles, so he goes to the airport earlier.
     Bubba has not reported anything yet, and the obvious thing is to put him
     on DL 1911 with the other four while there are still seats.
+    So the departure day splits. One passenger leaves the resort for a 13:50
+    flight and four leave for a 15:15 one, which is two pickups from Dreams
+    Jade rather than one, and the sixth is undecided. That is a question for
+    the transfer operator rather than something to solve on the morning: see
+    docs/transport.md.
   dtw_mex_2026_12_29: >
     Do not try to put the group on one booking. The Delta nonstop will not
     sell to a party of five or more in a single transaction, and every
@@ -580,7 +595,11 @@ price_watch:
     keep working. Do not build one.
 
 open:
-  - Collect flight details from single_b, which is the last one outstanding
+  - >
+    Collect flight details from single_b, the last one outstanding. This now
+    blocks the Cancun transfer as well as the headcount: the arrival van is
+    priced on all six landing on AM 536 at 18:36, and the departure pickups
+    cannot be booked until his Friday flight is known.
   - >
     Three of the six on the beach leg still have to book AM 536 on
     2027-01-03, AM Plus Classic: Haley, Eddie and Bubba. The hosts and
