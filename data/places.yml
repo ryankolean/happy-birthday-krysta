@@ -119,7 +119,12 @@ places:
     category: casual
     address: Tabasco 46, Roma Norte, Mexico City
     neighborhood: Roma Norte
-    note: Four minute walk. Max 10 online, so 8 fits. The 30 December casual option.
+    note: >
+      Four minute walk. Max 10 online, so 8 fits. The 30 December casual
+      option. A friend in the city in November flagged the to-go counter on
+      the right for fancy pastries, and guesses it is a good breakfast
+      without having eaten one there, so treat the breakfast half as
+      untested.
     booking: CoverManager, slug cuina-cdmx. 55 8902 4840.
 
   - name: Lardo
@@ -150,7 +155,12 @@ places:
     category: market
     address: Campeche 101, Roma Sur, Mexico City
     neighborhood: Roma Sur
-    note: About a 25 minute walk. Open 8 AM to 7 PM, fondas busiest noon to 3 PM.
+    note: >
+      About a 25 minute walk. Open 8 AM to 7 PM, fondas busiest noon to 3 PM.
+      The nearer of the two markets to hunt a chirimoya in, and the one to try
+      first for that reason. Ask the fruit vendors, and ask for one ready to
+      eat today or tomorrow. Mercado de San Juan is the other option and
+      carries more of the unusual stuff.
 
   # ---------- bars ----------
   - name: Limantour
@@ -216,7 +226,10 @@ places:
     category: spot
     address: Museo Nacional de Antropologia, Ciudad de Mexico
     neighborhood: Chapultepec
-    note: Tuesday to Sunday 9 to 18, MX$210. Closed 1 January.
+    note: >
+      Tuesday to Sunday 9 to 18, MX$210. Closed 1 January. A friend in the
+      city in November calls this their favourite museum here, for the huge
+      Aztec carving and the history of humans.
 
   - name: Zocalo
     category: spot
@@ -322,8 +335,11 @@ places:
   - name: Maizajo
     category: casual
     address: Fernando Montes de Oca 113, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico
-    note: Nixtamal and tortilla specialists.
-    source: instagram @thatonepointofview
+    note: >
+      Nixtamal and tortilla specialists. Get the flan, which is the one thing
+      a friend in the city in November said about the place and said in
+      capitals.
+    source: instagram @thatonepointofview, friend in Mexico City, November 2026
 
   - name: Panaderia Rosetta
     category: casual
@@ -333,6 +349,8 @@ places:
       The bakery arm of Rosetta. Guava roll is the thing. Named again by two
       more reels, one calling it the best bakery in the city. One of those two
       was unconvinced by the guava pastries, so it is not unanimous.
+      A friend in the city in November named it unprompted and specified the
+      guava roll, which breaks that tie in favour of ordering it.
     source: instagram @thatonepointofview, @thecaroandtina, @stepbysteph.traveltips
 
   - name: Jenni's Quesadillas
@@ -348,7 +366,11 @@ places:
       Sinaloan seafood. Was already on Krysta's own list. A third poster called
       it the best stop of their whole trip, for the seafood tower, the aguachiles
       and the tuna tostada.
-    source: instagram @thatonepointofview, @itsalanbarr, @thecaroandtina
+      A friend in the city in November named the same two dishes unprompted,
+      the torre de mariscos and the aguachile, and said most any seafood here
+      is good. Four independent sources on the same two orders is as settled
+      as anything on this page gets.
+    source: instagram @thatonepointofview, @itsalanbarr, @thecaroandtina, friend in Mexico City, November 2026
 
   - name: De Huevos
     category: casual
@@ -529,7 +551,11 @@ places:
       made to order, spicy tuna tostada. Pricier than a normal taqueria. Billed
       as the only Michelin-starred taqueria in Mexico. The wagyu taco is the one
       to order and the picanha off the trompo is skippable.
-    source: instagram @placesnoted, @thecaroandtina
+      This is also the place a friend in the city described only as "the taco
+      spot next to Rosetta", which is worth recording because this entry has
+      no street number: the pin came from a name lookup. Rosetta is Colima
+      166, so that is the block.
+    source: instagram @placesnoted, @thecaroandtina, friend in Mexico City, November 2026
 
   - name: Tacos Atarantados
     category: taco
@@ -567,8 +593,11 @@ places:
     category: taco
     address: Taqueria Orinoco, Roma Norte, Ciudad de Mexico
     neighborhood: Roma Norte
-    note: Starred as actually eaten. Open very late.
-    source: instagram @thatonepointofview
+    note: >
+      Starred as actually eaten. Open very late. Al pastor off the trompo is
+      the order, and a friend in the city in November picks the gringa
+      specifically.
+    source: instagram @thatonepointofview, friend in Mexico City, November 2026
 
   - name: El Califa de Leon
     category: taco
@@ -1419,3 +1448,238 @@ places:
     booking: Walk-in (unverified)
     url: https://escapetomexico.com/atractivos/cenote-siete-bocas-a-subterranean-network-of-cenotes
     region: riviera
+
+  # ---------- a friend's list from Mexico City, 8 November 2026 ----------
+  # Sent by a friend who is in the city now and exploring on our behalf.
+  # First-hand recommendations rather than reels or listicles, which makes
+  # this the best sourced batch on this page. Names came through as the friend
+  # typed them, so several turned out to be places already listed under a
+  # different spelling, and two could not be identified at all. See
+  # docs/open-questions.md.
+  - name: Meroma
+    category: casual
+    address: Colima 150, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Mid-scale contemporary, Italian and Mediterranean cooking on a Mexican
+      base. The friend has loved every dish here, which is a stronger claim
+      than anything else on this page gets. Michelin lists it without a star.
+      Same block as Rosetta at 166 and Panaderia Rosetta at 179, so it pairs
+      with the bakery on a Roma Norte morning.
+      Hours conflict: one listing says Monday to Saturday 13:00 to 23:00 and
+      Sunday to 22:00, another says closed Mondays. Unverified.
+    booking: OpenTable. +52 55 5920 2654.
+    source: friend in Mexico City, November 2026
+  - name: Azul Historico
+    category: casual
+    address: Isabel la Catolica 30, Centro, Cuauhtemoc, 06000 Ciudad de Mexico
+    neighborhood: Centro
+    note: >
+      Mid-scale regional Mexican, in the courtyard of the Downtown Mexico
+      building. Ricardo Munoz Zurita's kitchen, and he is the person who
+      spent decades cataloguing regional Mexican ingredients, so the menu
+      rotates by region rather than by season.
+      Order the guacamole with chapulines, grasshoppers. The friend calls it
+      truly delicious and also rated the steak. Reported 09:00 to 23:00 daily,
+      unverified.
+      The friend wrote only "Azul", and there are three: this one in Centro,
+      Azul Condesa on Nuevo Leon, and the original Azul y Oro on the UNAM
+      campus. This is the one visitors normally mean and the only one with a
+      confirmed street number, so it is the one pinned. Worth asking which
+      they ate at before anybody plans around the courtyard.
+    source: friend in Mexico City, November 2026
+  - name: Mercado de San Juan
+    category: market
+    address: Mercado de San Juan Ernesto Pugibet, Centro, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Centro
+    note: >
+      Specialty food market, the one where the vendors carry things the other
+      markets do not.
+      This is the chirimoya errand. Ask around the fruit vendors for one, they
+      are reported to be helpful about pointing you at whoever has it, and ask
+      for one ready to eat today or tomorrow. It looks alarming, has big seeds
+      and a pulpy centre to avoid, and the white flesh is the point. Mercado
+      Medellin is the fallback and is closer to the house.
+      Hours conflict, 09:00 to 17:00 on one listing and 11:00 to 18:00 on
+      another, daily either way. Unverified. Bring cash, not every stall
+      takes a card.
+      Addresses are a mess here. Listings variously give Ernesto Pugibet 21,
+      2a Calle de Ernesto Pugibet, and postal codes 06070 and 11580. Geocoding
+      the street number landed on a restaurant called La Cocina de San Juan
+      about 150 m away, so this pin is the market looked up by its own name
+      instead. Trust the name, not the number.
+    source: friend in Mexico City, November 2026
+  - name: Bosforo
+    category: bar
+    address: Luis Moya 31, Centro, Cuauhtemoc, 06010 Ciudad de Mexico
+    neighborhood: Centro
+    precision: approximate
+    note: >
+      Mezcal bar, reported 40 plus small-batch artisan mezcals. No sign on
+      the street: look for the red curtain on Luis Moya and go through it.
+      The friend's instruction is to get there right when it opens, take a
+      seat at the bar, and let the bartenders walk you through flavours until
+      you find what you like. That only works with a seat at the bar, so it
+      is an opening-time plan and not a late one.
+      A block or so off the Alameda, walkable from Hidalgo, Bellas Artes or
+      Juarez metro. Hours conflict badly: one source says Tuesday 19:00 to
+      02:30, Wednesday to 23:00, Thursday to Saturday to 02:30, another says
+      Tuesday to Saturday 18:00 to 02:00. Unverified, and a group of seven at
+      the bar is optimistic.
+    source: friend in Mexico City, November 2026
+  - name: Pulqueria Las Duelistas
+    category: bar
+    address: Aranda 28, Centro, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Centro
+    precision: approximate
+    note: >
+      Pulque, the fermented agave drink, usually served flavoured as curados.
+      Painted floor to ceiling in murals. On the corner with Vizcainas,
+      between Ayuntamiento and Puente Peredo.
+      The friend is honest about this one: glad to have tried a few flavours,
+      does not seek it out on later trips. So one round as an experience
+      rather than an evening.
+      Reported Monday to Saturday 10:00 to 21:00, though one source says
+      daily and another says closed Sundays. Unverified. Cash only.
+    source: friend in Mexico City, November 2026
+  - name: Pulqueria Los Insurgentes
+    category: bar
+    address: Avenida Insurgentes Sur 226, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      The other pulqueria on the friend's list and the easier one to reach
+      from the house. Several floors, flavoured pulques, a rooftop terrace
+      with a stage, jazz midweek and salsa at weekends. Same caveat as Las
+      Duelistas: worth trying once.
+      Hours conflict across listings, roughly 13:00 or 14:00 to between 01:00
+      and 03:00, later at weekends. Unverified. One listing puts it in San
+      Rafael, which every other source contradicts.
+    source: friend in Mexico City, November 2026
+  - name: La Rifa Chocolateria
+    category: casual
+    address: Dinamarca 47, Juarez, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Juarez
+    note: >
+      Drinking chocolate, cacao from Tabasco, Chiapas, Guadalajara and
+      Ensenada. The friend's non-alcoholic pick.
+      Listings disagree: Dinamarca 47 in Juarez is the best attested, while
+      several guides give a Roma Norte address that on closer reading belongs
+      to a different shop. Treat Juarez as the one and confirm before
+      walking.
+    source: friend in Mexico City, November 2026
+  - name: Arena Coliseo
+    category: spot
+    address: Republica de Peru 77, Centro, Cuauhtemoc, 06010 Ciudad de Mexico
+    neighborhood: Centro
+    note: >
+      Lucha libre. The older and smaller of the two city arenas, about 5,250
+      to 5,550 seats, and the one the city calls the original home of lucha
+      libre here. Nearest metro Allende.
+      This is where the 29 December evening may end up: the booked experience
+      walks the group to either Arena Mexico or here, and the confirmation
+      does not say which. The friend's line is that it is an experience, which
+      matches why it was booked.
+    source: friend in Mexico City, November 2026
+  - name: Tacos La Chula
+    category: taco
+    address: Avenida Insurgentes Sur 454, Roma Sur, Cuauhtemoc, 06760 Ciudad de Mexico
+    neighborhood: Roma Sur
+    precision: approximate
+    note: >
+      On the friend's list as "La chula" with no branch given, and there are
+      at least three: this one on Insurgentes Sur in Roma Sur, one at
+      Liverpool 102 in Juarez that gets the written-up reviews and is reported
+      open around the clock, and one on Avenida Revolucion in Escandon. A
+      separate La Chula Taqueria on Astronomos rates poorly and is probably
+      not related.
+      Pinned at the Roma Sur branch because it is the closest of the three to
+      the house. Ask the friend which one they meant before building an
+      evening on it.
+    source: friend in Mexico City, November 2026
+  - name: Quentin Cafe
+    category: casual
+    address: Avenida Alvaro Obregon 64, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Specialty coffee, four branches around Roma and Condesa: this one on
+      Alvaro Obregon, Amsterdam 67a in Hipodromo, Yucatan 93 in Roma Norte and
+      Bruselas 11 in Juarez. Alvaro Obregon is the most cited and is pinned.
+    source: friend in Mexico City, November 2026
+  - name: Cafe Memorias de una Barista
+    category: casual
+    address: Frontera 83, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Tiny specialty roaster on a quiet stretch of Roma Norte, four small
+      tables. Founded by a barista who also teaches latte art, so it is a
+      coffee-first room rather than a cafe to sit and work in.
+      Listings give the unit as 83, 83B or 83 local A, and the name appears
+      both as "una barista" and "un barista". Same place.
+    source: friend in Mexico City, November 2026
+  - name: Almanegra Cafe
+    category: casual
+    address: Tonala 53, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Third-wave roaster. Addresses conflict across guides, with Tonala 53
+      the most repeated and Cordoba 132 and a Tabasco street address also
+      claimed. Tonala is pinned. Confirm before a detour.
+    source: friend in Mexico City, November 2026
+  - name: Blend Station
+    category: casual
+    address: Blend Station, Tamaulipas, Condesa, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Condesa
+    precision: approximate
+    note: >
+      A small chain, four branches: Tamaulipas 60 and Amsterdam 282 in
+      Condesa, Puebla 237 in Roma Norte and Horacio 256 in Polanco. The
+      Condesa one is pinned, though one listing gives Tamaulipas 121 instead
+      of 60, so check the number on the door.
+      The one on this list most likely to work for a group that wants to sit
+      down for a while.
+      Pinned by venue name on Avenida Tamaulipas rather than by house number,
+      because Tamaulipas 60 did not resolve at all and Tamaulipas 121 is the
+      competing claim. So the pin is the right shop on the right avenue, not
+      a confirmed door.
+    source: friend in Mexico City, November 2026
+  - name: Chiquitito Cafe
+    category: casual
+    address: Alfonso Reyes 232E, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico
+    neighborhood: Condesa
+    precision: approximate
+    note: >
+      One of the first specialty coffee shops in Condesa, open since about
+      2012, husband and wife run. Beans from a Veracruz roaster.
+      Alfonso Reyes 232E is the original and is pinned. A second Condesa
+      address at Agustin Melgar 43 shows on a delivery listing and may be a
+      newer branch, and there is now one in Lomas de Chapultepec.
+    source: friend in Mexico City, November 2026
+  - name: Anvil Cafe de Especialidad
+    category: casual
+    address: Zamora 79, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico
+    neighborhood: Condesa
+    note: >
+      Small specialty cafe, V60 and Chemex, espresso tonic and a pistachio
+      cream coffee on the menu. Outdoor seating. Reported Monday to Friday
+      08:00 to 20:00, Saturday from 09:00, closed Sunday, unverified.
+      Ratings are high but on few reviews. One directory files it under San
+      Miguel Chapultepec while giving the same Condesa address, and the
+      geocoder agrees with the directory: Zamora 79 resolved into San Miguel
+      Chapultepec, postal code 11850, not Condesa 06140. Calle Zamora runs
+      along the boundary, so both labels are defensible and the house number
+      matched. Walk to the number, not to the colonia.
+    source: friend in Mexico City, November 2026
+  - name: Constela Cafe
+    category: casual
+    address: Colima 209, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Specialty coffee in the middle of Roma Norte, on the same street as
+      Rosetta, Panaderia Rosetta and Meroma. Chocolate babka and the cinnamon
+      roll with lemon glaze are the repeated food picks, pineapple coffee and
+      the cortado the drink ones.
+      Reported Monday to Thursday 08:00 to 20:00, Friday to Sunday to 21:00.
+      The one real warning in the reviews: several of the signature drinks are
+      often unavailable, and service runs slow. About 4.0 on roughly 1,170
+      Google reviews, which is the weakest score of the coffee places here.
+    source: friend in Mexico City, November 2026

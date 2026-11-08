@@ -36,6 +36,26 @@ Whether complimentary Comfort+ extends to Mexico at Silver, and the internationa
 ### Four venue addresses never resolved
 Minutito, Cursi, Fueguia 1833 and Salazar were on the shortlist and none has a confirmed address.
 
+### Four things on the friend's list that need one message back
+A friend in Mexico City sent a long first-hand list on 8 November. Most of it
+is now on the map. These four are not, or are pinned on a guess:
+
+- **"Balle tacos."** No taqueria of that name turns up anywhere. Probably a
+  misspelling of something. Not on the map until the friend confirms it.
+- **"Cacche for pedicure."** No salon by that name turns up either. Not on
+  the map.
+- **"Azul."** There are three: Azul Historico in Centro, Azul Condesa on
+  Nuevo Leon, and Azul y Oro on the UNAM campus. Azul Historico is pinned
+  because it is the one visitors normally mean and the only one with a
+  confirmed street number, but the friend ate at one of the three and did not
+  say which.
+- **"La chula."** At least three Tacos La Chula branches. The Roma Sur one on
+  Insurgentes Sur is pinned because it is nearest the house, but the one that
+  gets written up is in Juarez on Liverpool.
+
+One message answers all four, and all four are cheap to be wrong about except
+Azul, which is the only one anybody would plan an evening around.
+
 ### Whether a taquiza provider will take a party of 8
 Most Mexico City providers set a 50 person minimum. One phone call settles it.
 

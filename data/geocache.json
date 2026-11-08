@@ -533,5 +533,85 @@
     "lat": 20.8549378,
     "lon": -86.8996898,
     "matched": "Cenotes route, Calle Chechen, Zetina Gasca, Región 18, Puerto Morelos, Quintana Roo, 77586, Mexico"
+  },
+  "Colima 150, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico": {
+    "lat": 19.4199197,
+    "lon": -99.1591075,
+    "matched": "150, Calle Colima, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Isabel la Catolica 30, Centro, Cuauhtemoc, 06000 Ciudad de Mexico": {
+    "lat": 19.4328126,
+    "lon": -99.1360595,
+    "matched": "Casa de los Condes de Miravalle, 30, Calle Isabel la Católica, Centro, Mexico City, Cuauhtémoc, Mexico City, 06060, Mexico"
+  },
+  "Luis Moya 31, Centro, Cuauhtemoc, 06010 Ciudad de Mexico": {
+    "lat": 19.4310588,
+    "lon": -99.1454493,
+    "matched": "Calle Luis Moya, Centro, Roma, Mexico City, Cuauhtémoc, Mexico City, 06050, Mexico"
+  },
+  "Aranda 28, Centro, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4291732,
+    "lon": -99.142915,
+    "matched": "Calle Aranda, Centro, Roma, Mexico City, Cuauhtémoc, Mexico City, 06070, Mexico"
+  },
+  "Avenida Insurgentes Sur 226, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico": {
+    "lat": 19.4192973,
+    "lon": -99.1640098,
+    "matched": "226, Avenida Insurgentes Sur, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Dinamarca 47, Juarez, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4275627,
+    "lon": -99.1589459,
+    "matched": "47, Calle Dinamarca, Juárez, Roma, Mexico City, Cuauhtémoc, Mexico City, 06600, Mexico"
+  },
+  "Republica de Peru 77, Centro, Cuauhtemoc, 06010 Ciudad de Mexico": {
+    "lat": 19.4393592,
+    "lon": -99.1346955,
+    "matched": "Arena Coliseo, 77, Calle República de Perú, Centro, Mexico City, Cuauhtémoc, Mexico City, 06010, Mexico"
+  },
+  "Avenida Insurgentes Sur 454, Roma Sur, Cuauhtemoc, 06760 Ciudad de Mexico": {
+    "lat": 19.4102813,
+    "lon": -99.1670287,
+    "matched": "Avenida Insurgentes Sur, Roma Sur, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06760, Mexico"
+  },
+  "Avenida Alvaro Obregon 64, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4184985,
+    "lon": -99.1575887,
+    "matched": "Quentin Cafe, 64, Avenida Álvaro Obregón, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Frontera 83, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico": {
+    "lat": 19.4211411,
+    "lon": -99.1566819,
+    "matched": "83, Calle Frontera, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Tonala 53, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4190232,
+    "lon": -99.1630544,
+    "matched": "53, Calle Tonalá, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Alfonso Reyes 232E, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico": {
+    "lat": 19.4098014,
+    "lon": -99.178775,
+    "matched": "Calle Alfonso Reyes, Hipódromo Condesa, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06160, Mexico"
+  },
+  "Colima 209, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4197004,
+    "lon": -99.1617463,
+    "matched": "209, Calle Colima, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Mercado de San Juan Ernesto Pugibet, Centro, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4299519,
+    "lon": -99.1445059,
+    "matched": "Mercado de San Juan Ernesto Pugibet, Cerrada Ernesto Pugibet, Centro, Roma, Mexico City, Cuauhtémoc, Mexico City, 06070, Mexico"
+  },
+  "Zamora 79, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico": {
+    "lat": 19.416671,
+    "lon": -99.1780189,
+    "matched": "79, Calle Zamora, Condesa, San Miguel Chapultepec, Mexico City, Cuauhtémoc, Mexico City, 11850, Mexico"
+  },
+  "Blend Station, Tamaulipas, Condesa, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4120567,
+    "lon": -99.1732568,
+    "matched": "Blend Station, Avenida Tamaulipas, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
   }
 }

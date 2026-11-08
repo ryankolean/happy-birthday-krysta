@@ -86,3 +86,19 @@ Pujol holds **two Michelin stars** in the 2026 guide. Only one other restaurant 
 Of the eleven Michelin starred restaurants in Mexico City, Pujol was the only one confirmed able to seat seven on 2 January when the field was checked on 23 October. That is the whole reason. The rest of the field has been taken off this page now that the table is held.
 
 One correction worth keeping, because it cost weeks: the **eight tasting menu minimum** that was treated here as the blocker applies to Pujol's **private dining room**, not to a regular table. A normal table for seven has no minimum, which is what got booked, so there is no wasted eighth cover and never had to be.
+
+## Two small things from a friend in the city
+
+Neither is a place, so neither is on the map.
+
+**Penafiel con limon y sal.** Mineral water with lime and salt, sold at any
+Oxxo or 7-Eleven. A friend in Mexico City in November calls it the best
+sparkling water there is and warns that it is strange on the first sip. Costs
+nothing to test on the first afternoon.
+
+**Chirimoya.** A custard apple, in season in winter. Big seeds and a pulpy
+centre to avoid, white flesh that is the point. It is a market errand rather
+than a shop purchase: ask the fruit vendors at Mercado Medellin, which is the
+closer one, or Mercado de San Juan, which carries more of the unusual stuff,
+and ask for one ready to eat today or tomorrow. The vendors are reported to
+be helpful about sending you to whoever actually has it.
