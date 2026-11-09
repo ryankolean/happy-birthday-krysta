@@ -613,5 +613,130 @@
     "lat": 19.4120567,
     "lon": -99.1732568,
     "matched": "Blend Station, Avenida Tamaulipas, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+  },
+  "Colima 124, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico": {
+    "lat": 19.4199786,
+    "lon": -99.1582259,
+    "matched": "124, Calle Colima, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Hegel 307, Polanco, Miguel Hidalgo, 11560 Ciudad de Mexico": {
+    "lat": 19.4285955,
+    "lon": -99.1877553,
+    "matched": "Calle Hegel, Polanco 5ª Sección, Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11560, Mexico"
+  },
+  "Aguascalientes 93, Roma Sur, Cuauhtemoc, 06760 Ciudad de Mexico": {
+    "lat": 19.4089732,
+    "lon": -99.1637948,
+    "matched": "Calle Aguascalientes, Roma Sur, Roma, Mexico City, Cuauhtémoc, Mexico City, 06760, Mexico"
+  },
+  "Merida 21, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4234263,
+    "lon": -99.1587325,
+    "matched": "21, Calle Mérida, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Merida 101, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico": {
+    "lat": 19.4193612,
+    "lon": -99.1576788,
+    "matched": "101, Calle Mérida, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Campeche 340, Hipodromo, Cuauhtemoc, 06100 Ciudad de Mexico": {
+    "lat": 19.4089746,
+    "lon": -99.1735088,
+    "matched": "Caracol de Mar, 340, Calle Campeche, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+  },
+  "Versalles 113, Juarez, Cuauhtemoc, 06600 Ciudad de Mexico": {
+    "lat": 19.4257825,
+    "lon": -99.1566963,
+    "matched": "113, Calle Versalles, Juárez, Roma, Mexico City, Cuauhtémoc, Mexico City, 06600, Mexico"
+  },
+  "Alfonso Reyes 217, Hipodromo, Cuauhtemoc, 06100 Ciudad de Mexico": {
+    "lat": 19.4069752,
+    "lon": -99.1739263,
+    "matched": "217, Calle Alfonso Reyes, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+  },
+  "Avenida Amsterdam 113, Hipodromo, Cuauhtemoc, 06170 Ciudad de Mexico": {
+    "lat": 19.4125739,
+    "lon": -99.171159,
+    "matched": "113, Avenida Amsterdam, Hipódromo, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06100, Mexico"
+  },
+  "Pedregal 33, Lomas de Chapultepec, Miguel Hidalgo, Ciudad de Mexico": {
+    "lat": 19.4238738,
+    "lon": -99.2037876,
+    "matched": "Calle Pedregal, Lomas de Chapultepec 4ª Sección, Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11000, Mexico"
+  },
+  "Avenida Mazatlan 30, Condesa, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4165517,
+    "lon": -99.1755951,
+    "matched": "Librería El Hallazgo, 30, Avenida Mazatlán, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06140, Mexico"
+  },
+  "Chihuahua 181, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4169787,
+    "lon": -99.1625623,
+    "matched": "Pancracia Panederia, 181, Calle Chihuahua, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Havre 73, Juarez, Cuauhtemoc, 06600 Ciudad de Mexico": {
+    "lat": 19.4253113,
+    "lon": -99.1607716,
+    "matched": "73, Calle Havre, Juárez, Roma, Mexico City, Cuauhtémoc, Mexico City, 06600, Mexico"
+  },
+  "Cordoba 87, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico": {
+    "lat": 19.4195989,
+    "lon": -99.1590506,
+    "matched": "87, Calle Córdoba, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Puebla 167, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4197562,
+    "lon": -99.175667,
+    "matched": "Calle Puebla, Roma Norte, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Jalapa 110, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4231037,
+    "lon": -99.1624192,
+    "matched": "Jalapa, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Avenida Mazatlan 81, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico": {
+    "lat": 19.4144716,
+    "lon": -99.1772674,
+    "matched": "81, Avenida Mazatlán, Condesa, Mexico City, Cuauhtémoc, Mexico City, 06140, Mexico"
+  },
+  "Queretaro 11, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4139929,
+    "lon": -99.1645881,
+    "matched": "Avenida Querétaro, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Jalapa 129, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4166537,
+    "lon": -99.1609068,
+    "matched": "Estetica, 129, Calle Jalapa, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Avenida de las Fuentes 180, Jardines del Pedregal, Alvaro Obregon, 01900 Ciudad de Mexico": {
+    "lat": 19.3284969,
+    "lon": -99.2047777,
+    "matched": "Tetetlán, 180, Avenida de las Fuentes, Jardines del Pedregal, Pedregal de San Ángel, Mexico City, Álvaro Obregón, Mexico City, 01900, Mexico"
+  },
+  "Calle Chiapas 208, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico": {
+    "lat": 19.4133263,
+    "lon": -99.1576335,
+    "matched": "Calle Chiapas, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Plaza de la Ciudadela, Centro, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4296344,
+    "lon": -99.1506385,
+    "matched": "Calle Plaza de la Ciudadela, Centro, Roma, Mexico City, Cuauhtémoc, Mexico City, 06040, Mexico"
+  },
+  "Mercado Merced, Venustiano Carranza, Ciudad de Mexico": {
+    "lat": 19.4262818,
+    "lon": -99.1238679,
+    "matched": "Mercado La Merced, Calle G. Pedraza, Unidad Habitacional  Candelaria  de los Patos, Zona Centro, Mexico City, Venustiano Carranza, Mexico City, 15120, Mexico"
+  },
+  "Plaza San Jacinto, San Angel, Alvaro Obregon, Ciudad de Mexico": {
+    "lat": 19.3445027,
+    "lon": -99.192318,
+    "matched": "Plaza de San Jacinto, San Ángel, Mexico City, Álvaro Obregón, Mexico City, Mexico"
+  },
+  "1a Seccion del Bosque de Chapultepec, Miguel Hidalgo, Ciudad de Mexico": {
+    "lat": 19.4218002,
+    "lon": -99.1881929,
+    "matched": "1a. Sección del Bosque de Chapultepec, Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11100, Mexico"
   }
 }

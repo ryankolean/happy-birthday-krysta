@@ -348,6 +348,7 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
 .legpin { display: block; flex: none; }
 .legitem .cnt { font-family: var(--f-mono); font-size: 11px; color: var(--muted); }
 .legitem[aria-pressed="false"] { opacity: 0.4; }
+.legitem--solo { border-color: var(--teal); box-shadow: inset 0 0 0 1px var(--teal); }
 .legitem[aria-pressed="false"] .legpin path { fill: none; stroke: var(--rule-firm); }
 .legitem:hover { border-color: var(--teal); }
 

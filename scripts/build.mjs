@@ -495,6 +495,7 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
 .legpin { display: block; flex: none; }
 .legitem .cnt { font-family: var(--f-mono); font-size: 11px; color: var(--muted); }
 .legitem[aria-pressed="false"] { opacity: 0.4; }
+.legitem--solo { border-color: var(--teal); box-shadow: inset 0 0 0 1px var(--teal); }
 .legitem[aria-pressed="false"] .legpin path { fill: none; stroke: var(--rule-firm); }
 .legitem:hover { border-color: var(--teal); }
 
@@ -1118,6 +1119,12 @@ ${bullets(jade.ask_on_the_call)}
 const PIN_PATH =
   'M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z';
 
+// Five pointed star sized to sit inside the pin head, centred on 12,9.4 where
+// the teardrop is widest. Drawn in the stroke colour so a filled pin reads it
+// as a cut out, and in the category colour on a hollow approximate pin.
+const STAR_PATH =
+  'M12 5.6L12.911 8.146L15.614 8.226L13.474 9.879L14.234 12.474L12 10.95L9.766 12.474L10.526 9.879L8.386 8.226L11.089 8.146Z';
+
 // Two maps from one places.yml. `region` defaults to cdmx; Puerto Morelos
 // entries carry `region: riviera`. Distances on each map are from that
 // region's own `stay` pin.
@@ -1183,6 +1190,7 @@ function buildMap(region = 'cdmx') {
       booking: nt(p.booking || ''),
       url: encodeURI(p.url || ''),
       approx: p.precision === 'approximate',
+      star: p.starred === true,
       km: Math.round(p.km * 10) / 10,
       walk: p.walkMin,
     })),
@@ -1239,7 +1247,7 @@ function buildMap(region = 'cdmx') {
           : p.walkMin
             ? `${p.walkMin} min walk`
             : `${(Math.round(p.km * 10) / 10).toFixed(1)} km`;
-      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.url ? `<br><a href="${esc(p.url)}">listing</a>` : ''}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${nt(p.note || '')}${p.booking ? `<br><small>${nt(p.booking)}</small>` : ''}</td></tr>`;
+      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.starred ? ' <span aria-label="starred">&#9733;</span>' : ''}${p.url ? `<br><a href="${esc(p.url)}">listing</a>` : ''}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${nt(p.note || '')}${p.booking ? `<br><small>${nt(p.booking)}</small>` : ''}</td></tr>`;
     }
     lists += `</tbody></table></div>`;
   }
@@ -1254,7 +1262,7 @@ function buildMap(region = 'cdmx') {
   </div>
 </header>
 
-<p class="lede">Dinner options, bars, markets and ${esc(cfg.base)}, colour coded. Tap a pin for details, or tap a colour below to show and hide that group.</p>
+<p class="lede">Dinner options, bars, markets and ${esc(cfg.base)}, colour coded. Tap a pin for details. Tap a colour below to show only that group, and tap the same colour again to bring the rest back. A starred pin is one we have settled on.</p>
 
 <div class="legend-row">${legend}</div>
 <div id="map" role="application" aria-label="Map of trip locations"></div>
@@ -1301,13 +1309,14 @@ ${lists}
 
   var SVG_NS = 'http://www.w3.org/2000/svg';
   var PIN_PATH = ${JSON.stringify(PIN_PATH)};
+  var STAR_PATH = ${JSON.stringify(STAR_PATH)};
 
   // Built with DOM APIs rather than innerHTML. Every value here is either a
   // constant or a colour from our own data, but this keeps pin construction
   // unambiguously safe. Same approach as 4pm-detroit's map-view client.
-  function buildPinEl(colour, approx, big) {
+  function buildPinEl(colour, approx, big, starred) {
     var el = document.createElement('div');
-    el.className = 'mappin' + (big ? ' mappin--big' : '');
+    el.className = 'mappin' + (big ? ' mappin--big' : '') + (starred ? ' mappin--star' : '');
 
     var size = big ? 36 : 28;
     var svg = document.createElementNS(SVG_NS, 'svg');
@@ -1329,6 +1338,15 @@ ${lists}
     if (approx) pin.setAttribute('stroke-dasharray', '3 2');
     svg.appendChild(pin);
 
+    // A starred place is one we have committed to, so it gets a mark that
+    // survives at pin size rather than a colour nobody can tell apart.
+    if (starred) {
+      var star = document.createElementNS(SVG_NS, 'path');
+      star.setAttribute('d', STAR_PATH);
+      star.setAttribute('fill', approx ? colour : 'var(--pin-stroke)');
+      svg.appendChild(star);
+    }
+
     el.appendChild(svg);
     return el;
   }
@@ -1336,11 +1354,11 @@ ${lists}
   var bounds = [];
   DATA.places.forEach(function (p) {
     var colour = (DATA.categories[p.c] || {}).color || '#666';
-    var big = p.c === 'stay';
+    var big = p.c === 'stay' || p.star;
     var size = big ? 36 : 28;
     var marker = L.marker([p.lat, p.lon], {
       icon: L.divIcon({
-        html: buildPinEl(colour, p.approx, big),
+        html: buildPinEl(colour, p.approx, big, p.star),
         className: '',
         iconSize: [size, size],
         // The silhouette's tip is at y=21 of 24, so the anchor is 21/24 down.
@@ -1351,7 +1369,7 @@ ${lists}
       riseOnHover: true
     });
 
-    var html = '<strong>' + p.n + '</strong>';
+    var html = '<strong>' + p.n + '</strong>' + (p.star ? ' <span title="Starred">&#9733;</span>' : '');
     if (p.hood) html += '<br><span style="opacity:.7">' + p.hood + '</span>';
     if (p.c !== 'stay') {
       html += '<br><span style="opacity:.7">' +
@@ -1399,12 +1417,29 @@ ${lists}
     }
   }
 
+  // One category at a time. Tapping a colour shows only that group, and
+  // tapping the same one again brings every group back. Toggling groups off
+  // one by one meant seven taps to answer "where are the taco places", which
+  // is the question the legend actually gets used for.
+  var solo = null;
+
+  function applyFilter() {
+    Object.keys(groups).forEach(function (k) {
+      var show = solo === null || solo === k;
+      if (show) map.addLayer(groups[k]); else map.removeLayer(groups[k]);
+    });
+    document.querySelectorAll('.legitem').forEach(function (b) {
+      var vis = solo === null || solo === b.dataset.cat;
+      b.setAttribute('aria-pressed', vis ? 'true' : 'false');
+      b.classList.toggle('legitem--solo', solo === b.dataset.cat);
+    });
+  }
+
   document.querySelectorAll('.legitem').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var k = btn.dataset.cat;
-      var on = btn.getAttribute('aria-pressed') === 'true';
-      btn.setAttribute('aria-pressed', on ? 'false' : 'true');
-      if (on) map.removeLayer(groups[k]); else map.addLayer(groups[k]);
+      solo = solo === k ? null : k;
+      applyFilter();
     });
   });
 

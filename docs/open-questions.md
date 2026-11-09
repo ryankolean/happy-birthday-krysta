@@ -56,6 +56,36 @@ is now on the map. These four are not, or are pinned on a guess:
 One message answers all four, and all four are cheap to be wrong about except
 Azul, which is the only one anybody would plan an evening around.
 
+### Five loose ends from the fifteen Instagram posts, 9 November 2026
+Ryan sent fifteen saved posts to be watched rather than skimmed. Twenty five
+new places came off them. These five did not resolve cleanly and are recorded
+here rather than being guessed onto the map as if they had:
+
+- **"Maggie's."** A 48 hour Roma Norte itinerary lists "Food & coffee at
+  Maggie's" between Cuina and Tacos del Valle. No cafe of that name turns up
+  in Roma Norte in any directory. Probably a nickname or a misremembering.
+  Not on the map.
+- **"Perfume Marica."** Named as one of only two shops worth the trip, against
+  a poster who was otherwise unimpressed by shopping here. The other one,
+  Proyecto Rufina, resolved and is pinned. This one does not resolve under
+  that spelling. Not on the map.
+- **Fugu.** A slide in the tuna tostada tour reads only FUGU. Three places in
+  the city carry the name and none is documented as serving a tuna tostada.
+  Pinned as Fugu Sushi in Condesa, an eight seat walk in counter, because it
+  is the only one with a food scene profile. Flagged as a guess on the entry.
+  Eight seats means it cannot take this group whole in any case.
+- **Which SAN Matcha.** Four branches. Pinned at the Roma Norte one as the
+  nearest to us; the poster who called it their favourite matcha did not say
+  which they went to, and the Condesa room is the one described as built for
+  sitting.
+- **Which Bobo.** Four branches, and the Roma Norte one is listed at both
+  Jalapa 110 and Jalapa 111. Pinned approximate on the block.
+
+Two more things from the batch are not places and so are not on the map.
+Paseo de la Reforma appears on two separate lists as something to walk, but it
+is fifteen kilometres of avenue and a pin would be arbitrary. The Coyoacan
+fruit stall selling mango with lime and chili is a stall with no address.
+
 ### Whether a taquiza provider will take a party of 8
 Most Mexico City providers set a 50 person minimum. One phone call settles it.
 

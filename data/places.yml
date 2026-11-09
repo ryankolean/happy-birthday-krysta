@@ -124,7 +124,9 @@ places:
       option. A friend in the city in November flagged the to-go counter on
       the right for fancy pastries, and guesses it is a good breakfast
       without having eaten one there, so treat the breakfast half as
-      untested.
+      untested. One poster who went for brunch waited an hour to an hour and a
+      half as a walk in, which is the argument for using the booking below
+      rather than turning up.
     booking: CoverManager, slug cuina-cdmx. 55 8902 4840.
 
   - name: Lardo
@@ -189,6 +191,12 @@ places:
       Longest booking lead time of any bar on the list. Establish it early. Hours per OpenTable:
       Sun-Thu 6 PM-1 AM, Fri-Sat 6 PM-2 AM (secondary source, unverified). NYE and 1 Jan status
       unverified. Slots about 1.5 hours.
+      Number 6 in the world on the 2026 World's 50 Best Bars and best in North
+      America again. The new thing, and the reason to look at this before
+      anything else on the bar list: a nine course cocktail omakase for
+      twelve people. Eight of us is inside that, so it is the one bar
+      experience on this page that could take the whole group as a group
+      rather than splitting it. Unpriced and unverified, worth an email.
     booking: >
       Group of 7 fits: OpenTable allows up to 12 per booking. Parties above 12 go by email only
       (reservaciones@handshake.bar).
@@ -351,12 +359,22 @@ places:
       was unconvinced by the guava pastries, so it is not unanimous.
       A friend in the city in November named it unprompted and specified the
       guava roll, which breaks that tie in favour of ordering it.
-    source: instagram @thatonepointofview, @thecaroandtina, @stepbysteph.traveltips
+      That tie is back. Two more posters in the November batch specifically
+      did not get the guava hype, one preferring the vanilla concha here and
+      the other the pan de muerto made with corn leaf ash. A third says locals
+      dislike this place and Odette both. So: go, because nobody disputes the
+      bakery, but order the concha as well as the guava roll and settle it
+      ourselves.
+    source: instagram @thatonepointofview, @thecaroandtina, @stepbysteph.traveltips, @bostoneatin, @dfgmuyjvbqg
 
   - name: Jenni's Quesadillas
     category: casual
     address: Merida 83, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
-    source: instagram @thatonepointofview, @itsalanbarr
+    note: >
+      Blue corn tortillas pressed to order on a comal in the street. The order
+      is the mole verde chicken. A late night line is reported to look worse
+      than it is and to move much faster than the one at Odette.
+    source: instagram @thatonepointofview, @itsalanbarr, @bostoneatin
 
   - name: Mi Compa Chava
     category: casual
@@ -370,6 +388,12 @@ places:
       the torre de mariscos and the aguachile, and said most any seafood here
       is good. Four independent sources on the same two orders is as settled
       as anything on this page gets.
+      A fifth went twice in one week and waited an hour and a half, naming the
+      grilled shrimp and the scallop tostada on top of the tuna tostada. Two
+      practical notes from that thread: weekends are the worst of it, and you
+      can wait in the courtyard with a beer rather than on the street. Also on
+      the tuna tostada tour below, which makes it the only place that appears
+      on both the seafood roster and everybody's general list.
     source: instagram @thatonepointofview, @itsalanbarr, @thecaroandtina, friend in Mexico City, November 2026
 
   - name: De Huevos
@@ -386,8 +410,17 @@ places:
     category: casual
     address: Expendio de Maiz Sin Nombre, Yucatan 84, Roma Norte, Ciudad de Mexico
     neighborhood: Roma Norte
-    note: No menu, they just feed you until you say stop. No reservations.
-    source: instagram @johnny.novo, @itsalanbarr
+    starred: true
+    note: >
+      No menu, they just feed you until you say stop. No reservations.
+      Starred by Ryan on 9 November 2026, which is the first entry on this
+      page to carry one: it draws a bigger pin with a star in it and means we
+      have settled on going, not that somebody on the internet liked it.
+      The dish named by the one poster who photographed a plate here is the
+      huarachito de recado negro, a thick tortilla under a black sauce of
+      charred peppers, described as smoky and spicy.
+    url: https://www.instagram.com/exp_maiz/
+    source: instagram @johnny.novo, @itsalanbarr, @bostoneatin
 
   - name: El Cardenal
     category: casual
@@ -413,13 +446,20 @@ places:
       Churros and thick chocolate, open late. Almost 100 years old and the
       churros are fried to order. One poster found them too crisp in the middle,
       so this is a crunchy churro rather than a gooey one.
-    source: instagram @itsalanbarr, @thecaroandtina
+      This is also the place a friend in the city called "churrescaria morro",
+      which is worth recording because nobody would find it under that name.
+    source: instagram @itsalanbarr, @thecaroandtina, friend in Mexico City, November 2026
 
   - name: Pasteleria Ideal
     category: casual
     address: 16 de Septiembre 18, Centro, Cuauhtemoc, 06000 Ciudad de Mexico
     neighborhood: Centro
-    source: instagram @itsalanbarr
+    note: >
+      Grab a tray and fill it yourself. Described as the most chaotic bakery
+      experience of a whole trip and a free for all when it is busy, but very
+      cheap and in the historic centre, so it folds into a Centro morning
+      rather than needing one.
+    source: instagram @itsalanbarr, @bostoneatin
 
   - name: Lindy
     category: casual
@@ -462,7 +502,11 @@ places:
       Polished bakery with gift-worthy chocolates. Two branches: this one on
       Plaza Popocatepetl and an original in Lomas de Chapultepec at Monte
       Libano 915. The Condesa one is the closer of the two to us.
-    source: instagram @stepbysteph.traveltips
+      The only outright warning in this whole batch: one poster said there
+      were bees flying around and would not recommend it at all, calling it
+      overrated on TikTok. Weigh that against the long queue, which another
+      poster used as the reason to go to Jenni's instead.
+    source: instagram @stepbysteph.traveltips, @emily.sav, @bostoneatin
 
   - name: Marne
     category: casual
@@ -538,7 +582,13 @@ places:
       eaten. Trompo-style pastor over open flame. The one where the hype and the
       plate agree. Three trompos, spicy pork, pork belly and carne asada, but the
       pick is the steak and bone marrow taco. Expect a long line.
-    source: instagram @placesnoted, @thatonepointofview, @thecaroandtina
+      Two more posters put numbers on that line: two hours on one visit, and
+      forty five minutes for the pork belly alone on another. Both said it was
+      worth it, and the second named the red and the black pork belly tacos.
+      A commenter on the second rated the flautas the best thing they ate in
+      ten days in the city. This is now the longest documented wait on this
+      page, which makes it a plan rather than a drop in.
+    source: instagram @placesnoted, @thatonepointofview, @thecaroandtina, @d.stvns, @bostoneatin
 
   - name: Tacos La Once Mil
     category: taco
@@ -603,8 +653,11 @@ places:
     category: taco
     address: Ribera de San Cosme 56, San Rafael, Cuauhtemoc, Ciudad de Mexico
     neighborhood: San Rafael
-    note: The one-Michelin-star taco stand. Four tacos on the menu, cash only, tiny.
-    source: instagram @thatonepointofview, @itsalanbarr
+    note: >
+      The one-Michelin-star taco stand. Four tacos on the menu, cash only,
+      tiny. Of the four, the rib steak is the one a poster who ate all of them
+      picked.
+    source: instagram @thatonepointofview, @itsalanbarr, @cdmxtacos2026
 
   - name: Los Cocuyos
     category: taco
@@ -616,7 +669,10 @@ places:
   - name: Tacos El Paisa
     category: taco
     address: Tacos El Paisa, Ciudad de Mexico
-    source: instagram @itsalanbarr
+    note: >
+      In the Michelin guide and still under five pounds a meal. The order is
+      the suadero and the pastor with pineapple.
+    source: instagram @itsalanbarr, @cdmxtacos2026
 
   # Bars
   - name: Hanky Panky
@@ -856,9 +912,13 @@ places:
     lon: -99.1390874
     neighborhood: Centro Historico
     note: >
-      Tue to Sun 10 to 18, last entry 17:30, closed Mon, closed 25 Dec and 1 Jan (museum site). Price not published
-      on the site (unverified). Beside the Palacio de Correos and a short walk from Bellas Artes.
-    booking: Ticket rules and free days not published on the site; unverified.
+      Tue to Sun 10 to 18, last entry 17:30, closed Mon, closed 25 Dec and 1 Jan (museum site). The museum site
+      still does not publish a price; one visitor reel in November 2026 put it at MX$95, the same as Bellas Artes,
+      which is the only figure we have. Treat it as an estimate until somebody sees the window.
+      Beside the Palacio de Correos and a short walk from Bellas Artes.
+    booking: >
+      Ticket rules and free days not published on the site; unverified. Sunday is free at several city museums,
+      so 3 January is worth trying here as well as at Bellas Artes.
     url: https://munal.mx/
 
   - name: Museo de Arte Popular
@@ -957,6 +1017,9 @@ places:
       Agave and mezcal cocktail bar, a 50 Best listing. Hours conflict: about 6 PM-2 AM daily on some
       listings, Tue-Sat to 1:30 AM and closed Sun-Mon on others (unverified). NYE and 1 Jan
       unverified.
+      Number 47 on the 2026 list and the only mezcaleria anywhere on it. No
+      reservations and no tables, first come first served, which matters more
+      for eight people than the ranking does.
     booking: >-
       Reported walk-in only, so a group of 7 will likely wait or split. Unverified; tlecan.com lists
       no booking info. Go early.
@@ -968,6 +1031,11 @@ places:
     note: >-
       1970s Italian-style bar, a 50 Best listing. Open Tue-Sun per 50 Best; Chilango hours
       (unverified): Mon, Wed, Thu 5-11 PM, Fri-Sat 4 PM-12 AM, Sun 3-10 PM. NYE and 1 Jan unverified.
+      Number 10 in the world in 2026, from a bar barely two years old, which
+      is about as fast as anyone has ever reached the global top ten. Two
+      brothers who came up at Limantour, named for their grandfather Mauro,
+      1970s Milanese aperitivo. The drink everyone orders is the Marito:
+      mezcal, Lillet and guava.
     booking: Recommended, by Instagram DM at @barmauromx. Group of 7 unverified; DM for a table.
     url: https://www.instagram.com/barmauromx
   - name: Maison Artemisia
@@ -1494,7 +1562,9 @@ places:
     neighborhood: Centro
     note: >
       Specialty food market, the one where the vendors carry things the other
-      markets do not.
+      markets do not. Known for exotic meats, which one guide lists as far out
+      as lion and penguin, and for imported cheese. Go hungry, and bring cash,
+      because not every stall takes a card.
       This is the chirimoya errand. Ask around the fruit vendors for one, they
       are reported to be helpful about pointing you at whoever has it, and ask
       for one ready to eat today or tomorrow. It looks alarming, has big seeds
@@ -1683,3 +1753,348 @@ places:
       often unavailable, and service runs slow. About 4.0 on roughly 1,170
       Google reviews, which is the weakest score of the coffee places here.
     source: friend in Mexico City, November 2026
+
+  # ---------- fifteen Instagram posts, watched 9 November 2026 ----------
+  # Ryan sent a batch of saved posts to be watched rather than skimmed, so
+  # each of these came off a frame, a caption or a carousel slide rather than
+  # off a search result. Where a post only corroborated a place already on
+  # this page, the specifics went onto that entry instead of making a
+  # duplicate. Sources are named by handle so a claim can be traced back.
+
+  # The tuna tostada tour, @marguga__. One poster ate a tostada de atun at
+  # thirteen places and published the roster by area. Eleven were new here.
+  - name: Campobaja
+    category: casual
+    address: Colima 124, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Ensenada style Baja seafood, in the Michelin guide, on the same Roma
+      Norte block as Meroma and Constela. The menu changes daily, so the
+      tostada de atun is not guaranteed. Hours conflict: OpenTable says lunch
+      13:00 to 18:00 Tuesday to Saturday and dinner to 23:00, Time Out says
+      13:00 to 01:00. Reserve at the weekend.
+    source: instagram @marguga__
+
+  - name: Entremar
+    category: casual
+    address: Hegel 307, Polanco, Miguel Hidalgo, 11560 Ciudad de Mexico
+    neighborhood: Polanco
+    precision: approximate
+    note: >
+      Gabriela Camara's Polanco seafood room, the sibling of Contramar. The
+      tostada is tuna with chipotle, avocado and crisp fried leek. Hours
+      conflict between listings, roughly 12:00 or 13:00 to 19:00 or 20:00
+      daily. Cross street Masaryk and Horacio, walkable from Polanco metro.
+    source: instagram @marguga__
+
+  - name: Voraz
+    category: casual
+    address: Aguascalientes 93, Roma Sur, Cuauhtemoc, 06760 Ciudad de Mexico
+    neighborhood: Roma Sur
+    precision: approximate
+    note: >
+      Contemporary gastrocantina. One local blog calls this the best tuna
+      tostada in the city outright and also names the machaca salad and the
+      mussels. A dissenting review says the tostada is excellent and the rest
+      of the menu is average, which is useful to know before booking a group
+      dinner here. Reported Wednesday to Saturday 18:00 to 01:00, Sunday to
+      19:00. Reservation advised.
+    source: instagram @marguga__
+
+  - name: Ultramarinos de Mar
+    category: casual
+    address: Merida 21, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Lucho Martinez's seafood place, a 2025 Michelin Bib Gourmand. One older
+      guide gives Durango 200 instead, which is Contramar's address, so trust
+      Merida 21.
+    source: instagram @marguga__
+
+  - name: Abrasamar
+    category: casual
+    address: Merida 101, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Gulf of Mexico cooking, Tabasco, Campeche and Yucatan, chef Fernando
+      Marrufo. Four doors and one block from Ultramarinos de Mar on the same
+      street, so check the number. Reported 12:00 to 18:00 Sunday to Tuesday
+      and 12:00 to 22:00 Wednesday to Saturday.
+    source: instagram @marguga__
+
+  - name: Caracol de Mar
+    category: casual
+    address: Campeche 340, Hipodromo, Cuauhtemoc, 06100 Ciudad de Mexico
+    neighborhood: Hipodromo
+    note: >
+      Mexican and Peruvian seafood from the Contramar group, chef Alvaro
+      Vasquez, Michelin Bib Gourmand 2024. One write up places it in a
+      restored mansion in the Centro Historico, which contradicts the
+      Campeche 340 address every booking listing gives. The booking listings
+      win. Reported Monday to Saturday 13:00 to 22:00, Sunday to 19:00.
+    source: instagram @marguga__
+
+  - name: Taller de Ostiones
+    category: casual
+    address: Versalles 113, Juarez, Cuauhtemoc, 06600 Ciudad de Mexico
+    neighborhood: Juarez
+    note: >
+      Oyster bar inside Casa Versalles, a few minutes from Handshake. Only
+      one directory carries it, so treat the hours as soft: reported midday to
+      20:00 daily, Sunday to 18:30.
+    source: instagram @marguga__
+
+  - name: Botanico
+    category: casual
+    address: Alfonso Reyes 217, Hipodromo, Cuauhtemoc, 06100 Ciudad de Mexico
+    neighborhood: Hipodromo
+    note: >
+      Hipodromo, not Roma, despite where most lists file it. Diners name the
+      tuna tostadas and the grilled oysters. Two doors from Chiquitito Cafe
+      on the same street.
+    source: instagram @marguga__
+
+  - name: El Tibur
+    category: casual
+    address: Avenida Amsterdam 113, Hipodromo, Cuauhtemoc, 06170 Ciudad de Mexico
+    neighborhood: Hipodromo
+    note: >
+      New seafood bar on the Amsterdam loop, chefs German Carballo and Luis
+      Solano. Crudos, tostadas and a short bar rather than a dining room.
+      Pickled mackerel with white ponzu and garlic oil is the dish the
+      critics name. Postal code is given as both 06100 and 06170. Reported
+      Wednesday to Friday afternoons and 12:00 to 20:00 at the weekend.
+    source: instagram @marguga__
+
+  - name: La Bonvi
+    category: taco
+    address: Pedregal 33, Lomas de Chapultepec, Miguel Hidalgo, Ciudad de Mexico
+    neighborhood: Lomas de Chapultepec
+    precision: approximate
+    note: >
+      Cesar de la Parra's second taqueria, by the same chef as Tacos La Once
+      Mil, known for the picana taco. One listing puts it at Anatole France
+      139 in Polanco instead; the Lomas address has more sources behind it.
+      Note this is well north of the house, a ride rather than a walk.
+    source: instagram @marguga__
+
+  - name: Fugu Sushi
+    category: casual
+    address: Avenida Mazatlan 30, Condesa, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Condesa
+    precision: approximate
+    note: >
+      Identified from a slide that read only FUGU. Three places in the city
+      carry that name and none of them is documented as serving a tuna
+      tostada, so this is the most defensible guess rather than a confirmed
+      match: an eight seat counter in Condesa, walk in only, no reservations,
+      which fits a tostada tour better than the two suburban sushi branches
+      do. See docs/open-questions.md. Eight seats means it does not work for
+      this group anyway without splitting.
+      Number 30 on Mazatlan resolves exactly but comes back labelled as a
+      bookshop, which is one more reason this one is marked approximate.
+    source: instagram @marguga__
+
+  # Bakeries and coffee, from @emily.sav, @d.stvns and @dfgmuyjvbqg
+  - name: Panaderia Brulee
+    category: casual
+    address: Chihuahua 181, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Norte
+    precision: approximate
+    note: >
+      The only place on this page recommended by two unrelated posters in the
+      same batch, both of them explicitly against the Rosetta consensus. One
+      calls it a literal hole in the wall and the best pastries of their
+      visit, naming the Paris Brest cruffin and the chocolate brioche bun with
+      fruit and cream. The other puts it above Panaderia Rosetta outright.
+      Croissants reported out warm about 09:30, a couple of street side seats
+      only. Spelled Brule on both posts and Brulee on the listings.
+      One caution on the pin: number 181 resolves exactly, but OpenStreetMap
+      labels that door Pancracia Panaderia, a different and also well known
+      Roma Norte bakery. Either Brulee took the site over or one of the two
+      records is stale. Right block, probably the right door, so marked
+      approximate until somebody stands in front of it.
+    source: instagram @emily.sav, @dfgmuyjvbqg
+
+  - name: Cafe Nin
+    category: casual
+    address: Havre 73, Juarez, Cuauhtemoc, 06600 Ciudad de Mexico
+    neighborhood: Juarez
+    note: >
+      Elena Reygadas again, in the old second Panaderia Rosetta site. Used as
+      a breakfast stop on a 48 hour itinerary that also hit Cuina and
+      Panaderia Rosetta. Listings split between Havre 73 and Havre 69, with
+      73 better supported. Hours disagree too, earliest open 07:00.
+    source: instagram @d.stvns
+
+  - name: Cafe Margarita
+    category: casual
+    address: Cordoba 87, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Singled out for the room rather than the coffee: a historic house with
+      a terrace and several indoor salons, inside Casa Margarita. MX$310 to
+      500 a head, which makes it a sit down rather than a coffee stop.
+    source: instagram @emily.sav
+
+  - name: SAN Matcha
+    category: casual
+    address: Puebla 167, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Norte
+    precision: approximate
+    note: >
+      Japanese tea and matcha, named as the best matcha of a whole slow travel
+      trip and saved for the last day. Four branches in the city, including
+      Polanco with a tatami room and a larger Condesa room made for sitting.
+      The poster did not say which one, so this pin is the Roma Norte branch
+      as the nearest. See docs/open-questions.md.
+    source: instagram @emily.sav
+
+  - name: Bobo Cafe
+    category: casual
+    address: Jalapa 110, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Norte
+    precision: approximate
+    note: >
+      The mini pancake. One poster calls it a possible dupe for the Golden
+      Diner pancake in New York, a commenter who has had both says it is good
+      but three times thicker and without the crisp edges. Younger sibling of
+      Bobo Burger. Listings give Jalapa 110 and Jalapa 111 for the Roma
+      branch, and there are three others, so the pin is the right block
+      rather than a confirmed door.
+    source: instagram @bostoneatin, @emily.sav
+
+  # Dinner and drinks
+  - name: Sente
+    category: fine
+    address: Avenida Mazatlan 81, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico
+    neighborhood: Condesa
+    note: >
+      Called the best dinner of an entire trip, for the steak and risotto main.
+      Chef Rafael Juarez. Condesa, not Roma, whatever the post implies. One
+      dissenting review had a tough cut and blamed luck. Rated 4.6 to 4.7 on
+      OpenTable at the top price band, so this is a sit down dinner decision
+      rather than a drop in.
+    source: instagram @emily.sav
+
+  - name: Choza
+    category: casual
+    address: Queretaro 11, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Norte
+    precision: approximate
+    note: >
+      Thai influenced food and a listening bar, behind a doorway at number 11
+      Queretaro that also hides two other restaurants and a bakery. Green
+      curry with thin sliced beef and a pork pad thai with chili crisp are
+      the two dishes shown. The hard part is getting in: reported walk in
+      only, open Saturday, Sunday and Monday only, and one listing says it is
+      not on Google at all. Address is from a 2021 article, so the pin is the
+      block rather than the door.
+    source: instagram @bostoneatin
+
+  - name: Pistilo
+    category: bar
+    address: Calle Chiapas 208, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
+    neighborhood: Roma Norte
+    precision: approximate
+    note: >
+      Mexican spirits, mezcal and natural pulque with house curados, built
+      around art and conversation rather than music. There is no sign: the
+      cues are a bat below the number 208 and a small green light saying it
+      is open. Reported Wednesday to Monday 18:00 to 02:00, closed Tuesday.
+      Standing room, so better for a few of us than for eight.
+    source: instagram @mapaenmexico
+
+  # Markets, from @insidetheupgrade's four market list
+  - name: Bazar Sabado
+    category: market
+    address: Plaza San Jacinto, San Angel, Alvaro Obregon, Ciudad de Mexico
+    neighborhood: San Angel
+    precision: approximate
+    note: >
+      Saturdays only, which for this trip means 2 January. A colonial mansion
+      full of crafts plus an art market filling the square outside. Flagged as
+      the more touristy and more expensive of the two craft markets, and the
+      poster bought two pieces in the square rather than inside. Hours differ
+      by source between 09:00 and 19:00; mornings are the common advice.
+      La Bombilla on the Insurgentes Metrobus, then about ten minutes on foot.
+      The market is the mansion at number 11 plus the square plus the streets
+      around it, and number 11 does not resolve on its own, so the pin is
+      Plaza de San Jacinto itself. That is the right answer here rather than a
+      compromise: on a Saturday the market is the square.
+    source: instagram @insidetheupgrade
+
+  - name: Mercado de Artesanias La Ciudadela
+    category: market
+    address: Plaza de la Ciudadela, Centro, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Centro
+    precision: approximate
+    note: >
+      The same crafts as Bazar Sabado, more local and much cheaper, all under
+      one roof: textiles, pottery, silver. Open daily, unlike Bazar Sabado,
+      which makes this the one to default to. The street has no number, the
+      entrance is at Balderas and Emilio Donde, and the postal code is given
+      as both 06040 and 14060, so the pin is by name. Three minutes from
+      Balderas metro on lines 1 and 3.
+    source: instagram @insidetheupgrade
+
+  - name: Mercado de La Merced
+    category: market
+    address: Mercado Merced, Venustiano Carranza, Ciudad de Mexico
+    neighborhood: La Merced
+    precision: approximate
+    note: >
+      The largest and oldest market in the city, and described as completely
+      overwhelming in the best way. Loud and crowded; the chili stalls are the
+      thing not to skip. No street number in any listing, so the pin is by
+      name. Metro Merced on line 1. Opens around 06:00, closes 18:00 or 19:00.
+      This is a long way east of everything else on this page, so it is a
+      morning of its own rather than something to fold into another day.
+    source: instagram @insidetheupgrade
+
+  # Shops and green space
+  - name: Proyecto Rufina
+    category: spot
+    address: Jalapa 129, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Clothing and homeware from Mexican artisans and designers, on a fair
+      wage basis. Named as one of only two shops worth it out of a whole trip
+      by a poster who was otherwise unimpressed by shopping here. A second
+      branch at Amsterdam 133 in Condesa. Same street as Bobo Cafe.
+      Number 129 resolves exactly, though OpenStreetMap still labels that door
+      a hair salon, so the pin is the right address under a stale name.
+    source: instagram @emily.sav
+
+  - name: Bosque de Chapultepec
+    category: spot
+    address: 1a Seccion del Bosque de Chapultepec, Miguel Hidalgo, Ciudad de Mexico
+    neighborhood: Chapultepec
+    precision: approximate
+    note: >
+      Named on a resident's short list of where to send a first time visitor,
+      alongside things already on this page. The park is enormous and has
+      three sections, so this pin is the middle of the first section, which is
+      the one everybody means: Antropologia, the Castillo and the lake are all
+      in it, and the Reforma entrance is its east edge. Asking the geocoder
+      for the park by name alone returned the second section instead, two and
+      a half kilometres further west and past everything worth walking to, so
+      the section is named in the address on purpose. This is a pin for an
+      area, not a door.
+    source: instagram @deccadotcom
+
+  - name: Tetetlan
+    category: spot
+    address: Avenida de las Fuentes 180, Jardines del Pedregal, Alvaro Obregon, 01900 Ciudad de Mexico
+    neighborhood: Jardines del Pedregal
+    note: >
+      A restaurant, shop and free architecture library in the former stables
+      of Luis Barragan's Casa Pedregal, built over the volcanic rock the
+      neighbourhood is named for. Casa Pedregal itself is next door and can be
+      toured by reservation. The only entry on a resident's first visit list
+      that was not already here. Listed as both 180 and 180-B. One roundup
+      gives Periferico 3720, which looks like a stale listing. Reported open
+      from 07:30 to about 23:00 daily. Deep south, about as far as
+      Xochimilco, so it pairs with Coyoacan or San Angel rather than standing
+      alone.
+    source: instagram @deccadotcom
