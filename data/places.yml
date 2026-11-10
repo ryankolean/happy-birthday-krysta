@@ -1540,20 +1540,37 @@ places:
       say English was not a problem. Shop phone +52 998 871 0048, WhatsApp
       +52 998 150 5587. Nothing is booked and no design exists yet, so price and
       chair time are both unverified.
-    artists: >-
+    artists_note: >-
       Five on the shop's own Instagram bio, checked 10 November 2026, each with a
-      portfolio to judge before picking. @vitaminafunk is Luis Olivares, neo
-      traditional and illustrative, custom work, books by DM. @mohnattt is Mohna
-      Solange, resident, blackwork, tattooing since 2013, books by DM and posts
-      available flash under a Disponibles highlight. @rivastattooer is Rivis, the
-      largest following of the five at 8,700, Caribbean styles, with a bookings
-      highlight. @jazzm_ink is Jaz, who has her own Google listing at the same
-      address, 5.0 from 4 reviews, women owned, Thursday 11 am to 7 pm and closed
-      Mondays and Tuesdays. @eilo_tattoo is Eilo, neo traditional and neo Japanese
-      out of Montreal, whose highlight reads Guest 2026, so treat them as a
-      visiting artist and confirm rather than assume they are there in January.
-      A Google reviewer also praises an artist called Mar de Fondo, who is not in
-      the current bio roster, so ask rather than request them by name.
+      portfolio to judge before picking. A Google reviewer also praises an artist
+      called Mar de Fondo, who is not in the current bio roster, so ask rather
+      than request them by name.
+    artists:
+      - handle: vitaminafunk
+        name: Luis Olivares
+        does: >-
+          Neo traditional and illustrative, custom designs. Books by DM.
+      - handle: mohnattt
+        name: Mohna Solange
+        does: >-
+          Resident. Blackwork, tattooing since 2013. Books by DM and posts
+          available flash under a Disponibles highlight.
+      - handle: rivastattooer
+        name: Rivis
+        does: >-
+          Caribbean styles. The largest following of the five at 8,700, with a
+          bookings highlight.
+      - handle: jazzm_ink
+        name: Jaz
+        does: >-
+          Has her own Google listing at the same address, 5.0 from 4 reviews,
+          women owned. Thursday 11 am to 7 pm, closed Mondays and Tuesdays.
+      - handle: eilo_tattoo
+        name: Eilo
+        does: >-
+          Neo traditional and neo Japanese, out of Montreal. Highlight reads
+          Guest 2026, so a visiting artist to confirm rather than a resident to
+          count on.
     booking: >-
       The bio says walk-ins welcome, but 7 January is peak season and two people
       is two chairs, so DM the shop or the artist first. Luis and Mohna both say
@@ -1574,11 +1591,15 @@ places:
       one says outright to make an appointment because the shop is getting busy.
       A single chair means two people is two sittings, not two at once. Phone
       +52 998 844 0823.
-    artists: >-
-      One, @one_stinky on Instagram, 500 posts and 2,100 followers, bio reads
-      "Base in the beautiful #puertomorelos" and says to message him for prices
-      and a consultation. That DM is the only quoting channel, so there is no
-      published price list to compare against MTL.
+    artists_note: >-
+      One artist. That DM is the only quoting channel here, so there is no
+      published price list to compare against MTL without asking.
+    artists:
+      - handle: one_stinky
+        name: Stinky
+        does: >-
+          500 posts and 2,100 followers. Bio says to message him for prices and
+          a consultation. Mostly black and grey per the reviews.
     booking: Message @one_stinky on Instagram ahead of 7 January
     url: https://www.instagram.com/one_stinky
     region: riviera

@@ -96,6 +96,17 @@ function linkify(html, skipAnchors) {
 // detail string reaches the page.
 const nt = (s) => linkify(esc(tidy(s)));
 
+// An artist roster entry becomes a linked handle plus what they draw. The
+// handle is the whole link text because that is what you search in Instagram
+// and what you would type into a DM.
+const igUrl = (h) => 'https://www.instagram.com/' + encodeURIComponent(String(h).replace(/^@/, '')) + '/';
+const artistLine = (a) =>
+  `<a href="${esc(igUrl(a.handle))}">@${esc(String(a.handle).replace(/^@/, ''))}</a>` +
+  (a.name ? ` ${esc(a.name)}` : '') +
+  (a.does ? `. ${nt(a.does)}` : '');
+const artistList = (list) =>
+  !list || !list.length ? '' : `<ul class="artists">${list.map((a) => `<li>${artistLine(a)}</li>`).join('')}</ul>`;
+
 const PAGES = [
   { file: 'index.html', label: 'The trip' },
   { file: 'itinerary.html', label: 'Itinerary' },
@@ -304,6 +315,13 @@ tr.sum td { border-top: 2px solid var(--ink); border-bottom: none; font-weight: 
 tr.pick td { background: var(--teal-soft); }
 td strong, th strong { color: var(--ink); }
 td small { color: var(--muted); }
+
+/* Artist rosters: one linked handle per line, in the fallback table and in a
+   map popup. The handle is the link text, so it stays scannable at popup size. */
+ul.artists { margin: 8px 0 0; padding-left: 0; list-style: none; }
+ul.artists li { margin-bottom: 6px; padding-left: 10px; border-left: 2px solid var(--rule); }
+ul.artists li:last-child { margin-bottom: 0; }
+ul.artists a { font-family: var(--f-mono); font-size: 0.92em; }
 
 /* tags */
 .tag {
@@ -1210,7 +1228,8 @@ function buildMap(region = 'cdmx') {
       lon: p.lon,
       hood: esc(p.neighborhood || ''),
       note: nt(p.note || ''),
-      artists: nt(p.artists || ''),
+      artistsNote: nt(p.artists_note || ''),
+      artists: artistList(p.artists),
       booking: nt(p.booking || ''),
       url: encodeURI(p.url || ''),
       approx: p.precision === 'approximate',
@@ -1271,7 +1290,7 @@ function buildMap(region = 'cdmx') {
           : p.walkMin
             ? `${p.walkMin} min walk`
             : `${(Math.round(p.km * 10) / 10).toFixed(1)} km`;
-      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.starred ? ' <span aria-label="starred">&#9733;</span>' : ''}${p.url ? `<br><a href="${esc(p.url)}">listing</a>` : ''}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${nt(p.note || '')}${p.artists ? `<br><br>${nt(p.artists)}` : ''}${p.booking ? `<br><small>${nt(p.booking)}</small>` : ''}</td></tr>`;
+      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.starred ? ' <span aria-label="starred">&#9733;</span>' : ''}${p.url ? `<br><a href="${esc(p.url)}">listing</a>` : ''}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${nt(p.note || '')}${p.artists_note ? `<br><br>${nt(p.artists_note)}` : ''}${artistList(p.artists)}${p.booking ? `<br><small>${nt(p.booking)}</small>` : ''}</td></tr>`;
     }
     lists += `</tbody></table></div>`;
   }
@@ -1400,7 +1419,8 @@ ${lists}
         (p.walk ? p.walk + ' min walk' : p.km + ' km') + ' from ' + DATA.base + '</span>';
     }
     if (p.note) html += '<br><br>' + p.note;
-    if (p.artists) html += '<br><br>' + p.artists;
+    if (p.artistsNote) html += '<br><br>' + p.artistsNote;
+    if (p.artists) html += p.artists;
     if (p.booking) html += '<br><br><em>' + p.booking + '</em>';
     if (p.url) html += '<br><br><a href="' + p.url + '" target="_blank" rel="noopener">Open listing</a>';
     marker.bindPopup(html, { maxWidth: 260 });
