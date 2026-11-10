@@ -174,6 +174,11 @@ const CSS = `:root {
   --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --pin-stroke: #11211F;
+  /* The guide's own red. Fixed, because it is a badge colour with white
+     stars on it in both themes; the text version gets its own token so it
+     can be lifted off a dark background without wrecking that contrast. */
+  --michelin: #C9372C;
+  --michelin-ink: #C9372C;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -183,6 +188,7 @@ const CSS = `:root {
     --marigold: #F0A23E; --marigold-soft: #33240E; --sea: #6FB8D2;
     --rule: #1E2A28; --rule-firm: #2C3B38;
     --pin-stroke: #FCFCFA;
+    --michelin-ink: #F08878;
   }
 }
 :root[data-theme="dark"] {
@@ -192,6 +198,7 @@ const CSS = `:root {
   --marigold: #F0A23E; --marigold-soft: #33240E; --sea: #6FB8D2;
   --rule: #1E2A28; --rule-firm: #2C3B38;
   --pin-stroke: #FCFCFA;
+  --michelin-ink: #F08878;
 }
 
 * { box-sizing: border-box; }
@@ -498,9 +505,50 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
 
 /* Pins. The drop shadow is what keeps a pin legible when its fill lands on a
    tile of a similar tone, in either theme. */
-.mappin { line-height: 0; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45)); }
+.mappin { position: relative; line-height: 0; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45)); }
 .mappin svg { display: block; }
 .leaflet-marker-icon:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
+
+/* Badges hang off the shoulders of a pin rather than sitting inside it. The
+   head is about nine units of twenty four across and the category glyph has
+   that space. Right shoulder is what the Michelin guide awarded, left shoulder
+   is what the kitchen is known for. */
+.pinbadges { position: absolute; top: -3px; display: flex; gap: 2px; pointer-events: none; }
+.pinbadges--mich { right: -6px; }
+.pinbadges--prot { left: -6px; }
+.pinbadge {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px; line-height: 0;
+  /* Same ring the pin silhouette carries, so a badge separates from the pin
+     under it in both themes rather than only on a pale background. */
+  box-shadow: 0 0 0 1.5px var(--pin-stroke), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.pinbadge--mich { background: var(--michelin); color: #FCFCFA; padding: 1.5px 2.5px; gap: 1px; }
+.pinbadge--star { background: var(--marigold); color: var(--paper); padding: 2.5px; }
+.pinbadge--prot { background: var(--paper); color: var(--ink); width: 16px; height: 16px; }
+
+/* The same badges inline, in a popup or a table cell, where there is room for
+   the words as well. The class is ptag, not tag, because tag is already the
+   price status pill on the costs and tasks pages and a second rule on that
+   name reaches every one of them. */
+.ptags { display: flex; flex-wrap: wrap; gap: 5px; margin: 7px 0 0; }
+.ptag {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: var(--f-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.5;
+  color: var(--body); background: var(--raise);
+  border: 1px solid var(--rule-firm); border-radius: 2px; padding: 2px 6px;
+}
+.ptag .pinbadge { box-shadow: none; }
+.ptag .pinbadge--prot { box-shadow: inset 0 0 0 1px var(--rule-firm); }
+.ptag--mich { color: var(--michelin-ink); border-color: var(--michelin-ink); background: transparent; }
+.legend-row--key { gap: 13px; margin-block: 0 16px; align-items: center; }
+.keyitem {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--f-body); font-size: 12px; color: var(--muted);
+}
+.keyitem .pinbadge { box-shadow: none; }
+.keyitem .pinbadge--prot { box-shadow: inset 0 0 0 1px var(--rule-firm); }
 
 .legend-row { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 18px 12px; }
 .legitem {
@@ -1160,11 +1208,195 @@ ${bullets(jade.ask_on_the_call)}
 const PIN_PATH =
   'M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z';
 
-// Five pointed star sized to sit inside the pin head, centred on 12,9.4 where
-// the teardrop is widest. Drawn in the stroke colour so a filled pin reads it
-// as a cut out, and in the category colour on a hollow approximate pin.
-const STAR_PATH =
-  'M12 5.6L12.911 8.146L15.614 8.226L13.474 9.879L14.234 12.474L12 10.95L9.766 12.474L10.526 9.879L8.386 8.226L11.089 8.146Z';
+// Five pointed star, centred in its own 24 unit box like the glyphs below.
+// It used to be drawn inside the pin head as a cut out; the category glyph has
+// that space now, so a star is a badge on the pin's shoulder instead.
+const STAR_GLYPH =
+  'M12 2L14.47 8.6L21.51 8.91L15.99 13.3L17.88 20.09L12 16.2L6.12 20.09L8.01 13.3L2.49 8.91L9.53 8.6Z';
+
+// Category glyphs, drawn in the head of every pin so colour is no longer the
+// only thing telling a taqueria from a museum. Each glyph is authored in its
+// own 0 0 24 24 box and scaled into wherever it is drawn, which keeps these
+// numbers editable. The head has about 9.4 units of clear space, so every
+// feature here is at least 3 units across: anything finer vanishes at pin size.
+// A part written as { d, hole: true } is filled with whatever is behind the
+// glyph, which is how a snout reads as a snout instead of a blob.
+const CAT_GLYPH = {
+  // Pitched roof over a box.
+  stay: ['M12 2.6L22.4 11.6h-3.4V21H5V11.6H1.6z'],
+  // Cloche: dome, base, knob.
+  fine: [
+    'M3 16a9 9 0 0 1 18 0z',
+    'M1.4 16.6h21.2v3.4H1.4z',
+    'M12 2.4a2 2 0 1 0 0 4 2 2 0 0 0 0-4z',
+  ],
+  // Mug with a handle. Casual here is cafes and bakeries as much as lunch.
+  casual: [
+    'M3 6h12.6v8.4a4.6 4.6 0 0 1-4.6 4.6H7.6A4.6 4.6 0 0 1 3 14.4z',
+    'M16.8 8.4h1.4a4 4 0 0 1 0 8h-1.4z',
+  ],
+  // Martini glass. The stem is 3.2 units so it survives the scale down.
+  bar: ['M2.4 3.6h19.2L13.6 12.8V19h3.8v2.4H6.6V19h3.8v-6.2z'],
+  // Market bag, handle above the body.
+  market: [
+    'M3.6 8h16.8l1.4 12.8H2.2z',
+    'M7.7 8.4a4.3 4.3 0 0 1 8.6 0h-3a1.3 1.3 0 0 0-2.6 0z',
+  ],
+  // Folded shell seen from the side, filling in the fold. A half disc with
+  // scallops along the flat edge was tried first and read as a cloud.
+  taco: [
+    'M2.4 16.6a9.6 9.6 0 0 1 19.2 0h-3.8a5.8 5.8 0 0 0-11.6 0z',
+    'M6.4 16.6a2.9 2.9 0 0 1 5.8 0z',
+    'M11.8 16.6a2.9 2.9 0 0 1 5.8 0z',
+  ],
+  // Two stacked triangles and a trunk.
+  spot: ['M12 2.4L19.2 12.4H4.8z', 'M12 9.6L21.4 21.2H2.6z', 'M10.4 20h3.2v3.2h-3.2z'],
+};
+
+// What a kitchen is known for. Four, because four is what was asked for, and
+// each one is an animal rather than a cut: a cut of meat at this size is a
+// brown blob, while an outline with ears or a tail fan still reads. The label
+// is what the popup and the table print, so Steak rather than Beef.
+const PROTEIN = {
+  seafood: {
+    label: 'Seafood',
+    // A fish, not the shrimp this was first drawn as. A shrimp needs legs and
+    // antennae to read as a shrimp, and at this size they close up: the curl
+    // that survived looked like the digit 3. A fish reads at eleven pixels.
+    parts: [
+      'M5.8 12a7.6 6.4 0 1 1 15.2 0 7.6 6.4 0 1 1-15.2 0z',
+      'M7.4 12L1.2 6.6v10.8z',
+      { d: 'M18 8.1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z', hole: true },
+    ],
+  },
+  chicken: {
+    label: 'Chicken',
+    parts: [
+      'M4.8 15.2a6.8 6.8 0 0 1 13.6 0 6.8 6.8 0 0 1-13.6 0z',
+      'M16.8 4a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2z',
+      'M19.8 6.2L23.4 7.8l-3.6 1.8z',
+      'M13.6 3.4a1.9 1.9 0 0 1 3.8 0z',
+      'M4.4 10.6l3 3.6-5 1.4z',
+    ],
+  },
+  beef: {
+    label: 'Steak',
+    // Cow: square head, horns out to the sides, muzzle below.
+    parts: [
+      'M5.4 8.6h13.2v6a6.6 6.6 0 0 1-13.2 0z',
+      'M8.6 15.2h6.8v3a3.4 3.4 0 0 1-6.8 0z',
+      'M5.6 9.2L1 5.6l0.4 5.6z',
+      'M18.4 9.2L23 5.6l-0.4 5.6z',
+    ],
+  },
+  pork: {
+    label: 'Pork',
+    // Pig: round head, ears up, snout punched out of the middle.
+    parts: [
+      'M12 5.8a8.2 8.2 0 1 0 0 16.4 8.2 8.2 0 0 0 0-16.4z',
+      'M5.6 7.4L3.2 1.6l6 2.4z',
+      'M18.4 7.4L20.8 1.6l-6 2.4z',
+      { d: 'M12 12.6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z', hole: true },
+      'M10.4 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z',
+      'M13.6 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z',
+    ],
+  },
+};
+
+// Pin sizes. Bumped from 28 and 36 when the glyphs went in: at 28 the head
+// could only hold about 11 pixels of glyph, which is under what a four part
+// silhouette needs.
+const PIN_SIZE = { base: 30, big: 38 };
+
+// White or near black on the category colour, whichever has the contrast.
+// Every colour in places.yml today is dark enough to take white; this is here
+// so a retuned palette cannot silently produce an unreadable glyph.
+const glyphInk = (hex) => {
+  const ch = (i) => parseInt(hex.slice(1 + i * 2, 3 + i * 2), 16) / 255;
+  const lin = (v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4);
+  const L = 0.2126 * lin(ch(0)) + 0.7152 * lin(ch(1)) + 0.0722 * lin(ch(2));
+  return L > 0.35 ? '#11211F' : '#FCFCFA';
+};
+
+// protein takes a scalar or a list, because most places are known for one
+// thing and writing a one item list for all of them reads badly in the yaml.
+const proteinList = (p) =>
+  p.protein == null ? [] : Array.isArray(p.protein) ? p.protein : [p.protein];
+
+// A typo in either field would otherwise just render nothing, which is the
+// failure mode that cost a round of work when `artists` was added. Fail here.
+for (const p of placesDoc.places) {
+  const m = p.michelin;
+  if (m != null) {
+    const ok = (Number.isInteger(m) && m >= 1 && m <= 3) || m === 'bib' || m === 'listed';
+    if (!ok) throw new Error(`${p.name}: michelin must be 1, 2, 3, bib or listed, got ${JSON.stringify(m)}`);
+  }
+  for (const k of proteinList(p)) {
+    if (!PROTEIN[k]) {
+      throw new Error(`${p.name}: unknown protein ${JSON.stringify(k)}. Known: ${Object.keys(PROTEIN).join(', ')}`);
+    }
+  }
+}
+
+// One glyph as markup. The map markers build the same thing with DOM calls
+// instead, off these same constants, so the two cannot show different shapes.
+const glyphHtml = (parts, fill, bg, cx, cy, scale) =>
+  `<g transform="translate(${cx} ${cy}) scale(${scale}) translate(-12 -12)">` +
+  parts
+    .map((part) => {
+      const d = typeof part === 'string' ? part : part.d;
+      const isHole = typeof part !== 'string' && part.hole;
+      return `<path d="${d}" fill="${isHole ? bg : fill}"/>`;
+    })
+    .join('') +
+  `</g>`;
+
+const legendPin = (key, colour, size = 22) =>
+  `<svg class="legpin" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" aria-hidden="true">` +
+  `<path d="${PIN_PATH}" fill="${esc(colour)}" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>` +
+  (CAT_GLYPH[key] ? glyphHtml(CAT_GLYPH[key], glyphInk(colour), esc(colour), 12, 9.2, 0.4) : '') +
+  `</svg>`;
+
+const starSvg = (size) =>
+  `<svg width="${size}" height="${size}" viewBox="0 0 24 24" aria-hidden="true"><path d="${STAR_GLYPH}" fill="currentColor"/></svg>`;
+
+const michBadgeHtml = (n) =>
+  `<span class="pinbadge pinbadge--mich" title="${n} Michelin star${n > 1 ? 's' : ''}">${starSvg(8).repeat(n)}</span>`;
+
+const starBadgeHtml = () =>
+  `<span class="pinbadge pinbadge--star" title="Settled on">${starSvg(8)}</span>`;
+
+const protBadgeHtml = (k) =>
+  `<span class="pinbadge pinbadge--prot" title="${esc(PROTEIN[k].label)}">` +
+  `<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">` +
+  `${glyphHtml(PROTEIN[k].parts, 'currentColor', 'var(--paper)', 12, 12, 0.72)}</svg></span>`;
+
+const michWords = (m) =>
+  typeof m === 'number'
+    ? `${['', 'One', 'Two', 'Three'][m]} Michelin star${m > 1 ? 's' : ''}`
+    : m === 'bib'
+      ? 'Michelin Bib Gourmand'
+      : m === 'listed'
+        ? 'In the Michelin guide'
+        : '';
+
+// The badge row a popup and a table cell both carry. Pre-escaped, because the
+// popup version goes through innerHTML.
+const tagsHtml = (p) => {
+  const out = [];
+  if (p.michelin != null) {
+    out.push(
+      `<span class="ptag ptag--mich">` +
+        (typeof p.michelin === 'number' ? starSvg(10).repeat(p.michelin) : '') +
+        esc(michWords(p.michelin)) +
+        `</span>`
+    );
+  }
+  for (const k of proteinList(p)) {
+    out.push(`<span class="ptag">${protBadgeHtml(k)} Known for ${esc(PROTEIN[k].label.toLowerCase())}</span>`);
+  }
+  return out.length ? `<div class="ptags">${out.join('')}</div>` : '';
+};
 
 // Two maps from one places.yml. `region` defaults to cdmx; Puerto Morelos
 // entries carry `region: riviera`. Distances on each map are from that
@@ -1218,7 +1450,11 @@ function buildMap(region = 'cdmx') {
     center: stay ? [stay.lat, stay.lon] : cfg.fallback,
     base: cfg.base,
     openViewKm: OPEN_VIEW_KM,
-    categories: cats,
+    // Glyph ink is settled here rather than in the browser, so the markers and
+    // the legend read it off the same number.
+    categories: Object.fromEntries(
+      Object.entries(cats).map(([k, c]) => [k, { label: c.label, color: c.color, ink: glyphInk(c.color) }])
+    ),
     // Escaped at build time: these strings go straight into popup innerHTML,
     // and a name with an apostrophe or an angle bracket would otherwise break it.
     places: resolved.map((p) => ({
@@ -1231,6 +1467,9 @@ function buildMap(region = 'cdmx') {
       artistsNote: nt(p.artists_note || ''),
       artists: artistList(p.artists),
       booking: nt(p.booking || ''),
+      tags: tagsHtml(p),
+      mich: p.michelin == null ? null : p.michelin,
+      prot: proteinList(p),
       url: encodeURI(p.url || ''),
       approx: p.precision === 'approximate',
       star: p.starred === true,
@@ -1270,11 +1509,22 @@ function buildMap(region = 'cdmx') {
     .map(
       ([key, c]) =>
         `<button class="legitem" data-cat="${esc(key)}" aria-pressed="true">` +
-        `<svg class="legpin" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">` +
-        `<path d="${PIN_PATH}" fill="${esc(c.color)}" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>` +
+        legendPin(key, c.color) +
         `${esc(c.label)} <span class="cnt">${counts[key] || 0}</span></button>`
     )
     .join('');
+
+  // What the badges mean. Without this the discs are a guessing game, and the
+  // glyph in the pin head is only learnable from the legend above.
+  const badgeKey =
+    `<div class="legend-row legend-row--key">` +
+    `<span class="keyitem">${michBadgeHtml(1)} one Michelin star</span>` +
+    `<span class="keyitem">${michBadgeHtml(2)} two</span>` +
+    Object.keys(PROTEIN)
+      .map((k) => `<span class="keyitem">${protBadgeHtml(k)} ${esc(PROTEIN[k].label.toLowerCase())}</span>`)
+      .join('') +
+    `<span class="keyitem">${starBadgeHtml()} settled on</span>` +
+    `</div>`;
 
   // Grouped list under the map, so the page still works if tiles fail to load.
   let lists = '';
@@ -1290,7 +1540,7 @@ function buildMap(region = 'cdmx') {
           : p.walkMin
             ? `${p.walkMin} min walk`
             : `${(Math.round(p.km * 10) / 10).toFixed(1)} km`;
-      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.starred ? ' <span aria-label="starred">&#9733;</span>' : ''}${p.url ? `<br><a href="${esc(p.url)}">listing</a>` : ''}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${nt(p.note || '')}${p.artists_note ? `<br><br>${nt(p.artists_note)}` : ''}${artistList(p.artists)}${p.booking ? `<br><small>${nt(p.booking)}</small>` : ''}</td></tr>`;
+      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.starred ? ' <span aria-label="starred">&#9733;</span>' : ''}${p.url ? `<br><a href="${esc(p.url)}">listing</a>` : ''}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${tagsHtml(p)}${nt(p.note || '')}${p.artists_note ? `<br><br>${nt(p.artists_note)}` : ''}${artistList(p.artists)}${p.booking ? `<br><small>${nt(p.booking)}</small>` : ''}</td></tr>`;
     }
     lists += `</tbody></table></div>`;
   }
@@ -1305,9 +1555,11 @@ function buildMap(region = 'cdmx') {
   </div>
 </header>
 
-<p class="lede">Dinner options, bars, markets and ${esc(cfg.base)}, colour coded. Tap a pin for details. Tap a colour below to show only that group, and tap the same colour again to bring the rest back. A starred pin is one we have settled on.</p>
+<p class="lede">Dinner options, bars, markets and ${esc(cfg.base)}. Each pin is coloured by type and carries a glyph in its head saying what it is. Stars on a pin's right shoulder are Michelin stars; a disc on its left is what the kitchen is known for. Tap a pin for details. Tap a colour below to show only that group, and tap the same colour again to bring the rest back. A gold star badge is a place we have settled on.</p>
 
 <div class="legend-row">${legend}</div>
+${badgeKey}
+<p class="caveat">A Michelin badge only appears where this plan actually looked it up. No badge means nobody checked, not that the guide passed the place over, and the same goes for the protein discs: they mark the places whose notes already say what the order is.</p>
 <div id="map" role="application" aria-label="Map of trip locations"></div>
 <p class="caveat" id="faraway"></p>
 ${region === 'cdmx' ? `<p class="caveat">Map data from OpenStreetMap. ${esc(stay ? stay.name : 'The house')} is not booked yet, and Airbnb only shows an approximate area until it is, so the house pin is their published circle rather than a street address. The exact address deliberately stays out of this repo.</p>
@@ -1352,56 +1604,130 @@ ${lists}
 
   var SVG_NS = 'http://www.w3.org/2000/svg';
   var PIN_PATH = ${JSON.stringify(PIN_PATH)};
-  var STAR_PATH = ${JSON.stringify(STAR_PATH)};
+  var STAR_GLYPH = ${JSON.stringify(STAR_GLYPH)};
+  var CAT_GLYPH = ${JSON.stringify(CAT_GLYPH)};
+  var PROTEIN = ${JSON.stringify(PROTEIN)};
+  var PIN_SIZE = ${JSON.stringify(PIN_SIZE)};
 
   // Built with DOM APIs rather than innerHTML. Every value here is either a
   // constant or a colour from our own data, but this keeps pin construction
   // unambiguously safe. Same approach as 4pm-detroit's map-view client.
-  function buildPinEl(colour, approx, big, starred) {
-    var el = document.createElement('div');
-    el.className = 'mappin' + (big ? ' mappin--big' : '') + (starred ? ' mappin--star' : '');
-
-    var size = big ? 36 : 28;
+  function svgBox(size) {
     var svg = document.createElementNS(SVG_NS, 'svg');
     svg.setAttribute('width', String(size));
     svg.setAttribute('height', String(size));
     svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('aria-hidden', 'true');
+    return svg;
+  }
+
+  // Glyphs are authored in their own 0 0 24 24 box, so each one is scaled and
+  // centred wherever it lands. A part flagged hole gets the background colour,
+  // which is what makes the pig's snout read as a snout.
+  function glyphInto(svg, parts, fill, bg, cx, cy, scale) {
+    var g = document.createElementNS(SVG_NS, 'g');
+    g.setAttribute('transform',
+      'translate(' + cx + ' ' + cy + ') scale(' + scale + ') translate(-12 -12)');
+    parts.forEach(function (part) {
+      var path = document.createElementNS(SVG_NS, 'path');
+      path.setAttribute('d', typeof part === 'string' ? part : part.d);
+      path.setAttribute('fill', typeof part === 'object' && part.hole ? bg : fill);
+      g.appendChild(path);
+    });
+    svg.appendChild(g);
+  }
+
+  function starEl(size) {
+    var svg = svgBox(size);
+    var path = document.createElementNS(SVG_NS, 'path');
+    path.setAttribute('d', STAR_GLYPH);
+    path.setAttribute('fill', 'currentColor');
+    svg.appendChild(path);
+    return svg;
+  }
+
+  function badge(cls, title) {
+    var b = document.createElement('span');
+    b.className = 'pinbadge ' + cls;
+    b.title = title;
+    return b;
+  }
+
+  function badgeRow(cls, kids) {
+    var row = document.createElement('div');
+    row.className = 'pinbadges ' + cls;
+    kids.forEach(function (k) { row.appendChild(k); });
+    return row;
+  }
+
+  function buildPinEl(p, colour, ink) {
+    var big = p.c === 'stay' || p.star;
+    var size = big ? PIN_SIZE.big : PIN_SIZE.base;
+    var el = document.createElement('div');
+    el.className = 'mappin' + (big ? ' mappin--big' : '') + (p.star ? ' mappin--star' : '');
+
+    var svg = svgBox(size);
     svg.setAttribute('fill', 'none');
     svg.setAttribute('stroke-linecap', 'round');
     svg.setAttribute('stroke-linejoin', 'round');
-    svg.setAttribute('aria-hidden', 'true');
 
     var pin = document.createElementNS(SVG_NS, 'path');
     pin.setAttribute('d', PIN_PATH);
     // An approximate location is drawn hollow and dashed, so it cannot be
     // mistaken for a pin we can actually stand behind.
-    pin.setAttribute('fill', approx ? 'none' : colour);
-    pin.setAttribute('stroke', approx ? colour : 'var(--pin-stroke)');
-    pin.setAttribute('stroke-width', approx ? '2.5' : '2');
-    if (approx) pin.setAttribute('stroke-dasharray', '3 2');
+    pin.setAttribute('fill', p.approx ? 'none' : colour);
+    pin.setAttribute('stroke', p.approx ? colour : 'var(--pin-stroke)');
+    pin.setAttribute('stroke-width', p.approx ? '2.5' : '2');
+    if (p.approx) pin.setAttribute('stroke-dasharray', '3 2');
     svg.appendChild(pin);
 
-    // A starred place is one we have committed to, so it gets a mark that
-    // survives at pin size rather than a colour nobody can tell apart.
-    if (starred) {
-      var star = document.createElementNS(SVG_NS, 'path');
-      star.setAttribute('d', STAR_PATH);
-      star.setAttribute('fill', approx ? colour : 'var(--pin-stroke)');
-      svg.appendChild(star);
+    // The category glyph in the head. A hollow approximate pin has no filled
+    // body for a cut out to sit on, so there the glyph takes the colour.
+    if (CAT_GLYPH[p.c]) {
+      glyphInto(svg, CAT_GLYPH[p.c], p.approx ? colour : ink, colour, 12, 9.2, 0.4);
     }
-
     el.appendChild(svg);
+
+    // Badges hang off the shoulders. A starred place used to carry its star
+    // inside the head; the glyph has that space now, so the star became a
+    // badge alongside whatever the guide says.
+    var right = [];
+    if (p.star) {
+      var sb = badge('pinbadge--star', 'Settled on');
+      sb.appendChild(starEl(8));
+      right.push(sb);
+    }
+    if (typeof p.mich === 'number') {
+      var mb = badge('pinbadge--mich', p.mich + ' Michelin star' + (p.mich > 1 ? 's' : ''));
+      for (var i = 0; i < p.mich; i++) mb.appendChild(starEl(8));
+      right.push(mb);
+    }
+    if (right.length) el.appendChild(badgeRow('pinbadges--mich', right));
+
+    // Two discs is the cap. A third is wider than the pin and starts covering
+    // the pin next to it; the popup and the table list every one.
+    var left = (p.prot || []).slice(0, 2).map(function (k) {
+      if (!PROTEIN[k]) return null;
+      var b = badge('pinbadge--prot', PROTEIN[k].label);
+      var g = svgBox(16);
+      glyphInto(g, PROTEIN[k].parts, 'currentColor', 'var(--paper)', 12, 12, 0.72);
+      b.appendChild(g);
+      return b;
+    }).filter(Boolean);
+    if (left.length) el.appendChild(badgeRow('pinbadges--prot', left));
+
     return el;
   }
 
   var bounds = [];
   DATA.places.forEach(function (p) {
-    var colour = (DATA.categories[p.c] || {}).color || '#666';
+    var cat = DATA.categories[p.c] || {};
+    var colour = cat.color || '#666';
     var big = p.c === 'stay' || p.star;
-    var size = big ? 36 : 28;
+    var size = big ? PIN_SIZE.big : PIN_SIZE.base;
     var marker = L.marker([p.lat, p.lon], {
       icon: L.divIcon({
-        html: buildPinEl(colour, p.approx, big, p.star),
+        html: buildPinEl(p, colour, cat.ink || '#FCFCFA'),
         className: '',
         iconSize: [size, size],
         // The silhouette's tip is at y=21 of 24, so the anchor is 21/24 down.
@@ -1418,6 +1744,7 @@ ${lists}
       html += '<br><span style="opacity:.7">' +
         (p.walk ? p.walk + ' min walk' : p.km + ' km') + ' from ' + DATA.base + '</span>';
     }
+    if (p.tags) html += p.tags;
     if (p.note) html += '<br><br>' + p.note;
     if (p.artistsNote) html += '<br><br>' + p.artistsNote;
     if (p.artists) html += p.artists;

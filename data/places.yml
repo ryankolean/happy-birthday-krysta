@@ -6,6 +6,18 @@
 #
 # category must be one of the keys in `categories` below.
 # precision: exact | approximate   (approximate draws a hollow marker)
+#
+# michelin: 1 | 2 | 3 | bib | listed
+#   What the Michelin guide says about the place, and only where this repo
+#   actually researched it. A number is stars and draws that many stars on the
+#   pin. `bib` is a Bib Gourmand and `listed` means in the guide without either,
+#   both of which show up in the popup and the table but not on the pin. No key
+#   means nobody checked, which is not the same as no star, and the map says so.
+#
+# protein: [seafood, beef, pork, chicken]
+#   What the kitchen is known for, not everything it serves. One badge per
+#   protein on the pin, so set this only where the note already says what the
+#   order is. A scalar works too: `protein: seafood`.
 
 categories:
   stay:
@@ -48,6 +60,7 @@ places:
   # ---------- fine dining ----------
   - name: Pujol
     category: fine
+    michelin: 2
     address: Tennyson 133, Polanco, Mexico City
     neighborhood: Polanco
     note: Private dining room, 8 to 14, minimum 8 tasting menus, no room fee. MX$3,795 each.
@@ -55,6 +68,7 @@ places:
 
   - name: Em
     category: fine
+    michelin: 1
     address: Avenida Amsterdam 76, Condesa, Mexico City
     neighborhood: Condesa
     note: One Michelin star. Main dining room takes 3 to 8. MX$3,900 each. Reopened Oct 2026 at this address.
@@ -62,6 +76,7 @@ places:
 
   - name: Quintonil
     category: fine
+    michelin: 2
     address: Quintonil, Isaac Newton, Polanco, Ciudad de Mexico
     neighborhood: Polanco
     note: Ruled out. Caps at 6 in the main dining room, 1 to 3 at the counter.
@@ -69,6 +84,7 @@ places:
 
   - name: Rosetta
     category: fine
+    michelin: 1
     address: Colima 166, Roma Norte, Mexico City
     neighborhood: Roma Norte
     note: One Michelin star, in a Roma mansion. A la carte, about $50 to $88 each.
@@ -76,6 +92,7 @@ places:
 
   - name: Maximo Bistrot
     category: fine
+    michelin: 1
     address: Avenida Alvaro Obregon 65 Bis, Roma Norte, Mexico City
     neighborhood: Roma Norte
     note: One Michelin star. A la carte, $56 to $100 each. Private dining with notice.
@@ -110,6 +127,7 @@ places:
 
   - name: Contramar
     category: fine
+    protein: [seafood]
     address: Durango 200, Roma Norte, Mexico City
     neighborhood: Roma Norte
     note: The classic lunch. Books out far ahead.
@@ -292,6 +310,7 @@ places:
 
   - name: Wagyu San
     category: fine
+    protein: [beef, seafood]
     address: Paseo de la Reforma 333, Cuauhtemoc, 06500 Ciudad de Mexico
     neighborhood: Cuauhtemoc
     note: Was already on Krysta's own list. Sushi and steak, views of the Angel.
@@ -299,12 +318,14 @@ places:
 
   - name: Pandora Rooftop
     category: fine
+    protein: [seafood, beef]
     address: Napoles 35, Juarez, Cuauhtemoc, 06600 Ciudad de Mexico
     note: Already on Krysta's list. Rooftop, octopus and steak.
     source: instagram @thatonepointofview
 
   - name: Taverna
     category: fine
+    protein: [seafood]
     lat: 19.429691
     lon: -99.1531323
     address: Taverna, Cuauhtemoc, Ciudad de Mexico
@@ -369,6 +390,7 @@ places:
 
   - name: Jenni's Quesadillas
     category: casual
+    protein: [chicken]
     address: Merida 83, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
     note: >
       Blue corn tortillas pressed to order on a comal in the street. The order
@@ -378,6 +400,7 @@ places:
 
   - name: Mi Compa Chava
     category: casual
+    protein: [seafood]
     address: Mi Compa Chava, Roma Norte, Ciudad de Mexico
     neighborhood: Roma Norte
     note: >
@@ -414,8 +437,9 @@ places:
     note: >
       No menu, they just feed you until you say stop. No reservations.
       Starred by Ryan on 9 November 2026, which is the first entry on this
-      page to carry one: it draws a bigger pin with a star in it and means we
-      have settled on going, not that somebody on the internet liked it.
+      page to carry one: it draws a bigger pin with a star badge on it and
+      means we have settled on going, not that somebody on the internet liked
+      it.
       The dish named by the one poster who photographed a plate here is the
       huarachito de recado negro, a thick tortilla under a black sauce of
       charred peppers, described as smoky and spicy.
@@ -576,6 +600,7 @@ places:
   # Tacos and street food
   - name: Tacos del Valle
     category: taco
+    protein: [pork]
     address: Tacos del Valle, Ciudad de Mexico
     note: >
       Rated 9/10 by @placesnoted and starred by @thatonepointofview as actually
@@ -592,6 +617,7 @@ places:
 
   - name: Tacos La Once Mil
     category: taco
+    protein: [beef]
     lat: 19.4199507
     lon: -99.160306
     address: Tacos La Once Mil, Roma Norte, Ciudad de Mexico
@@ -609,6 +635,7 @@ places:
 
   - name: Tacos Atarantados
     category: taco
+    protein: [pork]
     address: Tacos Atarantados, Ciudad de Mexico
     note: Rated 8.5/10. Al pastor over real charcoal, which is rarer than it should be here.
     source: instagram @placesnoted
@@ -633,6 +660,7 @@ places:
 
   - name: La Ochenta y Nueve
     category: taco
+    protein: [beef]
     address: Colima 134, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
     note: >
       Rated 5.5/10, the weakest on the list. Quesabirria and campechano, but
@@ -641,6 +669,7 @@ places:
 
   - name: Taqueria Orinoco
     category: taco
+    protein: [pork]
     address: Taqueria Orinoco, Roma Norte, Ciudad de Mexico
     neighborhood: Roma Norte
     note: >
@@ -651,6 +680,8 @@ places:
 
   - name: El Califa de Leon
     category: taco
+    michelin: 1
+    protein: [beef]
     address: Ribera de San Cosme 56, San Rafael, Cuauhtemoc, Ciudad de Mexico
     neighborhood: San Rafael
     note: >
@@ -661,6 +692,7 @@ places:
 
   - name: Los Cocuyos
     category: taco
+    protein: [beef]
     address: Bolivar 56, Centro, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Centro
     note: Open almost around the clock. Suadero and the offal cuts.
@@ -668,6 +700,8 @@ places:
 
   - name: Tacos El Paisa
     category: taco
+    michelin: listed
+    protein: [pork, beef]
     address: Tacos El Paisa, Ciudad de Mexico
     note: >
       In the Michelin guide and still under five pounds a meal. The order is
@@ -772,12 +806,14 @@ places:
 
   - name: Taqueria Los Parados
     category: taco
+    michelin: listed
     address: Avenida Monterrey 333, Roma Sur, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Roma Sur
     note: Taco tour stop 2. Mon-Thu 12:30-03:00, Fri-Sat to 05:00, Sun to 01:00 (Michelin). Standing only. Holiday hours unverified.
 
   - name: Carinito Tacos
     category: taco
+    michelin: listed
     address: Guanajuato 53, Roma Norte, Cuauhtemoc, Ciudad de Mexico
     precision: approximate
     neighborhood: Roma Norte
@@ -785,6 +821,7 @@ places:
 
   - name: Tacos Hola El Guero
     category: taco
+    michelin: listed
     address: Avenida Amsterdam 135, Hipodromo, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Hipodromo
     note: Taco tour backup for stop 2. Guisados since 1968. Michelin lists Mon-Fri 9-21, Sat 9-19, Sun 9-15; Chilango 2024 says 9:30-17:00 Mon-Sat. Holiday hours unverified.
@@ -1156,6 +1193,7 @@ places:
     url: https://www.timeout.com/mexico-city/bars/hotel-casa-awolly
   - name: Vigneron
     category: bar
+    michelin: bib
     address: Jalapa 181, Roma Norte, Mexico City
     precision: approximate
     neighborhood: Roma Norte
@@ -1224,6 +1262,8 @@ places:
   # ---------- Puerto Morelos places, TRAVEL-22, checked 6 November 2026 ----------
   - name: Punta Corcho
     category: fine
+    michelin: listed
+    protein: [seafood]
     address: Avenida Rafael E. Melgar, Puerto Morelos, Quintana Roo, Mexico
     lat: 20.8471974
     lon: -86.8761169
@@ -1241,6 +1281,7 @@ places:
     region: riviera
   - name: Muelle Once
     category: casual
+    protein: [seafood]
     address: Avenida Rafael E. Melgar, Puerto Morelos, Quintana Roo, Mexico
     lat: 20.8478
     lon: -86.8752
@@ -1328,6 +1369,7 @@ places:
     region: riviera
   - name: Blue Morelos
     category: casual
+    protein: [seafood]
     address: Avenida Javier Rojo Gomez, Puerto Morelos, Quintana Roo, Mexico
     lat: 20.8504609
     lon: -86.8750851
@@ -1613,6 +1655,7 @@ places:
   # docs/open-questions.md.
   - name: Meroma
     category: casual
+    michelin: listed
     address: Colima 150, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
     neighborhood: Roma Norte
     note: >
@@ -1852,6 +1895,8 @@ places:
   # thirteen places and published the roster by area. Eleven were new here.
   - name: Campobaja
     category: casual
+    michelin: listed
+    protein: [seafood]
     address: Colima 124, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
     neighborhood: Roma Norte
     note: >
@@ -1864,6 +1909,7 @@ places:
 
   - name: Entremar
     category: casual
+    protein: [seafood]
     address: Hegel 307, Polanco, Miguel Hidalgo, 11560 Ciudad de Mexico
     neighborhood: Polanco
     precision: approximate
@@ -1876,6 +1922,7 @@ places:
 
   - name: Voraz
     category: casual
+    protein: [seafood]
     address: Aguascalientes 93, Roma Sur, Cuauhtemoc, 06760 Ciudad de Mexico
     neighborhood: Roma Sur
     precision: approximate
@@ -1890,6 +1937,8 @@ places:
 
   - name: Ultramarinos de Mar
     category: casual
+    michelin: bib
+    protein: [seafood]
     address: Merida 21, Roma Norte, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Roma Norte
     note: >
@@ -1911,6 +1960,8 @@ places:
 
   - name: Caracol de Mar
     category: casual
+    michelin: bib
+    protein: [seafood]
     address: Campeche 340, Hipodromo, Cuauhtemoc, 06100 Ciudad de Mexico
     neighborhood: Hipodromo
     note: >
@@ -1923,6 +1974,7 @@ places:
 
   - name: Taller de Ostiones
     category: casual
+    protein: [seafood]
     address: Versalles 113, Juarez, Cuauhtemoc, 06600 Ciudad de Mexico
     neighborhood: Juarez
     note: >
@@ -1933,6 +1985,7 @@ places:
 
   - name: Botanico
     category: casual
+    protein: [seafood]
     address: Alfonso Reyes 217, Hipodromo, Cuauhtemoc, 06100 Ciudad de Mexico
     neighborhood: Hipodromo
     note: >
@@ -1943,6 +1996,7 @@ places:
 
   - name: El Tibur
     category: casual
+    protein: [seafood]
     address: Avenida Amsterdam 113, Hipodromo, Cuauhtemoc, 06170 Ciudad de Mexico
     neighborhood: Hipodromo
     note: >
@@ -1955,6 +2009,7 @@ places:
 
   - name: La Bonvi
     category: taco
+    protein: [beef]
     address: Pedregal 33, Lomas de Chapultepec, Miguel Hidalgo, Ciudad de Mexico
     neighborhood: Lomas de Chapultepec
     precision: approximate
@@ -2054,6 +2109,7 @@ places:
   # Dinner and drinks
   - name: Sente
     category: fine
+    protein: [beef]
     address: Avenida Mazatlan 81, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico
     neighborhood: Condesa
     note: >
