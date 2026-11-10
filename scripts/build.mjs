@@ -987,10 +987,13 @@ function buildStays() {
   const r = budget.riviera;
 
   const bullets = (arr) => `<ul>${arr.map((x) => `<li>${nt(x)}</li>`).join('')}</ul>`;
-  const rec = jade.combinations.find((c) => c.recommended);
 
+  // This page is the two places and nothing else. Every figure it used to
+  // carry, the room by room catalogue, the six alternative builds and the
+  // payment schedule, was the working behind a decision that is now made, and
+  // the money all lives on the costs page where one set amount answers it.
   let b = `<header class="masthead">
-  <p class="eyebrow">Two places, and only two. Mexico City booked ${esc(iso(casakm.booked))}.</p>
+  <p class="eyebrow">Two places, and only two</p>
   <h1>Where we are staying</h1>
   <div class="dateline">
     <div><b>Mexico City</b>${esc(shortDate(casakm.checkin))} to ${esc(shortDate(casakm.checkout))}, ${casakm.nights} nights</div>
@@ -998,31 +1001,10 @@ function buildStays() {
   </div>
 </header>
 
-<p class="lede">Casa KM in Mexico City is booked and partly paid. Dreams Jade in Puerto Morelos is quoted in writing and not booked. Nothing else is under consideration, so nothing else is on this page.</p>
-
-${jade.direct_quote ? `<div class="note">
-  <div class="nh">The resort quoted us direct on ${esc(iso(jade.direct_quote.received))}</div>
-  <p>${esc(jade.direct_quote.build)}. Two rooms at ${usd(jade.direct_quote.rooms[0].nightly_usd)} a night for two people and two at ${usd(jade.direct_quote.rooms[1].nightly_usd)} for one, so <strong>${usd(jade.direct_quote.total_usd)} for the four rooms and ${usd(jade.direct_quote.per_person_usd)} each</strong>. Food, drinks, taxes and gratuities are in that rate, and nothing is added at the resort.</p>
-  <p>That is ${usd(jade.direct_quote.versus_booking.direct_saves_usd)} under the Booking.com flexible rate in the table below. ${nt(jade.direct_quote.cancellation)}</p>
-  <p><strong>Payment:</strong> ${nt(jade.direct_quote.payment)}</p>
-  <p><strong>Getting there:</strong> ${nt(jade.direct_quote.transfers)}</p>
-</div>` : ''}
-
-<div class="scroller"><table>
-<caption>Booked whole and split evenly. Per person in bold.</caption>
-<thead><tr><th>Where</th><th>Dates</th><th>Who</th><th class="n">Whole place</th><th class="n">Each</th></tr></thead><tbody>
-<tr class="pick"><td><strong>${esc(casakm.name)}</strong><br><small>${esc(casakm.neighborhood)}, Mexico City &middot; booked</small></td>
-<td>${esc(shortDate(casakm.checkin))} to ${esc(shortDate(casakm.checkout))}<br><small>${casakm.nights} nights</small></td>
-<td>${casakm.guests} guests</td>
-<td class="n"><small>${usd(casakm.total_usd)}</small></td><td class="n"><strong>${usd(casakm.per_person_usd)}</strong></td></tr>
-<tr><td><strong>${esc(jade.name)}</strong><br><small>${esc(rec.label)} &middot; not booked</small></td>
-<td>${esc(shortDate(jade.checkin))} to ${esc(shortDate(jade.checkout))}<br><small>${jade.nights} nights</small></td>
-<td>${jade.adults} adults</td>
-<td class="n"><small>${usd(rec.flexible_usd)}</small></td><td class="n"><strong>${usd(rec.flexible_per_person_usd)}</strong></td></tr>
-</tbody></table></div>
+<p class="lede">Casa KM in Mexico City, booked ${esc(iso(casakm.booked))}. Dreams Jade in Puerto Morelos, quoted direct and not booked yet. What either one costs and when the money moves are on <a href="costs.html">the costs page</a>. This page is the two places.</p>
 
 <h2><span class="num">01</span>${esc(casakm.name)}<span class="tag ok">booked</span></h2>
-<p class="lede">${esc(casakm.subtitle)}. ${esc(casakm.neighborhood)}, Mexico City. <strong>${usd(casakm.per_person_usd)} each</strong>, all in, and partly paid.</p>
+<p class="lede">${esc(casakm.subtitle)}. ${esc(casakm.neighborhood)}, Mexico City.</p>
 
 <p><a class="bigline" href="${esc(casakm.url)}">Open the Airbnb listing</a></p>
 
@@ -1032,7 +1014,6 @@ ${jade.direct_quote ? `<div class="note">
 <tr><th>Nights</th><td>${casakm.nights}</td></tr>
 <tr><th>Guests</th><td>${casakm.guests} of us, and ${casakm.capacity} is the hard maximum</td></tr>
 <tr><th>Layout</th><td>${casakm.bedrooms} bedrooms, ${casakm.beds} beds, ${casakm.baths} bathrooms<br><small>${esc(casakm.baths_note)}</small></td></tr>
-<tr><th>Price</th><td><strong>${usd(casakm.total_usd)}</strong> all in, <strong>${usd(casakm.per_person_usd)} each</strong></td></tr>
 <tr><th>Rated</th><td>${casakm.rating} from ${casakm.reviews} reviews</td></tr>
 <tr><th>Also</th><td>Washer and dryer in unit, ${casakm.wifi_mbps} Mbps wifi, ${esc(casakm.parking)}</td></tr>
 </tbody></table></div>
@@ -1059,41 +1040,6 @@ ${casakm.bed_config.map((x) => `<tr><td>${esc(x.bedroom)}</td><td><strong>${esc(
 <h3>Why this one</h3>
 ${bullets(casakm.why_chosen)}
 
-<div class="note warn">
-  <div class="nh">Cancellation, now that it is committed</div>
-  <p><strong>${esc(casakm.cancellation.actual)}</strong></p>
-  <p>${nt(casakm.cancellation.warning)}</p>
-</div>
-
-<div class="note">
-  <div class="nh">Worth knowing</div>
-  ${bullets(casakm.flags)}
-</div>
-
-<h2><span class="num">02</span>The Mexico City booking itself</h2>
-<p class="lede">Confirmed ${esc(iso(casakm.booked))}. The confirmation code, street address and host phone are deliberately not on this site; they live in the repo's gitignored <code>private/</code> folder.</p>
-
-<div class="scroller"><table>
-<caption>What was actually charged, taxes included.</caption>
-<thead><tr><th>Line</th><th class="n">Amount</th></tr></thead><tbody>
-<tr><td>${esc(casakm.price_breakdown.nightly_usd.toFixed(2))} a night x ${casakm.price_breakdown.nights} nights</td><td class="n">${usd(casakm.price_breakdown.subtotal_usd)}</td></tr>
-<tr><td>Taxes</td><td class="n">${usd(casakm.price_breakdown.taxes_usd)}</td></tr>
-<tr class="sum"><td>Total</td><td class="n"><strong>${usd(casakm.price_breakdown.total_usd)}</strong></td></tr>
-<tr class="pick"><td>Split ${casakm.guests} ways</td><td class="n"><strong>${usd(casakm.per_person_usd)} each</strong></td></tr>
-</tbody></table></div>
-
-<h3>When the money moves</h3>
-<div class="scroller"><table>
-<thead><tr><th>Date</th><th class="n">Amount</th><th>Status</th></tr></thead><tbody>
-${casakm.payment_schedule.map((x) => `<tr><td>${esc(longDate(x.date))}</td><td class="n">${usd(x.amount_usd)}</td><td><span class="tag ${x.status === 'paid' ? 'ok' : 'estimate'}">${esc(x.status)}</span></td></tr>`).join('')}
-</tbody></table></div>
-<p>The second payment lands before the refund cliff, so deposits want collecting ahead of ${esc(longDate(casakm.payment_schedule[1].date))}, not after. Both dates are on <a href="tasks.html">the to do list</a>.</p>
-
-<div class="note warn">
-  <div class="nh">The rate rose before we booked</div>
-  <p>${nt(casakm.rate_rose_before_booking)}</p>
-</div>
-
 <h3>House rules on the confirmation</h3>
 <div class="scroller"><table><tbody>
 <tr><th>Quiet hours</th><td><strong>${esc(casakm.house_rules.quiet_hours)}</strong></td></tr>
@@ -1107,60 +1053,15 @@ ${casakm.payment_schedule.map((x) => `<tr><td>${esc(longDate(x.date))}</td><td c
   <p>The ${esc(casakm.house_rules.quiet_hours)} quiet hours appeared only on the confirmation, not in the listing's rules summary. Midnight on New Year's Eve sits inside that window and the property has exterior cameras, so <a href="nye.html">the New Year's Eve plan</a> is provisional until the host agrees in writing.</p>
 </div>
 
-<h2><span class="num">03</span>${esc(jade.name)}<span class="tag estimate">not booked</span></h2>
-<p class="lede">Puerto Morelos, between Cancun and Playa del Carmen. ${jade.adults} of us, as ${esc(jade.group_shape)}. All-inclusive, scored ${jade.review_score} on ${jade.review_count} reviews. Repriced live on ${esc(iso(jade.repriced))}.</p>
+<div class="note">
+  <div class="nh">Worth knowing</div>
+  ${bullets(casakm.flags)}
+</div>
+
+<h2><span class="num">02</span>${esc(jade.name)}<span class="tag estimate">not booked</span></h2>
+<p class="lede">Puerto Morelos, between Cancun and Playa del Carmen. ${jade.adults} of us, as ${esc(jade.group_shape)}. ${esc(jade.board)} Scored ${jade.review_score} on ${jade.review_count} reviews.</p>
 
 <p><a class="bigline" href="${esc(jade.url)}">Open the listing</a></p>
-
-<div class="note">
-  <div class="nh">Why a resort and not a residence</div>
-  <p>${nt(jade.why_this_property)}</p>
-</div>
-
-<div class="note warn">
-  <div class="nh">Four rooms, four Kings, one category</div>
-  <p><strong>${nt(jade.layout_recommended)}</strong></p>
-  <p>${nt(jade.layout_problem)}</p>
-</div>
-
-<h3>Every way six adults could have slept here, and what each would have cost</h3>
-<p>All ${jade.combinations.length} builds below give each person a bed of their own with nobody on a sofa. They differ on how many rooms we take and how good the view is.</p>
-<div class="scroller"><table>
-<caption>Booking.com prices seen 28 October, ${esc(shortDate(jade.checkin))} to ${esc(shortDate(jade.checkout))}, all-inclusive, 16% VAT added on top. Split ${jade.adults} ways. The build we are taking is cheaper than any figure here: see the quote above.</caption>
-<thead><tr><th>Layout</th><th>Who sleeps where</th><th class="n">Non-refundable</th><th class="n">Each</th><th class="n">Flexible</th><th class="n">Each</th></tr></thead><tbody>
-${jade.combinations.map((c) => `<tr${c.recommended ? ' class="pick"' : ''}><td><strong>${esc(c.label)}</strong><br><small>${c.units} unit${c.units > 1 ? 's' : ''}</small></td>
-<td><small>${esc(c.rooms_detail)}</small><br><small>${nt(c.sleeps)}</small></td>
-<td class="n"><small>${usd(c.nonrefundable_usd)}</small></td><td class="n">${usd(c.nonrefundable_per_person_usd)}</td>
-<td class="n"><small>${usd(c.flexible_usd)}</small></td><td class="n"><strong>${usd(c.flexible_per_person_usd)}</strong></td></tr>`).join('')}
-</tbody></table></div>
-<p><strong>Decided: ${esc(rec.label)}, booked direct, ${usd(rec.direct_per_person_usd ?? rec.flexible_per_person_usd)} each.</strong> ${nt(jade.recommendation_note)}</p>
-
-<div class="note warn">
-  <div class="nh">Never put a single in an ocean front room</div>
-  <p>${nt(jade.single_occupancy_rule.note)}</p>
-</div>
-
-<div class="note warn">
-  <div class="nh">Booking quotes this property before tax</div>
-  <p>${nt(jade.tax_treatment.note)}</p>
-</div>
-
-<div class="note">
-  <div class="nh">Preferred Club, and a pricing quirk worth knowing</div>
-  <p>${nt(jade.preferred_club.what)}</p>
-  <p>${nt(jade.preferred_club.pricing_quirk)}</p>
-</div>
-
-<h3>Every room available on these dates</h3>
-<div class="scroller"><table>
-<caption>Per room for all ${jade.nights} nights, 16% VAT added on top of the price Booking displays. The single column is the one-adult rate for the same room: 80 percent on the four cheapest types and 100 percent on everything above them.</caption>
-<thead><tr><th>Room</th><th>Beds</th><th class="n">Two people</th><th class="n">Flexible</th><th class="n">One person</th></tr></thead><tbody>
-${jade.room_catalogue.map((c) => `<tr><td><strong>${esc(c.name)}</strong><br><small>up to ${c.max_adults} adults</small></td>
-<td><small>${esc(c.beds)}</small></td>
-<td class="n">${usd(c.nonrefundable.all_in_usd)}</td>
-<td class="n"><small>${usd(c.flexible.all_in_usd)}</small></td>
-<td class="n">${c.single_nonrefundable ? usd(c.single_nonrefundable.all_in_usd) + (c.single_discount_percent ? '' : ' <small>(no discount)</small>') : '<small>n/a</small>'}</td></tr>`).join('')}
-</tbody></table></div>
 
 <div class="scroller"><table><tbody>
 <tr><th>Check in</th><td>${esc(longDate(jade.checkin))}, from ${esc(jade.checkin_time)}</td></tr>
@@ -1172,30 +1073,21 @@ ${jade.room_catalogue.map((c) => `<tr><td><strong>${esc(c.name)}</strong><br><sm
 </tbody></table></div>
 
 <div class="note">
-  <div class="nh">Food is in the rate now</div>
-  <p>${nt(r.board_included.note)}</p>
+  <div class="nh">Why a resort and not a residence</div>
+  <p>${nt(jade.why_this_property)}</p>
 </div>
 
 <div class="note">
-  <div class="nh">Four rooms is not a group, and there is a better lever</div>
-  <p>${nt(jade.group_booking)}</p>
-  <p>${nt(jade.hyatt_prive.what)} ${nt(jade.hyatt_prive.caution)}</p>
+  <div class="nh">Four rooms, four Kings, one category</div>
+  <p>${nt(jade.layout_recommended)}</p>
 </div>
 
 <h3>Why 3 January and not earlier</h3>
 <p>${nt(jade.why_jan_3)}</p>
 
-<h3>Ask these on the call</h3>
-${bullets(jade.ask_on_the_call)}
-
-<div class="note warn">
-  <div class="nh">Still open before booking</div>
-  ${bullets(jade.open)}
-</div>
-
 <div class="note">
-  <div class="nh">Deposits</div>
-  <p>Both legs want money before they are held, and ${esc(casakm.name)} stops refunding entirely after 22 December. Collect from everyone first. The full cancellation position is on <a href="costs.html">the costs page</a>, and the booking deadlines are on <a href="tasks.html">the to do list</a>.</p>
+  <div class="nh">Nobody settles with either place directly</div>
+  <p>Both legs sit inside the one set amount everybody pays Ryan, and his card answers every hotel and resort bill on this trip. The derivation, the figure and the dates are on <a href="costs.html">the costs page</a>; the booking deadlines are on <a href="tasks.html">the to do list</a>.</p>
 </div>`;
 
   return shell({ title: 'Where we are staying', current: 'stays.html', body: b });
