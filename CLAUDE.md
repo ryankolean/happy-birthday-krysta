@@ -14,6 +14,18 @@ Do not write a real surname here to illustrate the rule. That is exactly how thi
 
 Published business phone numbers and public listing URLs are fine. Someone's personal mobile is not.
 
+## How the money works
+
+**One card. Ryan's.** He fronts Casa KM, Dreams Jade, Pujol and the lucha libre, and everybody pays him back a single set amount. Nobody settles with a hotel, a resort or a restaurant directly, at any point, for anything. The only thing owed after the trip is each person's share of the Pujol drinks.
+
+**The set amount is $2,346 for the six doing both legs and $304 for the one doing the city only.** It is not an estimate and not a target. It is four real charges divided by the heads on each, and the derivation lives in `data/budget.yml` under `set_amount_back_check`, which the costs page renders. Six at $2,346 plus one at $304 is $14,380 against $14,386.46 of charges, so the whole trip reconciles to $6.46 of rounding.
+
+**A supplier's billing schedule is not this group's arrangement.** Dreams Jade wants one night per room at booking and the balance at check-in. That says when Ryan's card gets hit, not who pays. Every resort, hotel and restaurant on this trip has its own schedule and none of them changes who owes what. Read any sentence about when money moves as a fact about a supplier until it says otherwise explicitly.
+
+**A sentence that contradicts `per_person.both_legs` is a bug.** Do not reason on top of it, do not reconcile it, do not invent a mechanism that makes both true. Find which one is wrong, fix it, and say so. On 10 November 2026 a stale sentence saying each room settles its own balance at the desk was read as the operating model, and an entire $467 shortfall was invented out of it that had never existed. `docs/decisions.md` records that at the top. If a figure here is ever doubted, redo the four lines in `set_amount_back_check` rather than arguing from prose.
+
+**Who has paid is in `private/ledger.md` and never in `data/`.** What everybody owes is identical for everybody and is published. Who is behind is not, and this repo is world readable and permanent.
+
 ## Where things live
 
 `data/*.yml` is the single source of truth. Change a fact there, not in `docs/` and not in a site template.

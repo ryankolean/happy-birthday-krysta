@@ -551,10 +551,17 @@ set_amount_back_check:
     the ground.
   the_model_this_proves: >
     Ryan fronts all four bookings on one card and each of the six pays him
-    2,346. Nothing is settled directly with any venue, hotel or resort by
-    anybody else. Any sentence anywhere in this repo that says otherwise is
-    describing a supplier's billing schedule, not this group's arrangement,
-    and should be read against this block.
+    $2,346. Nobody settles with a hotel, a resort or a restaurant directly,
+    at any point, for anything on this page. If a supplier says a balance is
+    due at check-in, that is their billing schedule and it is Ryan's card that
+    answers it, out of the money already collected. The only thing anybody
+    else owes after the trip is their share of the Pujol drinks.
+  if_this_is_ever_doubted: >
+    Redo the four lines above rather than reasoning from a sentence written
+    somewhere else. This block is the derivation, and anything in this repo
+    that contradicts per_person.both_legs is wrong and should be fixed, not
+    worked around. That mistake has been made once, on 10 November 2026, and
+    docs/decisions.md records how.
 
 per_person:
   both_legs: 2346      # 943 city + 1403 beach, see set_amount_back_check

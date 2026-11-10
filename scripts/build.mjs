@@ -737,6 +737,8 @@ function buildCosts() {
 <tr><td colspan="2"><em>Not added to any total above</em></td><td class="n"><em>${usd(total)}</em></td></tr>
 </tbody></table></div>`;
 
+  const bc = budget.set_amount_back_check;
+
   let b = `<header class="masthead">
   <p class="eyebrow">What you owe Ryan, per person</p>
   <h1>What it costs you</h1>
@@ -752,6 +754,27 @@ function buildCosts() {
 <div class="note warn">
   <div class="nh">Estimates are not in any total on this page</div>
   <p>${nt(budget.estimates_note)}</p>
+</div>
+
+<h2>Where ${esc(usd(budget.per_person.both_legs))} comes from</h2>
+<p class="lede">${nt(bc.method)}</p>
+<div class="scroller"><table>
+<caption>Checked ${esc(longDate(bc.checked))}. Every total is a charge on Ryan's card.</caption>
+<thead><tr><th>What</th><th class="n">Whole charge</th><th class="n">Split</th><th class="n">Each</th></tr></thead>
+<tbody>${bc.lines.map((l) => `<tr><td>${esc(l.what)}</td><td class="n"><small>${usd(l.total_usd)}</small></td><td class="n">${l.heads}</td><td class="n">${usd(l.per_person_usd)}</td></tr>`).join('')}
+<tr class="sum"><td>Charged to Ryan in total</td><td class="n">${usd(bc.charges_total_usd)}</td><td class="n"></td><td class="n">${usd(bc.sum_of_shares_usd)}</td></tr>
+<tr class="pick"><td colspan="3"><strong>Carried on this page as</strong><br><small>${nt(bc.rounding_note)}</small></td><td class="n"><strong>${usd(bc.carried_as)}</strong></td></tr>
+</tbody></table></div>
+
+<div class="note">
+  <div class="nh">It reconciles</div>
+  <p>${nt(bc.reconciles)}</p>
+  <p>Not in it: ${nt(bc.what_is_not_in_it)}</p>
+</div>
+
+<div class="note warn">
+  <div class="nh">Nobody settles with a hotel or a venue directly</div>
+  <p>${nt(bc.the_model_this_proves)}</p>
 </div>
 
 <h2>Flights</h2>
