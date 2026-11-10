@@ -306,6 +306,40 @@ riviera:
       thing somebody will ask about, and the answer should be that it was
       considered and declined rather than missed.
 
+  # What prepaying does to the check-in desk. Added 10 November 2026, when
+  # the first person settled both legs in advance.
+  desk_settlement_caveat:
+    the_problem: >
+      Two rules were agreed separately and they do not quite fit together.
+      The first is the even split: six people, $8,420, $1,403 each. The second
+      is how the resort gets paid: Ryan fronts one night per room and each
+      room settles its own balance at the desk. Each rule is fine. Together
+      they only work if everybody pays at the desk, because a room is billed
+      what the room costs and not what its occupant owes under the split.
+    the_numbers: >
+      A single's room is $1,870 for the five nights. Under the even split that
+      traveller owes $1,403. The $467 difference is the subsidy the four
+      coupled travellers were always putting in, described in split_question
+      above as $933 across the two singles.
+      While everybody paid their own desk balance that $467 was a settle-up
+      after the trip and nobody had to fund it in advance. Once a single pays
+      Ryan the $1,403 instead, Ryan is the one standing at the desk: $374 of
+      that money has already gone on the deposit, so he holds $1,029 against a
+      $1,496 balance and is $467 short on that room on the day.
+    what_it_does_not_mean: >
+      Nobody underpaid and nothing is missing. The $467 is inside what the
+      coupled travellers owe anyway, and half of it is the hosts' own share.
+      This is a cash position on one morning, not a new cost, and the trip
+      total does not move.
+    what_to_do: >
+      Ryan presents the card for any room whose occupant has already settled,
+      and tells them beforehand so they do not hand over a card for a room
+      they have paid for. Have enough collected by 3 January to cover $467 for
+      each single who has prepaid, or fund it and collect after.
+      It doubles to $934 if the second single also prepays. A couple prepaying
+      helps instead of hurting, because a couple's room costs less per head
+      than the even split charges them.
+
   # Every arrangement in which all six get a bed of their own and nobody is on
   # a sofa. Mirrors combinations in data/lodging.yml.
   # PRICES BELOW ARE BOOKING.COM, 28 OCTOBER, AND ARE NOW REFERENCE ONLY.
@@ -549,6 +583,14 @@ split_mechanism:
   - Flights never go through this. Book your own and pay for your own.
   - Pujol goes on Ryan's card on the day. Food is the figure on this page, drinks and tip are settled after.
   - Note who fronts which booking and how they are repaid
+  - >
+    Anyone who settles with Ryan in advance is done, and must not be billed
+    again at the Dreams Jade desk. Ryan pays that room, and covers the $467
+    gap between what the even split charged them and what their room costs.
+  - >
+    Who has paid and who has not is tracked privately rather than on this
+    site. What everybody owes is the same for everybody and is published here;
+    who is behind is nobody else's business.
   - Splitwise or similar, agreed up front
 
 non_refundable_exposure:
@@ -589,6 +631,16 @@ non_refundable_exposure:
       full-prepayment exception does not cover a 3 January arrival. So Ryan
       fronts $1,684 and each couple and each single settles its own room at
       the desk. Nobody has to be collected from before the trip.
+      That last sentence assumed nobody would pay early, and on 10 November
+      one of the two single travellers settled both legs with Ryan in full.
+      It does not change what anybody owes and it does not change the terms
+      above, but it does change who puts a card down on 3 January: a traveller
+      who has already paid must not be billed again at the desk, so Ryan
+      settles that room, and needs $467 of other people's money in hand that
+      morning to do it. That $467 is not a shortfall: a single's room costs
+      $1,870 and the even split charges them $1,403, so it is the subsidy the
+      coupled travellers were always putting in, arriving as cash a week early
+      instead of as a settle-up afterwards.
       There is no price protection after booking. A later rate drop will not
       be honoured on a confirmed reservation, and the only route to it is
       cancelling and rebooking: free until 30 December, one night after.

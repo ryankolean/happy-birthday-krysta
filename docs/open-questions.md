@@ -25,6 +25,13 @@ Unpriced. If anyone is flying from Los Angeles that is a separate search, and LA
 ### Whether the one traveller leaving early takes a connection home
 The MEX to DTW nonstop is $1,893 and connections that day run $774 to $956. **Saving:** about $1,040. This was two people until 12 October; now it is one. They have not been asked.
 
+### What the deposit figure actually is
+`data/tasks.yml` has carried "Collect a deposit from everyone" since it was written and has never had a number in it. The real deadline is **14 December**, when Casa KM takes **$2,251.42** off Ryan's card automatically. That is the only date before the trip where the money has to exist, and it is five weeks out.
+
+One of the two single travellers answered the question by ignoring it and paying **both legs in full on 10 November**, which is $2,346 against a deposit nobody had sized. Four groups still to go. Who has settled is in `private/ledger.md` rather than here, because `data/travelers.yml` already says who is paying for what lives in `private/`.
+
+Two things to decide. **How much**, where the honest floor is each person's share of the 14 December charge and the ceiling is the full $2,346. And **whether to tell the group** that somebody has already paid everything, which is the most effective thing that could be said to move the other four and also the thing most likely to read as pressure.
+
 ## Logistics
 
 ### Firm yes or no from all 7
