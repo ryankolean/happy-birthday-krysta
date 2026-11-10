@@ -1210,6 +1210,7 @@ function buildMap(region = 'cdmx') {
       lon: p.lon,
       hood: esc(p.neighborhood || ''),
       note: nt(p.note || ''),
+      artists: nt(p.artists || ''),
       booking: nt(p.booking || ''),
       url: encodeURI(p.url || ''),
       approx: p.precision === 'approximate',
@@ -1270,7 +1271,7 @@ function buildMap(region = 'cdmx') {
           : p.walkMin
             ? `${p.walkMin} min walk`
             : `${(Math.round(p.km * 10) / 10).toFixed(1)} km`;
-      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.starred ? ' <span aria-label="starred">&#9733;</span>' : ''}${p.url ? `<br><a href="${esc(p.url)}">listing</a>` : ''}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${nt(p.note || '')}${p.booking ? `<br><small>${nt(p.booking)}</small>` : ''}</td></tr>`;
+      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.starred ? ' <span aria-label="starred">&#9733;</span>' : ''}${p.url ? `<br><a href="${esc(p.url)}">listing</a>` : ''}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${nt(p.note || '')}${p.artists ? `<br><br>${nt(p.artists)}` : ''}${p.booking ? `<br><small>${nt(p.booking)}</small>` : ''}</td></tr>`;
     }
     lists += `</tbody></table></div>`;
   }
@@ -1399,6 +1400,7 @@ ${lists}
         (p.walk ? p.walk + ' min walk' : p.km + ' km') + ' from ' + DATA.base + '</span>';
     }
     if (p.note) html += '<br><br>' + p.note;
+    if (p.artists) html += '<br><br>' + p.artists;
     if (p.booking) html += '<br><br><em>' + p.booking + '</em>';
     if (p.url) html += '<br><br><a href="' + p.url + '" target="_blank" rel="noopener">Open listing</a>';
     marker.bindPopup(html, { maxWidth: 260 });
