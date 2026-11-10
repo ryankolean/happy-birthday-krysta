@@ -738,5 +738,10 @@
     "lat": 19.4218002,
     "lon": -99.1881929,
     "matched": "1a. Sección del Bosque de Chapultepec, Polanco, Mexico City, Miguel Hidalgo, Mexico City, 11100, Mexico"
+  },
+  "Orizaba 83, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4200285,
+    "lon": -99.1604264,
+    "matched": "83, Calle Orizaba, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
   }
 }

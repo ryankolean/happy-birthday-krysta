@@ -1559,7 +1559,7 @@ function buildMap(region = 'cdmx') {
 
 <div class="legend-row">${legend}</div>
 ${badgeKey}
-<p class="caveat">A Michelin badge only appears where this plan actually looked it up. No badge means nobody checked, not that the guide passed the place over, and the same goes for the protein discs: they mark the places whose notes already say what the order is.</p>
+<p class="caveat">Michelin badges come from the guide's own Mexico selection, read on 10 November 2026: every restaurant it lists in the Mexico City boroughs and in Puerto Morelos. A place here with no badge is not in the guide. The protein discs are not a sweep like that, and mark the places whose notes already say what the order is.</p>
 <div id="map" role="application" aria-label="Map of trip locations"></div>
 <p class="caveat" id="faraway"></p>
 ${region === 'cdmx' ? `<p class="caveat">Map data from OpenStreetMap. ${esc(stay ? stay.name : 'The house')} is not booked yet, and Airbnb only shows an approximate area until it is, so the house pin is their published circle rather than a street address. The exact address deliberately stays out of this repo.</p>

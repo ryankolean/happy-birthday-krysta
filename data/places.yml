@@ -8,11 +8,21 @@
 # precision: exact | approximate   (approximate draws a hollow marker)
 #
 # michelin: 1 | 2 | 3 | bib | listed
-#   What the Michelin guide says about the place, and only where this repo
-#   actually researched it. A number is stars and draws that many stars on the
-#   pin. `bib` is a Bib Gourmand and `listed` means in the guide without either,
-#   both of which show up in the popup and the table but not on the pin. No key
-#   means nobody checked, which is not the same as no star, and the map says so.
+#   What the Michelin guide itself says, read off guide.michelin.com, not what
+#   a restaurant or a reel claims about itself. A number is stars and draws
+#   that many stars on the pin. `bib` is a Bib Gourmand and `listed` means in
+#   the guide without either, both of which show in the popup and the table but
+#   not on the pin.
+#
+#   Checked against the guide's whole Mexico selection on 10 November 2026,
+#   every entry it lists in the Mexico City boroughs and in Puerto Morelos, so
+#   no key now means the guide does not list the place. Redo it the same way
+#   rather than from a news story: the per distinction lists at
+#   /en/mx/restaurants/1-star-michelin, /2-stars-michelin and /bib-gourmand are
+#   complete and short, while the unfiltered list pages shuffle between
+#   requests and need fetching several times over to cover everything.
+#   Distinctions move every year. El Califa de Leon had a star in 2024 and does
+#   not now.
 #
 # protein: [seafood, beef, pork, chicken]
 #   What the kitchen is known for, not everything it serves. One badge per
@@ -114,6 +124,7 @@ places:
 
   - name: Sud 777
     category: fine
+    michelin: 1
     address: Boulevard de la Luz 777, Jardines del Pedregal, Mexico City
     neighborhood: Jardines del Pedregal
     note: Twelve courses at MX$1,850. 35 to 45 minutes south, which is why it loses.
@@ -127,6 +138,7 @@ places:
 
   - name: Contramar
     category: fine
+    michelin: bib
     protein: [seafood]
     address: Durango 200, Roma Norte, Mexico City
     neighborhood: Roma Norte
@@ -304,6 +316,7 @@ places:
 
   - name: Esquina Comun
     category: fine
+    michelin: 1
     address: Fernando Montes de Oca 86, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico
     neighborhood: Condesa
     source: instagram @thatonepointofview
@@ -363,6 +376,7 @@ places:
 
   - name: Maizajo
     category: casual
+    michelin: listed
     address: Fernando Montes de Oca 113, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico
     note: >
       Nixtamal and tortilla specialists. Get the flan, which is the one thing
@@ -431,6 +445,7 @@ places:
 
   - name: Expendio de Maiz
     category: casual
+    michelin: 1
     address: Expendio de Maiz Sin Nombre, Yucatan 84, Roma Norte, Ciudad de Mexico
     neighborhood: Roma Norte
     starred: true
@@ -600,6 +615,7 @@ places:
   # Tacos and street food
   - name: Tacos del Valle
     category: taco
+    michelin: bib
     protein: [pork]
     address: Tacos del Valle, Ciudad de Mexico
     note: >
@@ -617,20 +633,22 @@ places:
 
   - name: Tacos La Once Mil
     category: taco
+    michelin: 1
     protein: [beef]
-    lat: 19.4199507
-    lon: -99.160306
-    address: Tacos La Once Mil, Roma Norte, Ciudad de Mexico
+    address: Orizaba 83, Roma Norte, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Roma Norte
     note: >
       Rated 10/10. Wood-fired Wagyu, filet mignon and Prime skirt, tortillas
-      made to order, spicy tuna tostada. Pricier than a normal taqueria. Billed
-      as the only Michelin-starred taqueria in Mexico. The wagyu taco is the one
-      to order and the picanha off the trompo is skippable.
-      This is also the place a friend in the city described only as "the taco
-      spot next to Rosetta", which is worth recording because this entry has
-      no street number: the pin came from a name lookup. Rosetta is Colima
-      166, so that is the block.
+      made to order, spicy tuna tostada. Pricier than a normal taqueria. The
+      wagyu taco is the one to order and the picanha off the trompo is
+      skippable.
+      It won one Michelin star in the 2026 guide, the star El Califa de Leon
+      lost, and it is the only taqueria in the country holding one. Read the
+      badge on this pin with one caveat: there are two branches, and the guide
+      lists the Lomas de Chapultepec one at Monte Everest 780. This pin is the
+      Roma Norte branch at Orizaba 83, same taqueria and same kitchen, and it
+      is the one a friend in the city meant by "the taco spot next to Rosetta".
+      The pin used to sit on a name lookup with no street number at all.
     source: instagram @placesnoted, @thecaroandtina, friend in Mexico City, November 2026
 
   - name: Tacos Atarantados
@@ -652,6 +670,7 @@ places:
 
   - name: Tacos Los Alexis
     category: taco
+    michelin: bib
     lat: 19.4132919
     lon: -99.1569371
     address: Tacos Los Alexis, Ciudad de Mexico
@@ -660,6 +679,7 @@ places:
 
   - name: La Ochenta y Nueve
     category: taco
+    michelin: bib
     protein: [beef]
     address: Colima 134, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
     note: >
@@ -680,18 +700,22 @@ places:
 
   - name: El Califa de Leon
     category: taco
-    michelin: 1
+    michelin: listed
     protein: [beef]
     address: Ribera de San Cosme 56, San Rafael, Cuauhtemoc, Ciudad de Mexico
     neighborhood: San Rafael
     note: >
-      The one-Michelin-star taco stand. Four tacos on the menu, cash only,
+      It held the first Michelin star ever given to a taqueria, and the 2026
+      guide took it back: the guide still lists the place, at Avenida Ribera de
+      San Cosme 56, but without a star, and the star it lost went to La Once
+      Mil. Four tacos on the menu, cash only,
       tiny. Of the four, the rib steak is the one a poster who ate all of them
       picked.
     source: instagram @thatonepointofview, @itsalanbarr, @cdmxtacos2026
 
   - name: Los Cocuyos
     category: taco
+    michelin: bib
     protein: [beef]
     address: Bolivar 56, Centro, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Centro
@@ -1204,6 +1228,7 @@ places:
     url: https://guide.michelin.com/en/ciudad-de-mexico/cuauhtemoc_1995126/restaurant/vigneron
   - name: Hugo el Wine Bar
     category: bar
+    michelin: listed
     address: Avenida Veracruz 38, Roma Norte, Mexico City
     lat: 19.4186475
     lon: -99.1751724
@@ -1262,14 +1287,14 @@ places:
   # ---------- Puerto Morelos places, TRAVEL-22, checked 6 November 2026 ----------
   - name: Punta Corcho
     category: fine
-    michelin: listed
+    michelin: bib
     protein: [seafood]
     address: Avenida Rafael E. Melgar, Puerto Morelos, Quintana Roo, Mexico
     lat: 20.8471974
     lon: -86.8761169
     neighborhood: Puerto Morelos centro
     note: >-
-      8 min taxi (about 3 km, estimate) from the resort. Michelin-listed seafood, second floor,
+      8 min taxi (about 3 km, estimate) from the resort. A Michelin Bib Gourmand, seafood, second floor,
       open-air, ocean breeze. Daily 1 pm to 11 pm per its own site and Michelin. Price tier $$
       (Michelin); roughly MX$600 to 900 (US$32 to 48) per person with a drink is an unverified
       estimate. Jan 1 and Jan 6 closure not stated (unverified). Fits 6 but its own site says "No
@@ -1909,6 +1934,7 @@ places:
 
   - name: Entremar
     category: casual
+    michelin: listed
     protein: [seafood]
     address: Hegel 307, Polanco, Miguel Hidalgo, 11560 Ciudad de Mexico
     neighborhood: Polanco
@@ -1985,6 +2011,7 @@ places:
 
   - name: Botanico
     category: casual
+    michelin: listed
     protein: [seafood]
     address: Alfonso Reyes 217, Hipodromo, Cuauhtemoc, 06100 Ciudad de Mexico
     neighborhood: Hipodromo
