@@ -1517,6 +1517,51 @@ places:
     url: https://escapetomexico.com/atractivos/cenote-siete-bocas-a-subterranean-network-of-cenotes
     region: riviera
 
+  # ---------- tattoo shops in the village, checked 10 November 2026 ----------
+  # Krysta and Ryan want the option of getting something on Thursday 7 January,
+  # the last full day. Only the two shops with a real review history are here.
+  # Four others exist in town (Tattoo House by Pekas, Mermaid Tattoo, A Gogo,
+  # Jazmink MTL, which shares MTL's address) and all have fewer than ten
+  # reviews, so they are leads rather than options. Cancun has much bigger
+  # shops, Moon Ink at 1,325 reviews and Tattoo Shop Company at 536, but that
+  # is a 30 to 40 minute drive each way and the two below are in the village.
+  - name: MTL Tattoo Caribe
+    category: spot
+    address: Calle Adolfo Lopez Mateos, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8506341
+    lon: -86.875398
+    neighborhood: Puerto Morelos centro
+    note: >-
+      5.0 from 115 Google reviews, the most reviewed shop in the village. Thursday
+      11 am to 7 pm, so open for all of 7 January. Several artists rather than one
+      chair, which is what makes two tattoos in one afternoon plausible: reviewers
+      name Lolo, who speaks good English and advises on sizing and placement, and
+      Mar de Fondo for colour and likeness work. Reviews repeat clean line work,
+      a clean studio and fair prices. Phone +52 998 871 0048. Nothing is booked
+      and no design exists yet, so price and chair time are both unverified.
+    booking: >-
+      Message on Instagram or phone ahead. 7 January is peak season and a two
+      person booking should not be walked in cold.
+    url: https://www.instagram.com/mtltattoocaribe/
+    region: riviera
+  - name: Tattoo Shack
+    category: spot
+    address: Avenida Javier Rojo Gomez, Puerto Morelos, Quintana Roo, Mexico
+    lat: 20.8460776
+    lon: -86.8783723
+    neighborhood: Puerto Morelos centro
+    note: >-
+      5.0 from 71 Google reviews, on the main village street. Thursday noon to
+      9 pm. One artist, who goes by Stinky, with repeat visitors who come back
+      every trip; the work shown is mostly black and grey, with some colour.
+      Reviewers describe walking in and being in the chair 45 minutes later, and
+      one says outright to make an appointment because the shop is getting busy.
+      A single chair means two people is two sittings, not two at once. Phone
+      +52 998 844 0823.
+    booking: Message @one_stinky on Instagram ahead of 7 January
+    url: https://www.instagram.com/one_stinky
+    region: riviera
+
   # ---------- a friend's list from Mexico City, 8 November 2026 ----------
   # Sent by a friend who is in the city now and exploring on our behalf.
   # First-hand recommendations rather than reels or listicles, which makes
