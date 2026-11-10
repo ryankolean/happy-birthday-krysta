@@ -382,6 +382,18 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
   border: 1px solid var(--rule-firm); border-radius: 2px; padding: 2px 6px;
 }
 .ptag .pinbadge { box-shadow: none; }
+
+/* Where to look a place up. One row of labelled links, in a popup and in the
+   table, so a pin always offers somewhere to go rather than a dead end. */
+.plinks { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0 0; }
+.plink {
+  font-family: var(--f-mono); font-size: 10.5px; font-weight: 500;
+  letter-spacing: 0.03em; line-height: 1.5;
+  color: var(--teal); text-decoration: none;
+  border: 1px solid var(--rule-firm); border-radius: 2px; padding: 2px 7px;
+  white-space: nowrap;
+}
+.plink:hover { border-color: var(--teal); }
 .ptag .pinbadge--prot { box-shadow: inset 0 0 0 1px var(--rule-firm); }
 .ptag--mich { color: var(--michelin-ink); border-color: var(--michelin-ink); background: transparent; }
 .legend-row--key { gap: 13px; margin-block: 0 16px; align-items: center; }

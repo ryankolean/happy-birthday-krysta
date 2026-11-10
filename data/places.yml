@@ -7,6 +7,15 @@
 # category must be one of the keys in `categories` below.
 # precision: exact | approximate   (approximate draws a hollow marker)
 #
+# url, links:
+#   Where to look the place up. `url` is the main one and `links` is a list of
+#   any others: their own site, their Instagram, wherever they take bookings,
+#   or the write up an entry came from. The label under each link on the map is
+#   worked out from the host, so nothing needs naming here. Every pin also gets
+#   a generated Google Maps search whether or not either key is set, so no pin
+#   is ever a dead end; the stay pin is the one exception, because a map search
+#   on its address would undo the point of a deliberately vague pin.
+#
 # michelin: 1 | 2 | 3 | bib | listed
 #   What the Michelin guide itself says, read off guide.michelin.com, not what
 #   a restaurant or a reel claims about itself. A number is stars and draws
@@ -70,6 +79,7 @@ places:
   # ---------- fine dining ----------
   - name: Pujol
     category: fine
+    url: https://pujol.com.mx/
     michelin: 2
     address: Tennyson 133, Polanco, Mexico City
     neighborhood: Polanco
@@ -86,6 +96,9 @@ places:
 
   - name: Quintonil
     category: fine
+    url: https://quintonil.com/
+    links:
+      - https://www.exploretock.com/quintonil
     michelin: 2
     address: Quintonil, Isaac Newton, Polanco, Ciudad de Mexico
     neighborhood: Polanco
@@ -94,6 +107,7 @@ places:
 
   - name: Rosetta
     category: fine
+    url: https://rosetta.com.mx/
     michelin: 1
     address: Colima 166, Roma Norte, Mexico City
     neighborhood: Roma Norte
@@ -138,6 +152,7 @@ places:
 
   - name: Contramar
     category: fine
+    url: https://contramar.com.mx/
     michelin: bib
     protein: [seafood]
     address: Durango 200, Roma Norte, Mexico City
@@ -179,6 +194,7 @@ places:
 
   - name: Madereros
     category: market
+    url: https://madereros.mx/
     address: Calle General Antonio Leon 72, San Miguel Chapultepec, Mexico City
     neighborhood: San Miguel Chapultepec
     note: New Year's Eve pickup, MX$900 each. Order by 29 December. Instagram @madereros.mx.
@@ -262,6 +278,7 @@ places:
 
   - name: Museo Nacional de Antropologia
     category: spot
+    url: https://mna.inah.gob.mx/
     address: Museo Nacional de Antropologia, Ciudad de Mexico
     neighborhood: Chapultepec
     note: >
@@ -348,6 +365,7 @@ places:
 
   - name: San Angel Inn
     category: fine
+    url: https://www.sanangelinn.com/
     address: San Angel Inn, Diego Rivera 50, San Angel, Ciudad de Mexico
     neighborhood: San Angel
     note: No Michelin star yet, but named as deserving one.
@@ -491,6 +509,7 @@ places:
 
   - name: Pasteleria Ideal
     category: casual
+    url: https://www.pasteleriaideal.com.mx/
     address: 16 de Septiembre 18, Centro, Cuauhtemoc, 06000 Ciudad de Mexico
     neighborhood: Centro
     note: >
@@ -535,6 +554,7 @@ places:
 
   - name: Odette
     category: casual
+    url: https://odette.com.mx/
     address: Plaza Popocatepetl 35, Hipodromo Condesa, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Condesa
     note: >
@@ -605,6 +625,7 @@ places:
 
   - name: Myka
     category: casual
+    url: https://myka.uffunmenu.com/
     address: Avenida Amsterdam 264, Condesa, Cuauhtemoc, 06100 Ciudad de Mexico
     neighborhood: Condesa
     note: >
@@ -689,6 +710,7 @@ places:
 
   - name: Taqueria Orinoco
     category: taco
+    url: https://taqueriaorinoco.com/
     protein: [pork]
     address: Taqueria Orinoco, Roma Norte, Ciudad de Mexico
     neighborhood: Roma Norte
@@ -735,6 +757,9 @@ places:
   # Bars
   - name: Hanky Panky
     category: bar
+    url: https://www.hankypanky.mx/
+    links:
+      - https://www.facebook.com/HankyPankyDF
     address: Turin 52, Juarez, Ciudad de Mexico
     neighborhood: Juarez
     note: Speakeasy, entrance through an unmarked door. Reservations needed.
@@ -1782,6 +1807,7 @@ places:
     source: friend in Mexico City, November 2026
   - name: La Rifa Chocolateria
     category: casual
+    url: https://www.facebook.com/larifachocolateria
     address: Dinamarca 47, Juarez, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Juarez
     note: >
@@ -1823,6 +1849,7 @@ places:
     source: friend in Mexico City, November 2026
   - name: Quentin Cafe
     category: casual
+    url: https://quentin.mx/
     address: Avenida Alvaro Obregon 64, Roma Norte, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Roma Norte
     note: >
@@ -1896,6 +1923,7 @@ places:
     source: friend in Mexico City, November 2026
   - name: Constela Cafe
     category: casual
+    url: https://constelacafe.com/
     address: Colima 209, Roma Norte, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Roma Norte
     note: >
@@ -1934,6 +1962,7 @@ places:
 
   - name: Entremar
     category: casual
+    url: https://entremar.com/
     michelin: listed
     protein: [seafood]
     address: Hegel 307, Polanco, Miguel Hidalgo, 11560 Ciudad de Mexico
@@ -1986,6 +2015,7 @@ places:
 
   - name: Caracol de Mar
     category: casual
+    url: https://caracoldemar.com.mx/
     michelin: bib
     protein: [seafood]
     address: Campeche 340, Hipodromo, Cuauhtemoc, 06100 Ciudad de Mexico
@@ -2087,6 +2117,7 @@ places:
 
   - name: Cafe Nin
     category: casual
+    url: https://www.instagram.com/cafe_nin/
     address: Havre 73, Juarez, Cuauhtemoc, 06600 Ciudad de Mexico
     neighborhood: Juarez
     note: >

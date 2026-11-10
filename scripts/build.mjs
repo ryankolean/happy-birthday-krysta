@@ -540,6 +540,18 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
   border: 1px solid var(--rule-firm); border-radius: 2px; padding: 2px 6px;
 }
 .ptag .pinbadge { box-shadow: none; }
+
+/* Where to look a place up. One row of labelled links, in a popup and in the
+   table, so a pin always offers somewhere to go rather than a dead end. */
+.plinks { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0 0; }
+.plink {
+  font-family: var(--f-mono); font-size: 10.5px; font-weight: 500;
+  letter-spacing: 0.03em; line-height: 1.5;
+  color: var(--teal); text-decoration: none;
+  border: 1px solid var(--rule-firm); border-radius: 2px; padding: 2px 7px;
+  white-space: nowrap;
+}
+.plink:hover { border-color: var(--teal); }
 .ptag .pinbadge--prot { box-shadow: inset 0 0 0 1px var(--rule-firm); }
 .ptag--mich { color: var(--michelin-ink); border-color: var(--michelin-ink); background: transparent; }
 .legend-row--key { gap: 13px; margin-block: 0 16px; align-items: center; }
@@ -1263,6 +1275,97 @@ const protBadgeHtml = (k) =>
   `<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">` +
   `${glyphHtml(PROTEIN[k].parts, 'currentColor', 'var(--paper)', 12, 12, 0.72)}</svg></span>`;
 
+// Every place should carry at least one way to look it up: its own site, its
+// Instagram, wherever it takes bookings, or failing those the write up the
+// entry came from. `url` is the main one and `links` is a plain list of extra
+// URLs, because a label that can be derived from the host is a label nobody
+// has to type or keep consistent.
+const LINK_LABELS = [
+  [/(^|\.)instagram\.com$/, 'Instagram'],
+  [/(^|\.)facebook\.com$/, 'Facebook'],
+  [/(^|\.)tiktok\.com$/, 'TikTok'],
+  [/(^|\.)(x|twitter)\.com$/, 'X'],
+  [/(^|\.)youtube\.com$/, 'YouTube'],
+  [/(^|\.)opentable\.(com|com\.mx|mx)$/, 'OpenTable'],
+  [/(^|\.)resy\.com$/, 'Resy'],
+  [/(^|\.)exploretock\.com$/, 'Tock'],
+  [/(^|\.)mesa247\.mx$/, 'Mesa 247'],
+  [/(^|\.)bookenda\.com$/, 'Bookenda'],
+  [/(^|\.)sevenrooms\.com$/, 'SevenRooms'],
+  [/(^|\.)airbnb\.com$/, 'Airbnb'],
+  [/(^|\.)booking\.com$/, 'Booking.com'],
+  [/(^|\.)wa\.me$/, 'WhatsApp'],
+  [/(^|\.)whatsapp\.com$/, 'WhatsApp'],
+  [/(^|\.)linktr\.ee$/, 'Link tree'],
+  [/(^|\.)guide\.michelin\.com$/, 'Michelin guide'],
+  [/(^|\.)(google\.[a-z.]+|maps\.google\.[a-z.]+|goo\.gl|g\.page|maps\.app\.goo\.gl)$/, 'Google Maps'],
+  [/(^|\.)tripadvisor\.[a-z.]+$/, 'Tripadvisor'],
+  [/(^|\.)yelp\.com$/, 'Yelp'],
+  [/(^|\.)chilango\.com$/, 'Chilango'],
+  [/(^|\.)timeout(mexico)?\.[a-z.]+$/, 'Time Out'],
+  [/(^|\.)theinfatuation\.com$/, 'The Infatuation'],
+  [/(^|\.)atlasobscura\.com$/, 'Atlas Obscura'],
+  [/(^|\.)frommers\.com$/, "Frommer's"],
+  [/(^|\.)fodors\.com$/, "Fodor's"],
+  [/(^|\.)inah\.gob\.mx$/, 'INAH'],
+  [/\.gob\.mx$/, 'Official page'],
+];
+
+const hostOf = (u) => {
+  try {
+    return new URL(u).hostname.replace(/^www\./, '');
+  } catch {
+    return 'Link';
+  }
+};
+
+const linkLabel = (u) => {
+  const host = hostOf(u);
+  if (host === 'Link') return 'Link';
+  for (const [re, label] of LINK_LABELS) if (re.test(host)) return label;
+  // Anything else is treated as the place's own site, which is what it almost
+  // always is. The host is printed when it plainly is not, so a link to a
+  // listicle never pretends to be an official page.
+  const bare = host.replace(/\.(com|mx|org|net|bar|mx\.com)(\.[a-z]{2})?$/, '');
+  return bare.includes('.') ? host : 'Website';
+};
+
+// The one link that can always be generated rather than researched. It is a
+// search, not a claim about a listing id, so it cannot rot the way a copied
+// place URL does, and what it lands on carries the phone, the hours and
+// whatever website the business itself has registered. Skipped only on the
+// stay pin, which is deliberately the middle of a neighbourhood: pointing a
+// map search at it would undo the whole reason it is vague. Everywhere else
+// an approximate pin just means the street number did not geocode, and a
+// search on the name is exactly what fixes that.
+const mapsSearch = (p) =>
+  p.category === 'stay' && p.precision === 'approximate'
+    ? null
+    : 'https://www.google.com/maps/search/?api=1&query=' +
+      encodeURIComponent([p.name, p.address].filter(Boolean).join(', '));
+
+// encodeURI on a string that already carries percent escapes turns %2C into
+// %252C and breaks the link. The generated map search is encoded at the point
+// it is built, so only a hand written URL gets encoded here.
+const safeUrl = (u) => (/%[0-9A-Fa-f]{2}/.test(u) ? u : encodeURI(u));
+
+const linkList = (p) => {
+  const all = [p.url, ...(Array.isArray(p.links) ? p.links : p.links ? [p.links] : []), mapsSearch(p)]
+    .filter(Boolean)
+    .filter((u, i, a) => a.indexOf(u) === i);
+  if (!all.length) return '';
+  // Two links that both land on an unrecognised host would otherwise both read
+  // Website, which tells you nothing about which is which. When that happens
+  // the host is printed instead.
+  const labels = all.map(linkLabel);
+  const shown = labels.map((l, i) =>
+    labels.filter((x) => x === l).length > 1 ? hostOf(all[i]) : l
+  );
+  return `<div class="plinks">${all
+    .map((u, i) => `<a class="plink" href="${esc(safeUrl(u))}">${esc(shown[i])}</a>`)
+    .join('')}</div>`;
+};
+
 const michWords = (m) =>
   typeof m === 'number'
     ? `${['', 'One', 'Two', 'Three'][m]} Michelin star${m > 1 ? 's' : ''}`
@@ -1360,6 +1463,7 @@ function buildMap(region = 'cdmx') {
       artists: artistList(p.artists),
       booking: nt(p.booking || ''),
       tags: tagsHtml(p),
+      links: linkList(p),
       mich: p.michelin == null ? null : p.michelin,
       prot: proteinList(p),
       url: encodeURI(p.url || ''),
@@ -1432,7 +1536,7 @@ function buildMap(region = 'cdmx') {
           : p.walkMin
             ? `${p.walkMin} min walk`
             : `${(Math.round(p.km * 10) / 10).toFixed(1)} km`;
-      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.starred ? ' <span aria-label="starred">&#9733;</span>' : ''}${p.url ? `<br><a href="${esc(p.url)}">listing</a>` : ''}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${tagsHtml(p)}${nt(p.note || '')}${p.artists_note ? `<br><br>${nt(p.artists_note)}` : ''}${artistList(p.artists)}${p.booking ? `<br><small>${nt(p.booking)}</small>` : ''}</td></tr>`;
+      lists += `<tr><td><strong>${esc(p.name)}</strong>${p.starred ? ' <span aria-label="starred">&#9733;</span>' : ''}${linkList(p)}</td><td>${esc(p.neighborhood || '')}${p.precision === 'approximate' ? '<br><small>approximate</small>' : ''}</td><td class="n">${esc(dist)}</td><td>${tagsHtml(p)}${nt(p.note || '')}${p.artists_note ? `<br><br>${nt(p.artists_note)}` : ''}${artistList(p.artists)}${p.booking ? `<br><small>${nt(p.booking)}</small>` : ''}</td></tr>`;
     }
     lists += `</tbody></table></div>`;
   }
@@ -1641,7 +1745,7 @@ ${lists}
     if (p.artistsNote) html += '<br><br>' + p.artistsNote;
     if (p.artists) html += p.artists;
     if (p.booking) html += '<br><br><em>' + p.booking + '</em>';
-    if (p.url) html += '<br><br><a href="' + p.url + '" target="_blank" rel="noopener">Open listing</a>';
+    if (p.links) html += p.links;
     marker.bindPopup(html, { maxWidth: 260 });
     marker.bindTooltip(p.n, { direction: 'top', offset: [0, -4] });
 
