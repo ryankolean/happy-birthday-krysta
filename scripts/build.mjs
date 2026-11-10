@@ -1323,11 +1323,14 @@ const linkLabel = (u) => {
   const host = hostOf(u);
   if (host === 'Link') return 'Link';
   for (const [re, label] of LINK_LABELS) if (re.test(host)) return label;
-  // Anything else is treated as the place's own site, which is what it almost
-  // always is. The host is printed when it plainly is not, so a link to a
-  // listicle never pretends to be an official page.
-  const bare = host.replace(/\.(com|mx|org|net|bar|mx\.com)(\.[a-z]{2})?$/, '');
-  return bare.includes('.') ? host : 'Website';
+  // Anything else is the place's own site, which is what an unrecognised host
+  // almost always is here. The publications that turn up as a source rather
+  // than a venue are named in the table above, so this fallback does not put
+  // the word Website on a listicle. A host with a dot left in it, like
+  // limantour.tv or a ticketing subdomain, is still their own site and reads
+  // the same way; the only time a host is printed is to tell two of them
+  // apart, which linkList handles.
+  return 'Website';
 };
 
 // The one link that can always be generated rather than researched. It is a

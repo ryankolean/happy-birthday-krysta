@@ -116,6 +116,7 @@ places:
 
   - name: Maximo Bistrot
     category: fine
+    url: https://www.maximobistrot.com.mx/
     michelin: 1
     address: Avenida Alvaro Obregon 65 Bis, Roma Norte, Mexico City
     neighborhood: Roma Norte
@@ -138,6 +139,7 @@ places:
 
   - name: Sud 777
     category: fine
+    url: https://sud777.com.mx/
     michelin: 1
     address: Boulevard de la Luz 777, Jardines del Pedregal, Mexico City
     neighborhood: Jardines del Pedregal
@@ -213,6 +215,7 @@ places:
   # ---------- bars ----------
   - name: Limantour
     category: bar
+    url: https://limantour.tv/
     address: Avenida Alvaro Obregon 106, Roma Norte, Mexico City
     neighborhood: Roma Norte
     note: >
@@ -231,6 +234,7 @@ places:
 
   - name: Handshake Speakeasy
     category: bar
+    url: https://handshake.bar/
     address: Amberes 65, Juarez, Mexico City
     neighborhood: Juarez
     note: >
@@ -340,6 +344,7 @@ places:
 
   - name: Wagyu San
     category: fine
+    url: https://wagyusan.mx/
     protein: [beef, seafood]
     address: Paseo de la Reforma 333, Cuauhtemoc, 06500 Ciudad de Mexico
     neighborhood: Cuauhtemoc
@@ -394,6 +399,7 @@ places:
 
   - name: Maizajo
     category: casual
+    url: https://maizajo.com/
     michelin: listed
     address: Fernando Montes de Oca 113, Condesa, Cuauhtemoc, 06140 Ciudad de Mexico
     note: >
@@ -481,6 +487,7 @@ places:
 
   - name: El Cardenal
     category: casual
+    url: https://restauranteelcardenal.com/
     address: Avenida Juarez 70, Colonia Centro, Ciudad de Mexico
     neighborhood: Centro
     note: Traditional breakfast, table-side hot chocolate and sweet breads.
@@ -497,6 +504,7 @@ places:
 
   - name: El Moro
     category: casual
+    url: https://elmoro.mx/
     address: Eje Central Lazaro Cardenas 42, Centro, Cuauhtemoc, 06000 Ciudad de Mexico
     neighborhood: Centro
     note: >
@@ -767,6 +775,7 @@ places:
 
   - name: Ticuchi
     category: bar
+    url: https://ticuchi.mx/
     address: Petrarca 254, Polanco, Ciudad de Mexico
     neighborhood: Polanco
     note: Enrique Olvera's agave bar, next door to Pujol.
@@ -1705,6 +1714,7 @@ places:
   # docs/open-questions.md.
   - name: Meroma
     category: casual
+    url: https://meroma.mx/
     michelin: listed
     address: Colima 150, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
     neighborhood: Roma Norte
@@ -1870,6 +1880,7 @@ places:
     source: friend in Mexico City, November 2026
   - name: Almanegra Cafe
     category: casual
+    url: https://almanegracafe.com/
     address: Tonala 53, Roma Norte, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Roma Norte
     note: >
