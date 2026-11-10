@@ -106,8 +106,15 @@ properties:
         One night per room at booking, $1,684 across the four, with the
         balance payable at check-in. Confirmed in writing on 3 November that
         the Christmas and New Year full-prepayment exception does not apply
-        to a 3 January arrival. So Ryan fronts $1,684 rather than $8,420, and
-        each couple and each single settles its own room at the desk.
+        to a 3 January arrival. So Ryan fronts $1,684 at booking rather than
+        $8,420, and pays the remaining $6,736 at the desk on 3 January.
+        Corrected 10 November 2026. This used to end "each couple and each
+        single settles its own room at the desk", which stated the resort's
+        billing schedule as though it were the group's arrangement. The whole
+        $8,420 sits inside the $1,403 beach share and therefore inside the
+        $2,346 set amount, so it is collected from everybody like every other
+        line and Ryan presents one card for all four rooms. See
+        set_amount_back_check in data/budget.yml.
       promotions: >
         Asked on 2 November about Black Friday, Cyber Monday and other
         seasonal offers. The resort has no confirmed information and does not

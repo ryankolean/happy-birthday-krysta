@@ -298,22 +298,23 @@ decisions_needed:
 
 housekeeping:
   - id: collect-deposits
-    title: Collect a deposit from everyone
+    title: Collect the set amount from everyone
     status: doing
     detail: >
-      Before anything non-refundable is signed. Still no figure set, which is
-      the thing to fix: this task has carried no number since it was written.
-      One of the two single travellers settled both legs in full on
-      10 November, ahead of any deadline and well past a deposit, so for that
-      person it is closed. Four groups to go. Who has paid is in
+      $2,346 a head for the six doing both legs, $304 for the one doing the
+      city only. Not a deposit and not an estimate: it is the four real
+      charges divided by the heads on each, and it reconciles to $6.46 of
+      rounding across the whole trip. Working in budget.yml
+      set_amount_back_check.
+      One traveller settled in full on 10 November, which is the first money
+      back and more than was asked for. Four groups to go. Who has paid is in
       private/ledger.md and deliberately not in data/.
-      The hard date is 14 December, when Casa KM takes $2,251.42 off Ryan's
-      card automatically. That is the only moment before the trip where the
-      money actually has to be there.
-      One knock-on worth reading before asking anybody else to pay early:
-      budget.yml riviera.desk_settlement_caveat. A single who prepays cannot
-      then be billed at the Dreams Jade desk, so Ryan covers that room and
-      needs $467 of other people's money in hand on 3 January for each one.
+      The forcing date is 14 December, when Casa KM takes $2,251.42 off Ryan's
+      card automatically whether or not anybody has paid him. That is the only
+      moment before the trip where the money has to actually be there.
+      A part payment is fine and is what "deposit" has always meant here.
+      There is no separate deposit figure to invent, because the total is
+      already exact.
 
   - id: passports
     title: Check passports and sort travel insurance

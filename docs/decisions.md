@@ -2,6 +2,16 @@
 
 What was decided, and what it beat. Newest first.
 
+## Correction: nobody settles their own room at the Dreams Jade desk, 10 November 2026
+
+**The 3 November entry below contains one wrong sentence and it is worth correcting rather than quietly editing.** It reads "Each couple and each single settles its own room at the desk." That is the resort's billing schedule written down as if it were this group's arrangement. It is not, and it never was.
+
+**The set amount is $2,346 per person and the resort's full $8,420 is inside it.** That figure was built by back-checking against the four charges that actually land on Ryan's card: Casa KM at $3,836.93 over six, Dreams Jade at $8,420 over six, Pujol at $1,414 over seven and the lucha libre at $715.53 over seven. It reconciles to $6.46 of rounding across the whole trip. The working is now in `data/budget.yml` under `set_amount_back_check`, so it can be rechecked in one place instead of re-derived.
+
+**So Ryan pays $1,684 at booking and $6,736 at the desk on 3 January, with one card, out of money already collected.** Nobody else pays the resort anything. What the resort's 3 November answer actually bought was timing and nothing else: the beach money does not have to be collected in November, because the resort does not want it until check-in. The entry below was right about that and wrong about who hands over a card.
+
+**Why this matters enough to log.** The wrong sentence was read as the operating model on 10 November and produced an invented $467 shortfall at check-in, built on the gap between what a single's room costs and what the even split charges them. There is no such shortfall. The even split is an accounting convention applied to one pot of money that one person pays; it never produces a cash gap because no room is ever billed to its occupant. Any sentence in this repo that describes a supplier's payment terms should now be read against `set_amount_back_check`.
+
 ## One private van from the airport, not Uber and not the bus, 3 November 2026
 
 **About $100 for the vehicle, round trip, which is $16.67 each at six.** A Toyota Hiace class van, private, quoted on eTransfers' own booking engine for the real dates with six passengers. Taxes, tolls and luggage included, the driver tracks AM 536 and meets the group past customs, and the price does not change if the flight lands late. Take the $100 Premium fare over the $94 Economy one: the $6 buys free cancellation up to 24 hours before, and nothing on the beach leg is committed yet.

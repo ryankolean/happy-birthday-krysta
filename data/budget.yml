@@ -306,40 +306,6 @@ riviera:
       thing somebody will ask about, and the answer should be that it was
       considered and declined rather than missed.
 
-  # What prepaying does to the check-in desk. Added 10 November 2026, when
-  # the first person settled both legs in advance.
-  desk_settlement_caveat:
-    the_problem: >
-      Two rules were agreed separately and they do not quite fit together.
-      The first is the even split: six people, $8,420, $1,403 each. The second
-      is how the resort gets paid: Ryan fronts one night per room and each
-      room settles its own balance at the desk. Each rule is fine. Together
-      they only work if everybody pays at the desk, because a room is billed
-      what the room costs and not what its occupant owes under the split.
-    the_numbers: >
-      A single's room is $1,870 for the five nights. Under the even split that
-      traveller owes $1,403. The $467 difference is the subsidy the four
-      coupled travellers were always putting in, described in split_question
-      above as $933 across the two singles.
-      While everybody paid their own desk balance that $467 was a settle-up
-      after the trip and nobody had to fund it in advance. Once a single pays
-      Ryan the $1,403 instead, Ryan is the one standing at the desk: $374 of
-      that money has already gone on the deposit, so he holds $1,029 against a
-      $1,496 balance and is $467 short on that room on the day.
-    what_it_does_not_mean: >
-      Nobody underpaid and nothing is missing. The $467 is inside what the
-      coupled travellers owe anyway, and half of it is the hosts' own share.
-      This is a cash position on one morning, not a new cost, and the trip
-      total does not move.
-    what_to_do: >
-      Ryan presents the card for any room whose occupant has already settled,
-      and tells them beforehand so they do not hand over a card for a room
-      they have paid for. Have enough collected by 3 January to cover $467 for
-      each single who has prepaid, or fund it and collect after.
-      It doubles to $934 if the second single also prepays. A couple prepaying
-      helps instead of hurting, because a couple's room costs less per head
-      than the even split charges them.
-
   # Every arrangement in which all six get a bed of their own and nobody is on
   # a sofa. Mirrors combinations in data/lodging.yml.
   # PRICES BELOW ARE BOOKING.COM, 28 OCTOBER, AND ARE NOW REFERENCE ONLY.
@@ -541,8 +507,57 @@ riviera:
       This read $1,534 against the Booking flexible rate until the direct
       quote landed on 2 November.
 
+# Where 2,346 comes from, checked against the four charges that actually hit
+# Ryan's card rather than against anything estimated. Added 10 November 2026.
+# If a figure on this page is ever questioned, redo this table first.
+set_amount_back_check:
+  checked: 2026-11-10
+  method: >
+    Every total below is a real charge: three of them are booked and the
+    fourth is a written quote from the resort. Each is divided by the number
+    of heads on that line, which is six for the two lodging lines and seven
+    for the two shared events, and nothing else is added.
+  lines:
+    - what: Casa KM, 4BR penthouse, 5 nights, all in
+      total_usd: 3836.93
+      heads: 6
+      per_person_usd: 639.49
+    - what: Dreams Jade, four rooms, 5 nights, all inclusive
+      total_usd: 8420.00
+      heads: 6
+      per_person_usd: 1403.33
+    - what: Pujol, table of seven, set menu only
+      total_usd: 1414.00
+      heads: 7
+      per_person_usd: 202.00
+    - what: Lucha libre with El Taco Club, all in
+      total_usd: 715.53
+      heads: 7
+      per_person_usd: 102.22
+  charges_total_usd: 14386.46
+  sum_of_shares_usd: 2347.04
+  carried_as: 2346
+  rounding_note: >
+    2,347.04 before rounding, carried as 2,346 because each line is rounded to
+    the dollar on its own first: 639 plus 202 plus 102 plus 1,403.
+  reconciles: >
+    Six people at 2,346 plus the one city-only traveller at 304 is 14,380
+    against 14,386.46 of charges. The 6.46 difference is rounding across four
+    lines and is not a shortfall.
+  what_is_not_in_it: >
+    Drinks and tip at Pujol, about 80 a head, which land on Ryan's card and
+    are owed to him afterwards but cannot be pinned to a number in advance.
+    Flights, which everybody books and pays for themselves. Anything spent on
+    the ground.
+  the_model_this_proves: >
+    Ryan fronts all four bookings on one card and each of the six pays him
+    2,346. Nothing is settled directly with any venue, hotel or resort by
+    anybody else. Any sentence anywhere in this repo that says otherwise is
+    describing a supplier's billing schedule, not this group's arrangement,
+    and should be read against this block.
+
 per_person:
-  both_legs: 2346      # 943 city + 1403 beach
+  both_legs: 2346      # 943 city + 1403 beach, see set_amount_back_check
   city_only: 304       # shared events and meals only, no lodging
   city_only_was: 964
   add_for_pujol_drinks: 80
@@ -583,14 +598,6 @@ split_mechanism:
   - Flights never go through this. Book your own and pay for your own.
   - Pujol goes on Ryan's card on the day. Food is the figure on this page, drinks and tip are settled after.
   - Note who fronts which booking and how they are repaid
-  - >
-    Anyone who settles with Ryan in advance is done, and must not be billed
-    again at the Dreams Jade desk. Ryan pays that room, and covers the $467
-    gap between what the even split charged them and what their room costs.
-  - >
-    Who has paid and who has not is tracked privately rather than on this
-    site. What everybody owes is the same for everybody and is published here;
-    who is behind is nobody else's business.
   - Splitwise or similar, agreed up front
 
 non_refundable_exposure:
@@ -629,18 +636,18 @@ non_refundable_exposure:
       booking, $1,684 in total, with the balance payable at check-in. The
       resort confirmed on 3 November that the Christmas and New Year
       full-prepayment exception does not cover a 3 January arrival. So Ryan
-      fronts $1,684 and each couple and each single settles its own room at
-      the desk. Nobody has to be collected from before the trip.
-      That last sentence assumed nobody would pay early, and on 10 November
-      one of the two single travellers settled both legs with Ryan in full.
-      It does not change what anybody owes and it does not change the terms
-      above, but it does change who puts a card down on 3 January: a traveller
-      who has already paid must not be billed again at the desk, so Ryan
-      settles that room, and needs $467 of other people's money in hand that
-      morning to do it. That $467 is not a shortfall: a single's room costs
-      $1,870 and the even split charges them $1,403, so it is the subsidy the
-      coupled travellers were always putting in, arriving as cash a week early
-      instead of as a settle-up afterwards.
+      pays $1,684 at booking and the remaining $6,736 at the desk on
+      3 January, out of the set amount he has collected from everybody.
+      Corrected 10 November 2026. This paragraph used to end "each couple and
+      each single settles its own room at the desk, nobody has to be collected
+      from before the trip", which was the resort's billing schedule written
+      down as if it were the group's. It is not. The resort's full $8,420 is
+      inside the $1,403 beach share and therefore inside the $2,346 set
+      amount, so it is collected like everything else and Ryan presents one
+      card for all four rooms. Nobody pays the Jade desk directly. What the
+      3 November answer actually bought was timing: no need to collect the
+      beach money in November, because the resort does not want it until
+      check-in.
       There is no price protection after booking. A later rate drop will not
       be honoured on a confirmed reservation, and the only route to it is
       cancelling and rebooking: free until 30 December, one night after.
