@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>The taco walk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css?v=d8846d0b">
+</head>
+<body>
+<nav class="topnav"><div class="navinner"><a href="index.html">The trip</a><a href="itinerary.html">Itinerary</a><a href="flights.html">Flights</a><a href="stays.html">Accommodations</a><a href="map.html">Map</a><a href="tacos.html" aria-current="page">Taco walk</a><a href="riviera-map.html">Puerto Morelos map</a><a href="costs.html">Costs</a><a href="dining.html">Birthday</a><a href="nye.html">New Year's Eve</a><a href="decisions.html">Decisions</a><a href="open-questions.html">Open questions</a><a href="tasks.html">To do</a></div></nav>
+<div class="wrap">
+<header class="masthead">
+  <p class="eyebrow">Self-guided, nothing booked</p>
+  <h1>The taco walk</h1>
+  <div class="dateline">
+    <div><b>Day</b>Wednesday Wed 30 Dec</div>
+    <div><b>Meet</b>11:00, Del Valle Norte</div>
+    <div><b>Route</b><span id="tw-head">5 stops</span></div>
+  </div>
+</header>
+
+<p class="lede">A canasta breakfast near the house, then a walk up through Roma Sur into Roma Norte. Add, drop and reorder stops below and the walking recomputes. Your version lives in this page's address, so <strong>copy the link</strong> to share it; nobody else's route changes until they open yours.</p>
+
+<div class="tw-bar">
+  <button type="button" class="tw-btn tw-btn--main" id="tw-copy">Copy link to this route</button>
+  <button type="button" class="tw-btn" id="tw-reset">Reset to the plan</button>
+  <span class="tw-status" id="tw-status" role="status" aria-live="polite"></span>
+</div>
+
+<div class="tw-totals" id="tw-totals"></div>
+
+<div class="legend-row legend-row--key"><span class="keyitem"><span class="pinbadge pinbadge--mich" title="1 Michelin star"><svg width="8" height="8" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L14.47 8.6L21.51 8.91L15.99 13.3L17.88 20.09L12 16.2L6.12 20.09L8.01 13.3L2.49 8.91L9.53 8.6Z" fill="currentColor"/></svg></span> Michelin star</span><span class="keyitem"><span class="pinbadge pinbadge--prot" title="Seafood"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><g transform="translate(12 12) scale(0.72) translate(-12 -12)"><path d="M5.8 12a7.6 6.4 0 1 1 15.2 0 7.6 6.4 0 1 1-15.2 0z" fill="currentColor"/><path d="M7.4 12L1.2 6.6v10.8z" fill="currentColor"/><path d="M18 8.1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" fill="var(--paper)"/></g></svg></span> seafood</span><span class="keyitem"><span class="pinbadge pinbadge--prot" title="Chicken"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><g transform="translate(12 12) scale(0.72) translate(-12 -12)"><path d="M4.8 15.2a6.8 6.8 0 0 1 13.6 0 6.8 6.8 0 0 1-13.6 0z" fill="currentColor"/><path d="M16.8 4a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2z" fill="currentColor"/><path d="M19.8 6.2L23.4 7.8l-3.6 1.8z" fill="currentColor"/><path d="M13.6 3.4a1.9 1.9 0 0 1 3.8 0z" fill="currentColor"/><path d="M4.4 10.6l3 3.6-5 1.4z" fill="currentColor"/></g></svg></span> chicken</span><span class="keyitem"><span class="pinbadge pinbadge--prot" title="Steak"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><g transform="translate(12 12) scale(0.72) translate(-12 -12)"><path d="M5.4 8.6h13.2v6a6.6 6.6 0 0 1-13.2 0z" fill="currentColor"/><path d="M8.6 15.2h6.8v3a3.4 3.4 0 0 1-6.8 0z" fill="currentColor"/><path d="M5.6 9.2L1 5.6l0.4 5.6z" fill="currentColor"/><path d="M18.4 9.2L23 5.6l-0.4 5.6z" fill="currentColor"/></g></svg></span> steak</span><span class="keyitem"><span class="pinbadge pinbadge--prot" title="Pork"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><g transform="translate(12 12) scale(0.72) translate(-12 -12)"><path d="M12 5.8a8.2 8.2 0 1 0 0 16.4 8.2 8.2 0 0 0 0-16.4z" fill="currentColor"/><path d="M5.6 7.4L3.2 1.6l6 2.4z" fill="currentColor"/><path d="M18.4 7.4L20.8 1.6l-6 2.4z" fill="currentColor"/><path d="M12 12.6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" fill="var(--paper)"/><path d="M10.4 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z" fill="currentColor"/><path d="M13.6 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z" fill="currentColor"/></g></svg></span> pork</span><span class="keyitem"><span class="tw-num tw-num--key">1</span> on the route</span><span class="keyitem"><span class="tw-faded"><svg class="legpin" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z" fill="#C23B22" stroke="var(--pin-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(12 9.2) scale(0.4) translate(-12 -12)"><path d="M2.4 16.6a9.6 9.6 0 0 1 19.2 0h-3.8a5.8 5.8 0 0 0-11.6 0z" fill="#FCFCFA"/><path d="M6.4 16.6a2.9 2.9 0 0 1 5.8 0z" fill="#FCFCFA"/><path d="M11.8 16.6a2.9 2.9 0 0 1 5.8 0z" fill="#FCFCFA"/></g></svg></span> not on it, tap to add</span></div>
+<div id="map" class="tw-map" role="application" aria-label="Map of the taco walk"></div>
+<p class="caveat">Walking is straight-line distance times 1.25 at 4.5 km/h, so treat every minute as a decent guess, not a route. A leg over 2 km is shown as a ride. Each stop gets 45 minutes, and the planned stops are not reached before their planned time, so the slack in the plan shows up as waiting. Hollow dashed pins are approximate locations.</p>
+
+<h2>The route</h2>
+<ol class="tw-stops" id="tw-stops"></ol>
+
+<h2>Suggestions</h2>
+<p class="caveat">Every taco place on the map that is not on your route, cheapest first: the extra walking it costs to slot it in at its best position. Hours are checked at the time you would arrive on Wednesday Wed 30 Dec, and for Thursday Thu 31 Dec in case the day slips.</p>
+<ol class="tw-sugg" id="tw-sugg"></ol>
+<p><button type="button" class="tw-btn" id="tw-more" hidden>Show all</button></p>
+
+<div class="note warn">
+  <div class="nh">Before anyone goes</div>
+  <ul><li>Cash in small bills, about 300 to 400 MXN a person for the day. Stands and canasta are cash only.</li><li>Los Parados is standing only. Split into two groups of four and order in rounds.</li><li>Avoid 31 December, when many places close in the afternoon, and 1 January.</li><li>Re-check every stop on Instagram or Maps on 28 December. No stop publishes holiday hours.</li></ul>
+</div>
+
+<div class="note">
+  <div class="nh">Still waiting on a Maps link</div>
+  <p>Tacos Chanito, Tacos &quot;Beto&quot;, Tacos la Soledad, &quot;Best Tacos in Mexico City&quot; (looks like a generic Maps label, not a business). None of these turned up as a Mexico City listing. Send the Google Maps link or Instagram handle and each one becomes a pin: add it to <code>data/places.yml</code> with <code>category: taco</code> and an address, run <code>npm run geocode</code> and <code>npm run build</code>, and it appears in the suggestions above, ranked by detour.</p>
+  
+</div>
+
+<noscript><p class="caveat">The route editor needs JavaScript. The plan is Tacos de Canasta Don Quique, then Taqueria Los Parados, then Tacos del Valle, then Carinito Tacos, then Taqueria Orinoco.</p></noscript>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+  integrity="sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+  integrity="sha384-NElt3Op+9NBMCYaef5HxeJmU4Xeard/Lku8ek6hoPTvYkQPh3zLIrJP7KiRocsxO" crossorigin="anonymous"></script>
+<script>
+(function () {
+  var DATA = {"tour":{"date":"2026-12-30","meet":"11:00","dwell":45,"factor":1.25,"kmh":4.5,"rideOver":2,"seed":["tacos-de-canasta-don-quique","taqueria-los-parados","tacos-del-valle","carinito-tacos","taqueria-orinoco"]},"stay":{"n":"Casa KM","hood":"Del Valle Norte","lat":19.3942366,"lon":-99.1670335},"colour":"#C23B22","ink":"#FCFCFA","stayColour":"#C06A05","stayInk":"#FCFCFA","places":[{"id":"tacos-del-valle","n":"Tacos del Valle","c":"taco","lat":19.4179168,"lon":-99.1606122,"hood":"Roma Norte","note":"Rated 9/10 by @placesnoted and starred by @thatonepointofview as actually eaten. Trompo-style pastor over open flame. The one where the hype and the plate agree. Three trompos, spicy pork, pork belly and carne asada, but the pick is the steak and bone marrow taco. Expect a long line. Two more posters put numbers on that line: two hours on one visit, and forty five minutes for the pork belly alone on another. Both said it was worth it, and the second named the red and the black pork belly tacos. A commenter on the second rated the flautas the best thing they ate in ten days in the city. This is now the longest documented wait on this page, which makes it a plan rather than a drop in.","tags":"<div class=\"ptags\"><span class=\"ptag ptag--mich\">Michelin Bib Gourmand</span><span class=\"ptag\"><span class=\"pinbadge pinbadge--prot\" title=\"Pork\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><g transform=\"translate(12 12) scale(0.72) translate(-12 -12)\"><path d=\"M12 5.8a8.2 8.2 0 1 0 0 16.4 8.2 8.2 0 0 0 0-16.4z\" fill=\"currentColor\"/><path d=\"M5.6 7.4L3.2 1.6l6 2.4z\" fill=\"currentColor\"/><path d=\"M18.4 7.4L20.8 1.6l-6 2.4z\" fill=\"currentColor\"/><path d=\"M12 12.6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z\" fill=\"var(--paper)\"/><path d=\"M10.4 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z\" fill=\"currentColor\"/><path d=\"M13.6 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z\" fill=\"currentColor\"/></g></svg></span> Known for pork</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Tacos%20del%20Valle%2C%20Avenida%20Alvaro%20Obregon%20130%2C%20Roma%20Norte%2C%20Cuauhtemoc%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":"bib","prot":["pork"],"approx":false,"hours":{"wed":"13:00-01:00"},"hoursSrc":"Michelin guide via TRAVEL-28, 6 November 2026, Wednesday only","order":"pastor, bistec, Arabe","at":"14:30","slot":2,"backup":"tacos-la-once-mil","backupFor":""},{"id":"tacos-la-once-mil","n":"Tacos La Once Mil","c":"taco","lat":19.4200285,"lon":-99.1604264,"hood":"Roma Norte","note":"Rated 10/10. Wood-fired Wagyu, filet mignon and Prime skirt, tortillas made to order, spicy tuna tostada. Pricier than a normal taqueria. The wagyu taco is the one to order and the picanha off the trompo is skippable. It won one Michelin star in the 2026 guide, the star El Califa de Leon lost, and it is the only taqueria in the country holding one. Read the badge on this pin with one caveat: there are two branches, and the guide lists the Lomas de Chapultepec one at Monte Everest 780. This pin is the Roma Norte branch at Orizaba 83, same taqueria and same kitchen, and it is the one a friend in the city meant by &quot;the taco spot next to Rosetta&quot;. The pin used to sit on a name lookup with no street number at all.","tags":"<div class=\"ptags\"><span class=\"ptag ptag--mich\"><svg width=\"10\" height=\"10\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2L14.47 8.6L21.51 8.91L15.99 13.3L17.88 20.09L12 16.2L6.12 20.09L8.01 13.3L2.49 8.91L9.53 8.6Z\" fill=\"currentColor\"/></svg>One Michelin star</span><span class=\"ptag\"><span class=\"pinbadge pinbadge--prot\" title=\"Steak\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><g transform=\"translate(12 12) scale(0.72) translate(-12 -12)\"><path d=\"M5.4 8.6h13.2v6a6.6 6.6 0 0 1-13.2 0z\" fill=\"currentColor\"/><path d=\"M8.6 15.2h6.8v3a3.4 3.4 0 0 1-6.8 0z\" fill=\"currentColor\"/><path d=\"M5.6 9.2L1 5.6l0.4 5.6z\" fill=\"currentColor\"/><path d=\"M18.4 9.2L23 5.6l-0.4 5.6z\" fill=\"currentColor\"/></g></svg></span> Known for steak</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Tacos%20La%20Once%20Mil%2C%20Orizaba%2083%2C%20Roma%20Norte%2C%20Cuauhtemoc%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":1,"prot":["beef"],"approx":false,"hours":null,"hoursSrc":"","order":"","at":null,"slot":-1,"backup":null,"backupFor":"Tacos del Valle"},{"id":"tacos-atarantados","n":"Tacos Atarantados","c":"taco","lat":19.4180262,"lon":-99.1585468,"hood":"Roma Norte","note":"Rated 8.5/10. Al pastor over real charcoal, which is rarer than it should be here. Monterrey-style. This pin is the Cordoba 113 branch the taco tour uses as a backup; a name lookup had put it on a second branch at Insurgentes Sur 337 in Hipodromo.","tags":"<div class=\"ptags\"><span class=\"ptag\"><span class=\"pinbadge pinbadge--prot\" title=\"Pork\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><g transform=\"translate(12 12) scale(0.72) translate(-12 -12)\"><path d=\"M12 5.8a8.2 8.2 0 1 0 0 16.4 8.2 8.2 0 0 0 0-16.4z\" fill=\"currentColor\"/><path d=\"M5.6 7.4L3.2 1.6l6 2.4z\" fill=\"currentColor\"/><path d=\"M18.4 7.4L20.8 1.6l-6 2.4z\" fill=\"currentColor\"/><path d=\"M12 12.6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z\" fill=\"var(--paper)\"/><path d=\"M10.4 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z\" fill=\"currentColor\"/><path d=\"M13.6 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z\" fill=\"currentColor\"/></g></svg></span> Known for pork</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Tacos%20Atarantados%2C%20Cordoba%20113%2C%20Roma%20Norte%2C%20Cuauhtemoc%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":null,"prot":["pork"],"approx":false,"hours":null,"hoursSrc":"","order":"","at":null,"slot":-1,"backup":null,"backupFor":"Carinito Tacos"},{"id":"milpa","n":"Milpa","c":"taco","lat":19.4140625,"lon":-99.1856371,"hood":"","note":"Rated 7/10 and called the non-hyped pick, where you see locals rather than tourists. Open kitchen, seating spills outside, soft shell crab taco.","tags":"","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Milpa%2C%20Milpa%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":null,"prot":[],"approx":false,"hours":null,"hoursSrc":"","order":"","at":null,"slot":-1,"backup":null,"backupFor":""},{"id":"tacos-los-alexis","n":"Tacos Los Alexis","c":"taco","lat":19.4132919,"lon":-99.1569371,"hood":"","note":"Rated 6.5/10. Short menu, reasonably priced, never lets you down but will not amaze.","tags":"<div class=\"ptags\"><span class=\"ptag ptag--mich\">Michelin Bib Gourmand</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Tacos%20Los%20Alexis%2C%20Tacos%20Los%20Alexis%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":"bib","prot":[],"approx":false,"hours":null,"hoursSrc":"","order":"","at":null,"slot":-1,"backup":null,"backupFor":""},{"id":"la-ochenta-y-nueve","n":"La Ochenta y Nueve","c":"taco","lat":19.4200473,"lon":-99.1585391,"hood":"","note":"Rated 5.5/10, the weakest on the list. Quesabirria and campechano, but meat and oil overwhelm the tortilla. Only if you are already nearby.","tags":"<div class=\"ptags\"><span class=\"ptag ptag--mich\">Michelin Bib Gourmand</span><span class=\"ptag\"><span class=\"pinbadge pinbadge--prot\" title=\"Steak\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><g transform=\"translate(12 12) scale(0.72) translate(-12 -12)\"><path d=\"M5.4 8.6h13.2v6a6.6 6.6 0 0 1-13.2 0z\" fill=\"currentColor\"/><path d=\"M8.6 15.2h6.8v3a3.4 3.4 0 0 1-6.8 0z\" fill=\"currentColor\"/><path d=\"M5.6 9.2L1 5.6l0.4 5.6z\" fill=\"currentColor\"/><path d=\"M18.4 9.2L23 5.6l-0.4 5.6z\" fill=\"currentColor\"/></g></svg></span> Known for steak</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=La%20Ochenta%20y%20Nueve%2C%20Colima%20134%2C%20Roma%20Norte%2C%20Cuauhtemoc%2C%2006700%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":"bib","prot":["beef"],"approx":false,"hours":null,"hoursSrc":"","order":"","at":null,"slot":-1,"backup":null,"backupFor":""},{"id":"taqueria-orinoco","n":"Taqueria Orinoco","c":"taco","lat":19.418156,"lon":-99.1592321,"hood":"Roma Norte","note":"Starred as actually eaten. Open very late. Al pastor off the trompo is the order, and a friend in the city in November picks the gringa specifically.","tags":"<div class=\"ptags\"><span class=\"ptag\"><span class=\"pinbadge pinbadge--prot\" title=\"Pork\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><g transform=\"translate(12 12) scale(0.72) translate(-12 -12)\"><path d=\"M12 5.8a8.2 8.2 0 1 0 0 16.4 8.2 8.2 0 0 0 0-16.4z\" fill=\"currentColor\"/><path d=\"M5.6 7.4L3.2 1.6l6 2.4z\" fill=\"currentColor\"/><path d=\"M18.4 7.4L20.8 1.6l-6 2.4z\" fill=\"currentColor\"/><path d=\"M12 12.6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z\" fill=\"var(--paper)\"/><path d=\"M10.4 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z\" fill=\"currentColor\"/><path d=\"M13.6 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z\" fill=\"currentColor\"/></g></svg></span> Known for pork</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://taqueriaorinoco.com/\">Website</a><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Taqueria%20Orinoco%2C%20Taqueria%20Orinoco%2C%20Roma%20Norte%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":null,"prot":["pork"],"approx":false,"hours":{"mon":"12:00-04:00","tue":"12:00-04:00","wed":"12:00-04:00","thu":"12:00-04:00","fri":"12:00-04:00","sat":"12:00-04:00","sun":"12:00-04:00"},"hoursSrc":"Time Out Mexico 2017 via TRAVEL-28, stale","order":"trompo 35, aguacate 34, res 64 MXN (El Financiero, July 2026)","at":"17:00","slot":4,"backup":null,"backupFor":""},{"id":"el-califa-de-leon","n":"El Califa de Leon","c":"taco","lat":19.4391743,"lon":-99.1560375,"hood":"San Rafael","note":"It held the first Michelin star ever given to a taqueria, and the 2026 guide took it back: the guide still lists the place, at Avenida Ribera de San Cosme 56, but without a star, and the star it lost went to La Once Mil. Four tacos on the menu, cash only, tiny. Of the four, the rib steak is the one a poster who ate all of them picked.","tags":"<div class=\"ptags\"><span class=\"ptag ptag--mich\">In the Michelin guide</span><span class=\"ptag\"><span class=\"pinbadge pinbadge--prot\" title=\"Steak\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><g transform=\"translate(12 12) scale(0.72) translate(-12 -12)\"><path d=\"M5.4 8.6h13.2v6a6.6 6.6 0 0 1-13.2 0z\" fill=\"currentColor\"/><path d=\"M8.6 15.2h6.8v3a3.4 3.4 0 0 1-6.8 0z\" fill=\"currentColor\"/><path d=\"M5.6 9.2L1 5.6l0.4 5.6z\" fill=\"currentColor\"/><path d=\"M18.4 9.2L23 5.6l-0.4 5.6z\" fill=\"currentColor\"/></g></svg></span> Known for steak</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=El%20Califa%20de%20Leon%2C%20Ribera%20de%20San%20Cosme%2056%2C%20San%20Rafael%2C%20Cuauhtemoc%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":"listed","prot":["beef"],"approx":false,"hours":null,"hoursSrc":"","order":"","at":null,"slot":-1,"backup":null,"backupFor":""},{"id":"los-cocuyos","n":"Los Cocuyos","c":"taco","lat":19.4304123,"lon":-99.1386622,"hood":"Centro","note":"Open almost around the clock. Suadero and the offal cuts.","tags":"<div class=\"ptags\"><span class=\"ptag ptag--mich\">Michelin Bib Gourmand</span><span class=\"ptag\"><span class=\"pinbadge pinbadge--prot\" title=\"Steak\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><g transform=\"translate(12 12) scale(0.72) translate(-12 -12)\"><path d=\"M5.4 8.6h13.2v6a6.6 6.6 0 0 1-13.2 0z\" fill=\"currentColor\"/><path d=\"M8.6 15.2h6.8v3a3.4 3.4 0 0 1-6.8 0z\" fill=\"currentColor\"/><path d=\"M5.6 9.2L1 5.6l0.4 5.6z\" fill=\"currentColor\"/><path d=\"M18.4 9.2L23 5.6l-0.4 5.6z\" fill=\"currentColor\"/></g></svg></span> Known for steak</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Los%20Cocuyos%2C%20Bolivar%2056%2C%20Centro%2C%20Cuauhtemoc%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":"bib","prot":["beef"],"approx":false,"hours":null,"hoursSrc":"","order":"","at":null,"slot":-1,"backup":null,"backupFor":""},{"id":"tacos-el-paisa","n":"Tacos El Paisa","c":"taco","lat":19.3554065,"lon":-99.0992204,"hood":"","note":"In the Michelin guide and still under five pounds a meal. The order is the suadero and the pastor with pineapple.","tags":"<div class=\"ptags\"><span class=\"ptag ptag--mich\">In the Michelin guide</span><span class=\"ptag\"><span class=\"pinbadge pinbadge--prot\" title=\"Pork\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><g transform=\"translate(12 12) scale(0.72) translate(-12 -12)\"><path d=\"M12 5.8a8.2 8.2 0 1 0 0 16.4 8.2 8.2 0 0 0 0-16.4z\" fill=\"currentColor\"/><path d=\"M5.6 7.4L3.2 1.6l6 2.4z\" fill=\"currentColor\"/><path d=\"M18.4 7.4L20.8 1.6l-6 2.4z\" fill=\"currentColor\"/><path d=\"M12 12.6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z\" fill=\"var(--paper)\"/><path d=\"M10.4 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z\" fill=\"currentColor\"/><path d=\"M13.6 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z\" fill=\"currentColor\"/></g></svg></span> Known for pork</span><span class=\"ptag\"><span class=\"pinbadge pinbadge--prot\" title=\"Steak\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><g transform=\"translate(12 12) scale(0.72) translate(-12 -12)\"><path d=\"M5.4 8.6h13.2v6a6.6 6.6 0 0 1-13.2 0z\" fill=\"currentColor\"/><path d=\"M8.6 15.2h6.8v3a3.4 3.4 0 0 1-6.8 0z\" fill=\"currentColor\"/><path d=\"M5.6 9.2L1 5.6l0.4 5.6z\" fill=\"currentColor\"/><path d=\"M18.4 9.2L23 5.6l-0.4 5.6z\" fill=\"currentColor\"/></g></svg></span> Known for steak</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Tacos%20El%20Paisa%2C%20Tacos%20El%20Paisa%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":"listed","prot":["pork","beef"],"approx":false,"hours":null,"hoursSrc":"","order":"","at":null,"slot":-1,"backup":null,"backupFor":""},{"id":"tacos-de-canasta-don-quique","n":"Tacos de Canasta Don Quique","c":"taco","lat":19.3937929,"lon":-99.1662914,"hood":"Del Valle","note":"Taco tour stop 1 (canasta breakfast). Hours and holiday closures unverified. About 20 to 30 MXN a taco, estimate. Cash.","tags":"","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Tacos%20de%20Canasta%20Don%20Quique%2C%20Avenida%20Coyoacan%20512%2C%20Del%20Valle%2C%20Benito%20Juarez%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":null,"prot":[],"approx":true,"hours":null,"hoursSrc":"","order":"papa, chorizo, frijol, chicharron, mole verde; about 20 to 30 MXN a taco, estimate","at":"11:00","slot":0,"backup":"tacos-joven","backupFor":""},{"id":"tacos-joven","n":"Tacos Joven","c":"taco","lat":19.3847033,"lon":-99.1556833,"hood":"Narvarte","note":"Taco tour backup for stop 1. Canasta. Sources disagree on hours (Mon-Sun 10-19 or Mon-Sat 9-16). 15 to 20 MXN a taco. Cash.","tags":"","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Tacos%20Joven%2C%20Avenida%20Universidad%20199%2C%20Narvarte%2C%20Benito%20Juarez%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":null,"prot":[],"approx":true,"hours":null,"hoursSrc":"","order":"","at":null,"slot":-1,"backup":null,"backupFor":"Tacos de Canasta Don Quique"},{"id":"taqueria-los-parados","n":"Taqueria Los Parados","c":"taco","lat":19.405616,"lon":-99.1611511,"hood":"Roma Sur","note":"Taco tour stop 2. Mon-Thu 12:30-03:00, Fri-Sat to 05:00, Sun to 01:00 (Michelin). Standing only. Holiday hours unverified.","tags":"<div class=\"ptags\"><span class=\"ptag ptag--mich\">In the Michelin guide</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Taqueria%20Los%20Parados%2C%20Avenida%20Monterrey%20333%2C%20Roma%20Sur%2C%20Cuauhtemoc%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":"listed","prot":[],"approx":false,"hours":{"mon":"12:30-03:00","tue":"12:30-03:00","wed":"12:30-03:00","thu":"12:30-03:00","fri":"12:30-05:00","sat":"12:30-05:00","sun":"12:30-01:00"},"hoursSrc":"Michelin guide via TRAVEL-28, 6 November 2026","order":"bistec, costilla, pastor","at":"12:45","slot":1,"backup":"tacos-hola-el-guero","backupFor":""},{"id":"carinito-tacos","n":"Carinito Tacos","c":"taco","lat":19.4173776,"lon":-99.1567587,"hood":"Roma Norte","note":"Taco tour stop 4. Daily 12:00-22:00 (Michelin). Outdoor seating only. Holiday hours unverified.","tags":"<div class=\"ptags\"><span class=\"ptag ptag--mich\">In the Michelin guide</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Carinito%20Tacos%2C%20Guanajuato%2053%2C%20Roma%20Norte%2C%20Cuauhtemoc%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":"listed","prot":[],"approx":true,"hours":{"mon":"12:00-22:00","tue":"12:00-22:00","wed":"12:00-22:00","thu":"12:00-22:00","fri":"12:00-22:00","sat":"12:00-22:00","sun":"12:00-22:00"},"hoursSrc":"Michelin guide via TRAVEL-28, 6 November 2026","order":"Southeast Asian leaning tacos","at":"15:45","slot":3,"backup":"tacos-atarantados","backupFor":""},{"id":"tacos-hola-el-guero","n":"Tacos Hola El Guero","c":"taco","lat":19.4117594,"lon":-99.1715852,"hood":"Hipodromo","note":"Taco tour backup for stop 2. Guisados since 1968. Michelin lists Mon-Fri 9-21, Sat 9-19, Sun 9-15; Chilango 2024 says 9:30-17:00 Mon-Sat. Holiday hours unverified.","tags":"<div class=\"ptags\"><span class=\"ptag ptag--mich\">In the Michelin guide</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Tacos%20Hola%20El%20Guero%2C%20Avenida%20Amsterdam%20135%2C%20Hipodromo%2C%20Cuauhtemoc%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":"listed","prot":[],"approx":false,"hours":{"mon":"09:00-21:00","tue":"09:00-21:00","wed":"09:00-21:00","thu":"09:00-21:00","fri":"09:00-21:00","sat":"09:00-19:00","sun":"09:00-15:00"},"hoursSrc":"Michelin guide via TRAVEL-28, 6 November 2026; Chilango 2024 says 09:30-17:00 Mon-Sat","order":"","at":null,"slot":-1,"backup":null,"backupFor":"Taqueria Los Parados"},{"id":"tacos-la-chula","n":"Tacos La Chula","c":"taco","lat":19.4102813,"lon":-99.1670287,"hood":"Roma Sur","note":"On the friend's list as &quot;La chula&quot; with no branch given, and there are at least three: this one on Insurgentes Sur in Roma Sur, one at Liverpool 102 in Juarez that gets the written-up reviews and is reported open around the clock, and one on Avenida Revolucion in Escandon. A separate La Chula Taqueria on Astronomos rates poorly and is probably not related. Pinned at the Roma Sur branch because it is the closest of the three to the house. Ask the friend which one they meant before building an evening on it.","tags":"","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Tacos%20La%20Chula%2C%20Avenida%20Insurgentes%20Sur%20454%2C%20Roma%20Sur%2C%20Cuauhtemoc%2C%2006760%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":null,"prot":[],"approx":true,"hours":null,"hoursSrc":"","order":"","at":null,"slot":-1,"backup":null,"backupFor":""},{"id":"la-bonvi","n":"La Bonvi","c":"taco","lat":19.4238738,"lon":-99.2037876,"hood":"Lomas de Chapultepec","note":"Cesar de la Parra's second taqueria, by the same chef as Tacos La Once Mil, known for the picana taco. One listing puts it at Anatole France 139 in Polanco instead; the Lomas address has more sources behind it. Note this is well north of the house, a ride rather than a walk.","tags":"<div class=\"ptags\"><span class=\"ptag\"><span class=\"pinbadge pinbadge--prot\" title=\"Steak\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><g transform=\"translate(12 12) scale(0.72) translate(-12 -12)\"><path d=\"M5.4 8.6h13.2v6a6.6 6.6 0 0 1-13.2 0z\" fill=\"currentColor\"/><path d=\"M8.6 15.2h6.8v3a3.4 3.4 0 0 1-6.8 0z\" fill=\"currentColor\"/><path d=\"M5.6 9.2L1 5.6l0.4 5.6z\" fill=\"currentColor\"/><path d=\"M18.4 9.2L23 5.6l-0.4 5.6z\" fill=\"currentColor\"/></g></svg></span> Known for steak</span></div>","links":"<div class=\"plinks\"><a class=\"plink\" href=\"https://www.google.com/maps/search/?api=1&amp;query=La%20Bonvi%2C%20Pedregal%2033%2C%20Lomas%20de%20Chapultepec%2C%20Miguel%20Hidalgo%2C%20Ciudad%20de%20Mexico\">Google Maps</a></div>","mich":null,"prot":["beef"],"approx":true,"hours":null,"hoursSrc":"","order":"","at":null,"slot":-1,"backup":null,"backupFor":""}]};
+  var T = DATA.tour;
+  var BY = {};
+  DATA.places.forEach(function (p) { BY[p.id] = p; });
+  var STORE = 'taco-walk-route';
+  var DOWS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+  var DOW_LONG = { sun: 'Sun', mon: 'Mon', tue: 'Tue', wed: 'Wed', thu: 'Thu', fri: 'Fri', sat: 'Sat' };
+
+  // ---------- state ----------
+
+  function clean(list) {
+    var seen = {};
+    return list.filter(function (id) {
+      if (!BY[id] || seen[id]) return false;
+      seen[id] = true;
+      return true;
+    });
+  }
+  function fromHash() {
+    var m = /(?:^|[#&])r=([^&]*)/.exec(location.hash);
+    if (!m) return null;
+    return clean(decodeURIComponent(m[1]).split('.').filter(Boolean));
+  }
+  function fromStore() {
+    try { var v = localStorage.getItem(STORE); return v ? clean(v.split('.')) : null; } catch (e) { return null; }
+  }
+  var route = fromHash() || fromStore() || T.seed.slice();
+
+  function isSeed() { return route.join('.') === T.seed.join('.'); }
+  function save() {
+    var h = isSeed() ? '' : '#r=' + route.join('.');
+    try { history.replaceState(null, '', location.pathname + location.search + h); } catch (e) { location.hash = h; }
+    try { if (isSeed()) localStorage.removeItem(STORE); else localStorage.setItem(STORE, route.join('.')); } catch (e) {}
+  }
+
+  // ---------- geometry and time ----------
+
+  function crow(a, b) {
+    var R = 6371, rad = Math.PI / 180;
+    var dLat = (b.lat - a.lat) * rad, dLon = (b.lon - a.lon) * rad;
+    var h = Math.pow(Math.sin(dLat / 2), 2) +
+      Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.pow(Math.sin(dLon / 2), 2);
+    return 2 * R * Math.asin(Math.sqrt(h));
+  }
+  function km(a, b) { return crow(a, b) * T.factor; }
+  // A ride is a pickup wait plus city traffic at about 18 km/h.
+  function leg(a, b) {
+    var k = km(a, b);
+    var ride = k > T.rideOver;
+    return { km: k, ride: ride, min: ride ? Math.round(8 + (k / 18) * 60) : Math.ceil((k / T.kmh) * 60) };
+  }
+  function toMin(hhmm) { var s = hhmm.split(':'); return +s[0] * 60 + +s[1]; }
+  function clock(m) {
+    m = ((Math.round(m) % 1440) + 1440) % 1440;
+    var h = Math.floor(m / 60), mm = m % 60;
+    return (h < 10 ? '0' : '') + h + ':' + (mm < 10 ? '0' : '') + mm;
+  }
+  function fmtKm(k) { return k < 1 ? Math.round(k * 1000 / 10) * 10 + ' m' : k.toFixed(1) + ' km'; }
+  function fmtMin(m) { return m < 60 ? m + ' min' : Math.floor(m / 60) + ' h ' + (m % 60 ? (m % 60) + ' min' : ''); }
+
+  // Arrival time at each stop in a list, meeting at T.meet at the first one.
+  // The ride from the house to stop one is not counted: the plan already says
+  // meet there.
+  function schedule(list) {
+    var t = toMin(T.meet), out = [], walkKm = 0, walkMin = 0, rides = 0;
+    for (var i = 0; i < list.length; i++) {
+      var l = i ? leg(BY[list[i - 1]], BY[list[i]]) : null;
+      if (l) {
+        t += l.min;
+        if (l.ride) rides++; else { walkKm += l.km; walkMin += l.min; }
+      }
+      var wait = 0;
+      // Only while the stop is still in its planned slot: moved, its planned
+      // time means nothing and would just strand the group.
+      if (BY[list[i]].at && BY[list[i]].slot === i && toMin(BY[list[i]].at) > t) { wait = toMin(BY[list[i]].at) - t; t += wait; }
+      out.push({ id: list[i], arrive: t, leg: l, wait: wait });
+      t += T.dwell;
+    }
+    return { stops: out, end: t, walkKm: walkKm, walkMin: walkMin, rides: rides };
+  }
+
+  // ---------- hours ----------
+
+  var D0 = new Date(T.date + 'T12:00:00Z');
+  var DAY0 = DOWS[D0.getUTCDay()];
+  var DAY1 = DOWS[(D0.getUTCDay() + 1) % 7];
+
+  function span(str) {
+    var p = str.split('-'), o = toMin(p[0]), c = toMin(p[1]);
+    if (c <= o) c += 1440;
+    return [o, c];
+  }
+  // open | closed | unknown, at minute m of weekday day. The previous day's
+  // hours count too, because a stand open until 04:00 is still open at 01:00.
+  function openAt(hours, day, m) {
+    if (!hours) return { state: 'unknown' };
+    var di = DOWS.indexOf(day), prev = DOWS[(di + 6) % 7];
+    if (hours[prev]) { var sp = span(hours[prev]); if (m + 1440 >= sp[0] && m + 1440 < sp[1]) return { state: 'open', until: sp[1] - 1440 }; }
+    if (!hours[day]) return { state: 'unknown' };
+    var s = span(hours[day]);
+    if (m >= s[0] && m < s[1]) return { state: 'open', until: s[1], soon: s[1] - m < T.dwell };
+    return { state: 'closed', opens: m < s[0] ? s[0] : null };
+  }
+  function hoursLine(p, m) {
+    var parts = [[DAY0, true], [DAY1, false]].map(function (d) {
+      var r = openAt(p.hours, d[0], m), lbl = DOW_LONG[d[0]] + ' ' + clock(m) + ': ';
+      if (r.state === 'unknown') return '<span class="tw-h tw-h--unk">' + lbl + 'hours unknown</span>';
+      if (r.state === 'closed') return '<span class="tw-h tw-h--bad">' + lbl + 'closed' + (r.opens != null ? ', opens ' + clock(r.opens) : '') + '</span>';
+      return '<span class="tw-h ' + (r.soon ? 'tw-h--bad' : 'tw-h--ok') + '">' + lbl + 'open' + (r.soon ? ', closes ' + clock(r.until) : ' to ' + clock(r.until)) + '</span>';
+    });
+    return '<div class="tw-hours">' + parts.join('') +
+      (p.hoursSrc ? '<span class="tw-src">' + p.hoursSrc + '</span>' : '') +
+      '<span class="tw-src">31 Dec: regular hours only, many places shut in the afternoon.</span></div>';
+  }
+
+  // ---------- suggestions ----------
+
+  // Cheapest place to slot each off-route taco place into: before the first
+  // stop, between any two, or after the last. Cost is extra walking.
+  function suggestions() {
+    var onRoute = {};
+    route.forEach(function (id) { onRoute[id] = true; });
+    return DATA.places.filter(function (p) { return !onRoute[p.id]; }).map(function (p) {
+      var best = null;
+      for (var i = 0; i <= route.length; i++) {
+        var a = i ? BY[route[i - 1]] : null, b = i < route.length ? BY[route[i]] : null;
+        var add = (a ? km(a, p) : 0) + (b ? km(p, b) : 0) - (a && b ? km(a, b) : 0);
+        if (!a && !b) add = 0;
+        if (!best || add < best.add) best = { at: i, add: add, a: a, b: b };
+      }
+      return { p: p, at: best.at, add: Math.max(0, best.add), a: best.a, b: best.b };
+    }).sort(function (x, y) { return x.add - y.add; });
+  }
+
+  // ---------- map ----------
+
+  var mapEl = document.getElementById('map');
+  var map = null, layer = null;
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  var PIN_PATH = "M12 21C12 21 18.5 13.8 18.5 9.5C18.5 5.36 15.59 2 12 2C8.41 2 5.5 5.36 5.5 9.5C5.5 13.8 12 21 12 21Z";
+  var STAR_GLYPH = "M12 2L14.47 8.6L21.51 8.91L15.99 13.3L17.88 20.09L12 16.2L6.12 20.09L8.01 13.3L2.49 8.91L9.53 8.6Z";
+  var CAT_GLYPH = {"stay":["M12 2.6L22.4 11.6h-3.4V21H5V11.6H1.6z"],"fine":["M3 16a9 9 0 0 1 18 0z","M1.4 16.6h21.2v3.4H1.4z","M12 2.4a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"],"casual":["M3 6h12.6v8.4a4.6 4.6 0 0 1-4.6 4.6H7.6A4.6 4.6 0 0 1 3 14.4z","M16.8 8.4h1.4a4 4 0 0 1 0 8h-1.4z"],"bar":["M2.4 3.6h19.2L13.6 12.8V19h3.8v2.4H6.6V19h3.8v-6.2z"],"market":["M3.6 8h16.8l1.4 12.8H2.2z","M7.7 8.4a4.3 4.3 0 0 1 8.6 0h-3a1.3 1.3 0 0 0-2.6 0z"],"taco":["M2.4 16.6a9.6 9.6 0 0 1 19.2 0h-3.8a5.8 5.8 0 0 0-11.6 0z","M6.4 16.6a2.9 2.9 0 0 1 5.8 0z","M11.8 16.6a2.9 2.9 0 0 1 5.8 0z"],"spot":["M12 2.4L19.2 12.4H4.8z","M12 9.6L21.4 21.2H2.6z","M10.4 20h3.2v3.2h-3.2z"]};
+  var PROTEIN = {"seafood":{"label":"Seafood","parts":["M5.8 12a7.6 6.4 0 1 1 15.2 0 7.6 6.4 0 1 1-15.2 0z","M7.4 12L1.2 6.6v10.8z",{"d":"M18 8.1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z","hole":true}]},"chicken":{"label":"Chicken","parts":["M4.8 15.2a6.8 6.8 0 0 1 13.6 0 6.8 6.8 0 0 1-13.6 0z","M16.8 4a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2z","M19.8 6.2L23.4 7.8l-3.6 1.8z","M13.6 3.4a1.9 1.9 0 0 1 3.8 0z","M4.4 10.6l3 3.6-5 1.4z"]},"beef":{"label":"Steak","parts":["M5.4 8.6h13.2v6a6.6 6.6 0 0 1-13.2 0z","M8.6 15.2h6.8v3a3.4 3.4 0 0 1-6.8 0z","M5.6 9.2L1 5.6l0.4 5.6z","M18.4 9.2L23 5.6l-0.4 5.6z"]},"pork":{"label":"Pork","parts":["M12 5.8a8.2 8.2 0 1 0 0 16.4 8.2 8.2 0 0 0 0-16.4z","M5.6 7.4L3.2 1.6l6 2.4z","M18.4 7.4L20.8 1.6l-6 2.4z",{"d":"M12 12.6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z","hole":true},"M10.4 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z","M13.6 15.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z"]}};
+  var PIN_SIZE = {"base":30,"big":38};
+
+  // Built with DOM APIs rather than innerHTML. Every value here is either a
+  // constant or a colour from our own data, but this keeps pin construction
+  // unambiguously safe. Same approach as 4pm-detroit's map-view client.
+  function svgBox(size) {
+    var svg = document.createElementNS(SVG_NS, 'svg');
+    svg.setAttribute('width', String(size));
+    svg.setAttribute('height', String(size));
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('aria-hidden', 'true');
+    return svg;
+  }
+
+  // Glyphs are authored in their own 0 0 24 24 box, so each one is scaled and
+  // centred wherever it lands. A part flagged hole gets the background colour,
+  // which is what makes the pig's snout read as a snout.
+  function glyphInto(svg, parts, fill, bg, cx, cy, scale) {
+    var g = document.createElementNS(SVG_NS, 'g');
+    g.setAttribute('transform',
+      'translate(' + cx + ' ' + cy + ') scale(' + scale + ') translate(-12 -12)');
+    parts.forEach(function (part) {
+      var path = document.createElementNS(SVG_NS, 'path');
+      path.setAttribute('d', typeof part === 'string' ? part : part.d);
+      path.setAttribute('fill', typeof part === 'object' && part.hole ? bg : fill);
+      g.appendChild(path);
+    });
+    svg.appendChild(g);
+  }
+
+  function starEl(size) {
+    var svg = svgBox(size);
+    var path = document.createElementNS(SVG_NS, 'path');
+    path.setAttribute('d', STAR_GLYPH);
+    path.setAttribute('fill', 'currentColor');
+    svg.appendChild(path);
+    return svg;
+  }
+
+  function badge(cls, title) {
+    var b = document.createElement('span');
+    b.className = 'pinbadge ' + cls;
+    b.title = title;
+    return b;
+  }
+
+  function badgeRow(cls, kids) {
+    var row = document.createElement('div');
+    row.className = 'pinbadges ' + cls;
+    kids.forEach(function (k) { row.appendChild(k); });
+    return row;
+  }
+
+  function buildPinEl(p, colour, ink) {
+    var big = p.c === 'stay' || p.star;
+    var size = big ? PIN_SIZE.big : PIN_SIZE.base;
+    var el = document.createElement('div');
+    el.className = 'mappin' + (big ? ' mappin--big' : '') + (p.star ? ' mappin--star' : '');
+
+    var svg = svgBox(size);
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+
+    var pin = document.createElementNS(SVG_NS, 'path');
+    pin.setAttribute('d', PIN_PATH);
+    // An approximate location is drawn hollow and dashed, so it cannot be
+    // mistaken for a pin we can actually stand behind.
+    pin.setAttribute('fill', p.approx ? 'none' : colour);
+    pin.setAttribute('stroke', p.approx ? colour : 'var(--pin-stroke)');
+    pin.setAttribute('stroke-width', p.approx ? '2.5' : '2');
+    if (p.approx) pin.setAttribute('stroke-dasharray', '3 2');
+    svg.appendChild(pin);
+
+    // The category glyph in the head. A hollow approximate pin has no filled
+    // body for a cut out to sit on, so there the glyph takes the colour.
+    if (CAT_GLYPH[p.c]) {
+      glyphInto(svg, CAT_GLYPH[p.c], p.approx ? colour : ink, colour, 12, 9.2, 0.4);
+    }
+    el.appendChild(svg);
+
+    // Badges hang off the shoulders. A starred place used to carry its star
+    // inside the head; the glyph has that space now, so the star became a
+    // badge alongside whatever the guide says.
+    var right = [];
+    if (p.star) {
+      var sb = badge('pinbadge--star', 'Settled on');
+      sb.appendChild(starEl(8));
+      right.push(sb);
+    }
+    if (typeof p.mich === 'number') {
+      var mb = badge('pinbadge--mich', p.mich + ' Michelin star' + (p.mich > 1 ? 's' : ''));
+      for (var i = 0; i < p.mich; i++) mb.appendChild(starEl(8));
+      right.push(mb);
+    }
+    if (right.length) el.appendChild(badgeRow('pinbadges--mich', right));
+
+    // Two discs is the cap. A third is wider than the pin and starts covering
+    // the pin next to it; the popup and the table list every one.
+    var left = (p.prot || []).slice(0, 2).map(function (k) {
+      if (!PROTEIN[k]) return null;
+      var b = badge('pinbadge--prot', PROTEIN[k].label);
+      var g = svgBox(16);
+      glyphInto(g, PROTEIN[k].parts, 'currentColor', 'var(--paper)', 12, 12, 0.72);
+      b.appendChild(g);
+      return b;
+    }).filter(Boolean);
+    if (left.length) el.appendChild(badgeRow('pinbadges--prot', left));
+
+    return el;
+  }
+
+  if (window.L && mapEl) {
+    map = L.map(mapEl, { scrollWheelZoom: false });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+    L.control.scale({ position: 'bottomleft', metric: true, imperial: true, maxWidth: 150 }).addTo(map);
+    layer = L.layerGroup().addTo(map);
+    map.on('click', function () { map.scrollWheelZoom.enable(); });
+    map.on('mouseout', function () { map.scrollWheelZoom.disable(); });
+  } else if (mapEl) {
+    mapEl.innerHTML = '<p style="padding:20px">Map could not load. The route below still works.</p>';
+  }
+
+  var fitted = false;
+  function drawMap(sched) {
+    if (!map) return;
+    layer.clearLayers();
+    var size = PIN_SIZE.base, anchor = [size / 2, Math.round(size * (21 / 24))];
+    var pos = {};
+    route.forEach(function (id, i) { pos[id] = i + 1; });
+
+    if (DATA.stay) {
+      var sEl = buildPinEl({ c: 'stay', approx: true, prot: [] }, DATA.stayColour, DATA.stayInk);
+      L.marker([DATA.stay.lat, DATA.stay.lon], {
+        icon: L.divIcon({ html: sEl, className: '', iconSize: [size, size], iconAnchor: anchor }),
+        alt: 'The house, approximate', keyboard: false
+      }).bindTooltip('The house (approximate area)', { direction: 'top', offset: [0, -20] }).addTo(layer);
+    }
+
+    // Route line, dashed where a leg is a ride.
+    sched.stops.forEach(function (s, i) {
+      if (!i) return;
+      var a = BY[route[i - 1]], b = BY[s.id];
+      L.polyline([[a.lat, a.lon], [b.lat, b.lon]], {
+        color: DATA.colour, weight: 3, opacity: 0.85, dashArray: s.leg.ride ? '2 8' : null
+      }).addTo(layer);
+    });
+
+    DATA.places.forEach(function (p) {
+      var n = pos[p.id];
+      var el = buildPinEl(p, DATA.colour, DATA.ink);
+      if (n) {
+        var num = document.createElement('span');
+        num.className = 'tw-num';
+        num.textContent = String(n);
+        el.appendChild(num);
+      } else {
+        el.classList.add('tw-off');
+      }
+      var m = L.marker([p.lat, p.lon], {
+        icon: L.divIcon({ html: el, className: '', iconSize: [size, size], iconAnchor: anchor, popupAnchor: [0, -anchor[1] + 4] }),
+        alt: p.n, riseOnHover: true, zIndexOffset: n ? 1000 : 0
+      });
+      var html = '<strong>' + p.n + '</strong>' + (p.hood ? '<br><span style="opacity:.7">' + p.hood + '</span>' : '') +
+        (p.tags || '') +
+        '<div class="tw-pop"><button type="button" class="tw-btn tw-btn--main" data-act="' + (n ? 'drop' : 'add') + '" data-id="' + p.id + '">' +
+        (n ? 'Drop stop ' + n : 'Add to the route') + '</button></div>' +
+        (p.links || '');
+      m.bindPopup(html, { maxWidth: 260 });
+      m.bindTooltip((n ? n + '. ' : '') + p.n, { direction: 'top', offset: [0, -20] });
+      m.addTo(layer);
+    });
+
+    if (!fitted) {
+      var pts = route.map(function (id) { return [BY[id].lat, BY[id].lon]; });
+      if (DATA.stay) pts.push([DATA.stay.lat, DATA.stay.lon]);
+      if (pts.length > 1) map.fitBounds(pts, { padding: [30, 30] });
+      else map.setView(pts[0] || [19.41, -99.16], 14);
+      fitted = true;
+    }
+  }
+
+  // ---------- lists ----------
+
+  var stopsEl = document.getElementById('tw-stops');
+  var suggEl = document.getElementById('tw-sugg');
+  var totalsEl = document.getElementById('tw-totals');
+  var headEl = document.getElementById('tw-head');
+  var moreBtn = document.getElementById('tw-more');
+  var showAll = false;
+  var SUGG_SHOWN = 6;
+
+  function btn(act, id, label, title, disabled) {
+    return '<button type="button" class="tw-btn tw-btn--sm" data-act="' + act + '" data-id="' + id + '"' +
+      (title ? ' title="' + title + '" aria-label="' + title + '"' : '') + (disabled ? ' disabled' : '') + '>' + label + '</button>';
+  }
+
+  function render() {
+    var sched = schedule(route);
+
+    headEl.textContent = route.length + ' stop' + (route.length === 1 ? '' : 's');
+    totalsEl.innerHTML = route.length
+      ? '<div><b>Walking</b>' + fmtKm(sched.walkKm) + '</div>' +
+        '<div><b>On foot</b>' + fmtMin(sched.walkMin) + '</div>' +
+        '<div><b>Rides</b>' + sched.rides + '</div>' +
+        '<div><b>Done by</b>' + clock(sched.end) + '</div>'
+      : '<div><b>Route</b>empty, add a stop from the suggestions</div>';
+
+    stopsEl.innerHTML = sched.stops.map(function (s, i) {
+      var p = BY[s.id];
+      var legHtml = s.leg
+        ? '<div class="tw-leg">' + (s.leg.ride ? 'Ride, about ' : 'Walk ') + fmtKm(s.leg.km) + ', ' + s.leg.min + ' min</div>'
+        : (DATA.stay ? '<div class="tw-leg">' + fmtKm(km(DATA.stay, p)) + ' from the house pin' + (km(DATA.stay, p) > T.rideOver ? ', a ride' : '') + '</div>' : '');
+      var bk = p.backup && BY[p.backup] && route.indexOf(p.backup) < 0 ? BY[p.backup] : null;
+      return '<li class="tw-stop">' + legHtml +
+        '<div class="tw-card">' +
+        '<div class="tw-top"><span class="tw-num tw-num--list">' + (i + 1) + '</span>' +
+        '<div class="tw-name"><strong>' + p.n + '</strong>' + (p.approx ? ' <small>approximate</small>' : '') +
+        '<div class="tw-meta">' + clock(s.arrive) + ' to ' + clock(s.arrive + T.dwell) + (p.hood ? ' &middot; ' + p.hood : '') + '</div>' +
+        (s.wait >= 5 ? '<div class="tw-meta">Planned for ' + p.at + ', so ' + fmtMin(s.wait) + ' of slack before it</div>' : '') + '</div>' +
+        '<div class="tw-ctl">' +
+        btn('up', p.id, '&uarr;', 'Move ' + p.n + ' earlier', i === 0) +
+        btn('down', p.id, '&darr;', 'Move ' + p.n + ' later', i === route.length - 1) +
+        btn('drop', p.id, 'Drop', 'Drop ' + p.n) +
+        '</div></div>' +
+        (p.tags || '') +
+        (p.order ? '<p class="tw-order"><b>Order</b> ' + p.order + '</p>' : '') +
+        hoursLine(p, s.arrive) +
+        (bk ? '<p class="tw-bk">Backup: <strong>' + bk.n + '</strong>, ' + fmtKm(km(p, bk)) + ' away. ' + btn('swap', p.id, 'Swap in', 'Swap ' + p.n + ' for ' + bk.n) + '</p>' : '') +
+        (p.note ? '<details><summary>Notes</summary><p>' + p.note + '</p></details>' : '') +
+        (p.links || '') +
+        '</div></li>';
+    }).join('');
+
+    var sugg = suggestions();
+    var shown = showAll ? sugg : sugg.slice(0, SUGG_SHOWN);
+    suggEl.innerHTML = shown.map(function (s) {
+      var p = s.p;
+      var trial = route.slice(); trial.splice(s.at, 0, p.id);
+      var arrive = schedule(trial).stops[s.at].arrive;
+      var where = !route.length ? 'Start here'
+        : s.a && s.b ? 'Between ' + (s.at) + ' and ' + (s.at + 1)
+        : s.a ? 'After stop ' + route.length : 'Before stop 1';
+      var cost = s.add < 0.05 ? 'on the way, no extra walking'
+        : s.add > T.rideOver ? 'a ride, ' + fmtKm(s.add) + ' extra'
+        : '+' + fmtKm(s.add) + ', about +' + Math.ceil((s.add / T.kmh) * 60) + ' min walking';
+      return '<li class="tw-sg">' +
+        '<div class="tw-top"><div class="tw-name"><strong>' + p.n + '</strong>' +
+        '<div class="tw-meta">' + where + ' &middot; ' + cost + (p.hood ? ' &middot; ' + p.hood : '') + '</div>' +
+        (p.backupFor ? '<div class="tw-meta">The plan\'s backup for ' + p.backupFor + '</div>' : '') +
+        '</div><div class="tw-ctl">' + btn('add', p.id, 'Add', 'Add ' + p.n + ' to the route') + '</div></div>' +
+        (p.tags || '') + hoursLine(p, arrive) + '</li>';
+    }).join('');
+    moreBtn.hidden = sugg.length <= SUGG_SHOWN;
+    moreBtn.textContent = showAll ? 'Show fewer' : 'Show all ' + sugg.length;
+
+    drawMap(sched);
+  }
+
+  // ---------- actions ----------
+
+  function act(a, id) {
+    var i = route.indexOf(id);
+    if (a === 'up' && i > 0) { route.splice(i, 1); route.splice(i - 1, 0, id); }
+    else if (a === 'down' && i > -1 && i < route.length - 1) { route.splice(i, 1); route.splice(i + 1, 0, id); }
+    else if (a === 'drop' && i > -1) route.splice(i, 1);
+    else if (a === 'swap' && i > -1 && BY[id].backup) route[i] = BY[id].backup;
+    else if (a === 'add' && i < 0) {
+      var s = suggestions().filter(function (x) { return x.p.id === id; })[0];
+      route.splice(s ? s.at : route.length, 0, id);
+    } else return;
+    if (map) map.closePopup();
+    save();
+    render();
+    var f = document.querySelector('[data-act="' + a + '"][data-id="' + id + '"]');
+    if (f && (a === 'up' || a === 'down')) f.focus();
+  }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('button[data-act]');
+    if (b && !b.disabled) act(b.getAttribute('data-act'), b.getAttribute('data-id'));
+  });
+
+  var statusEl = document.getElementById('tw-status');
+  function say(msg) { statusEl.textContent = msg; setTimeout(function () { statusEl.textContent = ''; }, 4000); }
+
+  document.getElementById('tw-copy').addEventListener('click', function () {
+    var url = location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () { say('Copied. Paste it in the group chat.'); },
+        function () { window.prompt('Copy this link:', url); });
+    } else window.prompt('Copy this link:', url);
+  });
+  document.getElementById('tw-reset').addEventListener('click', function () {
+    route = T.seed.slice(); save(); render(); say('Back to the plan.');
+  });
+  moreBtn.addEventListener('click', function () { showAll = !showAll; render(); });
+  window.addEventListener('hashchange', function () {
+    var r = fromHash(); route = r || T.seed.slice(); render();
+  });
+
+  save();
+  render();
+})();
+</script>
+<footer>
+  <p>Built from <code>data/</code> in <a href="https://github.com/ryankolean/happy-birthday-krysta">ryankolean/happy-birthday-krysta</a>. Lodging and flights last verified 2026-10-02. Casa KM is booked and partly paid, and all three of Ryan and Krysta's flights are ticketed. Everything else is still open.</p>
+  <p>Figures marked <span class="tag quoted">quoted</span> are live prices from the operator's own site. <span class="tag estimate">estimate</span> is a real market price for a comparable thing, never quoted for us. <span class="tag open">open</span> means undecided and the number is a placeholder.</p>
+</footer>
+</div>
+</body>
+</html>

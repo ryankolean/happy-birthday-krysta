@@ -1,0 +1,63 @@
+# Self-guided taco walk, Mexico City. Jira TRAVEL-28, planned 6 November 2026.
+#
+# This is the seed route the taco page opens with. Every name under `stops`
+# must match a `name` in data/places.yml exactly, and the build fails if one
+# does not, so a stop is always a pin we already stand behind. Add a place to
+# places.yml first, then reference it here.
+#
+# The page lets each viewer add, drop and reorder stops, and keeps their
+# version in the page address so it can be pasted into the group chat. None of
+# that comes back here: change the plan for everybody by editing this file.
+
+date: 2026-12-30
+meet: "11:00"
+# Minutes spent at each stop: ordering in two groups of four, eating standing.
+dwell_min: 45
+# Straight-line distance times this is the walk. Roma's grid plus the
+# diagonals of Alvaro Obregon put real routes about a quarter over the crow.
+street_factor: 1.25
+walk_kmh: 4.5
+# A leg longer than this is a ride, not a walk.
+ride_over_km: 2.0
+
+# `at` is the planned arrival from TRAVEL-28. The page treats it as an
+# earliest time while the stop is still in its planned slot: if the walk gets
+# there sooner, the group waits, which keeps a stop from landing before it
+# opens. Moved to another slot, a stop is reached as soon as the walk gets there.
+stops:
+  - name: Tacos de Canasta Don Quique
+    at: "11:00"
+    backup: Tacos Joven
+    order: papa, chorizo, frijol, chicharron, mole verde; about 20 to 30 MXN a taco, estimate
+  - name: Taqueria Los Parados
+    at: "12:45"
+    backup: Tacos Hola El Guero
+    order: bistec, costilla, pastor
+  - name: Tacos del Valle
+    at: "14:30"
+    backup: Tacos La Once Mil
+    order: pastor, bistec, Arabe
+  - name: Carinito Tacos
+    at: "15:45"
+    backup: Tacos Atarantados
+    order: Southeast Asian leaning tacos
+  - name: Taqueria Orinoco
+    at: "17:00"
+    order: trompo 35, aguacate 34, res 64 MXN (El Financiero, July 2026)
+
+# Names from the original shortlist with no verified Mexico City listing yet.
+# Each waits on a Google Maps link or Instagram handle. To slot one in: add it
+# to places.yml with `category: taco` and an address, run `npm run geocode`
+# and `npm run build`, delete it from this list, and it shows up on the page
+# as a suggestion ranked by detour.
+unverified:
+  - Tacos Chanito
+  - Tacos "Beto"
+  - Tacos la Soledad
+  - '"Best Tacos in Mexico City" (looks like a generic Maps label, not a business)'
+
+notes:
+  - Cash in small bills, about 300 to 400 MXN a person for the day. Stands and canasta are cash only.
+  - Los Parados is standing only. Split into two groups of four and order in rounds.
+  - Avoid 31 December, when many places close in the afternoon, and 1 January.
+  - Re-check every stop on Instagram or Maps on 28 December. No stop publishes holiday hours.

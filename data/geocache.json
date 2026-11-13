@@ -743,5 +743,15 @@
     "lat": 19.4200285,
     "lon": -99.1604264,
     "matched": "83, Calle Orizaba, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Avenida Alvaro Obregon 130, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4179168,
+    "lon": -99.1606122,
+    "matched": "El Parián, 130, Avenida Álvaro Obregón, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
+  },
+  "Cordoba 113, Roma Norte, Cuauhtemoc, Ciudad de Mexico": {
+    "lat": 19.4180262,
+    "lon": -99.1585468,
+    "matched": "Tacos Atarantados, 113, Calle Córdoba, Roma Norte, Roma, Mexico City, Cuauhtémoc, Mexico City, 06700, Mexico"
   }
 }

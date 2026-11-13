@@ -37,6 +37,14 @@
 #   What the kitchen is known for, not everything it serves. One badge per
 #   protein on the pin, so set this only where the note already says what the
 #   order is. A scalar works too: `protein: seafood`.
+#
+# hours, hours_source:
+#   Opening hours as a map of weekday (mon to sun) to "HH:MM-HH:MM", 24 hour,
+#   where a close earlier than the open means past midnight. Only days a source
+#   actually gives; a missing day means unknown, not closed. The taco tour page
+#   reads these to flag a stop that is shut at its planned time on 30 or 31
+#   December. They are regular hours: no stop here publishes holiday hours, so
+#   say where they came from in hours_source and re-check on 28 December.
 
 categories:
   stay:
@@ -646,7 +654,10 @@ places:
     category: taco
     michelin: bib
     protein: [pork]
-    address: Tacos del Valle, Ciudad de Mexico
+    address: Avenida Alvaro Obregon 130, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Norte
+    hours: { wed: "13:00-01:00" }
+    hours_source: Michelin guide via TRAVEL-28, 6 November 2026, Wednesday only
     note: >
       Rated 9/10 by @placesnoted and starred by @thatonepointofview as actually
       eaten. Trompo-style pastor over open flame. The one where the hype and the
@@ -683,8 +694,13 @@ places:
   - name: Tacos Atarantados
     category: taco
     protein: [pork]
-    address: Tacos Atarantados, Ciudad de Mexico
-    note: Rated 8.5/10. Al pastor over real charcoal, which is rarer than it should be here.
+    address: Cordoba 113, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Norte
+    note: >
+      Rated 8.5/10. Al pastor over real charcoal, which is rarer than it should
+      be here. Monterrey-style. This pin is the Cordoba 113 branch the taco
+      tour uses as a backup; a name lookup had put it on a second branch at
+      Insurgentes Sur 337 in Hipodromo.
     source: instagram @placesnoted
 
   - name: Milpa
@@ -722,6 +738,8 @@ places:
     protein: [pork]
     address: Taqueria Orinoco, Roma Norte, Ciudad de Mexico
     neighborhood: Roma Norte
+    hours: { mon: "12:00-04:00", tue: "12:00-04:00", wed: "12:00-04:00", thu: "12:00-04:00", fri: "12:00-04:00", sat: "12:00-04:00", sun: "12:00-04:00" }
+    hours_source: Time Out Mexico 2017 via TRAVEL-28, stale
     note: >
       Starred as actually eaten. Open very late. Al pastor off the trompo is
       the order, and a friend in the city in November picks the gringa
@@ -867,6 +885,8 @@ places:
     michelin: listed
     address: Avenida Monterrey 333, Roma Sur, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Roma Sur
+    hours: { mon: "12:30-03:00", tue: "12:30-03:00", wed: "12:30-03:00", thu: "12:30-03:00", fri: "12:30-05:00", sat: "12:30-05:00", sun: "12:30-01:00" }
+    hours_source: Michelin guide via TRAVEL-28, 6 November 2026
     note: Taco tour stop 2. Mon-Thu 12:30-03:00, Fri-Sat to 05:00, Sun to 01:00 (Michelin). Standing only. Holiday hours unverified.
 
   - name: Carinito Tacos
@@ -875,6 +895,8 @@ places:
     address: Guanajuato 53, Roma Norte, Cuauhtemoc, Ciudad de Mexico
     precision: approximate
     neighborhood: Roma Norte
+    hours: { mon: "12:00-22:00", tue: "12:00-22:00", wed: "12:00-22:00", thu: "12:00-22:00", fri: "12:00-22:00", sat: "12:00-22:00", sun: "12:00-22:00" }
+    hours_source: Michelin guide via TRAVEL-28, 6 November 2026
     note: Taco tour stop 4. Daily 12:00-22:00 (Michelin). Outdoor seating only. Holiday hours unverified.
 
   - name: Tacos Hola El Guero
@@ -882,6 +904,8 @@ places:
     michelin: listed
     address: Avenida Amsterdam 135, Hipodromo, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Hipodromo
+    hours: { mon: "09:00-21:00", tue: "09:00-21:00", wed: "09:00-21:00", thu: "09:00-21:00", fri: "09:00-21:00", sat: "09:00-19:00", sun: "09:00-15:00" }
+    hours_source: Michelin guide via TRAVEL-28, 6 November 2026; Chilango 2024 says 09:30-17:00 Mon-Sat
     note: Taco tour backup for stop 2. Guisados since 1968. Michelin lists Mon-Fri 9-21, Sat 9-19, Sun 9-15; Chilango 2024 says 9:30-17:00 Mon-Sat. Holiday hours unverified.
 
   # ---------- Puerto Morelos, 3 to 8 January 2027 (riviera map) ----------

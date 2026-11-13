@@ -113,6 +113,7 @@ const PAGES = [
   { file: 'flights.html', label: 'Flights' },
   { file: 'stays.html', label: 'Accommodations' },
   { file: 'map.html', label: 'Map' },
+  { file: 'tacos.html', label: 'Taco walk' },
   { file: 'riviera-map.html', label: 'Puerto Morelos map' },
   { file: 'costs.html', label: 'Costs' },
   { file: 'dining.html', label: 'Birthday' },
@@ -589,6 +590,59 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
 .swatch {
   display: inline-block; width: 11px; height: 11px; border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg); margin-right: 9px; vertical-align: baseline;
+}
+
+/* taco walk */
+.tw-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-block: 0 16px; }
+.tw-status { font-size: 13px; color: var(--teal); }
+.tw-btn {
+  font-family: var(--f-body); font-size: 13px; font-weight: 500; line-height: 1.2;
+  color: var(--ink); background: var(--raise);
+  border: 1px solid var(--rule-firm); border-radius: 2px; padding: 8px 12px; cursor: pointer;
+}
+.tw-btn:hover:not(:disabled) { border-color: var(--teal); }
+.tw-btn:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
+.tw-btn:disabled { opacity: 0.35; cursor: default; }
+.tw-btn--main { color: var(--teal); background: var(--teal-soft); border-color: var(--teal); font-weight: 600; }
+.tw-btn--sm { min-width: 40px; min-height: 36px; padding: 6px 10px; }
+.tw-totals { display: flex; flex-wrap: wrap; gap: 6px 22px; font-family: var(--f-mono); font-size: 14px; color: var(--ink); margin-block: 0 4px; }
+.tw-totals b { display: block; font-family: var(--f-body); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.tw-map { margin-block: 4px 8px; }
+.tw-pop { margin: 8px 0 0; }
+.tw-num {
+  position: absolute; left: 50%; bottom: -9px; transform: translateX(-50%);
+  min-width: 17px; height: 17px; padding: 0 4px; border-radius: 999px;
+  background: var(--ink); color: var(--paper);
+  font-family: var(--f-mono); font-size: 10.5px; font-weight: 600; line-height: 17px; text-align: center;
+  box-shadow: 0 0 0 1.5px var(--paper); pointer-events: none;
+}
+.tw-num--key, .tw-num--list { position: static; transform: none; display: inline-block; }
+.tw-num--list { flex: none; min-width: 26px; height: 26px; line-height: 26px; font-size: 13px; margin-top: 2px; }
+.mappin.tw-off { opacity: 0.5; }
+.tw-faded { opacity: 0.5; display: inline-flex; }
+.tw-stops, .tw-sugg { list-style: none; padding: 0; margin: 0; }
+.tw-leg { font-family: var(--f-mono); font-size: 12px; color: var(--muted); padding: 6px 0 6px 12px; margin-left: 12px; border-left: 2px dashed var(--rule-firm); }
+.tw-card, .tw-sg { background: var(--raise); border: 1px solid var(--rule-firm); border-radius: 2px; padding: 12px 14px; font-size: 14px; }
+.tw-sg { margin-bottom: 8px; }
+.tw-top { display: flex; gap: 10px; align-items: flex-start; }
+.tw-name { flex: 1; min-width: 0; }
+.tw-name strong { color: var(--ink); font-size: 15px; }
+.tw-meta { font-size: 12.5px; color: var(--muted); }
+.tw-ctl { display: flex; gap: 4px; flex: none; }
+.tw-order, .tw-bk { margin: 8px 0 0; font-size: 13.5px; }
+.tw-order b { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
+.tw-hours { display: flex; flex-wrap: wrap; gap: 4px 6px; margin: 8px 0 0; }
+.tw-h { font-family: var(--f-mono); font-size: 11px; border: 1px solid var(--rule-firm); border-radius: 2px; padding: 1px 6px; }
+.tw-h--ok { color: var(--teal); border-color: var(--teal); }
+.tw-h--bad { color: var(--michelin-ink); border-color: var(--michelin-ink); }
+.tw-h--unk { color: var(--marigold); border-color: var(--marigold); }
+.tw-src { flex-basis: 100%; font-size: 11.5px; color: var(--muted); }
+.tw-card details { margin: 8px 0 0; font-size: 13.5px; }
+.tw-card summary { cursor: pointer; color: var(--teal); }
+.tw-card details p { margin: 6px 0 0; }
+@media (max-width: 480px) {
+  .tw-top { flex-wrap: wrap; }
+  .tw-ctl { flex-basis: 100%; justify-content: flex-end; }
 }
 
 footer { margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--rule-firm); font-size: 12.5px; color: var(--muted); }
@@ -1404,6 +1458,127 @@ const MAPS = {
   riviera: { file: 'riviera-map.html', title: 'Puerto Morelos', base: 'the resort', openViewKm: 6, fallback: [20.8478, -86.8756] },
 };
 
+// Pin construction in the browser, shared by the map and the taco walk so a
+// pin cannot look different on the two pages. Every value it reads is a
+// build-time constant above.
+const PIN_JS = `  var SVG_NS = 'http://www.w3.org/2000/svg';
+  var PIN_PATH = ${JSON.stringify(PIN_PATH)};
+  var STAR_GLYPH = ${JSON.stringify(STAR_GLYPH)};
+  var CAT_GLYPH = ${JSON.stringify(CAT_GLYPH)};
+  var PROTEIN = ${JSON.stringify(PROTEIN)};
+  var PIN_SIZE = ${JSON.stringify(PIN_SIZE)};
+
+  // Built with DOM APIs rather than innerHTML. Every value here is either a
+  // constant or a colour from our own data, but this keeps pin construction
+  // unambiguously safe. Same approach as 4pm-detroit's map-view client.
+  function svgBox(size) {
+    var svg = document.createElementNS(SVG_NS, 'svg');
+    svg.setAttribute('width', String(size));
+    svg.setAttribute('height', String(size));
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('aria-hidden', 'true');
+    return svg;
+  }
+
+  // Glyphs are authored in their own 0 0 24 24 box, so each one is scaled and
+  // centred wherever it lands. A part flagged hole gets the background colour,
+  // which is what makes the pig's snout read as a snout.
+  function glyphInto(svg, parts, fill, bg, cx, cy, scale) {
+    var g = document.createElementNS(SVG_NS, 'g');
+    g.setAttribute('transform',
+      'translate(' + cx + ' ' + cy + ') scale(' + scale + ') translate(-12 -12)');
+    parts.forEach(function (part) {
+      var path = document.createElementNS(SVG_NS, 'path');
+      path.setAttribute('d', typeof part === 'string' ? part : part.d);
+      path.setAttribute('fill', typeof part === 'object' && part.hole ? bg : fill);
+      g.appendChild(path);
+    });
+    svg.appendChild(g);
+  }
+
+  function starEl(size) {
+    var svg = svgBox(size);
+    var path = document.createElementNS(SVG_NS, 'path');
+    path.setAttribute('d', STAR_GLYPH);
+    path.setAttribute('fill', 'currentColor');
+    svg.appendChild(path);
+    return svg;
+  }
+
+  function badge(cls, title) {
+    var b = document.createElement('span');
+    b.className = 'pinbadge ' + cls;
+    b.title = title;
+    return b;
+  }
+
+  function badgeRow(cls, kids) {
+    var row = document.createElement('div');
+    row.className = 'pinbadges ' + cls;
+    kids.forEach(function (k) { row.appendChild(k); });
+    return row;
+  }
+
+  function buildPinEl(p, colour, ink) {
+    var big = p.c === 'stay' || p.star;
+    var size = big ? PIN_SIZE.big : PIN_SIZE.base;
+    var el = document.createElement('div');
+    el.className = 'mappin' + (big ? ' mappin--big' : '') + (p.star ? ' mappin--star' : '');
+
+    var svg = svgBox(size);
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+
+    var pin = document.createElementNS(SVG_NS, 'path');
+    pin.setAttribute('d', PIN_PATH);
+    // An approximate location is drawn hollow and dashed, so it cannot be
+    // mistaken for a pin we can actually stand behind.
+    pin.setAttribute('fill', p.approx ? 'none' : colour);
+    pin.setAttribute('stroke', p.approx ? colour : 'var(--pin-stroke)');
+    pin.setAttribute('stroke-width', p.approx ? '2.5' : '2');
+    if (p.approx) pin.setAttribute('stroke-dasharray', '3 2');
+    svg.appendChild(pin);
+
+    // The category glyph in the head. A hollow approximate pin has no filled
+    // body for a cut out to sit on, so there the glyph takes the colour.
+    if (CAT_GLYPH[p.c]) {
+      glyphInto(svg, CAT_GLYPH[p.c], p.approx ? colour : ink, colour, 12, 9.2, 0.4);
+    }
+    el.appendChild(svg);
+
+    // Badges hang off the shoulders. A starred place used to carry its star
+    // inside the head; the glyph has that space now, so the star became a
+    // badge alongside whatever the guide says.
+    var right = [];
+    if (p.star) {
+      var sb = badge('pinbadge--star', 'Settled on');
+      sb.appendChild(starEl(8));
+      right.push(sb);
+    }
+    if (typeof p.mich === 'number') {
+      var mb = badge('pinbadge--mich', p.mich + ' Michelin star' + (p.mich > 1 ? 's' : ''));
+      for (var i = 0; i < p.mich; i++) mb.appendChild(starEl(8));
+      right.push(mb);
+    }
+    if (right.length) el.appendChild(badgeRow('pinbadges--mich', right));
+
+    // Two discs is the cap. A third is wider than the pin and starts covering
+    // the pin next to it; the popup and the table list every one.
+    var left = (p.prot || []).slice(0, 2).map(function (k) {
+      if (!PROTEIN[k]) return null;
+      var b = badge('pinbadge--prot', PROTEIN[k].label);
+      var g = svgBox(16);
+      glyphInto(g, PROTEIN[k].parts, 'currentColor', 'var(--paper)', 12, 12, 0.72);
+      b.appendChild(g);
+      return b;
+    }).filter(Boolean);
+    if (left.length) el.appendChild(badgeRow('pinbadges--prot', left));
+
+    return el;
+  }
+`;
+
 function buildMap(region = 'cdmx') {
   const cfg = MAPS[region];
   const cats = placesDoc.categories;
@@ -1601,123 +1776,7 @@ ${lists}
   var groups = {};
   Object.keys(DATA.categories).forEach(function (k) { groups[k] = L.layerGroup().addTo(map); });
 
-  var SVG_NS = 'http://www.w3.org/2000/svg';
-  var PIN_PATH = ${JSON.stringify(PIN_PATH)};
-  var STAR_GLYPH = ${JSON.stringify(STAR_GLYPH)};
-  var CAT_GLYPH = ${JSON.stringify(CAT_GLYPH)};
-  var PROTEIN = ${JSON.stringify(PROTEIN)};
-  var PIN_SIZE = ${JSON.stringify(PIN_SIZE)};
-
-  // Built with DOM APIs rather than innerHTML. Every value here is either a
-  // constant or a colour from our own data, but this keeps pin construction
-  // unambiguously safe. Same approach as 4pm-detroit's map-view client.
-  function svgBox(size) {
-    var svg = document.createElementNS(SVG_NS, 'svg');
-    svg.setAttribute('width', String(size));
-    svg.setAttribute('height', String(size));
-    svg.setAttribute('viewBox', '0 0 24 24');
-    svg.setAttribute('aria-hidden', 'true');
-    return svg;
-  }
-
-  // Glyphs are authored in their own 0 0 24 24 box, so each one is scaled and
-  // centred wherever it lands. A part flagged hole gets the background colour,
-  // which is what makes the pig's snout read as a snout.
-  function glyphInto(svg, parts, fill, bg, cx, cy, scale) {
-    var g = document.createElementNS(SVG_NS, 'g');
-    g.setAttribute('transform',
-      'translate(' + cx + ' ' + cy + ') scale(' + scale + ') translate(-12 -12)');
-    parts.forEach(function (part) {
-      var path = document.createElementNS(SVG_NS, 'path');
-      path.setAttribute('d', typeof part === 'string' ? part : part.d);
-      path.setAttribute('fill', typeof part === 'object' && part.hole ? bg : fill);
-      g.appendChild(path);
-    });
-    svg.appendChild(g);
-  }
-
-  function starEl(size) {
-    var svg = svgBox(size);
-    var path = document.createElementNS(SVG_NS, 'path');
-    path.setAttribute('d', STAR_GLYPH);
-    path.setAttribute('fill', 'currentColor');
-    svg.appendChild(path);
-    return svg;
-  }
-
-  function badge(cls, title) {
-    var b = document.createElement('span');
-    b.className = 'pinbadge ' + cls;
-    b.title = title;
-    return b;
-  }
-
-  function badgeRow(cls, kids) {
-    var row = document.createElement('div');
-    row.className = 'pinbadges ' + cls;
-    kids.forEach(function (k) { row.appendChild(k); });
-    return row;
-  }
-
-  function buildPinEl(p, colour, ink) {
-    var big = p.c === 'stay' || p.star;
-    var size = big ? PIN_SIZE.big : PIN_SIZE.base;
-    var el = document.createElement('div');
-    el.className = 'mappin' + (big ? ' mappin--big' : '') + (p.star ? ' mappin--star' : '');
-
-    var svg = svgBox(size);
-    svg.setAttribute('fill', 'none');
-    svg.setAttribute('stroke-linecap', 'round');
-    svg.setAttribute('stroke-linejoin', 'round');
-
-    var pin = document.createElementNS(SVG_NS, 'path');
-    pin.setAttribute('d', PIN_PATH);
-    // An approximate location is drawn hollow and dashed, so it cannot be
-    // mistaken for a pin we can actually stand behind.
-    pin.setAttribute('fill', p.approx ? 'none' : colour);
-    pin.setAttribute('stroke', p.approx ? colour : 'var(--pin-stroke)');
-    pin.setAttribute('stroke-width', p.approx ? '2.5' : '2');
-    if (p.approx) pin.setAttribute('stroke-dasharray', '3 2');
-    svg.appendChild(pin);
-
-    // The category glyph in the head. A hollow approximate pin has no filled
-    // body for a cut out to sit on, so there the glyph takes the colour.
-    if (CAT_GLYPH[p.c]) {
-      glyphInto(svg, CAT_GLYPH[p.c], p.approx ? colour : ink, colour, 12, 9.2, 0.4);
-    }
-    el.appendChild(svg);
-
-    // Badges hang off the shoulders. A starred place used to carry its star
-    // inside the head; the glyph has that space now, so the star became a
-    // badge alongside whatever the guide says.
-    var right = [];
-    if (p.star) {
-      var sb = badge('pinbadge--star', 'Settled on');
-      sb.appendChild(starEl(8));
-      right.push(sb);
-    }
-    if (typeof p.mich === 'number') {
-      var mb = badge('pinbadge--mich', p.mich + ' Michelin star' + (p.mich > 1 ? 's' : ''));
-      for (var i = 0; i < p.mich; i++) mb.appendChild(starEl(8));
-      right.push(mb);
-    }
-    if (right.length) el.appendChild(badgeRow('pinbadges--mich', right));
-
-    // Two discs is the cap. A third is wider than the pin and starts covering
-    // the pin next to it; the popup and the table list every one.
-    var left = (p.prot || []).slice(0, 2).map(function (k) {
-      if (!PROTEIN[k]) return null;
-      var b = badge('pinbadge--prot', PROTEIN[k].label);
-      var g = svgBox(16);
-      glyphInto(g, PROTEIN[k].parts, 'currentColor', 'var(--paper)', 12, 12, 0.72);
-      b.appendChild(g);
-      return b;
-    }).filter(Boolean);
-    if (left.length) el.appendChild(badgeRow('pinbadges--prot', left));
-
-    return el;
-  }
-
+${PIN_JS}
   var bounds = [];
   DATA.places.forEach(function (p) {
     var cat = DATA.categories[p.c] || {};
@@ -1820,6 +1879,496 @@ ${lists}
 </script>`;
 
   return shell({ title: cfg.title, current: cfg.file, body });
+}
+
+// ---------- taco walk ----------
+
+// The TRAVEL-28 walk as an editable route. The seed lives in
+// data/taco-tour.yml; every stop on it and every suggestion is a taco entry in
+// places.yml, so the page can never offer a place the map does not have.
+// Edits stay with the viewer: the route rides in the page address, so a copied
+// link carries it, and the browser remembers the last one. No backend.
+const tacoTour = load('taco-tour.yml');
+
+const HOURS_RE = /^([01]\d|2[0-3]):[0-5]\d-([01]\d|2[0-3]):[0-5]\d$/;
+const WEEKDAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+for (const p of placesDoc.places) {
+  if (p.hours == null) continue;
+  if (typeof p.hours !== 'object') throw new Error(`${p.name}: hours must be a map of weekday to "HH:MM-HH:MM"`);
+  for (const [d, v] of Object.entries(p.hours)) {
+    if (!WEEKDAYS.includes(d)) throw new Error(`${p.name}: hours day ${JSON.stringify(d)} is not one of ${WEEKDAYS.join(', ')}`);
+    if (!HOURS_RE.test(String(v))) throw new Error(`${p.name}: hours.${d} must be "HH:MM-HH:MM", got ${JSON.stringify(v)}`);
+  }
+}
+
+const slug = (s) => String(s).toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+function buildTacos() {
+  const byName = new Map(placesDoc.places.map((p) => [p.name, p]));
+  const pos = (p) => (p.lat && p.lon ? { lat: p.lat, lon: p.lon } : geocache[p.address]);
+
+  for (const s of tacoTour.stops) {
+    for (const n of [s.name, s.backup].filter(Boolean)) {
+      const p = byName.get(n);
+      if (!p) throw new Error(`taco-tour.yml: ${JSON.stringify(n)} is not a name in places.yml`);
+      if (!pos(p)) throw new Error(`taco-tour.yml: ${n} has no coordinates yet, run npm run geocode`);
+    }
+  }
+
+  const tacos = placesDoc.places.filter((p) => p.category === 'taco' && (p.region || 'cdmx') === 'cdmx' && pos(p));
+  const unplaced = placesDoc.places.filter((p) => p.category === 'taco' && (p.region || 'cdmx') === 'cdmx' && !pos(p));
+  const stay = placesDoc.places.find((p) => p.category === 'stay' && (p.region || 'cdmx') === 'cdmx');
+  const stayPos = stay && pos(stay);
+  const cats = placesDoc.categories;
+
+  const ids = new Set();
+  const payload = {
+    tour: {
+      date: iso(tacoTour.date),
+      meet: String(tacoTour.meet),
+      dwell: tacoTour.dwell_min,
+      factor: tacoTour.street_factor,
+      kmh: tacoTour.walk_kmh,
+      rideOver: tacoTour.ride_over_km,
+      seed: tacoTour.stops.map((s) => slug(s.name)),
+    },
+    stay: stayPos ? { n: esc(stay.name), hood: esc(stay.neighborhood || ''), lat: stayPos.lat, lon: stayPos.lon } : null,
+    colour: cats.taco.color,
+    ink: glyphInk(cats.taco.color),
+    stayColour: cats.stay.color,
+    stayInk: glyphInk(cats.stay.color),
+    places: tacos.map((p) => {
+      const id = slug(p.name);
+      if (ids.has(id)) throw new Error(`two taco places share the id ${id}; rename one`);
+      ids.add(id);
+      const seed = tacoTour.stops.find((s) => s.name === p.name);
+      const backupOf = tacoTour.stops.find((s) => s.backup === p.name);
+      const q = pos(p);
+      return {
+        id,
+        n: esc(p.name),
+        c: 'taco',
+        lat: q.lat,
+        lon: q.lon,
+        hood: esc(p.neighborhood || ''),
+        note: nt(p.note || ''),
+        tags: tagsHtml(p),
+        links: linkList(p),
+        mich: p.michelin == null ? null : p.michelin,
+        prot: proteinList(p),
+        approx: p.precision === 'approximate',
+        hours: p.hours || null,
+        hoursSrc: esc(p.hours_source || ''),
+        order: seed?.order ? esc(seed.order) : '',
+        at: seed?.at ? String(seed.at) : null,
+        slot: seed ? tacoTour.stops.indexOf(seed) : -1,
+        backup: seed?.backup ? slug(seed.backup) : null,
+        backupFor: backupOf ? esc(backupOf.name) : '',
+      };
+    }),
+  };
+
+  const d = new Date(tacoTour.date);
+  const dayName = DOW[d.getUTCDay()];
+  const nextDay = new Date(d.getTime() + 86400000);
+
+  const badgeKey =
+    `<div class="legend-row legend-row--key">` +
+    `<span class="keyitem">${michBadgeHtml(1)} Michelin star</span>` +
+    Object.keys(PROTEIN)
+      .map((k) => `<span class="keyitem">${protBadgeHtml(k)} ${esc(PROTEIN[k].label.toLowerCase())}</span>`)
+      .join('') +
+    `<span class="keyitem"><span class="tw-num tw-num--key">1</span> on the route</span>` +
+    `<span class="keyitem"><span class="tw-faded">${legendPin('taco', cats.taco.color, 18)}</span> not on it, tap to add</span>` +
+    `</div>`;
+
+  const body = `<header class="masthead">
+  <p class="eyebrow">Self-guided, nothing booked</p>
+  <h1>The taco walk</h1>
+  <div class="dateline">
+    <div><b>Day</b>${esc(dayName)} ${esc(shortDate(iso(tacoTour.date)))}</div>
+    <div><b>Meet</b>${esc(String(tacoTour.meet))}, ${esc(stay ? stay.neighborhood : 'Del Valle')}</div>
+    <div><b>Route</b><span id="tw-head">${tacoTour.stops.length} stops</span></div>
+  </div>
+</header>
+
+<p class="lede">A canasta breakfast near the house, then a walk up through Roma Sur into Roma Norte. Add, drop and reorder stops below and the walking recomputes. Your version lives in this page's address, so <strong>copy the link</strong> to share it; nobody else's route changes until they open yours.</p>
+
+<div class="tw-bar">
+  <button type="button" class="tw-btn tw-btn--main" id="tw-copy">Copy link to this route</button>
+  <button type="button" class="tw-btn" id="tw-reset">Reset to the plan</button>
+  <span class="tw-status" id="tw-status" role="status" aria-live="polite"></span>
+</div>
+
+<div class="tw-totals" id="tw-totals"></div>
+
+${badgeKey}
+<div id="map" class="tw-map" role="application" aria-label="Map of the taco walk"></div>
+<p class="caveat">Walking is straight-line distance times ${esc(String(tacoTour.street_factor))} at ${esc(String(tacoTour.walk_kmh))} km/h, so treat every minute as a decent guess, not a route. A leg over ${esc(String(tacoTour.ride_over_km))} km is shown as a ride. Each stop gets ${esc(String(tacoTour.dwell_min))} minutes, and the planned stops are not reached before their planned time, so the slack in the plan shows up as waiting. Hollow dashed pins are approximate locations.</p>
+
+<h2>The route</h2>
+<ol class="tw-stops" id="tw-stops"></ol>
+
+<h2>Suggestions</h2>
+<p class="caveat">Every taco place on the map that is not on your route, cheapest first: the extra walking it costs to slot it in at its best position. Hours are checked at the time you would arrive on ${esc(dayName)} ${esc(shortDate(iso(tacoTour.date)))}, and for ${esc(DOW[nextDay.getUTCDay()])} ${esc(shortDate(iso(nextDay.toISOString().slice(0, 10))))} in case the day slips.</p>
+<ol class="tw-sugg" id="tw-sugg"></ol>
+<p><button type="button" class="tw-btn" id="tw-more" hidden>Show all</button></p>
+
+<div class="note warn">
+  <div class="nh">Before anyone goes</div>
+  <ul>${tacoTour.notes.map((n) => `<li>${nt(n)}</li>`).join('')}</ul>
+</div>
+
+<div class="note">
+  <div class="nh">Still waiting on a Maps link</div>
+  <p>${tacoTour.unverified.map((n) => esc(n)).join(', ')}. None of these turned up as a Mexico City listing. Send the Google Maps link or Instagram handle and each one becomes a pin: add it to <code>data/places.yml</code> with <code>category: taco</code> and an address, run <code>npm run geocode</code> and <code>npm run build</code>, and it appears in the suggestions above, ranked by detour.</p>
+  ${unplaced.length ? `<p>On file but not yet geocoded: ${unplaced.map((p) => esc(p.name)).join(', ')}.</p>` : ''}
+</div>
+
+<noscript><p class="caveat">The route editor needs JavaScript. The plan is ${tacoTour.stops.map((s) => esc(s.name)).join(', then ')}.</p></noscript>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+  integrity="sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+  integrity="sha384-NElt3Op+9NBMCYaef5HxeJmU4Xeard/Lku8ek6hoPTvYkQPh3zLIrJP7KiRocsxO" crossorigin="anonymous"></script>
+<script>
+(function () {
+  var DATA = ${JSON.stringify(payload)};
+  var T = DATA.tour;
+  var BY = {};
+  DATA.places.forEach(function (p) { BY[p.id] = p; });
+  var STORE = 'taco-walk-route';
+  var DOWS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+  var DOW_LONG = { sun: 'Sun', mon: 'Mon', tue: 'Tue', wed: 'Wed', thu: 'Thu', fri: 'Fri', sat: 'Sat' };
+
+  // ---------- state ----------
+
+  function clean(list) {
+    var seen = {};
+    return list.filter(function (id) {
+      if (!BY[id] || seen[id]) return false;
+      seen[id] = true;
+      return true;
+    });
+  }
+  function fromHash() {
+    var m = /(?:^|[#&])r=([^&]*)/.exec(location.hash);
+    if (!m) return null;
+    return clean(decodeURIComponent(m[1]).split('.').filter(Boolean));
+  }
+  function fromStore() {
+    try { var v = localStorage.getItem(STORE); return v ? clean(v.split('.')) : null; } catch (e) { return null; }
+  }
+  var route = fromHash() || fromStore() || T.seed.slice();
+
+  function isSeed() { return route.join('.') === T.seed.join('.'); }
+  function save() {
+    var h = isSeed() ? '' : '#r=' + route.join('.');
+    try { history.replaceState(null, '', location.pathname + location.search + h); } catch (e) { location.hash = h; }
+    try { if (isSeed()) localStorage.removeItem(STORE); else localStorage.setItem(STORE, route.join('.')); } catch (e) {}
+  }
+
+  // ---------- geometry and time ----------
+
+  function crow(a, b) {
+    var R = 6371, rad = Math.PI / 180;
+    var dLat = (b.lat - a.lat) * rad, dLon = (b.lon - a.lon) * rad;
+    var h = Math.pow(Math.sin(dLat / 2), 2) +
+      Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.pow(Math.sin(dLon / 2), 2);
+    return 2 * R * Math.asin(Math.sqrt(h));
+  }
+  function km(a, b) { return crow(a, b) * T.factor; }
+  // A ride is a pickup wait plus city traffic at about 18 km/h.
+  function leg(a, b) {
+    var k = km(a, b);
+    var ride = k > T.rideOver;
+    return { km: k, ride: ride, min: ride ? Math.round(8 + (k / 18) * 60) : Math.ceil((k / T.kmh) * 60) };
+  }
+  function toMin(hhmm) { var s = hhmm.split(':'); return +s[0] * 60 + +s[1]; }
+  function clock(m) {
+    m = ((Math.round(m) % 1440) + 1440) % 1440;
+    var h = Math.floor(m / 60), mm = m % 60;
+    return (h < 10 ? '0' : '') + h + ':' + (mm < 10 ? '0' : '') + mm;
+  }
+  function fmtKm(k) { return k < 1 ? Math.round(k * 1000 / 10) * 10 + ' m' : k.toFixed(1) + ' km'; }
+  function fmtMin(m) { return m < 60 ? m + ' min' : Math.floor(m / 60) + ' h ' + (m % 60 ? (m % 60) + ' min' : ''); }
+
+  // Arrival time at each stop in a list, meeting at T.meet at the first one.
+  // The ride from the house to stop one is not counted: the plan already says
+  // meet there.
+  function schedule(list) {
+    var t = toMin(T.meet), out = [], walkKm = 0, walkMin = 0, rides = 0;
+    for (var i = 0; i < list.length; i++) {
+      var l = i ? leg(BY[list[i - 1]], BY[list[i]]) : null;
+      if (l) {
+        t += l.min;
+        if (l.ride) rides++; else { walkKm += l.km; walkMin += l.min; }
+      }
+      var wait = 0;
+      // Only while the stop is still in its planned slot: moved, its planned
+      // time means nothing and would just strand the group.
+      if (BY[list[i]].at && BY[list[i]].slot === i && toMin(BY[list[i]].at) > t) { wait = toMin(BY[list[i]].at) - t; t += wait; }
+      out.push({ id: list[i], arrive: t, leg: l, wait: wait });
+      t += T.dwell;
+    }
+    return { stops: out, end: t, walkKm: walkKm, walkMin: walkMin, rides: rides };
+  }
+
+  // ---------- hours ----------
+
+  var D0 = new Date(T.date + 'T12:00:00Z');
+  var DAY0 = DOWS[D0.getUTCDay()];
+  var DAY1 = DOWS[(D0.getUTCDay() + 1) % 7];
+
+  function span(str) {
+    var p = str.split('-'), o = toMin(p[0]), c = toMin(p[1]);
+    if (c <= o) c += 1440;
+    return [o, c];
+  }
+  // open | closed | unknown, at minute m of weekday day. The previous day's
+  // hours count too, because a stand open until 04:00 is still open at 01:00.
+  function openAt(hours, day, m) {
+    if (!hours) return { state: 'unknown' };
+    var di = DOWS.indexOf(day), prev = DOWS[(di + 6) % 7];
+    if (hours[prev]) { var sp = span(hours[prev]); if (m + 1440 >= sp[0] && m + 1440 < sp[1]) return { state: 'open', until: sp[1] - 1440 }; }
+    if (!hours[day]) return { state: 'unknown' };
+    var s = span(hours[day]);
+    if (m >= s[0] && m < s[1]) return { state: 'open', until: s[1], soon: s[1] - m < T.dwell };
+    return { state: 'closed', opens: m < s[0] ? s[0] : null };
+  }
+  function hoursLine(p, m) {
+    var parts = [[DAY0, true], [DAY1, false]].map(function (d) {
+      var r = openAt(p.hours, d[0], m), lbl = DOW_LONG[d[0]] + ' ' + clock(m) + ': ';
+      if (r.state === 'unknown') return '<span class="tw-h tw-h--unk">' + lbl + 'hours unknown</span>';
+      if (r.state === 'closed') return '<span class="tw-h tw-h--bad">' + lbl + 'closed' + (r.opens != null ? ', opens ' + clock(r.opens) : '') + '</span>';
+      return '<span class="tw-h ' + (r.soon ? 'tw-h--bad' : 'tw-h--ok') + '">' + lbl + 'open' + (r.soon ? ', closes ' + clock(r.until) : ' to ' + clock(r.until)) + '</span>';
+    });
+    return '<div class="tw-hours">' + parts.join('') +
+      (p.hoursSrc ? '<span class="tw-src">' + p.hoursSrc + '</span>' : '') +
+      '<span class="tw-src">31 Dec: regular hours only, many places shut in the afternoon.</span></div>';
+  }
+
+  // ---------- suggestions ----------
+
+  // Cheapest place to slot each off-route taco place into: before the first
+  // stop, between any two, or after the last. Cost is extra walking.
+  function suggestions() {
+    var onRoute = {};
+    route.forEach(function (id) { onRoute[id] = true; });
+    return DATA.places.filter(function (p) { return !onRoute[p.id]; }).map(function (p) {
+      var best = null;
+      for (var i = 0; i <= route.length; i++) {
+        var a = i ? BY[route[i - 1]] : null, b = i < route.length ? BY[route[i]] : null;
+        var add = (a ? km(a, p) : 0) + (b ? km(p, b) : 0) - (a && b ? km(a, b) : 0);
+        if (!a && !b) add = 0;
+        if (!best || add < best.add) best = { at: i, add: add, a: a, b: b };
+      }
+      return { p: p, at: best.at, add: Math.max(0, best.add), a: best.a, b: best.b };
+    }).sort(function (x, y) { return x.add - y.add; });
+  }
+
+  // ---------- map ----------
+
+  var mapEl = document.getElementById('map');
+  var map = null, layer = null;
+${PIN_JS}
+  if (window.L && mapEl) {
+    map = L.map(mapEl, { scrollWheelZoom: false });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+    L.control.scale({ position: 'bottomleft', metric: true, imperial: true, maxWidth: 150 }).addTo(map);
+    layer = L.layerGroup().addTo(map);
+    map.on('click', function () { map.scrollWheelZoom.enable(); });
+    map.on('mouseout', function () { map.scrollWheelZoom.disable(); });
+  } else if (mapEl) {
+    mapEl.innerHTML = '<p style="padding:20px">Map could not load. The route below still works.</p>';
+  }
+
+  var fitted = false;
+  function drawMap(sched) {
+    if (!map) return;
+    layer.clearLayers();
+    var size = PIN_SIZE.base, anchor = [size / 2, Math.round(size * (21 / 24))];
+    var pos = {};
+    route.forEach(function (id, i) { pos[id] = i + 1; });
+
+    if (DATA.stay) {
+      var sEl = buildPinEl({ c: 'stay', approx: true, prot: [] }, DATA.stayColour, DATA.stayInk);
+      L.marker([DATA.stay.lat, DATA.stay.lon], {
+        icon: L.divIcon({ html: sEl, className: '', iconSize: [size, size], iconAnchor: anchor }),
+        alt: 'The house, approximate', keyboard: false
+      }).bindTooltip('The house (approximate area)', { direction: 'top', offset: [0, -20] }).addTo(layer);
+    }
+
+    // Route line, dashed where a leg is a ride.
+    sched.stops.forEach(function (s, i) {
+      if (!i) return;
+      var a = BY[route[i - 1]], b = BY[s.id];
+      L.polyline([[a.lat, a.lon], [b.lat, b.lon]], {
+        color: DATA.colour, weight: 3, opacity: 0.85, dashArray: s.leg.ride ? '2 8' : null
+      }).addTo(layer);
+    });
+
+    DATA.places.forEach(function (p) {
+      var n = pos[p.id];
+      var el = buildPinEl(p, DATA.colour, DATA.ink);
+      if (n) {
+        var num = document.createElement('span');
+        num.className = 'tw-num';
+        num.textContent = String(n);
+        el.appendChild(num);
+      } else {
+        el.classList.add('tw-off');
+      }
+      var m = L.marker([p.lat, p.lon], {
+        icon: L.divIcon({ html: el, className: '', iconSize: [size, size], iconAnchor: anchor, popupAnchor: [0, -anchor[1] + 4] }),
+        alt: p.n, riseOnHover: true, zIndexOffset: n ? 1000 : 0
+      });
+      var html = '<strong>' + p.n + '</strong>' + (p.hood ? '<br><span style="opacity:.7">' + p.hood + '</span>' : '') +
+        (p.tags || '') +
+        '<div class="tw-pop"><button type="button" class="tw-btn tw-btn--main" data-act="' + (n ? 'drop' : 'add') + '" data-id="' + p.id + '">' +
+        (n ? 'Drop stop ' + n : 'Add to the route') + '</button></div>' +
+        (p.links || '');
+      m.bindPopup(html, { maxWidth: 260 });
+      m.bindTooltip((n ? n + '. ' : '') + p.n, { direction: 'top', offset: [0, -20] });
+      m.addTo(layer);
+    });
+
+    if (!fitted) {
+      var pts = route.map(function (id) { return [BY[id].lat, BY[id].lon]; });
+      if (DATA.stay) pts.push([DATA.stay.lat, DATA.stay.lon]);
+      if (pts.length > 1) map.fitBounds(pts, { padding: [30, 30] });
+      else map.setView(pts[0] || [19.41, -99.16], 14);
+      fitted = true;
+    }
+  }
+
+  // ---------- lists ----------
+
+  var stopsEl = document.getElementById('tw-stops');
+  var suggEl = document.getElementById('tw-sugg');
+  var totalsEl = document.getElementById('tw-totals');
+  var headEl = document.getElementById('tw-head');
+  var moreBtn = document.getElementById('tw-more');
+  var showAll = false;
+  var SUGG_SHOWN = 6;
+
+  function btn(act, id, label, title, disabled) {
+    return '<button type="button" class="tw-btn tw-btn--sm" data-act="' + act + '" data-id="' + id + '"' +
+      (title ? ' title="' + title + '" aria-label="' + title + '"' : '') + (disabled ? ' disabled' : '') + '>' + label + '</button>';
+  }
+
+  function render() {
+    var sched = schedule(route);
+
+    headEl.textContent = route.length + ' stop' + (route.length === 1 ? '' : 's');
+    totalsEl.innerHTML = route.length
+      ? '<div><b>Walking</b>' + fmtKm(sched.walkKm) + '</div>' +
+        '<div><b>On foot</b>' + fmtMin(sched.walkMin) + '</div>' +
+        '<div><b>Rides</b>' + sched.rides + '</div>' +
+        '<div><b>Done by</b>' + clock(sched.end) + '</div>'
+      : '<div><b>Route</b>empty, add a stop from the suggestions</div>';
+
+    stopsEl.innerHTML = sched.stops.map(function (s, i) {
+      var p = BY[s.id];
+      var legHtml = s.leg
+        ? '<div class="tw-leg">' + (s.leg.ride ? 'Ride, about ' : 'Walk ') + fmtKm(s.leg.km) + ', ' + s.leg.min + ' min</div>'
+        : (DATA.stay ? '<div class="tw-leg">' + fmtKm(km(DATA.stay, p)) + ' from the house pin' + (km(DATA.stay, p) > T.rideOver ? ', a ride' : '') + '</div>' : '');
+      var bk = p.backup && BY[p.backup] && route.indexOf(p.backup) < 0 ? BY[p.backup] : null;
+      return '<li class="tw-stop">' + legHtml +
+        '<div class="tw-card">' +
+        '<div class="tw-top"><span class="tw-num tw-num--list">' + (i + 1) + '</span>' +
+        '<div class="tw-name"><strong>' + p.n + '</strong>' + (p.approx ? ' <small>approximate</small>' : '') +
+        '<div class="tw-meta">' + clock(s.arrive) + ' to ' + clock(s.arrive + T.dwell) + (p.hood ? ' &middot; ' + p.hood : '') + '</div>' +
+        (s.wait >= 5 ? '<div class="tw-meta">Planned for ' + p.at + ', so ' + fmtMin(s.wait) + ' of slack before it</div>' : '') + '</div>' +
+        '<div class="tw-ctl">' +
+        btn('up', p.id, '&uarr;', 'Move ' + p.n + ' earlier', i === 0) +
+        btn('down', p.id, '&darr;', 'Move ' + p.n + ' later', i === route.length - 1) +
+        btn('drop', p.id, 'Drop', 'Drop ' + p.n) +
+        '</div></div>' +
+        (p.tags || '') +
+        (p.order ? '<p class="tw-order"><b>Order</b> ' + p.order + '</p>' : '') +
+        hoursLine(p, s.arrive) +
+        (bk ? '<p class="tw-bk">Backup: <strong>' + bk.n + '</strong>, ' + fmtKm(km(p, bk)) + ' away. ' + btn('swap', p.id, 'Swap in', 'Swap ' + p.n + ' for ' + bk.n) + '</p>' : '') +
+        (p.note ? '<details><summary>Notes</summary><p>' + p.note + '</p></details>' : '') +
+        (p.links || '') +
+        '</div></li>';
+    }).join('');
+
+    var sugg = suggestions();
+    var shown = showAll ? sugg : sugg.slice(0, SUGG_SHOWN);
+    suggEl.innerHTML = shown.map(function (s) {
+      var p = s.p;
+      var trial = route.slice(); trial.splice(s.at, 0, p.id);
+      var arrive = schedule(trial).stops[s.at].arrive;
+      var where = !route.length ? 'Start here'
+        : s.a && s.b ? 'Between ' + (s.at) + ' and ' + (s.at + 1)
+        : s.a ? 'After stop ' + route.length : 'Before stop 1';
+      var cost = s.add < 0.05 ? 'on the way, no extra walking'
+        : s.add > T.rideOver ? 'a ride, ' + fmtKm(s.add) + ' extra'
+        : '+' + fmtKm(s.add) + ', about +' + Math.ceil((s.add / T.kmh) * 60) + ' min walking';
+      return '<li class="tw-sg">' +
+        '<div class="tw-top"><div class="tw-name"><strong>' + p.n + '</strong>' +
+        '<div class="tw-meta">' + where + ' &middot; ' + cost + (p.hood ? ' &middot; ' + p.hood : '') + '</div>' +
+        (p.backupFor ? '<div class="tw-meta">The plan\\'s backup for ' + p.backupFor + '</div>' : '') +
+        '</div><div class="tw-ctl">' + btn('add', p.id, 'Add', 'Add ' + p.n + ' to the route') + '</div></div>' +
+        (p.tags || '') + hoursLine(p, arrive) + '</li>';
+    }).join('');
+    moreBtn.hidden = sugg.length <= SUGG_SHOWN;
+    moreBtn.textContent = showAll ? 'Show fewer' : 'Show all ' + sugg.length;
+
+    drawMap(sched);
+  }
+
+  // ---------- actions ----------
+
+  function act(a, id) {
+    var i = route.indexOf(id);
+    if (a === 'up' && i > 0) { route.splice(i, 1); route.splice(i - 1, 0, id); }
+    else if (a === 'down' && i > -1 && i < route.length - 1) { route.splice(i, 1); route.splice(i + 1, 0, id); }
+    else if (a === 'drop' && i > -1) route.splice(i, 1);
+    else if (a === 'swap' && i > -1 && BY[id].backup) route[i] = BY[id].backup;
+    else if (a === 'add' && i < 0) {
+      var s = suggestions().filter(function (x) { return x.p.id === id; })[0];
+      route.splice(s ? s.at : route.length, 0, id);
+    } else return;
+    if (map) map.closePopup();
+    save();
+    render();
+    var f = document.querySelector('[data-act="' + a + '"][data-id="' + id + '"]');
+    if (f && (a === 'up' || a === 'down')) f.focus();
+  }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('button[data-act]');
+    if (b && !b.disabled) act(b.getAttribute('data-act'), b.getAttribute('data-id'));
+  });
+
+  var statusEl = document.getElementById('tw-status');
+  function say(msg) { statusEl.textContent = msg; setTimeout(function () { statusEl.textContent = ''; }, 4000); }
+
+  document.getElementById('tw-copy').addEventListener('click', function () {
+    var url = location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () { say('Copied. Paste it in the group chat.'); },
+        function () { window.prompt('Copy this link:', url); });
+    } else window.prompt('Copy this link:', url);
+  });
+  document.getElementById('tw-reset').addEventListener('click', function () {
+    route = T.seed.slice(); save(); render(); say('Back to the plan.');
+  });
+  moreBtn.addEventListener('click', function () { showAll = !showAll; render(); });
+  window.addEventListener('hashchange', function () {
+    var r = fromHash(); route = r || T.seed.slice(); render();
+  });
+
+  save();
+  render();
+})();
+</script>`;
+
+  return shell({ title: 'The taco walk', current: 'tacos.html', body });
 }
 
 // ---------- markdown pages ----------
@@ -2051,6 +2600,7 @@ writeFileSync(join(out, 'costs.html'), buildCosts());
 writeFileSync(join(out, 'stays.html'), buildStays());
 writeFileSync(join(out, 'map.html'), buildMap('cdmx'));
 writeFileSync(join(out, 'riviera-map.html'), buildMap('riviera'));
+writeFileSync(join(out, 'tacos.html'), buildTacos());
 writeFileSync(join(out, 'tasks.html'), buildTasks());
 writeFileSync(join(out, 'dining.html'), buildDoc('dining.md', 'dining.html', 'The birthday'));
 writeFileSync(join(out, 'nye.html'), buildDoc('nye.md', 'nye.html', "New Year's Eve"));
