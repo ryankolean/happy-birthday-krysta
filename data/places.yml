@@ -773,9 +773,11 @@ places:
     price_mxn: "48-82"
     category: taco
     michelin: bib
-    lat: 19.4132919
-    lon: -99.1569371
-    address: Tacos Los Alexis, Ciudad de Mexico
+    # lat and lon: Michelin guide's own pin, 13 November 2026; geocoders only find the street
+    lat: 19.4133903
+    lon: -99.1569349
+    address: Chiapas 46, Roma Norte, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: Roma Norte
     hours: { tue: "14:00-23:00", wed: "14:00-23:00", thu: "14:00-23:00", fri: "14:00-23:00", sat: "14:00-23:00", sun: "12:00-18:00" }
     hours_source: Michelin guide, read 13 November 2026, closed Monday; Milenio 28 May 2026 has Sunday 14:00-20:00 instead
     note: Rated 6.5/10. Short menu, reasonably priced, never lets you down but will not amaze.
@@ -861,7 +863,10 @@ places:
     neighborhood: Centro
     hours: { mon: "00:00-23:59", tue: "00:00-23:59", wed: "00:00-23:59", thu: "00:00-23:59", fri: "00:00-23:59", sat: "00:00-23:59", sun: "00:00-23:59" }
     hours_source: Michelin guide and Chilango, open 24 hours, read 13 November 2026; price is the pastor taco per El Imparcial, August 2025
-    note: Open almost around the clock. Suadero and the offal cuts.
+    note: >
+      Open around the clock. Suadero and the offal cuts. Michelin gives
+      Simon Bolivar 67, but OpenStreetMap, Time Out and Chilango all put the
+      stand at 56, so the pin stays there.
     source: instagram @itsalanbarr
 
   - name: Tacos El Paisa
@@ -874,7 +879,11 @@ places:
     category: taco
     michelin: listed
     protein: [pork, beef]
-    address: Tacos El Paisa, Ciudad de Mexico
+    # lat and lon: Michelin guide's own pin, 13 November 2026; the old name lookup had landed on an unrelated El Paisa in Iztapalapa
+    lat: 19.4408204
+    lon: -99.1610057
+    address: Joaquin Garcia Icazbalceta 36, San Rafael, Cuauhtemoc, Ciudad de Mexico
+    neighborhood: San Rafael
     hours: { mon: "18:00-00:00", tue: "18:00-00:00", wed: "18:00-00:00", thu: "19:00-00:00", fri: "18:00-01:00", sat: "10:00-00:00", sun: "10:00-00:00" }
     hours_source: Michelin guide (the San Rafael stand at Joaquin Garcia Icazbalceta 36), read 13 November 2026
     note: >
