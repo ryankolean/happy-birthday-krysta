@@ -227,6 +227,19 @@ class SwipeDeck extends HTMLElement {
     setTimeout(commit, 260);
   }
 
+  // Sets one card's answer directly, for a picks list beside the deck: 1 yes,
+  // -1 no, 0 clears it and puts the card back in the stack.
+  set(id, v) {
+    if (!this._ready || this._flying || !this._items.some((it) => it.id === id)) return;
+    if (v === 0) delete this._votes[id];
+    else this._votes[id] = v;
+    this._history = this._history.filter((h) => h.id !== id);
+    this._reset();
+    this._persist(id, v);
+    this._emit('swipe-deck:vote', { id, vote: v });
+    this._render();
+  }
+
   undo() {
     const last = this._history.pop();
     if (!last || this._flying) return;

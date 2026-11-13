@@ -16,7 +16,7 @@ A framework-free `<swipe-deck>` web component: a stack of cards you swipe right 
 ```
 
 - **Events:** `swipe-deck:vote` `{ id, vote }` (vote 0 is an undo), `swipe-deck:details` `{ id, open }`, `swipe-deck:done` `{ votes }`, `swipe-deck:error` `{ error }`.
-- **Methods:** `vote(1 | -1)`, `details(open)`, `undo()`, `restart()`.
+- **Methods:** `vote(1 | -1)` on the top card, `set(id, 1 | -1 | 0)` on any card (for a picks list beside the deck; 0 puts it back in the stack), `details(open)`, `undo()`, `restart()`.
 - **Card front:** it does not scroll, because vertical drags belong to the gesture. Keep it short and put the rest in `details`, which does scroll.
 - **Labels:** `yes-label`, `no-label`, `undo-label`, `details-label`, `details-hint`. Property `votes` is the current answers.
 - **Theming:** set `--sd-yes`, `--sd-no`, `--sd-card-bg`, `--sd-card-border`, `--sd-ink`, `--sd-muted`, `--sd-radius` and `--sd-height` on `swipe-deck`. The defaults have zero specificity, so any rule of yours wins.
