@@ -8,7 +8,8 @@
     "build": "node scripts/build.mjs",
     "serve": "node scripts/build.mjs && python3 -m http.server 4199 --directory site --bind 127.0.0.1",
     "geocode": "node scripts/geocode.mjs",
-    "check:pii": "node scripts/check-pii.mjs"
+    "check:pii": "node scripts/check-pii.mjs",
+    "swipe:links": "node scripts/swipe-links.mjs"
   },
   "dependencies": {
     "js-yaml": "4.1.0",

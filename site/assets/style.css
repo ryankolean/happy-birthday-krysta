@@ -481,6 +481,26 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
 .tw-card details { margin: 8px 0 0; font-size: 13.5px; }
 .tw-card summary { cursor: pointer; color: var(--teal); }
 .tw-card details p { margin: 6px 0 0; }
+.tw-votes { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: 8px 0 0; }
+.tw-v { font-family: var(--f-mono); font-size: 11px; font-weight: 600; border-radius: 2px; padding: 1px 6px; }
+.tw-v--yes { color: var(--paper); background: var(--teal); }
+.tw-v--no { color: var(--michelin-ink); border: 1px solid var(--michelin-ink); }
+.tw-vn { font-size: 12px; color: var(--muted); }
+
+/* swipe deck, themed onto the site's tokens */
+swipe-deck {
+  --sd-yes: var(--teal); --sd-no: var(--michelin-ink); --sd-card-bg: var(--raise);
+  --sd-card-border: var(--rule-firm); --sd-ink: var(--ink); --sd-muted: var(--muted);
+  --sd-radius: 4px; --sd-height: min(460px, 58vh);
+  margin-block: 8px 28px;
+}
+swipe-deck .sd-btn { font-family: var(--f-body); }
+.sw-card h3 { text-transform: none; letter-spacing: normal; font-family: var(--f-display); font-weight: 400; font-size: 30px; line-height: 1.1; color: var(--ink); margin: 34px 0 4px; }
+.sw-card .sw-role { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin: 0; }
+.sw-card .sw-hood { font-size: 13px; color: var(--muted); margin: 2px 0 0; }
+.sw-card .sw-note { font-size: 14px; line-height: 1.55; margin: 12px 0 0; }
+.sw-card .legpin { position: absolute; top: 14px; right: 14px; }
+.sw-msg { max-width: 420px; margin-inline: auto; }
 @media (max-width: 480px) {
   .tw-top { flex-wrap: wrap; }
   .tw-ctl { flex-basis: 100%; justify-content: flex-end; }

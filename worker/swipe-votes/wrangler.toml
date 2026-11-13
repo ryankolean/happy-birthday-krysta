@@ -1,0 +1,16 @@
+# Backend for the <swipe-deck> component. Deploy from this folder:
+#   npx wrangler@4 deploy
+# Tokens are never in this file or the repo. `npm run swipe:links` makes them,
+# writes everyone's personal link to private/swipe-links.md and pushes the
+# token map to this worker as the TOKENS secret.
+name = "swipe-votes"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+[vars]
+ALLOWED_ORIGINS = "https://ryankolean.github.io,http://localhost:4199"
+
+[[kv_namespaces]]
+binding = "VOTES"
+id = "97e241da6297492f9155f43a4afdbfd3"

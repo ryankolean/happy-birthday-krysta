@@ -640,6 +640,26 @@ hr { border: none; border-top: 1px solid var(--rule-firm); margin: 32px 0; }
 .tw-card details { margin: 8px 0 0; font-size: 13.5px; }
 .tw-card summary { cursor: pointer; color: var(--teal); }
 .tw-card details p { margin: 6px 0 0; }
+.tw-votes { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: 8px 0 0; }
+.tw-v { font-family: var(--f-mono); font-size: 11px; font-weight: 600; border-radius: 2px; padding: 1px 6px; }
+.tw-v--yes { color: var(--paper); background: var(--teal); }
+.tw-v--no { color: var(--michelin-ink); border: 1px solid var(--michelin-ink); }
+.tw-vn { font-size: 12px; color: var(--muted); }
+
+/* swipe deck, themed onto the site's tokens */
+swipe-deck {
+  --sd-yes: var(--teal); --sd-no: var(--michelin-ink); --sd-card-bg: var(--raise);
+  --sd-card-border: var(--rule-firm); --sd-ink: var(--ink); --sd-muted: var(--muted);
+  --sd-radius: 4px; --sd-height: min(460px, 58vh);
+  margin-block: 8px 28px;
+}
+swipe-deck .sd-btn { font-family: var(--f-body); }
+.sw-card h3 { text-transform: none; letter-spacing: normal; font-family: var(--f-display); font-weight: 400; font-size: 30px; line-height: 1.1; color: var(--ink); margin: 34px 0 4px; }
+.sw-card .sw-role { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin: 0; }
+.sw-card .sw-hood { font-size: 13px; color: var(--muted); margin: 2px 0 0; }
+.sw-card .sw-note { font-size: 14px; line-height: 1.55; margin: 12px 0 0; }
+.sw-card .legpin { position: absolute; top: 14px; right: 14px; }
+.sw-msg { max-width: 420px; margin-inline: auto; }
 @media (max-width: 480px) {
   .tw-top { flex-wrap: wrap; }
   .tw-ctl { flex-basis: 100%; justify-content: flex-end; }
@@ -1931,6 +1951,7 @@ function buildTacos() {
       kmh: tacoTour.walk_kmh,
       rideOver: tacoTour.ride_over_km,
       seed: tacoTour.stops.map((s) => slug(s.name)),
+      api: SWIPE_API,
     },
     stay: stayPos ? { n: esc(stay.name), hood: esc(stay.neighborhood || ''), lat: stayPos.lat, lon: stayPos.lon } : null,
     colour: cats.taco.color,
@@ -2005,6 +2026,12 @@ function buildTacos() {
 ${badgeKey}
 <div id="map" class="tw-map" role="application" aria-label="Map of the taco walk"></div>
 <p class="caveat">Walking is straight-line distance times ${esc(String(tacoTour.street_factor))} at ${esc(String(tacoTour.walk_kmh))} km/h, so treat every minute as a decent guess, not a route. A leg over ${esc(String(tacoTour.ride_over_km))} km is shown as a ride. Each stop gets ${esc(String(tacoTour.dwell_min))} minutes, and the planned stops are not reached before their planned time, so the slack in the plan shows up as waiting. Hollow dashed pins are approximate locations.</p>
+
+<section class="tw-group" id="tw-group" hidden>
+  <h2>What the group swiped</h2>
+  <p class="caveat">Everyone has a personal link to <a href="swipe.html">swipe yes or no</a> on every taco place; Ryan sends them out. Counts can trail a new swipe by about a minute. <span id="tw-voters"></span></p>
+  <ol class="tw-sugg" id="tw-group-list"></ol>
+</section>
 
 <h2>The route</h2>
 <ol class="tw-stops" id="tw-stops"></ol>
@@ -2244,6 +2271,41 @@ ${PIN_JS}
     }
   }
 
+  // ---------- group swipes ----------
+
+  // Fetched once. Off the network the page still works, it just shows no
+  // votes.
+  var TALLY = null;
+  if (T.api && window.fetch) {
+    fetch(T.api + '/tally').then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (j && j.items) { TALLY = j; render(); }
+    }).catch(function () {});
+  }
+  function chip(id) {
+    var t = TALLY && TALLY.items[id];
+    if (!t || (!t.yes.length && !t.no.length)) return '';
+    return '<div class="tw-votes"><span class="tw-v tw-v--yes" title="' + (t.yes.join(', ') || 'nobody') + '">' + t.yes.length + ' yes</span>' +
+      '<span class="tw-v tw-v--no" title="' + (t.no.join(', ') || 'nobody') + '">' + t.no.length + ' no</span>' +
+      (t.yes.length ? '<span class="tw-vn">' + t.yes.join(', ') + '</span>' : '') + '</div>';
+  }
+  function renderGroup() {
+    var box = document.getElementById('tw-group');
+    if (!TALLY) { box.hidden = true; return; }
+    box.hidden = false;
+    document.getElementById('tw-voters').textContent = TALLY.voters + ' of the group ' + (TALLY.voters === 1 ? 'has' : 'have') + ' swiped so far.';
+    var rows = DATA.places.map(function (p) {
+      var t = TALLY.items[p.id] || { yes: [], no: [] };
+      return { p: p, y: t.yes.length, n: t.no.length };
+    }).filter(function (r) { return r.y || r.n; }).sort(function (a, b) { return (b.y - b.n) - (a.y - a.n) || b.y - a.y; });
+    document.getElementById('tw-group-list').innerHTML = rows.length ? rows.map(function (r) {
+      var i = route.indexOf(r.p.id);
+      return '<li class="tw-sg"><div class="tw-top"><div class="tw-name"><strong>' + r.p.n + '</strong>' +
+        '<div class="tw-meta">' + (i > -1 ? 'Stop ' + (i + 1) + ' on your route' : 'Not on your route') + (r.p.hood ? ' &middot; ' + r.p.hood : '') + '</div></div>' +
+        (i < 0 ? '<div class="tw-ctl">' + btn('add', r.p.id, 'Add', 'Add ' + r.p.n + ' to the route') + '</div>' : '') +
+        '</div>' + chip(r.p.id) + '</li>';
+    }).join('') : '<li class="caveat">No swipes yet.</li>';
+  }
+
   // ---------- lists ----------
 
   var stopsEl = document.getElementById('tw-stops');
@@ -2287,7 +2349,7 @@ ${PIN_JS}
         btn('down', p.id, '&darr;', 'Move ' + p.n + ' later', i === route.length - 1) +
         btn('drop', p.id, 'Drop', 'Drop ' + p.n) +
         '</div></div>' +
-        (p.tags || '') +
+        (p.tags || '') + chip(p.id) +
         (p.order ? '<p class="tw-order"><b>Order</b> ' + p.order + '</p>' : '') +
         hoursLine(p, s.arrive) +
         (bk ? '<p class="tw-bk">Backup: <strong>' + bk.n + '</strong>, ' + fmtKm(km(p, bk)) + ' away. ' + btn('swap', p.id, 'Swap in', 'Swap ' + p.n + ' for ' + bk.n) + '</p>' : '') +
@@ -2313,11 +2375,12 @@ ${PIN_JS}
         '<div class="tw-meta">' + where + ' &middot; ' + cost + (p.hood ? ' &middot; ' + p.hood : '') + '</div>' +
         (p.backupFor ? '<div class="tw-meta">The plan\\'s backup for ' + p.backupFor + '</div>' : '') +
         '</div><div class="tw-ctl">' + btn('add', p.id, 'Add', 'Add ' + p.n + ' to the route') + '</div></div>' +
-        (p.tags || '') + hoursLine(p, arrive) + '</li>';
+        (p.tags || '') + chip(p.id) + hoursLine(p, arrive) + '</li>';
     }).join('');
     moreBtn.hidden = sugg.length <= SUGG_SHOWN;
     moreBtn.textContent = showAll ? 'Show fewer' : 'Show all ' + sugg.length;
 
+    renderGroup();
     drawMap(sched);
   }
 
@@ -2369,6 +2432,121 @@ ${PIN_JS}
 </script>`;
 
   return shell({ title: 'The taco walk', current: 'tacos.html', body });
+}
+
+// ---------- taco swipe ----------
+
+// One deck of every taco place, swiped yes or no from a personal link. The
+// deck itself is components/swipe-deck, which knows nothing about this trip;
+// this page supplies the cards and an adapter that talks to the swipe-votes
+// worker. The token arrives in the address once, moves to the browser's
+// storage and leaves the address, so a screenshot or a forwarded tab does
+// not carry it.
+// SWIPE_API points the pages at another copy of the worker, such as
+// `wrangler dev` on localhost, so the deck can be tested without real links.
+const SWIPE_API = process.env.SWIPE_API || tacoTour.swipe?.api || null;
+const SWIPE_JS = readFileSync(join(root, 'components', 'swipe-deck', 'swipe-deck.js'), 'utf8');
+const SWIPE_HASH = createHash('sha256').update(SWIPE_JS).digest('hex').slice(0, 8);
+
+function buildTacoSwipe() {
+  const pos = (p) => (p.lat && p.lon ? { lat: p.lat, lon: p.lon } : geocache[p.address]);
+  const tacos = placesDoc.places.filter((p) => p.category === 'taco' && (p.region || 'cdmx') === 'cdmx' && pos(p));
+  const planIdx = (p) => tacoTour.stops.findIndex((s) => s.name === p.name);
+  const backupOf = (p) => tacoTour.stops.find((s) => s.backup === p.name);
+  // The plan first, in order, then its backups, then everything else.
+  const rank = (p) => (planIdx(p) > -1 ? planIdx(p) : backupOf(p) ? 100 : 200);
+  const cards = tacos
+    .map((p, i) => ({ p, i }))
+    .sort((a, b) => rank(a.p) - rank(b.p) || a.i - b.i)
+    .map(({ p }) => {
+      const role = planIdx(p) > -1 ? `Stop ${planIdx(p) + 1} on the plan` : backupOf(p) ? `Backup for ${backupOf(p).name}` : 'Not on the plan';
+      const seed = tacoTour.stops.find((s) => s.name === p.name);
+      return {
+        id: slug(p.name),
+        html:
+          `<div class="sw-card">${legendPin('taco', placesDoc.categories.taco.color, 40)}` +
+          `<h3>${esc(p.name)}</h3><p class="sw-role">${esc(role)}</p>` +
+          (p.neighborhood ? `<p class="sw-hood">${esc(p.neighborhood)}</p>` : '') +
+          tagsHtml(p) +
+          (seed?.order ? `<p class="sw-note"><strong>Order:</strong> ${esc(seed.order)}</p>` : '') +
+          (p.note ? `<p class="sw-note">${nt(p.note)}</p>` : '') +
+          linkList(p) +
+          `</div>`,
+      };
+    });
+
+  const body = `<header class="masthead">
+  <p class="eyebrow">Taco walk, ${esc(shortDate(iso(tacoTour.date)))}</p>
+  <h1 id="sw-hi">Swipe the tacos</h1>
+</header>
+
+<p class="lede sw-msg" id="sw-lede">Right for yes, left for nope. Every taco place we have on the map, the plan's stops first. Your swipes save as you go and show up on <a href="tacos.html">the taco walk</a> for everyone.</p>
+<div class="note warn sw-msg" id="sw-err" hidden><p></p></div>
+
+<swipe-deck yes-label="Yes" no-label="Nope" undo-label="Undo" aria-label="Taco places: swipe or use the arrow keys, right for yes, left for nope"></swipe-deck>
+
+<p class="caveat sw-msg">Keyboard: right arrow yes, left arrow nope, Backspace undo. Links on a card open the place; drag anywhere else on it.</p>
+
+<script type="module">
+  import './assets/swipe-deck.js?v=${SWIPE_HASH}';
+  var API = ${JSON.stringify(SWIPE_API)};
+  var CARDS = ${JSON.stringify(cards)};
+  var KEY = 'swipe-token';
+  var deck = document.querySelector('swipe-deck');
+  var errBox = document.getElementById('sw-err');
+  function fail(msg) { errBox.hidden = false; errBox.querySelector('p').textContent = msg; }
+
+  var m = /(?:^|[#&])t=([A-Za-z0-9_-]+)/.exec(location.hash);
+  var token = null;
+  try {
+    if (m) localStorage.setItem(KEY, m[1]);
+    token = localStorage.getItem(KEY);
+  } catch (e) { token = m ? m[1] : null; }
+  if (m) history.replaceState(null, '', location.pathname + location.search);
+  // A link opened on a tab already showing this page only changes the hash.
+  window.addEventListener('hashchange', function () { if (/[#&]t=/.test(location.hash)) location.reload(); });
+
+  if (!token) {
+    deck.hidden = true;
+    fail('This page needs your personal link. Ryan is sending one to each of us; open it on the phone you will use and it will remember you.');
+  } else {
+    var auth = { Authorization: 'Bearer ' + token };
+    deck.adapter = {
+      load: function () {
+        return fetch(API + '/me', { headers: auth }).then(function (r) {
+          if (r.status === 401) {
+            try { localStorage.removeItem(KEY); } catch (e) {}
+            throw new Error('That link no longer works. Ask Ryan for a fresh one.');
+          }
+          if (!r.ok) throw new Error('Could not load your swipes (' + r.status + ').');
+          return r.json();
+        }).then(function (j) {
+          document.getElementById('sw-hi').textContent = 'Swipe the tacos, ' + j.name;
+          return j;
+        });
+      },
+      save: function (id, vote) {
+        return fetch(API + '/me', {
+          method: 'PUT', headers: Object.assign({ 'Content-Type': 'application/json' }, auth),
+          body: JSON.stringify({ id: id, vote: vote })
+        }).then(function (r) { if (!r.ok) throw new Error('save ' + r.status); });
+      }
+    };
+    deck.items = CARDS;
+    deck.addEventListener('swipe-deck:error', function (e) {
+      var er = e.detail.error;
+      fail(er && er.message && !/^save/.test(er.message) ? er.message : 'A swipe did not save. Check your connection and swipe that one again.');
+      if (/no longer works/.test(er && er.message)) deck.hidden = true;
+    });
+    deck.addEventListener('swipe-deck:vote', function () { errBox.hidden = true; });
+    deck.addEventListener('swipe-deck:done', function () {
+      document.getElementById('sw-lede').innerHTML = 'All swiped. See how the group voted on <a href="tacos.html">the taco walk</a>, or swipe again to change your mind.';
+    });
+    deck.focus({ preventScroll: true });
+  }
+</script>`;
+
+  return shell({ title: 'Swipe the tacos', current: 'tacos.html', body });
 }
 
 // ---------- markdown pages ----------
@@ -2601,6 +2779,8 @@ writeFileSync(join(out, 'stays.html'), buildStays());
 writeFileSync(join(out, 'map.html'), buildMap('cdmx'));
 writeFileSync(join(out, 'riviera-map.html'), buildMap('riviera'));
 writeFileSync(join(out, 'tacos.html'), buildTacos());
+writeFileSync(join(out, 'swipe.html'), buildTacoSwipe());
+writeFileSync(join(out, 'assets', 'swipe-deck.js'), SWIPE_JS);
 writeFileSync(join(out, 'tasks.html'), buildTasks());
 writeFileSync(join(out, 'dining.html'), buildDoc('dining.md', 'dining.html', 'The birthday'));
 writeFileSync(join(out, 'nye.html'), buildDoc('nye.md', 'nye.html', "New Year's Eve"));

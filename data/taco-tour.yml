@@ -24,6 +24,14 @@ ride_over_km: 2.0
 # earliest time while the stop is still in its planned slot: if the walk gets
 # there sooner, the group waits, which keeps a stop from landing before it
 # opens. Moved to another slot, a stop is reached as soon as the walk gets there.
+# Swipe deck. Each person gets a private link to swipe yes or no on every
+# taco place; the walk page shows the group's tally. Votes live in the
+# swipe-votes Cloudflare worker (worker/swipe-votes), keyed by first name.
+# `npm run swipe:links` makes the links into private/swipe-links.md.
+swipe:
+  api: https://swipe-votes.ryan-kolean.workers.dev/v1/tacos-2026
+  site: https://ryankolean.github.io/happy-birthday-krysta/
+
 stops:
   - name: Tacos de Canasta Don Quique
     at: "11:00"
