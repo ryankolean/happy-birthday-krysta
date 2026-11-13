@@ -495,11 +495,35 @@ swipe-deck {
   margin-block: 8px 28px;
 }
 swipe-deck .sd-btn { font-family: var(--f-body); }
-.sw-card h3 { text-transform: none; letter-spacing: normal; font-family: var(--f-display); font-weight: 400; font-size: 30px; line-height: 1.1; color: var(--ink); margin: 34px 0 4px; }
-.sw-card .sw-role { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin: 0; }
-.sw-card .sw-hood { font-size: 13px; color: var(--muted); margin: 2px 0 0; }
-.sw-card .sw-note { font-size: 14px; line-height: 1.55; margin: 12px 0 0; }
-.sw-card .legpin { position: absolute; top: 14px; right: 14px; }
+.sw-card { margin: -18px -18px 0; }
+.sw-band {
+  position: relative; height: 132px; display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--band) 22%, var(--raise));
+  border-bottom: 1px solid color-mix(in srgb, var(--band) 45%, var(--raise));
+}
+.sw-band .legpin { filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25)); }
+.sw-badges { position: absolute; left: 14px; bottom: 12px; display: flex; gap: 6px; }
+.sw-badges .pinbadge { transform: scale(1.5); transform-origin: left bottom; margin-right: 8px; }
+.sw-mich {
+  position: absolute; right: 12px; top: 12px; display: inline-flex; align-items: center; gap: 2px;
+  font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--paper); background: var(--michelin-ink); border-radius: 2px; padding: 4px 7px;
+}
+.sw-card h3, .sw-det h4 { text-transform: none; letter-spacing: normal; font-family: var(--f-display); font-weight: 400; font-size: 30px; line-height: 1.1; color: var(--ink); margin: 16px 18px 4px; }
+.sw-meta { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); margin: 0 18px; }
+.sw-known { font-size: 16px; line-height: 1.45; margin: 12px 18px 0; color: var(--ink); }
+.sw-get { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 14px 18px 6px; }
+.sw-order { list-style: none; padding: 0; margin: 0 18px; display: flex; flex-wrap: wrap; gap: 6px; }
+.sw-order li { font-size: 13.5px; line-height: 1.2; border: 1px solid var(--rule-firm); border-radius: 999px; padding: 6px 11px; background: var(--paper); }
+.sw-det h4 { margin: 0 0 4px; font-size: 26px; }
+.sw-det .sw-known, .sw-det .sw-order { margin-inline: 0; }
+.sw-det h5 { font-family: var(--f-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin: 18px 0 6px; }
+.sw-det p { font-size: 14px; line-height: 1.55; margin: 6px 0 0; }
+.sw-week { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 2px 12px; font-size: 13px; }
+.sw-week span { display: inline-block; width: 36px; color: var(--muted); }
+.sw-week .is-day { font-weight: 700; }
+.sw-src { font-size: 12px !important; color: var(--muted); }
+.sw-det .ptags, .sw-det .plinks { margin-top: 16px; }
 .sw-msg { max-width: 420px; margin-inline: auto; }
 @media (max-width: 480px) {
   .tw-top { flex-wrap: wrap; }

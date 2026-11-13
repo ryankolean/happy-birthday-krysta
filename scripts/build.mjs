@@ -654,11 +654,35 @@ swipe-deck {
   margin-block: 8px 28px;
 }
 swipe-deck .sd-btn { font-family: var(--f-body); }
-.sw-card h3 { text-transform: none; letter-spacing: normal; font-family: var(--f-display); font-weight: 400; font-size: 30px; line-height: 1.1; color: var(--ink); margin: 34px 0 4px; }
-.sw-card .sw-role { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin: 0; }
-.sw-card .sw-hood { font-size: 13px; color: var(--muted); margin: 2px 0 0; }
-.sw-card .sw-note { font-size: 14px; line-height: 1.55; margin: 12px 0 0; }
-.sw-card .legpin { position: absolute; top: 14px; right: 14px; }
+.sw-card { margin: -18px -18px 0; }
+.sw-band {
+  position: relative; height: 132px; display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--band) 22%, var(--raise));
+  border-bottom: 1px solid color-mix(in srgb, var(--band) 45%, var(--raise));
+}
+.sw-band .legpin { filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25)); }
+.sw-badges { position: absolute; left: 14px; bottom: 12px; display: flex; gap: 6px; }
+.sw-badges .pinbadge { transform: scale(1.5); transform-origin: left bottom; margin-right: 8px; }
+.sw-mich {
+  position: absolute; right: 12px; top: 12px; display: inline-flex; align-items: center; gap: 2px;
+  font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--paper); background: var(--michelin-ink); border-radius: 2px; padding: 4px 7px;
+}
+.sw-card h3, .sw-det h4 { text-transform: none; letter-spacing: normal; font-family: var(--f-display); font-weight: 400; font-size: 30px; line-height: 1.1; color: var(--ink); margin: 16px 18px 4px; }
+.sw-meta { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); margin: 0 18px; }
+.sw-known { font-size: 16px; line-height: 1.45; margin: 12px 18px 0; color: var(--ink); }
+.sw-get { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 14px 18px 6px; }
+.sw-order { list-style: none; padding: 0; margin: 0 18px; display: flex; flex-wrap: wrap; gap: 6px; }
+.sw-order li { font-size: 13.5px; line-height: 1.2; border: 1px solid var(--rule-firm); border-radius: 999px; padding: 6px 11px; background: var(--paper); }
+.sw-det h4 { margin: 0 0 4px; font-size: 26px; }
+.sw-det .sw-known, .sw-det .sw-order { margin-inline: 0; }
+.sw-det h5 { font-family: var(--f-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin: 18px 0 6px; }
+.sw-det p { font-size: 14px; line-height: 1.55; margin: 6px 0 0; }
+.sw-week { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 2px 12px; font-size: 13px; }
+.sw-week span { display: inline-block; width: 36px; color: var(--muted); }
+.sw-week .is-day { font-weight: 700; }
+.sw-src { font-size: 12px !important; color: var(--muted); }
+.sw-det .ptags, .sw-det .plinks { margin-top: 16px; }
 .sw-msg { max-width: 420px; margin-inline: auto; }
 @media (max-width: 480px) {
   .tw-top { flex-wrap: wrap; }
@@ -1920,6 +1944,12 @@ for (const p of placesDoc.places) {
     if (!HOURS_RE.test(String(v))) throw new Error(`${p.name}: hours.${d} must be "HH:MM-HH:MM", got ${JSON.stringify(v)}`);
   }
 }
+for (const p of placesDoc.places) {
+  if (p.known_for != null && typeof p.known_for !== 'string') throw new Error(`${p.name}: known_for must be one line of text`);
+  if (p.order != null && !(Array.isArray(p.order) && p.order.every((o) => typeof o === 'string' && o)))
+    throw new Error(`${p.name}: order must be a list of dishes`);
+  if (p.price_mxn != null && !/^\d+(-\d+)?$/.test(String(p.price_mxn))) throw new Error(`${p.name}: price_mxn must look like "35" or "35-60"`);
+}
 
 const slug = (s) => String(s).toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
@@ -2448,7 +2478,12 @@ const SWIPE_API = process.env.SWIPE_API || tacoTour.swipe?.api || null;
 const SWIPE_JS = readFileSync(join(root, 'components', 'swipe-deck', 'swipe-deck.js'), 'utf8');
 const SWIPE_HASH = createHash('sha256').update(SWIPE_JS).digest('hex').slice(0, 8);
 
+const DAY_SHORT = { mon: 'Mon', tue: 'Tue', wed: 'Wed', thu: 'Thu', fri: 'Fri', sat: 'Sat', sun: 'Sun' };
+
 function buildTacoSwipe() {
+  const tourDate = new Date(`${iso(tacoTour.date)}T12:00:00Z`);
+  const tourDay = WEEKDAYS[tourDate.getUTCDay()];
+  const tourDayLabel = `${DAY_SHORT[tourDay]} ${tourDate.getUTCDate()} ${tourDate.toLocaleString('en-GB', { month: 'short', timeZone: 'UTC' })}`;
   const pos = (p) => (p.lat && p.lon ? { lat: p.lat, lon: p.lon } : geocache[p.address]);
   const tacos = placesDoc.places.filter((p) => p.category === 'taco' && (p.region || 'cdmx') === 'cdmx' && pos(p));
   const planIdx = (p) => tacoTour.stops.findIndex((s) => s.name === p.name);
@@ -2461,15 +2496,46 @@ function buildTacoSwipe() {
     .map(({ p }) => {
       const role = planIdx(p) > -1 ? `Stop ${planIdx(p) + 1} on the plan` : backupOf(p) ? `Backup for ${backupOf(p).name}` : 'Not on the plan';
       const seed = tacoTour.stops.find((s) => s.name === p.name);
+      const order = p.order || [];
+      const colour = placesDoc.categories.taco.color;
+      const hoursToday = p.hours?.[tourDay];
+      const week = p.hours
+        ? `<ul class="sw-week">${['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+            .map((d) => `<li${d === tourDay ? ' class="is-day"' : ''}><span>${DAY_SHORT[d]}</span>${esc(p.hours[d] || 'not on file')}</li>`)
+            .join('')}</ul>` +
+          (p.hours_source ? `<p class="sw-src">${esc(p.hours_source)}</p>` : '')
+        : '<p>Not on file. Check Maps or Instagram before going.</p>';
       return {
         id: slug(p.name),
         html:
-          `<div class="sw-card">${legendPin('taco', placesDoc.categories.taco.color, 40)}` +
-          `<h3>${esc(p.name)}</h3><p class="sw-role">${esc(role)}</p>` +
-          (p.neighborhood ? `<p class="sw-hood">${esc(p.neighborhood)}</p>` : '') +
+          `<div class="sw-card">` +
+          `<div class="sw-band" style="--band:${esc(colour)}">${legendPin('taco', colour, 76)}` +
+          `<div class="sw-badges">${proteinList(p).map(protBadgeHtml).join('')}</div>` +
+          (p.michelin != null ? `<span class="sw-mich">${typeof p.michelin === 'number' ? starSvg(11).repeat(p.michelin) : ''}${esc(michWords(p.michelin))}</span>` : '') +
+          `</div>` +
+          `<h3>${esc(p.name)}</h3>` +
+          `<p class="sw-meta">${[p.neighborhood, role].filter(Boolean).map(esc).join(' &middot; ')}</p>` +
+          (p.known_for ? `<p class="sw-known">${esc(p.known_for)}</p>` : '') +
+          (order.length
+            ? `<p class="sw-get">Get</p><ul class="sw-order">${order.slice(0, 3).map((o) => `<li>${esc(o)}</li>`).join('')}</ul>`
+            : seed?.order ? `<p class="sw-get">Get</p><p class="sw-known">${esc(seed.order)}</p>` : '') +
+          `</div>`,
+        details:
+          `<div class="sw-det">` +
+          `<h4>${esc(p.name)}</h4>` +
+          (p.known_for ? `<p class="sw-known">${esc(p.known_for)}</p>` : '') +
+          (order.length || seed?.order
+            ? `<h5>What to order</h5>` +
+              (order.length ? `<ul class="sw-order">${order.map((o) => `<li>${esc(o)}</li>`).join('')}</ul>` : '') +
+              (seed?.order && !seed.order.split(',').every((x) => order.some((o) => o.toLowerCase().includes(x.trim().toLowerCase())))
+                ? `<p>${order.length ? 'Plan says: ' : ''}${esc(seed.order)}</p>`
+                : '')
+            : '') +
+          (p.price_mxn ? `<h5>Price</h5><p>About ${esc(p.price_mxn)} MXN a taco.</p>` : '') +
+          `<h5>Hours${hoursToday ? `, ${esc(hoursToday)} on ${esc(tourDayLabel)}` : ''}</h5>${week}` +
+          `<h5>On the plan</h5><p>${esc(role)}${seed?.at ? `, arriving ${esc(seed.at)}` : ''}.</p>` +
+          (p.note ? `<h5>Notes</h5><p>${nt(p.note)}</p>` : '') +
           tagsHtml(p) +
-          (seed?.order ? `<p class="sw-note"><strong>Order:</strong> ${esc(seed.order)}</p>` : '') +
-          (p.note ? `<p class="sw-note">${nt(p.note)}</p>` : '') +
           linkList(p) +
           `</div>`,
       };
@@ -2480,12 +2546,12 @@ function buildTacoSwipe() {
   <h1 id="sw-hi">Swipe the tacos</h1>
 </header>
 
-<p class="lede sw-msg" id="sw-lede">Right for yes, left for nope. Every taco place we have on the map, the plan's stops first. Your swipes save as you go and show up on <a href="tacos.html">the taco walk</a> for everyone.</p>
+<p class="lede sw-msg" id="sw-lede">Right for yes, left for nope, up (or tap) for what to order, hours and the rest. Every taco place we have on the map, the plan's stops first. Your swipes save as you go and show up on <a href="tacos.html">the taco walk</a> for everyone.</p>
 <div class="note warn sw-msg" id="sw-err" hidden><p></p></div>
 
-<swipe-deck yes-label="Yes" no-label="Nope" undo-label="Undo" aria-label="Taco places: swipe or use the arrow keys, right for yes, left for nope"></swipe-deck>
+<swipe-deck yes-label="Yes" no-label="Nope" undo-label="Undo" details-label="Details" details-hint="Swipe up for the order" aria-label="Taco places: swipe or use the arrow keys, right for yes, left for nope, up for details"></swipe-deck>
 
-<p class="caveat sw-msg">Keyboard: right arrow yes, left arrow nope, Backspace undo. Links on a card open the place; drag anywhere else on it.</p>
+<p class="caveat sw-msg">Keyboard: right arrow yes, left arrow nope, up arrow details, down arrow back, Backspace undo.</p>
 
 <script type="module">
   import './assets/swipe-deck.js?v=${SWIPE_HASH}';

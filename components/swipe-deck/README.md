@@ -1,6 +1,6 @@
 # swipe-deck
 
-A framework-free `<swipe-deck>` web component: a stack of cards you swipe right for yes and left for no, with buttons, undo and arrow keys as well. One file, no dependencies, works in any page that can load an ES module.
+A framework-free `<swipe-deck>` web component: a stack of cards you swipe right for yes and left for no, dating app style, with buttons, undo and arrow keys as well. Give a card `details` and swiping up (or tapping) slides a details side over it; dragging its handle down closes it. One file, no dependencies, works in any page that can load an ES module.
 
 ```html
 <swipe-deck yes-label="Yes" no-label="Nope"></swipe-deck>
@@ -11,12 +11,14 @@ A framework-free `<swipe-deck>` web component: a stack of cards you swipe right 
     load: () => fetch(API + '/me', { headers }).then((r) => r.json()), // { name, votes: { id: 1 | -1 } }
     save: (id, vote) => fetch(API + '/me', { method: 'PUT', headers, body: JSON.stringify({ id, vote }) }),
   };
-  deck.items = [{ id: 'orinoco', html: '<h3>Orinoco</h3>' }]; // html is not escaped for you
+  deck.items = [{ id: 'orinoco', html: '<h3>Orinoco</h3>', details: '<p>Order the pastor.</p>' }]; // not escaped for you
 </script>
 ```
 
-- **Events:** `swipe-deck:vote` `{ id, vote }` (vote 0 is an undo), `swipe-deck:done` `{ votes }`, `swipe-deck:error` `{ error }`.
-- **Methods:** `vote(1 | -1)`, `undo()`, `restart()`. Property `votes` is the current answers.
+- **Events:** `swipe-deck:vote` `{ id, vote }` (vote 0 is an undo), `swipe-deck:details` `{ id, open }`, `swipe-deck:done` `{ votes }`, `swipe-deck:error` `{ error }`.
+- **Methods:** `vote(1 | -1)`, `details(open)`, `undo()`, `restart()`.
+- **Card front:** it does not scroll, because vertical drags belong to the gesture. Keep it short and put the rest in `details`, which does scroll.
+- **Labels:** `yes-label`, `no-label`, `undo-label`, `details-label`, `details-hint`. Property `votes` is the current answers.
 - **Theming:** set `--sd-yes`, `--sd-no`, `--sd-card-bg`, `--sd-card-border`, `--sd-ink`, `--sd-muted`, `--sd-radius` and `--sd-height` on `swipe-deck`. The defaults have zero specificity, so any rule of yours wins.
 - **Storage:** the adapter is the only thing that knows where votes go. Leave it off and votes stay in memory, or point it at `worker/swipe-votes`, a Cloudflare Worker and KV store that serves any number of decks from any site listed in its `ALLOWED_ORIGINS`.
 

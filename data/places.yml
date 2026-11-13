@@ -45,6 +45,13 @@
 #   reads these to flag a stop that is shut at its planned time on 30 or 31
 #   December. They are regular hours: no stop here publishes holiday hours, so
 #   say where they came from in hours_source and re-check on 28 December.
+#
+# known_for, order, price_mxn:
+#   Taco places only, for the swipe deck. `known_for` is one short line on what
+#   the place is famous for, `order` is a list of the two to four things a
+#   first timer gets, and `price_mxn` is a rough per taco range like "35-60".
+#   Same rule as protein: from a source, never a guess. A place without them
+#   still gets a card, just a thinner one.
 
 categories:
   stay:
@@ -651,6 +658,13 @@ places:
 
   # Tacos and street food
   - name: Tacos del Valle
+    # known_for and order: Michelin page and Chilango 2025 via research 13 Nov 2026, plus the note, researched 13 November 2026
+    known_for: "Trompo pastor over open flame, and the longest line on the list"
+    order:
+      - "steak and bone marrow taco"
+      - "red and black pork belly"
+      - "La Tijuanita costra"
+      - "flautas"
     category: taco
     michelin: bib
     protein: [pork]
@@ -672,6 +686,14 @@ places:
     source: instagram @placesnoted, @thatonepointofview, @thecaroandtina, @d.stvns, @bostoneatin
 
   - name: Tacos La Once Mil
+    # known_for and order: El Financiero 21 May 2026, researched 13 November 2026
+    known_for: "The only Michelin-starred taqueria in Mexico in 2026, wood-fired beef"
+    order:
+      - "wagyu taco"
+      - "Black Angus sirloin trompo"
+      - "rib eye delgadita"
+      - "barbacoa de hongos"
+    price_mxn: "120-160"
     category: taco
     michelin: 1
     protein: [beef]
@@ -692,6 +714,13 @@ places:
     source: instagram @placesnoted, @thecaroandtina, friend in Mexico City, November 2026
 
   - name: Tacos Atarantados
+    # known_for and order: Grupo Animal 28 Sep 2026, researched 13 November 2026
+    known_for: "Monterrey-born, several trompos plus grill cuts"
+    order:
+      - "trompo negro de puerco"
+      - "trompo de res con chicharron"
+      - "abrazo de rib eye"
+    price_mxn: "35-38"
     category: taco
     protein: [pork]
     address: Cordoba 113, Roma Norte, Cuauhtemoc, Ciudad de Mexico
@@ -714,6 +743,12 @@ places:
     source: instagram @placesnoted
 
   - name: Tacos Los Alexis
+    # known_for and order: Michelin guide and Milenio 28 May 2026, researched 13 November 2026
+    known_for: "Northern charcoal asada meets chilango style, volcanes and costras"
+    order:
+      - "asada with caramelized onion on flour"
+      - "costra especial"
+      - "huitlacoche in crisped cheese"
     category: taco
     michelin: bib
     lat: 19.4132919
@@ -723,6 +758,12 @@ places:
     source: instagram @placesnoted
 
   - name: La Ochenta y Nueve
+    # known_for and order: Michelin guide and Chilango June 2025, researched 13 November 2026
+    known_for: "Bright Roma Norte spot for carne asada and birria"
+    order:
+      - "quesabirria with consome"
+      - "carne asada taco"
+      - "a torta"
     category: taco
     michelin: bib
     protein: [beef]
@@ -733,6 +774,13 @@ places:
     source: instagram @placesnoted
 
   - name: Taqueria Orinoco
+    # known_for and order: Infatuation March 2024 and Chilango, researched 13 November 2026
+    known_for: "Regio (Monterrey) style, open until 04:00"
+    order:
+      - "chicharron norteno"
+      - "pastor off the trompo"
+      - "costra de chicharron on flour"
+      - "gringa"
     category: taco
     url: https://taqueriaorinoco.com/
     protein: [pork]
@@ -747,6 +795,12 @@ places:
     source: instagram @thatonepointofview, friend in Mexico City, November 2026
 
   - name: El Califa de Leon
+    # known_for and order: Michelin best-of and Grupo Animal May 2026, researched 13 November 2026
+    known_for: "Four tacos, cash only, the gaonera that once held a Michelin star"
+    order:
+      - "gaonera with lime, salt and green salsa"
+      - "rib steak"
+    price_mxn: "58-88"
     category: taco
     michelin: listed
     protein: [beef]
@@ -762,6 +816,13 @@ places:
     source: instagram @thatonepointofview, @itsalanbarr, @cdmxtacos2026
 
   - name: Los Cocuyos
+    # known_for and order: Michelin best-of, Chilango and Time Out; prices on file are 2017, researched 13 November 2026
+    known_for: "Arguably the city's best suadero, a near 24 hour Centro stand"
+    order:
+      - "suadero"
+      - "longaniza"
+      - "campechano"
+      - "lengua or cachete"
     category: taco
     michelin: bib
     protein: [beef]
@@ -771,6 +832,12 @@ places:
     source: instagram @itsalanbarr
 
   - name: Tacos El Paisa
+    # known_for and order: Grupo Animal May 2026, researched 13 November 2026
+    known_for: "Michelin listed and still one of the cheapest plates in the guide"
+    order:
+      - "suadero, ask for trozos"
+      - "pastor with pineapple"
+    price_mxn: "16"
     category: taco
     michelin: listed
     protein: [pork, beef]
@@ -867,6 +934,13 @@ places:
 
   # ---------- taco tour stops, TRAVEL-28, checked 6 November 2026 ----------
   - name: Tacos de Canasta Don Quique
+    # known_for and order: Time Out Mexico August 2021, researched 13 November 2026
+    known_for: "Del Valle's garage canasta stand, family-run for about 60 years"
+    order:
+      - "chicharron"
+      - "mole verde"
+      - "papa adobada con chorizo"
+      - "frijol"
     category: taco
     address: Avenida Coyoacan 512, Del Valle, Benito Juarez, Ciudad de Mexico
     precision: approximate
@@ -874,6 +948,14 @@ places:
     note: Taco tour stop 1 (canasta breakfast). Hours and holiday closures unverified. About 20 to 30 MXN a taco, estimate. Cash.
 
   - name: Tacos Joven
+    # known_for and order: Chilango 20 Feb 2026, researched 13 November 2026
+    known_for: "Tacos de canasta since 1971, famous for its morita salsa with chicharron"
+    order:
+      - "papa"
+      - "frijol refrito"
+      - "adobo"
+      - "mole verde"
+    price_mxn: "20"
     category: taco
     address: Avenida Universidad 199, Narvarte, Benito Juarez, Ciudad de Mexico
     precision: approximate
@@ -881,6 +963,14 @@ places:
     note: Taco tour backup for stop 1. Canasta. Sources disagree on hours (Mon-Sun 10-19 or Mon-Sat 9-16). 15 to 20 MXN a taco. Cash.
 
   - name: Taqueria Los Parados
+    # known_for and order: Michelin guide and Grupo Animal 27 May 2026, researched 13 November 2026
+    known_for: "Standing-only charcoal grill since 1965, open until 05:00 at weekends"
+    order:
+      - "bistec"
+      - "costilla"
+      - "pastor"
+      - "poblano with cheese"
+    price_mxn: "40"
     category: taco
     michelin: listed
     address: Avenida Monterrey 333, Roma Sur, Cuauhtemoc, Ciudad de Mexico
@@ -890,6 +980,12 @@ places:
     note: Taco tour stop 2. Mon-Thu 12:30-03:00, Fri-Sat to 05:00, Sun to 01:00 (Michelin). Standing only. Holiday hours unverified.
 
   - name: Carinito Tacos
+    # known_for and order: Michelin guide; the eggplant is one blogger's pick, researched 13 November 2026
+    known_for: "Southeast Asian leaning tacos on flour tortillas"
+    order:
+      - "siu yuk crispy pork"
+      - "Cantonese pork belly"
+      - "eggplant"
     category: taco
     michelin: listed
     address: Guanajuato 53, Roma Norte, Cuauhtemoc, Ciudad de Mexico
@@ -900,6 +996,14 @@ places:
     note: Taco tour stop 4. Daily 12:00-22:00 (Michelin). Outdoor seating only. Holiday hours unverified.
 
   - name: Tacos Hola El Guero
+    # known_for and order: Michelin guide and Grupo Animal 27 May 2026, researched 13 November 2026
+    known_for: "Guisados kept warm in clay pots since 1968"
+    order:
+      - "picadillo"
+      - "chorizo con papa"
+      - "bistec en pasilla"
+      - "rajas or nopales"
+    price_mxn: "32"
     category: taco
     michelin: listed
     address: Avenida Amsterdam 135, Hipodromo, Cuauhtemoc, Ciudad de Mexico
@@ -1866,6 +1970,13 @@ places:
       matches why it was booked.
     source: friend in Mexico City, November 2026
   - name: Tacos La Chula
+    # known_for and order: Chilango 21 May 2025, per taco worked out from 190 for ten, researched 13 November 2026
+    known_for: "200 kg pastor trompo, the public's favourite at Taco Chilango 2025"
+    order:
+      - "piramide de pastor, 10 tacos"
+      - "suadero or campechano"
+      - "margachela"
+    price_mxn: "19"
     category: taco
     address: Avenida Insurgentes Sur 454, Roma Sur, Cuauhtemoc, 06760 Ciudad de Mexico
     neighborhood: Roma Sur
@@ -2100,6 +2211,12 @@ places:
     source: instagram @marguga__
 
   - name: La Bonvi
+    # known_for and order: Food and Pleasure 22 Aug 2025, researched 13 November 2026
+    known_for: "Second taqueria from the La Once Mil chef"
+    order:
+      - "picana"
+      - "New York taco"
+      - "costra de arrachera"
     category: taco
     protein: [beef]
     address: Pedregal 33, Lomas de Chapultepec, Miguel Hidalgo, Ciudad de Mexico
