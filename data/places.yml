@@ -658,13 +658,14 @@ places:
 
   # Tacos and street food
   - name: Tacos del Valle
-    # known_for and order: Michelin page and Chilango 2025 via research 13 Nov 2026, plus the note, researched 13 November 2026
+    # known_for and order: Michelin page and Chilango 2025 via research 13 Nov 2026, plus the note, researched 13 November 2026; price Chilango 31 Aug 2024
     known_for: "Trompo pastor over open flame, and the longest line on the list"
     order:
       - "steak and bone marrow taco"
       - "red and black pork belly"
       - "La Tijuanita costra"
       - "flautas"
+    price_mxn: "85-130"
     category: taco
     michelin: bib
     protein: [pork]
@@ -699,6 +700,8 @@ places:
     protein: [beef]
     address: Orizaba 83, Roma Norte, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Roma Norte
+    hours: { mon: "11:00-23:30", tue: "11:00-23:30", wed: "11:00-23:30", thu: "11:00-23:30", fri: "11:00-23:30", sat: "11:00-23:30", sun: "11:00-23:30" }
+    hours_source: Pixidia listing for the Roma Norte branch (Google-derived), page dated 28 August 2026
     note: >
       Rated 10/10. Wood-fired Wagyu, filet mignon and Prime skirt, tortillas
       made to order, spicy tuna tostada. Pricier than a normal taqueria. The
@@ -725,6 +728,8 @@ places:
     protein: [pork]
     address: Cordoba 113, Roma Norte, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Roma Norte
+    hours: { mon: "13:00-01:00", tue: "13:00-01:00", wed: "13:00-01:00", thu: "13:00-01:00", fri: "13:00-02:00", sat: "13:00-02:00", sun: "13:00-01:00" }
+    hours_source: El Universal Menu, December 2024; nothing newer gives hours
     note: >
       Rated 8.5/10. Al pastor over real charcoal, which is rarer than it should
       be here. Monterrey-style. This pin is the Cordoba 113 branch the taco
@@ -733,13 +738,29 @@ places:
     source: instagram @placesnoted
 
   - name: Milpa
+    # known_for and order: Time Out Mexico 6 May 2026, Mood Fork Food 7 July 2026 and Instagram @milpataqueria, researched 13 November 2026
+    known_for: "Native-corn tortillas and Mexican wine, tacos and vinos buenos"
+    order:
+      - "jaiba, crisp, on a sauce"
+      - "costilla de cerdo"
+      - "lubina"
+      - "chicharron prensado"
+      - "tamal de palomitas with butter gelato, for dessert"
     category: taco
+    url: https://www.instagram.com/milpataqueria/
     lat: 19.4140625
     lon: -99.1856371
-    address: Milpa, Ciudad de Mexico
+    address: Gobernador Tiburcio Montiel 24, San Miguel Chapultepec, Miguel Hidalgo, Ciudad de Mexico
+    neighborhood: San Miguel Chapultepec
+    hours: { tue: "13:00-23:00", wed: "13:00-23:00", thu: "13:00-23:00", fri: "13:00-23:00", sat: "13:00-23:00", sun: "13:00-23:00" }
+    hours_source: Instagram @milpataqueria and Time Out Mexico May 2026, closed Monday; only Time Out gives the Sunday hours
     note: >
       Rated 7/10 and called the non-hyped pick, where you see locals rather than
       tourists. Open kitchen, seating spills outside, soft shell crab taco.
+      Matched to Milpa Taqueria in San Miguel Chapultepec: a July 2026 write up
+      names its crunchy jaiba taco as the favourite and says you sit out in the
+      street, so do not plan it for rain. Chef Antonio Peralta, from Puebla.
+      No per taco price published anywhere readable.
     source: instagram @placesnoted
 
   - name: Tacos Los Alexis
@@ -749,11 +770,14 @@ places:
       - "asada with caramelized onion on flour"
       - "costra especial"
       - "huitlacoche in crisped cheese"
+    price_mxn: "48-82"
     category: taco
     michelin: bib
     lat: 19.4132919
     lon: -99.1569371
     address: Tacos Los Alexis, Ciudad de Mexico
+    hours: { tue: "14:00-23:00", wed: "14:00-23:00", thu: "14:00-23:00", fri: "14:00-23:00", sat: "14:00-23:00", sun: "12:00-18:00" }
+    hours_source: Michelin guide, read 13 November 2026, closed Monday; Milenio 28 May 2026 has Sunday 14:00-20:00 instead
     note: Rated 6.5/10. Short menu, reasonably priced, never lets you down but will not amaze.
     source: instagram @placesnoted
 
@@ -764,23 +788,27 @@ places:
       - "quesabirria with consome"
       - "carne asada taco"
       - "a torta"
+    price_mxn: "60"
     category: taco
     michelin: bib
     protein: [beef]
     address: Colima 134, Roma Norte, Cuauhtemoc, 06700 Ciudad de Mexico
+    hours: { mon: "12:00-00:00", tue: "12:00-00:00", wed: "12:00-00:00", thu: "12:00-00:00", fri: "12:00-00:00", sat: "11:00-00:00", sun: "11:00-22:00" }
+    hours_source: Michelin guide, read 13 November 2026; price is the from price per 7 Canibales, October 2025
     note: >
       Rated 5.5/10, the weakest on the list. Quesabirria and campechano, but
       meat and oil overwhelm the tortilla. Only if you are already nearby.
     source: instagram @placesnoted
 
   - name: Taqueria Orinoco
-    # known_for and order: Infatuation March 2024 and Chilango, researched 13 November 2026
+    # known_for and order: Infatuation March 2024 and Chilango, researched 13 November 2026; price Rappi menu for the Juarez branch, 13 November 2026
     known_for: "Regio (Monterrey) style, open until 04:00"
     order:
       - "chicharron norteno"
       - "pastor off the trompo"
       - "costra de chicharron on flour"
       - "gringa"
+    price_mxn: "35-64"
     category: taco
     url: https://taqueriaorinoco.com/
     protein: [pork]
@@ -806,6 +834,8 @@ places:
     protein: [beef]
     address: Ribera de San Cosme 56, San Rafael, Cuauhtemoc, Ciudad de Mexico
     neighborhood: San Rafael
+    hours: { mon: "11:00-02:00", tue: "11:00-02:00", wed: "11:00-02:00", thu: "11:00-02:00", fri: "11:00-02:00", sat: "11:00-02:00", sun: "11:00-02:00" }
+    hours_source: Michelin guide, read 13 November 2026
     note: >
       It held the first Michelin star ever given to a taqueria, and the 2026
       guide took it back: the guide still lists the place, at Avenida Ribera de
@@ -823,11 +853,14 @@ places:
       - "longaniza"
       - "campechano"
       - "lengua or cachete"
+    price_mxn: "22"
     category: taco
     michelin: bib
     protein: [beef]
     address: Bolivar 56, Centro, Cuauhtemoc, Ciudad de Mexico
     neighborhood: Centro
+    hours: { mon: "00:00-23:59", tue: "00:00-23:59", wed: "00:00-23:59", thu: "00:00-23:59", fri: "00:00-23:59", sat: "00:00-23:59", sun: "00:00-23:59" }
+    hours_source: Michelin guide and Chilango, open 24 hours, read 13 November 2026; price is the pastor taco per El Imparcial, August 2025
     note: Open almost around the clock. Suadero and the offal cuts.
     source: instagram @itsalanbarr
 
@@ -842,6 +875,8 @@ places:
     michelin: listed
     protein: [pork, beef]
     address: Tacos El Paisa, Ciudad de Mexico
+    hours: { mon: "18:00-00:00", tue: "18:00-00:00", wed: "18:00-00:00", thu: "19:00-00:00", fri: "18:00-01:00", sat: "10:00-00:00", sun: "10:00-00:00" }
+    hours_source: Michelin guide (the San Rafael stand at Joaquin Garcia Icazbalceta 36), read 13 November 2026
     note: >
       In the Michelin guide and still under five pounds a meal. The order is
       the suadero and the pastor with pineapple.
@@ -945,7 +980,9 @@ places:
     address: Avenida Coyoacan 512, Del Valle, Benito Juarez, Ciudad de Mexico
     precision: approximate
     neighborhood: Del Valle
-    note: Taco tour stop 1 (canasta breakfast). Hours and holiday closures unverified. About 20 to 30 MXN a taco, estimate. Cash.
+    hours: { mon: "09:00-14:00", tue: "09:00-14:00", wed: "09:00-14:00", thu: "09:00-14:00", fri: "09:00-14:00" }
+    hours_source: Time Out Mexico, August 2021, the newest source found; weekends not given
+    note: Taco tour stop 1 (canasta breakfast). Holiday closures unverified. Time Out had them at 7 MXN a taco in 2021; about 20 to 30 MXN now is an estimate. Cash.
 
   - name: Tacos Joven
     # known_for and order: Chilango 20 Feb 2026, researched 13 November 2026
@@ -960,7 +997,9 @@ places:
     address: Avenida Universidad 199, Narvarte, Benito Juarez, Ciudad de Mexico
     precision: approximate
     neighborhood: Narvarte
-    note: Taco tour backup for stop 1. Canasta. Sources disagree on hours (Mon-Sun 10-19 or Mon-Sat 9-16). 15 to 20 MXN a taco. Cash.
+    hours: { mon: "10:00-17:00", tue: "10:00-17:00", wed: "10:00-17:00", thu: "10:00-17:00", fri: "10:00-17:00", sat: "10:00-17:00", sun: "10:00-17:00" }
+    hours_source: Chilango, 31 March 2026, or until sold out; weekends can sell out by 13:00
+    note: Taco tour backup for stop 1. Canasta. 15 to 20 MXN a taco. Cash.
 
   - name: Taqueria Los Parados
     # known_for and order: Michelin guide and Grupo Animal 27 May 2026, researched 13 November 2026
@@ -980,12 +1019,13 @@ places:
     note: Taco tour stop 2. Mon-Thu 12:30-03:00, Fri-Sat to 05:00, Sun to 01:00 (Michelin). Standing only. Holiday hours unverified.
 
   - name: Carinito Tacos
-    # known_for and order: Michelin guide; the eggplant is one blogger's pick, researched 13 November 2026
+    # known_for and order: Michelin guide; the eggplant is one blogger's pick, researched 13 November 2026; price Chilango May 2021, likely higher now
     known_for: "Southeast Asian leaning tacos on flour tortillas"
     order:
       - "siu yuk crispy pork"
       - "Cantonese pork belly"
       - "eggplant"
+    price_mxn: "50"
     category: taco
     michelin: listed
     address: Guanajuato 53, Roma Norte, Cuauhtemoc, Ciudad de Mexico
@@ -1980,6 +2020,8 @@ places:
     category: taco
     address: Avenida Insurgentes Sur 454, Roma Sur, Cuauhtemoc, 06760 Ciudad de Mexico
     neighborhood: Roma Sur
+    hours: { mon: "00:00-23:59", tue: "00:00-23:59", wed: "00:00-23:59", thu: "00:00-23:59", fri: "00:00-23:59", sat: "00:00-23:59", sun: "00:00-23:59" }
+    hours_source: The chain's own page for this branch, open 24 hours, read 13 November 2026
     precision: approximate
     note: >
       On the friend's list as "La chula" with no branch given, and there are
@@ -2217,10 +2259,13 @@ places:
       - "picana"
       - "New York taco"
       - "costra de arrachera"
+    price_mxn: "89-145"
     category: taco
     protein: [beef]
     address: Pedregal 33, Lomas de Chapultepec, Miguel Hidalgo, Ciudad de Mexico
     neighborhood: Lomas de Chapultepec
+    hours: { mon: "12:00-23:30", tue: "12:00-23:30", wed: "12:00-23:30", thu: "12:00-23:30", fri: "12:00-23:30", sat: "11:00-23:30", sun: "11:00-23:30" }
+    hours_source: Instagram @labonvi.mx, read 13 November 2026; price from Primero Tacos, September 2025
     precision: approximate
     note: >
       Cesar de la Parra's second taqueria, by the same chef as Tacos La Once
